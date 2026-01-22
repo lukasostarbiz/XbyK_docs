@@ -1,21 +1,27 @@
+---
+source: https://docs.kentico.com/guides/development/email-marketing/display-structured-content-email-builder
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Email marketing](/guides/development/email-marketing)
+  * Display structured content in Email Builder 
+
+
 # Display structured content in Email Builder
-  * How-to| [ Copy page link ](guides/development/email-marketing/display-structured-content-email-builder#) | [Get HelpService ID](guides/development/email-marketing/display-structured-content-email-builder#)
-Core MVC 5
-
-
-[✖](guides/development/email-marketing/display-structured-content-email-builder# "Close page link panel") [Copy to clipboard](guides/development/email-marketing/display-structured-content-email-builder#)
 Email Builder in Xperience by Kentico empowers marketers to control the visual design of emails with a flexible drag-and-drop interface.
 However, some scenarios might call for less flexibility. For example: - You may want to consistently display structured content, such as product details, event information, or other reusable content items. - Your organization might have business requirements that set strict styling rules for certain emails. - Your marketers may not have the time to invest in planning and designing each issue of a recurring newsletter.
-Unlike Xperience’s original implementation of [email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates), which only exist in the database, Email Builder allows developers to manage templates and other components in the application, where they can edit code without having to run the site and sign in.
+Unlike Xperience’s original implementation of [email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates), which only exist in the database, Email Builder allows developers to manage templates and other components in the application, where they can edit code without having to run the site and sign in.
 Let’s explore the use of structured content in Email Builder, displaying this data with a rigid template that still includes some editable areas for drag and drop.
 ## Before you start
-This guide uses resources from the [Use the Email Builder Starter Kit in your project](guides/development/email-marketing/use-email-builder-starter-kit) and [Create an Email Builder widget for articles](guides/development/email-marketing/create-an-email-widget-for-articles) guides.
-If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](guides/development/email-marketing/use-email-builder-starter-kit).
+This guide uses resources from the [Use the Email Builder Starter Kit in your project](/guides/development/email-marketing/use-email-builder-starter-kit) and [Create an Email Builder widget for articles](/guides/development/email-marketing/create-an-email-widget-for-articles) guides.
+If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](/guides/development/email-marketing/use-email-builder-starter-kit).
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * Familiarity with [builders in Xperience by Kentico](documentation/developers-and-admins/development/builders)
-  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * Familiarity with [builders in Xperience by Kentico](/documentation/developers-and-admins/development/builders)
+  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -34,11 +40,11 @@ The Training guides project already includes a content type for this newsletter,
   * One or more related articles from the website
 
 
-Compared to the [previous scenario](guides/development/email-marketing/create-an-email-widget-for-articles#implement-the-mapper), where we built a widget for displaying Articles, this example is more closely tied to a specific content type.
+Compared to the [previous scenario](/guides/development/email-marketing/create-an-email-widget-for-articles#implement-the-mapper), where we built a widget for displaying Articles, this example is more closely tied to a specific content type.
 For this reason, we won’t use a mapper class to abstract the template from the content type and make it portable. However, if a mapper fits your requirements, it is still possible to implement in this scenario. Feel free to employ the lessons you learned in the earlier guide
 ## Enable Email Builder for the Nature spotlight newsletter
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the Training guides repository contains the `NatureSpotlightEmail`. However, it is not enabled for Email Builder yet.
-[Earlier in this series](guides/development/email-marketing/use-email-builder-starter-kit#enable-email-builder), you enabled Email Builder for the `BasicEmail` content type.
+[Earlier in this series](/guides/development/email-marketing/use-email-builder-starter-kit#enable-email-builder), you enabled Email Builder for the `BasicEmail` content type.
 Navigate to **Program.cs** and add the `NatureSpotlightEmail` content type identifier to the configured `EmailBuilderOptions`.
 C#
 **~/Program.cs**
@@ -111,7 +117,7 @@ This file uses the `ImageWidgetModel` from the Email Builder Starter Kit and the
 ### Display the component’s data
 Add a new file called **NatureSpotlightEmailTemplate.razor**.
 We haven’t defined its code-behind yet, but we’ll plan for it to have a `NatureSpotlightEmailModel` property called `Model`, and a `string` property called `CssContent` to mirror the [template](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit/blob/main/src/Kentico.Xperience.Mjml.StarterKit.Rcl/Templates/EmailBuilderStarterKitTemplate.razor.cs) from the Email Builder Starter Kit).
-In this example, let’s include some [editable areas](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#editable-areas), so that marketers have the option to add extra notices, notes, and other content within the pre-determined structure.
+In this example, let’s include some [editable areas](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#editable-areas), so that marketers have the option to add extra notices, notes, and other content within the pre-determined structure.
 You can use Email Builder templates that do not have editable areas if you want a fully locked-down template that is part of your project’s source code.
 cshtml
 **NatureSpotlightEmailTemplate.razor**
@@ -308,3 +314,81 @@ public static class ServiceCollectionExtensions
 
 
 ```
+
+* * *
+### Fill the template’s data in the component’s code-behind
+Now we can utilize this new service in the code-behind for the Razor component (**NatureSpotlightEmailTemplate.razor.cs**).
+First, register the email template, restricting its potential content types to the Nature spotlight email type exclusively.
+You can use the [CssLoaderService](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit/blob/main/src/Kentico.Xperience.Mjml.StarterKit.Rcl/CssLoaderService.cs) from the Email Builder Starter Kit to populate CSS for the template.
+Lastly, use the `NatureSpotlightEmailService` to build the component’s model.
+C#
+**NatureSpotlightEmailTemplate.razor.cs**
+Copy
+```
+using CMS.EmailMarketing;
+using Kentico.EmailBuilder.Web.Mvc;
+using Kentico.Xperience.Mjml.StarterKit.Rcl;
+using Microsoft.AspNetCore.Components;
+using TrainingGuides;
+using TrainingGuides.Web.Features.Newsletters.NatureSpotlight;
+
+[assembly: RegisterEmailTemplate(
+    identifier: NatureSpotlightEmailTemplate.IDENTIFIER,
+    name: "Nature spotlight template",
+    componentType: typeof(NatureSpotlightEmailTemplate),
+    ContentTypeNames = [NatureSpotlightEmail.CONTENT_TYPE_NAME])]
+
+namespace TrainingGuides.Web.Features.Newsletters.NatureSpotlight;
+
+
+public partial class NatureSpotlightEmailTemplate
+{
+    public const string IDENTIFIER = $"TrainingGuides.{nameof(NatureSpotlightEmailTemplate)}";
+
+    private string? cssContent;
+
+    protected string CssContent
+    {
+        get => cssContent ?? string.Empty;
+        set => cssContent = value;
+    }
+
+    private EmailRecipientContext? recipient;
+
+    protected EmailRecipientContext Recipient => recipient ??= RecipientContextAccessor.GetContext();
+
+    [Inject]
+    private IEmailRecipientContextAccessor RecipientContextAccessor { get; set; } = default!;
+
+    [Inject]
+    private INatureSpotlightEmailService NatureSpotlightEmailService { get; set; } = default!;
+
+    [Inject]
+    private CssLoaderService CssLoaderService { get; set; } = null!;
+
+    public NatureSpotlightEmailModel Model { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Model = await NatureSpotlightEmailService.GetNatureSpotlightEmailModel();
+        cssContent = await CssLoaderService.GetCssAsync();
+    }
+}
+```
+
+## See the results
+Sign in to the Xperience by Kentico administration interface and access the **Training guides emails** channel.
+Create a new **Regular** email of the **Nature spotlight email** content type, with the **Nature spotlight email template** option for its template.
+[![screenshot of create-email dialogue](/docsassets/guides/display-structured-content-email-builder/see-results-create-email.png)](/docsassets/guides/display-structured-content-email-builder/see-results-create-email.png)
+[![screenshot of template selection dialogue](/docsassets/guides/display-structured-content-email-builder/see-results-choose-template.png)](/docsassets/guides/display-structured-content-email-builder/see-results-choose-template.png)
+After following through the steps and filling in the email fields, you should see your new template in action, displaying structured content with a rigid layout and optional editable areas for further customization.
+[![screenshot of Content tab](/docsassets/guides/display-structured-content-email-builder/see-results-content-tab.png)](/docsassets/guides/display-structured-content-email-builder/see-results-content-tab.png)
+[![screenshot of Email Builder tab](/docsassets/guides/display-structured-content-email-builder/see-results-builder-tab.png)](/docsassets/guides/display-structured-content-email-builder/see-results-builder-tab.png)
+By following this approach, you can create robust, maintainable email templates that surface structured content in Email Builder. This way, marketers can easily deliver engaging, consistent communications while keeping your codebase clean and maintainable.
+## Continue learning
+Now that you have an email, try creating a recipient list for a subscription flow, and sending out a test email.
+The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the Training guides repo already contains a content type for subscription confirmation, but you’ll still need to create a form, an autoresponder email, and other components as described in [the documentation](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
+## What’s next
+The [next guide in this series](/guides/development/email-marketing/build-a-flexible-email-builder-template) explores Email Builder’s flexibility, creating a template and section that allow marketers to create and style complex layouts.
+![]()
+[]()[]()

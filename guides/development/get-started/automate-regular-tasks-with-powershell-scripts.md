@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/development/get-started/automate-regular-tasks-with-powershell-scripts
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Get started](/guides/development/get-started)
+  * Automate regular tasks with PowerShell scripts 
+
+
 # Automate regular tasks with PowerShell scripts
-  * [ Copy page link ](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#) | [Get HelpService ID](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#) | This page is part of a module: [ Developer setup ](modules/developer-setup)
-Core MVC 5
-
-
-[✖](guides/development/get-started/automate-regular-tasks-with-powershell-scripts# "Close page link panel") [Copy to clipboard](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#)
 Many development teams use PowerShell scripts to speed up common tasks. Even in cases where the script automates one or two commands, a developer can simply run a file from a folder without the need to look up or memorize several specific commands.
 This guide will show you how to create PowerShell scripts to automate common recurring tasks in Kentico Xperience environments.
 **Repository and folder structure**
@@ -12,7 +18,7 @@ Each script will assume it is located in a folder called  _scripts_ in the root 
 The code samples in this guide were developed using Windows PowerShell 5.1. Note that some other versions of PowerShell may not support the same commands, and you may need to make minor adjustments for your environment.
 ## Generate code files
 Code generation is a common development function that requires a command. Xperience code generation through the .NET CLI automatically generates strongly typed C# classes and interfaces based on content types, module classes, reusable field schemas and forms that exist in the Xperience database.
-The code generation command has [many parameters](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) that you can use to control which objects to include and where to save their files.
+The code generation command has [many parameters](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) that you can use to control which objects to include and where to save their files.
 This guide’s example will demonstrate all object types and save them to the _TrainingGuides.Entities_ project.
   1. Save the current location to a variable before switching to the _TrainingGuides.Web_ directory.
 Utilize the PowerShell [$PSScriptRoot](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4#psscriptroot) variable to ensure the correct file paths even if you call the script from other than the _scripts_ folder. 
@@ -85,7 +91,7 @@ Set-Location -Path $originalLocation
 Read-Host -Prompt "Press Enter to exit"
 ```
 
-Visit our [Code generator documentation](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to learn more about its parameters and usage. Additionally, you can see a more detailed exploration and examples [in this video](guides/development/get-started/generate-code-for-custom-content-and-data-classes). 
+Visit our [Code generator documentation](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to learn more about its parameters and usage. Additionally, you can see a more detailed exploration and examples [in this video](/guides/development/get-started/generate-code-for-custom-content-and-data-classes). 
 ## Publish
 The .NET CLI allows for projects to be built and published, meaning this process can be automated. Using a Powershell script, you can carry out additional automated steps before and after, and ensure your team doesn’t need to worry about Visual Studio _publish_ _profiles_.
 This example is relatively straightforward, but you can expand it with additional deployment tasks for your specific scenario.
@@ -138,8 +144,8 @@ Read-Host -Prompt "Press Enter to exit"
 ```
 
 ## Continuous integration
-_[Continuous integration](documentation/developers-and-admins/ci-cd/continuous-integration) (CI)_ is a feature of Xperience that allows you to easily share database changes with other developers on your team.
-Using the `--kxp-ci-store` option you can serialize your data changes into XML format in your file system (see [CI store](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#ci-store)). These can be shared over a source control with your team members who can then restore the changes to update their database, using `--kxp-ci-restore` (see [CI restore](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#ci-restore)).
+_[Continuous integration](/documentation/developers-and-admins/ci-cd/continuous-integration) (CI)_ is a feature of Xperience that allows you to easily share database changes with other developers on your team.
+Using the `--kxp-ci-store` option you can serialize your data changes into XML format in your file system (see [CI store](#ci-store)). These can be shared over a source control with your team members who can then restore the changes to update their database, using `--kxp-ci-restore` (see [CI restore](#ci-restore)).
 The following sections will share tips and best practices on how to work with these commands to help your team be the most effective. 
 ### CI store
 The following script serializes database data and automatically stores it in the _App_Data/CIRepository_ directory of your current project - in this case, the _TrainingGuides.Web_.
@@ -182,7 +188,7 @@ Read-Host -Prompt "Press Enter to exit"
 ```
 
 ### Connection string function
-Restoring data from the _CIRepository_ requires retrieving a connection string to access the database. Because there are two more scripts in this guide that will need this utility, let’s create a reusable _Get-ConnectionString_ script before diving into [CI restore](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#ci-restore).
+Restoring data from the _CIRepository_ requires retrieving a connection string to access the database. Because there are two more scripts in this guide that will need this utility, let’s create a reusable _Get-ConnectionString_ script before diving into [CI restore](#ci-restore).
   1. Create a new file called _Get-ConnectionString.ps1_ in the _scripts_ directory of the repository.
   2. Define a function with the same name as the file, taking two `string` parameters: `$Path` and `$OriginalLocation`.
   3. Check if there is a _CMSConnectionString_ saved in the user secrets, and return it if found.
@@ -254,10 +260,10 @@ function Get-ConnectionString {
 The script below covers restoring data from the _App_Data/CIRepository_ folder of your project and updating the Xperience database to match the version specified by the NuGet packages in your application.
 While it may take just a single command to restore objects from the _CIRepository_ to the database, things get more complicated when changes are made to the database structure.
 Continuous integration handles some database schema changes on its own, creating and deleting tables for custom content types, forms, and module classes. However, further customizations, such as custom indexes, are not accounted for.
-[Our documentation](documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts) shows how to run migration scripts before and after a CI restore. Since certain changes to the database schema may interfere with the restore process, this process automatically executes certain SQL commands before and after the CI restore operation.
+[Our documentation](/documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts) shows how to run migration scripts before and after a CI restore. Since certain changes to the database schema may interfere with the restore process, this process automatically executes certain SQL commands before and after the CI restore operation.
 This guide’s example closely follows the PowerShell script provided by the documentation. Start by copying the script and changing it in three key ways.
   * Assume that the script is stored in the _scripts_ folder of the repository, and remove the path as a parameter.
-  * Use the `Get-ConnectionString` function from the [previous section](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#connection-string-function), rather than including the function innately.
+  * Use the `Get-ConnectionString` function from the [previous section](#connection-string-function), rather than including the function innately.
   * Add a `Handle-Error` function that sets location back to the original directory, logs an error and returns `exit 1`. Use it throughout the script.
 
 
@@ -525,13 +531,13 @@ Information about the migrations is logged into the `CI_Migration` table of the 
   * `Run-Restore`
     * Takes the application offline and runs the _Before_ migration list.
     * Runs a CI restore.
-Just like the [CI store script above](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#ci-store), CI restore also uses the optional `--no-build` parameter. Consider your team’s procedures when deciding whether to include it. 
+Just like the [CI store script above](#ci-store), CI restore also uses the optional `--no-build` parameter. Consider your team’s procedures when deciding whether to include it. 
     * Runs the _After_ migration list and brings the application back online.
     * Writes any errors it encounters along the way.
 
 
 To provide this script with the conditions it needs, create new text files named _Before.txt_ and _After.txt_ in the _App_Data/CIRepository_ folder of the _TrainingGuides.Web_ project, along with an empty folder named _@migrations_.
-You can find an example of the type of migration that can be run here on [this documentation page](documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts#example---database-change-migration-script). 
+You can find an example of the type of migration that can be run here on [this documentation page](/documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts#example---database-change-migration-script). 
 ## Update
 The last script updates the Xperience by Kentico instance to the version specified by the application’s NuGet packages.
 To prevent continuous integration operations from interfering and causing errors, the script needs to disable CI before running the update. After the update is finished it will re-enable CI.
@@ -685,7 +691,7 @@ This ensures no connections are left open during the update, but may be less eff
 **Data consistency**
 If the _CI store_ operation fails when you run this script, we highly recommend taking the following steps after addressing the issue that led to failure:
   1. Building your application
-  2. Running [CI store](guides/development/get-started/automate-regular-tasks-with-powershell-scripts#ci-store)
+  2. Running [CI store](#ci-store)
 
 
 This ensures that updates to the schema of objects in the database are not in conflict with the data serialized in the CI repository.
@@ -693,3 +699,5 @@ Make sure your solution builds without errors before running CI store - otherwis
 You can also inspect [a similar sample PowerShell script](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/scripts/Update-XperienceProjectWithDatabase.ps1) that updates both the Xperience project files and database.
 # What’s next?
 Scripts like these will save your developers time and uncertainty in recurring tasks. All they need to do to run one of these scripts is right-click and choose Run with PowerShell, or alternately, open a PowerShell command line in the _scripts_ folder and call one of the files. You may want to customize these scripts to fit your team’s procedures or look into any other tasks that could potentially be automated in similar ways.
+![]()
+[]()[]()

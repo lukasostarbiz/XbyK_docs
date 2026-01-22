@@ -1,20 +1,26 @@
+---
+source: https://docs.kentico.com/guides/development/email-marketing/build-a-flexible-email-builder-template
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Email marketing](/guides/development/email-marketing)
+  * Build a flexible Email Builder template 
+
+
 # Build a flexible Email Builder template
-  * How-to| [ Copy page link ](guides/development/email-marketing/build-a-flexible-email-builder-template#) | [Get HelpService ID](guides/development/email-marketing/build-a-flexible-email-builder-template#)
-Core MVC 5
-
-
-[✖](guides/development/email-marketing/build-a-flexible-email-builder-template# "Close page link panel") [Copy to clipboard](guides/development/email-marketing/build-a-flexible-email-builder-template#)
 Email Builder in Xperience by Kentico empowers marketers to create visually engaging emails using a drag-and-drop interface. Let’s create a flexible, reusable template that supports a variety of layouts and color schemes.
 We’ll walk through the process of building a general-purpose template and section for Email Builder, supporting a range of visual customization options for your marketers.
-[![Screenshot of a finished email](docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](https://docs.kentico.com/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
+[![Screenshot of a finished email](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
 ## Before you start
 This guide uses resources from the [Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit/)
-If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](guides/development/email-marketing/use-email-builder-starter-kit).
+If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](/guides/development/email-marketing/use-email-builder-starter-kit).
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * Familiarity with [builders in Xperience by Kentico](documentation/developers-and-admins/development/builders), especially [Email Builder](documentation/developers-and-admins/development/builders/email-builder)
-  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * Familiarity with [builders in Xperience by Kentico](/documentation/developers-and-admins/development/builders), especially [Email Builder](/documentation/developers-and-admins/development/builders/email-builder)
+  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -26,10 +32,10 @@ They come from a project that uses [implicit using directives](https://learn.mic
 ## Prepare styling options
 ### Create an enumeration dropdown provider
 To support flexible layouts and color schemes, start by creating dropdown providers for enumerations. This allows you to manage the options marketers can specify for column layout, corner style, and color scheme.
-You may be familiar with a DropdownEnumOptionProvider class from our [dropdown provider guide](guides/development/page-builder/map-enum-to-dropdown#implement-a-generic-mapper-class). If your project does not have the class, you add it by following the steps in that guide or copy the completed code from [the finished branch of the Training guides repository.](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/DropdownEnumOptionProvider.cs).
+You may be familiar with a DropdownEnumOptionProvider class from our [dropdown provider guide](/guides/development/page-builder/map-enum-to-dropdown#implement-a-generic-mapper-class). If your project does not have the class, you add it by following the steps in that guide or copy the completed code from [the finished branch of the Training guides repository.](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/DropdownEnumOptionProvider.cs).
 ### Define a service for parsing enum values
 Next, create and register a service for parsing enum values from strings, using the [Enums.NET NuGet package](https://www.nuget.org/packages/Enums.NET/). It should take a _default value_ to fall back to when the provided string does not contain an enum value.
-We also outline this in the [dropdown provider guide](guides/development/page-builder/map-enum-to-dropdown#create-a-service-to-parse-enumeration-values-from-strings) mentioned earlier, which creates the following files:
+We also outline this in the [dropdown provider guide](/guides/development/page-builder/map-enum-to-dropdown#create-a-service-to-parse-enumeration-values-from-strings) mentioned earlier, which creates the following files:
   * [~/Features/Shared/OptionProviders/IEnumStringService.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/IEnumStringService.cs)
   * [~/Features/Shared/OptionProviders/EnumStringService.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/EnumStringService.cs)
   * [~/ServiceCollectionExtensions.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/ServiceCollectionExtensions.cs)
@@ -37,7 +43,7 @@ We also outline this in the [dropdown provider guide](guides/development/page-bu
 
 ### Include enumerations for styling
 With a dropdown provider and a class for parsing enumeration values in place, we can move on to the enumerations themselves.
-If you haven’t completed our [Page Builder module](modules/page-builder) or [guides](guides/development/page-builder), add these files to your project:
+If you haven’t completed our [Page Builder module](/modules/page-builder) or [guides](/guides/development/page-builder), add these files to your project:
   * [~/Features/Shared/OptionProviders/ColorScheme/ColorSchemeOption.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/ColorScheme/ColorSchemeOption.cs)
   * [~/Features/Shared/OptionProviders/ColumnLayout/ColumnLayoutOption.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/ColumnLayout/ColumnLayoutOption.cs)
   * [~/Features/Shared/OptionProviders/CornerStyle/CornerStyleOption.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/OptionProviders/CornerStyle/CornerStyleOption.cs)
@@ -124,9 +130,9 @@ Add the following files:
   * [~/ServiceCollectionExtensions.cs](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/ServiceCollectionExtensions.cs)
 
 
-You can find more implementation details for the style service in the [versatile page templates guide](guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles).
+You can find more implementation details for the style service in the [versatile page templates guide](/guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles).
 ## Craft a reusable columns component
-Now, let’s create a Razor component analogous to the [Page Builder columns view component](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/ViewComponents/PageBuilderColumnsViewComponent.cs) from the [page builder module](modules/page-builder).
+Now, let’s create a Razor component analogous to the [Page Builder columns view component](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/ViewComponents/PageBuilderColumnsViewComponent.cs) from the [page builder module](/modules/page-builder).
 In this case, we’ll render only widget zones. Allowing the component to conditionally render both editable areas and widget zones, like we did in the Page Builder component, would cause problems with the hierarchy of [MJML components](https://documentation.mjml.io/#standard-body-components).
 Alternately, you can modify the component to render editable areas instead. This will require you to take a different approach regarding which level of the Email Builder hierarchy you can use certain MJML elements (templates vs sections vs widgets).
 ### Define the models
@@ -501,7 +507,7 @@ public class Invisible : VisibilityCondition
 ```
 
 ### Define the section’s Razor component
-Thanks to the `EmailBuilderColumns` component [we built earlier](guides/development/email-marketing/build-a-flexible-email-builder-template#craft-a-reusable-columns-component), the section component can be fairly simple.
+Thanks to the `EmailBuilderColumns` component [we built earlier](#craft-a-reusable-columns-component), the section component can be fairly simple.
 In the code-behind, register the component and include a `GeneralEmailSectionProperties` parameter to access marketers’ configurations. Then utilize the `IEnumStringService` to parse enumeration values from the properties.
 C#
 **GeneralEmailSection.razor.cs**
@@ -639,7 +645,7 @@ public class GeneralEmailTemplateProperties : IEmailTemplateProperties
 
 Now we can move on to the Razor component for the template. The approach for the template’s layout is much simpler than dealing with columns, so there’s no need to break it out into a separate component.
 Aside from the layout, we also need to account for information in the header of the email, like styles and metadata, and the unsubscribe link.
-If you haven’t been following along, make sure you have the [email data mapper](guides/development/email-marketing/use-email-builder-starter-kit#create-the-data-mapper) from earlier in this series.
+If you haven’t been following along, make sure you have the [email data mapper](/guides/development/email-marketing/use-email-builder-starter-kit#create-the-data-mapper) from earlier in this series.
 C#
 **GeneralEmailTemplate.razor.cs**
 Copy
@@ -781,6 +787,8 @@ Now your new Email Builder components are in working order!
 Create a new email using the _General email template_ to test it out!
 Your browser does not support the video tag. 
 You can use these components along with widgets from the Email Builder Starter Kit to create an email like this:
-[![Screenshot of a finished email](docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](https://docs.kentico.com/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
+[![Screenshot of a finished email](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
 Due to current system limitations at the time this guide was authored, the text color on the **Email Builder** tab may not match the color specified in a template or section. The correct color will appear on the **Preview** tab and in the sent email.
 Your marketers should consider the **Preview** tab as the _source of truth_.
+![]()
+[]()[]()
