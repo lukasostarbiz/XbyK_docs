@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-assets/manual-cropping-and-focal-points
+scrape_date: 2026-01-22
+---
+
+Module: Work with assets
+17 of 21 Pages
 # Manual cropping and focal point
-  * [ Copy page link ](modules/work-with-assets/manual-cropping-and-focal-points#) | [Get HelpService ID](modules/work-with-assets/manual-cropping-and-focal-points#)
-Core MVC 5
-
-
-[✖](modules/work-with-assets/manual-cropping-and-focal-points# "Close page link panel") [Copy to clipboard](modules/work-with-assets/manual-cropping-and-focal-points#)
 When you upload an image to the _Content hub_ , Xperience automatically **optimizes** it. This means a file variant is compressed to reduce its size, which helps your **pages load faster** while still keeping the **image sharp and clear**.
 At the same time, Xperience generates the predefined _image variants_. To decide how to crop them, the system uses an **automatic focal point** :
   * By default, _AIRA_ places the focal point in the center of the image, but if it recognizes some important area, it moves the focal point accordingly.
@@ -37,19 +39,11 @@ When cropping manually, keep in mind:
   * They’re marked with a crop icon so you can tell them apart from the automatically optimized variants.
 
 
-[![Manually cropped variants](docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)
+[![Manually cropped variants](/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)](/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)
 You may have noticed that each of the variants in our example is named in a way that relates to how the variant behaves. A “wide” variant retains “wide” dimensions, and a “vertical” always remains “vertical”, no matter where you move the crop box. The developers set these dimensions and the variant names during the project implementation.
 While your project setting might look different from ours – your variants may have other dimensions and different names – one thing will always remain the same. An image variant will stay within the predefined limits of its dimensions.
-[ Previous page ](modules/work-with-assets/understanding-image-variants)
+[ Previous page ](/modules/work-with-assets/understanding-image-variants)
 17 of 21
-[ Mark complete and continue ](modules/work-with-assets/exercise-upload-and-adjust-image)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-assets/manual-cropping-and-focal-points)
-[](https://docs.kentico.com/modules/work-with-assets/manual-cropping-and-focal-points)[](https://docs.kentico.com/modules/work-with-assets/manual-cropping-and-focal-points)
+[ Mark complete and continue ](/modules/work-with-assets/exercise-upload-and-adjust-image)
+![]()
+[]()[]()

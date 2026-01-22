@@ -1,17 +1,22 @@
+---
+source: https://docs.kentico.com/api/configuration/roles
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Roles 
+
+
 # Roles
-  * [ Copy page link ](api/configuration/roles#) | [Get HelpService ID](api/configuration/roles#)
-Core MVC 5
-
-
-[✖](api/configuration/roles# "Close page link panel") [Copy to clipboard](api/configuration/roles#)
   
 List of examples:
-  * [Dependency injection](api/configuration/roles#dependency-injection)
-    * [Initialize required services](api/configuration/roles#initialize-required-services)
-  * [Roles](api/configuration/roles#roles)
-    * [Create a role](api/configuration/roles#create-a-role)
-    * [Assign a user to a role](api/configuration/roles#assign-a-user-to-a-role)
-    * [Define application permissions for a specific role](api/configuration/roles#define-application-permissions-for-a-specific-role)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Roles](#roles)
+    * [Create a role](#create-a-role)
+    * [Assign a user to a role](#assign-a-user-to-a-role)
+    * [Define application permissions for a specific role](#define-application-permissions-for-a-specific-role)
 
 
 ## Dependency injection
@@ -39,7 +44,7 @@ public RolesServices(
 }
 ```
 
-[> Back to list of examples](api/configuration/roles#toc)
+[> Back to list of examples](#toc)
 ## Roles
 ### Create a role
 C#
@@ -63,7 +68,7 @@ RoleInfo newRole = new()
 roleInfoProvider.Set(newRole);
 ```
 
-[> Back to list of examples](api/configuration/roles#toc)
+[> Back to list of examples](#toc)
 ### Assign a user to a role
 C#
 Copy
@@ -87,7 +92,7 @@ UserRoleInfo newRoleAssignment = new()
 userRoleInfoProvider.Set(newRoleAssignment);
 ```
 
-[> Back to list of examples](api/configuration/roles#toc)
+[> Back to list of examples](#toc)
 ### Define application permissions for a specific role
 C#
 Copy
@@ -121,4 +126,6 @@ ApplicationPermissionInfo newApplicationPermissionRoleAssignment = new()
 applicationPermissionInfoProvider.Set(newApplicationPermissionRoleAssignment);
 ```
 
-[> Back to list of examples](api/configuration/roles#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

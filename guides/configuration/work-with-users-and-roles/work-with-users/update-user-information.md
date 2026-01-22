@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-users/update-user-information
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with users](/guides/configuration/work-with-users-and-roles/work-with-users)
+  * Update user information 
+
+
 # Update user information
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-users/update-user-information#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-users/update-user-information#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-users/update-user-information# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-users/update-user-information#)
 You need to be an **Administrator** to update other users’ information. 
 To update information of other users:
   1. Go to the **Users** application.
@@ -12,3 +19,7 @@ To update information of other users:
     1. **First name** : e.g., _Laura_.
     2. **Last name** : e.g., _Miller_.
   4. **Save** the changes.
+
+
+![]()
+[]()[]()

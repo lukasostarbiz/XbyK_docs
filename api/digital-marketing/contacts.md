@@ -1,20 +1,25 @@
+---
+source: https://docs.kentico.com/api/digital-marketing/contacts
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Digital marketing](/api/digital-marketing)
+  * Contacts 
+
+
 # Contacts
-  * [ Copy page link ](api/digital-marketing/contacts#) | [Get HelpService ID](api/digital-marketing/contacts#)
-Core MVC 5
-
-
-[✖](api/digital-marketing/contacts# "Close page link panel") [Copy to clipboard](api/digital-marketing/contacts#)
   
 List of examples:
-  * [Dependency injection](api/digital-marketing/contacts#dependency-injection)
-    * [Initialize required services](api/digital-marketing/contacts#initialize-required-services)
-  * [Contacts](api/digital-marketing/contacts#contacts)
-    * [Get the current contact](api/digital-marketing/contacts#get-the-current-contact)
-    * [Create contacts](api/digital-marketing/contacts#create-contacts)
-    * [Update contacts](api/digital-marketing/contacts#update-contacts)
-    * [Update multiple contacts](api/digital-marketing/contacts#update-multiple-contacts)
-    * [Delete contacts](api/digital-marketing/contacts#delete-contacts)
-    * [Delete contacts in bulk](api/digital-marketing/contacts#delete-contacts-in-bulk)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Contacts](#contacts)
+    * [Get the current contact](#get-the-current-contact)
+    * [Create contacts](#create-contacts)
+    * [Update contacts](#update-contacts)
+    * [Update multiple contacts](#update-multiple-contacts)
+    * [Delete contacts](#delete-contacts)
+    * [Delete contacts in bulk](#delete-contacts-in-bulk)
 
 
 ## Dependency injection
@@ -34,7 +39,7 @@ public ContactsServices(IInfoProvider<ContactInfo> contactInfoProvider, IContact
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ## Contacts
 ### Get the current contact
 C#
@@ -44,7 +49,7 @@ Copy
 ContactInfo currentContact = ContactManagementContext.CurrentContact;
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ### Create contacts
 C#
 Copy
@@ -63,7 +68,7 @@ ContactInfo newContact = new ContactInfo()
 contactInfoProvider.Set(newContact);
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ### Update contacts
 C#
 Copy
@@ -84,7 +89,7 @@ if (updateContact != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ### Update multiple contacts
 C#
 Copy
@@ -104,7 +109,7 @@ foreach (ContactInfo contact in contacts)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ### Delete contacts
 C#
 Copy
@@ -122,7 +127,7 @@ if (deleteContact != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
 ### Delete contacts in bulk
 C#
 Copy
@@ -140,4 +145,6 @@ var condition = new WhereCondition()
 await contactDeletionService.BulkDelete(condition);
 ```
 
-[> Back to list of examples](api/digital-marketing/contacts#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

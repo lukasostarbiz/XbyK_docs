@@ -1,20 +1,26 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/transform-widget-properties
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Transform widget properties 
+
+
 # Transform widget properties
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/transform-widget-properties#) | [Get HelpService ID](guides/development/upgrade-deep-dives/transform-widget-properties#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/transform-widget-properties# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/transform-widget-properties#)
 This technical deep dive shows you how to transform widget properties during an upgrade from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK). You’ll learn how to migrate properties that use different UI controls, handle custom components, and enhance the editing experience by restructuring widget properties.
 While the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) handles most standard widget properties automatically, you often need to customize the migration process when working with complex property configurations or when modernizing widgets as part of the upgrade.
-For comprehensive widget restructuring scenarios, see our [Migrate widget data as reusable content](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub) page. This material focuses on property-level transformations.
+For comprehensive widget restructuring scenarios, see our [Migrate widget data as reusable content](/guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub) page. This material focuses on property-level transformations.
 ## Before you start
 This guide assumes you have:
   * Basic knowledge of C# and .NET framework concepts
-  * Familiarity with the basics of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) widgets in Xperience by Kentico and in Kentico Xperience 13
-  * Basic understanding of the [KX13 to XbyK upgrade process](guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) using the Kentico Migration tool.
+  * Familiarity with the basics of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) widgets in Xperience by Kentico and in Kentico Xperience 13
+  * Basic understanding of the [KX13 to XbyK upgrade process](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) using the Kentico Migration tool.
 
 
-If you haven’t, we recommend following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico.
+If you haven’t, we recommend following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico.
 ## Understand the mechanics
 Before exploring specific transformation scenarios, it’s important to understand how widget property migration works. Generally, upgrading widget properties involves two key aspects: _data migration_ and _code migration_.
 **Data migration** handles the transformation of existing widget property data from your KX13 database to the new XbyK structure. Most widget properties are straightforward to handle and migrate automatically as they map one-to-one between KX13 and XbyK (e.g., text fields) or have a default migration defined (e.g., pages, attachments/media files).
@@ -26,7 +32,7 @@ Now let’s walk through concrete examples that demonstrate different types of p
 ## Transform properties to use a different UI form control
 ### Keeping the data type
 Imagine you have a widget in your source KX13 instance with a simple text input property. During the usage of the widget it turned out that editors need to store a longer sentence or even a paragraph in this property.
-[![Text input property in KX13 that needs transformation into a text area](docsassets/guides/transform-widget-properties/text-control-kx13.png)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/text-control-kx13.png)
+[![Text input property in KX13 that needs transformation into a text area](/docsassets/guides/transform-widget-properties/text-control-kx13.png)](/docsassets/guides/transform-widget-properties/text-control-kx13.png)
 Let’s change the UI control from a _text input_ to a _text area_.
 Since the data type remains the same (text), you don’t need to perform any data migration work.
 When adjusting widget properties in the code of your target instance, simply use the `TextAreaComponent` attribute:
@@ -52,12 +58,12 @@ public string Content { get; set; } = "";
 ```
 
 The result will look seamless.
-[![Showing a piece of widget properties configuration window in XbyK showcasing the migrated Content property.](docsassets/guides/transform-widget-properties/text-area-xbyk.png)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/text-area-xbyk.png)
+[![Showing a piece of widget properties configuration window in XbyK showcasing the migrated Content property.](/docsassets/guides/transform-widget-properties/text-area-xbyk.png)](/docsassets/guides/transform-widget-properties/text-area-xbyk.png)
 ### Changing the data type
 For a more complex scenario, consider a widget property that uses a page selector component in KX13:
-[![KX13 Here Banner widget with a page selector property](docsassets/guides/transform-widget-properties/page-selector-kx13.png)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/page-selector-kx13.png)
-The migration tool already handles differences in the Page Builder data structure for page selector properties between KX13 and XbyK, with the default [page selector migration](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.Extensions/DefaultMigrations/WidgetPageSelectorMigration.cs). This default transformation will work for you if you’re aiming for a [lift-and-shift migration](guides/development/upgrade-deep-dives/upgrade-widgets-introduction#lift-and-shift-migration).
-To use a different control for page selection, for example, the [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector), which is the Kentico-recommended practice, define a [custom widget property migration](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/4533d9be2da9e494057ae666ecd26976fe590116/Migration.Tool.Extensions/README.md#customize-widget-property-migrations).
+[![KX13 Here Banner widget with a page selector property](/docsassets/guides/transform-widget-properties/page-selector-kx13.png)](/docsassets/guides/transform-widget-properties/page-selector-kx13.png)
+The migration tool already handles differences in the Page Builder data structure for page selector properties between KX13 and XbyK, with the default [page selector migration](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.Extensions/DefaultMigrations/WidgetPageSelectorMigration.cs). This default transformation will work for you if you’re aiming for a [lift-and-shift migration](/guides/development/upgrade-deep-dives/upgrade-widgets-introduction#lift-and-shift-migration).
+To use a different control for page selection, for example, the [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector), which is the Kentico-recommended practice, define a [custom widget property migration](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/4533d9be2da9e494057ae666ecd26976fe590116/Migration.Tool.Extensions/README.md#customize-widget-property-migrations).
 First, examine the Page Builder data structures. Both use an array, but the _page selector_ in KX13 references pages by `nodeGuid`, while the _combined content selector_ in XbyK uses `Identifier` (a content item GUID).
 JSON
 **Page selector property data structure in KX13**
@@ -314,7 +320,7 @@ The content retrieval is beyond the scope of this material. See an example imple
 ## Upgrade properties with custom UI control
 To migrate a property implemented with a custom control, you can also define a custom property migration. Then use `Rank` or direct property assignment in widget migration as described in the previous section.
 Let’s look at an example. Consider a Hero banner widget in KX13 that uses a Cloudinary custom control, which allows editors to use images and media files stored in a connected Cloudinary account.
-[![KX13 instance showing a Hero Banner widget with the Cloudinary control property](docsassets/guides/transform-widget-properties/custom-control.gif)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/custom-control.gif)
+[![KX13 instance showing a Hero Banner widget with the Cloudinary control property](/docsassets/guides/transform-widget-properties/custom-control.gif)](/docsassets/guides/transform-widget-properties/custom-control.gif)
 The control stores the file path in Cloudinary within the widget property.
 JSON
 **An example of KX13 widget data with custom Cloudinary UI control**
@@ -392,7 +398,7 @@ public class WidgetCustomSelectorMigration(
 }
 ```
 
-See guidance on how to create new reusable content items in our [migrating widget data to content hub](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub#define-custom-widget-migration-logic) example.
+See guidance on how to create new reusable content items in our [migrating widget data to content hub](/guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub#define-custom-widget-migration-logic) example.
 **Remember to register your custom property migration class**. 
 C#
 **ServiceCollectionExtensions.cs**
@@ -403,7 +409,7 @@ services.AddTransient<IWidgetPropertyMigration, WidgetCustomSelectorMigration>()
 ...
 ```
 
-If you migrated your property to an out-of-the-box combined content selector, decorate the property in your target instance and adjust content retrieval as shown in [the previous example](guides/development/upgrade-deep-dives/transform-widget-properties#combined-content-selector-property).
+If you migrated your property to an out-of-the-box combined content selector, decorate the property in your target instance and adjust content retrieval as shown in [the previous example](#combined-content-selector-property).
 ## Change property names and order
 Sometimes you want to rename, reorder, or consolidate widget properties to improve the editing experience in your target solution. You might also want to perform small property data changes specific to this widget without reusing them elsewhere.
 You can add this functionality to your custom widget migration class using simple value mapping.
@@ -417,7 +423,7 @@ The _HeroBanner_ widget in this example has the following properties in source i
 
 
 The widget’s code contains internal conditional logic to prioritize navigating to the **CtaUrlExternal** before **CtaUrlInternal** if it’s set.
-[![Showing the old version of Hero Banner widget in the source instance](docsassets/guides/transform-widget-properties/hero-banner-old.png)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/hero-banner-old.png)
+[![Showing the old version of Hero Banner widget in the source instance](/docsassets/guides/transform-widget-properties/hero-banner-old.png)](/docsassets/guides/transform-widget-properties/hero-banner-old.png)
 The resulting _HeroBanner_ widget should feature an improved user experience for editors:
   * `Title` - stays the same
   * `CtaText` - stays the same
@@ -427,7 +433,7 @@ The resulting _HeroBanner_ widget should feature an improved user experience for
   * `CtaTargetUrl` - still holds the external absolute URL, but displays conditionally, based on _CtaTargetType_
 
 
-[![Showing the new version of Hero Banner widget in the target instance](docsassets/guides/transform-widget-properties/hero-banner-new.gif)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/hero-banner-new.gif)
+[![Showing the new version of Hero Banner widget in the target instance](/docsassets/guides/transform-widget-properties/hero-banner-new.gif)](/docsassets/guides/transform-widget-properties/hero-banner-new.gif)
 Here’s the sample code for the custom migration and widget property file in the target XbyK instance:
 C#
 **HeroBannerWidgetMigration.cs**
@@ -551,8 +557,8 @@ public string CtaTargetUrl { get; set; } = "";
 ```
 
 ## Migrate inline properties
-Some of your widgets in KX13 contain so-called [inline properties](13/developing-websites/distributing-custom-builder-components#inline-property-editors), values which the editor can modify in Page Builder edit mode without visiting the widget configuration. A good example is the CTA button widget in the Dancing Goat sample site:
-[![Editing an inline property of CTA button in KX13](docsassets/guides/transform-widget-properties/cta-button-inline-prop-kx13.gif)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/cta-button-inline-prop-kx13.gif)
+Some of your widgets in KX13 contain so-called [inline properties](/13/developing-websites/distributing-custom-builder-components#inline-property-editors), values which the editor can modify in Page Builder edit mode without visiting the widget configuration. A good example is the CTA button widget in the Dancing Goat sample site:
+[![Editing an inline property of CTA button in KX13](/docsassets/guides/transform-widget-properties/cta-button-inline-prop-kx13.gif)](/docsassets/guides/transform-widget-properties/cta-button-inline-prop-kx13.gif)
 Inline properties with out-of-the-box data types migrate automatically. In this example, the property is of type Text.
 The inline property needs no special decoration in the properties file. Here’s comparison of the CTA button widget properties file in KX13 and in XbyK:
 C#
@@ -703,20 +709,22 @@ Copy
 ```
 
 Now the CTA button widget in XbyK looks nearly identical to its KX13 counterpart:
-[![Editing an inline property of CTA button in XbyK](docsassets/guides/transform-widget-properties/cta-button-inline-prop-xbyk.gif)](https://docs.kentico.com/docsassets/guides/transform-widget-properties/cta-button-inline-prop-xbyk.gif)
+[![Editing an inline property of CTA button in XbyK](/docsassets/guides/transform-widget-properties/cta-button-inline-prop-xbyk.gif)](/docsassets/guides/transform-widget-properties/cta-button-inline-prop-xbyk.gif)
 What about inline properties using custom data types?
 Currently, the Kentico Migration Tool doesn’t support custom property migrations for inline properties. However, if your widget uses an inline property of a custom type, you can work with the JSON data in a [custom widget migration](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.Extensions/README.md#customize-widget-migrations).
 ## Improve editing experience
 An upgrade provides an excellent opportunity to improve not only your content model, but also the robustness and editing experience of your Xperience solution.
 Consider these tips when migrating your widget properties:
-  * Use a [dropdown provider](guides/development/page-builder/map-enum-to-dropdown) to fill dropdowns with dynamic data instead of hardcoded values.
+  * Use a [dropdown provider](/guides/development/page-builder/map-enum-to-dropdown) to fill dropdowns with dynamic data instead of hardcoded values.
   * Add meaningful explanation texts.
   * Set meaningful default values.
   * Reevaluate control types, for example, checkbox versus dropdown.
-  * Use [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions).
+  * Use [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions).
 
 
 ## What’s next?
-This guide focused on scenarios around widget properties. Check out our other [deep dive guides](guides/development/upgrade-deep-dives) for additional widget migration topics, migration strategies, and transforming widget data into reusable content items.
-If you haven’t already, consider following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico from start to finish.
+This guide focused on scenarios around widget properties. Check out our other [deep dive guides](/guides/development/upgrade-deep-dives) for additional widget migration topics, migration strategies, and transforming widget data into reusable content items.
+If you haven’t already, consider following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico from start to finish.
 If you encounter any challenging scenarios during your own widget migrations, or if you have ideas for subjects we haven’t covered, don’t hesitate to reach out to us through the **Send us feedback** button at the bottom of this page.
+![]()
+[]()[]()

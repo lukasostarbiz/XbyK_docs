@@ -1,13 +1,15 @@
+---
+source: https://docs.kentico.com/modules/developer-setup/install-a-specific-version-of-xperience-by-kentico
+scrape_date: 2026-01-22
+---
+
+Module: Developer setup
+3 of 7 Pages
 # Install a specific version of Xperience by Kentico
-  * [ Copy page link ](modules/developer-setup/install-a-specific-version-of-xperience-by-kentico#) | [Get HelpService ID](modules/developer-setup/install-a-specific-version-of-xperience-by-kentico#)
-Core MVC 5
-
-
-[✖](modules/developer-setup/install-a-specific-version-of-xperience-by-kentico# "Close page link panel") [Copy to clipboard](modules/developer-setup/install-a-specific-version-of-xperience-by-kentico#)
 During the creation of an Xperience by Kentico instance, when you install **Kentico.Xperience.Templates** without any further specification, the .NET CLI automatically installs the latest stable version.
 While this is typically the desired behavior, you may encounter situations where you need to install an older version. For example, your company already uses a given version or has a lengthy approval process. 
 This guide demonstrates installation of an exact version of Xperience by Kentico, using the boilerplate project. We’ll work with version **30.11.1** as an example, though you can substitute any valid version number and simply use this guide as a reference.
-See the list of all valid version numbers in [the documentation’s _Changelog_ page](documentation/changelog).
+See the list of all valid version numbers in [the documentation’s _Changelog_ page](/documentation/changelog).
 ## Before you start
 To follow along with this guide, we recommend your machine has the following installed:
   * [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
@@ -26,7 +28,7 @@ dotnet new uninstall
 ```
 
 If you have previously installed multiple versions of _Kentico.Xperience.Templates_ , you’ll notice that all of them appear in the list, but only the most recently installed one includes a _Templates_ subsection with a list of specific template names. **This is the version the system is currently actively using.** For example, this image shows a case where version 29.6.1 was most recently installed:
-[![Screenshot showing multiple installed versions of Xperience templates, with only the latest installed \(version 29.6.1\) showing the Templates section](docsassets/guides/install-a-specific-version-of-xperience-by-kentico/installed-versions.png)](https://docs.kentico.com/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/installed-versions.png)
+[![Screenshot showing multiple installed versions of Xperience templates, with only the latest installed \(version 29.6.1\) showing the Templates section](/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/installed-versions.png)](/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/installed-versions.png)
 To clean up and uninstall _all templates_ from your machine you can run:
 CMD
 **Uninstall project templates**
@@ -72,7 +74,7 @@ Add a file called _license.txt_ with the content of a valid **license key**.
 You can obtain the license key from your agency, supervisor, or team lead.
 Alternatively, you can create an account at the [Client Portal](https://client.kentico.com/), and generate a [temporary key](https://client.kentico.com/evaluation-keys) valid for 30 days.
 Your browser does not support the video tag. 
-Learn more about licensing in our [documentation](documentation/developers-and-admins/installation/licenses).
+Learn more about licensing in our [documentation](/documentation/developers-and-admins/installation/licenses).
 Add a solution to the project. This will allow other projects to be created to work in tandem and keep things organized.
 Some IDE’s, like Visual Studio Code with the [C# Dev Kit extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit), will generate the solution file automatically after you open the project. We recommend saving the solution directly in the _src_ folder, one level up from _TrainingGuides.Web_.
 If you are using Visual Studio: 
@@ -104,7 +106,7 @@ Note the information specified with each parameter, which you can change if you 
     * The path to a text file containing your license key
 
 
-For more details about parameters and configuration options, visit our [documentation](documentation/developers-and-admins/installation#create-the-project-database).
+For more details about parameters and configuration options, visit our [documentation](/documentation/developers-and-admins/installation#create-the-project-database).
 Once the database finishes installing, run the site and visit the _/admin_ path. Sign in to your Xperience by Kentico instance with the username _administrator_ and the password specified in the command above.
 **Site not configured message**
 When the site loads, you should see a message that says something like this:
@@ -113,21 +115,13 @@ The TrainingGuides.Web site has not been configured yet.
 ```
 
 This is okay; you can still access the administration interface. You can remove this message later when you add content and develop page templates.
-After a successful sign-in, the app will navigate you to the [Xperience administration dashboard](documentation/administration-interface-basics), the interface content editors use to perform their daily tasks. As a developer, you will use the administration dashboard to configure and customize Xperience by Kentico according to your company’s business needs.
-[![Xperience administration dashboard after signing in as an ‘administrator’ user](docsassets/guides/install-a-specific-version-of-xperience-by-kentico/xperience-admin.png)](https://docs.kentico.com/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/xperience-admin.png)
+After a successful sign-in, the app will navigate you to the [Xperience administration dashboard](/documentation/administration-interface-basics), the interface content editors use to perform their daily tasks. As a developer, you will use the administration dashboard to configure and customize Xperience by Kentico according to your company’s business needs.
+[![Xperience administration dashboard after signing in as an ‘administrator’ user](/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/xperience-admin.png)](/docsassets/guides/install-a-specific-version-of-xperience-by-kentico/xperience-admin.png)
 ## What’s next?
 Now you have a fresh boilerplate project running on your specified version, so you can get started with development!
 Check out also our [Xperience Manager (xman)](https://github.com/Kentico/xperience-by-kentico-manager) tool, which can help you simplify installing and managing Xperience by Kentico instances in future projects.
-[ Previous page ](modules/developer-setup/install-xperience-by-kentico)
+[ Previous page ](/modules/developer-setup/install-xperience-by-kentico)
 3 of 7
-[ Mark complete and continue ](modules/developer-setup/generate-code-for-custom-content-and-data-classes)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/developer-setup/install-a-specific-version-of-xperience-by-kentico)
-[](https://docs.kentico.com/modules/developer-setup/install-a-specific-version-of-xperience-by-kentico)[](https://docs.kentico.com/modules/developer-setup/install-a-specific-version-of-xperience-by-kentico)
+[ Mark complete and continue ](/modules/developer-setup/generate-code-for-custom-content-and-data-classes)
+![]()
+[]()[]()

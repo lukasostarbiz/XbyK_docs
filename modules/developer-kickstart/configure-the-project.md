@@ -1,15 +1,17 @@
+---
+source: https://docs.kentico.com/modules/developer-kickstart/configure-the-project
+scrape_date: 2026-01-22
+---
+
+Module: Xperience by Kentico Developer kickstart
+6 of 13 Pages
 # Configure the project to display content
-  * [ Copy page link ](modules/developer-kickstart/configure-the-project#) | [Get HelpService ID](modules/developer-kickstart/configure-the-project#)
-Core MVC 5
-
-
-[✖](modules/developer-kickstart/configure-the-project# "Close page link panel") [Copy to clipboard](modules/developer-kickstart/configure-the-project#)
 You have created a _page content type – Landing page_ – with a field that allows for referencing another _reusable content type – Slogan_. The next step in line with our recommended practices is to create a **Page template**.
 But first, let’s get some necessary configuration tasks out of the way.
 ## Enable Content tree-based routing and Page Builder
 Page templates require the following features to be enabled:
-  * [Page Builder](documentation/developers-and-admins/development/builders/page-builder) allows editors to design web pages using drag-and-drop widgets, templates, and other configurations.
-  * [Content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing) creates URLs for web pages based on their position in the content tree and automatically handles requests to those URLs.
+  * [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) allows editors to design web pages using drag-and-drop widgets, templates, and other configurations.
+  * [Content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing) creates URLs for web pages based on their position in the content tree and automatically handles requests to those URLs.
 
 
 When you run your _Kickstart.Web_ project, you see a default message rendered on the screen:
@@ -53,7 +55,7 @@ using Kentico.PageBuilder.Web.Mvc;
 ```
 
 Provide `PageBuilderOptions` with the _Landing page_ content type name to the `UsePageBuilder` method – add `using Kickstart` to resolve errors.
-Use the `CONTENT_TYPE_NAME` constant from the [generated class](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to access the content type identifier.
+Use the `CONTENT_TYPE_NAME` constant from the [generated class](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to access the content type identifier.
 C#
 **Program.cs**
 Copy
@@ -98,18 +100,10 @@ Copy
 
 This will allow any future page template views you add to use common features without explicit `@using` directives.
 See an example __ViewImports.cshtml_ in our [Kickstart repository](https://github.com/Kentico/xperience-by-kentico-kickstart/blob/main/src/Kickstart.Web/_ViewImports.cshtml).
-Learn more about the [available tag helpers](documentation/developers-and-admins/development/reference-tag-helpers) in the Xperience by Kentico.
+Learn more about the [available tag helpers](/documentation/developers-and-admins/development/reference-tag-helpers) in the Xperience by Kentico.
 Now that you have added these configurations to your project let’s move on to the next step: building a page template.
-[ Previous page ](modules/developer-kickstart/define-a-page-content-type)
+[ Previous page ](/modules/developer-kickstart/define-a-page-content-type)
 6 of 13
-[ Mark complete and continue ](modules/developer-kickstart/build-a-page-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/developer-kickstart/configure-the-project)
-[](https://docs.kentico.com/modules/developer-kickstart/configure-the-project)[](https://docs.kentico.com/modules/developer-kickstart/configure-the-project)
+[ Mark complete and continue ](/modules/developer-kickstart/build-a-page-template)
+![]()
+[]()[]()

@@ -1,11 +1,20 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)
+  * [Reference - UI page templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates)
+  * Edit UI page template 
+
+
 # Edit UI page template
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#)
-Edit pages generate forms that enable users to edit [object types](documentation/developers-and-admins/customization/object-types) (_*Info_ objects).
-[![Editing user details in the Users application](docsassets/documentation/edit-ui-page-template/UserEdit.png)](https://docs.kentico.com/docsassets/documentation/edit-ui-page-template/UserEdit.png)
+Edit pages generate forms that enable users to edit [object types](/documentation/developers-and-admins/customization/object-types) (_*Info_ objects).
+[![Editing user details in the Users application](/docsassets/documentation/edit-ui-page-template/UserEdit.png)](/docsassets/documentation/edit-ui-page-template/UserEdit.png)
 All edit pages inherit from the `InfoEditPage<TInfo>` base class, where `TInfo` is substituted for the **Info** class of the object type the page is used to edit.
 C#
 **Example - edit page implementation**
@@ -42,7 +51,7 @@ public class UserEdit : InfoEditPage<UserInfo>
 }
 ```
 
-From the code above, you can see that edit pages are parameterized by the identifier of the edited object. To get this information into the URL structure of the page, the system provides the `EditSectionPage` base class. The base class, in conjunction with URL parameterization (described in the _Page URLs and routing_ section on [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)), is used to ensure correct URLs for edit pages:
+From the code above, you can see that edit pages are parameterized by the identifier of the edited object. To get this information into the URL structure of the page, the system provides the `EditSectionPage` base class. The base class, in conjunction with URL parameterization (described in the _Page URLs and routing_ section on [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)), is used to ensure correct URLs for edit pages:
 C#
 Copy
 ```
@@ -73,7 +82,7 @@ where _ID_PARAMETERIZED_SLUG_ contains the identifier of the edited object. The 
 ## Access the currently edited info object
 You can retrieve the currently edited object (identified by the ID slug in the page URL) via the `GetInfoObject` method.
 ## Assign editing forms
-To specify which [UI form](documentation/developers-and-admins/customization/object-types) the edit page displays, use the `UIFormName` property and assign the **Code name** of the desired UI form:
+To specify which [UI form](/documentation/developers-and-admins/customization/object-types) the edit page displays, use the `UIFormName` property and assign the **Code name** of the desired UI form:
 **Reserved UI form code names**
 If the selected object type contains a UI form with the **edit** code name, that form gets used automatically without needing to be set via `UIFormName`. Other forms need to be set directly.
 C#
@@ -130,7 +139,7 @@ public override async Task ConfigurePage()
 ```
 
 Additionally, the dialog can also display an arbitrary form. Typically, you would want to offer a multiple-choice selector that allows you to further control how the back end processes the submitted data.
-The form must be defined within a dedicated model class and annotated with [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components). [Validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) are also supported.
+The form must be defined within a dedicated model class and annotated with [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components). [Validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) are also supported.
 C#
 **Add forms to configuration dialogs**
 Copy
@@ -147,7 +156,7 @@ public class ConfirmationDialogFormModel
 }
 ```
 
-To access the data during form submit, use `GetValidatedConfirmationModel<T>`. The method can only be called after the form model has been received from the client. Suitable places are the `FinalizeInfoObject`, and `SetFormData` methods (see [Lifecycle of edit and create UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#lifecycle-of-edit-and-create-ui-pages)). 
+To access the data during form submit, use `GetValidatedConfirmationModel<T>`. The method can only be called after the form model has been received from the client. Suitable places are the `FinalizeInfoObject`, and `SetFormData` methods (see [Lifecycle of edit and create UI pages](#lifecycle-of-edit-and-create-ui-pages)). 
 C#
 **Control back-end flow based on confirmation form data**
 Copy
@@ -174,7 +183,7 @@ You can use the edit page template to create new Xperience objects. Such pages m
   * **TInfo** – the ***Info** object that represents the entity in the system (e.g., existing system object types such as `UserInfo`, or custom object types).
   * **TRedirectPage** – the page to which users get redirected after creating the object. 
     * By default, the system automatically appends the created object’s identifier to the redirect URL. As a result, you can only redirect to other edit pages that work with the created object (expect its identifier in their URL structure).
-    * You can modify this behavior by overriding the `GetSubmitSuccessResponse` method. See [Change redirection behavior](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#change-redirection-behavior).
+    * You can modify this behavior by overriding the `GetSubmitSuccessResponse` method. See [Change redirection behavior](#change-redirection-behavior).
 
 
 C#
@@ -208,7 +217,7 @@ public override Task ConfigurePage()
 ```
 
 ### Change redirection behavior
-By default, the system automatically appends the created object’s identifier to the redirect URL. As a result, you can only redirect to other edit pages that work with the created object (expect its identifier in their URL structure). You can modify this behavior by overriding the `GetSubmitSuccessResponse` method. To generate URLs to other pages in the administration, use the `IPageLinkGenerator` service. See [Page URL generation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages).
+By default, the system automatically appends the created object’s identifier to the redirect URL. As a result, you can only redirect to other edit pages that work with the created object (expect its identifier in their URL structure). You can modify this behavior by overriding the `GetSubmitSuccessResponse` method. To generate URLs to other pages in the administration, use the `IPageLinkGenerator` service. See [Page URL generation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages).
 C#
 **Change create page redirection behavior**
 Copy
@@ -254,25 +263,25 @@ public override Task ConfigurePage()
 The following table provides a reference of all template configuration options available via the `PageConfiguration` property.
 Property |  Type |  Description  
 ---|---|---  
-BackLink |  string |  If set and the page is not displayed in a dialog, renders a back arrow above the form that redirects users to the specified page. Use `IPageLinkGenerator` to [generate links](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages) to other administration pages.  
+BackLink |  string |  If set and the page is not displayed in a dialog, renders a back arrow above the form that redirects users to the specified page. Use `IPageLinkGenerator` to [generate links](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages) to other administration pages.  
 ErrorMessage |  string |  If set, displays the specified error message instead of the editing form.  
-Components |  ICollection<IFormComponentClientProperties> |  Contains the collection of [form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) properties required to instantiate the editing form on the client.  
-SubmitConfiguration |  SubmitConfiguration |  Configures the submit action. See [Configure the submit action](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#configure-the-submit-action) and [Raise a confirmation prompt on submit](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#raise-a-confirmation-prompt-on-submit).  
+Components |  ICollection<IFormComponentClientProperties> |  Contains the collection of [form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) properties required to instantiate the editing form on the client.  
+SubmitConfiguration |  SubmitConfiguration |  Configures the submit action. See [Configure the submit action](#configure-the-submit-action) and [Raise a confirmation prompt on submit](#raise-a-confirmation-prompt-on-submit).  
 EditMode |  FormEditMode |  Indicates whether the form can be edited and submitted:
   * `FormEditMode.Disabled` value disables submission
   * `FormEditMode.Default` enables submission
   * `FormEditMode.ReadOnly` disables submission, but the contents can be read easily
 
-If some of the [form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) on the page don’t implement the ReadOnly state, they will be displayed in the Disabled state. When the `EditMode` value set for a [form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) differs from the one set in `PageConfiguration`, the component is rendered according to the more restrictive of the two, following this order of precedence:
+If some of the [form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) on the page don’t implement the ReadOnly state, they will be displayed in the Disabled state. When the `EditMode` value set for a [form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) differs from the one set in `PageConfiguration`, the component is rendered according to the more restrictive of the two, following this order of precedence:
   1. `FormEditMode.Disabled`
   2. `FormEditMode.ReadOnly`
   3. `FormEditMode.Default`
 
   
 Headline |  string |  The page’s title.  
-Callouts |  ICollection<CalloutConfiguration> |  Configures an optional message box element that can be displayed above the listing. See [Add callouts](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#add-callouts) under the listing template section.  
+Callouts |  ICollection<CalloutConfiguration> |  Configures an optional message box element that can be displayed above the listing. See [Add callouts](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#add-callouts) under the listing template section.  
 ## Register edit pages
-Edit pages need to specify the `TemplateNames.EDIT` client template during [registration](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages).
+Edit pages need to specify the `TemplateNames.EDIT` client template during [registration](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages).
 C#
 **Example edit page registration**
 Copy
@@ -291,22 +300,24 @@ using Kentico.Xperience.Admin.Base;
 ## Client template – EDIT
 Edit pages must use the `EDIT` client template whose properties are represented by `EditTemplateClientProperties` (_Kentico.Xperience.Admin.Base_) on the back end.
 The template supports the following page commands:
-  * **Change** – handles the form change command. The command is invoked whenever [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) or field value dependencies of the form need to be reevaluated and the form re-rendered (to display or hide form fields). The arguments submitted by the command to the server are represented by `FormChangeCommandArguments`. The response expected by the client is represented by `FormChangeResult`.
+  * **Change** – handles the form change command. The command is invoked whenever [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) or field value dependencies of the form need to be reevaluated and the form re-rendered (to display or hide form fields). The arguments submitted by the command to the server are represented by `FormChangeCommandArguments`. The response expected by the client is represented by `FormChangeResult`.
   * **Submit** – executed when the corresponding form is submitted from the client. The arguments the command sends to the server are represented by `FormSubmissionCommandArguments`. The response expected by the client is represented by `FormSubmissionResult`.
 
 
 ## Lifecycle of edit and create UI pages
 The following diagram illustrates the lifecycle of edit and create pages, and their available customization points. Each step with a red border indicates a virtual member that can be overridden to customize the page’s behavior. 
-[![Edit and create UI page lifecycle](docsassets/documentation/edit-ui-page-template/EditPageLifecycle.png)](https://docs.kentico.com/docsassets/documentation/edit-ui-page-template/EditPageLifecycle.png)
+[![Edit and create UI page lifecycle](/docsassets/documentation/edit-ui-page-template/EditPageLifecycle.png)](/docsassets/documentation/edit-ui-page-template/EditPageLifecycle.png)
 ### Configure page
 The place to configure the behavior of the edit/create page. See the other topics on this page for details.
 ### GetFormItems
-Provides a place to modify the initial configuration of individual form components that comprise the editing form displayed by the page before they get sent to the client. The default configuration is taken from the [editing form](documentation/developers-and-admins/customization/object-types#define-editing-forms) assigned to the page.
+Provides a place to modify the initial configuration of individual form components that comprise the editing form displayed by the page before they get sent to the client. The default configuration is taken from the [editing form](/documentation/developers-and-admins/customization/object-types#define-editing-forms) assigned to the page.
 ### ConfigureTemplateProperties
 Provides a place to modify page properties before they get sent to the client.
 ### FinalizeInfoObject
-Called immediately after the submitted data is bound to the _Info_ object and before validation runs. Can be used to populate fields intentionally not editable as part of the form. For example, to configure [relationships](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) between objects.
+Called immediately after the submitted data is bound to the _Info_ object and before validation runs. Can be used to populate fields intentionally not editable as part of the form. For example, to configure [relationships](/documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) between objects.
 ### SetFormData
 Called when saving the edited _Info_ object to the database.
 ### GetSubmitSuccessResponse
-Controls the page response upon a successful submit action. By default, edit pages display a “saved” prompt and create pages [redirect to the parent](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#change-redirection-behavior).
+Controls the page response upon a successful submit action. By default, edit pages display a “saved” prompt and create pages [redirect to the parent](#change-redirection-behavior).
+![]()
+[]()[]()

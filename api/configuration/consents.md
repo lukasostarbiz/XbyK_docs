@@ -1,23 +1,28 @@
+---
+source: https://docs.kentico.com/api/configuration/consents
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Consents 
+
+
 # Consents
-  * [ Copy page link ](api/configuration/consents#) | [Get HelpService ID](api/configuration/consents#)
-Core MVC 5
-
-
-[✖](api/configuration/consents# "Close page link panel") [Copy to clipboard](api/configuration/consents#)
   
 List of examples:
-  * [Dependency injection](api/configuration/consents#dependency-injection)
-    * [Initialize required services](api/configuration/consents#initialize-required-services)
-  * [Consents](api/configuration/consents#consents)
-    * [Create consents](api/configuration/consents#create-consents)
-    * [Update consents](api/configuration/consents#update-consents)
-    * [Create consent language versions](api/configuration/consents#create-consent-language-versions)
-    * [Delete consents](api/configuration/consents#delete-consents)
-  * [Consent agreements](api/configuration/consents#consent-agreements)
-    * [Create a consent agreement](api/configuration/consents#create-a-consent-agreement)
-    * [Check a consent agreement](api/configuration/consents#check-a-consent-agreement)
-    * [Revoke a consent agreement](api/configuration/consents#revoke-a-consent-agreement)
-    * [Get the consent agreements of a contact](api/configuration/consents#get-the-consent-agreements-of-a-contact)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Consents](#consents)
+    * [Create consents](#create-consents)
+    * [Update consents](#update-consents)
+    * [Create consent language versions](#create-consent-language-versions)
+    * [Delete consents](#delete-consents)
+  * [Consent agreements](#consent-agreements)
+    * [Create a consent agreement](#create-a-consent-agreement)
+    * [Check a consent agreement](#check-a-consent-agreement)
+    * [Revoke a consent agreement](#revoke-a-consent-agreement)
+    * [Get the consent agreements of a contact](#get-the-consent-agreements-of-a-contact)
 
 
 ## Dependency injection
@@ -41,7 +46,7 @@ public ConsentsServices(IInfoProvider<ConsentInfo> consentInfoProvider,
 }
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ## Consents
 ### Create consents
 C#
@@ -63,7 +68,7 @@ newConsent.UpsertConsentText("english", shortText, fullText);
 newConsent.Update();
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Update consents
 C#
 Copy
@@ -83,7 +88,7 @@ existingConsent.UpsertConsentText("english", shortText, fullText);
 existingConsent.Update();
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Create consent language versions
 C#
 Copy
@@ -100,7 +105,7 @@ existingConsent.UpsertConsentText("spanish", shortText, fullText);
 existingConsent.Update();
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Delete consents
 C#
 Copy
@@ -115,7 +120,7 @@ if (deleteConsent != null)
 }
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ## Consent agreements
 ### Create a consent agreement
 C#
@@ -135,7 +140,7 @@ ContactInfo contact = contactInfoProvider.Get()
 consentAgreementService.Agree(contact, consent);
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Check a consent agreement
 C#
 Copy
@@ -154,7 +159,7 @@ ContactInfo contact = contactInfoProvider.Get()
 bool agreed = consentAgreementService.IsAgreed(contact, consent);
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Revoke a consent agreement
 C#
 Copy
@@ -173,7 +178,7 @@ ContactInfo contact = contactInfoProvider.Get()
 consentAgreementService.Revoke(contact, consent);
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
 ### Get the consent agreements of a contact
 C#
 Copy
@@ -205,4 +210,6 @@ foreach (Consent consent in consents)
 }
 ```
 
-[> Back to list of examples](api/configuration/consents#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

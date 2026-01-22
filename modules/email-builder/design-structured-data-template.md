@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/email-builder/design-structured-data-template
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+8 of 13 Pages
 # Design a template for structured data
-  * [ Copy page link ](modules/email-builder/design-structured-data-template#) | [Get HelpService ID](modules/email-builder/design-structured-data-template#)
-Core MVC 5
-
-
-[✖](modules/email-builder/design-structured-data-template# "Close page link panel") [Copy to clipboard](modules/email-builder/design-structured-data-template#)
 Email Builder in Xperience by Kentico empowers marketers to control the visual design of emails with a flexible drag-and-drop interface.
 However, some scenarios might call for less flexibility. For example: - You may want to consistently display structured content, such as product details, event information, or other reusable content items. - Your organization might have business requirements that set strict styling rules for certain emails. - Your marketers may not have the time to invest in planning and designing each issue of a recurring newsletter.
-Unlike Xperience’s original implementation of [email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates), which only exist in the database, Email Builder allows developers to manage templates and other components in the application, where they can edit code without having to run the site and sign in.
+Unlike Xperience’s original implementation of [email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates), which only exist in the database, Email Builder allows developers to manage templates and other components in the application, where they can edit code without having to run the site and sign in.
 Let’s explore the use of structured content in Email Builder, displaying this data with a rigid template that still includes some editable areas for drag and drop.
 ## Explore the scenario
 In this scenario, we will create a template for a **Nature spotlight** email newsletter: a regular publication that describes interesting species of organisms, geographical features, and other natural phenomena.
@@ -18,11 +20,11 @@ The Training guides project already includes a content type for this newsletter,
   * One or more related articles from the website
 
 
-Compared to the [previous scenario](guides/development/email-marketing/create-an-email-widget-for-articles#implement-the-mapper), where we built a widget for displaying Articles, this example is more closely tied to a specific content type.
+Compared to the [previous scenario](/guides/development/email-marketing/create-an-email-widget-for-articles#implement-the-mapper), where we built a widget for displaying Articles, this example is more closely tied to a specific content type.
 For this reason, we won’t use a mapper class to abstract the template from the content type and make it portable. However, if a mapper fits your requirements, it is still possible to implement in this scenario. Feel free to employ the lessons you learned in the earlier guide
 ## Enable Email Builder for the Nature spotlight newsletter
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the Training guides repository contains the `NatureSpotlightEmail`. However, it is not enabled for Email Builder yet.
-[Earlier in this series](modules/email-builder/configure-the-starter-kit-and-email-builder#enable-email-builder), you enabled Email Builder for the `BasicEmail` content type.
+[Earlier in this series](/modules/email-builder/configure-the-starter-kit-and-email-builder#enable-email-builder), you enabled Email Builder for the `BasicEmail` content type.
 Navigate to **Program.cs** and add the `NatureSpotlightEmail` content type identifier to the configured `EmailBuilderOptions`.
 C#
 **~/Program.cs**
@@ -95,7 +97,7 @@ This file uses the `ImageWidgetModel` from the Email Builder Starter Kit and the
 ### Display the component’s data
 Add a new file called **NatureSpotlightEmailTemplate.razor**.
 We haven’t defined its code-behind yet, but we’ll plan for it to have a `NatureSpotlightEmailModel` property called `Model`, and a `string` property called `CssContent` to mirror the [template](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit/blob/main/src/Kentico.Xperience.Mjml.StarterKit.Rcl/Templates/EmailBuilderStarterKitTemplate.razor.cs) from the Email Builder Starter Kit).
-In this example, let’s include some [editable areas](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#editable-areas), so that marketers have the option to add extra notices, notes, and other content within the pre-determined structure.
+In this example, let’s include some [editable areas](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#editable-areas), so that marketers have the option to add extra notices, notes, and other content within the pre-determined structure.
 You can use Email Builder templates that do not have editable areas if you want a fully locked-down template that is part of your project’s source code.
 cshtml
 **NatureSpotlightEmailTemplate.razor**
@@ -165,16 +167,8 @@ Copy
 You might notice that this uses the `mj-section` component to wrap some content, but does not wrap `EditableArea` components in the same way.
 We avoided wrapping the editable area in this example because the Email Builder sections in this project use `mj-section` around their widget zones, and MJML does not support nesting `mj-section` components within one another.
 This approach is not a requirement, but you should make sure the approach you decide on is consistent across all of the Email Builder components of each type within your project.
-[ Previous page ](modules/email-builder/build-widget-component)
+[ Previous page ](/modules/email-builder/build-widget-component)
 8 of 13
-[ Mark complete and continue ](modules/email-builder/implement-structured-data-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/design-structured-data-template)
-[](https://docs.kentico.com/modules/email-builder/design-structured-data-template)[](https://docs.kentico.com/modules/email-builder/design-structured-data-template)
+[ Mark complete and continue ](/modules/email-builder/implement-structured-data-template)
+![]()
+[]()[]()

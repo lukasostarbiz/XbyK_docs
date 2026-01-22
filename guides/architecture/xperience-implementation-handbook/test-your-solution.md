@@ -1,14 +1,20 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/test-your-solution
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * Test your solution 
+
+
 # Test your solution
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/test-your-solution#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/test-your-solution#) | This page is part of a module: [ Xperience implementation handbook ](modules/xperience-implementation-handbook)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/test-your-solution# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/test-your-solution#)
 ## Functional testing
 Thoroughly testing the functions of your solution helps to ensure a good user experience.
 When testing the functionality of your project, consider the following:
   * Test all use case scenarios with automated tests. 
-    * Set up end-to-end (E2E) testing for the solution, with tools like [Playwright](https://playwright.dev/) and [Selenium](https://www.selenium.dev/) for the live site, and [Cypress](documentation/developers-and-admins/customization/extend-the-administration-interface/administration-interface-ui-tests#cypress) for the admin UI.
+    * Set up end-to-end (E2E) testing for the solution, with tools like [Playwright](https://playwright.dev/) and [Selenium](https://www.selenium.dev/) for the live site, and [Cypress](/documentation/developers-and-admins/customization/extend-the-administration-interface/administration-interface-ui-tests#cypress) for the admin UI.
     * Add unit tests to ensure the correct functioning of your granular code components, like individual methods.
     * Create integration tests to make sure components interact as expected with mock data.
   * Validate website code and accessibility for all devices and browsers you are planning to support.
@@ -50,4 +56,6 @@ When running performance, load, and capacity tests, there are several things you
 
 
 ## What’s next
-The [next guide](guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment) in this handbook will cover important considerations regarding how you deploy and host your project.
+The [next guide](/guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment) in this handbook will cover important considerations regarding how you deploy and host your project.
+![]()
+[]()[]()

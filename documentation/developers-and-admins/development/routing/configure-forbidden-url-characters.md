@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/routing/configure-forbidden-url-characters
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Routing](/documentation/developers-and-admins/development/routing)
+  * Configure forbidden URL characters 
+
+
 # Configure forbidden URL characters
-  * [ Copy page link ](documentation/developers-and-admins/development/routing/configure-forbidden-url-characters#) | [Get HelpService ID](documentation/developers-and-admins/development/routing/configure-forbidden-url-characters#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/routing/configure-forbidden-url-characters# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/routing/configure-forbidden-url-characters#)
-In URLs, some characters are considered unsafe because they may be used for special purposes or could cause issues with browsers or servers. The system automatically replaces or removes forbidden characters in [URL slugs and vanity URLs](documentation/business-users/website-content/manage-page-urls).
+In URLs, some characters are considered unsafe because they may be used for special purposes or could cause issues with browsers or servers. The system automatically replaces or removes forbidden characters in [URL slugs and vanity URLs](/documentation/business-users/website-content/manage-page-urls).
 By default, the following characters are forbidden:
 Text
 Copy
@@ -30,10 +37,10 @@ Copy
 "CMSForbiddenURLValues": "\\/:*?\"<>|&%.'#[]+ ="
 ```
 
-**Note** : Support for the slash (‘/’) character in [vanity URLs](documentation/business-users/website-content/manage-page-urls#manage-vanity-urls-of-pages) always requires additional [configuration](documentation/developers-and-admins/development/routing/configure-forbidden-url-characters#allow-the-slash-character-in-vanity-urls), even if the slash character is not included in the forbidden characters specified by the `CMSForbiddenURLValues` key.
+**Note** : Support for the slash (‘/’) character in [vanity URLs](/documentation/business-users/website-content/manage-page-urls#manage-vanity-urls-of-pages) always requires additional [configuration](#allow-the-slash-character-in-vanity-urls), even if the slash character is not included in the forbidden characters specified by the `CMSForbiddenURLValues` key.
 You can either use the key to allow some of the default forbidden characters or add new ones. We **strongly recommend keeping the default set of forbidden characters** – entering the characters into URL values may prevent certain types of URLs from resolving correctly.
 ### Allow the slash (‘/’) character in vanity URLs
-Support for the slash character in [vanity URLs](documentation/business-users/website-content/manage-page-urls#manage-vanity-urls-of-pages) can’t be configured through the `CMSForbiddenURLValues` key, but has to be enabled separately. When the setting below is enabled, the slash character is always allowed in vanity URLs, regardless of other settings.
+Support for the slash character in [vanity URLs](/documentation/business-users/website-content/manage-page-urls#manage-vanity-urls-of-pages) can’t be configured through the `CMSForbiddenURLValues` key, but has to be enabled separately. When the setting below is enabled, the slash character is always allowed in vanity URLs, regardless of other settings.
 To allow the slash character in vanity URLs:
   1. Open the **Settings** application.
   2. Select the **URLs and SEO** category.
@@ -57,3 +64,5 @@ To specify forbidden character replacement:
 
 
 By default, forbidden characters located at the beginning or end of the path are removed completely and consecutive forbidden characters are only replaced by a single replacement character. For example, “ _Articles*and%%%blogs_ ” is replaced with “ _Articles-and-blogs_ ” when using the default replacement character: ‘ _-_ ’ hyphen. If no replacement character is specified, the underscore ‘ ___ ’ character is used.
+![]()
+[]()[]()

@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-roles/create-data-protection-officer-role
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with roles](/guides/configuration/work-with-users-and-roles/work-with-roles)
+  * Create data protection officer role 
+
+
 # Create data protection officer role
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-roles/create-data-protection-officer-role#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-roles/create-data-protection-officer-role#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-roles/create-data-protection-officer-role# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-roles/create-data-protection-officer-role#)
 Let’s create a Data Protection Officer role your manager asked you to create to comply with the legislation. The Data Protection Officer oversees the personal data of company staff, customers, providers, or any other individuals (data subjects) in compliance with the applicable data protection rules.
 ”
 Not a fan of the video format? Here’re the steps you need to take to create a Data protection officer role in Xperience by Kentico.
@@ -22,4 +29,8 @@ Not a fan of the video format? Here’re the steps you need to take to create a 
     5. **Members** : _View_ , _Update_ , _Delete_.
   6. **Save** the changes.
   7. Your _Data Protection Officer_ role should look like the following:  
-[![](docsassets/guides/create-data-protection-officer-role/data-protection-officer-role.png)](https://docs.kentico.com/docsassets/guides/create-data-protection-officer-role/data-protection-officer-role.png)
+[![](/docsassets/guides/create-data-protection-officer-role/data-protection-officer-role.png)](/docsassets/guides/create-data-protection-officer-role/data-protection-officer-role.png)
+
+
+![]()
+[]()[]()

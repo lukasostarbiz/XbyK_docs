@@ -1,14 +1,20 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/upgrade-content-retrieval
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Upgrade your content retrieval code 
+
+
 # Upgrade your content retrieval code
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/upgrade-content-retrieval#) | [Get HelpService ID](guides/development/upgrade-deep-dives/upgrade-content-retrieval#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/upgrade-content-retrieval# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/upgrade-content-retrieval#)
-If you’ve followed along with our [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough), you’ve already seen several examples of converting `IPageRetriever` code from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK) APIs.
+If you’ve followed along with our [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough), you’ve already seen several examples of converting `IPageRetriever` code from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK) APIs.
 While `IPageRetriever` was the recommended approach for live sites in KX13, many upgraded KX13 projects still use other methods for retrieving content, such as `DocumentHelper` and `TreeProvider`. These options are all built on `DocumentQuery` and `MultiDocumentQuery`, and share similar extension methods for parameterization.
-We’ve put together some practical examples, inspired by real technical support cases and educational scenarios, to explore how to replicate these KX13 page retrieval scenarios using the [ContentRetriever](documentation/developers-and-admins/api/content-item-api/content-retriever-api) and [Content item query](documentation/developers-and-admins/api/content-item-api/content-item-query-api) APIs.
+We’ve put together some practical examples, inspired by real technical support cases and educational scenarios, to explore how to replicate these KX13 page retrieval scenarios using the [ContentRetriever](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) and [Content item query](/documentation/developers-and-admins/api/content-item-api/content-item-query-api) APIs.
 ## Filter columns
-Let’s start out with a sample inspired by the [KX13 documentation](13/developing-websites/form-builder-development/developing-form-components/using-a-dynamic-data-source-with-selector-components).
+Let’s start out with a sample inspired by the [KX13 documentation](/13/developing-websites/form-builder-development/developing-form-components/using-a-dynamic-data-source-with-selector-components).
 This example uses `DocumentHelper`, which by default selects the most recently-edited versions of pages under workflow. This made it ideal for working with preview data in older Kentico versions, but it could also work with published data using the `PublishedVersion` extension method.
 Let’s take a look at the KX13 code:
 C#
@@ -30,7 +36,7 @@ var articles = DocumentHelper.GetDocuments("DancingGoatCore.Article")
 ```
 
 We can achieve the same result in XbyK using `IContentRetriever`.
-Let’s assume we’ve migrated KX13 pages to a [website channel](documentation/developers-and-admins/configuration/website-channel-management) in XbyK, rather than converting them to reusable items in the [Content hub](documentation/business-users/content-hub). We’ll also assume that `contentRetriever` is an instance of `IContentRetriever` supplied through dependency injection.
+Let’s assume we’ve migrated KX13 pages to a [website channel](/documentation/developers-and-admins/configuration/website-channel-management) in XbyK, rather than converting them to reusable items in the [Content hub](/documentation/business-users/content-hub). We’ll also assume that `contentRetriever` is an instance of `IContentRetriever` supplied through dependency injection.
 C#
 **XbyK**
 Copy
@@ -145,7 +151,7 @@ var pages = await contentQueryExecutor.GetMappedResult<IWebPageFieldsSource>(bui
 ```
 
 The `ContentItemQueryBuilder` sample here includes a hard-coded language for the sake of illustration.
-If you need to [resolve the current visitor’s preferred language dynamically](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language), you can inject an instance of `IPreferredLanguageRetriever`, and call the `Get()` method.
+If you need to [resolve the current visitor’s preferred language dynamically](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language), you can inject an instance of `IPreferredLanguageRetriever`, and call the `Get()` method.
 This happens automatically if you do not supply a language name to `IContentRetriever`.
 ## Use a complex sorting condition
 Now let’s look at another scenario, based on a support case we received, where products of a certain brand are prioritized.
@@ -319,7 +325,7 @@ However, there are still some notable changes, such as:
   * The format of cache settings, now a `RetrievalCacheSettings` object instead of an `Action`
   * The definition of the cache item’s suffix, rather than its entire name
   * The use of a separate parameters object
-  * The replacement of [page attachments](13/managing-website-content/working-with-files/page-attachments) with reusable content items
+  * The replacement of [page attachments](/13/managing-website-content/working-with-files/page-attachments) with reusable content items
   * The existence of a linked items depth parameter in Xperience by Kentico
 
 
@@ -371,5 +377,7 @@ public virtual async Task<IEnumerable<TPageDto>> GetPagesInCurrentCultureAsync(
 The `MapPages` method, which converts a `TPage` object into a `TPageDto` object, is beyond the scope of this example.
 Because the migration tool converts attached files to reusable content items, we assume the new `MapPages` implementation uses the `depth` parameter to decide whether it should work with related files, instead of the `includeAttachments` boolean parameter.
 ## What’s next?
-If you haven’t already, we recommend checking out our [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough), to see content retrieval migration in context of the whole upgrade process, including more caching examples. You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](guides/development/upgrade-deep-dives).
+If you haven’t already, we recommend checking out our [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough), to see content retrieval migration in context of the whole upgrade process, including more caching examples. You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](/guides/development/upgrade-deep-dives).
 If you’ve encountered any pain points during your upgrade to Xperience by Kentico that additional training materials could help with, or you’ve found any issues in our existing materials, please use the **Send us feedback** button at the bottom of the page to let us know!
+![]()
+[]()[]()

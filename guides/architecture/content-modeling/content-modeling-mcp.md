@@ -1,15 +1,21 @@
+---
+source: https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-mcp
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Content modeling](/guides/architecture/content-modeling)
+  * Content Modeling MCP Server 
+
+
 # Content Modeling MCP Server
-  * Concept| [ Copy page link ](guides/architecture/content-modeling/content-modeling-mcp#) | [Get HelpService ID](guides/architecture/content-modeling/content-modeling-mcp#)
-Core MVC 5
-
-
-[✖](guides/architecture/content-modeling/content-modeling-mcp# "Close page link panel") [Copy to clipboard](guides/architecture/content-modeling/content-modeling-mcp#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Content modeling is a crucial yet time-consuming phase of any Xperience by Kentico project. Analyzing the results of a content audit, identifying key content types, and defining presentation components takes time and requires experience with Xperience. Yet these steps are critical for building a solid content model that determines the success of your entire project.
 This guide introduces an AI-powered content modeling approach that streamlines content modeling tasks. By leveraging a structured workflow with built-in validation, you can reduce the time spent on prototyping a content model for Xperience application. The content modeling workflow takes away some of the mundane tasks, such as writing instructions for editors, and helps you quickly deliver project prototypes that are easy to iterate on.
-For a comprehensive overview of content modeling concepts and strategies, see [Content modeling guide](guides/architecture/content-modeling/content-modeling-guide). If you’re new to Xperience by Kentico content modeling, start with [Content modeling basics](guides/architecture/content-modeling/xperience-content-modeling-basics).
+For a comprehensive overview of content modeling concepts and strategies, see [Content modeling guide](/guides/architecture/content-modeling/content-modeling-guide). If you’re new to Xperience by Kentico content modeling, start with [Content modeling basics](/guides/architecture/content-modeling/xperience-content-modeling-basics).
 **What you’ll learn:**
   * How to install the MCP server
   * How to use orchestration prompts and validation tools for each modeling phase
@@ -19,10 +25,10 @@ For a comprehensive overview of content modeling concepts and strategies, see [C
 
 This approach helps agencies and implementation partners accelerate project delivery while maintaining high-quality content structures aligned with modern multi-channel needs. It helps you focus on building prototypes, not final outputs, so you can validate and refine your content model early.
 ## About the Content Modeling MCP Server
-The Content Modeling MCP Server is part of [KentiCopilot](guides/development/kenticopilot), Kentico’s initiative to help developers effectively adopt AI in building Xperience by Kentico projects.
+The Content Modeling MCP Server is part of [KentiCopilot](/guides/development/kenticopilot), Kentico’s initiative to help developers effectively adopt AI in building Xperience by Kentico projects.
 The server provides a deterministic, tools-based approach to content modeling that follows the **Orchestration prompt** + **Tool** pattern. Built on the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), an open standard that enables AI agents to dynamically discover and use external tools, the server offers reliable content modeling workflows with client-side LLM execution and server-side validation.
 The MCP server works directly within your integrated development environment (IDE), allowing AI agents to access specialized content modeling capabilities without switching between tools or platforms.
-For querying and retrieving information about existing content types in your Xperience application, see [Content type management API](documentation/developers-and-admins/development/content-types/management-api).
+For querying and retrieving information about existing content types in your Xperience application, see [Content type management API](/documentation/developers-and-admins/development/content-types/management-api).
 ## Key features
 The Content Modeling MCP Server provides the following capabilities:
   * **Orchestrated content modeling workflow** : Complete 5-phase workflow with built-in validation and transition logic.
@@ -52,7 +58,7 @@ Cursor |  ✅ Fully supported |  Recommended for best experience
 VS Code |  ⚠️ Inconsistent |  May experience inconsistent behavior with Claude Sonnet models. GPT-5 is stable.  
 ## Getting started
 To begin using the Content Modeling MCP Server:
-  1. [Install the Content Modeling MCP Server](guides/architecture/content-modeling/content-modeling-mcp#install-the-mcp-server) using the installation links for your preferred IDE.
+  1. [Install the Content Modeling MCP Server](#install-the-mcp-server) using the installation links for your preferred IDE.
   2. Open your MCP-compatible client (Claude Desktop, Cursor, VS Code with Copilot, etc.).
   3. Verify the Content Modeling MCP Server appears in your available prompts and tools.
   4. Start the content modeling workflow. The method varies by IDE, some might include the MCP server name in front of the `/start_content_modeling` prompt:
@@ -98,7 +104,7 @@ content_modeling_final_validation |  This tool validates outputs of _Validation 
 The content modeling workflow in Xperience by Kentico is orchestrated by the `start_content_modeling` prompt, which guides users through all five phases automatically. Each phase is supported by a dedicated prompt and validation tool to ensure accuracy and completeness before moving to the next step:
 **1. Requirements gathering & approach selection**
   * Gather project requirements, business goals, and editorial needs
-  * Select the modeling approach ([atomic](guides/architecture/content-modeling/content-modeling-guide/design-atomic-content-model) vs. [page-builder](guides/architecture/content-modeling/content-modeling-guide/design-page-based-content-model)) based on requirements
+  * Select the modeling approach ([atomic](/guides/architecture/content-modeling/content-modeling-guide/design-atomic-content-model) vs. [page-builder](/guides/architecture/content-modeling/content-modeling-guide/design-page-based-content-model)) based on requirements
   * Prompt: `content_modeling_1_requirements`
   * Validation tool: `content_modeling_validate_requirements`
 
@@ -132,9 +138,13 @@ The content modeling workflow in Xperience by Kentico is orchestrated by the `st
 
 
 **Next steps: Implement your content model**
-After designing and validating your content model, you can implement it in your Xperience application using the [Content type management API](documentation/developers-and-admins/development/content-types/management-api). The Management API MCP server allows AI agents to create content types, add fields, and configure reusable field schemas based on your designed model.
+After designing and validating your content model, you can implement it in your Xperience application using the [Content type management API](/documentation/developers-and-admins/development/content-types/management-api). The Management API MCP server allows AI agents to create content types, add fields, and configure reusable field schemas based on your designed model.
 ## Example prompts
 ### Using the start_content_modeling prompt
-The only way to begin content modeling is using the `start_content_modeling` prompt or the alternatives provided in the [Getting started](guides/architecture/content-modeling/content-modeling-mcp#getting-started) table:
+The only way to begin content modeling is using the `start_content_modeling` prompt or the alternatives provided in the [Getting started](#getting-started) table:
   * “Use the start_content_modeling prompt to help me build a content model for a car dealership website”
   * “Guide me through the complete content modeling workflow for an commerce platform using start_content_modeling”
+
+
+![]()
+[]()[]()

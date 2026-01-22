@@ -1,34 +1,42 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
+  * Reference - React input components 
+
+
 # Reference - React input components
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#)
-This page provides an overview of input components from the `@kentico/xperience-admin-components` package that can be used to define editing interfaces for [admin UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
-  * [Checkbox](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#checkbox)
-  * [Input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#input)
-  * [Select](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#anchor-referencereactinputcomponents-selectcomponent-select)
-  * [RadioGroup](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#radiogroup)
-  * [RichTextEditor](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#richtexteditor)
-  * [Textarea](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#textarea)
+This page provides an overview of input components from the `@kentico/xperience-admin-components` package that can be used to define editing interfaces for [admin UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
+  * [Checkbox](#checkbox)
+  * [Input](#input)
+  * [Select](#anchor-referencereactinputcomponents-selectcomponent-select)
+  * [RadioGroup](#radiogroup)
+  * [RichTextEditor](#richtexteditor)
+  * [Textarea](#textarea)
 
 
 ## Checkbox
 **onChange event Type:** React.ChangeEventHandler<HTMLInputElement>
 A binary state input.
 The checkbox component has the following configurable properties:
-  * [label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxLabel)
-  * [size](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxSize)
-  * [checked](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxChecked)
-  * [indetermined](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxIndetermined)
-  * [tooltipText](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxTooltipText)
-  * [onChange](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxOnChange)
-  * [Inherited properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-checkboxInherited)
+  * [label](#ReferenceReactinputcomponents-checkboxLabel)
+  * [size](#ReferenceReactinputcomponents-checkboxSize)
+  * [checked](#ReferenceReactinputcomponents-checkboxChecked)
+  * [indetermined](#ReferenceReactinputcomponents-checkboxIndetermined)
+  * [tooltipText](#ReferenceReactinputcomponents-checkboxTooltipText)
+  * [onChange](#ReferenceReactinputcomponents-checkboxOnChange)
+  * [Inherited properties](#ReferenceReactinputcomponents-checkboxInherited)
 
 
 **Type:** label?: string 
 Sets the label for the checkbox.
-[![Label property demonstration](docsassets/documentation/reference-react-input-components/CheckboxLabel.png)](https://docs.kentico.com/docsassets/documentation/reference-react-input-components/CheckboxLabel.png)
+[![Label property demonstration](/docsassets/documentation/reference-react-input-components/CheckboxLabel.png)](/docsassets/documentation/reference-react-input-components/CheckboxLabel.png)
 JS
 **Example**
 Copy
@@ -40,7 +48,7 @@ import { Checkbox } from "@kentico/xperience-admin-components";
 
 **Type:** size?: CheckboxSize 
 Sets the size of the checkbox to one of three sizes defined by the `CheckboxSize` enum. Defaults to `CheckboxSize.M` if not set.
-[![Size property demonstration](docsassets/documentation/reference-react-input-components/CheckboxSize.png)](https://docs.kentico.com/docsassets/documentation/reference-react-input-components/CheckboxSize.png)
+[![Size property demonstration](/docsassets/documentation/reference-react-input-components/CheckboxSize.png)](/docsassets/documentation/reference-react-input-components/CheckboxSize.png)
 Value |  Example  
 ---|---  
 CheckboxSize.S |  JS Copy ```
@@ -63,7 +71,7 @@ import { Checkbox, CheckboxSize } from "@kentico/xperience-admin-components";
   
 **Type:** checked?: boolean
 Indicates a checked state. Defaults to _false_.
-[![Check property demonstration](docsassets/documentation/reference-react-input-components/CheckboxChecked.png)](https://docs.kentico.com/docsassets/documentation/reference-react-input-components/CheckboxChecked.png)
+[![Check property demonstration](/docsassets/documentation/reference-react-input-components/CheckboxChecked.png)](/docsassets/documentation/reference-react-input-components/CheckboxChecked.png)
 JS
 **Example**
 Copy
@@ -75,7 +83,7 @@ import { Checkbox } from "@kentico/xperience-admin-components";
 
 **Type:** indetermined?: boolean
 Indicates an indeterminate state. Defaults to _false_.
-[![Indetermined property demonstration](docsassets/documentation/reference-react-input-components/CheckboxIndeterminate.png)](https://docs.kentico.com/docsassets/documentation/reference-react-input-components/CheckboxIndeterminate.png)
+[![Indetermined property demonstration](/docsassets/documentation/reference-react-input-components/CheckboxIndeterminate.png)](/docsassets/documentation/reference-react-input-components/CheckboxIndeterminate.png)
 JS
 **Example**
 Copy
@@ -87,7 +95,7 @@ import { Checkbox } from "@kentico/xperience-admin-components";
 
 **Type:** tooltipText?: string
 Sets the tooltip for the checkbox.
-[![tooltipText property demonstration](docsassets/documentation/reference-react-input-components/CheckboxTooltip.png)](https://docs.kentico.com/docsassets/documentation/reference-react-input-components/CheckboxTooltip.png)
+[![tooltipText property demonstration](/docsassets/documentation/reference-react-input-components/CheckboxTooltip.png)](/docsassets/documentation/reference-react-input-components/CheckboxTooltip.png)
 JS
 **Example**
 Copy
@@ -121,19 +129,19 @@ The component also inherits the following properties from [HTMLInputElement](htt
 **onChange event Type:** React.ChangeEventHandler<HTMLInputElement>
 Conventional text input element.
 The input component has the following configurable properties:
-  * [label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputLabel)
-  * [invalid](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputInvalid)
-  * [value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputValue)
-  * [type](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputType)
-  * [validationMessage](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputValidationMessage)
-  * [actionElement](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputActionElement)
-  * [explanationText](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputExplanationText)
-  * [labelDisabledTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputLabelDisabledTooltip)
-  * [labelIcon](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputLabelIcon)
-  * [labelIconTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputLabelIconTooltip)
-  * [markAsRequired](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputMarkAsRequired)
-  * [inputRef](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputInputRef)
-  * [Inherited properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-inputInheritedProperties)
+  * [label](#ReferenceReactinputcomponents-inputLabel)
+  * [invalid](#ReferenceReactinputcomponents-inputInvalid)
+  * [value](#ReferenceReactinputcomponents-inputValue)
+  * [type](#ReferenceReactinputcomponents-inputType)
+  * [validationMessage](#ReferenceReactinputcomponents-inputValidationMessage)
+  * [actionElement](#ReferenceReactinputcomponents-inputActionElement)
+  * [explanationText](#ReferenceReactinputcomponents-inputExplanationText)
+  * [labelDisabledTooltip](#ReferenceReactinputcomponents-inputLabelDisabledTooltip)
+  * [labelIcon](#ReferenceReactinputcomponents-inputLabelIcon)
+  * [labelIconTooltip](#ReferenceReactinputcomponents-inputLabelIconTooltip)
+  * [markAsRequired](#ReferenceReactinputcomponents-inputMarkAsRequired)
+  * [inputRef](#ReferenceReactinputcomponents-inputInputRef)
+  * [Inherited properties](#ReferenceReactinputcomponents-inputInheritedProperties)
 
 
 **Type:** label?: string
@@ -184,19 +192,19 @@ The component also inherits the following properties from [HTMLInputElement](htt
 **onChange event Type:** string
 Drop-down menu. The element defines its options by its children.
 The selector component has the following properties:
-  * [label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectLabel)
-  * [invalid](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectInvalid)
-  * [value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectValue)
-  * [maxContentHeight](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectMaxContentHeight)
-  * [onChange](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectOnChange)
-  * [validationMessage](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectValidationMessage)
-  * [explanationText](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectExplanationText)
-  * [labelDisabledTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectLabelDisabledTooltip)
-  * [labelIcon](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectLabelIcon)
-  * [labelIconTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectLabelIconTooltip)
-  * [markAsRequired](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectMarkAsRequired)
-  * [inputRef](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectInputRef)
-  * [Inherited properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-selectInheritedProperties)
+  * [label](#ReferenceReactinputcomponents-selectLabel)
+  * [invalid](#ReferenceReactinputcomponents-selectInvalid)
+  * [value](#ReferenceReactinputcomponents-selectValue)
+  * [maxContentHeight](#ReferenceReactinputcomponents-selectMaxContentHeight)
+  * [onChange](#ReferenceReactinputcomponents-selectOnChange)
+  * [validationMessage](#ReferenceReactinputcomponents-selectValidationMessage)
+  * [explanationText](#ReferenceReactinputcomponents-selectExplanationText)
+  * [labelDisabledTooltip](#ReferenceReactinputcomponents-selectLabelDisabledTooltip)
+  * [labelIcon](#ReferenceReactinputcomponents-selectLabelIcon)
+  * [labelIconTooltip](#ReferenceReactinputcomponents-selectLabelIconTooltip)
+  * [markAsRequired](#ReferenceReactinputcomponents-selectMarkAsRequired)
+  * [inputRef](#ReferenceReactinputcomponents-selectInputRef)
+  * [Inherited properties](#ReferenceReactinputcomponents-selectInheritedProperties)
 
 
 **Type:** label?: string
@@ -310,19 +318,19 @@ export const MyFormComponent = (props: MyFormComponentProps) => {
 **onChange event Type:** string
 Radio button group selector. Allows single selection. Uses RadioButton components for selectable options.
 The component has the following properties:
-  * [label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgLabel)
-  * [invalid](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgInvalid)
-  * [value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgValue)
-  * [size](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgSize)
-  * [disabled](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgDisabled)
-  * [children](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgChildren)
-  * [onChange](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgOnChange)
-  * [validationMessage](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgValidationMessage)
-  * [explanationText](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgExplanationText)
-  * [labelDisabledTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgLabelDisabledTooltip)
-  * [labelIcon](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgLabelIcon)
-  * [labelIconTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgLabelIconTooltip)
-  * [markAsRequired](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-rgMarkAsRequired)
+  * [label](#ReferenceReactinputcomponents-rgLabel)
+  * [invalid](#ReferenceReactinputcomponents-rgInvalid)
+  * [value](#ReferenceReactinputcomponents-rgValue)
+  * [size](#ReferenceReactinputcomponents-rgSize)
+  * [disabled](#ReferenceReactinputcomponents-rgDisabled)
+  * [children](#ReferenceReactinputcomponents-rgChildren)
+  * [onChange](#ReferenceReactinputcomponents-rgOnChange)
+  * [validationMessage](#ReferenceReactinputcomponents-rgValidationMessage)
+  * [explanationText](#ReferenceReactinputcomponents-rgExplanationText)
+  * [labelDisabledTooltip](#ReferenceReactinputcomponents-rgLabelDisabledTooltip)
+  * [labelIcon](#ReferenceReactinputcomponents-rgLabelIcon)
+  * [labelIconTooltip](#ReferenceReactinputcomponents-rgLabelIconTooltip)
+  * [markAsRequired](#ReferenceReactinputcomponents-rgMarkAsRequired)
 
 
 **Type:** label: string
@@ -351,7 +359,7 @@ Sets the icon rendered next to the label.
 Sets the tooltip text of the icon rendered next to the label.
 **Type:** markAsRequired?: boolean
 Indicates if the input is required. If true, renders a small red asterisk in front of the component label text.
-Use a custom property to send a collection of options from the back end. See the [select component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-SelectComponent) for an example.
+Use a custom property to send a collection of options from the back end. See the [select component](#ReferenceReactinputcomponents-SelectComponent) for an example.
 On the client, pass the collection of options as children using the `RadioButton` component.
 JS
 Copy
@@ -371,23 +379,23 @@ export const MyFormComponent = (props: MyFormComponentProps) => {
 
 ## RichTextEditor
 **onChange event Type:** string
-[Rich text editor](documentation/business-users/rich-text-editor) built using Froala WYSIWYG.
+[Rich text editor](/documentation/business-users/rich-text-editor) built using Froala WYSIWYG.
 ## Textarea
 **onChange event Type:** React.ChangeEventHandler<HTMLTextAreaElement>
 A text area.
 The selector component has the following properties:
-  * [label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaLabel)
-  * [value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaValue)
-  * [invalid](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaInvalid)
-  * [validationMessage](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaValidationMessage)
-  * [minRows](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaMinRows)
-  * [maxRows](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaMaxRows)
-  * [explanationText](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaExplanationText)
-  * [labelDisabledTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaLabelDisabledTooltip)
-  * [labelIcon](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaLabelIcon)
-  * [labelIconTooltip](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaLabelIconTooltip)
-  * [markAsRequired](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaMarkAsRequired)
-  * [textAreaRef](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components#ReferenceReactinputcomponents-areaTextAreaRef)
+  * [label](#ReferenceReactinputcomponents-areaLabel)
+  * [value](#ReferenceReactinputcomponents-areaValue)
+  * [invalid](#ReferenceReactinputcomponents-areaInvalid)
+  * [validationMessage](#ReferenceReactinputcomponents-areaValidationMessage)
+  * [minRows](#ReferenceReactinputcomponents-areaMinRows)
+  * [maxRows](#ReferenceReactinputcomponents-areaMaxRows)
+  * [explanationText](#ReferenceReactinputcomponents-areaExplanationText)
+  * [labelDisabledTooltip](#ReferenceReactinputcomponents-areaLabelDisabledTooltip)
+  * [labelIcon](#ReferenceReactinputcomponents-areaLabelIcon)
+  * [labelIconTooltip](#ReferenceReactinputcomponents-areaLabelIconTooltip)
+  * [markAsRequired](#ReferenceReactinputcomponents-areaMarkAsRequired)
+  * [textAreaRef](#ReferenceReactinputcomponents-areaTextAreaRef)
 
 
 **Type:** label?: string
@@ -424,3 +432,7 @@ The component also inherits the following properties from [HTMLTextAreaElement](
   * onKeyPress
   * id
   * placeholder
+
+
+![]()
+[]()[]()

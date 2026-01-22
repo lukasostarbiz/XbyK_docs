@@ -1,15 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Form Builder](/documentation/developers-and-admins/development/builders/form-builder)
+  * [Form components](/documentation/developers-and-admins/development/builders/form-builder/form-components)
+  * Form component properties 
+
+
 # Form component properties
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties#)
-Alongside their front-end logic, form components contain a set of properties that can be exposed to users via the [configuration dialog](documentation/business-users/digital-marketing/forms/create-and-edit-forms). Using the provided interface, users can parameterize a component by providing a different label, tooltip, set a field’s required status, etc.
-The configuration dialog lists all editable properties belonging to the currently selected form component. The editing interface for each property is provided by [UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) (a different type of components usable exclusively in the Xperience administration UI) and is fully customizable. UI form components acting in this capacity are referred to as [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) in the documentation.
-[![Form component properties dialog](docsassets/documentation/form-component-properties/Form_component_properties.png)](https://docs.kentico.com/docsassets/documentation/form-component-properties/Form_component_properties.png)
+Alongside their front-end logic, form components contain a set of properties that can be exposed to users via the [configuration dialog](/documentation/business-users/digital-marketing/forms/create-and-edit-forms). Using the provided interface, users can parameterize a component by providing a different label, tooltip, set a field’s required status, etc.
+The configuration dialog lists all editable properties belonging to the currently selected form component. The editing interface for each property is provided by [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) (a different type of components usable exclusively in the Xperience administration UI) and is fully customizable. UI form components acting in this capacity are referred to as [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) in the documentation.
+[![Form component properties dialog](/docsassets/documentation/form-component-properties/Form_component_properties.png)](/docsassets/documentation/form-component-properties/Form_component_properties.png)
 ## Defining properties for custom form components
-You can define custom properties for each component in its corresponding properties class. See [Example - Define a ‘Character size’ property](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties#example---define-a-character-size-property).
-To expose these properties for editing, use the [editing component attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). For more information, refer to [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+You can define custom properties for each component in its corresponding properties class. See [Example - Define a ‘Character size’ property](#example---define-a-character-size-property).
+To expose these properties for editing, use the [editing component attribute](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). For more information, refer to [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
 C#
 Copy
 ```
@@ -25,7 +34,7 @@ Property |  Description |  Additional information
 ---|---|---  
 **Label** |  The label text displayed in the properties dialog. |  Can be localized by setting the value to an expression in format `{$key$}`. Replace “key” with the key of a resource string.  
 **Required** |  When true, the form can only be submitted if the field has a value specified. |   
-**SmartField** |  Indicates whether the field behaves as a [smart field](documentation/business-users/digital-marketing/forms/use-smart-fields-in-forms). |  Fields marked as smart are displayed only on repeated views of a form, as a replacement for other fields that were already filled in by the given visitor.  
+**SmartField** |  Indicates whether the field behaves as a [smart field](/documentation/business-users/digital-marketing/forms/use-smart-fields-in-forms). |  Fields marked as smart are displayed only on repeated views of a form, as a replacement for other fields that were already filled in by the given visitor.  
 **DefaultValue** |  The default value of the property’s input field. |   
 **Name** |  The unique identifier of fields within the given form.  |  If a user adds multiple fields based on the same component to a form, the system automatically appends a number to the default name.  
 **Size** |  Sets the size of the underlying database column. |  When configured, it overrides the size set in the form component’s properties class constructor. If configured for an editing component (e.g., in a widget configuration dialog), sets the maximum number of characters the property can contain.  
@@ -36,7 +45,7 @@ Property |  Description |  Additional information
 ### Overriding the editing components of system properties
 All system properties use system UI form components as their editing components. If you wish to assign a different editing component for these properties:
   1. _Override_ the system property in the properties class used by your form component.
-  2. Designate a different editing component using the [UI form component’s attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) (e.g., `NumberInputComponent` for integers).
+  2. Designate a different editing component using the [UI form component’s attribute](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) (e.g., `NumberInputComponent` for integers).
 
 
 The following example  _overrides_ the base implementation of the `Tooltip` and `Label` properties, assigns them custom editing components, and configures some of their system properties using optional constructor parameters of the editing component attributes:
@@ -57,7 +66,7 @@ If you wish to hide a system property of a form component in the properties dial
 ## Example - Define a ‘Character size’ property
 The following example demonstrates how to declare and configure a property that sets a field’s width to exactly fit the specified number of characters:
   1. Open your project in Visual Studio.
-  2. Declare a new property in a component properties class and assign an [editing component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) attribute:
+  2. Declare a new property in a component properties class and assign an [editing component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) attribute:
 C#
 **Properties class**
 Copy
@@ -113,3 +122,5 @@ Copy
 
 
 The custom property can now be edited on the properties dialog of form components using the modified properties class. When editors configure the property, the width of the input field is set to exactly fit the specified number of characters.
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/page-builder/create-general-template
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+10 of 16 Pages
 # Create a generic page template
-  * [ Copy page link ](modules/page-builder/create-general-template#) | [Get HelpService ID](modules/page-builder/create-general-template#)
-Core MVC 5
-
-
-[✖](modules/page-builder/create-general-template# "Close page link panel") [Copy to clipboard](modules/page-builder/create-general-template#)
 Looking over the page template we’ve just created, you may find it a bit of a waste to have all these options for Page Builder layouts and appearance available only for product pages.
 Since most of what we’ve made is reusable, it will be straightforward to create a more general-purpose page template that has these Page Builder features, and can be used on any page type.
   1. Create a new _~/Features/Shared/Templates_ folder.
@@ -99,20 +101,12 @@ public static class GeneralPageTemplate
 Now, if you sign in to the administration interface, you should have a general-use page template with properties to determine its color, corner styling, and editable area layout.
 Your browser does not support the video tag. 
 ## Wrapping up
-If you need a refresher, feel free to take another look at the [beginning of this series](modules/page-builder/meet-requirements-with-page-builder) to review the mockups of the page functionality we’ve been working to implement so far.
+If you need a refresher, feel free to take another look at the [beginning of this series](/modules/page-builder/meet-requirements-with-page-builder) to review the mockups of the page functionality we’ve been working to implement so far.
 **Apply your knowledge**
 If you’d like to put your knowledge to the test, try swapping out the `UsePageBuilder` checkbox in `ProductPagePageTemplateProperties` for another enumeration-based dropdown.
 Create a third option which keeps the structured product data, while rendering editable areas at the top and bottom of the page.
-[ Previous page ](modules/page-builder/expand-page-builder-functionality)
+[ Previous page ](/modules/page-builder/expand-page-builder-functionality)
 10 of 16
-[ Mark complete and continue ](modules/page-builder/implement-flexible-sections)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/create-general-template)
-[](https://docs.kentico.com/modules/page-builder/create-general-template)[](https://docs.kentico.com/modules/page-builder/create-general-template)
+[ Mark complete and continue ](/modules/page-builder/implement-flexible-sections)
+![]()
+[]()[]()

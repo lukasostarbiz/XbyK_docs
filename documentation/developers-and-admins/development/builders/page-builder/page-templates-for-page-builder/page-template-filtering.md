@@ -1,10 +1,19 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder/page-template-filtering
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Page Builder](/documentation/developers-and-admins/development/builders/page-builder)
+  * [Page templates for Page Builder](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder)
+  * Page template filtering 
+
+
 # Page template filtering
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder/page-template-filtering#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder/page-template-filtering#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder/page-template-filtering# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder/page-template-filtering#)
-When users [create a new page](documentation/business-users/website-content/create-pages) or change the template of an existing page, the system displays a list of available [page templates](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder). By default, the list contains all of the page templates registered for the current content type in the website project.
+When users [create a new page](/documentation/business-users/website-content/create-pages) or change the template of an existing page, the system displays a list of available [page templates](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder). By default, the list contains all of the page templates registered for the current content type in the website project.
 You can additionally implement page template filtering to control what page templates are available to users to display only templates that are relevant for specific pages.
 ## Implement page template filters
 To create a new page template filter:
@@ -54,7 +63,7 @@ namespace CompanyName.PageTemplateFilters
 ```
 
 ## Register page template filters
-Register filters by adding them to the `PageBuilderFilters.PageTemplates` collection [on application start](documentation/developers-and-admins/customization/run-code-on-application-startup).
+Register filters by adding them to the `PageBuilderFilters.PageTemplates` collection [on application start](/documentation/developers-and-admins/customization/run-code-on-application-startup).
 C#
 **Example - Registering page template filters**
 Copy
@@ -92,7 +101,7 @@ public class PageTemplateFilters : Module
 
 Note that the filtering is cumulative. The process starts with a collection of all page templates registered in the system. Each subsequently applied filter then works with the collection of templates returned (filtered) by the previous filter.
 ### Register filters that use dependency injection
-Page template filter classes support [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) and their constructor can have parameters (e.g., instances of services registered in the project’s DI container).
+Page template filter classes support [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) and their constructor can have parameters (e.g., instances of services registered in the project’s DI container).
 Such filters must be registered into the `PageBuilderFilters.PageTemplates` collection using the `Add<FilterClassType>` method:
 C#
 Copy
@@ -103,3 +112,6 @@ private void RegisterPageTemplateFilters()
     PageBuilderFilters.PageTemplates.Add<AnotherPageTemplateFilter>();
 }
 ```
+
+![]()
+[]()[]()

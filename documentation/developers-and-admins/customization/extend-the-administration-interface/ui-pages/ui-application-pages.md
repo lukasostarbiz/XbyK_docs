@@ -1,16 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)
+  * UI application pages 
+
+
 # UI application pages
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#)
-UI application pages are [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) that encapsulate a UI page hierarchy with specific functionality under an **application**.
+UI application pages are [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) that encapsulate a UI page hierarchy with specific functionality under an **application**.
 Every application in the admin UI is contained within an application page that serves as the app’s entry point and the root for its UI page subtree.
 Application pages:
-  * must inherit from the [ApplicationPage base class](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#create-ui-application-pages)
-  * be assigned to a [category](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#ui-application-categories)
-  * be [registered](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages#register-ui-application-pages) using the `UIApplication` attribute
-  * have their [permissions defined](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks)
+  * must inherit from the [ApplicationPage base class](#create-ui-application-pages)
+  * be assigned to a [category](#ui-application-categories)
+  * be [registered](#register-ui-application-pages) using the `UIApplication` attribute
+  * have their [permissions defined](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks)
 
 
 ## Create UI application pages
@@ -55,13 +63,13 @@ The code names of default system categories are stored as constants in:
 
 ## Register UI application pages
 To register application pages into the system, use the `UIApplication` assembly attribute. Supply the following parameters:
-  * `identifier` – a unique identifier string for the application. Used in the data stored when assigning permission sets for the application to [roles](documentation/developers-and-admins/configuration/users/role-management).
+  * `identifier` – a unique identifier string for the application. Used in the data stored when assigning permission sets for the application to [roles](/documentation/developers-and-admins/configuration/users/role-management).
   * `type` – the type implementing the page (inheriting from `ApplicationPage`).
   * `slug` – the URL segment under which the application is available. Applications are always accessible directly under the admin UI’s root: _< domain>/admin/<UIApplicationSlug>_
   * `name` – the name of the application page.
   * `category` – the category to which the application is assigned.
   * `icon` – the icon displayed for the application in the administration application menu and dashboard.
-  * `templateName` – the name of the client template used by the page. Application pages **should** use the `SECTION_LAYOUT` [client template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template) to display a navigation menu for their child pages.
+  * `templateName` – the name of the client template used by the page. Application pages **should** use the `SECTION_LAYOUT` [client template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template) to display a navigation menu for their child pages.
 
 
 C#
@@ -81,4 +89,6 @@ using Kentico.Xperience.Admin.Base;
 ```
 
 ## Assign permissions to UI application pages
-To define the set of [UI permissions](documentation/developers-and-admins/configuration/users/role-management) available to and evaluated by the given application, see [UI page permission checks](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks).
+To define the set of [UI permissions](/documentation/developers-and-admins/configuration/users/role-management) available to and evaluated by the given application, see [UI page permission checks](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks).
+![]()
+[]()[]()

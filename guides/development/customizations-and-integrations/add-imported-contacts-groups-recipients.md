@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Customizations and integrations](/guides/development/customizations-and-integrations)
+  * Add imported contacts to contact groups and recipient lists 
+
+
 # Add imported contacts to contact groups and recipient lists
-  * How-to| [ Copy page link ](guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients#) | [Get HelpService ID](guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients#) | This page is part of a module: [ Additional customizations ](modules/additional-customizations)
-Core MVC 5
-
-
-[✖](guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients# "Close page link panel") [Copy to clipboard](guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients#)
-We’ve covered the process of [importing contacts in bulk](guides/development/customizations-and-integrations/import-objects-with-the-api), but we’ve yet to walk through the process of _doing something_ with those contacts once they are in your Xperience project.
-Let’s create a condition-based [contact group](documentation/business-users/digital-marketing/contact-groups) that segments imported contacts based on a value provided from the external system we imported them from, then propagate them to a [recipient list](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers#create-recipient-lists).
+We’ve covered the process of [importing contacts in bulk](/guides/development/customizations-and-integrations/import-objects-with-the-api), but we’ve yet to walk through the process of _doing something_ with those contacts once they are in your Xperience project.
+Let’s create a condition-based [contact group](/documentation/business-users/digital-marketing/contact-groups) that segments imported contacts based on a value provided from the external system we imported them from, then propagate them to a [recipient list](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers#create-recipient-lists).
 To keep this example concise, we’ll only create these objects for _one of the segments_ from our external system (with the identifier `c2e5f9a1-7b4d-4e8c-a3f6-9d1b5c8e2a7f`), but **the same approach applies even if you have several segments**.
 The code samples in this sample exist in the **~/Features/ContactImport** folder of the **TrainingGuides.Web** project and its subdirectories.
 ## Before you start
-This guide is part of a series, and builds directly on the [examples found here](guides/development/customizations-and-integrations/import-objects-with-the-api).
-If you’d like to follow along in sequence, we recommend [the contact customization module](modules/additional-customizations).
+This guide is part of a series, and builds directly on the [examples found here](/guides/development/customizations-and-integrations/import-objects-with-the-api).
+If you’d like to follow along in sequence, we recommend [the contact customization module](/modules/additional-customizations).
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -399,7 +405,7 @@ While adding and removing recipients, keep in mind that two components are neces
 
 
 Let’s ensure that our service has the tools to handle this functionality.
-We’ll design our code so that we can use it in an [ongoing integration with the external system](documentation/developers-and-admins/integrate-with-decoupled-systems), if we decide to expand it in that direction in the future. We’ll make sure our code can update recipients that already exist, rather than exclusively inserting new records.
+We’ll design our code so that we can use it in an [ongoing integration with the external system](/documentation/developers-and-admins/integrate-with-decoupled-systems), if we decide to expand it in that direction in the future. We’ll make sure our code can update recipients that already exist, rather than exclusively inserting new records.
 C#
 **./Services/IContactishContactImportService.cs**
 Copy
@@ -720,5 +726,7 @@ You can also trigger the task to run manually from the **List of scheduled task 
 Once it runs, a number of contacts up to the batch size you specified in code will be transferred to the recipient list from the condition-based contact group.
 ## What’s next?
 Congratulations, you now have a recipient list containing contacts with the specified segment identifier from our external system.
-For more customization topics, we recommend checking out our [custom settings module](modules/custom-settings), [third-party integrations](documentation/developers-and-admins/third-party-integrations), [blog posts](https://community.kentico.com/blog) and [community contributions](https://community.kentico.com/community/contributions).
+For more customization topics, we recommend checking out our [custom settings module](/modules/custom-settings), [third-party integrations](/documentation/developers-and-admins/third-party-integrations), [blog posts](https://community.kentico.com/blog) and [community contributions](https://community.kentico.com/community/contributions).
 If you have ideas you’d like us to cover in future guides, or if you’ve encountered any problems or issues in our existing materials, please click the **Send us feedback** button below to let us know.
+![]()
+[]()[]()

@@ -1,10 +1,12 @@
+---
+source: https://docs.kentico.com/modules/work-with-website-content/create-a-reusable-landing-page-template
+scrape_date: 2026-01-22
+---
+
+Module: Work with website content
+8 of 20 Pages
 # Save configuration as a reusable landing page template
-  * [ Copy page link ](modules/work-with-website-content/create-a-reusable-landing-page-template#) | [Get HelpService ID](modules/work-with-website-content/create-a-reusable-landing-page-template#)
-Core MVC 5
-
-
-[✖](modules/work-with-website-content/create-a-reusable-landing-page-template# "Close page link panel") [Copy to clipboard](modules/work-with-website-content/create-a-reusable-landing-page-template#)
-Xperience allows editors to save the configuration of pages based on [page templates](documentation/business-users/website-content/page-templates) into preset page templates. They can reuse the presets and work faster and more efficiently. Learn how to create these reusable page templates using a landing page template as an example.
+Xperience allows editors to save the configuration of pages based on [page templates](/documentation/business-users/website-content/page-templates) into preset page templates. They can reuse the presets and work faster and more efficiently. Learn how to create these reusable page templates using a landing page template as an example.
 Let’s say your Content manager decided they want to have all landing pages in the same layout. To help content editors, the Content manager asked you to prepare a template any of the editors can use. In this exercise, you’ll prepare a unified template for future landing pages.
 ## Prepare the page layout
   1. Go to the **Kbank for personal** channel.
@@ -39,19 +41,11 @@ In the Kbank website, editors have to provide the **SEO Title**. That’s why it
   3. **Save** the template.
 
 
-[![](docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)](https://docs.kentico.com/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)
+[![](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)
 You can see the new template is ready to be used. You can use it to create a **New page** and select the **Content** page. Your _Landing page template_ is in the _Preset templates_.
-[![](docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)](https://docs.kentico.com/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)
-[ Previous page ](modules/work-with-website-content/create-a-landing-page-from-page-components)
+[![](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)
+[ Previous page ](/modules/work-with-website-content/create-a-landing-page-from-page-components)
 8 of 20
-[ Mark complete and continue ](modules/work-with-website-content/create-a-new-landing-page-from-a-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-website-content/create-a-reusable-landing-page-template)
-[](https://docs.kentico.com/modules/work-with-website-content/create-a-reusable-landing-page-template)[](https://docs.kentico.com/modules/work-with-website-content/create-a-reusable-landing-page-template)
+[ Mark complete and continue ](/modules/work-with-website-content/create-a-new-landing-page-from-a-template)
+![]()
+[]()[]()

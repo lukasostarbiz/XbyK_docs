@@ -1,15 +1,21 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/database-table-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * Database table API 
+
+
 # Database table API
-  * [ Copy page link ](documentation/developers-and-admins/api/database-table-api#) | [Get HelpService ID](documentation/developers-and-admins/api/database-table-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/database-table-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/database-table-api#)
 Xperience stores most data in database tables. The API provides classes for managing the data of each table – an `Info` class, `IInfoProvider` interface (service), and an `InfoProvider` class.
-[![Info object database table structure in Xperience](docsassets/documentation/database-table-api/DB_InfoProvider_API.png)](https://docs.kentico.com/docsassets/documentation/database-table-api/DB_InfoProvider_API.png)
+[![Info object database table structure in Xperience](/docsassets/documentation/database-table-api/DB_InfoProvider_API.png)](/docsassets/documentation/database-table-api/DB_InfoProvider_API.png)
 ## Info classes
 Every `Info` class is related to a specific database table. Instances of Info classes represent entries (rows) in the given table – the class serves as a container for the data of the entry. The properties of an info class correspond to the columns of the related table.
 ### Info class validation
-When saving info objects to the database, the system validates object code name format and uniqueness. You can extend this validation by implementing info-specific rules via `IInfoValidator<TInfo>`. See [Customize system providers](documentation/developers-and-admins/customization/customize-system-providers#info-object-validation).
+When saving info objects to the database, the system validates object code name format and uniqueness. You can extend this validation by implementing info-specific rules via `IInfoValidator<TInfo>`. See [Customize system providers](/documentation/developers-and-admins/customization/customize-system-providers#info-object-validation).
 ## Info class managers
 The system offers the following options for CRUD operations over managed database objects.
 ### Generic provider class – IInfoProvider<TInfo>
@@ -35,8 +41,8 @@ If you cannot use dependency injection in your codebase, you can instantiate the
 ### Dedicated provider classes
 Each managed database object can have a dedicated provider class that ensures CRUD operations.
 #### IInfoProvider interfaces
-Most `Info` classes have a matching `IInfoProvider` interface (service), which allows basic management of the given objects – getting, creating, updating, and deleting – using the system’s [ObjectQuery](documentation/developers-and-admins/api/objectquery-api) query syntax.
-You can resolve instances of `IInfoProvider` services using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) or via the `Provider` property of the corresponding `Info` class.
+Most `Info` classes have a matching `IInfoProvider` interface (service), which allows basic management of the given objects – getting, creating, updating, and deleting – using the system’s [ObjectQuery](/documentation/developers-and-admins/api/objectquery-api) query syntax.
+You can resolve instances of `IInfoProvider` services using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) or via the `Provider` property of the corresponding `Info` class.
 C#
 **Code example**
 Copy
@@ -55,3 +61,5 @@ string userEmail = user.Email;
 #### InfoProvider classes
 `InfoProvider` classes are the actual implementations of the `IInfoProvider` interfaces. Every provider manages the data of a specific table using the related `Info` objects.
 We do not recommend using `InfoProvider` classes directly for basic operations, such as getting, creating, or deleting objects. Use the corresponding `IInfoProvider` service instead.
+![]()
+[]()[]()

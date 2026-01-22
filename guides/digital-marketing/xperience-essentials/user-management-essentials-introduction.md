@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/xperience-essentials/user-management-essentials-introduction
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Xperience essentials](/guides/digital-marketing/xperience-essentials)
+  * User management introduction 
+
+
 # User management introduction
-  * [ Copy page link ](guides/digital-marketing/xperience-essentials/user-management-essentials-introduction#) | [Get HelpService ID](guides/digital-marketing/xperience-essentials/user-management-essentials-introduction#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/xperience-essentials/user-management-essentials-introduction# "Close page link panel") [Copy to clipboard](guides/digital-marketing/xperience-essentials/user-management-essentials-introduction#)
 Effective user and role management is key to maintaining secure, structured, and efficient collaboration within **Xperience by Kentico**. As a **digital experience platform (DXP)** , [(Xperience by Kentico)](https://www.kentico.com/discover/what-is-a-dxp) empowers organizations to control access, streamline content workflows, and ensure users have the correct permissions. This short series will guide you through the essentials — signing in, creating and managing users, and defining roles for a well-organized and secure environment.
 By mastering these foundational skills, admins, marketers, and content editors can optimize workflows, enforce security best practices, and create a flexible yet cohesive system tailored to their business needs. Whether you’re setting up new _Users_ or defining _Roles_ , this series will help you get started with confidence.
 Let’s have a look at the definition of core concepts.
@@ -29,4 +35,6 @@ Xperience comes with two built-in applications you can use to create, manage, an
 
 Xperience comes with two predefined roles: _Administrator_ and _Digital Channel Manager_. If your project requires a more granular system of access permissions, you can easily create custom roles to fit your needs.
 ## Next step
-Continue learning about [working with roles](guides/digital-marketing/xperience-essentials/work-with-roles-essentials).
+Continue learning about [working with roles](/guides/digital-marketing/xperience-essentials/work-with-roles-essentials).
+![]()
+[]()[]()

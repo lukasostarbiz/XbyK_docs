@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/objectquery-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * ObjectQuery API 
+
+
 # ObjectQuery API
-  * [ Copy page link ](documentation/developers-and-admins/api/objectquery-api#) | [Get HelpService ID](documentation/developers-and-admins/api/objectquery-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/objectquery-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/objectquery-api#)
 The Xperience ObjectQuery API provides an abstraction layer over the SQL database. Developers use ObjectQuery to retrieve data from the Xperience database. The main advantages of using ObjectQuery are:
   * strongly typed and enumerable results
   * independence on specific versions of SQL syntax
@@ -19,7 +25,7 @@ var query = UserInfo.Provider.Get();
 
 The example query retrieves all users stored within Xperience.
 The resulting collection contains **Info** objects. One instance of an _Info_ object represents one row of data from the database. In this case, the result is a set of `UserInfo` objects holding the data of individual users. The result allows you to iterate through the records using a foreach statement.
-Similarly to users, you can use ObjectQuery to retrieve any other type of object. The Xperience API offers `IInfoProvider` interfaces (services) for individual object types, with a `Get` method that performs an appropriate ObjectQuery call. The `IInfoProvider` services can be added to your code [using dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) or accessed through the `Provider` property of the corresponding `Info` class.
+Similarly to users, you can use ObjectQuery to retrieve any other type of object. The Xperience API offers `IInfoProvider` interfaces (services) for individual object types, with a `Get` method that performs an appropriate ObjectQuery call. The `IInfoProvider` services can be added to your code [using dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) or accessed through the `Provider` property of the corresponding `Info` class.
 The following table provides an example of the naming conventions.
 Object |  Info class name |  IInfoProvider service  
 ---|---|---  
@@ -264,3 +270,6 @@ var enabledUserList = userQuery
 // Gets a list of users using the original unmodified query
 var userList = userQuery.ToList();
 ```
+
+![]()
+[]()[]()

@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/additional-customizations/add-imported-contacts-groups-recipients
+scrape_date: 2026-01-22
+---
+
+Module: Additional customizations
+5 of 6 Pages
 # Add imported contacts to contact groups and recipient lists
-  * [ Copy page link ](modules/additional-customizations/add-imported-contacts-groups-recipients#) | [Get HelpService ID](modules/additional-customizations/add-imported-contacts-groups-recipients#)
-Core MVC 5
-
-
-[✖](modules/additional-customizations/add-imported-contacts-groups-recipients# "Close page link panel") [Copy to clipboard](modules/additional-customizations/add-imported-contacts-groups-recipients#)
-We’ve covered the process of [importing contacts in bulk](modules/additional-customizations/import-objects-with-the-api), but we’ve yet to walk through the process of _doing something_ with those contacts once they are in your Xperience project.
-Let’s create a condition-based [contact group](documentation/business-users/digital-marketing/contact-groups) that segments imported contacts based on a value provided from the external system we imported them from, then propagate them to a [recipient list](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers#create-recipient-lists).
+We’ve covered the process of [importing contacts in bulk](/modules/additional-customizations/import-objects-with-the-api), but we’ve yet to walk through the process of _doing something_ with those contacts once they are in your Xperience project.
+Let’s create a condition-based [contact group](/documentation/business-users/digital-marketing/contact-groups) that segments imported contacts based on a value provided from the external system we imported them from, then propagate them to a [recipient list](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers#create-recipient-lists).
 To keep this example concise, we’ll only create these objects for _one of the segments_ from our external system (with the identifier `c2e5f9a1-7b4d-4e8c-a3f6-9d1b5c8e2a7f`), but **the same approach applies even if you have several segments**.
 The code samples in this sample exist in the **~/Features/ContactImport** folder of the **TrainingGuides.Web** project and its subdirectories.
 ## Create a contact group
@@ -385,7 +387,7 @@ While adding and removing recipients, keep in mind that two components are neces
 
 
 Let’s ensure that our service has the tools to handle this functionality.
-We’ll design our code so that we can use it in an [ongoing integration with the external system](documentation/developers-and-admins/integrate-with-decoupled-systems), if we decide to expand it in that direction in the future. We’ll make sure our code can update recipients that already exist, rather than exclusively inserting new records.
+We’ll design our code so that we can use it in an [ongoing integration with the external system](/documentation/developers-and-admins/integrate-with-decoupled-systems), if we decide to expand it in that direction in the future. We’ll make sure our code can update recipients that already exist, rather than exclusively inserting new records.
 C#
 **./Services/IContactishContactImportService.cs**
 Copy
@@ -704,16 +706,8 @@ Now that we’ve defined the `ContactishRecipientTransferScheduledTask` schedule
 
 You can also trigger the task to run manually from the **List of scheduled task configurations**.
 Once it runs, a number of contacts up to the batch size you specified in code will be transferred to the recipient list from the condition-based contact group.
-[ Previous page ](modules/additional-customizations/import-objects-with-the-api)
+[ Previous page ](/modules/additional-customizations/import-objects-with-the-api)
 5 of 6
-[ Mark complete and continue ](modules/additional-customizations/additional-customizations-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/additional-customizations/add-imported-contacts-groups-recipients)
-[](https://docs.kentico.com/modules/additional-customizations/add-imported-contacts-groups-recipients)[](https://docs.kentico.com/modules/additional-customizations/add-imported-contacts-groups-recipients)
+[ Mark complete and continue ](/modules/additional-customizations/additional-customizations-learn-more)
+![]()
+[]()[]()

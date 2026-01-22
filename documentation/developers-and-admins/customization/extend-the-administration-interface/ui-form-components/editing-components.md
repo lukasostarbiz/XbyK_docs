@@ -1,25 +1,33 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
+  * Editing components 
+
+
 # Editing components
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components#)
-[Admin UI](documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview), [Page Builder](documentation/developers-and-admins/development/builders/page-builder), and [Form Builder](documentation/developers-and-admins/development/builders/form-builder) components can expose customizable properties that allow users to adjust their functionality, appearance, behavior, or other attributes. The editing interface for such properties is provided by [UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
+[Admin UI](/documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview), [Page Builder](/documentation/developers-and-admins/development/builders/page-builder), and [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) components can expose customizable properties that allow users to adjust their functionality, appearance, behavior, or other attributes. The editing interface for such properties is provided by [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
 The documentation refers to UI form components used in this fashion as **editing components**.
 Editing components can be used in:
   * Admin UI component configuration dialogs of
-    * [Form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
-    * [UI form component validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
-    * [UI form component visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions)
-    * [Model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms)
-    * [Listing UI page filters](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template)
+    * [Form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
+    * [UI form component validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
+    * [UI form component visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions)
+    * [Model-based edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms)
+    * [Listing UI page filters](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template)
   * Page Builder component configuration dialogs of
-    * [Widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties)
-    * [Sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties)
-    * [Personalization condition types](documentation/business-users/digital-marketing/widget-personalization)
+    * [Widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties)
+    * [Sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties)
+    * [Personalization condition types](/documentation/business-users/digital-marketing/widget-personalization)
   * Form Builder component configuration dialogs of
-    * [Form components](documentation/developers-and-admins/development/builders/form-builder/form-components)
-    * [Form sections](documentation/developers-and-admins/development/builders/form-builder/form-sections)
+    * [Form components](/documentation/developers-and-admins/development/builders/form-builder/form-components)
+    * [Form sections](/documentation/developers-and-admins/development/builders/form-builder/form-sections)
 
 
 ## Assign and configure editing components
@@ -47,8 +55,8 @@ public string MyProperty { get; set; }
 The data type of the assigned editing component must match the data type of the property being annotated.
 The property is now editable via the component’s configuration dialog.
 ### Form component attributes
-See [Reference - Admin UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for an overview of form components and corresponding component attributes provided by default Xperience installations.
-If the provided set of components isn’t sufficient, you can develop [custom form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) suitable for your scenarios.
+See [Reference - Admin UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for an overview of form components and corresponding component attributes provided by default Xperience installations.
+If the provided set of components isn’t sufficient, you can develop [custom form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) suitable for your scenarios.
 ### Configure editing component properties
 All component attributes allow you to configure a set of default properties, which you can use to adjust the resulting configuration interface. These properties are set using optional constructor parameters available within each attribute.
   * **Label** – the label text displayed in the property’s configuration interface.
@@ -57,10 +65,10 @@ All component attributes allow you to configure a set of default properties, whi
   * **Order** – the order in which the properties appear in the configuration interface.
 
 
-Form components can also have their own properties, which differ based on the component used. See the [individual attributes and their constructors](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for details.
+Form components can also have their own properties, which differ based on the component used. See the [individual attributes and their constructors](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for details.
 ### Configure components dynamically
-You can use the API to dynamically configure the state of editing components. Such configuration is intended for advanced scenarios where statically configuring editing component properties, [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) and [validations rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) via attribute notation is not sufficient. A typical use case is creating dynamic data sources for selector components.
-For more information, see [Configure editing component state](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components/configure-editing-component-state).
+You can use the API to dynamically configure the state of editing components. Such configuration is intended for advanced scenarios where statically configuring editing component properties, [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) and [validations rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) via attribute notation is not sufficient. A typical use case is creating dynamic data sources for selector components.
+For more information, see [Configure editing component state](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components/configure-editing-component-state).
 ### Group components into categories
 Editing components within individual configuration dialogs can be grouped into categories using the `FormCategory` attribute. The attribute must be applied to the model class. There is no limit on the number of categories that can be created per dialog.
 The position of each category relative to other editing components and categories is determined by the `Order` property, which is shared with the order of other items in the form.
@@ -103,7 +111,7 @@ public class MyComponentAttribute : FormComponentAttribute
 }
 ```
 
-If you don’t require more than the [base set of configuration properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components#configure-editing-component-properties), the above definition is sufficient.
+If you don’t require more than the [base set of configuration properties](#configure-editing-component-properties), the above definition is sufficient.
 However, if your form component relies on additional configuration properties, mirror those in the attribute class (provided you want them configurable). The mirrored properties:
   * **must be named identically** to the properties you wish to configure.
   * **must be of the same type** as the corresponding form component property.
@@ -142,3 +150,5 @@ public class MyComponent : FormComponent<TProperties, TClientProperties, TType>
 ```
 
 For the example above, all properties decorated with `MyComponentAttribute` use `MyComponent` as their editing component.
+![]()
+[]()[]()

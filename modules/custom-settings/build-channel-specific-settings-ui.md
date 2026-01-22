@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/custom-settings/build-channel-specific-settings-ui
+scrape_date: 2026-01-22
+---
+
+Module: Custom modules: custom settings
+6 of 9 Pages
 # Build the channel-specific settings UI
-  * [ Copy page link ](modules/custom-settings/build-channel-specific-settings-ui#) | [Get HelpService ID](modules/custom-settings/build-channel-specific-settings-ui#)
-Core MVC 5
-
-
-[✖](modules/custom-settings/build-channel-specific-settings-ui# "Close page link panel") [Copy to clipboard](modules/custom-settings/build-channel-specific-settings-ui#)
-[![screenshot of channel settings list](docsassets/guides/add-channels-to-module/ChannelSettingsList.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)
-In the previous example from this series, we saw a [listing page that displayed _global settings key_ objects](modules/custom-settings/build-module-ui#define-the-listing-page). Because these global settings were created and managed by users, the listing page just needed to display the objects, with links and buttons.
-However, in situations where you want to enforce one-to-one relationships, you can use the landing page to execute code that ensures the existence of the required objects. [UI pages in Xperience by Kentico](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) support dependency injection, so you should be able to use whichever services and options you need to properly set up data before the page loads.
+[![screenshot of channel settings list](/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)](/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)
+In the previous example from this series, we saw a [listing page that displayed _global settings key_ objects](/modules/custom-settings/build-module-ui#define-the-listing-page). Because these global settings were created and managed by users, the listing page just needed to display the objects, with links and buttons.
+However, in situations where you want to enforce one-to-one relationships, you can use the landing page to execute code that ensures the existence of the required objects. [UI pages in Xperience by Kentico](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) support dependency injection, so you should be able to use whichever services and options you need to properly set up data before the page loads.
 For our example, let’s use the listing page to make sure that for each web channel, a _web channel settings_ object exists, and that each one has an _SEO settings_ child.
-Start by creating a listing page similar to the [example from earlier in this seires](modules/custom-settings/build-module-ui#define-the-listing-page), but with no delete button; Xperience will handle deletions automatically thanks to our class overrides that established the relationship between Web channel settings and their corresponding channels.
+Start by creating a listing page similar to the [example from earlier in this seires](/modules/custom-settings/build-module-ui#define-the-listing-page), but with no delete button; Xperience will handle deletions automatically thanks to our class overrides that established the relationship between Web channel settings and their corresponding channels.
 You only need one column in the `ColumnConfigurations`, showing the display name of the channel. Editors will arrive at this page to see a list of channel names. Then they can edit the settings of whichever channel they click on.
 C#
 **WebChannelSettingsListingPage.cs**
@@ -146,13 +148,13 @@ public class WebChannelSettingsListingPage : ListingPage
 ```
 
 You can find the complete file [in the finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/WebChannelSettingsListingPage.cs) for reference.
-You may notice how the above code does not check for and delete settings objects with no parent. Thanks to the parent-child relationship [we set earlier](modules/custom-settings/model-channel-specific-settings), settings are deleted automatically along with their channel.
+You may notice how the above code does not check for and delete settings objects with no parent. Thanks to the parent-child relationship [we set earlier](/modules/custom-settings/model-channel-specific-settings), settings are deleted automatically along with their channel.
 ## Edit child objects as part of a parent
 When objects have parent-child relationships, you may want to edit one or more child objects when a user selects a parent from the listing page, rather than directly editing the parent itself. In our example, the _Web channel settings_ don’t have any meaningful properties for users to edit, so instead, so when they choose a channel, we want to display the _SEO settings_ edit form instead.
 This will involve a few adjustments compared to previous examples, which involved _listing_ and _edit_ pages that worked with the same object type.
 Luckily, the type of an `InfoEditPage<T>` does not need to match the type of the `EditSectionPage<T>` registered as its `parentType`.
 Compared to the previous examples, we need an extra bound parameter to retrieve the ID of the parent object. Then we can use its value in our child pages. For editing child objects with one-to-one relationships (like our example’s parent _Web channels settings_ and child _SEO settings_), override the abstract `ObjectID` property inherited from `InfoEditPage<T>`, and use the parent’s ID to retrieve the appropriate child.
-The [next section](modules/custom-settings/build-channel-specific-settings-ui#create-a-sub-section-for-multiple-child-objects) wil cover one-to-many relationships, where there may be mutiple child objects per parent.
+The [next section](#create-a-sub-section-for-multiple-child-objects) wil cover one-to-many relationships, where there may be mutiple child objects per parent.
 For example, several _Web channel snippets_ may relate to one _Web channel settings_ object.
 For editing pages, Xperience automatically propagates the display name of a saved object to the breadcrumbs and navigation, so you’ll need to override the `GetSubmitSuccessResponse` method to keep the name of the parent object on display.
 **See the difference**
@@ -280,17 +282,17 @@ public class SeoSettingsEditPage : InfoEditPage<SeoSettingsInfo>
 }
 ```
 
-You can see the completed file in the [finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/SeoSettingsEditPage.cs) for reference. Note that the code sample above is not localized for simplicity, but the repository version includes a localized version. For more guidance on how to localize your custom UI pages, see our [Admin UI localization documentation](documentation/developers-and-admins/customization/admin-ui-localization).
+You can see the completed file in the [finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/SeoSettingsEditPage.cs) for reference. Note that the code sample above is not localized for simplicity, but the repository version includes a localized version. For more guidance on how to localize your custom UI pages, see our [Admin UI localization documentation](/documentation/developers-and-admins/customization/admin-ui-localization).
 If you build the project and navigate to **Project settings → Channel settings → Training guides pages** , you should see a UI like this, where you can enter a _robots.txt_ value for your website channel:
-[![Screenshot of SEO settings](docsassets/guides/add-channels-to-module/SeoSettings.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/SeoSettings.png)
+[![Screenshot of SEO settings](/docsassets/guides/add-channels-to-module/SeoSettings.png)](/docsassets/guides/add-channels-to-module/SeoSettings.png)
 ## Create a sub-section for multiple child objects
-If you want to include a listing of child objects that users can manage within the edit section of a parent object, for example, giving each _Web channel settings_ object a listing of _Web channel snippet_ objects, the process is nearly identical to the standard module page approach from the [basic module from earlier in this series](guides/development/customizations-and-integrations/create-basic-module#build-the-module-ui).
+If you want to include a listing of child objects that users can manage within the edit section of a parent object, for example, giving each _Web channel settings_ object a listing of _Web channel snippet_ objects, the process is nearly identical to the standard module page approach from the [basic module from earlier in this series](/guides/development/customizations-and-integrations/create-basic-module#build-the-module-ui).
 You can define a _Listing page_ as a child of the parent’s _Edit section_. This listing can have its own _Edit section_ and _Create page_ as children.
-[![Screenshot of the UI page hierarchy](docsassets/guides/add-channels-to-module/UITree.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/UITree.png)
-Then, you just need to bind the parent object’s ID, like you did [earlier](modules/custom-settings/build-channel-specific-settings-ui#edit-child-objects-as-part-of-a-parent), on any pages that need access to it. For example, you need the parent object’s ID to set the foreign key value on the create page and generate the URL for the edit page, and to filter which child objects are displayed on the listing page.
+[![Screenshot of the UI page hierarchy](/docsassets/guides/add-channels-to-module/UITree.png)](/docsassets/guides/add-channels-to-module/UITree.png)
+Then, you just need to bind the parent object’s ID, like you did [earlier](#edit-child-objects-as-part-of-a-parent), on any pages that need access to it. For example, you need the parent object’s ID to set the foreign key value on the create page and generate the URL for the edit page, and to filter which child objects are displayed on the listing page.
 For our example, complete the following steps:
   1. Create a listing page for _Web channel snippet_ objects under the _Web channel settings_ edit section. 
-Follow the same approach as [earlier](modules/custom-settings). 
+Follow the same approach as [earlier](/modules/custom-settings). 
   2. Bind `WebChannelSettingsId` and use it to add a `QueryModifier` to `PageConfiguration.QueryModifiers` in the `ConfigurePage` method.
 
 
@@ -477,16 +479,8 @@ Now you should have a new section in your **Project settings** application with 
 With these tools you should be able to create a hierarchical custom module structure with multiple layers, including one-to-one and one-to-many relationships. You can also create channel-specific subsections in the admin UI.
 If you followed the example, try going to the **Channel management** application a few times to create and delete channels. Each time you navigate to **Project settings → Channel settings** , you’ll be able to see the available channel settings update accordingly, each with is own distinct _SEO settings_ and its own empty set of snippets.
 Your browser does not support the video tag. 
-[ Previous page ](modules/custom-settings/model-channel-specific-settings)
+[ Previous page ](/modules/custom-settings/model-channel-specific-settings)
 6 of 9
-[ Mark complete and continue ](modules/custom-settings/access-channel-specific-settings-options-pattern)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/custom-settings/build-channel-specific-settings-ui)
-[](https://docs.kentico.com/modules/custom-settings/build-channel-specific-settings-ui)[](https://docs.kentico.com/modules/custom-settings/build-channel-specific-settings-ui)
+[ Mark complete and continue ](/modules/custom-settings/access-channel-specific-settings-options-pattern)
+![]()
+[]()[]()

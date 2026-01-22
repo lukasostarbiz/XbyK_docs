@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/build-flexible-model-with-content-blocks
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+14 of 28 Pages
 # Build a flexible model with content blocks
-  * [ Copy page link ](modules/content-modeling-guide/build-flexible-model-with-content-blocks#) | [Get HelpService ID](modules/content-modeling-guide/build-flexible-model-with-content-blocks#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/build-flexible-model-with-content-blocks# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/build-flexible-model-with-content-blocks#)
 A **content block** is a piece of content that is not a full page but still carries semantic or functional meaning within your digital content. _Content blocks_ are typically reusable across multiple pages or app screens; they can repeatedly appear in emails or can be shared externally through a headless API. Storing this content in a structured format in _Content hub_ helps your content stay consistent and accurate and reduces unnecessary duplication if editors need to share this data across channels.
 _Content blocks_ :
   * Have semantic meaning (they represent a specific type of information, like an FAQ section or a call to action).
@@ -29,16 +31,8 @@ You can see some examples of _content blocks_ that we’ve seen in Kentico proje
   * **Contact information** blocks that maintain consistent formatting across regions.
 
 
-[ Previous page ](modules/content-modeling-guide/store-content-in-reusable-schemas)
+[ Previous page ](/modules/content-modeling-guide/store-content-in-reusable-schemas)
 14 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/use-the-built-in-admin-ui-form-components)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/build-flexible-model-with-content-blocks)
-[](https://docs.kentico.com/modules/content-modeling-guide/build-flexible-model-with-content-blocks)[](https://docs.kentico.com/modules/content-modeling-guide/build-flexible-model-with-content-blocks)
+[ Mark complete and continue ](/modules/content-modeling-guide/use-the-built-in-admin-ui-form-components)
+![]()
+[]()[]()

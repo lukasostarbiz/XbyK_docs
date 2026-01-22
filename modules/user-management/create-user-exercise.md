@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/user-management/create-user-exercise
+scrape_date: 2026-01-22
+---
+
+Module: User management
+5 of 20 Pages
 # Create a user - an exercise
-  * [ Copy page link ](modules/user-management/create-user-exercise#) | [Get HelpService ID](modules/user-management/create-user-exercise#)
-Core MVC 5
-
-
-[✖](modules/user-management/create-user-exercise# "Close page link panel") [Copy to clipboard](modules/user-management/create-user-exercise#)
 Suppose a new digital marketer starts working for your company next week. Create a new user, assign them the role of _Digital Channel Marketer_ , and email them an invitation.
 Xperience sends invitations to new users, so you need to have Email-sending functionality configured. See our [Email configuration](https://devnet.kentico.com/CMSPages/DocLinkMapper.ashx?version=xp&link=smtp_servers_config) documentation to learn how to set up email sending.
 If sending emails fails in your live project, you can retrieve the invitation link from the notification. You can find the notification in the **Email queue** application.
@@ -24,18 +26,10 @@ Your Xperience demo website doesn’t send any invitations for this exercise.
 
 If you sign in as the user you’ve created, you will see only the applications with assigned permissions on the dashboard.
 _Laura Miller, the Digital Channel Manager_ :
-[![](docsassets/guides/work-with-users-essentials/role-dashboard.png)](https://docs.kentico.com/docsassets/guides/work-with-users-essentials/role-dashboard.png)
+[![](/docsassets/guides/work-with-users-essentials/role-dashboard.png)](/docsassets/guides/work-with-users-essentials/role-dashboard.png)
 Users and roles are an essential part of Xperience by Kentico administration. By setting them up, you can help everyone focus on their daily jobs.
-[ Previous page ](modules/user-management/update-your-password)
+[ Previous page ](/modules/user-management/update-your-password)
 5 of 20
-[ Mark complete and continue ](modules/user-management/update-user-information)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/user-management/create-user-exercise)
-[](https://docs.kentico.com/modules/user-management/create-user-exercise)[](https://docs.kentico.com/modules/user-management/create-user-exercise)
+[ Mark complete and continue ](/modules/user-management/update-user-information)
+![]()
+[]()[]()

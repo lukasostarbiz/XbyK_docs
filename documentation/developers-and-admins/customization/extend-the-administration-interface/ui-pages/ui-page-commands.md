@@ -1,19 +1,27 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)
+  * UI page commands 
+
+
 # UI page commands
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands#)
 UI page commands enable the execution of arbitrary code on the server back end from within the client-side application. Typical use cases for commands are CRUD operations on database objects (creating or deleting new users, logging events). 
 The following diagram illustrates the basic lifecycle of a command: 
-[![UI page command lifecycle](docsassets/documentation/ui-page-commands/UIPageCommandHighlevel.png)](https://docs.kentico.com/docsassets/documentation/ui-page-commands/UIPageCommandHighlevel.png)
+[![UI page command lifecycle](/docsassets/documentation/ui-page-commands/UIPageCommandHighlevel.png)](/docsassets/documentation/ui-page-commands/UIPageCommandHighlevel.png)
   1. A client component invokes a command (e.g., as part of a user interaction with some UI element).
   2. The admin application sends a request containing command metadata together with user-specified data to the server.
   3. The server invokes a designated handler function which processes the command.
   4. The handler function returns a response back to the client (including custom data that can be further processed by the client)
 
 
-Commands are identified by their names specified in the client template. When invoked, the system uses the surrounding context (command name, page URL path) to match the command to its back-end handling method (located within the page’s [back-end definiton](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) or its [page extender](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders)).
+Commands are identified by their names specified in the client template. When invoked, the system uses the surrounding context (command name, page URL path) to match the command to its back-end handling method (located within the page’s [back-end definiton](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) or its [page extender](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders)).
 ## Define commands within client templates
 ### Register page command definitions
 Within client templates, register page commands via `usePageCommand<TCommandResult>`:
@@ -71,7 +79,7 @@ usePageCommand<TCommandResult, TCommandData>("CommandName", {
   * `dependencies` – an array of dependencies. The command only executes when an object in the dependency list changes. Identical to the functionality within [conventional React hooks](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect).
 
 
-When a command is invoked on the client, the admin app sends a request to the back end, which invokes a corresponding handler method [assigned to the command](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands#designate-command-handlers).
+When a command is invoked on the client, the admin app sends a request to the back end, which invokes a corresponding handler method [assigned to the command](#designate-command-handlers).
 ## Prepare and designate command handlers on the back end
 ### Designate command handlers
 Commands called from the client are handled by designated methods. The handling API is **asynchronous and task-based**. Only asynchronous methods can be used as command handlers.
@@ -178,7 +186,7 @@ return Response().AddErrorMessage("Error message.");
 return Response().AddWarningMessage("Warning message.");
 ```
   
-`UseCommand` |  Invokes a command with the provided name on the client. Can be used, e.g., with [listing pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template) to refresh the object listing after a command has executed on the back end. C# Copy ```
+`UseCommand` |  Invokes a command with the provided name on the client. Can be used, e.g., with [listing pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template) to refresh the object listing after a command has executed on the back end. C# Copy ```
 // Reloads the object grid on listing pages (e.g., to display changes in displayed data)
 return Response().UseCommand('LoadData').AddInfoMessage('Objects modified.');
 ```
@@ -217,7 +225,7 @@ public class MyPage : Page
 
 ### Redirect to another page after command execution
 Instead of returning a response, the command handler method can redirect the user to another page in the admin UI. 
-If you wish to redirect from a command handler, use the `NavigateTo` method. The method takes a parameter containing the URL of the page where the user is to be redirected. To obtain the URL of a different page in the admin UI, use `IPageLinkGenerator`. See [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages) for more information about URL generation and navigation.
+If you wish to redirect from a command handler, use the `NavigateTo` method. The method takes a parameter containing the URL of the page where the user is to be redirected. To obtain the URL of a different page in the admin UI, use `IPageLinkGenerator`. See [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages) for more information about URL generation and navigation.
 C#
 Copy
 ```
@@ -258,7 +266,7 @@ public async Task<ICommandResponse> MyCommand(MyCommandArguments args, Cancellat
 
 If the command handler calls logic that supports the cancellation token pattern (typically for long-running async operations), the token ensures all related threads terminate (e.g., in case the application needs to shut down) when the corresponding token source sends a request for cancellation. 
 ## Add permission checks to page commands
-You can configure page commands to evaluate user permissions before executing. See [UI page permission checks](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks) for more information.
+You can configure page commands to evaluate user permissions before executing. See [UI page permission checks](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks) for more information.
 ## Example - page command and its handling method
 The following code demonstrates a sample client template with a page command that fetches a string value from the back end and displays it in a label. The implementation of the command on the back end can be altered to be suitable for the specific page’s role. For example, you can return `DateTime` values, or the name of the current user.
 JS
@@ -320,3 +328,6 @@ public async Task<ICommandResponse> GetString()
             .AddInfoMessage("Data returned");
 }
 ```
+
+![]()
+[]()[]()

@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/xperience-implementation-handbook/test-your-solution
+scrape_date: 2026-01-22
+---
+
+Module: Xperience implementation handbook
+6 of 9 Pages
 # Test your solution
-  * [ Copy page link ](modules/xperience-implementation-handbook/test-your-solution#) | [Get HelpService ID](modules/xperience-implementation-handbook/test-your-solution#)
-Core MVC 5
-
-
-[✖](modules/xperience-implementation-handbook/test-your-solution# "Close page link panel") [Copy to clipboard](modules/xperience-implementation-handbook/test-your-solution#)
 ## Functional testing
 Thoroughly testing the functions of your solution helps to ensure a good user experience.
 When testing the functionality of your project, consider the following:
   * Test all use case scenarios with automated tests. 
-    * Set up end-to-end (E2E) testing for the solution, with tools like [Playwright](https://playwright.dev/) and [Selenium](https://www.selenium.dev/) for the live site, and [Cypress](documentation/developers-and-admins/customization/extend-the-administration-interface/administration-interface-ui-tests#cypress) for the admin UI.
+    * Set up end-to-end (E2E) testing for the solution, with tools like [Playwright](https://playwright.dev/) and [Selenium](https://www.selenium.dev/) for the live site, and [Cypress](/documentation/developers-and-admins/customization/extend-the-administration-interface/administration-interface-ui-tests#cypress) for the admin UI.
     * Add unit tests to ensure the correct functioning of your granular code components, like individual methods.
     * Create integration tests to make sure components interact as expected with mock data.
   * Validate website code and accessibility for all devices and browsers you are planning to support.
@@ -49,16 +51,8 @@ When running performance, load, and capacity tests, there are several things you
   * Keep the testing environment consistent so that you can compare test results directly.
 
 
-[ Previous page ](modules/xperience-implementation-handbook/develop-your-project)
+[ Previous page ](/modules/xperience-implementation-handbook/develop-your-project)
 6 of 9
-[ Mark complete and continue ](modules/xperience-implementation-handbook/deploy-to-a-new-environment)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/xperience-implementation-handbook/test-your-solution)
-[](https://docs.kentico.com/modules/xperience-implementation-handbook/test-your-solution)[](https://docs.kentico.com/modules/xperience-implementation-handbook/test-your-solution)
+[ Mark complete and continue ](/modules/xperience-implementation-handbook/deploy-to-a-new-environment)
+![]()
+[]()[]()

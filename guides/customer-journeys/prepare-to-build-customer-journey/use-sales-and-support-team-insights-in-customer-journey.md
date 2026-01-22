@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/prepare-to-build-customer-journey/use-sales-and-support-team-insights-in-customer-journey
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Prepare to build customer journey](/guides/customer-journeys/prepare-to-build-customer-journey)
+  * Use Sales and Support Team's insights 
+
+
 # Use Sales and Support Team's insights
-  * Concept| [ Copy page link ](guides/customer-journeys/prepare-to-build-customer-journey/use-sales-and-support-team-insights-in-customer-journey#) | [Get HelpService ID](guides/customer-journeys/prepare-to-build-customer-journey/use-sales-and-support-team-insights-in-customer-journey#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/prepare-to-build-customer-journey/use-sales-and-support-team-insights-in-customer-journey# "Close page link panel") [Copy to clipboard](guides/customer-journeys/prepare-to-build-customer-journey/use-sales-and-support-team-insights-in-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -45,4 +51,6 @@ It will remind your team that behind every click, action, or conversion is a rea
 Still wondering about how to begin customer journey mapping? See what [marketing and strategy leaders recommend](https://www.kentico.com/discover/blog/expert-roundtable-customer-journeys) for organizations starting **their customer journey mapping and optimization** efforts.
 ## Next steps
 You’ve reached the end of this series of guides focused on identifying the insights you need to build effective customer journeys. Along the way, you’ve learned how to gather accurate data, validate assumptions, and bring together different perspectives to reveal the true state of your customer experience. These insights are essential for designing journeys that are not only data-driven but also actionable and aligned with real user needs.
-To keep learning, explore what’s next in [the final guide in this series](guides/customer-journeys/continue-learning-about-customer-journeys).
+To keep learning, explore what’s next in [the final guide in this series](/guides/customer-journeys/continue-learning-about-customer-journeys).
+![]()
+[]()[]()

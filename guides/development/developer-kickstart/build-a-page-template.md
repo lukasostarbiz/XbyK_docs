@@ -1,11 +1,17 @@
+---
+source: https://docs.kentico.com/guides/development/developer-kickstart/build-a-page-template
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Developer kickstart](/guides/development/developer-kickstart)
+  * Build a page template 
+
+
 # Build a page template
-  * [ Copy page link ](guides/development/developer-kickstart/build-a-page-template#) | [Get HelpService ID](guides/development/developer-kickstart/build-a-page-template#) | This page is part of a module: [ Xperience by Kentico Developer kickstart ](modules/developer-kickstart)
-Core MVC 5
-
-
-[✖](guides/development/developer-kickstart/build-a-page-template# "Close page link panel") [Copy to clipboard](guides/development/developer-kickstart/build-a-page-template#)
-We recommend using [Page templates](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) to display content in website projects. They enable flexibility in the presentation of a page without developer intervention – you can set up multiple templates for editors to choose from, and include properties that allow them to configure the design.
-Now that we have created a _Landing page_ content type and configured the project, let’s create a simple template to display landing pages. The template will access fields from the reusable [_Slogan_](guides/development/developer-kickstart/create-a-reusable-content-type) item linked by the Landing page. 
+We recommend using [Page templates](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) to display content in website projects. They enable flexibility in the presentation of a page without developer intervention – you can set up multiple templates for editors to choose from, and include properties that allow them to configure the design.
+Now that we have created a _Landing page_ content type and configured the project, let’s create a simple template to display landing pages. The template will access fields from the reusable [_Slogan_](/guides/development/developer-kickstart/create-a-reusable-content-type) item linked by the Landing page. 
 In the _Kickstart.Web_ project, create a directory _Features_ , with a subfolder _LandingPages_ for code files relating to landing pages.
 ## Add a view model class
 Let’s start by defining a view model class to hold the data the template should display.
@@ -58,7 +64,7 @@ public class LandingPageController : Controller
 ```
 
 ### Query the landing page
-To retrieve the data of a given landing page, we’ll use the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api).
+To retrieve the data of a given landing page, we’ll use the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api).
 Inject the content retriever service into your class.
 Utilize its `RetrieveCurrentPage` method to fetch the data of your current _Landing page_. This method will automatically find the page associated with the request route, retrieve the data in the current language, and map it to a `LandingPage` object in code.
 Once you retrieve the landing page data, you can use the `GetViewModel` method from earlier in this step to create a `LandingPageViewModel`.
@@ -98,7 +104,7 @@ public class LandingPageController : Controller
 ### Register the controller
 Now we need to tell Xperience to use this template whenever someone requests a page of the `LandingPage` type.
 Use the `RegisterWebPageRoute` assembly attribute to create this association.
-Thanks to this attribute, the [content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing) (which you configured in the previous step) knows to use the controller.
+Thanks to this attribute, the [content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing) (which you configured in the previous step) knows to use the controller.
 You don’t need to set up any kind of routing table that references the controller.
 C#
 **LandingPageController.cs**
@@ -119,7 +125,7 @@ The completed file should look [like this code](https://github.com/Kentico/xperi
 **Refactoring**
 The code samples here are meant to demonstrate important principles, but they are not production-ready.
 In real-world scenarios, you will need to retrieve various content items frequently in your project. We recommend extracting content querying functionality into a separate service to make your code more modular and readable, as in [in this example](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs).
-Depending on the size and lifetime of projects, you may also want to consider more complex [enterprise architecture](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) with a higher degree of abstraction.
+Depending on the size and lifetime of projects, you may also want to consider more complex [enterprise architecture](/guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) with a higher degree of abstraction.
 ## Add the page template view
 With the view model and controller in place, let’s move on to the view.
 In the _Features/LandingPages_ folder, create an empty Razor view called _LandingPagePageTemplate.cshtml_.
@@ -142,7 +148,7 @@ Copy
 <editable-area area-identifier="areaMain" />
 ```
 
-The `TemplateViewModel` lives in the `Kentico.Content.Web.Mvc.PageBuilder` namespace. Notice that we don’t need a `using` directive here because we added it to __ViewImports.cshtml_ in the [previous step](guides/development/developer-kickstart/configure-the-project#create-a-viewimports-file).
+The `TemplateViewModel` lives in the `Kentico.Content.Web.Mvc.PageBuilder` namespace. Notice that we don’t need a `using` directive here because we added it to __ViewImports.cshtml_ in the [previous step](/guides/development/developer-kickstart/configure-the-project#create-a-viewimports-file).
 ## Register the page template
 Now the landing page template exists in code, but Xperience cannot use it unless you register it.
 In the current state, when execution hits your controller, Xperience will not know which view to use when the `Index` action returns `TemplateResult`.
@@ -196,7 +202,9 @@ public static class LandingPagePageTemplate
 ```
 
 Now the system knows that the view from the previous section is a page template. It will be available to any _LandingPage_ pages that are allowed to use page templates.
-Learn more about the `RegisterPageTemplate` attribute on [this page of our documentation](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder#register-page-templates). 
+Learn more about the `RegisterPageTemplate` attribute on [this page of our documentation](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder#register-page-templates). 
 In the next step, let’s check your progress by creating a homepage that uses this template.
 ## Continue learning
-When you’re ready, move on to the next page: [Apply a page template](guides/development/developer-kickstart/apply-a-page-template)
+When you’re ready, move on to the next page: [Apply a page template](/guides/development/developer-kickstart/apply-a-page-template)
+![]()
+[]()[]()

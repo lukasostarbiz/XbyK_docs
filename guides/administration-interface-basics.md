@@ -1,9 +1,13 @@
+---
+source: https://docs.kentico.com/guides/administration-interface-basics
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * Administration interface basics 
+
+
 # Administration interface basics
-  * [ Copy page link ](guides/administration-interface-basics#) | [Get HelpService ID](guides/administration-interface-basics#)
-Core MVC 5
-
-
-[✖](guides/administration-interface-basics# "Close page link panel") [Copy to clipboard](guides/administration-interface-basics#)
 Welcome to the Xperience by Kentico Tutorial. This page introduces the basics of the administration interface where you’ll manage websites and other content channels built with Xperience by Kentico.
 ## Access the administration
 You can access the Xperience administration using your browser:
@@ -18,12 +22,12 @@ You can access the Xperience administration using your browser:
          * The default username is **administrator**.
          * Use the password you’ve received in the notification about website creation.
   3. Once you sign in, the Xperience administration opens.  
-[![Xperience by Kentico administration dashboard](docsassets/guides/administration-interface-basics/admin_homepage.png)](https://docs.kentico.com/docsassets/guides/administration-interface-basics/admin_homepage.png)
+[![Xperience by Kentico administration dashboard](/docsassets/guides/administration-interface-basics/admin_homepage.png)](/docsassets/guides/administration-interface-basics/admin_homepage.png)
 
 
 ## Xperience administration basics
 The system takes you to Xperience’s administration dashboard when you sign in. The dashboard consists of tiles that represent different applications you will use to perform your daily tasks. No matter where you are in the administration interface, you can use the following elements to navigate around Xperience.
-[![Xperience interface overview](docsassets/guides/administration-interface-basics/admin_dashboard.png)](https://docs.kentico.com/docsassets/guides/administration-interface-basics/admin_dashboard.png)
+[![Xperience interface overview](/docsassets/guides/administration-interface-basics/admin_dashboard.png)](/docsassets/guides/administration-interface-basics/admin_dashboard.png)
 **Application list** |  The menu on the left side gives you access to all Xperience applications. The applications are conveniently grouped into dedicated areas according to their function, e.g., **Digital marketing** or **Configuration**. **Actions:**
   * Select application group or application and press **Enter** to open. 
     * (Optional:) Use **keyboard shortcut F2** to open the application list and the search box.
@@ -56,7 +60,7 @@ Xperience by Kentico supports the latest major versions of the following browser
   * Safari on Mac OS
 
 
-See other [browser requirements](documentation/developers-and-admins/installation/system-requirements#browser-requirements) in the Xperience documentation.
+See other [browser requirements](/documentation/developers-and-admins/installation/system-requirements#browser-requirements) in the Xperience documentation.
 ## Applications
 The Xperience platform is split into different **_applications_** . You’ll have access to different applications depending on your project’s implementation.
 From a technical perspective, an application is a group of related functions you can use to perform different tasks. For example, you segment your audience in **Contact groups** , manage user accounts in **Users** , or view various information in the **Event log**.
@@ -72,5 +76,7 @@ The URL of the Xperience administration interface consists of the following part
 All time values in the administration are displayed in the local time zone of each user. For example: _01:30 PM (GMT+02:00)_
 The time zone is detected according to the browser and environment settings of the user’s device.
 ## Next steps
-### [Continue with the Developer tutorial](guides/development/developer-kickstart)
-### [Continue with the Xperience Essentials](guides/digital-marketing/xperience-essentials)
+### [Continue with the Developer tutorial](/guides/development/developer-kickstart)
+### [Continue with the Xperience Essentials](/guides/digital-marketing/xperience-essentials)
+![]()
+[]()[]()

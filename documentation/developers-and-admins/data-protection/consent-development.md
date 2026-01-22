@@ -1,29 +1,35 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/data-protection/consent-development
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
+  * Consent development 
+
+
 # Consent development
-  * [ Copy page link ](documentation/developers-and-admins/data-protection/consent-development#) | [Get HelpService ID](documentation/developers-and-admins/data-protection/consent-development#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/data-protection/consent-development# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/data-protection/consent-development#)
 In Xperience, consents are records used to inform visitors about the means of collecting and manipulating their personal data by the system, administrators, marketers and anyone else who has access to said data, including third parties to whom this data is forwarded.
-You can use consents to comply with the requirements of the [GDPR](documentation/developers-and-admins/data-protection/gdpr-compliance) and other personal data regulations.
-Whenever any personal data of a visitor is obtained, it is necessary to have a consent agreement from the visitor to legally process this data. This includes [tracking of contacts](documentation/business-users/digital-marketing/contact-management) and their [activities](documentation/business-users/digital-marketing/contact-activities). Every consent agreement of a visitor is directly connected to a corresponding contact. Deleting contacts from the system therefore also causes deletion of the contact’s consent agreements.
+You can use consents to comply with the requirements of the [GDPR](/documentation/developers-and-admins/data-protection/gdpr-compliance) and other personal data regulations.
+Whenever any personal data of a visitor is obtained, it is necessary to have a consent agreement from the visitor to legally process this data. This includes [tracking of contacts](/documentation/business-users/digital-marketing/contact-management) and their [activities](/documentation/business-users/digital-marketing/contact-activities). Every consent agreement of a visitor is directly connected to a corresponding contact. Deleting contacts from the system therefore also causes deletion of the contact’s consent agreements.
 **Prerequisite**
-Since consent agreements are directly connected to contacts, you need to enable [contact tracking](documentation/developers-and-admins/digital-marketing-setup/contact-configuration) in your Xperience application.
-This page describes how to set up consent functionality on Xperience websites. To learn how to create consents in the Xperience administration, see [Consent management](documentation/developers-and-admins/data-protection/consent-management).
+Since consent agreements are directly connected to contacts, you need to enable [contact tracking](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration) in your Xperience application.
+This page describes how to set up consent functionality on Xperience websites. To learn how to create consents in the Xperience administration, see [Consent management](/documentation/developers-and-admins/data-protection/consent-management).
 ## Set up tracking consent
-When creating a consent for the [tracking of contacts](documentation/developers-and-admins/digital-marketing-setup/contact-configuration) and [activities](documentation/developers-and-admins/digital-marketing-setup/set-up-activities), you need to provide a way for visitors to adjust their allowed [cookie level](documentation/developers-and-admins/data-protection/cookies). The system only performs the tracking for visitors whose cookie level is  _Visitor_ or higher.
+When creating a consent for the [tracking of contacts](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration) and [activities](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities), you need to provide a way for visitors to adjust their allowed [cookie level](/documentation/developers-and-admins/data-protection/cookies). The system only performs the tracking for visitors whose cookie level is  _Visitor_ or higher.
 To ensure that visitors are not tracked until they give the tracking consent, set the **default cookie level** in the Xperience administration:
   1. Open **Channel management** application.
   2. Select your website channel.
   3. Open the **Channel settings** tab.
   4. In the **Cookies** section, choose a **Default cookie level**. 
-     * For an overview of individual cookie levels, see [Cookie levels](documentation/developers-and-admins/data-protection/cookies#cookie-levels).
+     * For an overview of individual cookie levels, see [Cookie levels](/documentation/developers-and-admins/data-protection/cookies#cookie-levels).
   5. Select **Save**.
 
 
 To allow visitors to give agreements with the tracking consent on your site, you need to develop corresponding components. For example, you can implement tracking consent functionality as a [view component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components).
 ### Create the consent
-Start by [defining the tracking consent](documentation/developers-and-admins/data-protection/consent-management) in the Xperience administration interface (in the **Data protection** application on the **Consents** tab).
+Start by [defining the tracking consent](/documentation/developers-and-admins/data-protection/consent-management) in the Xperience administration interface (in the **Data protection** application on the **Consents** tab).
 ### Create the model
 We recommend creating a view model class in your project to represent data related to the tracking consent. Include the following properties:
   * A `string` property for storing the consent’s short text
@@ -53,7 +59,7 @@ Create a new [view component](https://docs.microsoft.com/en-us/aspnet/core/mvc/v
     * `ICurrentCookieLevelProvider`– to manage the current visitor’s cookie level.
     * `IWebPageDataContextRetriever` and `IWebPageUrlRetriever` – to obtain the URL of the current page.
     * `IPreferredLanguageRetriever` – to get the currently selected content language.
-We recommend using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
+We recommend using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
 C#
 **Services**
 Copy
@@ -140,7 +146,7 @@ public async Task<IViewComponentResult> InvokeAsync()
 
 
 ### Create the view
-Add the view referenced in your view component’s invoke method. Display the text of the tracking consent and inputs for giving or revoking agreements. Depending on your preferences and legal requirements, you can hide the view’s output for visitors who have given the tracking consent or display alternative content (for example the option to [revoke the consent](documentation/developers-and-admins/data-protection/consent-development#revoke-consents)).
+Add the view referenced in your view component’s invoke method. Display the text of the tracking consent and inputs for giving or revoking agreements. Depending on your preferences and legal requirements, you can hide the view’s output for visitors who have given the tracking consent or display alternative content (for example the option to [revoke the consent](#revoke-consents)).
 cshtml
 **Tracking consent view**
 Copy
@@ -172,9 +178,9 @@ Copy
 
 ### Create the controller
 Add a controller that handles requests for adding consent agreements:
-  * Initialize instances of services required to manage the tracking consent (some of the same services described for the [View component code](documentation/developers-and-admins/data-protection/consent-development#create-the-view-component)).
+  * Initialize instances of services required to manage the tracking consent (some of the same services described for the [View component code](#create-the-view-component)).
   * Define a POST action for creating consent agreements.
-  * Retrieve the visitor’s contact using the `ContactManagementContext` API (see [Contact configuration](documentation/developers-and-admins/digital-marketing-setup/contact-configuration)).
+  * Retrieve the visitor’s contact using the `ContactManagementContext` API (see [Contact configuration](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration)).
   * Modify the visitor’s cookie level according to the performed action – call the `SetCurrentCookieLevel` method of the `ICurrentCookieLevelProvider` service.
     * Set the _All_ cookie level when creating tracking consent agreements.
   * Create consent agreements using the `Agree` method of the `IConsentAgreementService` instance.
@@ -247,7 +253,7 @@ The following sections describe how to create a privacy page using MVC architect
   * Create a model representing the list of consents for which visitors have given agreements.
   * Create a model representing consent details.
   * Create a controller that provides actions for displaying and revoking consents.
-  * Implement a handler for the `DataProtectionEvents.RevokeConsentAgreement`[global event](documentation/developers-and-admins/customization/handle-global-events) to clear related cookies and personal data.
+  * Implement a handler for the `DataProtectionEvents.RevokeConsentAgreement`[global event](/documentation/developers-and-admins/customization/handle-global-events) to clear related cookies and personal data.
   * Create views for the consent list and details pages.
 
 
@@ -271,7 +277,7 @@ public class ConsentListingModel
 **`Consent`and`ConsentInfo` objects**
 The Xperience API uses `ConsentInfo` objects to work with consents in general. However, when you load consents for which a contact has given an agreement, the `ConsentAgreementService.GetAgreedConsents` method returns a collection of `Consent` objects. Instances of the `Consent` class provide the `GetConsentText` method, which automatically retrieves either the current texts of the given consent or the texts of the archived consent version for which the agreement was given.
 When displaying accepted consents to visitors, always work with `Consent` objects to ensure that the correct consent text version is used (for scenarios where the consent text was changed after agreements had been given).
-For more information, see the _View archived consents_ section of the [Consent management](documentation/developers-and-admins/data-protection/consent-management) page.
+For more information, see the _View archived consents_ section of the [Consent management](/documentation/developers-and-admins/data-protection/consent-management) page.
 **Tip** : You can directly use an `IEnumerable<Consent>` collection as a model if you do not need to work with any other data in your controller or views. However, having a dedicated model class allows you to extend the model based on future requirements.
   * Add a model class that represents the full details of a consent, including properties for the short text, full text, and any other information about the consent you may need. 
 C#
@@ -311,9 +317,9 @@ public PrivacyPageController(IConsentAgreementService consentAgreementService,
 }
 ```
 
-We recommend using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
+We recommend using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
   * Implement a GET action which retrieves a list of all consents accepted by the visitor:
-    1. Retrieve the current contact using the `ContactManagementContext` API (see [Contact configuration](documentation/developers-and-admins/digital-marketing-setup/contact-configuration)).
+    1. Retrieve the current contact using the `ContactManagementContext` API (see [Contact configuration](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration)).
     2. Get the consents for which the contact has given an agreement by calling the `GetAgreedConsents` method of the `IConsentAgreementService` instance.
     3. Create an instance of the consent list model class and pass it to the view.
 C#
@@ -419,10 +425,10 @@ public ActionResult Revoke(int consentId)
 
 
 ### Add a RevokeConsentAgreement handler
-Websites and their related functionality often contain multiple locations where visitors can revoke consents. To ensure that revocations are handled correctly in all cases, we recommend assigning a custom handler to the system’s `DataProtectionEvents.RevokeConsentAgreement` [global event](documentation/developers-and-admins/customization/handle-global-events). The handler provides a central place where you can perform additional actions whenever a consent agreement is revoked.
+Websites and their related functionality often contain multiple locations where visitors can revoke consents. To ensure that revocations are handled correctly in all cases, we recommend assigning a custom handler to the system’s `DataProtectionEvents.RevokeConsentAgreement` [global event](/documentation/developers-and-admins/customization/handle-global-events). The handler provides a central place where you can perform additional actions whenever a consent agreement is revoked.
 The following are typical scenarios to handle in the `RevokeConsentAgreement`event:
-  * **Setting the cookie level** – when revoking the [tracking consent](documentation/developers-and-admins/data-protection/consent-development#set-up-tracking-consent), you also need to lower the visitor’s [cookie level](documentation/developers-and-admins/data-protection/cookies) to ensure that contact tracking is disabled. Call the `SetCurrentCookieLevel` method of the `ICurrentCookieLevelProvider` service and set the default cookie level from the website channel’s settings.
-  * **Clearing personal data** – when a visitor revokes a consent agreement, you may also need to delete or anonymize certain types of personal data stored by the system. See also: [Personal data erasure](documentation/developers-and-admins/data-protection/personal-data-erasure)
+  * **Setting the cookie level** – when revoking the [tracking consent](#set-up-tracking-consent), you also need to lower the visitor’s [cookie level](/documentation/developers-and-admins/data-protection/cookies) to ensure that contact tracking is disabled. Call the `SetCurrentCookieLevel` method of the `ICurrentCookieLevelProvider` service and set the default cookie level from the website channel’s settings.
+  * **Clearing personal data** – when a visitor revokes a consent agreement, you may also need to delete or anonymize certain types of personal data stored by the system. See also: [Personal data erasure](/documentation/developers-and-admins/data-protection/personal-data-erasure)
 
 
 C#
@@ -485,3 +491,5 @@ Copy
 ```
 
 Visitors on your site are now able to view a list of all consents for which they have given an agreement. They can also access the full details of the given consents and revoke their agreements if required.
+![]()
+[]()[]()

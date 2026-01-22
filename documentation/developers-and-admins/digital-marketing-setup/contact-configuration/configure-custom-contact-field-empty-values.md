@@ -1,13 +1,20 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/configure-custom-contact-field-empty-values
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital marketing setup](/documentation/developers-and-admins/digital-marketing-setup)
+  * [Contact configuration](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration)
+  * Configure custom contact field empty values 
+
+
 # Configure custom contact field empty values
-  * [ Copy page link ](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/configure-custom-contact-field-empty-values#) | [Get HelpService ID](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/configure-custom-contact-field-empty-values#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/configure-custom-contact-field-empty-values# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/configure-custom-contact-field-empty-values#)
-If you have [custom contact fields](documentation/developers-and-admins/digital-marketing-setup/contact-configuration#add-custom-fields-to-contacts) that use a [custom data type](documentation/developers-and-admins/customization/field-editor/data-type-management#register-custom-data-types) and wish to use these fields with the _Contact field value is empty_ condition in [contact groups](documentation/business-users/digital-marketing/contact-groups) or [automation processes](documentation/business-users/digital-marketing/automation#conditions), you need to define what value is considered as empty for the data type. Otherwise the condition will not be evaluated correctly. You can configure the empty value for individual data types by extending the `ContactFieldEmptyValueProvider` using the [decorator pattern](documentation/developers-and-admins/customization/decorate-system-services). Additionally, you can change the empty values provided by the system for the default contact fields.
+If you have [custom contact fields](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration#add-custom-fields-to-contacts) that use a [custom data type](/documentation/developers-and-admins/customization/field-editor/data-type-management#register-custom-data-types) and wish to use these fields with the _Contact field value is empty_ condition in [contact groups](/documentation/business-users/digital-marketing/contact-groups) or [automation processes](/documentation/business-users/digital-marketing/automation#conditions), you need to define what value is considered as empty for the data type. Otherwise the condition will not be evaluated correctly. You can configure the empty value for individual data types by extending the `ContactFieldEmptyValueProvider` using the [decorator pattern](/documentation/developers-and-admins/customization/decorate-system-services). Additionally, you can change the empty values provided by the system for the default contact fields.
 ## Define custom empty values
   1. Open your solution in Visual Studio.
-  2. [Add a custom assembly](documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) with class discovery enabled to the solution, or re-use an existing assembly.
+  2. [Add a custom assembly](/documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) with class discovery enabled to the solution, or re-use an existing assembly.
   3. Reference the project from your Xperience website project.
 
 
@@ -15,7 +22,7 @@ Continue by implementing the custom class:
   1. Create a new custom class. For example, name the class `CustomContactFieldEmptyValueProvider`.
   2. Make the class implement the `IContactFieldEmptyValueProvider` interface.
   3. Add the `Get` method: 
-     * Use the [decorator customization pattern](documentation/developers-and-admins/customization/decorate-system-services#decorate-services-via-dependency-injection) to call the default implementation of the `Get` method. This call returns a dictionary which maps the system data types to their empty value. Here, you can add the empty values of your custom data types or adjust the empty values of the system data types.
+     * Use the [decorator customization pattern](/documentation/developers-and-admins/customization/decorate-system-services#decorate-services-via-dependency-injection) to call the default implementation of the `Get` method. This call returns a dictionary which maps the system data types to their empty value. Here, you can add the empty values of your custom data types or adjust the empty values of the system data types.
   4. Register the implementation using the `RegisterImplementation` assembly attribute.
 
 
@@ -59,3 +66,6 @@ public class CustomContactFieldEmptyValueProvider : IContactFieldEmptyValueProvi
     }
 }
 ```
+
+![]()
+[]()[]()

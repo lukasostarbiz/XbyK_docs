@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/advanced-content/personalize-widget-content
+scrape_date: 2026-01-22
+---
+
+Module: Advanced content
+3 of 11 Pages
 # Personalize widget content
-  * [ Copy page link ](modules/advanced-content/personalize-widget-content#) | [Get HelpService ID](modules/advanced-content/personalize-widget-content#)
-Core MVC 5
-
-
-[✖](modules/advanced-content/personalize-widget-content# "Close page link panel") [Copy to clipboard](modules/advanced-content/personalize-widget-content#)
 After our changes the widgets are working again. However, we have the opportunity to make them even better.
-If we implement [content personalization](documentation/developers-and-admins/digital-marketing-setup/content-personalization), we can allow editors to show different featured articles to visitors who are members of certain contact groups, based on what is more relevant to them.
+If we implement [content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization), we can allow editors to show different featured articles to visitors who are members of certain contact groups, based on what is more relevant to them.
 To give you an idea of what we are implementing, here is what the process of personalizing widgets looks like for editors:
 Navigate to the **Contact groups** application in the Xperience admin, and define a new contact group with placeholder values for its name and description.
-Now, [define a new personalization condition type](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types) in the _TrainingGuides.Web/Features/Personalization_ folder that allows editors to select a contact group and evaluates whether the current contact is in that group.
+Now, [define a new personalization condition type](/documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types) in the _TrainingGuides.Web/Features/Personalization_ folder that allows editors to select a contact group and evaluates whether the current contact is in that group.
 C#
 **IsInContactGroupConditionType.cs**
 Copy
@@ -67,16 +69,8 @@ public class IsInContactGroupConditionType : ConditionType
 
 Rebuild the solution and access the page builder tab. Now you can define a different featured article that displays for members of your contact group.
 Your browser does not support the video tag. 
-[ Previous page ](modules/advanced-content/work-with-reusable-field-schemas)
+[ Previous page ](/modules/advanced-content/work-with-reusable-field-schemas)
 3 of 11
-[ Mark complete and continue ](modules/advanced-content/think-about-filtering-with-taxonomies)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/advanced-content/personalize-widget-content)
-[](https://docs.kentico.com/modules/advanced-content/personalize-widget-content)[](https://docs.kentico.com/modules/advanced-content/personalize-widget-content)
+[ Mark complete and continue ](/modules/advanced-content/think-about-filtering-with-taxonomies)
+![]()
+[]()[]()

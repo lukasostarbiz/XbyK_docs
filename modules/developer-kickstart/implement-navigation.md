@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/developer-kickstart/implement-navigation
+scrape_date: 2026-01-22
+---
+
+Module: Xperience by Kentico Developer kickstart
+12 of 13 Pages
 # Implement navigation
-  * [ Copy page link ](modules/developer-kickstart/implement-navigation#) | [Get HelpService ID](modules/developer-kickstart/implement-navigation#)
-Core MVC 5
-
-
-[✖](modules/developer-kickstart/implement-navigation# "Close page link panel") [Copy to clipboard](modules/developer-kickstart/implement-navigation#)
 With the navigation content types in place, let’s use a view component to render the _Navigation menu_ that exists in the Content hub.
 ## Create view models
 Start by creating view models that correspond to the _Navigation item_ and _Navigation menu_ classes.
@@ -22,7 +24,7 @@ public class NavigationItemViewModel
 }
 ```
 
-You might remember that in the [page template step](modules/developer-kickstart/build-a-page-template#add-a-view-model-class), you defined a method that created a `LandingPageViewModel` based on a `LandingPage` object.
+You might remember that in the [page template step](/modules/developer-kickstart/build-a-page-template#add-a-view-model-class), you defined a method that created a `LandingPageViewModel` based on a `LandingPage` object.
 We need a similar method here to create a `NavigationItemViewModel` from a `NavigationItem`.
 You can retrieve the page’s URL simply by calling the `GetUrl` extension method of `IWebPageFieldsSource`, which every web page implements. Return `null` if the provided item is `null` or missing its target.
 C#
@@ -138,7 +140,7 @@ If you copy-paste the code above, you will see a couple of issues:
 
 We will fix both of these shortly.
 Add a private method to retrieve the menu.
-To query the content items, we will use the [ContentRetriever](documentation/developers-and-admins/api/content-item-api/content-retriever-api), as we did in [the earlier step](modules/developer-kickstart/build-a-page-template#query-the-landing-page). This time we’ll use it’s `RetrieveContent` method to get the whole menu structure, including it’s items, based on a provided menu codename.
+To query the content items, we will use the [ContentRetriever](/documentation/developers-and-admins/api/content-item-api/content-retriever-api), as we did in [the earlier step](/modules/developer-kickstart/build-a-page-template#query-the-landing-page). This time we’ll use it’s `RetrieveContent` method to get the whole menu structure, including it’s items, based on a provided menu codename.
 C#
 **NavigationMenuViewComponent.cs**
 Copy
@@ -234,19 +236,11 @@ Copy
 ```
 
 With all these elements in place, you should have a working navigation menu that looks something like this:
-[![Screen recording of working navigation](docsassets/guides/implement-navigation/working-navigation.gif)](https://docs.kentico.com/docsassets/guides/implement-navigation/working-navigation.gif)
+[![Screen recording of working navigation](/docsassets/guides/implement-navigation/working-navigation.gif)](/docsassets/guides/implement-navigation/working-navigation.gif)
 If you haven’t already, check out our [Kickstart repository](https://github.com/Kentico/xperience-by-kentico-kickstart) to see the complete implementation of the website we created together in this series. To run the project, follow the _README_ instructions.
 Continue to the next step for additional exercises and resources.
-[ Previous page ](modules/developer-kickstart/model-navigation)
+[ Previous page ](/modules/developer-kickstart/model-navigation)
 12 of 13
-[ Mark complete and continue ](modules/developer-kickstart/next-steps)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/developer-kickstart/implement-navigation)
-[](https://docs.kentico.com/modules/developer-kickstart/implement-navigation)[](https://docs.kentico.com/modules/developer-kickstart/implement-navigation)
+[ Mark complete and continue ](/modules/developer-kickstart/next-steps)
+![]()
+[]()[]()

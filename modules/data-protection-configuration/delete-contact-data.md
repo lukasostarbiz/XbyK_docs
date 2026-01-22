@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/data-protection-configuration/delete-contact-data
+scrape_date: 2026-01-22
+---
+
+Module: Data protection configuration
+5 of 6 Pages
 # Delete contact data (Right to be forgotten)
-  * [ Copy page link ](modules/data-protection-configuration/delete-contact-data#) | [Get HelpService ID](modules/data-protection-configuration/delete-contact-data#)
-Core MVC 5
-
-
-[✖](modules/data-protection-configuration/delete-contact-data# "Close page link panel") [Copy to clipboard](modules/data-protection-configuration/delete-contact-data#)
 Follow the steps below to comply when a customer requests that your company deletes their customer data.
   1. Navigate to the **Data protection** application.
   2. Open the **Right to be forgotten** tab.
@@ -27,16 +29,8 @@ To test this scenario on the [demo website](https://www.kentico.com/services/tra
 
 
 It’s common for developers to prepare a special page that allows your members to request getting this data automatically. Usually, this data is available within the member account profile or on the customer preference center. To learn what data the company has gathered about the user, they must sign in to their profile and verify their request, e.g., via email.
-[ Previous page ](modules/data-protection-configuration/send-user-information-collected)
+[ Previous page ](/modules/data-protection-configuration/send-user-information-collected)
 5 of 6
-[ Mark complete and continue ](modules/data-protection-configuration/recap-and-next-steps)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection-configuration/delete-contact-data)
-[](https://docs.kentico.com/modules/data-protection-configuration/delete-contact-data)[](https://docs.kentico.com/modules/data-protection-configuration/delete-contact-data)
+[ Mark complete and continue ](/modules/data-protection-configuration/recap-and-next-steps)
+![]()
+[]()[]()

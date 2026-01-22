@@ -1,18 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital marketing setup](/documentation/developers-and-admins/digital-marketing-setup)
+  * [Content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization)
+  * Develop personalization condition types 
+
+
 # Develop personalization condition types
-  * [ Copy page link ](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types#) | [Get HelpService ID](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
-After [developing widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) for Page Builder, you can enable content editors to personalize individual widgets. To set up personalization, you need to create the types of conditions based on which the widgets will be personalized.
+After [developing widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) for Page Builder, you can enable content editors to personalize individual widgets. To set up personalization, you need to create the types of conditions based on which the widgets will be personalized.
 The condition types may be of any kind or form, for example  _Current visitor belongs to contact group X_ , _Current visitor has recently bought product X_ , or  _Current date is between X and Y_. You can allow content editors to further adjust the conditions of specific widget variants by preparing properties and configuration dialogs for your condition types.
 **Contact tracking**
-We recommend setting up [tracking of contacts](documentation/developers-and-admins/digital-marketing-setup/contact-configuration) on your website. The tracking is required for most types of conditions that utilize Xperience digital marketing features and data.
+We recommend setting up [tracking of contacts](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration) on your website. The tracking is required for most types of conditions that utilize Xperience digital marketing features and data.
 **Example of condition type development**
-For a full code sample of a personalization condition type, see [Example - Personalization condition type](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type).
+For a full code sample of a personalization condition type, see [Example - Personalization condition type](/documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type).
 ## Create condition types
 Conditions types are designed as global components and therefore must be registered in the your project’s application root (not in an [Area](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/areas)). Registering condition types in Areas may lead to unexpected behavior.
 To define a new personalization condition type:
@@ -27,7 +34,7 @@ By default, the `ConditionType` base class contains the `VariantName` property t
 When transferring data to and from the configuration dialog, the system serializes objects of the condition type class into JSON format (using the _Newtonsoft.Json_ library).
 You can use the `Newtonsoft.Json.JsonIgnore` attribute to exclude properties from the serialized data (for example dynamically computed properties).
   4. Define the visual interface of the condition type’s configuration dialog:
-     * Decorate the specified properties using desired [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+     * Decorate the specified properties using desired [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
      * The attribute assigns and configures a form component, which is used as the input element for the given property.
 C#
 **Decorating condition type properties**
@@ -39,10 +46,10 @@ Copy
 public string ConsentCodeName { get; set; }
 ```
 
-  5. [Register](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types#register-condition-types) the condition type.
+  5. [Register](#register-condition-types) the condition type.
 
 
-[See a full example](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type) that demonstrates how to develop a basic condition type.
+[See a full example](/documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type) that demonstrates how to develop a basic condition type.
 Conditions of the given type work according to your implementation of the `Evaluate` method. The configuration dialog is generated automatically based on the editing components assigned to the class’s properties.
 ### Implement custom configuration dialogs
 Custom configuration dialogs for personalization condition types are based on MVC architecture, composed of Model, View, and Controller elements. These elements define a configuration form which allows users to submit values for the condition type’s properties. By taking full control over the implementation, you can make the configuration dialog look and behave exactly as you need.
@@ -166,4 +173,6 @@ using Kentico.PageBuilder.Web.Mvc.Personalization;
     Hint = "Enter the code name of a consent. The condition is fulfilled for visitors who have given an agreement with the given consent.")]
 ```
 
-Once the condition type is registered, editors can select it when [personalizing widgets](documentation/business-users/digital-marketing/widget-personalization) in a website channel application within the Xperience administration.
+Once the condition type is registered, editors can select it when [personalizing widgets](/documentation/business-users/digital-marketing/widget-personalization) in a website channel application within the Xperience administration.
+![]()
+[]()[]()

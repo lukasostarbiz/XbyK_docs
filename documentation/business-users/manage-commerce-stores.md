@@ -1,17 +1,22 @@
+---
+source: https://docs.kentico.com/documentation/business-users/manage-commerce-stores
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Business users](/documentation/business-users)
+  * Manage commerce stores 
+
+
 # Manage commerce stores
-  * [ Copy page link ](documentation/business-users/manage-commerce-stores#) | [Get HelpService ID](documentation/business-users/manage-commerce-stores#)
-Core MVC 5
-
-
-[✖](documentation/business-users/manage-commerce-stores# "Close page link panel") [Copy to clipboard](documentation/business-users/manage-commerce-stores#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 The digital commerce feature provides you with simple online stores where you can sell physical or digital products. It offers the essential tools, data structure, and actions needed to manage your shop and process orders.
 ## Manage products
-Due to the customizability of the Xperience by Kentico commerce feature, how you manage products depends on the implementation of your [product catalog](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog).
+Due to the customizability of the Xperience by Kentico commerce feature, how you manage products depends on the implementation of your [product catalog](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog).
 The following image shows a **sample** listing of products hosted in the content hub from the Dancing Goat sample site:
-[![Listing of products on the Dancing Goat](docsassets/documentation/manage-commerce-stores/DG_products_listing.png)](https://docs.kentico.com/docsassets/documentation/manage-commerce-stores/DG_products_listing.png)
+[![Listing of products on the Dancing Goat](/docsassets/documentation/manage-commerce-stores/DG_products_listing.png)](/docsassets/documentation/manage-commerce-stores/DG_products_listing.png)
 ## Manage customers
 The **Customers** application allows you to view customer details, and track orders made by customers.
   1. Navigate to the **Customers** application.
@@ -30,24 +35,24 @@ The **Orders** application allows users to list orders, view order details, chan
   3. Navigate to the **Ordered items** tab to view a list of products in the order.
 
 
-[![List of ordered items](docsassets/documentation/manage-commerce-stores/ordered_items.png)](https://docs.kentico.com/docsassets/documentation/manage-commerce-stores/ordered_items.png)
+[![List of ordered items](/docsassets/documentation/manage-commerce-stores/ordered_items.png)](/docsassets/documentation/manage-commerce-stores/ordered_items.png)
 ### View orders from specific customers
   1. Navigate to the **Customers** application.
   2. Select a customer whose orders you want to view.
   3. Navigate to the **Orders** tab to view a list of orders created by the selected customer.
 
 
-[![View orders of a customer](docsassets/documentation/manage-commerce-stores/customer_orders.png)](https://docs.kentico.com/docsassets/documentation/manage-commerce-stores/customer_orders.png)
+[![View orders of a customer](/docsassets/documentation/manage-commerce-stores/customer_orders.png)](/docsassets/documentation/manage-commerce-stores/customer_orders.png)
 ### Change order status
   1. Navigate to the **Orders** application.
   2. Find and select the order you want to modify. 
      * You can use the search interface or sort orders by status.
   3. Select **Update order status**.
   4. Select the new status to which you want to move the order and **Confirm** the changes. 
-     * Depending on your [commerce configuration](documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses), selected users may receive a notification that a new order was moved to the new status. Note that if you skip statuses (e.g., move an order from the initial to the final status while skipping all other statuses), the notification is only sent for the status to which you move the order, not for the intermediate statuses.
+     * Depending on your [commerce configuration](/documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses), selected users may receive a notification that a new order was moved to the new status. Note that if you skip statuses (e.g., move an order from the initial to the final status while skipping all other statuses), the notification is only sent for the status to which you move the order, not for the intermediate statuses.
 
 
-[![Order status interface with the Update order status button](docsassets/documentation/manage-commerce-stores/update_order_status.png)](https://docs.kentico.com/docsassets/documentation/manage-commerce-stores/update_order_status.png)
+[![Order status interface with the Update order status button](/docsassets/documentation/manage-commerce-stores/update_order_status.png)](/docsassets/documentation/manage-commerce-stores/update_order_status.png)
 You can now see the order in the listing with the new status.
 ## Manage promotions
 The **Promotions** application allows you to create and manage discounts for your store. Promotions can apply discounts to individual products or entire orders.
@@ -90,3 +95,7 @@ The status automatically updates based on the **Active from** and **Active to** 
   1. Open the **Promotions** application.
   2. Select the promotion you want to delete.
   3. Select **Delete** and confirm the action.
+
+
+![]()
+[]()[]()

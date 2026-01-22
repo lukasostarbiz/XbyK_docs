@@ -1,11 +1,17 @@
+---
+source: https://docs.kentico.com/guides/development/members/implement-member-registration
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Members](/guides/development/members)
+  * Implement a member registration widget 
+
+
 # Implement a member registration widget
-  * How-to| [ Copy page link ](guides/development/members/implement-member-registration#) | [Get HelpService ID](guides/development/members/implement-member-registration#)
-Core MVC 5
-
-
-[✖](guides/development/members/implement-member-registration# "Close page link panel") [Copy to clipboard](guides/development/members/implement-member-registration#)
-Many websites allow visitors to register and sign in for exclusive access to premium content. You can add this functionality to your website channels in Xperience by Kentico by implementing [Members](documentation/business-users/members) in your site.
-Let’s dive into the first step of this process, expanding upon the standard approach by creating a **reusable widget** that allows members to register via [Forms authentication](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication). It also includes an overview of how to apply the same approach to a [Sign-in widget](guides/development/members/implement-member-registration#apply-the-same-approach-to-authentication).
+Many websites allow visitors to register and sign in for exclusive access to premium content. You can add this functionality to your website channels in Xperience by Kentico by implementing [Members](/documentation/business-users/members) in your site.
+Let’s dive into the first step of this process, expanding upon the standard approach by creating a **reusable widget** that allows members to register via [Forms authentication](/documentation/developers-and-admins/development/registration-and-authentication/forms-authentication). It also includes an overview of how to apply the same approach to a [Sign-in widget](#apply-the-same-approach-to-authentication).
 Integrating the registration form into a widget requires extra complexity compared to using a standard routed MVC view.
 The registration widget will allow editors to do the following:
   * Easily link to a registration page from components like the _Page selector_ , _Combined content selector_ , and _Rich text editor_.
@@ -22,8 +28,8 @@ To see simpler examples using standard MVC routed views for membership functiona
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * Experience with [Widgets](guides/development/page-builder/build-simple-cta-widget).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * Experience with [Widgets](/guides/development/page-builder/build-simple-cta-widget).
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -41,10 +47,10 @@ For this guide’s example, imagine you have the following requirements for memb
   5. Editors can choose to display the form with only required fields, or to include optional fields.
 
 
-You can [extend the member class with custom fields](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) to handle the name order requirement.
-All of the requirements regarding editors’ control of the registration forms can be met by making the registration form a [widget](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder): editors can place the widget on Page Builder zones in landing pages and use widget properties to configure the labels and fields to display in the registration form.
+You can [extend the member class with custom fields](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) to handle the name order requirement.
+All of the requirements regarding editors’ control of the registration forms can be met by making the registration form a [widget](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder): editors can place the widget on Page Builder zones in landing pages and use widget properties to configure the labels and fields to display in the registration form.
 ## Extend the Member class
-To start, let’s [add custom fields](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) that allow members to configure the order of their full names. While we’re at it, we’ll also add a field to mirror the “favorite coffee” example from our [training guide about customizing contacts](guides/development/customizations-and-integrations/add-custom-contact-field).
+To start, let’s [add custom fields](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) that allow members to configure the order of their full names. While we’re at it, we’ll also add a field to mirror the “favorite coffee” example from our [training guide about customizing contacts](/guides/development/customizations-and-integrations/add-custom-contact-field).
 ### Define the module fields
 Navigate to the **Modules** application in Xperience, and edit the **Membership** module. Choose **Classes → Member → Database columns**. Add text fields for the given name, family name, and favorite coffee of your members, along with a boolean field to indicate if the family name should go first.
   * Given name 
@@ -73,7 +79,7 @@ Now, these custom columns exist in the database. You can read and manipulate the
 ### Adjust the UI
 While we can access our custom fields in code, they will not show up in the Xperience admin UI without further adjustment.
 After defining the fields in the **Modules** application, switch to the **UI forms** tab of the _Member_ class and click on the **Edit** form. On its **Fields** tab, add a **New field** for each of the database columns you created previously, defining appropriate captions and form components.
-[![Screenshot of the fields of the Member class’s ‘Edit’ UI form](docsassets/guides/implement-member-registration/MemberUIForm.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/MemberUIForm.png)
+[![Screenshot of the fields of the Member class’s ‘Edit’ UI form](/docsassets/guides/implement-member-registration/MemberUIForm.png)](/docsassets/guides/implement-member-registration/MemberUIForm.png)
 ### Extend the ApplicationUser class
 Xperience comes with a class called `ApplicationUser` out of the box, which ties the Xperience `MemberInfo` object to [.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity). However, this class is in an assembly and cannot be directly modified.
 To add our custom fields and any other functionality, we need to extend this class.
@@ -162,7 +168,7 @@ public static class MemberInfoExtensions
 ```
 
 ## Set up Identity
-Now, to enable .NET Identity, we need to [Configure registration and authentication](documentation/developers-and-admins/development/registration-and-authentication).
+Now, to enable .NET Identity, we need to [Configure registration and authentication](/documentation/developers-and-admins/development/registration-and-authentication).
 C#
 **Program.cs**
 Copy
@@ -247,15 +253,15 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 Make sure to register your service as **scoped** ; some crucial parts of .NET Identity are scoped services, and we’ll want to utilize them in our code.
 We’ll expand this service as needed throughout the guide, but for now let’s move on to the widget.
 ## Consider your region’s data protection laws
-Since Member objects in Xperience contain personally identifiable information about the humans they represent, real-life implementations of member registration may need to include a [consent](documentation/developers-and-admins/data-protection/consent-management) to store that data if your company does business in a region with laws governing data protection.
-It is likely that this consent will need to be separate and have distinct verbiage from consents related to contact tracking, such as the cookie consents from the [Data protection series](guides/development/data-protection).
-Managing consents alongside members is outside the scope of this example, but you can find information about working with consents in the Xperience by Kentico [documentation](documentation/developers-and-admins/data-protection/consent-development).
+Since Member objects in Xperience contain personally identifiable information about the humans they represent, real-life implementations of member registration may need to include a [consent](/documentation/developers-and-admins/data-protection/consent-management) to store that data if your company does business in a region with laws governing data protection.
+It is likely that this consent will need to be separate and have distinct verbiage from consents related to contact tracking, such as the cookie consents from the [Data protection series](/guides/development/data-protection).
+Managing consents alongside members is outside the scope of this example, but you can find information about working with consents in the Xperience by Kentico [documentation](/documentation/developers-and-admins/data-protection/consent-development).
 ## Craft the widget
 Let’s start the process of building our registration widget.
 In the _TrainingGuides.Web_ project, create a _~/Features/Membership/Widgets/Registration_ folder. This will contain the files relating to our registration widget.
 ### Define the widget properties
 When creating a widget, it’s helpful to start by considering what editors should be able to configure.
-According to our [requirements](guides/development/members/implement-member-registration#examine-the-requirements), editors need the ability to display a minimal registration form with only required fields, or a fully detailed form that includes optional fields. They also need to define the form’s labels.
+According to our [requirements](#examine-the-requirements), editors need the ability to display a minimal registration form with only required fields, or a fully detailed form that includes optional fields. They also need to define the form’s labels.
 Let’s say that a _minimal_ registration form contains only **username** , **email** , **password** , and **password confirmation** fields. Add boolean properties to indicate whether to show optional form fields, like those related to the member’s name and favorite coffee.
 C#
 **RegistrationWidgetProperties.cs**
@@ -390,7 +396,7 @@ Setting default values for the labels in the default language will save your edi
 ### Set up a view model
 Now let’s move on to creating a view model for the widget.
 We’re going to use .NET [Model validation](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation) to handle validation of this form, so we’ll need to include properties for the data that visitors will fill in alongside those for managing the widget’s configuration and display.
-It will be useful in other related features (e.g., [member profile page](guides/development/members/create-a-profile-page)) to have a view model class containing all of the custom fields we added to the _Member_ object type. Let’s create a dedicated class for that and have our widget view model inherit from it. Add a _Profile_ folder under _Membership_ and add analogs of the four custom member fields with data annotations.
+It will be useful in other related features (e.g., [member profile page](/guides/development/members/create-a-profile-page)) to have a view model class containing all of the custom fields we added to the _Member_ object type. Let’s create a dedicated class for that and have our widget view model inherit from it. Add a _Profile_ folder under _Membership_ and add analogs of the four custom member fields with data annotations.
 C#
 **GuidesMemberProfileViewModel.cs**
 Copy
@@ -634,7 +640,7 @@ public interface IHttpRequestService
 }
 ```
 
-If you’ve already completed the [multilingual guides](guides/development/multilingual), you might already have a different overload of `GetBaseUrlWithLanguage`.
+If you’ve already completed the [multilingual guides](/guides/development/multilingual), you might already have a different overload of `GetBaseUrlWithLanguage`.
 Optionally, you can modify the logic of the existing method with optional parameters, rather than creating an overload.
 C#
 **HttpRequestService.cs**
@@ -759,7 +765,7 @@ public class HttpRequestService : IHttpRequestService
 
 #### Hide the form from signed-in users
 The new `DisplayForm` property also needs new logic. We should hide the registration form from members who are already signed in, because they already have accounts, so we need a method in the membership service to determine if the current member is authenticated.
-Add a new method to the membership service that [retrieves the current member](documentation/developers-and-admins/development/registration-and-authentication#retrieve-the-currently-authenticated-member), then utilize it in a separate boolean method that returns `false` if no such member is found.
+Add a new method to the membership service that [retrieves the current member](/documentation/developers-and-admins/development/registration-and-authentication#retrieve-the-currently-authenticated-member), then utilize it in a separate boolean method that returns `false` if no such member is found.
 In some cases, it is useful for the editor to see restricted content in the administration even if no member is signed in. This is why our `IsMemberAuthenticated` method also returns `true` if running in Page Builder or Preview mode.
 C#
 **IMembershipService.cs**
@@ -1267,8 +1273,8 @@ internal static class EventIds
 Now you should be able to add the Registration widget to a page with a widget zone and configure its properties.
 Your browser does not support the video tag. 
 Once you save the registration widget on a page, you can navigate to the page as a visitor and submit the form. You’ll be able to see the member you created in the **Members** application of the Xperience administration interface.
-[![Screenshot of the registration form filled out on a page](docsassets/guides/implement-member-registration/RegistrationForm.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/RegistrationForm.png)
-[![Screenshot of the resulting member appearing in the member listing](docsassets/guides/implement-member-registration/MembersApp.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/MembersApp.png)
+[![Screenshot of the registration form filled out on a page](/docsassets/guides/implement-member-registration/RegistrationForm.png)](/docsassets/guides/implement-member-registration/RegistrationForm.png)
+[![Screenshot of the resulting member appearing in the member listing](/docsassets/guides/implement-member-registration/MembersApp.png)](/docsassets/guides/implement-member-registration/MembersApp.png)
 Although this guide does not describe how to set up email confirmation as part of the registration process, you can find a working example in the [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished)
 Specifically check out:
   * [The additional files in the Registration widget folder](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/Membership/Widgets/Registration)
@@ -1491,4 +1497,6 @@ You may find the following resources particularly helpful:
 
 
 ## What’s next?
-The [next guide in this series](guides/development/members/map-member-to-contact) will cover the process of creating and maintaining a relationship between members and contacts.
+The [next guide in this series](/guides/development/members/map-member-to-contact) will cover the process of creating and maintaining a relationship between members and contacts.
+![]()
+[]()[]()

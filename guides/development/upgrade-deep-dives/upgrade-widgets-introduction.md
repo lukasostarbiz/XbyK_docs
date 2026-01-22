@@ -1,25 +1,31 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/upgrade-widgets-introduction
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Upgrade widgets from Kentico Xperience 13 
+
+
 # Upgrade widgets from Kentico Xperience 13
-  * Concept| [ Copy page link ](guides/development/upgrade-deep-dives/upgrade-widgets-introduction#) | [Get HelpService ID](guides/development/upgrade-deep-dives/upgrade-widgets-introduction#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/upgrade-widgets-introduction# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/upgrade-widgets-introduction#)
-When you upgrade from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK), migrating widgets is one of the key elements you need to evaluate. The [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) helps you with [migrating the data](guides/architecture/upgrade-from-kx13/prep-for-upgrade-and-transfer-data#migrate-your-data). After transferring the data, you’ll still need to [update the widget code files](guides/architecture/upgrade-from-kx13/adjust-your-code-and-adapt#adjust-page-builder-components).
+When you upgrade from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK), migrating widgets is one of the key elements you need to evaluate. The [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) helps you with [migrating the data](/guides/architecture/upgrade-from-kx13/prep-for-upgrade-and-transfer-data#migrate-your-data). After transferring the data, you’ll still need to [update the widget code files](/guides/architecture/upgrade-from-kx13/adjust-your-code-and-adapt#adjust-page-builder-components).
 Both platforms are built on .NET, but the underlying architecture and APIs in XbyK have evolved to take advantage of modern .NET and .NET 8 features. How you migrate your widgets depends on your existing setup and what you want to achieve in the new environment.
 If your KX13 site is already built on .NET Core, the process is more straightforward because XbyK runs natively on .NET 8. Migrating from an MVC-based project is more complex, since you need to adapt MVC artifacts to their .NET Core equivalents.
 his material provides a conceptual overview of migrating widgets and explains the available options, including the requirements and limitations of each approach. It then covers how you can use the upgrade process to modernize your widgets and improve the editing experience in the new XbyK application.
 ## Understand data in widgets
-[Page Builder widgets](documentation/developers-and-admins/development/builders/page-builder) are reusable components that let content editors manage content and layout without writing code.
+[Page Builder widgets](/documentation/developers-and-admins/development/builders/page-builder) are reusable components that let content editors manage content and layout without writing code.
 Each widget stores its content and settings through widget properties, which define what data the widget holds and how it’s used. This data can come from multiple sources: content stored directly in the widget, references to items in the content tree or in custom tables, or even data provided through APIs from third-party systems. This flexibility allows editors to build and adjust pages quickly. However, it also means the structure of stored data varies from widget to widget.
-Widget implementation differs between two KX13 applications: the **Page Builder** within [Pages](13/managing-website-content/working-with-pages) and the [Email Builder](13/on-line-marketing-features/managing-your-on-line-marketing-features/email-marketing/composing-marketing-emails).
-While XbyK’s [Page Builder](guides/development/page-builder) leverages a similar technology stack as KX13’s and it is possible to migrate KX13 Page Builder content to XbyK, the XbyK [Email Builder](guides/development/email-marketing/email-builder-overview) employs a different architecture and widget development model.
-[XbyK email widgets](guides/development/email-marketing/create-an-email-widget-for-articles) are implemented as custom _Razor components_ that allow developers to use MJML markup or standard HTML for email design. The migration tool does not migrate KX13 emails or their content, nor does it support migrating form autoresponders from KX13. You will also need to **rebuild the Email Builder widgets from scratch** within XbyK.
+Widget implementation differs between two KX13 applications: the **Page Builder** within [Pages](/13/managing-website-content/working-with-pages) and the [Email Builder](/13/on-line-marketing-features/managing-your-on-line-marketing-features/email-marketing/composing-marketing-emails).
+While XbyK’s [Page Builder](/guides/development/page-builder) leverages a similar technology stack as KX13’s and it is possible to migrate KX13 Page Builder content to XbyK, the XbyK [Email Builder](/guides/development/email-marketing/email-builder-overview) employs a different architecture and widget development model.
+[XbyK email widgets](/guides/development/email-marketing/create-an-email-widget-for-articles) are implemented as custom _Razor components_ that allow developers to use MJML markup or standard HTML for email design. The migration tool does not migrate KX13 emails or their content, nor does it support migrating form autoresponders from KX13. You will also need to **rebuild the Email Builder widgets from scratch** within XbyK.
 Let’s focus on how you can upgrade Page Builder content to XbyK.
-Behind the scenes, Page Builder data, including widget properties, is stored in the [database fields](13/custom-development/working-with-pages-in-the-api/page-database-structure) as JSON objects (_CMS_Document_ table in KX13, and _CMS_ContentItemCommonData_ in XbyK). Widgets that reference other content store only the link (GUID) to that item, while widgets that hold their own content save the complete data in a serialized format. It’s common for widgets to combine these approaches, for example, storing a GUID for referenced content and in-UI adjustments, such as button labels in personalization, hyperlinks, color options, or deep-link anchors.
-The data in widget properties can rely on built-in KX13 UI form components, such as text inputs, checkboxes, or page or media file [selectors](13/developing-websites/page-builder-development/selectors-for-page-builder-components). However, many projects also include custom properties with custom editing components to meet unique requirements. Understanding both the data structure and the components used to manage it is essential when migrating or refactoring widgets, as it affects how you can migrate or adapt content during an upgrade to XbyK.
+Behind the scenes, Page Builder data, including widget properties, is stored in the [database fields](/13/custom-development/working-with-pages-in-the-api/page-database-structure) as JSON objects (_CMS_Document_ table in KX13, and _CMS_ContentItemCommonData_ in XbyK). Widgets that reference other content store only the link (GUID) to that item, while widgets that hold their own content save the complete data in a serialized format. It’s common for widgets to combine these approaches, for example, storing a GUID for referenced content and in-UI adjustments, such as button labels in personalization, hyperlinks, color options, or deep-link anchors.
+The data in widget properties can rely on built-in KX13 UI form components, such as text inputs, checkboxes, or page or media file [selectors](/13/developing-websites/page-builder-development/selectors-for-page-builder-components). However, many projects also include custom properties with custom editing components to meet unique requirements. Understanding both the data structure and the components used to manage it is essential when migrating or refactoring widgets, as it affects how you can migrate or adapt content during an upgrade to XbyK.
 ## Explore the options for migrating widgets
 Depending on your project’s complexity, available resources, and constraints, you can migrate widgets in three different ways.
-The _Kentico Migration Tool_ supports multiple migration paths for widgets. You can migrate widgets in _legacy mode_ or _map_ KX13 _widget properties_ to new [XbyK UI controls](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). You can also use the upgrade as an opportunity to update your content model, which requires _remodeling and adjusting your widgets_.
+The _Kentico Migration Tool_ supports multiple migration paths for widgets. You can migrate widgets in _legacy mode_ or _map_ KX13 _widget properties_ to new [XbyK UI controls](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). You can also use the upgrade as an opportunity to update your content model, which requires _remodeling and adjusting your widgets_.
 ### “Lift-and-shift” migration
 You can choose to migrate your widgets in **legacy mode**. This is a straightforward migration of your widgets from KX13 to Xperience by Kentico, keeping the data, widget properties, and their configuration intact, i.e., as they are in KX13.
 #### When to migrate in legacy mode
@@ -36,7 +42,7 @@ Transfer widgets and their content from KX13 to XbyK when:
 
 
 ### Map widget properties to new XbyK controls
-[Source instance API discovery](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#configuration) inspects your source instance during migration and maps built-in KX13 widget properties to the new platform. This approach produces native-like XbyK widgets and unifies the editing experience, especially if your XbyK project contains both migrated and newly built widgets. However, the underlying content model will remain the same, so editors will still not be able to fully take advantage of modern editing capabilities.
+[Source instance API discovery](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#configuration) inspects your source instance during migration and maps built-in KX13 widget properties to the new platform. This approach produces native-like XbyK widgets and unifies the editing experience, especially if your XbyK project contains both migrated and newly built widgets. However, the underlying content model will remain the same, so editors will still not be able to fully take advantage of modern editing capabilities.
 #### When to use source instance API discovery
 Source instance API discovery automatically maps KX13 widgets to XbyK during migration to unify the editing experience. Use it when:
   * Your widgets use only built-in editing components.
@@ -65,12 +71,12 @@ Typical widget modifications to consider during migration include:
 
 
 ## Migrating built-in widgets
-Built-in [system widgets](13/developing-websites/page-builder-development/reference-system-widgets), i.e., the **Form** and **Rich text** widgets, migrate with minimal effort. They can be good test cases to validate your migration process before tackling custom widgets.
+Built-in [system widgets](/13/developing-websites/page-builder-development/reference-system-widgets), i.e., the **Form** and **Rich text** widgets, migrate with minimal effort. They can be good test cases to validate your migration process before tackling custom widgets.
 ## Choosing the right approach to widget migration
 For most projects, at least API discovery is the recommended path. It migrates widget properties in native XbyK UI and makes the experience fresh from day one. **Combining API discovery with targeted adjustments can deliver the cleanest, most future-proof result for teams looking to modernize.**
 However, if you need a quick migration or your widgets include complex customizations, you can start in legacy mode and plan an incremental refactoring process.
 ## Customize widget migrations
-Not every widget has to or can be migrated to XbyK as-is from KX13. In many projects, you might want to customize the migration process to address adjustments to new features or handle unique widget types, non-standard properties, or data that doesn’t [map cleanly to XbyK](guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features).
+Not every widget has to or can be migrated to XbyK as-is from KX13. In many projects, you might want to customize the migration process to address adjustments to new features or handle unique widget types, non-standard properties, or data that doesn’t [map cleanly to XbyK](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features).
 The migration tool provides two key extension points for this:
   * **Custom widget migrations** give you control over how entire widgets are migrated.
   * **Custom widget property migrations** handle individual widget properties.
@@ -107,7 +113,7 @@ This approach is useful when:
   * You want to display the content in Page Builder with reusable content rather than maintain separate page types in the content tree.
 
 
-When you migrate pages as widgets, the tool can map page fields into widget properties and even handle child pages by converting their content into linked content items in the Content hub. This enables editors to compose their pages in a user-friendly UI and introduces new digital marketing options, such as [content personalization](documentation/developers-and-admins/digital-marketing-setup/content-personalization). It also fits into XbyK’s cleaner, more modern editing philosophy.
+When you migrate pages as widgets, the tool can map page fields into widget properties and even handle child pages by converting their content into linked content items in the Content hub. This enables editors to compose their pages in a user-friendly UI and introduces new digital marketing options, such as [content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization). It also fits into XbyK’s cleaner, more modern editing philosophy.
 ## Additional considerations for widget migration
 Beyond the basic migration paths and customizations, there are several areas you’ll need to review to make sure your migrated widgets work correctly in XbyK.
 ### Widget content personalization
@@ -120,14 +126,14 @@ All KX13 widgets rely on custom business logic to fetch and display data. Becaus
 
 ### Adjusting Page Builder components
 In combination with the Content hub, XbyK’s Page Builder brings a more flexible content management experience than KX13. However, there are some differences to be aware of:
-  * Custom or customized [editing components](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) based on KX13 frameworks need to be rewritten to fit the [technology stack](documentation/developers-and-admins/upgrade-to-xperience-by-kentico#technical-comparison).
+  * Custom or customized [editing components](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) based on KX13 frameworks need to be rewritten to fit the [technology stack](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico#technical-comparison).
   * Customizing the page structure and widget behavior might require adjusting zone and other restrictions you’ve had in the KX13 project to maintain consistent behavior.
   * Personalization conditions in KX13 that used controllers to render widget properties need to be updated in XbyK to work with the widget’s property model.
 
 
 Test your migrated widgets in real Page Builder scenarios to catch these differences early.
 ### Handling migrated assets
-Widgets that display images, files, or other media in KX13 need review. During the migration process, [attachments](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#attachments) and [media files](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#media-libraries) are converted to [content item assets](documentation/business-users/content-hub/content-item-assets). Ensure your widgets are updated to reference these new asset items rather than the legacy file paths.
+Widgets that display images, files, or other media in KX13 need review. During the migration process, [attachments](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#attachments) and [media files](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#media-libraries) are converted to [content item assets](/documentation/business-users/content-hub/content-item-assets). Ensure your widgets are updated to reference these new asset items rather than the legacy file paths.
 ## Summary and recommended practices
 Migrating widgets from Kentico Xperience 13 to Xperience by Kentico can range from a simple lift-and-shift to a full redesign of their functionality. Investigate the complexity of the KX13 project and stakeholder requirements to determine whether to move the widgets just to upgrade, or invest in modernizing your solution.
 Start investigating migration options with API discovery to get you the cleanest foundation. It creates native widgets in XbyK and lets your team immediately take advantage of the new UI. From there, you can decide which widgets need refining over time, which parts of the codebase need to be modernized, and where you can improve the editor experience with adjustments.
@@ -141,3 +147,5 @@ Start investigating migration options with API discovery to get you the cleanest
 
 Migrating Page Builder content with widgets, page templates, and other components, and adjusting these components to leverage new XbyK features makes a big difference for editors. With careful planning and testing, you can make the process smooth and prepare your solution to take full advantage of XbyK’s modern platform.
 If you have any questions or upgrade scenarios you’d like us to cover in the future, please let us know with the **Send us feedback** button at the bottom of this page.
+![]()
+[]()[]()

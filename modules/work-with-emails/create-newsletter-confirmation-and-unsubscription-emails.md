@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails
+scrape_date: 2026-01-22
+---
+
+Module: Work with emails
+9 of 14 Pages
 # Create newsletter confirmation and unsubscription emails
-  * [ Copy page link ](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails#) | [Get HelpService ID](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails#)
-Core MVC 5
-
-
-[✖](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails# "Close page link panel") [Copy to clipboard](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails#)
 Create an email where your visitors can either confirm their subscription to or unsubscribe from a newsletter.
 This sample shows how to create a newsletter subscription and unsubscription emails.
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site. In case want to follow along, we prepared content for you. And you can also watch [this detailed video](https://www.youtube.com/watch?v=uWkV4ALAitg&list=PL9RdJplq_ukam3poVr7YEt9_IcsRoRlsC).
@@ -34,16 +36,8 @@ _Thank you._
   4. **Publish** the email draft.
 
 
-[ Previous page ](modules/work-with-emails/create-a-marketing-email)
+[ Previous page ](/modules/work-with-emails/create-a-marketing-email)
 9 of 14
-[ Mark complete and continue ](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails)
-[](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails)[](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails)
+[ Mark complete and continue ](/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages)
+![]()
+[]()[]()

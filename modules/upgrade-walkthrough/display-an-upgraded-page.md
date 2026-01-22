@@ -1,13 +1,15 @@
+---
+source: https://docs.kentico.com/modules/upgrade-walkthrough/display-an-upgraded-page
+scrape_date: 2026-01-22
+---
+
+Module: Upgrading to Xperience by Kentico - Walkthrough
+5 of 6 Pages
 # Display an upgraded page with structured data and Page Builder functionality
-  * [ Copy page link ](modules/upgrade-walkthrough/display-an-upgraded-page#) | [Get HelpService ID](modules/upgrade-walkthrough/display-an-upgraded-page#)
-Core MVC 5
-
-
-[✖](modules/upgrade-walkthrough/display-an-upgraded-page# "Close page link panel") [Copy to clipboard](modules/upgrade-walkthrough/display-an-upgraded-page#)
 In this final step, we’ll cover the code adjustments needed to display the _Contacts_ page from the _Kentico Xperience 13_ version of the Dancing Goat in _Xperience by Kentico_ , including the structured _Contact_ and _Cafe_ data it displays, and the widget zone containing the system _Form_ widget.
 ## Look over the contacts page
 To start out, let’s take a look at the _Contacts_ page in KX13, located at the _/Contacts_ path.
-[![Contacts page with no form](docsassets/guides/display-an-upgraded-page/PageKX13.png)](https://docs.kentico.com/docsassets/guides/display-an-upgraded-page/PageKX13.png)
+[![Contacts page with no form](/docsassets/guides/display-an-upgraded-page/PageKX13.png)](/docsassets/guides/display-an-upgraded-page/PageKX13.png)
 It displays the contact information of the Dancing Goat company alongside a form widget. Then below, it shows a list of company cafes and a map.
 In order to recreate this page in Xperience by Kentico, we’ll need to handle all of these components.
 If you do not have a Google Maps API key, the map won’t render on your page.
@@ -212,12 +214,12 @@ public IEnumerable<Cafe> GetCompanyCafes(string nodeAliasPath, int count = 0)
 ...
 ```
 
-Our `ContentItemRetrieverService` class uses the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api), which has implicit caching functionality.
-Taking a look at the [data caching documentation](documentation/developers-and-admins/development/caching/data-caching) for XbyK, we can see that the formats for caching differ somewhat from the `IPageRetriever` in KX13.
+Our `ContentItemRetrieverService` class uses the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api), which has implicit caching functionality.
+Taking a look at the [data caching documentation](/documentation/developers-and-admins/development/caching/data-caching) for XbyK, we can see that the formats for caching differ somewhat from the `IPageRetriever` in KX13.
 Lets implement this functionality, including reusable utilities we can use across the service.
-If you query data using an API other than `ContentRetriever`, or require more advanced caching options, you can use `IProgressiveCache` for data caching. [data caching](documentation/developers-and-admins/development/caching/data-caching#cache-general-objects)
+If you query data using an API other than `ContentRetriever`, or require more advanced caching options, you can use `IProgressiveCache` for data caching. [data caching](/documentation/developers-and-admins/development/caching/data-caching#cache-general-objects)
 #### Add caching utility methods
-Copy the `IsCacheEnabled` example from the [data caching](documentation/developers-and-admins/development/caching/data-caching#preview-mode-and-caching) documentation.
+Copy the `IsCacheEnabled` example from the [data caching](/documentation/developers-and-admins/development/caching/data-caching#preview-mode-and-caching) documentation.
 C#
 **ContentItemRetrieverService.cs**
 Copy
@@ -487,7 +489,7 @@ public async Task<IEnumerable<T>> RetrieveWebPageChildrenByPath<T>(
 ```
 
 In the end, your `ContentItemRetrieverService` should look like this:
-[ContentItemRetrieverService.cs](docsassets/guides/display-an-upgraded-page/ContentItemRetrieverService.cs)
+[ContentItemRetrieverService.cs](/docsassets/guides/display-an-upgraded-page/ContentItemRetrieverService.cs)
 ### Register your service
 Now, let’s set up the service and register it.
 Create an interface with corresponding signatures for the public methods.
@@ -974,7 +976,7 @@ public class CafeViewModel
 ```
 
 **Handling legacy attachments and media files**
-By default, certain versions the migration tool create a field of the _Pages and reusable content_ data type for attachment fields on pages, with two allowed content types: _Legacy attachment_ and _Legacy media file_. During [code generation](documentation/developers-and-admins/api/generate-code-files-for-system-objects), this translates to a property of the type `IEnumerable<IContentItemFieldsSource>`.
+By default, certain versions the migration tool create a field of the _Pages and reusable content_ data type for attachment fields on pages, with two allowed content types: _Legacy attachment_ and _Legacy media file_. During [code generation](/documentation/developers-and-admins/api/generate-code-files-for-system-objects), this translates to a property of the type `IEnumerable<IContentItemFieldsSource>`.
 In this case, we know the field will _always hold attachments_ , so there are two potential ways to handle this:
 First, you can **cast** the photo field into an attachment, as we did in this code sample.
 The other is to remove _Legacy media file_ as an allowed content type in the Xperience UI and **re-generate code files**. Then, the property will be strongly-typed and will not need casting. This option is more robust, but requires extra steps, so we opted for the quicker alternative in this walkthrough.
@@ -1000,7 +1002,7 @@ The Contacts page in the KX13 Dancing Goat is rendered by the _~/Views/Contacts/
 #### Contacts view
 Copy this view into the same location within the _DancingGoat.Web_ project in your Xperience by Kentico solution.
 Then copy _~/Views/Shared/_GoogleMaps.cshtml_ from KX13 into the corresponding folder in XbyK’s _DancingGoat.Web_ project. This partial view is rendered by the Index view, and can be left unaltered.
-As for the Index view, thanks to the _ViewStart_ and _ViewImports_ files we set up in [the global code guide](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#shared-views), only small changes are necessary. Simply adjust the allowed widgets to only include the form widget’s identifier, as we have not migrated the other widgets in this example.
+As for the Index view, thanks to the _ViewStart_ and _ViewImports_ files we set up in [the global code guide](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#shared-views), only small changes are necessary. Simply adjust the allowed widgets to only include the form widget’s identifier, as we have not migrated the other widgets in this example.
 cshtml
 **Index.cshtml**
 Copy
@@ -1070,7 +1072,7 @@ Copy
 #### Layout view
 With our standard view ready, let’s double-check that we have a layout view to wrap it.
 You copied the __Layout.cshtml_ file from the KX13 site in the previous part of this walkthrough, and modified it to get around some compiler errors. If it’s giving you trouble, make sure it looks something like this:
-[_Layout.cshtml](docsassets/guides/display-an-upgraded-page/_Layout.cshtml)
+[_Layout.cshtml](/docsassets/guides/display-an-upgraded-page/_Layout.cshtml)
 ### Controller
 The `ContactsController` class in the KX13 Dancing Goat uses the repositories and `GetViewModel` methods from earlier to gather the necessary data for the Contacts page.
 Copy it to the _~/Controllers/_ folder in your Xperience by Kentico solution. Then adjust the private methods to handle the asynchronous nature of our new repository methods, and to better handle `null` values.
@@ -1152,11 +1154,11 @@ public class ContactsController : Controller
 
 ### Check your progress
 Try running the site in debug mode. We haven’t brought over any of the home page code, so you’ll see an error when it loads, but if you visit the _/Contacts_ path, you should see something like this:
-[![Contacts page with no form](docsassets/guides/display-an-upgraded-page/PageWithNoSection.png)](https://docs.kentico.com/docsassets/guides/display-an-upgraded-page/PageWithNoSection.png)
+[![Contacts page with no form](/docsassets/guides/display-an-upgraded-page/PageWithNoSection.png)](/docsassets/guides/display-an-upgraded-page/PageWithNoSection.png)
 If you’re seeing an error that the application cannot find the index view, you can either adjust the registration attribute to point to where you’ve put your _Index.cshtml_ file, or move the file to the location referenced by the error.
 ### Page Builder sections
 If you look at the the Contacts page in KX13, you’ll notice that it holds a form widget that’s missing from the XbyK version.
-In order to display this form widget, we’ll need to bring over the [Page Builder section](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) that the widget lives in.
+In order to display this form widget, we’ll need to bring over the [Page Builder section](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) that the widget lives in.
 From the _~/Components/Sections/_ folder of the KX13 Dancing Goat project, copy the **__DancingGoat_SingleColumnSection.cshtml_** and **_ThemeSectionProperties.cs_** files into a new _~/Components/Sections/_ folder in the _DancingGoat.Web_ project of your XbyK solution. We don’t need to change either of these files.
 C#
 **_DancingGoat_SingleColumnSection.cshtml**
@@ -1197,7 +1199,7 @@ namespace DancingGoat.Sections
 }
 ```
 
-Now, in the _ComponentIdentifiers.cs_ file that you [copied earlier](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#identifiers), un-comment the `SINGLE_COLUMN_SECTION` constant.
+Now, in the _ComponentIdentifiers.cs_ file that you [copied earlier](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#identifiers), un-comment the `SINGLE_COLUMN_SECTION` constant.
 Then copy _PageBuilderComponentRegister.cs_ from the _~/Components/_ folder in KX13 into the corresponding folder in XbyK, and comment out everything except for the `RegisterSection` attribute that registers the single column section.
 C#
 **ComponentIdentifiers.cs**
@@ -1257,17 +1259,9 @@ builder.Services.AddKentico(features =>
 
 ### See the result
 Now restart the site. Navigating to the _/Contacts_ page, you should see the “Send us a message” form now correctly displayed.
-[![Contacts page with no form](docsassets/guides/display-an-upgraded-page/PageWithSection.png)](https://docs.kentico.com/docsassets/guides/display-an-upgraded-page/PageWithSection.png)
-[ Previous page ](modules/upgrade-walkthrough/adjust-global-code)
+[![Contacts page with no form](/docsassets/guides/display-an-upgraded-page/PageWithSection.png)](/docsassets/guides/display-an-upgraded-page/PageWithSection.png)
+[ Previous page ](/modules/upgrade-walkthrough/adjust-global-code)
 5 of 6
-[ Mark complete and continue ](modules/upgrade-walkthrough/conclusion)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/upgrade-walkthrough/display-an-upgraded-page)
-[](https://docs.kentico.com/modules/upgrade-walkthrough/display-an-upgraded-page)[](https://docs.kentico.com/modules/upgrade-walkthrough/display-an-upgraded-page)
+[ Mark complete and continue ](/modules/upgrade-walkthrough/conclusion)
+![]()
+[]()[]()

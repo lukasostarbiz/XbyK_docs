@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/members/set-up-restricted-pages
+scrape_date: 2026-01-22
+---
+
+Module: Members
+9 of 12 Pages
 # Set up restricted pages
-  * [ Copy page link ](modules/members/set-up-restricted-pages#) | [Get HelpService ID](modules/members/set-up-restricted-pages#)
-Core MVC 5
-
-
-[✖](modules/members/set-up-restricted-pages# "Close page link panel") [Copy to clipboard](modules/members/set-up-restricted-pages#)
 When a business decides to include members in their project, they typically have some kind of exclusive content that only members should be able to see.
 As a result, developers must ensure that only signed-in members can see certain content.
 Luckily, Xperience and .NET Identity both include functionality to facilitate this process.
@@ -14,18 +16,18 @@ In the Xperience admin UI, open a _website channel_ where you want to secure a p
 Then, select the page you want to secure in the content tree, and switch to the **Properties** tab.
 Expand the **Membership** section and tick the box to require authentication, before clicking to publish the change.
 For this example, choose one of the article pages under the **News and articles** page of the **Training guides pages** channel.
-Depending on whether you’ve completed the [advanced content guides](guides/development/advanced-content), some articles might not work. Make sure you choose one that renders properly.
-[![Screenshot of the membership properties of a page](docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)
+Depending on whether you’ve completed the [advanced content guides](/guides/development/advanced-content), some articles might not work. Make sure you choose one that renders properly.
+[![Screenshot of the membership properties of a page](/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)](/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)
 ### Restrict a reusable item in the Content hub
 In the **Content hub** , edit the item you want to secure.
 Select the **Properties** tab and tick the box to require authentication under the **Security** heading.
 For this example, choose one of the reusable articles referenced by a page under the **News and articles** page of the **Training guides pages** channel.
 Make sure it’s from a page that renders properly, and is **NOT** associated with the page you chose in the previous section. **DO NOT** secure the page that references this reusable item, only secure the reusable item itself.
-[![Screenshot of the security properties of a reusable content item](docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)
+[![Screenshot of the security properties of a reusable content item](/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)](/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)
 ## Handle the 403 HTTP status code
 The _403 Forbidden_ error code is used in web development to indicate that someone does not have access to a resource.
 Both Xperience and .NET Identity follow this convention in ways that are relevant to our scenario:
-  * Xperience’s [Content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing) returns this status code when a secured page is requested by an unauthenticated visitor.
+  * Xperience’s [Content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing) returns this status code when a secured page is requested by an unauthenticated visitor.
   * .NET Identity offers [configuration](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-9.0#cookie-settings) to redirect requests that return this status code to a certain path, such as a sign-in page.
 
 
@@ -200,16 +202,8 @@ Now, if you set the _About conifers_ page to require authentication earlier, you
 Your browser does not support the video tag. 
 You’ll notice that the secured page correctly redirects to the _Sign in_ page, but once the member authenticates, the form **DOES NOT** send them to the _return URL_.
 We’ll have to make some changes for that to work.
-[ Previous page ](modules/members/create-profile-page)
+[ Previous page ](/modules/members/create-profile-page)
 9 of 12
-[ Mark complete and continue ](modules/members/expand-restricted-content-and-sign-in-functionality)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/set-up-restricted-pages)
-[](https://docs.kentico.com/modules/members/set-up-restricted-pages)[](https://docs.kentico.com/modules/members/set-up-restricted-pages)
+[ Mark complete and continue ](/modules/members/expand-restricted-content-and-sign-in-functionality)
+![]()
+[]()[]()

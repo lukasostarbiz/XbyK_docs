@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/developer-kickstart/model-navigation
+scrape_date: 2026-01-22
+---
+
+Module: Xperience by Kentico Developer kickstart
+11 of 13 Pages
 # Model navigation
-  * [ Copy page link ](modules/developer-kickstart/model-navigation#) | [Get HelpService ID](modules/developer-kickstart/model-navigation#)
-Core MVC 5
-
-
-[✖](modules/developer-kickstart/model-navigation# "Close page link panel") [Copy to clipboard](modules/developer-kickstart/model-navigation#)
 Let’s create a content model that will allow your editors to be in control of the website’s main navigation.
 We’ll create two content types– one to represent a menu, and one to represent the individual items it contains. The editors can manage these menus in the Content hub to decide what the menu includes.
 ## Define the navigation item type
 Start with the content type that represents an individual item in the menu. It needs a title to hold the text of the link, and a target to choose which page the link points to.
-Open the **Content types** application and define a new reusable type. The process will be the same as when you created the _Slogan_ type [earlier](modules/developer-kickstart/create-a-reusable-content-type), but you should use these values instead:
+Open the **Content types** application and define a new reusable type. The process will be the same as when you created the _Slogan_ type [earlier](/modules/developer-kickstart/create-a-reusable-content-type), but you should use these values instead:
   * **General**
     * **Content type name:** Navigation item
     * **Namespace:** Kickstart
@@ -37,7 +39,7 @@ Open the **Content types** application and define a new reusable type. The proce
 
 ## Create the menu type
 Next, you need another reusable content type to represent the menu as a whole.
-Most importantly, it should have a field for referencing the items it contains, much like the _Landing page_ referenced a _Slogan_ in the [earlier step](modules/developer-kickstart/define-a-page-content-type).
+Most importantly, it should have a field for referencing the items it contains, much like the _Landing page_ referenced a _Slogan_ in the [earlier step](/modules/developer-kickstart/define-a-page-content-type).
 Additionally, it should have a _Display name_ and _Code name_ in case there are multiple menus that need to be handled in code or displayed in a list.
 Define a new content type with the following values:
   * **General**
@@ -73,9 +75,9 @@ Define a new content type with the following values:
 
 
 Now, the list in your **Content types** application should look like this:
-[![Screenshot of content types listing](docsassets/guides/model-navigation/content-types-list.png)](https://docs.kentico.com/docsassets/guides/model-navigation/content-types-list.png)
+[![Screenshot of content types listing](/docsassets/guides/model-navigation/content-types-list.png)](/docsassets/guides/model-navigation/content-types-list.png)
 ## Generate the code
-As with the _Slogan_ type [earlier](modules/developer-kickstart/create-a-reusable-content-type#generate-the-class), open a command window in the _Kickstart.Web_ directory and generate code files for the _Navigation item_ and _Navigation menu_ content types.
+As with the _Slogan_ type [earlier](/modules/developer-kickstart/create-a-reusable-content-type#generate-the-class), open a command window in the _Kickstart.Web_ directory and generate code files for the _Navigation item_ and _Navigation menu_ content types.
 CMD
 Copy
 ```
@@ -106,21 +108,13 @@ Then, under **Items** click **Create new** to define two items corresponding to 
      * **Target:** Contact us
 
 
-Make sure to publish each item, either individually or through [cascade publishing](documentation/business-users/content-hub/content-items#cascade-publishing).
+Make sure to publish each item, either individually or through [cascade publishing](/documentation/business-users/content-hub/content-items#cascade-publishing).
 Your browser does not support the video tag. 
 At this point, your items in the Content hub should look like this:
-[![Screenshot of Content hub ‘All items’ listing](docsassets/guides/model-navigation/content-hub-list.png)](https://docs.kentico.com/docsassets/guides/model-navigation/content-hub-list.png)
+[![Screenshot of Content hub ‘All items’ listing](/docsassets/guides/model-navigation/content-hub-list.png)](/docsassets/guides/model-navigation/content-hub-list.png)
 Keep following along to see how to render this newly-defined menu on your website!
-[ Previous page ](modules/developer-kickstart/add-contact-us-page)
+[ Previous page ](/modules/developer-kickstart/add-contact-us-page)
 11 of 13
-[ Mark complete and continue ](modules/developer-kickstart/implement-navigation)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/developer-kickstart/model-navigation)
-[](https://docs.kentico.com/modules/developer-kickstart/model-navigation)[](https://docs.kentico.com/modules/developer-kickstart/model-navigation)
+[ Mark complete and continue ](/modules/developer-kickstart/implement-navigation)
+![]()
+[]()[]()

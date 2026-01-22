@@ -1,17 +1,26 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Page Builder](/documentation/developers-and-admins/development/builders/page-builder)
+  * [Sections for Page Builder](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder)
+  * Section properties 
+
+
 # Section properties
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#)
-When developing [Page Builder sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), you can define properties that allow content editors to adjust the appearance or behavior of the sections in the administration interface. Users then interact with the section properties through section configuration dialogs.
+When developing [Page Builder sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), you can define properties that allow content editors to adjust the appearance or behavior of the sections in the administration interface. Users then interact with the section properties through section configuration dialogs.
 Use the following process to develop properties for a section:
-  1. [Create a model class that defines the section properties](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#create-property-models)
-  2. [Define the configuration dialog to allow content editors to modify the properties](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#define-the-configuration-dialog)
-  3. [Handle the properties in the section’s code](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#handle-properties-in-section-code)
+  1. [Create a model class that defines the section properties](#create-property-models)
+  2. [Define the configuration dialog to allow content editors to modify the properties](#define-the-configuration-dialog)
+  3. [Handle the properties in the section’s code](#handle-properties-in-section-code)
 
 
-See the [Example](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder/section-properties#example---develop-a-section-with-a-configurable-property) on this page for a scenario with full code samples.
+See the [Example](#example---develop-a-section-with-a-configurable-property) on this page for a scenario with full code samples.
 ## Create property models
 The properties of a section must be defined within a model class that implements the `ISectionProperties` interface (available in the `Kentico.PageBuilder.Web.Mvc` namespace).
 Specify each section property by creating a corresponding property in the model class. You can also set default values for the properties.
@@ -29,9 +38,9 @@ public class CustomSectionProperties : ISectionProperties
 You can use the `Newtonsoft.Json.JsonIgnore` attribute to exclude dynamically computed section properties from database serialization.
 We recommend storing section property models in a dedicated _< SectionName>_ folder together with other files required by the section.
 ## Define the configuration dialog
-The configuration dialog is a simple way to allow content editors to set values for section properties. In the property model class, you need to define editing form components for section properties which you want to make editable in the configuration dialog. You can use the system’s [default form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) or develop [custom form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
+The configuration dialog is a simple way to allow content editors to set values for section properties. In the property model class, you need to define editing form components for section properties which you want to make editable in the configuration dialog. You can use the system’s [default form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) or develop [custom form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components).
   1. Edit the section’s property model class in your live site project.
-  2. Define the visual interface of the configuration dialog by assigning appropriate [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) to the configuration properties.
+  2. Define the visual interface of the configuration dialog by assigning appropriate [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) to the configuration properties.
 C#
 **Example - Setting an editing component**
 Copy
@@ -42,13 +51,13 @@ public string Color { get; set; } = "#FFF";
 
 
 
-Users can now click the **Configure** ([working with sections in the administration interface](documentation/business-users/website-content/widgets-and-page-builder). This opens the section properties dialog, and the configured property values affect the appearance and functionality of the section on the live site.
+Users can now click the **Configure** ([working with sections in the administration interface](/documentation/business-users/website-content/widgets-and-page-builder). This opens the section properties dialog, and the configured property values affect the appearance and functionality of the section on the live site.
 **Custom editing components with links to content items**
-If you decorate any section property with a [custom form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) that allows users to add links to content items (other than the default [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) and [rich text editor](documentation/business-users/rich-text-editor) ), you need to create a [custom reference extractor](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-reference-extractors) in order to enable [usage tracking](documentation/business-users/content-hub/content-items#track-usage-of-content-items) in the property.
+If you decorate any section property with a [custom form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) that allows users to add links to content items (other than the default [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) and [rich text editor](/documentation/business-users/rich-text-editor) ), you need to create a [custom reference extractor](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-reference-extractors) in order to enable [usage tracking](/documentation/business-users/content-hub/content-items#track-usage-of-content-items) in the property.
 **Advanced property options**
-You can add dynamic [visibility conditions and validation](documentation/developers-and-admins/development/builders/builder-component-properties-visibility-and-validation) that restrict how and when properties are displayed in the section configuration dialog.
+You can add dynamic [visibility conditions and validation](/documentation/developers-and-admins/development/builders/builder-component-properties-visibility-and-validation) that restrict how and when properties are displayed in the section configuration dialog.
 ## Handle properties in section code
-In order for properties to have an effect on a section’s appearance or functionality, you need to retrieve the property values and adjust the section’s output code or logic correspondingly. The required steps depend on the development approach used to create the section (see [Sections for Page Builder](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) for more information).
+In order for properties to have an effect on a section’s appearance or functionality, you need to retrieve the property values and adjust the section’s output code or logic correspondingly. The required steps depend on the development approach used to create the section (see [Sections for Page Builder](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) for more information).
 ### Basic sections
 For basic sections that consist only of a partial view file and a properties class, handle the property values in the section’s partial view.
 The view must use the generic `ComponentViewModel<TPropertyModel>` class as its model, with the appropriate property model class as the generic type parameter. The system ensures that the property values configured for the currently processed section are passed to the view. Retrieve the property values from the model’s Properties member, which returns an object of the specified property model class.
@@ -88,7 +97,7 @@ var propertyValue = sectionProperties.Properties.BackgroundColor;
 You can then adjust the flow of your code based on the values of individual section properties, or pass them to the section’s view using an appropriate view model.
 Do not directly pass the property model to your section views. We strongly recommend creating a separate view model class, which you can then use to pass data to the section view.
 ## Access section properties in POST actions
-Basic POST requests do not by default contain section properties data. To access the properties of a section during POST actions (in the controller class handling POST requests), you first need to include the properties into the data submitted by the corresponding HTML form in the section’s output. Call the `Html.Kentico().ComponentPropertiesData` extension method (or its [Tag Helper](documentation/developers-and-admins/development/reference-tag-helpers) equivalent) within the given form tag in your section view.
+Basic POST requests do not by default contain section properties data. To access the properties of a section during POST actions (in the controller class handling POST requests), you first need to include the properties into the data submitted by the corresponding HTML form in the section’s output. Call the `Html.Kentico().ComponentPropertiesData` extension method (or its [Tag Helper](/documentation/developers-and-admins/development/reference-tag-helpers) equivalent) within the given form tag in your section view.
 cshtml
 **Example**
 Copy
@@ -120,7 +129,7 @@ MySectionProperties properties = componentPropertiesRetriever.Retrieve<MySection
 ```
 
 ## Example - Develop a section with a configurable property
-The following section will guide you through a step-by-step process of developing a simple [Page Builder section](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) with a configurable property.
+The following section will guide you through a step-by-step process of developing a simple [Page Builder section](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) with a configurable property.
 When finished, the section is displayed with a color background of your choice. The color is set via a section property and can be modified through a section configuration dialog. The color can be specified in any text format that is accepted by the [CSS background-color property](https://www.w3schools.com/cssref/pr_background-color.asp) (e.g. a HEX or RGB value).
 ### Property model
 Create a properties model **CustomSectionProperties.cs** in the _~/Components/PageBuilder/Sections/CustomSection_ folder:
@@ -169,3 +178,6 @@ Copy
                            customViewName: "~/Components/PageBuilder/Sections/CustomSection/_CustomSection.cshtml",
                            IconClass = "icon-square")]
 ```
+
+![]()
+[]()[]()

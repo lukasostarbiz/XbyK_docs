@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/guides/development/advanced-content/filter-content-based-on-taxonomies
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Advanced content](/guides/development/advanced-content)
+  * Filter content with taxonomies and reusable field schemas 
+
+
 # Filter content with taxonomies and reusable field schemas
-  * Tutorial| [ Copy page link ](guides/development/advanced-content/filter-content-based-on-taxonomies#) | [Get HelpService ID](guides/development/advanced-content/filter-content-based-on-taxonomies#)
-Core MVC 5
-
-
-[✖](guides/development/advanced-content/filter-content-based-on-taxonomies# "Close page link panel") [Copy to clipboard](guides/development/advanced-content/filter-content-based-on-taxonomies#)
-[Taxonomies](documentation/developers-and-admins/configuration/taxonomies) in Xperience by Kentico provide a powerful tool for your customers to categorize and organize content.
+[Taxonomies](/documentation/developers-and-admins/configuration/taxonomies) in Xperience by Kentico provide a powerful tool for your customers to categorize and organize content.
 Each taxonomy is a _group of related tags_ (e.g., PC features: external GPU, disc drive, tower size…). Content editors assign these tags to content items with a field allowing the given taxonomy. Then they can, for example, configure a widget to display a list of content items with a specific set of tags.
 Let’s empower your content editors to do just that - filter content items by taxonomy tags in a widget listing.
 In the process, we’ll cover how you can easily query items of different content types as long as they share a reusable field schema. Let’s dive in!
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Basic experience with [Page Builder widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) and [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas).
+  * Basic experience with [Page Builder widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) and [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
 
 
 **Code samples**
@@ -22,24 +28,24 @@ The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guide
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Consider the scenario
-Earlier in this series, we explored reusable field schemas through the lens of content model evolution. You have adjusted your project to work with [two new Article content types](guides/development/advanced-content/work-with-reusable-field-schemas#consider-the-scenario) that share an _Article schema_ , alongside with a deprecated one.
+Earlier in this series, we explored reusable field schemas through the lens of content model evolution. You have adjusted your project to work with [two new Article content types](/guides/development/advanced-content/work-with-reusable-field-schemas#consider-the-scenario) that share an _Article schema_ , alongside with a deprecated one.
 Perhaps you recall that when you added the _Article list_ widget to your _Home_ page to check your progress and selected a parent page from the content tree, the widget rendered articles of all content types, both old and new.
 Now imagine that your customer’s content editors want more control. They’re asking for the ability to filter articles in the widget by specific tags, so they can display only the articles that match the categories they’re interested in.
 Your browser does not support the video tag. 
 ## Examine the current state
 Take a look at the _Article schema_ in Xperience administration. Notice the _ArticleSchemaCategory_ field with the **Taxonomy** data type. This field allows editors to assign one or more tags from the _Article category_ taxonomy to any content item implementing this schema.
-[![Taxonomy field in the Article schema in Xperience administration](docsassets/guides/filter-content-based-on-taxonomies/taxonomy-field.png)](https://docs.kentico.com/docsassets/guides/filter-content-based-on-taxonomies/taxonomy-field.png)
+[![Taxonomy field in the Article schema in Xperience administration](/docsassets/guides/filter-content-based-on-taxonomies/taxonomy-field.png)](/docsassets/guides/filter-content-based-on-taxonomies/taxonomy-field.png)
 The _Article category_ taxonomy already exists in our project and includes two tags: **Animals** and **Plants**. You can find it in the **Taxonomies** application under the **Configuration** category.
-[![Article category taxonomy in the administration interface](docsassets/guides/filter-content-based-on-taxonomies/article-category-taxonomy.png)](https://docs.kentico.com/docsassets/guides/filter-content-based-on-taxonomies/article-category-taxonomy.png)
+[![Article category taxonomy in the administration interface](/docsassets/guides/filter-content-based-on-taxonomies/article-category-taxonomy.png)](/docsassets/guides/filter-content-based-on-taxonomies/article-category-taxonomy.png)
 When you examine any of the _Article (general)_ or _Article (interview)_ items in the **Content hub** , you’ll see they all have tags or an option to add tags in the **Category** field.
 ## Implement the filtering
 Now, we can implement filtering based on the _Article category_ taxonomy.
 ### Add new widget property
-First, let’s add a [tag selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#tag-selector) to the widget UI to so that editors can select the desired tags.
+First, let’s add a [tag selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#tag-selector) to the widget UI to so that editors can select the desired tags.
 Find the definition of the [Article list widget properties](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Articles/Widgets/ArticleList/ArticleListWidgetProperties.cs) in the Training guides repository.
 Add a new `IEnumerable<TagReference>` property called `Tags` between the existing `ContentTreeSection` and `TopN`. Decorate the property with `TagSelectorComponent` attribute.
 Specify allowed taxonomy passing our taxonomy code name, `ArticleCategory`, as the first parameter.
-To refresh your memory on defining widget properties revisit our [Build a simple call-to-action widget](guides/development/page-builder/build-simple-cta-widget#define-widget-properties) guide.
+To refresh your memory on defining widget properties revisit our [Build a simple call-to-action widget](/guides/development/page-builder/build-simple-cta-widget#define-widget-properties) guide.
 C#
 **ArticleListWidgetProperties.cs**
 Copy
@@ -160,7 +166,7 @@ using CMS.ContentEngine;
 
 Now there is one issue we need to solve:
 Our widget expects **Article page** content items to construct its view model. However, the property holding our taxonomy tags is on the reusable content item linked by the page.
-Because of the current limitations of the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api), we will do this in two steps:
+Because of the current limitations of the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api), we will do this in two steps:
   1. Retrieve the IDs of all reusable content items that implement **Article schema** and contain the specified tags.
   2. Retrieve **Article page** content items on the specified path that link these reusable items.
 
@@ -168,10 +174,10 @@ Because of the current limitations of the [ContentRetriever API](documentation/d
 ### Implement the service methods
 Let’s go implement these service methods in our [ContentItemRetrieverService.cs file](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs) .
 #### Retrieve reusable content items by schema and tags
-The ContentRetriever API has a [`RetrieveContentOfReusableSchemas` extension method](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-sharing-reusable-field-schema) that is exactly suited for our scenario.
+The ContentRetriever API has a [`RetrieveContentOfReusableSchemas` extension method](/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-sharing-reusable-field-schema) that is exactly suited for our scenario.
 We will utilize it to retrieve the reusable content items that contain:
   * Our _Article schema_ , passing in the schema codename as a parameter (`schemaName`)
-  * GUIDs of specific tags, using the [WhereContainsTags](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#wherecontainstags) extension method.
+  * GUIDs of specific tags, using the [WhereContainsTags](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#wherecontainstags) extension method.
 
 
 The data we need to perform this query will become additional method parameters:
@@ -343,7 +349,7 @@ public class ContentItemRetrieverService : IContentItemRetrieverService
 ```
 
 Last but not least, implement a new public method that retrieves pages from a given path which link to the specified content items. This method needs two new parameters beyond the existing path and depth: the **code name of the reference field** and the **IEnumerable of content item IDs**.
-Call our new **private** `RetrieveWebPageChildrenByPath` method and pass in custom query configuration - an anonymous function calling the [Linking](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#linking) extension method.
+Call our new **private** `RetrieveWebPageChildrenByPath` method and pass in custom query configuration - an anonymous function calling the [Linking](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#linking) extension method.
 C#
 **ContentItemRetrieverService.cs**
 Copy
@@ -463,6 +469,8 @@ Your browser does not support the video tag.
 Find the complete and working implementation of this example in the [finished branch of the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) . If you are experiencing any issues or errors, double-check that your references, methods, parameters and `using` directives match the ones in the repo.
 ## Additional materials
 So far in this series, we have explored reusable field schemas and taxonomies in the context of content model evolution using the **expand and contract approach**.
-We have talked mostly about the _‘expand’_ part, adjusting your application to work with both the new and old content types. The next step is to _‘contract’_ your solution, converting deprecated items to the new content types so we can delete the old content type. The [next guide in this series](guides/development/advanced-content/convert-content-to-reusable-schemas) covers this scenario.
+We have talked mostly about the _‘expand’_ part, adjusting your application to work with both the new and old content types. The next step is to _‘contract’_ your solution, converting deprecated items to the new content types so we can delete the old content type. The [next guide in this series](/guides/development/advanced-content/convert-content-to-reusable-schemas) covers this scenario.
 If you are interested in the expand and contract approach, we recommend this [Community portal blog on the topic](https://community.kentico.com/blog/safely-evolving-a-content-model-with-expand-and-contract).
-To learn more about [taxonomies](documentation/developers-and-admins/configuration/taxonomies) from the content modeling perspective, check out our [Model a reusable article](guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) guide. If you’d like to get a better perspective on how business users and editors work with taxonomies in Xperience, we recommend you take a look at our [Work with taxonomies](guides/digital-marketing/work-with-taxonomies) business guides.
+To learn more about [taxonomies](/documentation/developers-and-admins/configuration/taxonomies) from the content modeling perspective, check out our [Model a reusable article](/guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) guide. If you’d like to get a better perspective on how business users and editors work with taxonomies in Xperience, we recommend you take a look at our [Work with taxonomies](/guides/digital-marketing/work-with-taxonomies) business guides.
+![]()
+[]()[]()

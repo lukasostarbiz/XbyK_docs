@@ -1,16 +1,18 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/website-system-pages
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+25 of 28 Pages
 # Model website system pages
-  * [ Copy page link ](modules/content-modeling-guide/website-system-pages#) | [Get HelpService ID](modules/content-modeling-guide/website-system-pages#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/website-system-pages# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/website-system-pages#)
 A good website administration experience doesn’t only mean that editors can easily create and manage website content. A well-structured website offers editors ways to adjust system-specific features without asking developers for help whenever they need to change the website’s SEO performance. For example, you can create a ”Website settings” section in the content tree and create specific page types that content administrators can use to change system settings. We recommend including the following system pages in your project:
-  * [Search result pages](modules/content-modeling-guide/website-system-pages#search-result-pages)
-  * [Consent settings page](modules/content-modeling-guide/website-system-pages#consent-settings-page)
-  * [SEO-specific pages](modules/content-modeling-guide/website-system-pages#seo-specific-pages)
-    * [Sitemap](modules/content-modeling-guide/website-system-pages#sitemap)
-    * [Error pages](modules/content-modeling-guide/website-system-pages#error-pages)
-    * [Robots.txt and no-indexing content](modules/content-modeling-guide/website-system-pages#robots.txt-and-no-indexing-content)
+  * [Search result pages](#search-result-pages)
+  * [Consent settings page](#consent-settings-page)
+  * [SEO-specific pages](#seo-specific-pages)
+    * [Sitemap](#sitemap)
+    * [Error pages](#error-pages)
+    * [Robots.txt and no-indexing content](#robots.txt-and-no-indexing-content)
 
 
 ### Search result pages
@@ -18,12 +20,12 @@ Xperience doesn’t currently provide any solution out of the box that will sear
 **Recommendations – Search**
 Considering your project requirements, we recommend using one of the available integrations with [Algolia Search](https://github.com/Kentico/xperience-by-kentico-algolia), [Lucene Search](https://github.com/Kentico/xperience-by-kentico-lucene), or [Azure AI Search](https://github.com/Kentico/xperience-by-kentico-azure-ai-search).
 ### Consent settings page
-Xperience comes with extensive [Data protection](documentation/developers-and-admins/data-protection) functionality that allows for building websites compliant with many different e-privacy laws and legislation.
+Xperience comes with extensive [Data protection](/documentation/developers-and-admins/data-protection) functionality that allows for building websites compliant with many different e-privacy laws and legislation.
 Administrators can use the data protection features to create and manage tracking consents or easily remove personal data from the administration UI. Once the personal data is in the system, marketers can easily use the built-in Xperience online marketing features, e.g., ensure that marketing emails are sent only to visitors who provided appropriate consent.
 To comply with data privacy regulations, developers must implement data collection and erasure features to match project requirements and accommodate how the website gathers, processes, and stores personal data.
 Find out more about customer data protection in Xperience:
-  * [Customer data management](documentation/business-users/digital-marketing/contact-management)
-  * [Data protection](documentation/developers-and-admins/data-protection)
+  * [Customer data management](/documentation/business-users/digital-marketing/contact-management)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
 
 
 **Recommendations – Consents**
@@ -51,16 +53,8 @@ We recommend providing editors or administrators with means to disallow parts of
   * To disable indexing parts of the website, create a dedicated page (or a section in a custom module) for _Robots.txt_ file with, e.g., a _Text area_ form control and use custom code to process the directives administrators want to input into the Robots.txt. The implementation could also restrict the website’s indexing by specific search bots.
 
 
-[ Previous page ](modules/content-modeling-guide/model-navigation)
+[ Previous page ](/modules/content-modeling-guide/model-navigation)
 25 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/general-content-modeling-recommendations)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/website-system-pages)
-[](https://docs.kentico.com/modules/content-modeling-guide/website-system-pages)[](https://docs.kentico.com/modules/content-modeling-guide/website-system-pages)
+[ Mark complete and continue ](/modules/content-modeling-guide/general-content-modeling-recommendations)
+![]()
+[]()[]()

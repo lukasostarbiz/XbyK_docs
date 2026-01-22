@@ -1,20 +1,27 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital marketing setup](/documentation/developers-and-admins/digital-marketing-setup)
+  * [Contact configuration](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration)
+  * Delete inactive contacts 
+
+
 # Delete inactive contacts
-  * [ Copy page link ](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#) | [Get HelpService ID](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#)
-The [contact management](documentation/business-users/digital-marketing/contact-management) features in Xperience generate a very large amount of data, particularly on high‑traffic websites. The system creates contacts and logs [activities](documentation/business-users/digital-marketing/contact-activities) for every visitor (depending on the project’s [default cookie level](documentation/developers-and-admins/data-protection/cookies)), which may be overwhelming for your marketers.
+The [contact management](/documentation/business-users/digital-marketing/contact-management) features in Xperience generate a very large amount of data, particularly on high‑traffic websites. The system creates contacts and logs [activities](/documentation/business-users/digital-marketing/contact-activities) for every visitor (depending on the project’s [default cookie level](/documentation/developers-and-admins/data-protection/cookies)), which may be overwhelming for your marketers.
 Additionally, an extremely high volume of contact data can lead to performance issues in administration UIs related to contacts, and result in an excessively large database. This increases storage costs and complicates maintenance operations such as backups or restores.
-To mitigate these issues, we recommend that you configure the system to regularly delete unnecessary contacts. By default, Xperience allows you to [enable automatic deletion of contacts](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#enable-automatic-deletion-of-inactive-contacts) who have not performed any activities over a specified number of days.
+To mitigate these issues, we recommend that you configure the system to regularly delete unnecessary contacts. By default, Xperience allows you to [enable automatic deletion of contacts](#enable-automatic-deletion-of-inactive-contacts) who have not performed any activities over a specified number of days.
 **Custom contact deletion**
-If the default deletion of inactive contacts does not satisfy your project’s requirements, developers can [implement custom deletion of contacts](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#implement-custom-deletion-of-contacts) with any conditions for selecting inactive, outdated or otherwise unnecessary contacts.
+If the default deletion of inactive contacts does not satisfy your project’s requirements, developers can [implement custom deletion of contacts](#implement-custom-deletion-of-contacts) with any conditions for selecting inactive, outdated or otherwise unnecessary contacts.
 ## Consequences of deleting contacts
 Deleting contacts also removes associated data, notably:
-  * [Consent agreements](documentation/developers-and-admins/data-protection/consent-management) given by the contacts
-  * [Activities](documentation/business-users/digital-marketing/contact-activities) logged for the contacts
-  * [Customer journey](documentation/business-users/digital-marketing/customer-journeys) conversions related to the contacts
-  * [Email recipients](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers) matching the contacts
+  * [Consent agreements](/documentation/developers-and-admins/data-protection/consent-management) given by the contacts
+  * [Activities](/documentation/business-users/digital-marketing/contact-activities) logged for the contacts
+  * [Customer journey](/documentation/business-users/digital-marketing/customer-journeys) conversions related to the contacts
+  * [Email recipients](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers) matching the contacts
 
 
 Only set up automatic contact deletion if you are sure this data will not be needed in the future. In particular, consent agreements may be required to maintain compliance with data protection laws.
@@ -24,7 +31,7 @@ To set up the system’s default inactive contact deletion:
   2. Navigate to the **Digital marketing → Contact management** category in the settings tree.
   3. Select the **Delete contacts who have not been active for the last X days** option.
   4. Fill in the **Last X days** value. 
-     * The system deletes contacts who do not have any [activities](documentation/business-users/digital-marketing/contact-activities) logged within the specified number of days, counting into the past from the current date.
+     * The system deletes contacts who do not have any [activities](/documentation/business-users/digital-marketing/contact-activities) logged within the specified number of days, counting into the past from the current date.
      * The minimum value is 7 days.
      * For contacts who do not have any activities logged, the contact’s creation date is considered as the time of the last activity.
   5. **Save** the changes.
@@ -32,7 +39,7 @@ To set up the system’s default inactive contact deletion:
 
 The system now starts deleting inactive contacts according to the specified criteria.
 ### How exactly are contacts deleted?
-The system deletes contacts using the **Delete inactive contacts** [scheduled task](documentation/developers-and-admins/customization/scheduled-tasks). The task runs in a way that does not significantly impact your application’s performance:
+The system deletes contacts using the **Delete inactive contacts** [scheduled task](/documentation/developers-and-admins/customization/scheduled-tasks). The task runs in a way that does not significantly impact your application’s performance:
   * Starts running once per day at 2 AM in the time zone of the server where the application is running.
   * Deletes contacts in batches of 1000.
   * Waits for 1 minute between each batch.
@@ -41,14 +48,14 @@ The system deletes contacts using the **Delete inactive contacts** [scheduled ta
 
 ## Implement custom deletion of contacts
 If deleting contacts based on inactivity duration doesn’t meet your project’s needs, you can create a custom automated task for contact cleanup. This approach lets you define your own criteria for selecting which contacts are still relevant and which are suitable for deletion.
-  1. Make sure the system’s [default inactive contact deletion](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/delete-inactive-contacts#enable-automatic-deletion-of-inactive-contacts) is disabled. 
+  1. Make sure the system’s [default inactive contact deletion](#enable-automatic-deletion-of-inactive-contacts) is disabled. 
      * In **Settings → Digital marketing → Contact management** , select the **Do not delete contacts** option.
-  2. Create a custom [scheduled task](documentation/developers-and-admins/customization/scheduled-tasks): 
+  2. Create a custom [scheduled task](/documentation/developers-and-admins/customization/scheduled-tasks): 
     1. In the task’s `Execute` method, define a `WhereCondition` to select the contacts you want to delete.
 **Where condition resources**
-To learn more about the Where condition API, see [Limit retrieved results](documentation/developers-and-admins/api/objectquery-api#limit-retrieved-results-sql-where). For a full list of the available `Where*` filtering methods, see the [API reference](https://api-reference.kentico.com/api/CMS.DataEngine.WhereConditionBase-1.html). 
+To learn more about the Where condition API, see [Limit retrieved results](/documentation/developers-and-admins/api/objectquery-api#limit-retrieved-results-sql-where). For a full list of the available `Where*` filtering methods, see the [API reference](https://api-reference.kentico.com/api/CMS.DataEngine.WhereConditionBase-1.html). 
     2. Use the `IContactsBulkDeletionService` service to bulk delete contacts who match the condition.
-    3. Set a suitable _Start time_ and _Period_ in the [scheduled task configuration](documentation/developers-and-admins/customization/scheduled-tasks#configure-task-schedule) based on your task’s implementation and requirements.
+    3. Set a suitable _Start time_ and _Period_ in the [scheduled task configuration](/documentation/developers-and-admins/customization/scheduled-tasks#configure-task-schedule) based on your task’s implementation and requirements.
 
 
 C#
@@ -140,3 +147,6 @@ while (deletedCount < numberOfContactsToBeDeleted)
     await Task.Delay(1000);
 }
 ```
+
+![]()
+[]()[]()

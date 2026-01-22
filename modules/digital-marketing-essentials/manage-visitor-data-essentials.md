@@ -1,19 +1,21 @@
+---
+source: https://docs.kentico.com/modules/digital-marketing-essentials/manage-visitor-data-essentials
+scrape_date: 2026-01-22
+---
+
+Module: Digital marketing essentials
+2 of 7 Pages
 # Manage visitor data
-  * [ Copy page link ](modules/digital-marketing-essentials/manage-visitor-data-essentials#) | [Get HelpService ID](modules/digital-marketing-essentials/manage-visitor-data-essentials#)
-Core MVC 5
-
-
-[✖](modules/digital-marketing-essentials/manage-visitor-data-essentials# "Close page link panel") [Copy to clipboard](modules/digital-marketing-essentials/manage-visitor-data-essentials#)
 Knowing how your visitors navigate and what content they consume through your digital content brings you invaluable insights for defining and optimizing your customer journeys.
 Xperience’s _Contact activity tracking_ feature allows you to **track and analyze** how contacts engage with your website, including **browsing patterns** , **content consumption** , **form submissions** , **downloads** , and other activities.
 Xperience tracks contacts **based on a cookie**. Once the contact agrees with the tracking, Xperience will always try to **match and log all activities** done by a specific contact, even when the contact performs the activity on a different device (such as visiting the website on their desktop and mobile phone).
 Depending on a cookie that represents a current contact, Xperience doesn’t require any further unique identification, such as a contact’s email. As a result, the system can log the activities of **“anonymous” visitors** and identify them later, for example, **when they share their email addresses** with you via a **form**.
 You can view the collected contact data in the **Contact management** application. Xperience displays all activities on the website in the **Activities** section. When opening individual contacts, you can see you can see their activities.
 With the Xperience **Cross-site tracking** feature, you generate an Xperience tracking script, insert it into your third-party website - and you can start collecting your website’s visitor data, even on websites that haven’t been built with Xperience. Creating an overall **picture of your customer’s interactions in one system** opens new opportunities to personalize your marketing experience.
-Find out more about [Contact management](documentation/business-users/digital-marketing/contact-management) and tracking [Contact activities](documentation/business-users/digital-marketing/contact-activities) in the documentation.
+Find out more about [Contact management](/documentation/business-users/digital-marketing/contact-management) and tracking [Contact activities](/documentation/business-users/digital-marketing/contact-activities) in the documentation.
 ## Data protection and GDPR
-The [Data protection](documentation/developers-and-admins/data-protection) functionality helps you **stay within the legal boundaries** of different data protection regulations in marketing-related actions. **Developers can prepare data protection** on your website in different ways. Usually, Xperience will use the contact’s email address as a unique identifier.
-Find out more about [data protection](documentation/developers-and-admins/data-protection) and [cookies](documentation/developers-and-admins/data-protection/cookies) in the documentation.
+The [Data protection](/documentation/developers-and-admins/data-protection) functionality helps you **stay within the legal boundaries** of different data protection regulations in marketing-related actions. **Developers can prepare data protection** on your website in different ways. Usually, Xperience will use the contact’s email address as a unique identifier.
+Find out more about [data protection](/documentation/developers-and-admins/data-protection) and [cookies](/documentation/developers-and-admins/data-protection/cookies) in the documentation.
 ## Exercise - Tracking a contact in Xperience
 This exercise will give you hands-on experience with the contact tracking feature. You’ll impersonate a website visitor using an incognito window, private window, or another browser and see how Xperience by Kentico collects visitor data in the **Contact management** application.
 **Task** :
@@ -28,16 +30,8 @@ This exercise will give you hands-on experience with the contact tracking featur
   8. When you finish browsing your website in the incognito window, switch to the contact’s **Overview** tab. If you have submitted the form on the _Contact_ page, your demo contact will no longer be anonymous.
 
 
-[ Previous page ](modules/digital-marketing-essentials)
+[ Previous page ](/modules/digital-marketing-essentials)
 2 of 7
-[ Mark complete and continue ](modules/digital-marketing-essentials/collect-visitor-data-essentials)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/digital-marketing-essentials/manage-visitor-data-essentials)
-[](https://docs.kentico.com/modules/digital-marketing-essentials/manage-visitor-data-essentials)[](https://docs.kentico.com/modules/digital-marketing-essentials/manage-visitor-data-essentials)
+[ Mark complete and continue ](/modules/digital-marketing-essentials/collect-visitor-data-essentials)
+![]()
+[]()[]()

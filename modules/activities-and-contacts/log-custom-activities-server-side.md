@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-server-side
+scrape_date: 2026-01-22
+---
+
+Module: Activities and contacts
+5 of 9 Pages
 # Log custom activities from the server side
-  * [ Copy page link ](modules/activities-and-contacts/log-custom-activities-server-side#) | [Get HelpService ID](modules/activities-and-contacts/log-custom-activities-server-side#)
-Core MVC 5
-
-
-[✖](modules/activities-and-contacts/log-custom-activities-server-side# "Close page link panel") [Copy to clipboard](modules/activities-and-contacts/log-custom-activities-server-side#)
 The next custom activity scenario we will explore is a _Page like_ widget demonstrating server-side logging with C# code. You will implement a controller action that logs a custom activity, and a widget that posts to the controller.
 ### Define a request model
 Create a strongly-typed class to represent the data that the widget will post to the controller, to make working with the data easier. In this case, you only need information to identify which page was liked, and to retrieve the correct item, so the Id of the web page content item, and the name of the content type should suffice.
@@ -24,7 +26,7 @@ public class PageLikeRequestModel
 ```
 
 ### Examine the content item retriever service
-You may have noticed that the [content item query api](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) requires a strongly typed mapping function in order to select the results of the query.
+You may have noticed that the [content item query api](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) requires a strongly typed mapping function in order to select the results of the query.
 However, since you’re building a widget, you may not know the content type of the web page item that your widget is placed on.
 In order to account for this, you need a way to retrieve a web page item by ID when you don’t necessarily know its content type. For this, you can use the `IWebPageFieldsSource` interface that all generated web page content types implement.
   1. Go to the `ContentItemRetrieverService` class in _ContentItemRetrieverService.cs_.
@@ -62,11 +64,11 @@ The controller is central to the functionality of the _Page like_ widget. It is 
   1. Add a new controller named _PageLikeController.cs_ to the _~/Features/Activities/Widgets/PageLike_ folder.
   2. Acquire an `ICustomActivityLogger`, an `IContentItemRetrieverService`, and an `ICookieConsentService` through constructor injection.
   3. Define a controller action with the `HttpPost` attribute to register it to the route _~/pagelike_ for POST requests.
-  4. Use the `CurrentContactCanBeTracked` method from [earlier in this series](modules/activities-and-contacts/enable-activity-tracking) to return a message if the visitor has not consented to tracking.
+  4. Use the `CurrentContactCanBeTracked` method from [earlier in this series](/modules/activities-and-contacts/enable-activity-tracking) to return a message if the visitor has not consented to tracking.
   5. Validate the `WebPageItemID` from the provided `PageLikeRequestModel`.
   6. Use your `IContentItemRetrieverService` to retrieve the web page item specified by the supplied Id.
-  7. Use the page to construct a `CustomActivityData` object, including relevant information about the liked page in the `ActivityTitle` and `ActivityValue`, before logging the activity [as described in the documentation](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#server-side-code).
-  8. Include an activity identifier constant, which will be stored in the view component created in a [future step](modules/activities-and-contacts/log-custom-activities-server-side#add-the-widget-view-model).
+  7. Use the page to construct a `CustomActivityData` object, including relevant information about the liked page in the `ActivityTitle` and `ActivityValue`, before logging the activity [as described in the documentation](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#server-side-code).
+  8. Include an activity identifier constant, which will be stored in the view component created in a [future step](#add-the-widget-view-model).
 
 
 C#
@@ -160,7 +162,7 @@ The widget’s view component needs to populate the view model. It must retrieve
   3. Add another constant to hold the identifier of the page like activity.
   4. Acquire `IInfoProvider<ActivityInfo>` and `IContentItemRetrieverService` objects with constructor injection.
   5. Define the `InvokeAsync` method, using `IInfoProvider<ActivityInfo>` to query for existing page-like activities of the current web page item by the current contact.
-Remember that [in the controller](modules/activities-and-contacts/log-custom-activities-server-side#create-the-logging-controller), you stored the Guid of the current web page to the custom activity’s `ActivityValue`. You can use this field to look up likes of the current page.
+Remember that [in the controller](#create-the-logging-controller), you stored the Guid of the current web page to the custom activity’s `ActivityValue`. You can use this field to look up likes of the current page.
   6. If no existing likes are found, set `ShowLikeButton` to `true` in a new `PageLikeWidgetViewModel` instance.
   7. Use the `Page` property of the provided `ComponentViewModel` parameter to populate the remaining properties of the `PageLikeWidgetViewModel`.
   8. Return the path to a view in the same folder, which will be added in the next section.
@@ -261,7 +263,7 @@ public static class ComponentIdentifiers
 
 ### Add the widget view
 The last piece you need to add is the view file referenced by the view component.
-  1. If you didn’t follow along with the [Data protection series](guides/development/data-protection) yet, add a dependency on the _AspNetCore.Unobtrusive.Ajax_ NuGet Package, and add the following line to the part of _Program.cs_ where services are added to the application builder.
+  1. If you didn’t follow along with the [Data protection series](/guides/development/data-protection) yet, add a dependency on the _AspNetCore.Unobtrusive.Ajax_ NuGet Package, and add the following line to the part of _Program.cs_ where services are added to the application builder.
 C#
 **Program.cs**
 Copy
@@ -321,16 +323,8 @@ The coding is done, so you can test your new widget.
   7. Return to the administration interface, opening the **Activities** tab of the **Contact management** application to see that Xperience has logged the _Page like_ activity.
 
 Your browser does not support the video tag. 
-[ Previous page ](modules/activities-and-contacts/log-custom-activities-client-side)
+[ Previous page ](/modules/activities-and-contacts/log-custom-activities-client-side)
 5 of 9
-[ Mark complete and continue ](modules/activities-and-contacts/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-server-side)
-[](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-server-side)[](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-server-side)
+[ Mark complete and continue ](/modules/activities-and-contacts/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
+![]()
+[]()[]()

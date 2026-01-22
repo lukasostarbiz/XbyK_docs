@@ -1,23 +1,31 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Routing](/documentation/developers-and-admins/development/routing)
+  * [Content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing)
+  * Set up content tree-based routing 
+
+
 # Set up content tree-based routing
-  * [ Copy page link ](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#) | [Get HelpService ID](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#)
-Content tree-based routing handles URL generation and routing for pages in website channels. A URL is granted to pages upon creation based on their name and position in the content tree. For a detailed overview, see [Content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing).
+Content tree-based routing handles URL generation and routing for pages in website channels. A URL is granted to pages upon creation based on their name and position in the content tree. For a detailed overview, see [Content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing).
 This page describes the steps needed to fully integrate the routing feature into your project.
-The routing scheme requires [content types](documentation/developers-and-admins/development/content-types) for pages with the _Include in routing_ option set. The option indicates that you want pages created from this content type to be accessible using a URL. When used with content tree-based routing, the system automatically generates URLs for new pages.
-When handling content types with the [Page Builder](documentation/developers-and-admins/development/builders/page-builder) feature enabled, there are a couple of additional prerequisites to keep in mind when setting up the routing scheme. See [Handle Page Builder-enabled content types](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#Setupcontenttreebasedrouting-PageBuilder).
+The routing scheme requires [content types](/documentation/developers-and-admins/development/content-types) for pages with the _Include in routing_ option set. The option indicates that you want pages created from this content type to be accessible using a URL. When used with content tree-based routing, the system automatically generates URLs for new pages.
+When handling content types with the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) feature enabled, there are a couple of additional prerequisites to keep in mind when setting up the routing scheme. See [Handle Page Builder-enabled content types](#Setupcontenttreebasedrouting-PageBuilder).
 When developing views for pages you need to provide your own controller together with a view model. This grants you full control over the data and processing logic. You can execute arbitrary code within the controller, pass additional data required by the view, or switch between different views as needed.
 When configuring routing, you need to:
-  1. [Decide which content types and sections of the content tree will be managed using your route](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#Setupcontenttreebasedrouting-RoutingOverview).
-  2. [Implement the controller logic](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#Setupcontenttreebasedrouting-CustomRouteImp) (together with view models and views).
-  3. [Register the controllers in the system together with the routes for which they are responsible](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#Setupcontenttreebasedrouting-RoutingOverview).
+  1. [Decide which content types and sections of the content tree will be managed using your route](#Setupcontenttreebasedrouting-RoutingOverview).
+  2. [Implement the controller logic](#Setupcontenttreebasedrouting-CustomRouteImp) (together with view models and views).
+  3. [Register the controllers in the system together with the routes for which they are responsible](#Setupcontenttreebasedrouting-RoutingOverview).
 
 
 When a request targets the URL of a page in the content tree of a website channel, the system reroutes the request to a matching custom controller. A matching controller is found based on the content type and tree path (location in the content tree) of the requested page. You provide this information using the `RegisterWebPageRoute` assembly attribute (`Kentico.Content.Web.Mvc.Routing` namespace). 
 The `RegisterWebPageRoute` attribute requires the following parameters:
-  * **ContentTypeName** – the code name of the content type this controller handles. The code name is in the _namespace.codename_ format. Both are set during content type creation. [Generated classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) expose the class name under the `CONTENT_TYPE_NAME` constant.
+  * **ContentTypeName** – the code name of the content type this controller handles. The code name is in the _namespace.codename_ format. Both are set during content type creation. [Generated classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) expose the class name under the `CONTENT_TYPE_NAME` constant.
   * **MarkedType** – the `System.Type` of the controller assigned to handling the requests for the content type.
 
 
@@ -77,7 +85,7 @@ As described in the previous section, routes require a controller that takes ove
 The development process for routing follows standard MVC practices:
   1. Create a new controller class in your project.
   2. Implement the `Index` action and any other required actions.
-     * If you need to work with the data context of the currently requested page, use the `Retrieve` method of the `IWebPageDataContextRetriever` interface. The method returns a `WebPageDataContext` object exposing a `WebPage` property, which gives you access to the ID, [language](documentation/developers-and-admins/configuration/languages), [content type](documentation/developers-and-admins/development/content-types) and [channel](documentation/developers-and-admins/configuration/website-channel-management) information of the page. If you need to load the content fields of the page, [retrieve the page object](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) using the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api).
+     * If you need to work with the data context of the currently requested page, use the `Retrieve` method of the `IWebPageDataContextRetriever` interface. The method returns a `WebPageDataContext` object exposing a `WebPage` property, which gives you access to the ID, [language](/documentation/developers-and-admins/configuration/languages), [content type](/documentation/developers-and-admins/development/content-types) and [channel](/documentation/developers-and-admins/configuration/website-channel-management) information of the page. If you need to load the content fields of the page, [retrieve the page object](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) using the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api).
 C#
 Copy
 ```
@@ -103,11 +111,11 @@ string channelName = page.WebsiteChannelName;
        * Full HTML markup, including the `html`, `head`, and `body` elements
        * Links to all necessary resources, such as stylesheets and scripts
      * Use MVC layouts with the view for any shared output code (for example your site’s main layout).
-  5. [Register](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#Setupcontenttreebasedrouting-RoutingOverview) the route in the system.
+  5. [Register](#Setupcontenttreebasedrouting-RoutingOverview) the route in the system.
 
 
 The registered controller handles the requests matching the criteria specified in the route registration attribute.
-For content types that use content tree-based routing and also have [Page Builder](documentation/developers-and-admins/development/builders/page-builder) enabled, you need to ensure certain prerequisites, depending on the use of [page templates](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder).
+For content types that use content tree-based routing and also have [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) enabled, you need to ensure certain prerequisites, depending on the use of [page templates](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder).
   * If the page is based on a page template: 
     * The controller action handling the request needs to return a `TemplateResult` object. You do not need to provide any additional information to the constructor. The page to render is retrieved from information provided by the router when handling the request.
 C#
@@ -117,7 +125,7 @@ return new TemplateResult();
 ```
 
   * If the page is NOT based on a page template: 
-    * The view needs to include [Page Builder scripts and styles](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to ensure page content is loaded correctly (either directly or through the assigned layout).
+    * The view needs to include [Page Builder scripts and styles](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to ensure page content is loaded correctly (either directly or through the assigned layout).
 
 
 ## Handle POST actions
@@ -142,8 +150,8 @@ Copy
 }
 ```
 
-The method renders a hidden form field that persists information about the current page. The page data can be retrieved via the `IWebPageDataContextRetriever` service and [content item API](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) in the corresponding controller action.
-Obtain an instance of the `IWebPageDataContextRetriever` service (using dependency injection) and call its `Retrieve` method. The returned object’s `WebPage` property contains basic information about the current page, which you can use to [retrieve the current page object](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content).
+The method renders a hidden form field that persists information about the current page. The page data can be retrieved via the `IWebPageDataContextRetriever` service and [content item API](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) in the corresponding controller action.
+Obtain an instance of the `IWebPageDataContextRetriever` service (using dependency injection) and call its `Retrieve` method. The returned object’s `WebPage` property contains basic information about the current page, which you can use to [retrieve the current page object](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content).
 C#
 Copy
 ```
@@ -164,15 +172,15 @@ string channelName = page.WebsiteChannelName;
 ```
 
 ## Retrieve generated page URLs using the API
-URLs generated for pages can be retrieved using the API. See [Retrieve page URLs](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) to learn about the available options.
+URLs generated for pages can be retrieved using the API. See [Retrieve page URLs](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) to learn about the available options.
 ## Combine content tree-based and ASP.NET routing
 Using content tree-based routing does not exclude your projects from using the conventional routing framework provided by ASP.NET Core. If content tree-based routing does not match an incoming URL to any of the site’s pages, it delegates the request to routes registered further down the routing table.
 At this point, request processing continues using the conventional routing model with the framework attempting to match the request to site-specific routes. See the following diagram for illustration.
-[![Request handling under content tree-based routing](docsassets/documentation/set-up-content-tree-based-routing/Routing_SimplifiedFlow.png)](https://docs.kentico.com/docsassets/documentation/set-up-content-tree-based-routing/Routing_SimplifiedFlow.png)
+[![Request handling under content tree-based routing](/docsassets/documentation/set-up-content-tree-based-routing/Routing_SimplifiedFlow.png)](/docsassets/documentation/set-up-content-tree-based-routing/Routing_SimplifiedFlow.png)
 You can take advantage of this if you wish to serve pages with content that does not need to be stored and managed in Xperience. For example when creating dynamic pages such as search interfaces with search results, or other pages with fully data-driven content. 
 ### Preserving thread language across routing modes
-On multilingual pages, the language for the **handling thread** is supplied by the router (based on the [language](documentation/developers-and-admins/configuration/languages) code name of the requested page). If you wish to invoke custom actions from the context of a page served by the router – that is, you wish to construct a URL that maps to a custom route defined for your application – you need to ensure the **thread language** of the handling thread matches the language supplied by the router. Otherwise, when opening links handled by custom actions, users may be redirected to a different language variant of the page.
-For this purpose, the system provides the `LanguageNameRouteValuesKey` property. The property can be set using the `WebPageRoutingOptions` object when [enabling the content tree-based routing feature](documentation/developers-and-admins/development/routing/content-tree-based-routing/enable-content-tree-based-routing) (provided as an optional parameter to the `UseWebPageRouting` method).
+On multilingual pages, the language for the **handling thread** is supplied by the router (based on the [language](/documentation/developers-and-admins/configuration/languages) code name of the requested page). If you wish to invoke custom actions from the context of a page served by the router – that is, you wish to construct a URL that maps to a custom route defined for your application – you need to ensure the **thread language** of the handling thread matches the language supplied by the router. Otherwise, when opening links handled by custom actions, users may be redirected to a different language variant of the page.
+For this purpose, the system provides the `LanguageNameRouteValuesKey` property. The property can be set using the `WebPageRoutingOptions` object when [enabling the content tree-based routing feature](/documentation/developers-and-admins/development/routing/content-tree-based-routing/enable-content-tree-based-routing) (provided as an optional parameter to the `UseWebPageRouting` method).
 C#
 Copy
 ```
@@ -228,8 +236,8 @@ Now, when building URLs to the “MyRoute” route from the context of pages ser
 
 
 ### Manually initialize page data context
-Some Xperience features, such as [Page Builder](documentation/developers-and-admins/development/builders/page-builder), require context data that is automatically available from the current page when using content tree-based routing. If you use custom .NET routing to display [pages](documentation/business-users/website-content) from a website channel’s content tree, you need to manually initialize the page data context to use such features.
-Use the `IWebPageDataContextInitializer` service and supply the context via the properties of the `RoutedWebPage` parameter. Get the required data by [retrieving the page](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) related to the given route.
+Some Xperience features, such as [Page Builder](/documentation/developers-and-admins/development/builders/page-builder), require context data that is automatically available from the current page when using content tree-based routing. If you use custom .NET routing to display [pages](/documentation/business-users/website-content) from a website channel’s content tree, you need to manually initialize the page data context to use such features.
+Use the `IWebPageDataContextInitializer` service and supply the context via the properties of the `RoutedWebPage` parameter. Get the required data by [retrieving the page](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) related to the given route.
 Only initialize page data context for custom routes that are associated with a page in the Xperience content tree.
 Otherwise you will not be able to set all `RoutedWebPage` properties (e.g., the `WebPageItemID`). Working with incomplete page data context may result in errors.
 C#
@@ -312,3 +320,6 @@ public class CustomRouteController : Controller
     }
 }
 ```
+
+![]()
+[]()[]()

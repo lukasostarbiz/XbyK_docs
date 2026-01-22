@@ -1,26 +1,32 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/generate-code-files-for-system-objects
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * Generate code files for system objects 
+
+
 # Generate code files for system objects
-  * [ Copy page link ](documentation/developers-and-admins/api/generate-code-files-for-system-objects#) | [Get HelpService ID](documentation/developers-and-admins/api/generate-code-files-for-system-objects#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/generate-code-files-for-system-objects# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/generate-code-files-for-system-objects#)
-Certain types of objects in the system, such as content types, can contain custom fields used to model and structure the content stored within them (e.g., a content type object with fields for a title, article summary, and article text). These custom fields are typically assigned via the [field editor](documentation/developers-and-admins/customization/field-editor) or the [Form Builder](documentation/developers-and-admins/development/builders/form-builder) editing interfaces and correspond to individual database columns.
+Certain types of objects in the system, such as content types, can contain custom fields used to model and structure the content stored within them (e.g., a content type object with fields for a title, article summary, and article text). These custom fields are typically assigned via the [field editor](/documentation/developers-and-admins/customization/field-editor) or the [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) editing interfaces and correspond to individual database columns.
 Since each object type can have a different set of custom fields, providing strongly-typed access to these fields through a shared, general class is difficult. Consequently, accessing custom field data directly often requires additional code and can be unwieldy. Developers might need to:
   * Specify database column names explicitly when retrieving or manipulating data for particular fields.
   * Manually perform value type conversions (e.g., from `object` or `string`) and validation on the data as it comes from the database.
 
 
-To simplify working with such objects, especially when retrieving data using the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api) or the [content item query API](documentation/developers-and-admins/api/content-item-api/content-item-query-api), the system allows you to generate object-specific code files, often referred to as model classes.
-A generated code file contains C# properties that directly correspond to the custom fields defined for the source object (e.g., **Title** , **ArticleSummary** , **ArticleText** properties for an article [content type](documentation/developers-and-admins/development/content-types)). Each property is generated with an appropriate C# data type and getter/setter logic suitable for manipulating the data of the underlying field. This provides strongly-typed access, IntelliSense support, and eliminates the need for manual type casting or validation in many cases.
+To simplify working with such objects, especially when retrieving data using the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) or the [content item query API](/documentation/developers-and-admins/api/content-item-api/content-item-query-api), the system allows you to generate object-specific code files, often referred to as model classes.
+A generated code file contains C# properties that directly correspond to the custom fields defined for the source object (e.g., **Title** , **ArticleSummary** , **ArticleText** properties for an article [content type](/documentation/developers-and-admins/development/content-types)). Each property is generated with an appropriate C# data type and getter/setter logic suitable for manipulating the data of the underlying field. This provides strongly-typed access, IntelliSense support, and eliminates the need for manual type casting or validation in many cases.
 Additionally, using these generated model classes greatly simplifies content retrieval. When the result type specified in a retrieval method matches the generated class for the content being retrieved, the system’s default mapping logic can often automatically populate the properties of the generated class instance directly from the query results. This reduces the need to write custom mapping logic or manually extract values from the raw database data (`IContentQueryDataContainer` objects).
 Code generation is available for the following objects:
-  * [Reusable content types](documentation/developers-and-admins/development/content-types) – generates a class with the reusable content type’s fields as properties. See [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api) and [Content item API](documentation/developers-and-admins/api/content-item-api/content-item-query-api) to learn about available API that can be used with generated content type classes.
-  * [Page content types](documentation/developers-and-admins/development/content-types) – generates a class with the page content type’s fields as properties. See [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api) [Content item API](documentation/developers-and-admins/api/content-item-api/content-item-query-api) to learn about available API that can be used with generated page classes.
-  * [Email content types](documentation/developers-and-admins/development/content-types) – generates a class with the email content type’s fields as properties. Xperience currently does not provide a general API for retrieving and working with emails. Classes generated for email content types are used when [retrieving the values](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#email-fields) of an email’s fields within [Email Builder components](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components).
-  * [Reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas) – generates an interface that defines the corresponding schema’s fields as its properties.
-  * [Forms](documentation/developers-and-admins/development/builders/form-builder) – generates a class with the form’s fields as properties. See [Content retrieval](documentation/developers-and-admins/development/content-retrieval) to learn about available API that can be used with generated form classes.
-  * [Object types](documentation/developers-and-admins/customization/object-types) – generates classes that facilitate working with object types. See [Database table API](documentation/developers-and-admins/api/database-table-api) to learn about the architecture and available API of such objects. 
-    * Code generation for object types can be further configured in the administration, see [Configure code generation for data classes](documentation/developers-and-admins/customization/object-types#Generatecodefilesforsystemobjects-otcodegenconfig).
+  * [Reusable content types](/documentation/developers-and-admins/development/content-types) – generates a class with the reusable content type’s fields as properties. See [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) and [Content item API](/documentation/developers-and-admins/api/content-item-api/content-item-query-api) to learn about available API that can be used with generated content type classes.
+  * [Page content types](/documentation/developers-and-admins/development/content-types) – generates a class with the page content type’s fields as properties. See [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) [Content item API](/documentation/developers-and-admins/api/content-item-api/content-item-query-api) to learn about available API that can be used with generated page classes.
+  * [Email content types](/documentation/developers-and-admins/development/content-types) – generates a class with the email content type’s fields as properties. Xperience currently does not provide a general API for retrieving and working with emails. Classes generated for email content types are used when [retrieving the values](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#email-fields) of an email’s fields within [Email Builder components](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components).
+  * [Reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) – generates an interface that defines the corresponding schema’s fields as its properties.
+  * [Forms](/documentation/developers-and-admins/development/builders/form-builder) – generates a class with the form’s fields as properties. See [Content retrieval](/documentation/developers-and-admins/development/content-retrieval) to learn about available API that can be used with generated form classes.
+  * [Object types](/documentation/developers-and-admins/customization/object-types) – generates classes that facilitate working with object types. See [Database table API](/documentation/developers-and-admins/api/database-table-api) to learn about the architecture and available API of such objects. 
+    * Code generation for object types can be further configured in the administration, see [Configure code generation for data classes](/documentation/developers-and-admins/customization/object-types#Generatecodefilesforsystemobjects-otcodegenconfig).
 
 
 ## Generate code files
@@ -48,9 +54,9 @@ Parameter  |  Required |  Description
     * You must set the `--namespace` parameter when using this option.
     * Use together with the _ReusableContentTypes_ or _PageContentTypes_ option which generate classes that already implement all assigned reusable schema interfaces.
     * Make sure to generate schema interfaces into the same namespace as your content type classes. The generator outputs uncompilable code otherwise.
-    * For more information, see [Reusable field schema interfaces](documentation/developers-and-admins/api/generate-code-files-for-system-objects#reusable-field-schema-interfaces).
-  * **Classes** – generates code files for object types. Code generation for object types can be further configured in the administration, see [Configure code generation for data classes](documentation/developers-and-admins/customization/object-types#Generatecodefilesforsystemobjects-otcodegenconfig). 
-    * Use together with the [–with-provider-class](documentation/developers-and-admins/api/generate-code-files-for-system-objects#withProviderClass) parameter to generate the corresponding _*Provider_ class and interface.
+    * For more information, see [Reusable field schema interfaces](#reusable-field-schema-interfaces).
+  * **Classes** – generates code files for object types. Code generation for object types can be further configured in the administration, see [Configure code generation for data classes](/documentation/developers-and-admins/customization/object-types#Generatecodefilesforsystemobjects-otcodegenconfig). 
+    * Use together with the [–with-provider-class](#withProviderClass) parameter to generate the corresponding _*Provider_ class and interface.
 
 The switches are case-sensitive. CMD **Example** Copy ```
 cd my/Xperience/app/root
@@ -87,7 +93,7 @@ When setting a custom namespace, you can use the following macros in the paramet
 
   
 --with-provider-class  |  No Supported values:  
-`True`/`False` |  Applies only when generating object type classes (`--type Classes`). Controls whether a corresponding provider class `*Provider` and interface `I*Provider` is generated for the selected object types. Defaults to **False**. You must explicitly call `--with-provider-class True` to enable this behavior. We don’t recommend generating dedicated provider classes per object type. Instead, use the generic `IInfoProvider<TInfo>` API to inject Info managers in your code. See [Database table API](documentation/developers-and-admins/api/database-table-api#info-class-managers) for more information. CMD **Example** Copy ```
+`True`/`False` |  Applies only when generating object type classes (`--type Classes`). Controls whether a corresponding provider class `*Provider` and interface `I*Provider` is generated for the selected object types. Defaults to **False**. You must explicitly call `--with-provider-class True` to enable this behavior. We don’t recommend generating dedicated provider classes per object type. Instead, use the generic `IInfoProvider<TInfo>` API to inject Info managers in your code. See [Database table API](/documentation/developers-and-admins/api/database-table-api#info-class-managers) for more information. CMD **Example** Copy ```
 # # Generates *Info classes only by default
 dotnet run -- --kxp-codegen --type "Classes"
 # Generates *Info classes along with provider classes and interfaces
@@ -98,10 +104,10 @@ The system generates the code files in the specified location and folder structu
 ### Store generated model classes
 For smaller projects, you can store generated model classes directly within the main Xperience project.
 If your project consists of multiple projects or [RCLs](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class), we recommend that you create a separate _Class library_ project for storing all generated model classes, and then reference this project from your other projects. This allows you to keep the models together (model classes often reference each other via linking properties), and ensures that the models are accessible in your entire code base.
-When using the generated code files in a separate library or external application, you need to allow the system to detect the classes. Make sure class discovery is enabled for the project using the `AssemblyDiscoverable` attribute – see [Integrate custom code](documentation/developers-and-admins/customization/integrate-custom-code).
+When using the generated code files in a separate library or external application, you need to allow the system to detect the classes. Make sure class discovery is enabled for the project using the `AssemblyDiscoverable` attribute – see [Integrate custom code](/documentation/developers-and-admins/customization/integrate-custom-code).
 Don’t directly add generated code files into external projects that compile into a different output type than a DLL assembly (for example console applications). The system cannot discover the code in these cases.
 ## Reusable field schema interfaces
-Code files generated via **ReusableContentTypes** or **PageContentTypes** for content types that use at least one [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) implement `I<SchemaName>` interfaces. Each such interface corresponds to a schema assigned to the given content type. You must generate these interfaces separately using the **ReusableFieldSchemas** `--type` parameter. Make sure to place them under the same namespace as the content type classes that use them. The generator outputs uncompilable code otherwise.
+Code files generated via **ReusableContentTypes** or **PageContentTypes** for content types that use at least one [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) implement `I<SchemaName>` interfaces. Each such interface corresponds to a schema assigned to the given content type. You must generate these interfaces separately using the **ReusableFieldSchemas** `--type` parameter. Make sure to place them under the same namespace as the content type classes that use them. The generator outputs uncompilable code otherwise.
 For example, assume an _Article_ page content type that uses the _PageMetadata_ and _SEO_ reusable field schemas.
 To generate the page content type, run:
 CMD
@@ -167,16 +173,16 @@ namespace My.Project
 ```
 
 ### Configure model mapping for properties storing content item references to reusable field schemas
-Content types can store references to other content items via fields of the _Pages and reusable content_ [data type](documentation/developers-and-admins/customization/field-editor/data-type-management) and the [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) component.
+Content types can store references to other content items via fields of the _Pages and reusable content_ [data type](/documentation/developers-and-admins/customization/field-editor/data-type-management) and the [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) component.
 In content type model classes output by the code generator, these fields are represented as an `IEnumerable` collection of model classes that correspond to the content type which the field references. For example, assume the following content types:
   * Book – contains information about various books (ISIN, title, etc.).
   * Author – contains information about authors (name, bio, etc.) and a _Books_ field that references content items of the _Book_ content type (the books a given author has written).
 
 
 Then the **Books** field, a reference from the _Author_ content type to the _Book_ content type, is in the generated model class represented as a property of the `IEnumerable<Book>` type.
-If the target of the reference is **not** a specific content type but a [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) that can be used by multiple content types, the property representing the reference is a collection of [reusable field schema interface](documentation/developers-and-admins/api/generate-code-files-for-system-objects#reusable-field-schema-interfaces) objects.
+If the target of the reference is **not** a specific content type but a [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) that can be used by multiple content types, the property representing the reference is a collection of [reusable field schema interface](#reusable-field-schema-interfaces) objects.
 As an example, imagine a `PageMetadata` reusable field schema that declares fields shared by all page content types in the system. References to this schema are in generated model classes defined using the `IEnumerable<IPageMetadata>` type.
-When retrieving content either via the [ContentRetriever](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api) or [content item query](documentation/developers-and-admins/api/content-item-api/content-item-query-api#run-queries-and-map-the-result) API and mapping the results to model classes that contain properties representing references to reusable field schemas, the system by default instantiates the referenced content items using the target reusable field schema interface type (`IPageMetadata`, for example).
+When retrieving content either via the [ContentRetriever](/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api) or [content item query](/documentation/developers-and-admins/api/content-item-api/content-item-query-api#run-queries-and-map-the-result) API and mapping the results to model classes that contain properties representing references to reusable field schemas, the system by default instantiates the referenced content items using the target reusable field schema interface type (`IPageMetadata`, for example).
 You can override this default behavior and directly set which model class the system should use via the `MapContentTypeReferenceTo` and `MapReferenceTo` property-level attributes.
 C#
 **Specify model classes for automatic mapping**
@@ -204,7 +210,7 @@ public class PageMetadata : IPageMetadata
 }
 ```
 
-If neither of these attributes is used, the system defaults first to the type of the property representing the reusable schema reference (`IPageMetadata` in the example above) and finally to the type registered via the [RegisterContentTypeMapping attribute](documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute). This fallback chain is identical for both the ContentRetriever and content item query APIs.
+If neither of these attributes is used, the system defaults first to the type of the property representing the reusable schema reference (`IPageMetadata` in the example above) and finally to the type registered via the [RegisterContentTypeMapping attribute](#registercontenttypemapping-attribute). This fallback chain is identical for both the ContentRetriever and content item query APIs.
 ## RegisterContentTypeMapping attribute
 All generated model classes come annotated with the `RegisterContentTypeMapping` class-level attribute. The attribute controls which model classes get prioritized when the system maps content item database data to models.
 C#
@@ -299,3 +305,6 @@ namespace DancingGoat
     }
 }
 ```
+
+![]()
+[]()[]()

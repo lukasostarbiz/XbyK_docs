@@ -1,10 +1,16 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/secure-custom-endpoints
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * Secure custom endpoints 
+
+
 # Secure custom endpoints
-  * [ Copy page link ](documentation/developers-and-admins/customization/secure-custom-endpoints#) | [Get HelpService ID](documentation/developers-and-admins/customization/secure-custom-endpoints#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/secure-custom-endpoints# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/secure-custom-endpoints#)
-Your custom code may include endpoints to handle various logic (e.g., image uploads). For example, custom endpoints can be used in the implementations of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) components.
+Your custom code may include endpoints to handle various logic (e.g., image uploads). For example, custom endpoints can be used in the implementations of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) components.
 The framework treats these endpoints as any other API – they are, by default, publicly accessible under the handler URL. If your custom endpoints process any potentially confidential data, you may want to consider implementing protection against unauthorized access.
 The `Authorize` attribute in .NET specifies that only authorized users can access a particular controller or action method. You can use the attribute with specific authentication schemes by specifying the scheme name as a parameter.
 Generally, you would want to use the `Authorize` attribute when:
@@ -14,8 +20,8 @@ Generally, you would want to use the `Authorize` attribute when:
 
 
 To allow requests only from users signed in to the Xperience admin UI (a sufficient constraint to identify non-malicious actors), specify a scheme from `AdminIdentityConstants`.
-  * `APPLICATION_SCHEME` – for users authenticated using [forms authentication](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-forms-authentication).
-  * `EXTERNAL_SCHEME` – for users authenticated using [external providers](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication).
+  * `APPLICATION_SCHEME` – for users authenticated using [forms authentication](/documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-forms-authentication).
+  * `EXTERNAL_SCHEME` – for users authenticated using [external providers](/documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication).
 
 
 C#
@@ -39,3 +45,6 @@ public class WidgetPostController : Controller
     }
 }
 ```
+
+![]()
+[]()[]()

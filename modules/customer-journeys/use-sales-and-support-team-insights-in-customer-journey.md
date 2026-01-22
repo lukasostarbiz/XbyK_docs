@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+15 of 17 Pages
 # Use Sales and Support Team's insights
-  * [ Copy page link ](modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey#) | [Get HelpService ID](modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey# "Close page link panel") [Copy to clipboard](modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -43,16 +45,8 @@ Using feedback when defining a customer journey allows you to:
 Even if the feedback doesn’t appear directly as a required activity for a specific stage of the customer journey, having the data available while defining the journey will help your team see the other above-mentioned data in context and make them more human.
 It will remind your team that behind every click, action, or conversion is a real person with goals, frustrations, and needs. Understanding their sentiments while building your customer journeys ensures your strategy stays grounded in empathy and aligned with what matters most to your customers.
 Still wondering about how to begin customer journey mapping? See what [marketing and strategy leaders recommend](https://www.kentico.com/discover/blog/expert-roundtable-customer-journeys) for organizations starting **their customer journey mapping and optimization** efforts.
-[ Previous page ](modules/customer-journeys/identify-customer-segments-for-customer-journey)
+[ Previous page ](/modules/customer-journeys/identify-customer-segments-for-customer-journey)
 15 of 17
-[ Mark complete and continue ](modules/customer-journeys/customer-journeys)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey)
-[](https://docs.kentico.com/modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey)[](https://docs.kentico.com/modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey)
+[ Mark complete and continue ](/modules/customer-journeys/customer-journeys)
+![]()
+[]()[]()

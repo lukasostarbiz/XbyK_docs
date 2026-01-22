@@ -1,28 +1,34 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/logging
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * Logging 
+
+
 # Logging
-  * [ Copy page link ](documentation/developers-and-admins/development/logging#) | [Get HelpService ID](documentation/developers-and-admins/development/logging#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/logging# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/logging#)
 Xperience by Kentico provides logging functionality that helps monitor application behavior and diagnose issues. The logging implementation is based on [.NET logging](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging).
 Data is logged from all Xperience modules and features, and developers can use logging within any custom code or components. You can access or visualize the resulting logs in various ways:
-  * The built-in [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log)
+  * The built-in [Xperience event log](#xperience-event-log)
   * Command line output when running Xperience as a web application
   * Any external tool or framework compatible with .NET logging ([Serilog](https://serilog.net/), [NLog](https://nlog-project.org/), [Aspire dashboard](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/dashboard/overview), etc.)
 
 
 ## Xperience event log
-Xperience provides a built-in `XperienceEventLog` logging provider, which captures system events and errors. The logged data can be viewed directly within the Xperience administration in the [Event log](documentation/developers-and-admins/configuration/event-log) application. This allows developers and administrators to quickly identify and resolve application issues without requiring external tools or third-party services.
-[![Event log overview](docsassets/documentation/logging/event_log.png)](https://docs.kentico.com/docsassets/documentation/logging/event_log.png)
+Xperience provides a built-in `XperienceEventLog` logging provider, which captures system events and errors. The logged data can be viewed directly within the Xperience administration in the [Event log](/documentation/developers-and-admins/configuration/event-log) application. This allows developers and administrators to quickly identify and resolve application issues without requiring external tools or third-party services.
+[![Event log overview](/docsassets/documentation/logging/event_log.png)](/docsassets/documentation/logging/event_log.png)
 Logged events are stored in the Xperience database. In case of a database outage, the system buffers all logged events in-memory until the database is available. When logging in custom code, you do not need to buffer or check for database availability.
 ## Configure logging
 Logging can be adjusted via standard [.NET logging configuration](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging#configure-logging) in your Xperience project’s _appsettings.json_ file. This allows you to increase or decrease the verbosity of logged data, filter specific events, etc. See [Log level](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?#log-level) to learn more about the available severity and verbosity levels of logged data.
-The [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log) is represented by the `XperienceEventLog` logging provider. By default, this provider captures the following logs:
+The [Xperience event log](#xperience-event-log) is represented by the `XperienceEventLog` logging provider. By default, this provider captures the following logs:
   * Events with a log level of `Warning` or higher originating from any application code (including custom).
   * Events with a log level of `Information` or higher originating from the Xperience libraries (`CMS` and `Kentico` logging categories).
 
 
-Events with the `Information` or lower level originating from custom code are not included unless you add configuration for your event categories. See [Logging in custom code](documentation/developers-and-admins/development/logging#logging-in-custom-code).
+Events with the `Information` or lower level originating from custom code are not included unless you add configuration for your event categories. See [Logging in custom code](#logging-in-custom-code).
 Adjust the configuration if you wish to change or filter which logs appear in the system’s event log (or your own logging providers). You can target events logged from specific Xperience libraries and features by adding configuration for the corresponding namespace.
 For example, the configuration shown below for the `XperienceEventLog` provider does the following:
   * Increases logging verbosity to include the `Debug` level for events originating from loggers in the `CMS.ContentSynchronization` namespace.
@@ -55,10 +61,10 @@ Copy
 
 ## Logging in custom code
 To perform logging in your custom modules, components or other code:
-  1. Obtain an instance of `ILogger<TCategoryName>` using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection). 
-     * The `TCategoryName` generic sets the category for all events created via this logger. The fully qualified name of the specified type is used. The category also determines the **Source** value for events in the [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log).
+  1. Obtain an instance of `ILogger<TCategoryName>` using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection). 
+     * The `TCategoryName` generic sets the category for all events created via this logger. The fully qualified name of the specified type is used. The category also determines the **Source** value for events in the [Xperience event log](#xperience-event-log).
   2. Call one of the available `Log*` methods to log an event with a corresponding log level. 
-     * To set the **Event code** value for events in the [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log), include the `EventId` parameter in the call and set its `name`.
+     * To set the **Event code** value for events in the [Xperience event log](#xperience-event-log), include the `EventId` parameter in the call and set its `name`.
 
 
 C#
@@ -106,7 +112,7 @@ public class CustomComponent {
 }
 ```
 
-Logged events appear in the Xperience event log (depending on your [logging configuration](documentation/developers-and-admins/development/logging#configure-logging) and the used log level) and any other logging providers configured for your application.
+Logged events appear in the Xperience event log (depending on your [logging configuration](#configure-logging) and the used log level) and any other logging providers configured for your application.
 You can use the `LogWithIntervalPolicy` method to ensure that events are logged only once during the application’s lifetime or a specified time interval. This can be useful to limit the frequency of events that could otherwise flood your log.
 C#
 Copy
@@ -124,13 +130,13 @@ logger.LogWithIntervalPolicy(LoggingIntervalPolicy.OncePerPeriod("api-example-on
 
 ## Customize event logging
 You can customize event logging by:
-  * [Handling system](documentation/developers-and-admins/development/logging#handle-event-log-events) events – customize event information, limit which types of events the system logs, or execute any custom logic when an event gets written to the Xperience event log.
-  * [Adding custom logging providers](documentation/developers-and-admins/development/logging#custom-logging-providers) – specify additional logging destinations, e.g., dedicated files, third-party logging tools or frameworks, visualization tools, etc.
-  * [Adding or removing the Xperience event logging provider](documentation/developers-and-admins/development/logging#add-or-remove-the-xperience-event-logging-provider) – in advanced scenarios, you may wish to manually control whether the default Xperience event logging provider is enabled for the application.
+  * [Handling system](#handle-event-log-events) events – customize event information, limit which types of events the system logs, or execute any custom logic when an event gets written to the Xperience event log.
+  * [Adding custom logging providers](#custom-logging-providers) – specify additional logging destinations, e.g., dedicated files, third-party logging tools or frameworks, visualization tools, etc.
+  * [Adding or removing the Xperience event logging provider](#add-or-remove-the-xperience-event-logging-provider) – in advanced scenarios, you may wish to manually control whether the default Xperience event logging provider is enabled for the application.
 
 
 ### Handle event log events
-You can use event handling to customize how the system writes records into its [event log](documentation/developers-and-admins/configuration/event-log).
+You can use event handling to customize how the system writes records into its [event log](/documentation/developers-and-admins/configuration/event-log).
 The system raises the following types of logging events:
   * `EventLogEvents.LogEvent.Before` – allows you to customize the data logged for events or cancel logging for certain types of events.
   * `EventLogEvents.LogEvent.After` – allows you to perform custom actions after events are successfully logged.
@@ -143,7 +149,7 @@ Performing demanding operations during event logging can negatively impact the p
 #### Example
 The following example demonstrates how to disable logging for events of a specific type and modify the _Description_ text for certain events.
   1. Open your Xperience solution in a suitable IDE (e.g., Visual Studio).
-  2. Create a [custom module class](documentation/developers-and-admins/customization/integrate-custom-code).
+  2. Create a [custom module class](/documentation/developers-and-admins/customization/integrate-custom-code).
   3. Override the module’s `OnInit` method and assign a handler method to `EventLogEvents.LogEvent.Before`.
   4. Perform the required actions within the handler method. 
      * Access the data of the logged event through the `Event` property of the handler’s `LogEventArgs` parameter.
@@ -203,7 +209,7 @@ public class EventLogCustomization : Module
 ```
 
 ### Custom logging providers
-The .NET logging framework allows you to add other logging providers in addition to the [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log). Logging providers store and display logged data, and may provide additional features, such as sematic (structured) logging or advanced visualization.
+The .NET logging framework allows you to add other logging providers in addition to the [Xperience event log](#xperience-event-log). Logging providers store and display logged data, and may provide additional features, such as sematic (structured) logging or advanced visualization.
 For more information, see the .NET documentation:
   * [Logging providers](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging-providers)
   * [Third-party logging providers](https://learn.microsoft.com/en-us/dotnet/core/extensions/logging-providers#third-party-logging-providers)
@@ -264,14 +270,14 @@ builder.Services.AddLogging(logging =>
 
 
 When you run the Aspire application (e.g., `dotnet run` from the folder where you added the project), the Aspire dashboard launches in a browser. This also automatically starts your Xperience application. You can view logs from Xperience (and any other applications added to the Aspire AppHost) on the dashboard.
-[![Logs from an Xperience application in Aspire dashboard](docsassets/documentation/logging/Aspire_Dashboard.png)](https://docs.kentico.com/docsassets/documentation/logging/Aspire_Dashboard.png)
+[![Logs from an Xperience application in Aspire dashboard](/docsassets/documentation/logging/Aspire_Dashboard.png)](/docsassets/documentation/logging/Aspire_Dashboard.png)
 **Aspire dashboard standalone mode**
 You can also run Aspire dashboard as a Docker image in [Standalone mode](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/dashboard/standalone).
 ### Add or remove the Xperience event logging provider
-The logging provider for the [Xperience event log](documentation/developers-and-admins/development/logging#xperience-event-log) is enabled by default as part of the `InitKentico` call in the project’s [middleware pipeline](documentation/developers-and-admins/development/website-development-basics/configure-new-projects).
+The logging provider for the [Xperience event log](#xperience-event-log) is enabled by default as part of the `InitKentico` call in the project’s [middleware pipeline](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects).
 If you are developing a fully custom logging implementation for your project, you can remove the Xperience event logging provider by calling the [ClearProviders](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.clearproviders) extension method before you add your own logging providers.
 **Application Insights for SaaS projects**
-Disabling the Xperience event logging provider also affects the [Microsoft Application Insights integration](documentation/developers-and-admins/configuration/saas-configuration#enable-microsoft-application-insights-integration) for [SaaS projects](documentation/developers-and-admins/saas/saas-overview). The [Event log report](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#event-log-and-exceptions) in the Xperience Portal **Monitoring** application will stop receiving data.
+Disabling the Xperience event logging provider also affects the [Microsoft Application Insights integration](/documentation/developers-and-admins/configuration/saas-configuration#enable-microsoft-application-insights-integration) for [SaaS projects](/documentation/developers-and-admins/saas/saas-overview). The [Event log report](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#event-log-and-exceptions) in the Xperience Portal **Monitoring** application will stop receiving data.
 If your implementation clears logging providers, but you also wish to enable the Xperience event logging provider, call the `AddXperienceLogging` method for your application’s service collection.
 C#
 **Program.cs**
@@ -299,4 +305,6 @@ builder.Services.AddXperienceLogging();
 ```
 
 **Filtering Xperience events from your logging providers**
-If you do not wish to include events logged from the Xperience libraries in your logging providers, adjust your project’s [logging configuration](documentation/developers-and-admins/development/logging#configure-logging) to filter out events with the `CMS` or `Kentico` category prefixes.
+If you do not wish to include events logged from the Xperience libraries in your logging providers, adjust your project’s [logging configuration](#configure-logging) to filter out events with the `CMS` or `Kentico` category prefixes.
+![]()
+[]()[]()

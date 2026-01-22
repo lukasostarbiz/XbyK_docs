@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/guides/development/email-marketing/create-an-email-widget-for-articles
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Email marketing](/guides/development/email-marketing)
+  * Create an Email Builder widget for articles 
+
+
 # Create an Email Builder widget for articles
-  * How-to| [ Copy page link ](guides/development/email-marketing/create-an-email-widget-for-articles#) | [Get HelpService ID](guides/development/email-marketing/create-an-email-widget-for-articles#)
-Core MVC 5
-
-
-[✖](guides/development/email-marketing/create-an-email-widget-for-articles# "Close page link panel") [Copy to clipboard](guides/development/email-marketing/create-an-email-widget-for-articles#)
-[Email Builder](documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico allows marketers to design emails using a drag-and-drop interface. By creating custom widgets, developers can extend the functionality of Email Builder to meet specific project requirements.
-Let’s explore how to create an [Email Builder widget](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets) for displaying articles. The example here uses tools and follows conventions from our [Xperience Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit).
+[Email Builder](/documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico allows marketers to design emails using a drag-and-drop interface. By creating custom widgets, developers can extend the functionality of Email Builder to meet specific project requirements.
+Let’s explore how to create an [Email Builder widget](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets) for displaying articles. The example here uses tools and follows conventions from our [Xperience Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit).
 ## Before you start
-If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](guides/development/email-marketing/use-email-builder-starter-kit).
+If you haven’t already integrated the Email Builder Starter Kit into your project, you can see a step-by-step example [in this guide](/guides/development/email-marketing/use-email-builder-starter-kit).
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * Familiarity with [builders in Xperience by Kentico](documentation/developers-and-admins/development/builders)
-  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * Familiarity with [builders in Xperience by Kentico](/documentation/developers-and-admins/development/builders)
+  * Familiarity with [ASP.NET Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/), [Blazor development best practices](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#blazor-development-best-practices), and [MJML markup](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#mjml-markup).
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -146,7 +152,7 @@ public sealed class ArticleEmailWidgetProperties : IEmailWidgetProperties
 }
 ```
 
-You can find details about the various form controls available for Email Builder component properties in [the documentation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
+You can find details about the various form controls available for Email Builder component properties in [the documentation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
 ## Define the widget model
 With the article widget properties in place, we need to define the data the widget will display. Create a file called **ArticleEmailWidgetModel.cs** in the _~/Features/Articles/EmailWidgets_ folder.
 The widget should not render the full text of the article directly in the email, because it is meant to drive traffic to the full version on the website. Properties for the _title_ , _teaser image_ , _summary_ , and _URL_ should be enough.
@@ -177,7 +183,7 @@ If you do not need a portable widget, you can include your data access logic dir
 ### Implement the mapper
 Add a file called **ArticleEmailWidgetModelMapper.cs** in the _~/Features/Articles/EmailWidgets_ folder. Implement the `IComponentModelMapper<TModel>` interface from the Starter Kit.
 The **Article page** content type of the Training guides repository can link to multiple reusable article types— `Article` and `IArticleSchema`.
-These types exist to show the process of handling content model expansion over time in the [advanced content module](modules/advanced-content).
+These types exist to show the process of handling content model expansion over time in the [advanced content module](/modules/advanced-content).
 We’ll need to handle both potential scenarios in our mapping class.
 C#
 **ArticleEmailWidgetModelMapper.cs**
@@ -323,7 +329,7 @@ public partial class ArticleEmailWidget : ComponentBase
 
 ### Design the widget front-end
 With the code-behind in place, we can move on to the widget’s display.
-[Email builder components](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components) also support HTML markup, though we recommend MJML as it automatically handles the messy conditional markup required for handling diverse email clients.
+[Email builder components](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components) also support HTML markup, though we recommend MJML as it automatically handles the messy conditional markup required for handling diverse email clients.
 Add a file called **ArticleEmailWidget.razor** in the same folder and use MJML markup to define the widget’s appearance:
 cshtml
 **ArticleEmailWidget.razor**
@@ -373,4 +379,6 @@ If your agency uses standardized content types for common scenarios, you’ll be
 To see more examples of Email Builder components in action, we recommend checking out those used on the [Community Portal](https://github.com/Kentico/community-portal/tree/v30.5.1.6/src/Kentico.Community.Portal.Web/Components/EmailBuilder).
 Here, you can see the code that makes up [community.kentico.com](https://community.kentico.com/), our site for the Xperience by Kentico developer community that features many helpful resources.
 ## What’s next
-To see an example of an Email Builder template that displays content from a richly structured email content type, continue on to [the next guide in this series](guides/development/email-marketing/display-structured-content-email-builder).
+To see an example of an Email Builder template that displays content from a richly structured email content type, continue on to [the next guide in this series](/guides/development/email-marketing/display-structured-content-email-builder).
+![]()
+[]()[]()

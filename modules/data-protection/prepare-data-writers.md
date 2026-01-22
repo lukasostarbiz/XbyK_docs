@@ -1,13 +1,15 @@
+---
+source: https://docs.kentico.com/modules/data-protection/prepare-data-writers
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+10 of 13 Pages
 # Prepare data writers
-  * [ Copy page link ](modules/data-protection/prepare-data-writers#) | [Get HelpService ID](modules/data-protection/prepare-data-writers#)
-Core MVC 5
-
-
-[✖](modules/data-protection/prepare-data-writers# "Close page link panel") [Copy to clipboard](modules/data-protection/prepare-data-writers#)
 Some data protection laws require all of a visitor’s tracked personal data to be gathered and delivered to them upon request. A data collector is necessary to implement such functionality in Xperience by Kentico.
 Data collectors find other objects associated with a provided set of identities from the Identity collector. In this example, the identities are contacts, and the data collector will find accounts, consent agreements, form data, activities, and other auxiliary data associated with those contacts.
 This example includes _accounts_ and other related objects which are considered obsolete as of version **30.9.0**.
-More details are available in the [changelog](documentation/changelog#refresh-august-25-2025).
+More details are available in the [changelog](/documentation/changelog#refresh-august-25-2025).
 If you are using a newer version, you can remove the affected code from these samples.
 ## Create data writers
 Based on whether data collection is requested through the **Data portability** or **Right to access** tab in the Xperience UI, it will invoke registered personal data collectors with the `outputFormat` parameter set to a constant string value, either `PersonalDataFormat.HUMAN_READABLE` or `PersonalDataFormat.MACHINE_READABLE`.
@@ -39,7 +41,7 @@ public class CollectedColumn
 ```
 
   4. Create a _Writers_ subfolder in _~/Features/DataProtection_ and add an interface that both the human and machine-readable writer classes can implement.
-  5. Similar to the [example in the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), add signatures for void methods that create beginning and ending sections and info objects.
+  5. Similar to the [example in the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), add signatures for void methods that create beginning and ending sections and info objects.
   6. Create an additional method signature for writing values.
   7. Add a method signature for a string method that outputs the result of the writer’s operations.
 C#
@@ -65,10 +67,10 @@ public interface IPersonalDataWriter : IDisposable
 
 ### Add a human-readable writer
   1. In the same folder, define a `HumanReadablePersonalDataWriter` that implements the `IPersonalDataWriter` interface.
-  2. Define it similarly to the [documentation example](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), utilizing a private string builder property.
+  2. Define it similarly to the [documentation example](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), utilizing a private string builder property.
   3. Add a method called `WriteSectionValue` that prints a key and value, ignoring the section name, which the machine-readable counterpart can utilize.
   4. Leave the `Dispose` method empty.
-You don’t need the method here, but it is important for the machine-readable data writer covered in the [next step](modules/data-protection/prepare-data-writers#create-a-machine-readable-writer).
+You don’t need the method here, but it is important for the machine-readable data writer covered in the [next step](#create-a-machine-readable-writer).
 
 
 C#
@@ -195,7 +197,7 @@ public class HumanReadablePersonalDataWriter : IPersonalDataWriter
 ```
 
 ### Create a machine-readable writer
-Add an XML writer that closely mirrors the [example in the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes).
+Add an XML writer that closely mirrors the [example in the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes).
 In this case, `WriteSectionValue` needs to use the `sectionName` property for the XML tags rather than the display name.
 C#
 **XmlPersonalDataWriter.cs**
@@ -279,16 +281,8 @@ public class XmlPersonalDataWriter : IPersonalDataWriter
 }
 ```
 
-[ Previous page ](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor)
+[ Previous page ](/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor)
 10 of 13
-[ Mark complete and continue ](modules/data-protection/collect-personal-data)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/prepare-data-writers)
-[](https://docs.kentico.com/modules/data-protection/prepare-data-writers)[](https://docs.kentico.com/modules/data-protection/prepare-data-writers)
+[ Mark complete and continue ](/modules/data-protection/collect-personal-data)
+![]()
+[]()[]()

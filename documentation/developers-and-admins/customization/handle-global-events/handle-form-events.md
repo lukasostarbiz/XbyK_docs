@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/handle-global-events/handle-form-events
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Handle global events](/documentation/developers-and-admins/customization/handle-global-events)
+  * Handle form events 
+
+
 # Handle form events
-  * [ Copy page link ](documentation/developers-and-admins/customization/handle-global-events/handle-form-events#) | [Get HelpService ID](documentation/developers-and-admins/customization/handle-global-events/handle-form-events#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/handle-global-events/handle-form-events# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/handle-global-events/handle-form-events#)
-You can run custom actions directly when form actions occur by [implementing handlers](documentation/developers-and-admins/customization/handle-global-events) for events of the `BizFormItemEvents` type. The system invokes the following events in response to form actions:
+You can run custom actions directly when form actions occur by [implementing handlers](/documentation/developers-and-admins/customization/handle-global-events) for events of the `BizFormItemEvents` type. The system invokes the following events in response to form actions:
   * `Update` – invoked when a form record is updated.
   * `Insert` – invoked on each form submission.
   * `Delete` – invoked when a form record is deleted.
@@ -69,3 +76,6 @@ public class FormHandlerModule : Module
     }
 }
 ```
+
+![]()
+[]()[]()

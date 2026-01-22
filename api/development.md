@@ -1,7 +1,15 @@
+---
+source: https://docs.kentico.com/api/development
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * Development 
+
+
 # Development
-  * [ Copy page link ](api/development#) | [Get HelpService ID](api/development#)
-Core MVC 5
+  * [Event log](/api/development/event-log)
 
 
-[✖](api/development# "Close page link panel") [Copy to clipboard](api/development#)
-  * [Event log](api/development/event-log)
+![]()
+[]()[]()

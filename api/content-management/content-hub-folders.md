@@ -1,19 +1,24 @@
+---
+source: https://docs.kentico.com/api/content-management/content-hub-folders
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Content management](/api/content-management)
+  * Content hub folders 
+
+
 # Content hub folders
-  * [ Copy page link ](api/content-management/content-hub-folders#) | [Get HelpService ID](api/content-management/content-hub-folders#)
-Core MVC 5
-
-
-[✖](api/content-management/content-hub-folders# "Close page link panel") [Copy to clipboard](api/content-management/content-hub-folders#)
   
 List of examples:
-  * [Dependency injection](api/content-management/content-hub-folders#dependency-injection)
-    * [Initialize required services](api/content-management/content-hub-folders#initialize-required-services)
-  * [Content hub folder management](api/content-management/content-hub-folders#content-hub-folder-management)
-    * [Create content hub folders](api/content-management/content-hub-folders#create-content-hub-folders)
-    * [Rename content hub folders](api/content-management/content-hub-folders#rename-content-hub-folders)
-    * [Move content hub folders](api/content-management/content-hub-folders#move-content-hub-folders)
-    * [Move items into a content hub folder](api/content-management/content-hub-folders#move-items-into-a-content-hub-folder)
-    * [Delete content hub folders](api/content-management/content-hub-folders#delete-content-hub-folders)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Content hub folder management](#content-hub-folder-management)
+    * [Create content hub folders](#create-content-hub-folders)
+    * [Rename content hub folders](#rename-content-hub-folders)
+    * [Move content hub folders](#move-content-hub-folders)
+    * [Move items into a content hub folder](#move-items-into-a-content-hub-folder)
+    * [Delete content hub folders](#delete-content-hub-folders)
 
 
 ## Dependency injection
@@ -39,7 +44,7 @@ public ContentHubFoldersServices(IContentFolderManagerFactory contentFolderManag
 }
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
 ## Content hub folder management
 ### Create content hub folders
 C#
@@ -56,7 +61,7 @@ CreateContentFolderParameters createFolderParams = new CreateContentFolderParame
 await contentFolderManager.Create(rootFolder.ContentFolderID, createFolderParams);
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
 ### Rename content hub folders
 C#
 Copy
@@ -71,7 +76,7 @@ ContentFolderMetadata renamedFolderMetadata = new ContentFolderMetadata("My fold
 await contentFolderManager.Update(folder.ContentFolderID, renamedFolderMetadata);
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
 ### Move content hub folders
 C#
 Copy
@@ -86,7 +91,7 @@ ContentFolderInfo parentFolder = await contentFolderManager.Get("ParentFolder");
 await contentFolderManager.Move(folder.ContentFolderID, parentFolder.ContentFolderID);
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
 ### Move items into a content hub folder
 C#
 Copy
@@ -113,7 +118,7 @@ ContentFolderInfo targetFolder = await contentFolderManager.Get("CandyStores");
 await contentFolderManager.MoveItems(targetFolder.ContentFolderID, itemIds);
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
 ### Delete content hub folders
 C#
 Copy
@@ -126,4 +131,6 @@ ContentFolderInfo folder = await contentFolderManager.Get("MyFolder");
 await contentFolderManager.Delete(folder.ContentFolderID);
 ```
 
-[> Back to list of examples](api/content-management/content-hub-folders#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

@@ -1,32 +1,39 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/object-types/example-offices-management-application
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Object types](/documentation/developers-and-admins/customization/object-types)
+  * Example - Offices management application 
+
+
 # Example - Offices management application
-  * [ Copy page link ](documentation/developers-and-admins/customization/object-types/example-offices-management-application#) | [Get HelpService ID](documentation/developers-and-admins/customization/object-types/example-offices-management-application#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/object-types/example-offices-management-application# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/object-types/example-offices-management-application#)
 This page contains step-by-step instructions showing how to implement a custom application for the Xperience administration, which allows management of manage offices. When working with the application, users:
   * Create new office objects
   * Assign users registered in the system as workers
   * Create listings of open positions for individual offices
 
 
-Developers can then [display the modeled data](documentation/developers-and-admins/development/content-retrieval#retrieve-general-object-data) on the website, for example when building the site’s company overview or hiring sections.
-The implementation makes use of custom [object types](documentation/developers-and-admins/customization/object-types) to define required database entities and the [admin UI customization framework](documentation/developers-and-admins/customization/extend-the-administration-interface) to build an editing interface for administration users. For this reason, you should already be familiar with these concepts (though relevant links are provided throughout the text).
+Developers can then [display the modeled data](/documentation/developers-and-admins/development/content-retrieval#retrieve-general-object-data) on the website, for example when building the site’s company overview or hiring sections.
+The implementation makes use of custom [object types](/documentation/developers-and-admins/customization/object-types) to define required database entities and the [admin UI customization framework](/documentation/developers-and-admins/customization/extend-the-administration-interface) to build an editing interface for administration users. For this reason, you should already be familiar with these concepts (though relevant links are provided throughout the text).
 This page is separated into multiple sections, each building upon the functionality implemented previously:
-  1. [Prepare a class library for administration-related customizations](documentation/developers-and-admins/customization/object-types/example-offices-management-application#ExampleOfficesmanagementapplication-ClassLibrary)
+  1. [Prepare a class library for administration-related customizations](#ExampleOfficesmanagementapplication-ClassLibrary)
   2. Define the custom Office object type and build a basic editing interface 
-    1. [Define the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#define-the-office-object-type)
-    2. [Build a basic editing interface for the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#build-a-basic-editing-interface-for-the-office-object-type)
-  3. [Add the option to define open positions for individual offices via a child object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#ExampleOfficesmanagementapplication-ChildClass)
-  4. [Link users registered in the system to individual offices via a binding object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#ExampleOfficesmanagementapplication-BindingClass)
+    1. [Define the Office object type](#define-the-office-object-type)
+    2. [Build a basic editing interface for the Office object type](#build-a-basic-editing-interface-for-the-office-object-type)
+  3. [Add the option to define open positions for individual offices via a child object type](#ExampleOfficesmanagementapplication-ChildClass)
+  4. [Link users registered in the system to individual offices via a binding object type](#ExampleOfficesmanagementapplication-BindingClass)
 
 
-We recommend storing all administration interface-related customizations in a dedicated class library project. This approach brings benefits such as separability for [specific types of deployments](documentation/developers-and-admins/deployment/deploy-to-private-cloud/deploy-without-the-administration). 
-  1. Create a [new class library project](documentation/developers-and-admins/customization/integrate-custom-code) in your Xperience solution.
+We recommend storing all administration interface-related customizations in a dedicated class library project. This approach brings benefits such as separability for [specific types of deployments](/documentation/developers-and-admins/deployment/deploy-to-private-cloud/deploy-without-the-administration). 
+  1. Create a [new class library project](/documentation/developers-and-admins/customization/integrate-custom-code) in your Xperience solution.
      * The example on this page uses a fictitious _Acme_ company to ensure the uniqueness of various object identifiers and namespace declarations.
      * For example, name the class library: _Acme.Web.Admin_
   2. Add the **Kentico.Xperience.Admin** package to the project.
-  3. [Enable class discovery](documentation/developers-and-admins/customization/integrate-custom-code#enable-class-discovery) for the assembly via the `AssemblyDiscoverable` attribute. 
+  3. [Enable class discovery](/documentation/developers-and-admins/customization/integrate-custom-code#enable-class-discovery) for the assembly via the `AssemblyDiscoverable` attribute. 
 C#
 **AssemblyAttributes.cs**
 Copy
@@ -62,7 +69,7 @@ using CMS;
 The system creates the data class and its corresponding database table: _Acme_Office_
 Continue by modeling the database entity:
   1. Switch to the **Database columns** tab of the **Office** class (available after the class is created).
-  2. Using the [field editor](documentation/developers-and-admins/customization/field-editor), add the following fields: 
+  2. Using the [field editor](/documentation/developers-and-admins/customization/field-editor), add the following fields: 
      * Field 1: 
        * **Field name** : OfficeType
        * **Data type** : Integer number
@@ -84,7 +91,7 @@ Copy
 dotnet run --no-build -- --kxp-codegen --type "Classes" --include "Acme.*"
 ```
 
-  3. Move the generated code files for classes with the `Acme` namespace from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with the office object types.
+  3. Move the generated code files for classes with the `Acme` namespace from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with the office object types.
   4. Relaunch the site using `dotnet run`.
 
 
@@ -141,7 +148,7 @@ This concludes the basic configuration of the Office object type. The next step 
 ## Build a basic editing interface for the Office object type
 This section covers the implementation of the **Office management** application for the admin UI.
 ### Application page
-The [application page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) serves as an entry point to the application. It contains the application registration and also registers a custom category under which the application is displayed in the administration.
+The [application page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) serves as an entry point to the application. It contains the application registration and also registers a custom category under which the application is displayed in the administration.
   1. Create a new folder structure in the custom class library: _UIPages/OfficeManagement_
      * The _UIPages_ folder groups all custom UI page implementations
      * The _OfficeManagement_ folder groups all implementations that belong to the OfficeManagement application
@@ -188,7 +195,7 @@ namespace Acme.Web.Admin.UIPages.OfficeManagement
 ```
 
 ### Office listing
-The listing page displays all existing offices. The page is based on the [listing UI page template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template) provided by the API. To add the listing page:
+The listing page displays all existing offices. The page is based on the [listing UI page template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template) provided by the API. To add the listing page:
   1. Under the _OfficeManagement_ folder, create a new class **OfficeListing.cs** and copy the following code:
 
 
@@ -237,7 +244,7 @@ namespace Acme.Web.Admin.UIPages.OfficeManagement
 ```
 
 ### Create page
-The create page enables users to create new office objects. The page is based on the [create UI page template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
+The create page enables users to create new office objects. The page is based on the [create UI page template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
 Under the _OfficeManagement_ folder, create a new class **OfficeCreate.cs** and copy the following code:
 C#
 **Office create page - OfficeCreate.cs**
@@ -273,7 +280,7 @@ namespace Acme.Web.Admin.UIPages.OfficeManagement
 **Reserved UI form code names**
 The create page automatically uses the UI form with the **create** code name, which you added for the _Office_ class. In other scenarios where you do not follow the _create_ code name convention for the UI form, you would need to override the `ConfigurePage` method and set the code name into the `PageConfiguration.UIFormName` property.
 ### Edit page
-The create page enables users to create new office objects. The page is based on the [edit UI page template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
+The create page enables users to create new office objects. The page is based on the [edit UI page template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
   1. Create a new folder under _OfficeManagement_ called _OfficeEdit_.
   2. Under the _OfficeEdit_ folder, create a new class **OfficeEditSection.cs** and copy the following code:
 C#
@@ -347,17 +354,17 @@ The edit page automatically uses the UI form with the **edit** code name, which 
 
 ### Final page hierarchy
 The following diagram shows the final UI page hierarchy of the **Office management** application:
-[![Office management application UI page hierarchy](docsassets/documentation/example-offices-management-application/OfficeManagementBasicHierarchy.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementBasicHierarchy.png)
+[![Office management application UI page hierarchy](/docsassets/documentation/example-offices-management-application/OfficeManagementBasicHierarchy.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementBasicHierarchy.png)
 The application, when accessed and populated with sample data, displays the following:
-[![Application demonstration](docsassets/documentation/example-offices-management-application/OfficeManagementBasicScreenshot.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementBasicScreenshot.png)
+[![Application demonstration](/docsassets/documentation/example-offices-management-application/OfficeManagementBasicScreenshot.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementBasicScreenshot.png)
 ## Add a child class tracking open job positions
 **Prerequisites**
 This example extends the Office management application created in the following sections:
-  1. [Define the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#define-the-office-object-type)
-  2. [Build a basic editing interface for the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#build-a-basic-editing-interface-for-the-office-object-type)
+  1. [Define the Office object type](#define-the-office-object-type)
+  2. [Build a basic editing interface for the Office object type](#build-a-basic-editing-interface-for-the-office-object-type)
 
 
-In this section, we extend the Office management application with the ability to create and list _job openings_ available for specific offices. Similar to Office objects, job openings are represented by a custom **OfficeJob** object type that has a [parent-child relationship](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) with a specific office.
+In this section, we extend the Office management application with the ability to create and list _job openings_ available for specific offices. Similar to Office objects, job openings are represented by a custom **OfficeJob** object type that has a [parent-child relationship](/documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) with a specific office.
 ### Create the OfficeJob object type
   1. Edit the **Acme** module in the **Modules** application.
   2. Switch the **Classes** tab and select **New class**.
@@ -372,7 +379,7 @@ In this section, we extend the Office management application with the ability to
 The system creates the data class and its corresponding database table: _Acme_OfficeJob_
 Continue by modeling the database entity:
   1. Switch to the **Database columns** tab of the **OfficeJob** class (available after the class is created).
-  2. Using the [field editor](documentation/developers-and-admins/customization/field-editor), add the following fields: 
+  2. Using the [field editor](/documentation/developers-and-admins/customization/field-editor), add the following fields: 
      * Field 1: 
        * **Field name** : OfficeJobDisplayName
        * **Data type** : Text
@@ -397,7 +404,7 @@ Copy
 dotnet run --no-build -- --kxp-codegen --type "Classes" --include "Acme.OfficeJob"
 ```
 
-  3. Move the code files generated for the **OfficeJob** object type from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library housing the Office management application. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with the office job object types.
+  3. Move the code files generated for the **OfficeJob** object type from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library housing the Office management application. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with the office job object types.
 
 
 ### Set the OfficeJob object type as a child of the Office object type
@@ -550,7 +557,7 @@ namespace Acme.Web.Admin.UIPages.OfficeManagement
 
 
 #### Open position create page
-The create page enables users to create new job opening objects. The page is based on the [edit UI page template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
+The create page enables users to create new job opening objects. The page is based on the [edit UI page template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) provided by the API. To add the create page:
   1. Under the _OpenPositions_ folder, create a new class **OpenPositionCreate.cs** and copy the following code:
 C#
 **Create a new open position - OpenPositionCreate.cs**
@@ -770,17 +777,17 @@ The edit page automatically uses the UI form with the **edit** code name, which 
 This completes the editing interface for the OfficeJob object type.
 ### Final page hierarchy of the Office management application
 The following diagram shows the final UI page hierarchy of the **Office management** application:
-[![Office management application page hierarchy](docsassets/documentation/example-offices-management-application/OfficeManagementPositionsHierarchy.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsHierarchy.png)
+[![Office management application page hierarchy](/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsHierarchy.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsHierarchy.png)
 The application, when accessed on the _Open positions_ page and populated with sample data, displays the following:
-[![Open positions management interface](docsassets/documentation/example-offices-management-application/OfficeManagementPositionsScreenshot.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsScreenshot.png)
+[![Open positions management interface](/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsScreenshot.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementPositionsScreenshot.png)
 ## Assign users from the system to offices via a binding object type
 **Prerequisites**
 This example extends the Office management application created in the following sections:
-  1. [Define the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#define-the-office-object-type)
-  2. [Build a basic editing interface for the Office object type](documentation/developers-and-admins/customization/object-types/example-offices-management-application#build-a-basic-editing-interface-for-the-office-object-type)
+  1. [Define the Office object type](#define-the-office-object-type)
+  2. [Build a basic editing interface for the Office object type](#build-a-basic-editing-interface-for-the-office-object-type)
 
 
-The following example demonstrates how to create a binding class, including an editing interface. The sample binding class allows the creation of relationships between offices and [users](documentation/developers-and-admins/configuration/users/user-management). Each relationship indicates that a user is an employee of a given office.
+The following example demonstrates how to create a binding class, including an editing interface. The sample binding class allows the creation of relationships between offices and [users](/documentation/developers-and-admins/configuration/users/user-management). Each relationship indicates that a user is an employee of a given office.
 ### Create and model the binding object type
   1. Edit the **Acme** module in the **Modules** application.
   2. Switch the **Classes** tab and select **New class**.
@@ -795,7 +802,7 @@ The following example demonstrates how to create a binding class, including an e
 The system creates the data class and its corresponding database table: _Acme_OfficeUser_
 Continue by modeling the database entity:
   1. Switch to the **Database columns** tab of the **Office user binding** class (available after the class is created).
-  2. Using the [field editor](documentation/developers-and-admins/customization/field-editor), add the following fields: 
+  2. Using the [field editor](/documentation/developers-and-admins/customization/field-editor), add the following fields: 
      * Field 1: 
        * **Field name** : OfficeID
        * **Data type** : Integer number
@@ -821,7 +828,7 @@ Copy
 dotnet run --no-build -- --kxp-codegen --type "Classes" --include "Acme.OfficeUser"
 ```
 
-  3. Move the code files generated for the **OfficeUser** object type from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library housing the Office management application. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with office-user binding object type.
+  3. Move the code files generated for the **OfficeUser** object type from the _Classes\Acme\Office_ directory under your project’s root to the custom class library. Alternatively, you can use the `--location` [parameter](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to set a custom path that targets the class library housing the Office management application. Make sure the classes do not remain under your main web project, otherwise you will encounter errors when working with office-user binding object type.
 
 
 ### Set the OfficeUser object type as a binding
@@ -953,6 +960,8 @@ namespace Acme.Web.Admin.UIPages.OfficeManagement
 
 ### Final page hierarchy of the Office management application
 The following diagram shows the final UI page hierarchy of the **Office management** application:
-[![Office management final page hierarchy](docsassets/documentation/example-offices-management-application/OfficeManagementBindingHierarchy.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementBindingHierarchy.png)
+[![Office management final page hierarchy](/docsassets/documentation/example-offices-management-application/OfficeManagementBindingHierarchy.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementBindingHierarchy.png)
 The application, when accessed on the _Assigned workers_ page and populated with sample data, displays the following:
-[![Assigned workers page](docsassets/documentation/example-offices-management-application/OfficeManagementBindingScreenshot.png)](https://docs.kentico.com/docsassets/documentation/example-offices-management-application/OfficeManagementBindingScreenshot.png)
+[![Assigned workers page](/docsassets/documentation/example-offices-management-application/OfficeManagementBindingScreenshot.png)](/docsassets/documentation/example-offices-management-application/OfficeManagementBindingScreenshot.png)
+![]()
+[]()[]()

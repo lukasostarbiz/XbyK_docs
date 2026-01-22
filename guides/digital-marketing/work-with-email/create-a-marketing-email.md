@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-email/create-a-marketing-email
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with email](/guides/digital-marketing/work-with-email)
+  * Create a marketing email 
+
+
 # Create a marketing email
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-email/create-a-marketing-email#) | [Get HelpService ID](guides/digital-marketing/work-with-email/create-a-marketing-email#) | This page is part of a module: [ Work with emails ](modules/work-with-emails)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-email/create-a-marketing-email# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-email/create-a-marketing-email#)
 Learn step-by-step how to create a marketing email in Xperience by Kentico.
 The sample covers what it takes to create and send a marketing newsletter informing your subscribers about personal loans.
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site.
@@ -45,6 +51,8 @@ You can now send the email to the recipients. You can select **Preview** to see 
 The demo environment is not connected to an email server, so you won’t be able to send emails to real inboxes.
 **Email statistics**
 Xperience shows you essential information about your email performance. Open your email in the **Marketing Emails** channel application and switch to the **Statistics** tab. You can view the statistics of a tracked email once you’ve sent some emails. But for the time being, there won’t be any.
-[![](docsassets/guides/create-a-marketing-email/marketing-email.png)](https://docs.kentico.com/docsassets/guides/create-a-marketing-email/marketing-email.png)
+[![](/docsassets/guides/create-a-marketing-email/marketing-email.png)](/docsassets/guides/create-a-marketing-email/marketing-email.png)
 ### Next step
-IN the next guide, learn how to [create newsletter confirmation and unsubscription emails](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails).
+IN the next guide, learn how to [create newsletter confirmation and unsubscription emails](/guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails).
+![]()
+[]()[]()

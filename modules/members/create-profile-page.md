@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/members/create-profile-page
+scrape_date: 2026-01-22
+---
+
+Module: Members
+8 of 12 Pages
 # Create the profile page
-  * [ Copy page link ](modules/members/create-profile-page#) | [Get HelpService ID](modules/members/create-profile-page#)
-Core MVC 5
-
-
-[✖](modules/members/create-profile-page# "Close page link panel") [Copy to clipboard](modules/members/create-profile-page#)
 Now that we have the view component and the controller action it posts to, we need to use the view component somewhere to test this functionality.
 Let’s create a bare-bones page template so that editors can see the profile page in the content tree.
 ### Start with a content type
@@ -19,7 +21,7 @@ Create a new content type with the following properties:
 
 
 You don’t need to add anything on the **Fields** tab, since we haven’t defined ways for editors to configure the profile page.
-Now run the [Code generation tool](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to generate a C# class for this content type in your project:
+Now run the [Code generation tool](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to generate a C# class for this content type in your project:
 CMD
 **.NET CLI**
 Copy
@@ -64,7 +66,7 @@ public static class ProfilePagePageTemplate
 
 Use the `ContentTypeNames` parameter to make sure only pages of the _Profile page_ type can use the template.
 ### Serve the template from a controller
-Now we need to tell Xperience’s [Content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing) to use a template for the _Profile page_ content type.
+Now we need to tell Xperience’s [Content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing) to use a template for the _Profile page_ content type.
 Create a controller that returns a `TemplateResult` from its `Index` action and register it with the router.
 C#
 **ProfilePageController.cs**
@@ -90,21 +92,13 @@ public class ProfilePageController : Controller
 With the template now bound to the content type, you can create a new _Profile page_ in Xperience and assign the new template.
 Your browser does not support the video tag. 
 Make sure to secure the page by enabling the **Requires authentication** checkbox in the **Membership** section of its **Properties** tab.
-[![Screenshot of the page’s properties](docsassets/guides/create-a-profile-page/SecuredProfilePage.png)](https://docs.kentico.com/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)
+[![Screenshot of the page’s properties](/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)](/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)
 ## Consider the possibilities
 If you want to expand on the functionality here, you can create allows members to change their email address, and tie it to a button on the profile page.
 You can create new methods in your membership service that use the `UserManager<T>`’s `GenerateChangeEmailTokenAsync` and `ChangeEmailAsync` methods in a flow similar to the existing [password reset process](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/Membership/Widgets/ResetPassword) in the [finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) of the _Training guides_ repository. Send an email with a link that contains the token.
 You can further expand the functionality by allowing members to define a recovery email address, or a phone number to use in case their primary email is no longer accessible.
-[ Previous page ](modules/members/profile-form)
+[ Previous page ](/modules/members/profile-form)
 8 of 12
-[ Mark complete and continue ](modules/members/set-up-restricted-pages)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/create-profile-page)
-[](https://docs.kentico.com/modules/members/create-profile-page)[](https://docs.kentico.com/modules/members/create-profile-page)
+[ Mark complete and continue ](/modules/members/set-up-restricted-pages)
+![]()
+[]()[]()

@@ -1,23 +1,25 @@
+---
+source: https://docs.kentico.com/modules/members/create-member-contact-relationship
+scrape_date: 2026-01-22
+---
+
+Module: Members
+5 of 12 Pages
 # Create a member-contact relationship
-  * [ Copy page link ](modules/members/create-member-contact-relationship#) | [Get HelpService ID](modules/members/create-member-contact-relationship#)
-Core MVC 5
-
-
-[✖](modules/members/create-member-contact-relationship# "Close page link panel") [Copy to clipboard](modules/members/create-member-contact-relationship#)
-A [Contact](documentation/business-users/digital-marketing/contact-management) object in Xperience by Kentico represents a website visitor. As you saw [earlier in this series](modules/members/groundwork-registration-widget), you can enable **registration** and implement sign in logic for your solution that creates [members](documentation/business-users/members).
+A [Contact](/documentation/business-users/digital-marketing/contact-management) object in Xperience by Kentico represents a website visitor. As you saw [earlier in this series](/modules/members/groundwork-registration-widget), you can enable **registration** and implement sign in logic for your solution that creates [members](/documentation/business-users/members).
 For many reasons it is useful to keep the the **member synchronized with the corresponding contact**. On successful member registration, the system logs the event for the contact and maps the member’s email to the contact if the contact’s email is empty. This synchronization aligns email data but doesn’t take care of any custom fields, such as name and other information relevant for your domain. Nor does it establish a direct link between the two objects.
-This guide expands on an [example from our documentation](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts), showing how to map custom member and contact fields, and use them to create link between the two objects.
+This guide expands on an [example from our documentation](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts), showing how to map custom member and contact fields, and use them to create link between the two objects.
 The examples here rely in part on examples from other training materials:
-  * The [Add a custom field to the Contact profile](guides/development/customizations-and-integrations/add-custom-contact-field) guide. Our example uses a custom contact field created here.
-  * The [Data protection](guides/development/data-protection) series. Our example utilizes cookie logic and the consent banner from this series.
+  * The [Add a custom field to the Contact profile](/guides/development/customizations-and-integrations/add-custom-contact-field) guide. Our example uses a custom contact field created here.
+  * The [Data protection](/guides/development/data-protection) series. Our example utilizes cookie logic and the consent banner from this series.
 
 
 If you have not completed these requirements, you can consider the parts of this example relating to _custom contact fields_ , _consent_ , and _cookie management_ optional.
 ## Build a member-to-contact relationship
-The [documentation contact-member mapping example](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts#example) is fairly straightforward. You implement the `IMemberToContactMapper` as a custom class and in the `Map` method you set all the custom values from the member object to the contact object. Then you call the default `Map` implementation, which ensures the mapping of the email and saving the `ContactInfo` object.
+The [documentation contact-member mapping example](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts#example) is fairly straightforward. You implement the `IMemberToContactMapper` as a custom class and in the `Map` method you set all the custom values from the member object to the contact object. Then you call the default `Map` implementation, which ensures the mapping of the email and saving the `ContactInfo` object.
 In that example the contact data gets updated, but the contact has no information about which member it corresponds to.
-Let’s create a little more complex solution. We’ll look at how to map **custom member fields** to **custom contact fields** and how to utilize [custom contact field](guides/development/customizations-and-integrations/add-custom-contact-field) to create relationship with the corresponding member.
-Extending contact with custom field is out the scope of this example. Here we will use the custom fields created in [a customization guide](guides/development/customizations-and-integrations/add-custom-contact-field). Feel free to skip this part if you have not completed that guide.
+Let’s create a little more complex solution. We’ll look at how to map **custom member fields** to **custom contact fields** and how to utilize [custom contact field](/guides/development/customizations-and-integrations/add-custom-contact-field) to create relationship with the corresponding member.
+Extending contact with custom field is out the scope of this example. Here we will use the custom fields created in [a customization guide](/guides/development/customizations-and-integrations/add-custom-contact-field). Feel free to skip this part if you have not completed that guide.
 ## Create the mapping
 ### Prepare the service
 Let’s start by creating a service in which we will place methods with all the mapping logic. This way, we will be able to call the logic outside of the limited default scenarios where Xperience triggers the `IMemberToContactMapper`.
@@ -210,20 +212,12 @@ public class TrainingGuidesMemberToContactMapper : IMemberToContactMapper
 ## Check your progress
 At this point you should be able to test whether your member-contact data synchronization works.
 Run your website in an incognito browser window as a visitor and accept cookies. Open the Xperience administration dashboard in a new window and visit the **Contact management** application. You will see your newly created anonymous contact.
-Now, in your website, use the registration page we created [earlier in this series](modules/members/groundwork-registration-widget) to register a new member.
+Now, in your website, use the registration page we created [earlier in this series](/modules/members/groundwork-registration-widget) to register a new member.
 When you go back to your administration dashboard and reload the **Contact management** , you will see that your new contact has its fields set according to what you filled out for the member. Including the custom fields. Success!
 Your browser does not support the video tag. 
-[![Shows the custom contact fields filled out according to the member data](docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)](https://docs.kentico.com/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)
-[ Previous page ](modules/members/register-the-member)
+[![Shows the custom contact fields filled out according to the member data](/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)](/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)
+[ Previous page ](/modules/members/register-the-member)
 5 of 12
-[ Mark complete and continue ](modules/members/actualize-member-contact-relationship)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/create-member-contact-relationship)
-[](https://docs.kentico.com/modules/members/create-member-contact-relationship)[](https://docs.kentico.com/modules/members/create-member-contact-relationship)
+[ Mark complete and continue ](/modules/members/actualize-member-contact-relationship)
+![]()
+[]()[]()

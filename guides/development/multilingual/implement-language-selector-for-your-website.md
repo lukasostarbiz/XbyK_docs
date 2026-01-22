@@ -1,37 +1,43 @@
+---
+source: https://docs.kentico.com/guides/development/multilingual/implement-language-selector-for-your-website
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Multilingual](/guides/development/multilingual)
+  * Implement a language selector for your website 
+
+
 # Implement a language selector for your website
-  * How-to| [ Copy page link ](guides/development/multilingual/implement-language-selector-for-your-website#) | [Get HelpService ID](guides/development/multilingual/implement-language-selector-for-your-website#)
-Core MVC 5
-
-
-[✖](guides/development/multilingual/implement-language-selector-for-your-website# "Close page link panel") [Copy to clipboard](guides/development/multilingual/implement-language-selector-for-your-website#)
 Offering your content to visitors in multiple languages is an important step in reaching a broader audience.
 If you followed the first part of the **Multilingual content** mini-series, your website can now display content in multiple languages, and it’s time to make switching between those languages seamless for your visitors.
 In the second part of the series, you’ll enhance the user experience by handling multilingual URLs and implementing a simple language selector that ties it all together.
 **Multilingual content series**
-**This is the second and last part of the[Set up multilingual](guides/development/multilingual) mini-series.** Using a concrete example, the mini-series demonstrates best practices and necessary steps you need to perform in order to present your website content in multiple languages in a user-friendly way.
-If you have followed along with [the previous part of the series](guides/development/multilingual/display-your-website-content-in-multiple-languages), you now:
+**This is the second and last part of the[Set up multilingual](/guides/development/multilingual) mini-series.** Using a concrete example, the mini-series demonstrates best practices and necessary steps you need to perform in order to present your website content in multiple languages in a user-friendly way.
+If you have followed along with [the previous part of the series](/guides/development/multilingual/display-your-website-content-in-multiple-languages), you now:
   * understand the basic terminology related to multilingual support in Xperience by Kentico.
   * have your home page and cookie consents in two language versions: English and Spanish.
 
 
 Continue with this series and learn how to handle navigating and working with URLs for multilingual pages. To tie everything together, you will implement a simple language selector control for the visitor, similar to the gif below:
-[![Screen recording gif of a working language selector](docsassets/guides/implement-language-selector-for-your-website/language-select.gif)](https://docs.kentico.com/docsassets/guides/implement-language-selector-for-your-website/language-select.gif)
+[![Screen recording gif of a working language selector](/docsassets/guides/implement-language-selector-for-your-website/language-select.gif)](/docsassets/guides/implement-language-selector-for-your-website/language-select.gif)
 ## Prerequisites
-This article is a direct continuation of [the first part](guides/development/multilingual/display-your-website-content-in-multiple-languages) in this mini-series. However, it is not mandatory that you have completed it, as long as you are familiar with the concepts mentioned above. 
+This article is a direct continuation of [the first part](/guides/development/multilingual/display-your-website-content-in-multiple-languages) in this mini-series. However, it is not mandatory that you have completed it, as long as you are familiar with the concepts mentioned above. 
 To follow along, you should have the following:
-  * running instance of **Xperience by Kentico version 30.11.1 or higher** (for guidance, follow [Install a specific version of Xperience by Kentico](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico))
-  * **a website channel** set up with at least one page displaying a content item stored in the Content hub (for guidance, follow [our Kickstart series](guides/development/developer-kickstart/xperience-by-kentico-overview))
-  * **content items and pages existing in at least two different languages** (this first part of the Multilingual series uses [English and Spanish as an example](guides/development/multilingual/display-your-website-content-in-multiple-languages))
+  * running instance of **Xperience by Kentico version 30.11.1 or higher** (for guidance, follow [Install a specific version of Xperience by Kentico](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico))
+  * **a website channel** set up with at least one page displaying a content item stored in the Content hub (for guidance, follow [our Kickstart series](/guides/development/developer-kickstart/xperience-by-kentico-overview))
+  * **content items and pages existing in at least two different languages** (this first part of the Multilingual series uses [English and Spanish as an example](/guides/development/multilingual/display-your-website-content-in-multiple-languages))
   * some version of **routing implemented** in your application (a link navigating from one page to another is sufficient)
 
 
 Alternatively, feel free to take a look at the [finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) to see the completed implementation of both multilingual URL handling and a language selector. All the code samples below are sourced from the repository.
 ## Handle URLs and routing
-Setting up multiple languages in Xperience by Kentico affects URL generation for web pages. For any non-primary language, [the URL has to contain the language code](documentation/developers-and-admins/development/routing/content-tree-based-routing#multilingual-urls) (e.g., _~/es/page_).
+Setting up multiple languages in Xperience by Kentico affects URL generation for web pages. For any non-primary language, [the URL has to contain the language code](/documentation/developers-and-admins/development/routing/content-tree-based-routing#multilingual-urls) (e.g., _~/es/page_).
 As a developer, you must ensure the links across your site work properly, preserving the language context, as visitors navigate your site.
-If you have followed along with the [first part of this mini-series](guides/development/multilingual/display-your-website-content-in-multiple-languages) or are running the app from the [finished branch in our repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished), your site contains a _Tracking consent banner_ and a _Cookie policy page_ that look similar to the screenshot below:
-[![Screenshot of the cookie policy page](docsassets/guides/implement-language-selector-for-your-website/cookies-consents.png)](https://docs.kentico.com/docsassets/guides/implement-language-selector-for-your-website/cookies-consents.png)
-Let’s look at an example of routing on the [banner](guides/development/data-protection/build-a-tracking-consent-banner). It includes a **Configure cookies** link. This link is supposed to navigate the visitor to the _Cookie policy page_ so they can set their preferences with more granularity. However, right now, it always navigates the visitor to the _Cookie policy page_ in the **primary language** , regardless of previous context. Navigate to the _TrackingConsent.cshtml_ file to find out why:
+If you have followed along with the [first part of this mini-series](/guides/development/multilingual/display-your-website-content-in-multiple-languages) or are running the app from the [finished branch in our repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished), your site contains a _Tracking consent banner_ and a _Cookie policy page_ that look similar to the screenshot below:
+[![Screenshot of the cookie policy page](/docsassets/guides/implement-language-selector-for-your-website/cookies-consents.png)](/docsassets/guides/implement-language-selector-for-your-website/cookies-consents.png)
+Let’s look at an example of routing on the [banner](/guides/development/data-protection/build-a-tracking-consent-banner). It includes a **Configure cookies** link. This link is supposed to navigate the visitor to the _Cookie policy page_ so they can set their preferences with more granularity. However, right now, it always navigates the visitor to the _Cookie policy page_ in the **primary language** , regardless of previous context. Navigate to the _TrackingConsent.cshtml_ file to find out why:
 In the _TrackingConsent_ view, the _Configure cookies_ anchor tag points to a URL composed of `BaseUrl` and the relative `RedirectUrl`.
 cshtml
 **TrackingConsent.cshtml**
@@ -46,7 +52,7 @@ Copy
 
 Look inside the _TrackingConsentViewComponent.cs_ and notice that the `BaseUrl` property is populated by the `GetBaseUrl` method of `HttpRequestService`. This is a problem, as the `GetBaseUrl` method returns the site’s base URL **without a language codename**.
 You need to define a new method that will consider the current request’s language and add relevant language code to the base URL.
-To handle [preserving language thread in routing](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#preserving-thread-language-across-routing-modes), Xperience by Kentico provides an option to define a **custom language name key** in the [RouteValueDictionary](https://learn.microsoft.com/en-us/dotnet/api/system.web.routing.routevaluedictionary) object of the request:
+To handle [preserving language thread in routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#preserving-thread-language-across-routing-modes), Xperience by Kentico provides an option to define a **custom language name key** in the [RouteValueDictionary](https://learn.microsoft.com/en-us/dotnet/api/system.web.routing.routevaluedictionary) object of the request:
   1. Define a new constant in _TrainingGuides.Web/Features/Shared/Helpers/ApplicationConstants.cs_.
 C#
 **ApplicationConstants.cs**
@@ -60,7 +66,7 @@ internal static class ApplicationConstants
 }
 ```
 
-  2. In your Program.cs file, locate the `UseWebPageRouting` method call that [enables content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing/enable-content-tree-based-routing). Pass in your custom language key:
+  2. In your Program.cs file, locate the `UseWebPageRouting` method call that [enables content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing/enable-content-tree-based-routing). Pass in your custom language key:
 C#
 **Program.cs**
 Copy
@@ -79,7 +85,7 @@ builder.Services.AddKentico(async features =>
 
 A custom language code name in the request can come in handy in several scenarios. In the next step of this section, we utilize it to manually extract the language from the request URL.
 Another example would be invoking a custom action from the context of the page served by the router.
-[Read more about LanguageNameRouteValuesKey and its usage in our documentation](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#preserving-thread-language-across-routing-modes).
+[Read more about LanguageNameRouteValuesKey and its usage in our documentation](/documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#preserving-thread-language-across-routing-modes).
   3. Add a new `GetBaseUrlWithLanguage` public method declaration into the _IHttpRequestService_ interface (in _TrainingGuides.Web/Features/Shared/Services_).
   4. Implement the `GetBaseUrlWithLanguage` method in the _HttpRequestService_ class:
 C#
@@ -124,8 +130,8 @@ public string GetBaseUrlWithLanguage()
 Notice that our example appends the language to the base URL only when it does not equal the primary language.
 If you navigate to a URL with a language code of the primary language, the system will NOT redirect you to a URL without a language code. Instead, it returns an [HTTP 404 (Not found)](https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found) error.
 For example, if the primary language of your channel is English, _http://localhost:53415/en/page_ will return [HTTP 404](https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found).
-The `GetBaseUrlWithLanguage` method in this code sample depends on `Kentico.WebPageUrlPaths` in the route values, and may not work outside the context of Xperience’s [Content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing).
-You can find an example of an overload that operates outside this context in the [member registration widget guide](guides/development/members/implement-member-registration#assemble-a-url-for-the-form).
+The `GetBaseUrlWithLanguage` method in this code sample depends on `Kentico.WebPageUrlPaths` in the route values, and may not work outside the context of Xperience’s [Content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing).
+You can find an example of an overload that operates outside this context in the [member registration widget guide](/guides/development/members/implement-member-registration#assemble-a-url-for-the-form).
   5. Now, let’s propagate a new property to the view.  
 Navigate to the _~/Features/DataProtection/ViewComponents/TrackingConsent_ folder and add a new `BaseUrlWithLanguage` property into `TrackingConsentViewModel`.
 C#
@@ -200,7 +206,7 @@ Your browser does not support the video tag.
 ## Add a language selector
 If you followed along up to this point, your site visitors are now able to view and navigate your content in two different languages.
 The last step is to tie everything together and allow the visitor to switch languages using a simple UI control (instead of changing the URL in the browser navigation bar).
-[![Screenshot of the language selector dropdown](docsassets/guides/implement-language-selector-for-your-website/dropdown.png)](https://docs.kentico.com/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)
+[![Screenshot of the language selector dropdown](/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)](/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)
 Because advanced styling and UI appearance are out of the scope of this series, let’s just use a simple Bootstrap dropdown select control:
   * The control will display the name of the current selected language (preferred language by default).
   * After the visitor opens the dropdown, it will show a list of available languages to choose from (all languages defined in the Xperience by Kentico instance).
@@ -279,8 +285,8 @@ Copy
   4. Create a method that generates a language-specific URL of the current page.
     1. Implement a new public method `GetCurrentPageUrlForLanguage` in _HttpRequestService.cs_ in _TrainingGuides.Web/Features/Shared/Services)_. Remember also to add a declaration in IHttpRequestService.
 The method will utilize two new services you need to inject using dependency injection:
-     * [`IWebPageDataContextRetriever`](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#implement-routing) (to retrieve data about the current page)
-     * [`IWebPageUrlRetriever`](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) (to generate a language-specific URL of a page).
+     * [`IWebPageDataContextRetriever`](/documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#implement-routing) (to retrieve data about the current page)
+     * [`IWebPageUrlRetriever`](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) (to generate a language-specific URL of a page).
 C#
 **HttpRequestService.cs**
 Copy
@@ -408,4 +414,6 @@ Copy
 Build and run your application. Your visitor can now toggle between English and Spanish versions of your website.
 Your browser does not support the video tag. 
 ## What’s next
-Congratulations! 🙂 Your website is now set up to support multiple languages. Play around and translate other pages and widgets or add new languages in your Xperience instance. If you have been working with our [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished), and are looking for an exercise, try localizing the [Page-like widget](guides/development/activities-and-marketing/log-custom-activities).
+Congratulations! 🙂 Your website is now set up to support multiple languages. Play around and translate other pages and widgets or add new languages in your Xperience instance. If you have been working with our [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished), and are looking for an exercise, try localizing the [Page-like widget](/guides/development/activities-and-marketing/log-custom-activities).
+![]()
+[]()[]()

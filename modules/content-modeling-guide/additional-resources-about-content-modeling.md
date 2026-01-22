@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/additional-resources-about-content-modeling
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+27 of 28 Pages
 # Additional resources about content modeling
-  * [ Copy page link ](modules/content-modeling-guide/additional-resources-about-content-modeling#) | [Get HelpService ID](modules/content-modeling-guide/additional-resources-about-content-modeling#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/additional-resources-about-content-modeling# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/additional-resources-about-content-modeling#)
 If you are new to content modeling, we have collected the following list of third-party resources that cover this important topic.
   * HeadlessCreator weekly 
     * <https://www.headlesscreator.com/course/content-modeling-weekly>
@@ -20,16 +22,8 @@ If you are new to content modeling, we have collected the following list of thir
     * <https://www.contentful.com/help/content-modelling-basics/>
 
 
-[ Previous page ](modules/content-modeling-guide/general-content-modeling-recommendations)
+[ Previous page ](/modules/content-modeling-guide/general-content-modeling-recommendations)
 27 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/conclusion)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/additional-resources-about-content-modeling)
-[](https://docs.kentico.com/modules/content-modeling-guide/additional-resources-about-content-modeling)[](https://docs.kentico.com/modules/content-modeling-guide/additional-resources-about-content-modeling)
+[ Mark complete and continue ](/modules/content-modeling-guide/conclusion)
+![]()
+[]()[]()

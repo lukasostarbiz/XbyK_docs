@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Content modeling](/guides/architecture/content-modeling)
+  * [Model website presentation components](/guides/architecture/content-modeling/model-website-presentation-components)
+  * Model Page Builder widgets 
+
+
 # Model Page Builder widgets
-  * How-to| [ Copy page link ](guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets#) | [Get HelpService ID](guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets#)
-Core MVC 5
-
-
-[✖](guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets# "Close page link panel") [Copy to clipboard](guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets#)
 Xperience Page Builder is a user-friendly interface that business users, such as website editors, content administrators, or marketers, use to manage web page content. During content modeling sessions, business analysts and solution architects, in collaboration with UX designers, front-end engineers, and stakeholders from the editor team, define which page components editors will use. This article will provide several recommendations for creating Kentico Page Builder widgets.
 After reading the article, you should be able to:
   * Understand the role of widgets and their function in shaping website content and user experience.
@@ -14,7 +21,7 @@ After reading the article, you should be able to:
 
 
 ## Prerequisites
-  * You should have basic knowledge of [content modeling principles](guides/architecture/content-modeling/content-modeling-guide).
+  * You should have basic knowledge of [content modeling principles](/guides/architecture/content-modeling/content-modeling-guide).
 
 
 ## What are widgets
@@ -22,7 +29,7 @@ When defining the presentation model for editors, it’s essential to understand
 **Page Builder** is not the only approach to display content on the website, but compared to other options, it’s the one that editors prefer the most. In Xperience website pages, the **page template** defines the overall look and feel of the page, while **sections** serve to arrange content, and **widgets** display and often style it.
 **Widgets** are the smallest, reusable components that website editors use to add or manage content on the website and create highly engaging pages with different layouts. Widgets play a crucial role in shaping how editors present content on the website and shape customer experience.
 ## Focus on your content goals
-From a developers perspective, widgets are view components with potential additional properties defined through a class that implements the IWidgetProperties interface. Learn more about how developers implement widgets in [guides about the Page Builder](guides/development/page-builder).
+From a developers perspective, widgets are view components with potential additional properties defined through a class that implements the IWidgetProperties interface. Learn more about how developers implement widgets in [guides about the Page Builder](/guides/development/page-builder).
 Page Builder provides a flexible environment that editors adore. Its widgets can display content from various sources, including **reusable data** stored in the _Content hub_ , **one-off data** stored on individual website pages, and data **ingested into Xperience via APIs**.
 ### Three types of widget
 When editors see how widgets work, they want to use them for everything, from adding content to the website to defining their core content, which they want to reuse across different channels, to designing what data will be served through a headless channel.
@@ -48,9 +55,9 @@ Xperience stores the combination of widgets and the content they contain or refe
 For example, the Featured content widget in the Kbank demo site displays data from the content type called Featured content. Featured content is a combination of a title, text and an image which doesn’t represent any semantic type, such as a case study, article or product. You will read more about the Featured content widget in the following article.
 ### Widgets that display data from semantic content types
 The third widget type often poses challenges for editor teams but offers significant benefits. These widgets leverage data organized into structured and meaningful types. We can call these representations _semantic_ content types as they represent not just the data, but also what this data means from the business perspective.
-For example, when editors create a listing page with latest articles, they do not add title, short texts and images per each article, but they use a widget that displays articles’s, summaries, and thumbnails which are stored as [a reusable content type](guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) and displayed through [an article page](guides/architecture/content-modeling/model-website-content-types/model-an-article-page). Structuring content into _semantic types_ that keep data separate from their presentation boosts editor’s efficiency, help ensure content consistency, and improves content curation.
-Take a look at the Kbank’s _Product_ content type. It stores [product-specific data in a reusable format](guides/architecture/content-modeling/model-reusable-content/model-a-reusable-product).
-[![Mortgage product item in the Content hub](docsassets/guides/model-page-builder-widgets/product-content-type.gif)](https://docs.kentico.com/docsassets/guides/model-page-builder-widgets/product-content-type.gif)
+For example, when editors create a listing page with latest articles, they do not add title, short texts and images per each article, but they use a widget that displays articles’s, summaries, and thumbnails which are stored as [a reusable content type](/guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) and displayed through [an article page](/guides/architecture/content-modeling/model-website-content-types/model-an-article-page). Structuring content into _semantic types_ that keep data separate from their presentation boosts editor’s efficiency, help ensure content consistency, and improves content curation.
+Take a look at the Kbank’s _Product_ content type. It stores [product-specific data in a reusable format](/guides/architecture/content-modeling/model-reusable-content/model-a-reusable-product).
+[![Mortgage product item in the Content hub](/docsassets/guides/model-page-builder-widgets/product-content-type.gif)](/docsassets/guides/model-page-builder-widgets/product-content-type.gif)
 However, editors are not limited when creating a product page, as designers modeled the widgets to display the referenced data. Even though the Product content type is composed of other content types, editors can easily create the reusable product and all its content items directly from the website channel.
 Each content type has its [role in the company’s brand experience](https://www.clearvoice.com/resources/how-to-define-content-levels-brand-experience/). We recommend designing a semantic content model and defining the content type’s data structure based on “what entity the content type represents,” even if you define the content model as “just a web page.” For example, your editors will create pages to promote events and use widgets to display [event details](https://schema.org/Event), share information about different [speakers](https://schema.org/Person), feature [brands](https://schema.org/Brand) that sponsors the event or provide details about the [event organizers](https://schema.org/Organization). You can consult [schema.org](https://schema.org/docs/full.html) to see what properties should different semantic content types contain.
 Your browser does not support the video tag. 
@@ -93,14 +100,14 @@ At the same time, skilled editors crave complexity and nuance. They’ll prefer 
 ## Provide instructions on how to work with complex widgets
 Two widgets of the same name will likely be different when you see them in different projects. Widgets can range from simple ones that offer just one editing property to complex ones that support diverse scenarios based on editors’ choices.
 See the following image that shows different instructions editors see in the Kbank’s Hero banner widget.
-[![](docsassets/guides/model-page-builder-widgets/hero-banner-properties.png)](https://docs.kentico.com/docsassets/guides/model-page-builder-widgets/hero-banner-properties.png)
+[![](/docsassets/guides/model-page-builder-widgets/hero-banner-properties.png)](/docsassets/guides/model-page-builder-widgets/hero-banner-properties.png)
 When preparing the content model your developers will implement, ensure your requirements contain the editor instructions you want to help your editors with. Do not leave creating these instructions to developers. Developers and editors often think differently, and you need to focus the guidance accordingly.
 ### Document complex editing flows before development
 It is quite common for editors to come up with seemingly simple ideas, but when you inspect them closer, they reveal their true complexity. These ideas, though straightforward from the editors’ perspective, often require elaborate backend code to manifest the correct behavior. During content modeling sessions, you need to bridge the gap between developers, editors who will be working with the solution, marketers, and other stakeholders.
 Imagine you’re shaping widget requirements. You define precisely how these widgets should behave. It’s not just about documenting the obvious – widget X will have Y and Z properties – in many cases, you need to capture the nuances. Detail the expected behavior to ensure all stakeholders—developers, designers, and product managers—align with the requirements. When you hand over these well-thought-out requirements to the development team, they’ll appreciate your clarity.
 Now, picture yourself sitting across from the technical team used to working with meticulously crafted technical documentation. If your widget contains a complex series of actions, each of which can trigger some behavior, create a flow chart detailing the flow. As you walk your team through the flow of editor actions, you’re not merely conveying design and development instructions but showcasing your due diligence. The flow isn’t just a sequence of steps; it’s a narrative – a story of how the widget combines user interactions and backend logic.
 This flow will serve more than developers. When you present it, you’re ensuring everybody says, “Look, we’ve thought this through. We’ve considered every twist and turn. This widget isn’t just lines of code; it helps editors succeed.” With a detailed flow approved by all stakeholders at the start, you can limit future iterations.
-[![The flow of dependent fields in Hero banner widget](docsassets/guides/model-page-builder-widgets/hero-banner-editor-flow.png)](https://docs.kentico.com/docsassets/guides/model-page-builder-widgets/hero-banner-editor-flow.png)
+[![The flow of dependent fields in Hero banner widget](/docsassets/guides/model-page-builder-widgets/hero-banner-editor-flow.png)](/docsassets/guides/model-page-builder-widgets/hero-banner-editor-flow.png)
 ## Widget personalization
 Editors of the Xperience website can tailor their marketing messages to appeal to different audiences.
   * **Widget personalization**. Editors can handpick content variants targeted at a contact group. Imagine tailor-stitching a bespoke experience: “Ah, this content is for the early risers; that content is for the night owls.”
@@ -110,7 +117,7 @@ Editors of the Xperience website can tailor their marketing messages to appeal t
 ## Test widgets with real-life content
 UX designers love to jump right in and start cranking out website wireframes. They usually don’t have content to work with at the start, so when they need to fill space with something, they paste in some placeholder text or images and move along. These solutions work, but partially.
 More often than not, your team will discover that your content barely fits the wall of nonsensical _Lorem ipsum_ text you’ve used to test the widgets.
-Don’t compromise on dummy content. Since you [completed the content audit](guides/architecture/content-modeling/content-modeling-guide), you’ve likely already molded your content strategy and defined your brand tone and voice.
+Don’t compromise on dummy content. Since you [completed the content audit](/guides/architecture/content-modeling/content-modeling-guide), you’ve likely already molded your content strategy and defined your brand tone and voice.
 Use your existing content from the audit and strategy and recreate it using the new widget prototypes and their properties. Find out if you can design your content in a way your brand book defines, identify other needs for widget configuration, and discuss options with your project owner.
 ## Validate every decision with ROI
 Every project implementor needs to stay vigilant and monitor the requests from the stakeholders and the editing team.
@@ -127,5 +134,7 @@ From experience, it’s safe to say that this update cycle rarely gets done in o
 ## Summary
 With the right properties, Page Builder widgets transform content editors’ experiences and help them design their website content without developers. Editors can craft their pages with finesse, tailor the user experience, and guide website visitors toward conversion, and boost ROI.
 ## What’s next?
-You have learned about different areas to consider when defining the widgets editors will use to create pages in their website channels. In the next guide, you’ll explore what to consider when [defining presentation components](guides/architecture/content-modeling/model-website-presentation-components/model-landing-page-components) defining presentation components editors will use to build effective landing pages.
-[Continue to the next guide](guides/architecture/content-modeling/model-website-presentation-components/model-landing-page-components)
+You have learned about different areas to consider when defining the widgets editors will use to create pages in their website channels. In the next guide, you’ll explore what to consider when [defining presentation components](/guides/architecture/content-modeling/model-website-presentation-components/model-landing-page-components) defining presentation components editors will use to build effective landing pages.
+[Continue to the next guide](/guides/architecture/content-modeling/model-website-presentation-components/model-landing-page-components)
+![]()
+[]()[]()

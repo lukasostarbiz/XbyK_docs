@@ -1,24 +1,30 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/convert-child-pages-to-widgets
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Convert child pages to widget content 
+
+
 # Convert child pages to widget content
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/convert-child-pages-to-widgets#) | [Get HelpService ID](guides/development/upgrade-deep-dives/convert-child-pages-to-widgets#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/convert-child-pages-to-widgets# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/convert-child-pages-to-widgets#)
 In this technical deep dive, we’ll show you how to convert child pages from Kentico Xperience 13 (KX13) into flexible Page Builder widgets when upgrading to Xperience by Kentico (XbyK). You’ll learn how to use the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) to transform child pages into reusable Content hub items and render them as widgets that editors can manage through Page Builder.
 This gives content editors more control over page layout and structure while preserving all the original content.
 ## Before you start
 This guide assumes you have:
   * Basic knowledge of C# and .NET framework concepts
-  * Familiarity with the basics of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) widgets in Xperience by Kentico and in Kentico Xperience 13
-  * Basic understanding of the [KX13 to XbyK upgrade process](guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) using the Kentico Migration tool.
+  * Familiarity with the basics of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) widgets in Xperience by Kentico and in Kentico Xperience 13
+  * Basic understanding of the [KX13 to XbyK upgrade process](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) using the Kentico Migration tool.
 
 
-If you haven’t, we recommend following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico. This guide builds on top of the walkthrough, assuming you have a running KX13 Dancing Goat sample site and a target XbyK _DancingGoat_ solution with two projects: _DancingGoat.Web_ and _DancingGoat.Entities_.
+If you haven’t, we recommend following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico. This guide builds on top of the walkthrough, assuming you have a running KX13 Dancing Goat sample site and a target XbyK _DancingGoat_ solution with two projects: _DancingGoat.Web_ and _DancingGoat.Entities_.
 ## Understand the scenario and the solution
 We’ll use the Dancing Goat _About us_ page as our example.
 In the content tree, the page contains multiple child items of type _About Us section_ , which the _About us_ page loads and renders in its view. The page is not using Page Builder, so the editor can’t access the **Page** tab or modify the layout.
-[![The ‘About us section’ content in administration](docsassets/guides/convert-child-pages-to-widgets/about-us-sections-admin.png)](https://docs.kentico.com/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-admin.png)
-[![The ‘About us’ page](docsassets/guides/convert-child-pages-to-widgets/about-us-sections-live-site.gif)](https://docs.kentico.com/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-live-site.gif)
+[![The ‘About us section’ content in administration](/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-admin.png)](/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-admin.png)
+[![The ‘About us’ page](/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-live-site.gif)](/docsassets/guides/convert-child-pages-to-widgets/about-us-sections-live-site.gif)
 Let’s change that in our target XbyK instance. Instead of utilizing the .NET routing, controller and hardcoded view, we’ll use an existing page template with Page Builder set up, and display content in widgets.
 Additionally, we’ll extract the content into the Content hub for possible future reuse.
 To accomplish this transformation, we’ll configure the migration tool to convert the child pages into Content hub items instead of web pages.
@@ -186,7 +192,7 @@ Copy
 ## Build your new widget in target instance
 After successful data migration, it’s time to implement the widget in your target XbyK instance.
 ### Generate code files
-First, we need to [generate code files](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) for the newly generated ‘DancingGoatCore.AboutUsSection’ content type.
+First, we need to [generate code files](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) for the newly generated ‘DancingGoatCore.AboutUsSection’ content type.
 Run this command from the root of your _DancingGoat.Web_ project: 
 CMD
 Copy
@@ -355,6 +361,8 @@ Provided your target solution includes implementation for the _DancingGoat.Landi
 Your browser does not support the video tag. 
 You’ve converted rigid child pages into flexible Page Builder widgets giving editors full control over content layout and structure.
 ## What’s next?
-For more migration scenarios, explore our other [upgrade deep dive guides](guides/development/upgrade-deep-dives).
-If you haven’t already, consider following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico from start to finish.
+For more migration scenarios, explore our other [upgrade deep dive guides](/guides/development/upgrade-deep-dives).
+If you haven’t already, consider following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico from start to finish.
 If you encounter any challenging scenarios during your own widget migrations, or if you have ideas for subjects we haven’t covered, don’t hesitate to reach out to us through the **Send us feedback** button at the bottom of this page.
+![]()
+[]()[]()

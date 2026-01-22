@@ -1,22 +1,28 @@
+---
+source: https://docs.kentico.com/guides/development/data-protection/data-erasers-clear-contact-information-from-the-site
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Data protection](/guides/development/data-protection)
+  * Data erasers - Clear contact information from the site 
+
+
 # Data erasers - Clear contact information from the site
-  * [ Copy page link ](guides/development/data-protection/data-erasers-clear-contact-information-from-the-site#) | [Get HelpService ID](guides/development/data-protection/data-erasers-clear-contact-information-from-the-site#) | This page is part of a module: [ Data protection ](modules/data-protection)
-Core MVC 5
-
-
-[✖](guides/development/data-protection/data-erasers-clear-contact-information-from-the-site# "Close page link panel") [Copy to clipboard](guides/development/data-protection/data-erasers-clear-contact-information-from-the-site#)
 Some data protection laws require site owners to comply when visitors request that their personal data be removed from the application. Data erasers are used to delete or anonymize a visitor’s data. They are called from the **Right to be forgotten** tab in the **Data protection** app of the Xperience by Kentico administration. Let’s examine the process of writing a data eraser.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the [earlier guides in the series](guides/development/data-protection).
+  * Have followed along with the samples from the [earlier guides in the series](/guides/development/data-protection).
 
 
-The example presented in this [Data protection guide series](guides/development/data-protection) is a **valid implementation of data protection for[Contacts](documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](documentation/business-users/members) and their associated data.)
+The example presented in this [Data protection guide series](/guides/development/data-protection) is a **valid implementation of data protection for[Contacts](/documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](/documentation/business-users/members) and their associated data.)
 You can copy-paste the code samples into your own solution.
 However, if you choose to do so, **make sure to consult your legal team** to determine whether the implementation, texts, and consent levels **meet the requirements of your region and market**.
 **Code samples**
@@ -25,12 +31,12 @@ The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guide
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Add a data eraser
-This example’s data eraser is similar in some ways to the data collector from [earlier](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), but it differs in a few key ways. Firstly, you don’t need to choose between different types of data writers in a data eraser because you are deleting it rather than compiling it for display. This means you don’t need to move the erasure logic into a separate file, as with the data collector.
-This data eraser will follow the same principle as the [documentation example](documentation/developers-and-admins/data-protection/personal-data-erasure#create-the-data-eraser), but it will include additional options for deleting form data and form submission activities.
+This example’s data eraser is similar in some ways to the data collector from [earlier](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), but it differs in a few key ways. Firstly, you don’t need to choose between different types of data writers in a data eraser because you are deleting it rather than compiling it for display. This means you don’t need to move the erasure logic into a separate file, as with the data collector.
+This data eraser will follow the same principle as the [documentation example](/documentation/developers-and-admins/data-protection/personal-data-erasure#create-the-data-eraser), but it will include additional options for deleting form data and form submission activities.
 Unlike the data collector, this class does not need collections of `CollectedColumn` objects. It will simply delete the objects rather than display specific fields.
 Alternatively, you can make a data eraser that only anonymizes objects (overwrites columns with personal identifying information with anonymous values) instead of deleting them. If you decide to anonymize certain object types, you can take a similar approach and specify which columns you want to anonymize.
   1. Create a new _Erasers_ folder in _TrainingGuides.Web/Features/DataProtection_ and add a new file called `ContactDataEraser.cs`.
-  2. Use the `FormCollectionService` from [earlier](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data) to retrieve forms and form submissions.
+  2. Use the `FormCollectionService` from [earlier](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data) to retrieve forms and form submissions.
   3. Include methods to delete form submission activities, all activities, contacts, and submitted form data.
 These methods correspond to the configuration options that users can choose on the **Right to be forgotten** tab of the **Data protection** application. You must check this configuration in each method to decide whether the object type should actually be deleted.
 
@@ -179,4 +185,6 @@ PersonalDataEraserRegister.Instance.Add(ActivatorUtilities.CreateInstance<Contac
 
 This code will fit anywhere within the scope of the method, though it may be best to put it after the existing code from earlier in this series in order to mirror the ordering of the data protection UI and the order in which the data eraser is called in relation to the identity collector.
 Now, you can open the **Data protection** application from the **Configuration** category of the administration interface. On the **Right to be forgotten** tab, you can enter the email of a known contact and choose which data to delete, and Xperience will use the `ContactDataEraser` to remove their information from the system, as shown in the video below:
-Your browser does not support the video tag.
+Your browser does not support the video tag. 
+![]()
+[]()[]()

@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-roles/create-new-role
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with roles](/guides/configuration/work-with-users-and-roles/work-with-roles)
+  * Create a new role 
+
+
 # Create a new role
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-roles/create-new-role#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-roles/create-new-role#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-roles/create-new-role# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-roles/create-new-role#)
 Let’s create a **Content editor** role with specific permissions for a user that works on managing website content.
   1. Before you create a new role in Kentico, put together a list of activities users with this role should be able to perform. Consider the applications they need and the actions they must perform in each application.
   2. Go to the **Role management** application.
@@ -24,4 +31,6 @@ Let’s create a **Content editor** role with specific permissions for a user th
   10. In this example, the _Content Editor_ role should look like the following:
 
 
-[![Content editor role settings](docsassets/guides/create-new-role/content-editor-role-settings.png)](https://docs.kentico.com/docsassets/guides/create-new-role/content-editor-role-settings.png)
+[![Content editor role settings](/docsassets/guides/create-new-role/content-editor-role-settings.png)](/docsassets/guides/create-new-role/content-editor-role-settings.png)
+![]()
+[]()[]()

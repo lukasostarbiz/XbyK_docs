@@ -1,15 +1,21 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys)
+  * What is a customer journey? 
+
+
 # What is a customer journey?
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 In short, a **customer journey** is a **roadmap** of how a person **interacts with a brand across different touchpoints**. Tracking this journey gives you the **right insights** to create seamless experiences and ensures that every interaction is meaningful.
 ## See customer journeys in action
-Let’s revisit Emma’s [unconfirmed registration dilemma](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) and apply it to three very different customer scenarios that could be happening here.
+Let’s revisit Emma’s [unconfirmed registration dilemma](/guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) and apply it to three very different customer scenarios that could be happening here.
 First, Thomas, a first-time visitor, submits a registration form but never clicks the confirmation link in his email. His _customer journey_ includes a timely reminder message and a follow-up email emphasizing the benefits of confirming his registration.
 Next visitor, Maria, starts her registration process but never finishes it. Her journey includes a personalized reminder and a gentle nudge highlighting what she’s missing out on.
 Finally, a loyal customer, Guy, delays confirming his registration because he’s unsure about the membership conditions. He keeps returning to the website, clicking through different pages to find the necessary information. His journey leads to a targeted message explaining exclusive membership conditions as well as perks, and inviting him to complete the process.
@@ -25,4 +31,6 @@ For example, if a user like Guy frequently visits a product page but never purch
 Customer journey tracking addresses the entire brand experience, whereas other frameworks serve different roles. For example, the buyer’s journey highlights the decision-making process leading to a purchase, while a user story defines specific needs in product development.
 Let’s discuss each of these frameworks in detail and clarify their role in your marketing and sales efforts.
 ## Next step
-You learned what the main purpose of customer journey mapping is. Now let’s explore how these concepts intersect and complement each other in the next chapter – [prepare to go back to basics](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare).
+You learned what the main purpose of customer journey mapping is. Now let’s explore how these concepts intersect and complement each other in the next chapter – [prepare to go back to basics](/guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare).
+![]()
+[]()[]()

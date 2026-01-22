@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/user-management-essentials
+scrape_date: 2026-01-22
+---
+
+Module: User management essentials
+1 of 4 Pages
 # User management introduction
-  * [ Copy page link ](modules/user-management-essentials#) | [Get HelpService ID](modules/user-management-essentials#)
-Core MVC 5
-
-
-[✖](modules/user-management-essentials# "Close page link panel") [Copy to clipboard](modules/user-management-essentials#)
 Effective user and role management is key to maintaining secure, structured, and efficient collaboration within **Xperience by Kentico**. As a **digital experience platform (DXP)** , [(Xperience by Kentico)](https://www.kentico.com/discover/what-is-a-dxp) empowers organizations to control access, streamline content workflows, and ensure users have the correct permissions. This short series will guide you through the essentials — signing in, creating and managing users, and defining roles for a well-organized and secure environment.
 By mastering these foundational skills, admins, marketers, and content editors can optimize workflows, enforce security best practices, and create a flexible yet cohesive system tailored to their business needs. Whether you’re setting up new _Users_ or defining _Roles_ , this series will help you get started with confidence.
 Let’s have a look at the definition of core concepts.
@@ -30,14 +32,6 @@ Xperience comes with two built-in applications you can use to create, manage, an
 Xperience comes with two predefined roles: _Administrator_ and _Digital Channel Manager_. If your project requires a more granular system of access permissions, you can easily create custom roles to fit your needs.
 Previous page
 1 of 4
-[ Mark complete and continue ](modules/user-management-essentials/work-with-roles-essentials)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/user-management-essentials)
-[](https://docs.kentico.com/modules/user-management-essentials)[](https://docs.kentico.com/modules/user-management-essentials)
+[ Mark complete and continue ](/modules/user-management-essentials/work-with-roles-essentials)
+![]()
+[]()[]()

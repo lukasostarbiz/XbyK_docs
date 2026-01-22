@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/general-content-modeling-recommendations
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+26 of 28 Pages
 # General content modeling recommendations
-  * [ Copy page link ](modules/content-modeling-guide/general-content-modeling-recommendations#) | [Get HelpService ID](modules/content-modeling-guide/general-content-modeling-recommendations#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/general-content-modeling-recommendations# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/general-content-modeling-recommendations#)
 **Routing and URLs**
-We recommend using [content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing) for most scenarios. With content tree-based routing, the system generates ULRs for pages based on their position in the content tree. The content tree-based routing also allows editors to easily [change the URL slugs of their pages](documentation/business-users/website-content/manage-page-urls) and store the URL history in the **Former URLs** application. 
-Sometimes, editors use characters considered suboptimal (or even invalid) for URLs. For example, some accented characters from extended Latin alphabets, such as _ö_ , can be encoded into SEO-suboptimal URL slugs. We recommend building [custom field validation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) on any URL-related page type fields and constraining forbidden (or suboptimal) URL characters. To validate custom URL fields, your code can reference the _Settings_ for URLs in the administration. You can use the `ISettingsService` and [retrieve specified URL restrictions](documentation/developers-and-admins/configuration/settings).
+We recommend using [content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing) for most scenarios. With content tree-based routing, the system generates ULRs for pages based on their position in the content tree. The content tree-based routing also allows editors to easily [change the URL slugs of their pages](/documentation/business-users/website-content/manage-page-urls) and store the URL history in the **Former URLs** application. 
+Sometimes, editors use characters considered suboptimal (or even invalid) for URLs. For example, some accented characters from extended Latin alphabets, such as _ö_ , can be encoded into SEO-suboptimal URL slugs. We recommend building [custom field validation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) on any URL-related page type fields and constraining forbidden (or suboptimal) URL characters. To validate custom URL fields, your code can reference the _Settings_ for URLs in the administration. You can use the `ISettingsService` and [retrieve specified URL restrictions](/documentation/developers-and-admins/configuration/settings).
 **Aim for content reusability**
 Follow a simple rule of thumb: if there is a chance that specific content will appear on the same website in multiple places or various channels of marketing communication, use structured content and **store your reusable content items in the Content hub**.
 **Ensure a seamless editing experience**
@@ -30,16 +32,8 @@ We recommend that
   * Developers use a pre-production UAT environment to create, test, and prove their code changes before synchronizing it with the production site.
 
 
-[ Previous page ](modules/content-modeling-guide/website-system-pages)
+[ Previous page ](/modules/content-modeling-guide/website-system-pages)
 26 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/additional-resources-about-content-modeling)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/general-content-modeling-recommendations)
-[](https://docs.kentico.com/modules/content-modeling-guide/general-content-modeling-recommendations)[](https://docs.kentico.com/modules/content-modeling-guide/general-content-modeling-recommendations)
+[ Mark complete and continue ](/modules/content-modeling-guide/additional-resources-about-content-modeling)
+![]()
+[]()[]()

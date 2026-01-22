@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/contact-management/create-a-contact-us-form
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+20 of 44 Pages
 # Create a Contact us form
-  * [ Copy page link ](modules/contact-management/create-a-contact-us-form#) | [Get HelpService ID](modules/contact-management/create-a-contact-us-form#)
-Core MVC 5
-
-
-[✖](modules/contact-management/create-a-contact-us-form# "Close page link panel") [Copy to clipboard](modules/contact-management/create-a-contact-us-form#)
 Create a simple yet effective **Contact us** form with a custom title and a **“thank you” message**.
 We walk through this example scenario in Xperience by Kentico’s [Kbank demo website](https://www.kentico.com/services/training/training-website-requests). To work along with us in this safe sandbox environment, you can request a hosted trial at the link above by selecting the following option: _Xperience by Kentico - Business Tutorial KBank demo site_.
 ## Create the form in the Forms app
@@ -49,16 +51,8 @@ We walk through this example scenario in Xperience by Kentico’s [Kbank demo we
   8. **Save** and **Publish** your changes.
 
 
-[ Previous page ](modules/contact-management/create-a-new-form)
+[ Previous page ](/modules/contact-management/create-a-new-form)
 20 of 44
-[ Mark complete and continue ](modules/contact-management/change-a-forms-name)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/create-a-contact-us-form)
-[](https://docs.kentico.com/modules/contact-management/create-a-contact-us-form)[](https://docs.kentico.com/modules/contact-management/create-a-contact-us-form)
+[ Mark complete and continue ](/modules/contact-management/change-a-forms-name)
+![]()
+[]()[]()

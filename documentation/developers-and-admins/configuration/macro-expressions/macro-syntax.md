@@ -1,17 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/configuration/macro-expressions/macro-syntax
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Configuration](/documentation/developers-and-admins/configuration)
+  * [Macro expressions](/documentation/developers-and-admins/configuration/macro-expressions)
+  * Macro syntax 
+
+
 # Macro syntax
-  * [ Copy page link ](documentation/developers-and-admins/configuration/macro-expressions/macro-syntax#) | [Get HelpService ID](documentation/developers-and-admins/configuration/macro-expressions/macro-syntax#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/configuration/macro-expressions/macro-syntax# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/configuration/macro-expressions/macro-syntax#)
-[Macro expressions](documentation/developers-and-admins/configuration/macro-expressions) need to be enclosed in curly brackets and the percentage symbol: {% <expression> %}
+[Macro expressions](/documentation/developers-and-admins/configuration/macro-expressions) need to be enclosed in curly brackets and the percentage symbol: {% <expression> %}
 Xperience provides an object-oriented language named **K#** , which defines the available macro expression syntax. The language is very similar to the C# programming language. This page provides an overview of the features available in K# and describes its differences from C#.
 The syntax is **case-insensitive** – the system does not differentiate between upper and lower case letters in commands. However, letter case may have an effect when inputting constants and variables (for the purposes of comparisons and similar).
 ## Macro return values
 When the system resolves a macro expression, the result is an object (value). Macros support the following types of objects:
   * Standard scalar C# types (int, double, string, DateTime, etc.).
   * Collections based on the `IEnumerable` interface.
-  * [Object types](documentation/developers-and-admins/api/database-table-api) (`UserInfo`, `MemberInfo`, etc.) – available for macros in the default values of object type editing forms
+  * [Object types](/documentation/developers-and-admins/api/database-table-api) (`UserInfo`, `MemberInfo`, etc.) – available for macros in the default values of object type editing forms
     * When the result of an expression is an object type, you can continue accessing its properties using conventional dot notation. For example: `UserInfo.UserName`
 
 
@@ -33,8 +40,8 @@ Copy
 {% UtcNow %}
 ```
 
-Xperience provides a set of macro fields that you can use in macro expressions, depending on the current location. See [Email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates) and [Macro resolvers](documentation/developers-and-admins/configuration/macro-expressions/macro-resolvers) for more information.
-You can also [register custom macro fields](documentation/developers-and-admins/configuration/macro-expressions/define-macro-fields) for specific administration UI pages.
+Xperience provides a set of macro fields that you can use in macro expressions, depending on the current location. See [Email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates) and [Macro resolvers](/documentation/developers-and-admins/configuration/macro-expressions/macro-resolvers) for more information.
+You can also [register custom macro fields](/documentation/developers-and-admins/configuration/macro-expressions/define-macro-fields) for specific administration UI pages.
 ## Methods 
 Macro methods perform specific tasks (run code) inside macro expressions. The recommended syntax for method calls is **infix** notation for the first argument. Prefix notation is also supported.
 K#
@@ -53,7 +60,7 @@ Copy
 {% FormatString("Today is {0}", UtcNow) %}
 ```
 
-Xperience provides a set of default methods that you can use in macro expressions. See: [Email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates) and [Macro resolvers](documentation/developers-and-admins/configuration/macro-expressions/macro-resolvers)
+Xperience provides a set of default methods that you can use in macro expressions. See: [Email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates) and [Macro resolvers](/documentation/developers-and-admins/configuration/macro-expressions/macro-resolvers)
 ## Operators
 Macro syntax uses the same basic operators as C#.
 The following table summarizes the differences in operator behavior that you need to keep in mind when writing macros.
@@ -83,7 +90,7 @@ Binary - subtracts the second operand from the first. In addition to numeric typ
   * GUID values are equal to the string representation of the GUID (always case insensitive)
   * Enumeration values are equal to constants of the enum’s underlying type (integer or string)
 
-**Tip** : Use [macro parameters](documentation/developers-and-admins/configuration/macro-expressions/macro-syntax#macro-parameters) to specify case sensitivity and the culture context in equality checks.  
+**Tip** : Use [macro parameters](#macro-parameters) to specify case sensitivity and the culture context in equality checks.  
 <  
 <=  
 >  
@@ -240,7 +247,7 @@ Copy
 ```
 
 ## Open conditions and loops
-When defining conditions or loops, you can leave the body of the loop/condition open and close it later in another macro expression. This allows you to apply the command to text content or HTML code placed between the macro expressions. Open commands can be particularly useful in [Email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates).
+When defining conditions or loops, you can leave the body of the loop/condition open and close it later in another macro expression. This allows you to apply the command to text content or HTML code placed between the macro expressions. Open commands can be particularly useful in [Email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates).
 You can also nest additional macro expressions inside open loops or conditions.
 K#
 **Example**
@@ -272,7 +279,7 @@ Copy
 ## Indexing
 K# supports indexing for collections and objects that serve as containers for other data:
   * **String** (returns the character at the specified index)
-  * **IEnumerable** collections, e.g., when retrieving linked content items in the fields of email content types in [Email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates) (returns the object at the specified index in the collection)
+  * **IEnumerable** collections, e.g., when retrieving linked content items in the fields of email content types in [Email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates) (returns the object at the specified index in the collection)
 
 
 K#
@@ -321,4 +328,6 @@ Parameter |  Example |  Description
 default |  {% |(default)N|A %} |  Sets a default value that the macro returns if the result of the expression is an empty value.  
 culture |  {% |(culture)en-us %} |  Sets the culture code used when formatting numbers and dates in the macro result.  
 casesensitive |  {% |(casesensitive)true %} |  Determines whether string comparisons and other operations inside the macro expression are case sensitive. _False_ by default.  
-encode |  {% |(encode)true %} |  Enables [HTML encoding](https://www.w3schools.com/html/html_charset.asp) for the result of the macro – converts reserved HTML characters to equivalent character entities.
+encode |  {% |(encode)true %} |  Enables [HTML encoding](https://www.w3schools.com/html/html_charset.asp) for the result of the macro – converts reserved HTML characters to equivalent character entities.  
+![]()
+[]()[]()

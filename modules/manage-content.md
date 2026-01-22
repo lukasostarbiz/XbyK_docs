@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/manage-content
+scrape_date: 2026-01-22
+---
+
+Module: Manage content
+1 of 19 Pages
 # Introduction to managing content
-  * [ Copy page link ](modules/manage-content#) | [Get HelpService ID](modules/manage-content#)
-Core MVC 5
-
-
-[✖](modules/manage-content# "Close page link panel") [Copy to clipboard](modules/manage-content#)
 Welcome! We’re excited to have you here. In this module, we’ll walk you through the essentials of working with content in Xperience by Kentico.
 If your daily tasks involve creating new pages, updating existing content, or managing information for different audiences, understanding how content works can make your job much easier. This module is designed to give you a strong foundation — helping you save time, avoid mistakes, and feel more confident every time you work in the system.
 Here’s what you’ll be able to do after completing this module:
@@ -18,14 +20,6 @@ If you don’t have your demo site, request the [Xperience by Kentico - Business
 Let’s get started and explore how you can make the most of your content!
 Previous page
 1 of 19
-[ Mark complete and continue ](modules/manage-content/digital-marketing-channels)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/manage-content)
-[](https://docs.kentico.com/modules/manage-content)[](https://docs.kentico.com/modules/manage-content)
+[ Mark complete and continue ](/modules/manage-content/digital-marketing-channels)
+![]()
+[]()[]()

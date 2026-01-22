@@ -1,16 +1,21 @@
+---
+source: https://docs.kentico.com/api/configuration/settings
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Settings 
+
+
 # Settings
-  * [ Copy page link ](api/configuration/settings#) | [Get HelpService ID](api/configuration/settings#)
-Core MVC 5
-
-
-[✖](api/configuration/settings# "Close page link panel") [Copy to clipboard](api/configuration/settings#)
   
 List of examples:
-  * [Dependency injection](api/configuration/settings#dependency-injection)
-    * [Initialize required services](api/configuration/settings#initialize-required-services)
-    * [Get the values of database settings](api/configuration/settings#get-the-values-of-database-settings)
-    * [Get the values of application settings](api/configuration/settings#get-the-values-of-application-settings)
-    * [Set the values of settings](api/configuration/settings#set-the-values-of-settings)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+    * [Get the values of database settings](#get-the-values-of-database-settings)
+    * [Get the values of application settings](#get-the-values-of-application-settings)
+    * [Set the values of settings](#set-the-values-of-settings)
 
 
 ## Dependency injection
@@ -37,7 +42,7 @@ public SettingsServices(ISettingsService settingsService,
 }
 ```
 
-[> Back to list of examples](api/configuration/settings#toc)
+[> Back to list of examples](#toc)
 ### Get the values of database settings
 C#
 Copy
@@ -54,7 +59,7 @@ bool continuousIntegrationEnabled = conversionService.GetBoolean(settingsService
 int eventLogSize = conversionService.GetInteger(settingsService["CMSLogSize"], 60);
 ```
 
-[> Back to list of examples](api/configuration/settings#toc)
+[> Back to list of examples](#toc)
 ### Get the values of application settings
 C#
 Copy
@@ -63,7 +68,7 @@ Copy
 string applicationSetting = configuration["CMSApplicationName"];
 ```
 
-[> Back to list of examples](api/configuration/settings#toc)
+[> Back to list of examples](#toc)
 ### Set the values of settings
 C#
 Copy
@@ -84,4 +89,6 @@ logSizeSettingsKey.KeyValue = 30.ToString();
 logSizeSettingsKey.Update();
 ```
 
-[> Back to list of examples](api/configuration/settings#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

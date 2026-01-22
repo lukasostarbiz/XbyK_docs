@@ -1,13 +1,19 @@
+---
+source: https://docs.kentico.com/guides/development/page-builder/create-versatile-templates-part-2
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Page Builder](/guides/development/page-builder)
+  * Create versatile page templates, part 2 
+
+
 # Create versatile page templates, part 2
-  * How-to| [ Copy page link ](guides/development/page-builder/create-versatile-templates-part-2#) | [Get HelpService ID](guides/development/page-builder/create-versatile-templates-part-2#)
-Core MVC 5
-
-
-[✖](guides/development/page-builder/create-versatile-templates-part-2# "Close page link panel") [Copy to clipboard](guides/development/page-builder/create-versatile-templates-part-2#)
-So far, we have [walked through](guides/development/page-builder/create-versatile-templates-part-1) the steps of creating a page template that displays structured product data with different styling options.
-Next, let’s make the template truly flexible by adding the option to dynamically add [Editable areas](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to the template based on configurable properties.
+So far, we have [walked through](/guides/development/page-builder/create-versatile-templates-part-1) the steps of creating a page template that displays structured product data with different styling options.
+Next, let’s make the template truly flexible by adding the option to dynamically add [Editable areas](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to the template based on configurable properties.
 ## Before you start
-This is the second part of the guide on page templates, and requires that you complete [Part 1](guides/development/page-builder/create-versatile-templates-part-1) first in order to properly follow along.
+This is the second part of the guide on page templates, and requires that you complete [Part 1](/guides/development/page-builder/create-versatile-templates-part-1) first in order to properly follow along.
 **Code samples**
 You can find a project with completed, working versions of code samples from this guide and others in the [finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) of the _Training guides_ repository.
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the repository provides a starting point to code along with the guides.
@@ -154,9 +160,9 @@ Copy
 
 ### Check your progress
 Now, if you sign in to the Xperience admin and apply this template to one of the pages under _Store_ in the _Training guides pages_ channel, you’ll see a new checkbox in the properties.
-[![Screenshot of page template properties](docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)
+[![Screenshot of page template properties](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)
 If you tick the box and click apply, the standard product content should disappear. It will be replaced with an editable area, where you can add and drag widgets.
-[![Screenshot of page template with editable area](docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)
+[![Screenshot of page template with editable area](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)
 If you un-tick the property, you may see a warning telling you that any content in the removed editable area will be lost upon saving.
 ## Flesh out the functionality
 An editable area is fairly flexible on its own, especially if you have multiple options for sections and lots of widgets, but let’s try to make it even more versatile.
@@ -191,7 +197,7 @@ public enum ColumnLayoutOption
 
   3. Return to the _~/Features/Products/ProductPagePageTemplateProperties_ file and add a new string property to represent the column layout. 
     1. Set the property to use a dropdown component, supplied by our new enumeration.
-    2. Add a [visibility condition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to ensure that it only appears if the `UsePageBuilder` property’s checkbox is true (enabled). 
+    2. Add a [visibility condition](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to ensure that it only appears if the `UsePageBuilder` property’s checkbox is true (enabled). 
 C#
 **ProductPagePageTemplateProperties.cs**
 Copy
@@ -268,7 +274,7 @@ private const string COL = "col-md";
 ```
 
   2. Use properties to access the identifier constants.
-This will allow for more complicated logic in the future. [Later on in the series](guides/development/page-builder/implement-flexible-sections), we will modify this view component to work with [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones) for [Page Builder sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). 
+This will allow for more complicated logic in the future. [Later on in the series](/guides/development/page-builder/implement-flexible-sections), we will modify this view component to work with [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones) for [Page Builder sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). 
 C#
 **PageBuilderColumnsViewComponent.cs**
 Copy
@@ -841,9 +847,11 @@ public static class GeneralPageTemplate
 Now, if you sign in to the administration interface, you should have a general-use page template with properties to determine its color, corner styling, and editable area layout.
 Your browser does not support the video tag. 
 ## Wrapping up
-If you need a refresher, feel free to take another look at the [beginning of this series](guides/development/page-builder/meet-requirements-with-page-builder) to review the mockups of the page functionality we’ve been working to implement so far.
+If you need a refresher, feel free to take another look at the [beginning of this series](/guides/development/page-builder/meet-requirements-with-page-builder) to review the mockups of the page functionality we’ve been working to implement so far.
 **Apply your knowledge**
 If you’d like to put your knowledge to the test, try swapping out the `UsePageBuilder` checkbox in `ProductPagePageTemplateProperties` for another enumeration-based dropdown.
 Create a third option which keeps the structured product data, while rendering editable areas at the top and bottom of the page.
 ## What’s next?
-The [next part of this series](guides/development/page-builder/implement-flexible-sections) will re-use the view component and tag helpers we’ve created here to make flexible Page Builder sections. After that, we will create widgets for simple call-to-action (CTA) buttons and products.
+The [next part of this series](/guides/development/page-builder/implement-flexible-sections) will re-use the view component and tag helpers we’ve created here to make flexible Page Builder sections. After that, we will create widgets for simple call-to-action (CTA) buttons and products.
+![]()
+[]()[]()

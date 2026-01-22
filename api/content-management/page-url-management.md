@@ -1,21 +1,26 @@
+---
+source: https://docs.kentico.com/api/content-management/page-url-management
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Content management](/api/content-management)
+  * Page URL management 
+
+
 # Page URL management
-  * [ Copy page link ](api/content-management/page-url-management#) | [Get HelpService ID](api/content-management/page-url-management#)
-Core MVC 5
-
-
-[✖](api/content-management/page-url-management# "Close page link panel") [Copy to clipboard](api/content-management/page-url-management#)
   
 List of examples:
-  * [Dependency injection](api/content-management/page-url-management#dependency-injection)
-    * [Initialize required services](api/content-management/page-url-management#initialize-required-services)
-  * [Manage page URLs](api/content-management/page-url-management#manage-page-urls)
-    * [Edit the URL slug](api/content-management/page-url-management#edit-the-url-slug)
-    * [Add a vanity URL](api/content-management/page-url-management#add-a-vanity-url)
-    * [Edit an existing vanity URL](api/content-management/page-url-management#edit-an-existing-vanity-url)
-    * [Remove a vanity URL](api/content-management/page-url-management#remove-a-vanity-url)
-    * [Select the canonical URL of a page](api/content-management/page-url-management#select-the-canonical-url-of-a-page)
-  * [Custom redirects](api/content-management/page-url-management#custom-redirects)
-    * [Create redirects using IWebPageRedirectManager](api/content-management/page-url-management#create-redirects-using-iwebpageredirectmanager)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Manage page URLs](#manage-page-urls)
+    * [Edit the URL slug](#edit-the-url-slug)
+    * [Add a vanity URL](#add-a-vanity-url)
+    * [Edit an existing vanity URL](#edit-an-existing-vanity-url)
+    * [Remove a vanity URL](#remove-a-vanity-url)
+    * [Select the canonical URL of a page](#select-the-canonical-url-of-a-page)
+  * [Custom redirects](#custom-redirects)
+    * [Create redirects using IWebPageRedirectManager](#create-redirects-using-iwebpageredirectmanager)
 
 
 ## Dependency injection
@@ -50,7 +55,7 @@ public PageUrlsServices(IContentQueryExecutor contentQueryExecutor,
 }
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ## Manage page URLs
 ### Edit the URL slug
 C#
@@ -97,7 +102,7 @@ await webPageManager.TryUpdateDraft(pageId, languageName, new UpdateDraftData(an
 await webPageManager.TryPublish(pageId, languageName);
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ### Add a vanity URL
 C#
 Copy
@@ -130,7 +135,7 @@ await webPageManager.TryUpdateDraft(pageId, languageName, new UpdateDraftData(ur
 await webPageManager.TryPublish(pageId, languageName);
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ### Edit an existing vanity URL
 C#
 Copy
@@ -178,7 +183,7 @@ await webPageManager.TryUpdateDraft(pageId, languageName, new UpdateDraftData(ur
 await webPageManager.TryPublish(pageId, languageName);
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ### Remove a vanity URL
 C#
 Copy
@@ -225,7 +230,7 @@ await webPageManager.TryUpdateDraft(pageId, languageName, new UpdateDraftData(ur
 await webPageManager.TryPublish(pageId, languageName);
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ### Select the canonical URL of a page
 C#
 Copy
@@ -274,7 +279,7 @@ await webPageManager.TryUpdateDraft(pageId, languageName, new UpdateDraftData(ur
 await webPageManager.TryPublish(pageId, languageName);
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
 ## Custom redirects
 ### Create redirects using IWebPageRedirectManager
 C#
@@ -317,4 +322,6 @@ await webPageRedirectManager.CreateOrUpdateRedirect(urlPath,
                                                     targetPageId.First());
 ```
 
-[> Back to list of examples](api/content-management/page-url-management#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

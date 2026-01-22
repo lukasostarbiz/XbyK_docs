@@ -1,25 +1,31 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Upgrade to Xperience by Kentico](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico)
+  * Editing components in Xperience by Kentico 
+
+
 # Editing components in Xperience by Kentico
-  * [ Copy page link ](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#) | [Get HelpService ID](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#)
-In Xperience by Kentico, editing components are no longer only used when configuring [Page Builder](documentation/developers-and-admins/development/builders/page-builder) and [Form Builder](documentation/developers-and-admins/development/builders/form-builder) components. Instead, you can use them across the entire Xperience administration (e.g., in [content types](documentation/developers-and-admins/development/content-types), [UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) conditions, [custom configuration dialogs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms)).
-A consequence of this broadened scope is that the Kentico Xperience 13 approach of assigning and configuring editing components via the `EditingComponent` attribute is now obsolete. Editing components in Xperience by Kentico, though functionally mostly equivalent, use a [different technology stack](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) to integrate with the new administration interface.
+In Xperience by Kentico, editing components are no longer only used when configuring [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) and [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) components. Instead, you can use them across the entire Xperience administration (e.g., in [content types](/documentation/developers-and-admins/development/content-types), [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) conditions, [custom configuration dialogs](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms)).
+A consequence of this broadened scope is that the Kentico Xperience 13 approach of assigning and configuring editing components via the `EditingComponent` attribute is now obsolete. Editing components in Xperience by Kentico, though functionally mostly equivalent, use a [different technology stack](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) to integrate with the new administration interface.
 The old API remains supported and is backward compatible, including modal dialog support. However, this will change in the future when support for Kentico Xperience 13 ends. We **strongly recommend** updating your codebase to the new components as soon as possible.
 See:
-  * [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for more information about the new API used to assign editing components.
-  * [Reference - Admin UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for a reference of all components usable in the admin UI.
+  * [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for more information about the new API used to assign editing components.
+  * [Reference - Admin UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) for a reference of all components usable in the admin UI.
 
 
-See the [Form components](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#form-components) section for general information about updating to the new admin UI form components.For details about updating selector components, see the following sections:
-  * [Page selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#page-selector)
-  * [URL selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#url-selector)
-  * [Object selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#object-selector)
-  * [General selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#general-selector)
-  * [Media file selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#media-file-selector)
-  * [Path selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#path-selector)
-  * [Attachment selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#attachment-selector)
+See the [Form components](#form-components) section for general information about updating to the new admin UI form components.For details about updating selector components, see the following sections:
+  * [Page selector](#page-selector)
+  * [URL selector](#url-selector)
+  * [Object selector](#object-selector)
+  * [General selector](#general-selector)
+  * [Media file selector](#media-file-selector)
+  * [Path selector](#path-selector)
+  * [Attachment selector](#attachment-selector)
 
 
 ## Form components
@@ -50,8 +56,8 @@ public string  Text { get; set; }
 ```
 
 **Builder compatibility mode**
-Existing [Page Builder](documentation/developers-and-admins/development/builders/page-builder) and [Form Builder](documentation/developers-and-admins/development/builders/form-builder) components with properties using the old `EditingComponent` attributes remain functional, and are displayed in “compatibility mode” within the Page or Form Builder interface.
-However, this compatibility mode is only intended as a short-term solution to help get [upgraded projects](documentation/developers-and-admins/upgrade-to-xperience-by-kentico) running as soon as possible. This option will stop working when support for Kentico Xperience 13 ends. We **strongly recommend** that you update your components to the new Xperience by Kentico framework.
+Existing [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) and [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) components with properties using the old `EditingComponent` attributes remain functional, and are displayed in “compatibility mode” within the Page or Form Builder interface.
+However, this compatibility mode is only intended as a short-term solution to help get [upgraded projects](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico) running as soon as possible. This option will stop working when support for Kentico Xperience 13 ends. We **strongly recommend** that you update your components to the new Xperience by Kentico framework.
 ## Selectors
 ### Page selector
 In Kentico Xperience 13, you assigned the page selector using the `EditingComponent` attribute and configured it via the `EditingComponentProperty` attribute.
@@ -192,7 +198,7 @@ public IEnumerable<string> UserOptions { get; set; }
 There are no plans to make the media file selector available in Xperience by Kentico.
 ### Path selector
 There are no plans to make the path selector available in Xperience by Kentico.
-If you need to retrieve a collection of [tree paths](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#filter-pages-based-on-content-tree-structure), we recommend using the [Page selector](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico#page-selector) and obtaining paths from the selected pages:
+If you need to retrieve a collection of [tree paths](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#filter-pages-based-on-content-tree-structure), we recommend using the [Page selector](#page-selector) and obtaining paths from the selected pages:
 C#
 **Use the page selector to obtain a collection of tree paths**
 Copy
@@ -208,4 +214,6 @@ IEnumerable<string> articlePaths = (await contentRetriever.RetrievePagesByGuids<
 ```
 
 ### Attachment selector
-There are no plans to make the attachment selector available for Xperience by Kentico. Page attachments are not supported by the system – use [Content hub](documentation/business-users/content-hub) instead.
+There are no plans to make the attachment selector available for Xperience by Kentico. Page attachments are not supported by the system – use [Content hub](/documentation/business-users/content-hub) instead.
+![]()
+[]()[]()

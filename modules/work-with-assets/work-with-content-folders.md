@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-assets/work-with-content-folders
+scrape_date: 2026-01-22
+---
+
+Module: Work with assets
+3 of 21 Pages
 # Work with content folder hierarchy
-  * [ Copy page link ](modules/work-with-assets/work-with-content-folders#) | [Get HelpService ID](modules/work-with-assets/work-with-content-folders#)
-Core MVC 5
-
-
-[✖](modules/work-with-assets/work-with-content-folders# "Close page link panel") [Copy to clipboard](modules/work-with-assets/work-with-content-folders#)
 A good folder hierarchy helps editors find and reuse assets. It doesn’t change where assets are stored in _Content hub_ ; they always remain in the same flat workspace. _Content folders_ help you create a logical way for your team to navigate to them.
 You can create as many folders and nest them as deeply as you need.
 To create folders:
@@ -28,7 +30,7 @@ Let’s test it out in the Kbank demo site. Kbank runs personal and business ban
 
 
 This structure helps editors find the right asset quickly without scrolling through unrelated files. The **breadcrumb navigation** shows them exactly where they are in the folder tree. Campaign teams know where to upload temporary images and can easily clean up the campaign subfolders once the promotion ends.
-[![Organizing folders into hierarchy in Content hub](docsassets/guides/organize-assets-in-content-hub/organize-content-hub-folders-into-hierarchy.png)](https://docs.kentico.com/docsassets/guides/organize-assets-in-content-hub/organize-content-hub-folders-into-hierarchy.png)
+[![Organizing folders into hierarchy in Content hub](/docsassets/guides/organize-assets-in-content-hub/organize-content-hub-folders-into-hierarchy.png)](/docsassets/guides/organize-assets-in-content-hub/organize-content-hub-folders-into-hierarchy.png)
 Keep your folder structure simple. Two to three levels of folders will suffice for most projects that keep assets alongside other content within the _Content hub_. Editors find complex hierarchies harder to navigate and maintain.
 ## Move items into content folders
 Once you have a folder structure, you can organize your assets into the right folders. Remember, moving items doesn’t mean creating copies of files; moving just assigns these content items to a folder so they are easier to find.
@@ -41,16 +43,8 @@ Let’s continue within the Kbank demo site.
 
 Select the _Balance transfer_ folder to confirm that your items appear correctly. Then, open the **All items view** to verify that the _Balance transfer card_ asset is still available in the workspace in _Content hub_ and its _Location_ has been updated.
 Your browser does not support the video tag. 
-[ Previous page ](modules/work-with-assets/understand-working-with-assets)
+[ Previous page ](/modules/work-with-assets/understand-working-with-assets)
 3 of 21
-[ Mark complete and continue ](modules/work-with-assets/manage-assets-in-workspaces)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-assets/work-with-content-folders)
-[](https://docs.kentico.com/modules/work-with-assets/work-with-content-folders)[](https://docs.kentico.com/modules/work-with-assets/work-with-content-folders)
+[ Mark complete and continue ](/modules/work-with-assets/manage-assets-in-workspaces)
+![]()
+[]()[]()

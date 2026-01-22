@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/advanced-content/prepare-to-convert-items
+scrape_date: 2026-01-22
+---
+
+Module: Advanced content
+6 of 11 Pages
 # Prepare to convert flat items to schemas
-  * [ Copy page link ](modules/advanced-content/prepare-to-convert-items#) | [Get HelpService ID](modules/advanced-content/prepare-to-convert-items#)
-Core MVC 5
-
-
-[✖](modules/advanced-content/prepare-to-convert-items# "Close page link panel") [Copy to clipboard](modules/advanced-content/prepare-to-convert-items#)
-In earlier examples, we explored a scenario of content model evolution; we integrated a flat-structured _Article_ content type with a newer [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) that spanned multiple content types. We adjusted code to work with the new schema-based types alongside the original _Article_ type.
+In earlier examples, we explored a scenario of content model evolution; we integrated a flat-structured _Article_ content type with a newer [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) that spanned multiple content types. We adjusted code to work with the new schema-based types alongside the original _Article_ type.
 Let’s continue further with this example, converting articles from the old content type into a schema-based type. We’ll also update pages that referenced the old articles to point to the new schema-based items.
 This example covers conversion of data in Xperience by Kentico from one content type to another. Though it may mention an “old” content type and a “new” one, it does not cover upgrading from Kentico Xperience 13 (or older versions) to Xperience by Kentico.
 ## Consider the scenario
-[Earlier in this series](guides/development/advanced-content/work-with-reusable-field-schemas), we worked with an older flat content type for articles alongside new content types based on a [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas). We updated the `ArticlePageService` to work with the new content types in parallel with the original `Article` content type, and extended the new article types to work with taxonomy - the **expand** step of the [expand and contract approach.](https://community.kentico.com/blog/safely-evolving-a-content-model-with-expand-and-contract).
+[Earlier in this series](/guides/development/advanced-content/work-with-reusable-field-schemas), we worked with an older flat content type for articles alongside new content types based on a [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). We updated the `ArticlePageService` to work with the new content types in parallel with the original `Article` content type, and extended the new article types to work with taxonomy - the **expand** step of the [expand and contract approach.](https://community.kentico.com/blog/safely-evolving-a-content-model-with-expand-and-contract).
 With old and new article models existing in parallel, our project works, but its content model is unnecessarily bloated. Additionally, editors can still create items of the deprecated `Article` type by mistake.
 If we can adjust our article functionality so that it no longer needs the old content type, we can remove it, moving forward with only schema-based article content types. The next step toward this goal is to move the existing `Article` data to one of our new schema-based types, `GeneralArticle`, completing the **contract** step.
 For this scenario, imagine we’ve instructed our content editors to make sure that all of the `Article` items are either **published** or **deleted** , along with the pages that display them. The code will be much less complicated if we only need to work with published items.
@@ -210,16 +212,8 @@ public class ConversionAttempt
 }
 ```
 
-[ Previous page ](modules/advanced-content/filter-content-with-taxonomies)
+[ Previous page ](/modules/advanced-content/filter-content-with-taxonomies)
 6 of 11
-[ Mark complete and continue ](modules/advanced-content/convert-items-to-schemas)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/advanced-content/prepare-to-convert-items)
-[](https://docs.kentico.com/modules/advanced-content/prepare-to-convert-items)[](https://docs.kentico.com/modules/advanced-content/prepare-to-convert-items)
+[ Mark complete and continue ](/modules/advanced-content/convert-items-to-schemas)
+![]()
+[]()[]()

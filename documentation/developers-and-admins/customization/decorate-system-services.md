@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/decorate-system-services
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * Decorate system services 
+
+
 # Decorate system services
-  * [ Copy page link ](documentation/developers-and-admins/customization/decorate-system-services#) | [Get HelpService ID](documentation/developers-and-admins/customization/decorate-system-services#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/decorate-system-services# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/decorate-system-services#)
 The [decorator pattern](https://refactoring.guru/design-patterns/decorator) allows you to add new functionality to an existing object without altering its structure.
 In Xperience by Kentico, the decorator pattern is suitable for customization various services. Consider using decorators when:
   * extending an existing implementation with new logic while maintaining the original behavior
@@ -23,11 +29,11 @@ The benefits of this approach are:
 
 
 **Registering multiple decorators for a service from the same assembly**
-Service registrations from within the same assembly are nondeterministic – the order of registration can be different every time the application starts. If you need to chain multiple decorators from within a single assembly, you can do so via a [custom code-only module](documentation/developers-and-admins/customization/run-code-on-application-startup) class. Override the module’s `OnPreInit` method, and call `Service.Use<TService, TImplementation>()` for each of your implementation in the order of dependency. This ensures deterministic ordering for the IoC container.
+Service registrations from within the same assembly are nondeterministic – the order of registration can be different every time the application starts. If you need to chain multiple decorators from within a single assembly, you can do so via a [custom code-only module](/documentation/developers-and-admins/customization/run-code-on-application-startup) class. Override the module’s `OnPreInit` method, and call `Service.Use<TService, TImplementation>()` for each of your implementation in the order of dependency. This ensures deterministic ordering for the IoC container.
 ### Example
 The following example demonstrates decoration via dependency injection:
   1. Create a new implementation of the desired service. This example modifies `IEmailService` to adjust the email queue priority for specific emails.
-     * For best practices about integrating custom code, see [Integrate custom code](documentation/developers-and-admins/customization/integrate-custom-code).
+     * For best practices about integrating custom code, see [Integrate custom code](/documentation/developers-and-admins/customization/integrate-custom-code).
   2. Inject the same service via a constructor dependency. When instantiating your service, the container resolves its previous implementation.
 C#
 Copy
@@ -116,3 +122,5 @@ public class CustomEmailService : IEmailService
 
 
 The system now uses your service implementation in place of the previous one. The service’s core behavior remains unchanged, but it also executes the additional logic when used.
+![]()
+[]()[]()

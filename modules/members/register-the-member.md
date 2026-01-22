@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/members/register-the-member
+scrape_date: 2026-01-22
+---
+
+Module: Members
+4 of 12 Pages
 # Complete the registration functionality
-  * [ Copy page link ](modules/members/register-the-member#) | [Get HelpService ID](modules/members/register-the-member#)
-Core MVC 5
-
-
-[✖](modules/members/register-the-member# "Close page link panel") [Copy to clipboard](modules/members/register-the-member#)
 With the registration widget in place, we can move on to the code that actually creates the member.
 Let’s add some new methods to the `MembershipService`:
   * Create a new member in the Xperience database. 
@@ -208,8 +210,8 @@ internal static class EventIds
 Now you should be able to add the Registration widget to a page with a widget zone and configure its properties.
 Your browser does not support the video tag. 
 Once you save the registration widget on a page, you can navigate to the page as a visitor and submit the form. You’ll be able to see the member you created in the **Members** application of the Xperience administration interface.
-[![Screenshot of the registration form filled out on a page](docsassets/guides/implement-member-registration/RegistrationForm.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/RegistrationForm.png)
-[![Screenshot of the resulting member appearing in the member listing](docsassets/guides/implement-member-registration/MembersApp.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/MembersApp.png)
+[![Screenshot of the registration form filled out on a page](/docsassets/guides/implement-member-registration/RegistrationForm.png)](/docsassets/guides/implement-member-registration/RegistrationForm.png)
+[![Screenshot of the resulting member appearing in the member listing](/docsassets/guides/implement-member-registration/MembersApp.png)](/docsassets/guides/implement-member-registration/MembersApp.png)
 Although this guide does not describe how to set up email confirmation as part of the registration process, you can find a working example in the [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished)
 Specifically check out:
   * [The additional files in the Registration widget folder](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/Membership/Widgets/Registration)
@@ -431,16 +433,8 @@ You may find the following resources particularly helpful:
   * [Authentication controller](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Membership/Controllers/AuthenticationController.cs)
 
 
-[ Previous page ](modules/members/build-registration-widget)
+[ Previous page ](/modules/members/build-registration-widget)
 4 of 12
-[ Mark complete and continue ](modules/members/create-member-contact-relationship)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/register-the-member)
-[](https://docs.kentico.com/modules/members/register-the-member)[](https://docs.kentico.com/modules/members/register-the-member)
+[ Mark complete and continue ](/modules/members/create-member-contact-relationship)
+![]()
+[]()[]()

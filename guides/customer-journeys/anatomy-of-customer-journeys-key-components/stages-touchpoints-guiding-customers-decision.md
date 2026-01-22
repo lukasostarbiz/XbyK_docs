@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Anatomy of customer journeys - Key components](/guides/customer-journeys/anatomy-of-customer-journeys-key-components)
+  * Stages, touchpoints, and guiding the customer’s decision 
+
+
 # Stages, touchpoints, and guiding the customer’s decision
-  * [ Copy page link ](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision#) | [Get HelpService ID](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision# "Close page link panel") [Copy to clipboard](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -91,4 +97,6 @@ One of the ultimate goals of journey mapping is to foster a **long-term working 
 Just as each customer journey is uniquely shaped by the customer’s needs, each customer journey will look a little different, bending and looping, following the customer’s current progress along the path towards conversion. But chasing the individual contacts like _Spudnik_ won’t bring you the large-scale success you’re looking for.
 Instead, keep things simple and organized – Xperience’s _Customer journeys_ empower you to do just that, retaining the **linear format** of a sales funnel in a neat little graph, and giving you a **high-level overview** of the different stages the contacts go through, so necessary to any **strategic decission-making**.
 ## Next steps
-Want to go further and super-charge your digital marketing strategy? Then let’s dig in on how to connect customer journeys with [Campaigns](guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys).
+Want to go further and super-charge your digital marketing strategy? Then let’s dig in on how to connect customer journeys with [Campaigns](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys).
+![]()
+[]()[]()

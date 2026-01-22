@@ -1,15 +1,17 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+6 of 17 Pages
 # Customer journey - benefits vs. drawbacks
-  * [ Copy page link ](modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#) | [Get HelpService ID](modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping# "Close page link panel") [Copy to clipboard](modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Like any strategic process, **customer journeys** have its pros and cons. The goal is to ensure that the benefits outweigh the challenges, and with the right tools, you can streamline the process for maximum impact.
 ## Emma’s dilemma solved: unconfirmed registrations completed with customer journeys
-Emma’s earlier challenge with [unconfirmed registrations](modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) clearly shows how _Customer journeys_ can deliver practical value.
+Emma’s earlier challenge with [unconfirmed registrations](/modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) clearly shows how _Customer journeys_ can deliver practical value.
 By identifying **at which stage** of their customer journey users **dropped off** – right after submitting a form but before confirming their registration – Emma was able to refine her team’s communication strategy. Customer journey helped her implement timely reminders and more compelling messaging, ultimately driving higher registration confirmation rates.
 This use case demonstrates how customer journeys uncover actionable insights that drive business success.
 If you’re still deciding whether _Customer journeys_ are the right solution for your business, let’s review a few arguments in favor and against this feature.
@@ -27,16 +29,8 @@ Xperience by Kentico ensures that customer interactions across multiple channels
 Xperience by Kentico provides powerful marketing applications that enhance customer journey mapping. Features such as **Contact groups** and **Contact management** , **Automation** , and **Forms** allow you to easily segment audiences, nurture leads, and create personalized experiences.
 ### Automation and planned AIRA-driven insights
 Xperience by Kentico aims to streamline future customer journey tracking by leveraging automation and [AIRA-powered analytics](https://roadmap.kentico.com/c/251-customer-journey-insights-powered-by-aira). Our future plans icnlude reducing manual work by identifying trends, predicting customer behavior, and providing actionable recommendations, allowing marketers to focus on strategy rather than data crunching.
-[ Previous page ](modules/customer-journeys/the-real-value-of-customer-journeys)
+[ Previous page ](/modules/customer-journeys/the-real-value-of-customer-journeys)
 6 of 17
-[ Mark complete and continue ](modules/customer-journeys/anatomy-of-customer-journeys-key-components)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
-[](https://docs.kentico.com/modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)[](https://docs.kentico.com/modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
+[ Mark complete and continue ](/modules/customer-journeys/anatomy-of-customer-journeys-key-components)
+![]()
+[]()[]()

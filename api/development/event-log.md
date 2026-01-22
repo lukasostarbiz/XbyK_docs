@@ -1,15 +1,20 @@
+---
+source: https://docs.kentico.com/api/development/event-log
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Development](/api/development)
+  * Event log 
+
+
 # Event log
-  * [ Copy page link ](api/development/event-log#) | [Get HelpService ID](api/development/event-log#)
-Core MVC 5
-
-
-[✖](api/development/event-log# "Close page link panel") [Copy to clipboard](api/development/event-log#)
   
 List of examples:
-  * [Dependency injection](api/development/event-log#dependency-injection)
-    * [Initialize required services](api/development/event-log#initialize-required-services)
-    * [Log events](api/development/event-log#log-events)
-    * [Work with events (sending events by email)](api/development/event-log#work-with-events-sending-events-by-email)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+    * [Log events](#log-events)
+    * [Work with events (sending events by email)](#work-with-events-sending-events-by-email)
 
 
 ## Dependency injection
@@ -39,7 +44,7 @@ public EventLogServices(IEmailService emailService,
 }
 ```
 
-[> Back to list of examples](api/development/event-log#toc)
+[> Back to list of examples](#toc)
 ### Log events
 C#
 Copy
@@ -98,7 +103,7 @@ logger.LogWithIntervalPolicy(LoggingIntervalPolicy.OncePerPeriod("api-example-on
     log => log.LogInformation("Event logged at most once every 5 minutes."));
 ```
 
-[> Back to list of examples](api/development/event-log#toc)
+[> Back to list of examples](#toc)
 ### Work with events (sending events by email)
 C#
 Copy
@@ -133,4 +138,6 @@ if (errors.Count > 0)
 }
 ```
 
-[> Back to list of examples](api/development/event-log#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

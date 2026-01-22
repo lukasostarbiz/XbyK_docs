@@ -1,29 +1,35 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Migrate widget data as reusable content 
+
+
 # Migrate widget data as reusable content
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub#) | [Get HelpService ID](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub#)
 In this technical deep dive, we will show you how to migrate widget data from Kentico Xperience 13 (KX13) into reusable content items when upgrading to Xperience by Kentico (XbyK). You will learn how to use the [Xperience by Kentico: Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) together with **custom widget migrations** to transform widget data into reusable content items in Content hub, and reference those items from your migrated widgets in XbyK.
-This material focuses on practical widget data migration and code adjustments, exploring the approach that combines Source item API discovery with targeted adjustments we talked about in our [Upgrade widgets from Kentico Xperience 13](guides/development/upgrade-deep-dives/upgrade-widgets-introduction).
+This material focuses on practical widget data migration and code adjustments, exploring the approach that combines Source item API discovery with targeted adjustments we talked about in our [Upgrade widgets from Kentico Xperience 13](/guides/development/upgrade-deep-dives/upgrade-widgets-introduction).
 ## Before you start
 This guide assumes you have:
   * Basic knowledge of C# and .NET framework concepts
-  * Familiarity with the basics of [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico
+  * Familiarity with the basics of [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico
   * Understanding and some experience with basic upgrade to XbyK using the Kentico Migration tool.
 
 
-If you haven’t, we recommend following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico.
+If you haven’t, we recommend following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to experience the process of getting a migrated page working in Xperience by Kentico.
 In preparation to follow along with this guide, you need:
   * A running instance of Kentico Xperience 13 with the Dancing Goat template
   * An instance of the [migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool)
   * A compatible install of Xperience by Kentico
 
 
-If you haven’t followed along with the walkthrough, complete the steps from its [environment setup page](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/setup-your-environment) in preparation for this guide.
+If you haven’t followed along with the walkthrough, complete the steps from its [environment setup page](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/setup-your-environment) in preparation for this guide.
 ## Understand our migration scenario
 For this example, we’ll be using the _Hero image_ widget from the KX13 Dancing Goat sample site.
-[![Hero image widget example in the KX13 Dancing Goat instance](docsassets/guides/migrate-widget-data-to-content-hub/hero-image-KX13.jpg)](https://docs.kentico.com/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-KX13.jpg)
+[![Hero image widget example in the KX13 Dancing Goat instance](/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-KX13.jpg)](/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-KX13.jpg)
 Currently, the _Hero image_ widget in KX13 stores all its data directly within its property configuration, which lives in the _CMS_Document_ table for each page. It has these properties:
   * An **image** for the background
   * A **text** for the heading
@@ -34,7 +40,7 @@ Currently, the _Hero image_ widget in KX13 stores all its data directly within i
 
 Each widget instance requires editors to manually fill out all this information, and the content can’t be reused across different pages.
 Together we’ll extract the content-related properties (`Text`, `ButtonText`, `ButtonTarget`) into reusable content items stored in the Content hub, while keeping the presentation properties (`Image`, `Theme`) in the widget itself. As a bonus, we’ll enhance the widget by adding a custom button text override option and a new “Open in new tab” property.
-[![A visual representation of the hero widget migration](docsassets/guides/migrate-widget-data-to-content-hub/hero-image-widget-migration.png)](https://docs.kentico.com/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-widget-migration.png)
+[![A visual representation of the hero widget migration](/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-widget-migration.png)](/docsassets/guides/migrate-widget-data-to-content-hub/hero-image-widget-migration.png)
 ## Map out the widget upgrade workflow
 The Kentico migration tool allows you to migrate data iteratively, which we will take advantage of in this scenario. Here’s our roadmap:
   1. **Run the initial data migration** excluding the pages that contain _Hero image_ widgets.
@@ -86,7 +92,7 @@ Before running any migration command, make sure you have:
   * Your source KX13 instance running
   * Your target XbyK instance stopped
   * [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#source-instance-api-discovery) enabled in your migration configuration 
-    * You’ll need this for the widget migration we’ll build later; see an example in [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#configuration).
+    * You’ll need this for the widget migration we’ll build later; see an example in [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#configuration).
 
 
 After a successful migration, you should be able to run your target instance. When you sign in to the administration, you’ll see that the DancingGoatCore site has become a website channel without any pages.
@@ -102,7 +108,7 @@ Start your target XbyK instance and navigate to the **Content types** applicatio
   * **Short code name:** Leave the auto-generated value
 
 
-[![Hero reusable content type in the Xperience administration - general properties](docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-1.png)](https://docs.kentico.com/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-1.png)
+[![Hero reusable content type in the Xperience administration - general properties](/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-1.png)](/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-1.png)
 Add these three fields, each of the **Text** type, marked as **Required** and using the **Text input** form control:
   * **HeroHeading**
   * **HeroTarget**  
@@ -110,9 +116,9 @@ Add these three fields, each of the **Text** type, marked as **Required** and us
   * **HeroCallToAction**
 
 
-[![Hero reusable content type in the Xperience administration - fields](docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-2.png)](https://docs.kentico.com/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-2.png)
+[![Hero reusable content type in the Xperience administration - fields](/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-2.png)](/docsassets/guides/migrate-widget-data-to-content-hub/hero-ct-2.png)
 ### Generate code files
-Now let’s generate the strongly-typed C# classes for our new Hero content type. Make sure you have the DancingGoat.Entities project set up first—see our [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#add-a-new-project-to-hold-generated-files) for details.
+Now let’s generate the strongly-typed C# classes for our new Hero content type. Make sure you have the DancingGoat.Entities project set up first—see our [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#add-a-new-project-to-hold-generated-files) for details.
 Run this command from your main project’s root directory (in our case, the _DancingGoat.Web_ folder):
 CMD
 **Generate Hero content type classes**
@@ -499,7 +505,7 @@ namespace DancingGoat.Widgets
 }
 ```
 
-In your own project, to feed data into a `DropDownComponent` control, we recommend using the dropdown provider, explained in [our Page Builder materials](guides/development/page-builder/map-enum-to-dropdown).
+In your own project, to feed data into a `DropDownComponent` control, we recommend using the dropdown provider, explained in [our Page Builder materials](/guides/development/page-builder/map-enum-to-dropdown).
 C#
 **HeroImageWidgetViewModel.cs**
 Copy
@@ -615,7 +621,7 @@ Copy
 }
 ```
 
-See more details and guidance on best practices of defining Page Builder widgets and other components in our [Page Builder module](modules/page-builder).
+See more details and guidance on best practices of defining Page Builder widgets and other components in our [Page Builder module](/modules/page-builder).
 Remember to add your new widget reference to the _ComponentIdentifiers_ class. This allows you to reference the widget in sections and templates without directly referencing the widget’s view component:
 C#
 **ComponentIdentifiers.cs**
@@ -650,6 +656,8 @@ Now build and run your target instance. When you look at your page in the **Page
 Your browser does not support the video tag. 
 Congratulations! You’ve successfully migrated your _Hero image_ widget data from KX13 to XbyK while modernizing your content architecture. You’ve transformed widget-specific content into reusable Content hub items that can be shared across pages, while maintaining visual control through widget properties.
 ## What’s next?
-This guide focused on custom widget migrations for transforming widget data into reusable content items. For guidance on migrating widget properties and UI controls, check out our [Transform widget properties](guides/development/upgrade-deep-dives/transform-widget-properties) page.
-You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](guides/development/upgrade-deep-dives).
+This guide focused on custom widget migrations for transforming widget data into reusable content items. For guidance on migrating widget properties and UI controls, check out our [Transform widget properties](/guides/development/upgrade-deep-dives/transform-widget-properties) page.
+You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](/guides/development/upgrade-deep-dives).
 If you encounter any challenging scenarios during your own widget migrations, or if you have ideas for subjects we haven’t covered, don’t hesitate to reach out to us through the **Send us feedback** button at the bottom of this page.
+![]()
+[]()[]()

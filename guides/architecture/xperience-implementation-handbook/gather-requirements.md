@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/gather-requirements
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * Gather requirements 
+
+
 # Gather requirements
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/gather-requirements#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/gather-requirements#) | This page is part of a module: [ Xperience implementation handbook ](modules/xperience-implementation-handbook)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/gather-requirements# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/gather-requirements#)
 ## Environment requirements
 The questions in this section focus on the processes and infrastructure that your project demands. Your team’s structure and procedures address some of these questions, and your client’s needs and requirements will answer the rest. The responses further your understanding of the constraints you need to work within and provide you with sufficient opportunity to address potential shortcomings.
 ### Development team
@@ -30,7 +36,7 @@ The questions in this section focus on the processes and infrastructure that you
 
 
 ### Hosting
-  * Will you use [Xperience SaaS](documentation/developers-and-admins/saas/saas-overview) or manage your own hosting?
+  * Will you use [Xperience SaaS](/documentation/developers-and-admins/saas/saas-overview) or manage your own hosting?
   * Will you host on-premise or in the cloud?
   * Is there a preferred hosting provider (e.g., Azure, AWS)?
   * Will the SQL server be dedicated or shared? 
@@ -176,4 +182,6 @@ These questions deal with some larger features and functionality that are native
 
 
 ## What’s next?
-The next guide in this handbook provides an [overview of the features Xperience has to offer](guides/architecture/xperience-implementation-handbook/examine-xperience-capabilities) and discusses how they contribute to a digital experience that furthers the goals of your client or organization.
+The next guide in this handbook provides an [overview of the features Xperience has to offer](/guides/architecture/xperience-implementation-handbook/examine-xperience-capabilities) and discusses how they contribute to a digital experience that furthers the goals of your client or organization.
+![]()
+[]()[]()

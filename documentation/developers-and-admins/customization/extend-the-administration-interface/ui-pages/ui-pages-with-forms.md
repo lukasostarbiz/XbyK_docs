@@ -1,20 +1,28 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)
+  * UI pages with forms 
+
+
 # UI pages with forms
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms#)
 The admin UI provides the following ways to create UI pages that contain forms to submit data to the back end:
-  * **Object type edit pages** – directly edit [objects types](documentation/developers-and-admins/customization/object-types) managed by the system. Display forms suitable for editing the specified object based on its UI form definition. See [Object type edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) for details _._
+  * **Object type edit pages** – directly edit [objects types](/documentation/developers-and-admins/customization/object-types) managed by the system. Display forms suitable for editing the specified object based on its UI form definition. See [Object type edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) for details _._
   * **Model-based edit pages** – use a custom model class with metadata to define forms that can submit any data to the back end. Covered on this page.
 
 
 ## Create model-based edit pages
 Pages based on model classes must derive from the `ModelEditPage<TModel>` base class. Substitute the `TModel` generic with a model class that describes the form to render.
   1. First, prepare the model class that describes the form and its behavior using 
-     * [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components)
-     * [UI form component validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
-     * [UI form component visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) as required. For example:
+     * [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components)
+     * [UI form component validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
+     * [UI form component visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) as required. For example:
 C#
 **Example form model class**
 Copy
@@ -76,7 +84,7 @@ public class EmailForm : ModelEditPage<EmailModel>
 }
 ```
 
-  3. The two classes created so far form the core of the UI page. The last thing to implement is the logic handling submitted form data. For this purpose, override and implement the `ProcessFormData` method. The method behaves as a standard [command handler method](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) that receives the following parameters from the client: 
+  3. The two classes created so far form the core of the UI page. The last thing to implement is the logic handling submitted form data. For this purpose, override and implement the `ProcessFormData` method. The method behaves as a standard [command handler method](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) that receives the following parameters from the client: 
      * **model** – the data submitted from the client.
      * **formItems** – a collection of form components comprising the client form.
 C#
@@ -122,8 +130,8 @@ protected override async Task<ICommandResponse> ProcessFormData(EmailModel model
 You can use the method to manipulate the submitted data as required.
 The page’s back-end definition is now ready. Register it in the system to make it available in the admin UI.
 ## Register model-based edit pages
-Pages based on model classes must use the `Kentico.Xperience.Admin.Base.TemplateNames.EDIT` client template. The template is necessary for specific form features, such as [visibility condition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) evaluation.
-Otherwise, these pages follow the same registration pattern as other UI pages. See [Register UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#register-ui-pages) for more information.
+Pages based on model classes must use the `Kentico.Xperience.Admin.Base.TemplateNames.EDIT` client template. The template is necessary for specific form features, such as [visibility condition](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) evaluation.
+Otherwise, these pages follow the same registration pattern as other UI pages. See [Register UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#register-ui-pages) for more information.
 ## Raise a confirmation prompt on submit
 If `ConfirmationConfiguration` is provided within `ConfigurePage`, users are prompted to confirm their action when saving changes. 
 C#
@@ -146,7 +154,7 @@ public override async Task ConfigurePage()
 ```
 
 Additionally, the dialog can also display an arbitrary form. Typically you would want to offer a multiple-choice selector that allows you to further control how the back end processes the submitted data.
-The form must be defined within a dedicated model class and annotated with [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components). [Validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) are also supported.
+The form must be defined within a dedicated model class and annotated with [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components). [Validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) are also supported.
 C#
 **Add forms to configuration dialogs**
 Copy
@@ -163,7 +171,7 @@ public class ConfirmationDialogFormModel
 }
 ```
 
-To access the data on form submit, use `GetValidatedConfirmationModel<T>` within `ProcessFormData` ([Lifecycle of model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms#lifecycle-of-model-based-edit-pages)).
+To access the data on form submit, use `GetValidatedConfirmationModel<T>` within `ProcessFormData` ([Lifecycle of model-based edit pages](#lifecycle-of-model-based-edit-pages)).
 C#
 **Control back-end flow based on confirmation form data**
 Copy
@@ -188,7 +196,7 @@ protected override async Task<ICommandResponse> ProcessFormData(EmailModel model
 
 ## Lifecycle of model-based edit pages
 This section details the lifecycle of model-based edit pages and their available customization points. You can use this information to customize the pages’ behavior at specific stages of their lifecycle. See the following diagram (red borders indicate steps where you can customize the behavior).
-[![Lifecycle of model-driven edit pages](docsassets/documentation/ui-pages-with-forms/ModelEditPage_Lifecycle.png)](https://docs.kentico.com/docsassets/documentation/ui-pages-with-forms/ModelEditPage_Lifecycle.png)
+[![Lifecycle of model-driven edit pages](/docsassets/documentation/ui-pages-with-forms/ModelEditPage_Lifecycle.png)](/docsassets/documentation/ui-pages-with-forms/ModelEditPage_Lifecycle.png)
 ### Model class initialization
 This is the first step of the page’s initialization process. At this point, the model class that defines the rendered form is instantiated. You can use this step to initialize the form with default values. For example:
 C#
@@ -212,16 +220,16 @@ protected override EmailModel Model
 }
 ```
 
-If you need to grab data from other objects, you can use [parameterized URLs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs) to get the object’s identifier, retrieve it, and use its properties to populate the form.
+If you need to grab data from other objects, you can use [parameterized URLs](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs) to get the object’s identifier, retrieve it, and use its properties to populate the form.
 ### Page configuration
-This step allows you to configure the [client template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms#register-model-based-edit-pages) (`TemplateNames.EDIT`) used to render the page. Model-based edit pages allow the same configuration as [object edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates). Among others, you can set the page’s
+This step allows you to configure the [client template](#register-model-based-edit-pages) (`TemplateNames.EDIT`) used to render the page. Model-based edit pages allow the same configuration as [object edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates). Among others, you can set the page’s
   * heading,
   * callouts,
   * confirmation dialogs,
   * and submit button text.
 
 
-See the object edit page [PageConfiguration reference](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#reference---pageconfiguration) for details.
+See the object edit page [PageConfiguration reference](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#reference---pageconfiguration) for details.
 ### Form component configuration
 At this point, you can modify the collection of form components instantiated from the metadata of the provided form model class. The system provides the `GetFormItems` method for this purpose. For example, you can:
   * Disable specific components.
@@ -241,7 +249,7 @@ protected override async Task<ICollection<IFormItem>> GetFormItems()
 }
 ```
 
-  * Post-configure [form component properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) using data not available from the model class, such as information from stored options configurations.
+  * Post-configure [form component properties](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) using data not available from the model class, such as information from stored options configurations.
 C#
 Copy
 ```
@@ -268,3 +276,5 @@ protected override async Task<ICollection<IFormItem>> GetFormItems()
 How the back end should respond to data submitted from the client is handled in the `ProcessFormData` method.
 ### General customization
 One general adjustment that applies throughout the page’s lifecycle is overriding and customizing the `IsEditedObjectValid` method. By default, the method checks if the form model class is initialized (not `null`). If you need to enforce stricter requirements on the model, this method is the place to implement them.
+![]()
+[]()[]()

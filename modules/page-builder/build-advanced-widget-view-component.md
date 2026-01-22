@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/page-builder/build-advanced-widget-view-component
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+14 of 16 Pages
 # Build the advanced widget's view component
-  * [ Copy page link ](modules/page-builder/build-advanced-widget-view-component#) | [Get HelpService ID](modules/page-builder/build-advanced-widget-view-component#)
-Core MVC 5
-
-
-[✖](modules/page-builder/build-advanced-widget-view-component# "Close page link panel") [Copy to clipboard](modules/page-builder/build-advanced-widget-view-component#)
 A widget’s view component is often the core of its functionality.
-The view component contains the business logic that supplies all the values for the view model, usually by interacting with the [Xperience API](documentation/developers-and-admins/api), or some external endpoint. It often uses widget properties to parameterize API interactions based on input from the editors.
+The view component contains the business logic that supplies all the values for the view model, usually by interacting with the [Xperience API](/documentation/developers-and-admins/api), or some external endpoint. It often uses widget properties to parameterize API interactions based on input from the editors.
   1. Use an identifier constant to **register the widget**.
   2. If you have any properties that are meant to change the data source of the widget, add conditional code that reacts to them accordingly.
   3. If you have properties meant to affect how the widget interacts with APIs, make sure to take them into account.
@@ -299,25 +301,17 @@ public static class ComponentIdentifiers
 ## Document your widget
 When you develop a new widget, make sure you train your editors about how to use it, and create documentation for it. Things that seem self-explanatory to development teams may not be so clear to non-technical users, so it’s important to give editors and other business users instructions on how to use what you make for them.
 ## See the results
-If you’ve followed along with this series about Page Builder, you can now use the [General template](modules/page-builder/model-template-data), [General section](modules/page-builder/implement-flexible-sections), [Simple CTA widget](modules/page-builder/build-simple-cta-widget), and Product widget to recreate the pages depicted in the mockups.
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups1.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups1.png)
-[![Screenshot of a promotional page](docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups2.png)
-[![Screenshot of a promotional page](docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)
-[![Mockup of a product detail page](docsassets/guides/define-advanced-widget/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
-[![Screenshot of a product page](docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)
+If you’ve followed along with this series about Page Builder, you can now use the [General template](/modules/page-builder/model-template-data), [General section](/modules/page-builder/implement-flexible-sections), [Simple CTA widget](/modules/page-builder/build-simple-cta-widget), and Product widget to recreate the pages depicted in the mockups.
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups1.png)](/docsassets/guides/define-advanced-widget/WidgetMockups1.png)
+[![Screenshot of a promotional page](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups2.png)
+[![Screenshot of a promotional page](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)
+[![Mockup of a product detail page](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
+[![Screenshot of a product page](/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)](/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)
 You’re welcome to tweak the styling to get the pages to appear even closer to the mockups. You can also apply your knowledge to add additional configurations to the template, section, and widgets.
 Additionally, the [finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) has several additional widgets that you can look over and modify for your own purposes.
-[ Previous page ](modules/page-builder/set-up-advanced-widget)
+[ Previous page ](/modules/page-builder/set-up-advanced-widget)
 14 of 16
-[ Mark complete and continue ](modules/page-builder/localize-advanced-widget)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/build-advanced-widget-view-component)
-[](https://docs.kentico.com/modules/page-builder/build-advanced-widget-view-component)[](https://docs.kentico.com/modules/page-builder/build-advanced-widget-view-component)
+[ Mark complete and continue ](/modules/page-builder/localize-advanced-widget)
+![]()
+[]()[]()

@@ -1,19 +1,21 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/identify-customer-segments-for-customer-journey
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+14 of 17 Pages
 # Identify customer segments
-  * [ Copy page link ](modules/customer-journeys/identify-customer-segments-for-customer-journey#) | [Get HelpService ID](modules/customer-journeys/identify-customer-segments-for-customer-journey#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/identify-customer-segments-for-customer-journey# "Close page link panel") [Copy to clipboard](modules/customer-journeys/identify-customer-segments-for-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Customer segmentation helps you categorize your audience based on shared characteristics, making personalizing communication and marketing efforts easier. Typically, marketing teams work with the following segments:
   * **Persona** – A fictional representation of an ideal customer based on research and accurate data. _Personas_ capture traits like demographics, behavior, goals, and pain points to help you effectively understand and engage with different types of users.
-  * **Contact group** – A dynamic or static collection of actual [contacts groups](documentation/business-users/digital-marketing/contact-groups) based on specific criteria, such as purchase history, engagement level, interests, or preferences. Unlike personas, contact groups consist of real people, allowing for targeted campaigns and personalized messaging.
-  * **Lead** – A potential customer who has shown interest in your business but hasn’t made a purchase or taken a key action yet. You can [collect leads](modules/customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare) through [website sign-ups](guides/digital-marketing/work-with-forms) , inquiries, or interactions with marketing campaigns. The goal is to nurture leads and convert them into customers.
+  * **Contact group** – A dynamic or static collection of actual [contacts groups](/documentation/business-users/digital-marketing/contact-groups) based on specific criteria, such as purchase history, engagement level, interests, or preferences. Unlike personas, contact groups consist of real people, allowing for targeted campaigns and personalized messaging.
+  * **Lead** – A potential customer who has shown interest in your business but hasn’t made a purchase or taken a key action yet. You can [collect leads](/modules/customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare) through [website sign-ups](/guides/digital-marketing/work-with-forms) , inquiries, or interactions with marketing campaigns. The goal is to nurture leads and convert them into customers.
 
 
-Use the **Contact groups** application in Xperience by Kentico to [segment your customers](documentation/business-users/digital-marketing/contact-groups) into targeted audiences. Built-in [condition rules](documentation/business-users/digital-marketing/contact-groups#set-up-dynamic-contact-groups) in Xperience let you dynamically create groups based on behavior and attributes, such as customers who _consent to marketing tracking_ , _submit specific forms_ , _register as members_ , or _visit certain pages_ at specific times.
+Use the **Contact groups** application in Xperience by Kentico to [segment your customers](/documentation/business-users/digital-marketing/contact-groups) into targeted audiences. Built-in [condition rules](/documentation/business-users/digital-marketing/contact-groups#set-up-dynamic-contact-groups) in Xperience let you dynamically create groups based on behavior and attributes, such as customers who _consent to marketing tracking_ , _submit specific forms_ , _register as members_ , or _visit certain pages_ at specific times.
 Businesses use personas, contact groups, or leads to refine their strategies to ensure that the right audience gets the right message at the right time. Let’s use “segments” or “customer segments” to refer to any segmentation types in this guide.
 ## Align customer journeys with the right segments
 A well-defined customer journey is only as good as the customers that live in it. If the customer journey for your segment is too broad, misaligned, or contradictory, your journey may not accurately reflect real customer experiences.
@@ -49,16 +51,8 @@ By focusing on one well-understood segment at a time, you’ll build more accura
 Using well-researched personas and meaningful contact groups in customer journey mapping ensures that each journey touchpoint reflects real audience needs.
 If your personas are poorly defined or contradict each other, contact groups overlap, or leads don’t have a clear position in your sales funnel, actions based on this customer journey may lead to wasted resources and missed opportunities. Refine content and interactions to smoothen drop-offs between neighboring customer journey stages.
 Track engagement (e.g., bounce rates, conversion rates) to see if the touchpoints resonate with the intended audience. The more accurately your customer segments represent your actual customers, the more data inform the journey stages, the more valuable and actionable your journey insights will be.
-[ Previous page ](modules/customer-journeys/gather-analytics-data.for-customer-journey)
+[ Previous page ](/modules/customer-journeys/gather-analytics-data.for-customer-journey)
 14 of 17
-[ Mark complete and continue ](modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/identify-customer-segments-for-customer-journey)
-[](https://docs.kentico.com/modules/customer-journeys/identify-customer-segments-for-customer-journey)[](https://docs.kentico.com/modules/customer-journeys/identify-customer-segments-for-customer-journey)
+[ Mark complete and continue ](/modules/customer-journeys/use-sales-and-support-team-insights-in-customer-journey)
+![]()
+[]()[]()

@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/page-builder/model-template-data
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+4 of 16 Pages
 # Model a product page template
-  * [ Copy page link ](modules/page-builder/model-template-data#) | [Get HelpService ID](modules/page-builder/model-template-data#)
-Core MVC 5
-
-
-[✖](modules/page-builder/model-template-data# "Close page link panel") [Copy to clipboard](modules/page-builder/model-template-data#)
 In this guide, we’ll walk through the process of creating a page template to match this product detail mockup:
-[![Mockup of a product detail page](docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
-See the [first guide in this series](modules/page-builder/meet-requirements-with-page-builder) for an overview of the mockup, and a breakdown of how to meet business requirements with [Page Builder](documentation/developers-and-admins/development/builders/page-builder).
+[![Mockup of a product detail page](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
+See the [first guide in this series](/modules/page-builder/meet-requirements-with-page-builder) for an overview of the mockup, and a breakdown of how to meet business requirements with [Page Builder](/documentation/developers-and-admins/development/builders/page-builder).
 ## Show structured data
 The data in the mockup comes from the _Product_ content type, which is served in the web channel through the _Product page_ content type.
 In order to implement a page that matches the mockup without any extra steps for editors, we need to access that data and display it directly in the template.
@@ -75,7 +77,7 @@ private static ProductFeatureValueType GetValueType(string value)
 ```
 
   5. Add a static `GetViewModel` method to create and populate a `ProductFeatureViewModel` based on a `ProductFeature` object. 
-`ProductFeature` is a generated class, created by the Xperience [code generation tool](documentation/developers-and-admins/api/generate-code-files-for-system-objects). 
+`ProductFeature` is a generated class, created by the Xperience [code generation tool](/documentation/developers-and-admins/api/generate-code-files-for-system-objects). 
 C#
 **ProductFeatureViewModel.cs**
 Copy
@@ -399,16 +401,8 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 
 
 
-[ Previous page ](modules/page-builder/map-enum-to-dropdown)
+[ Previous page ](/modules/page-builder/map-enum-to-dropdown)
 4 of 16
-[ Mark complete and continue ](modules/page-builder/define-template-properties)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/model-template-data)
-[](https://docs.kentico.com/modules/page-builder/model-template-data)[](https://docs.kentico.com/modules/page-builder/model-template-data)
+[ Mark complete and continue ](/modules/page-builder/define-template-properties)
+![]()
+[]()[]()

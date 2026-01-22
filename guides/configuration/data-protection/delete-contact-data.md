@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/configuration/data-protection/delete-contact-data
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Data protection](/guides/configuration/data-protection)
+  * Delete contact data (Right to be forgotten) 
+
+
 # Delete contact data (Right to be forgotten)
-  * Tutorial| [ Copy page link ](guides/configuration/data-protection/delete-contact-data#) | [Get HelpService ID](guides/configuration/data-protection/delete-contact-data#) | This page is part of a module: [ Data protection configuration ](modules/data-protection-configuration)
-Core MVC 5
-
-
-[✖](guides/configuration/data-protection/delete-contact-data# "Close page link panel") [Copy to clipboard](guides/configuration/data-protection/delete-contact-data#)
 Follow the steps below to comply when a customer requests that your company deletes their customer data.
   1. Navigate to the **Data protection** application.
   2. Open the **Right to be forgotten** tab.
@@ -27,3 +33,5 @@ To test this scenario on the [demo website](https://www.kentico.com/services/tra
 
 
 It’s common for developers to prepare a special page that allows your members to request getting this data automatically. Usually, this data is available within the member account profile or on the customer preference center. To learn what data the company has gathered about the user, they must sign in to their profile and verify their request, e.g., via email.
+![]()
+[]()[]()

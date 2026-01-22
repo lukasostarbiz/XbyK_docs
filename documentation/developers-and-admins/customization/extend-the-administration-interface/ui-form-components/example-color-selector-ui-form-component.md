@@ -1,15 +1,23 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
+  * Example - Color selector UI form component 
+
+
 # Example - Color selector UI form component
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component#)
-This page provides a step-by-step example demonstrating the process of creating, configuring, and registering a [UI form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) in the system. The component renders a color selector and returns the selected color in the hexadecimal format. The example implementation also ensures that the component is displayed in a non-editable [state](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#editmode-on-the-front-end) when required by the admin UI.
-For example, when used in [Page Builder widget properties](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties), the component can enable users to set the color of some part or element rendered by the widget. See the following screenshot for an illustration.
-[![Color selector in widget properties](docsassets/documentation/example-color-selector-ui-form-component/ColorSelectorUsage.png)](https://docs.kentico.com/docsassets/documentation/example-color-selector-ui-form-component/ColorSelectorUsage.png)
-If you have not yet done so, prepare your development environment according to [Prepare your environment for admin development](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development). UI form components consist of both back-end and front-end code, so you’ll need to prepare a custom JavaScript module as well.
+This page provides a step-by-step example demonstrating the process of creating, configuring, and registering a [UI form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) in the system. The component renders a color selector and returns the selected color in the hexadecimal format. The example implementation also ensures that the component is displayed in a non-editable [state](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#editmode-on-the-front-end) when required by the admin UI.
+For example, when used in [Page Builder widget properties](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties), the component can enable users to set the color of some part or element rendered by the widget. See the following screenshot for an illustration.
+[![Color selector in widget properties](/docsassets/documentation/example-color-selector-ui-form-component/ColorSelectorUsage.png)](/docsassets/documentation/example-color-selector-ui-form-component/ColorSelectorUsage.png)
+If you have not yet done so, prepare your development environment according to [Prepare your environment for admin development](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development). UI form components consist of both back-end and front-end code, so you’ll need to prepare a custom JavaScript module as well.
 **Custom code best practices**
-We recommend separating admin UI customizations into a dedicated class library project. Using separate assemblies keeps the code intended for the admin UI separate from your site implementation. It also provides a convenient place to embed compiled JS modules with client code and simplifies certain [advanced deployment scenarios](documentation/developers-and-admins/deployment/deploy-to-private-cloud/deploy-without-the-administration).
+We recommend separating admin UI customizations into a dedicated class library project. Using separate assemblies keeps the code intended for the admin UI separate from your site implementation. It also provides a convenient place to embed compiled JS modules with client code and simplifies certain [advanced deployment scenarios](/documentation/developers-and-admins/deployment/deploy-to-private-cloud/deploy-without-the-administration).
 After your environment is set up, implement the component’s back-end definition.
 C#
 **ColorSelectorFormComponent.cs**
@@ -50,7 +58,7 @@ namespace Acme.Web.Admin.UIFormComponents.ColorSelector
 }
 ```
 
-Next, define the [editing component attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) used for annotating other properties.
+Next, define the [editing component attribute](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) used for annotating other properties.
 C#
 **ColorSelectorComponentAttribute.cs**
 Copy
@@ -172,7 +180,7 @@ Copy
 export * from './form-components/ColorSelectorFormComponent';
 ```
 
-The UI form component is ready for use in [builder component dialogs](documentation/developers-and-admins/development/builders) and [model-driven UI forms](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms). To enable usage in the [field editor](documentation/developers-and-admins/customization/field-editor), register the component using `RegisterFormComponent`. 
+The UI form component is ready for use in [builder component dialogs](/documentation/developers-and-admins/development/builders) and [model-driven UI forms](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms). To enable usage in the [field editor](/documentation/developers-and-admins/customization/field-editor), register the component using `RegisterFormComponent`. 
 C#
 **Form component registration**
 Copy
@@ -183,3 +191,6 @@ using Kentico.Xperience.Admin.Base.Forms;
                                  typeof(ColorSelectorFormComponent),
                                  "Color selector")]
 ```
+
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Activity tracking](/guides/digital-marketing/activity-tracking)
+  * Verify if contact tracking is enabled 
+
+
 # Verify if contact tracking is enabled
-  * How-to| [ Copy page link ](guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled#) | [Get HelpService ID](guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled# "Close page link panel") [Copy to clipboard](guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled#)
 Test yourself if contact tracking works for you in Xperience by Kentico.
   1. Visit your website in an incognito window.
   2. Open a second window and navigate to your **Contact management** application in the Xperience by Kentico administration interface.
@@ -14,4 +20,6 @@ Test yourself if contact tracking works for you in Xperience by Kentico.
 
 
 ### Next step
-Continue to a guide that shows you how to [verify if contact tracking is enabled using browser’s Developer tools](guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled-advanced).
+Continue to a guide that shows you how to [verify if contact tracking is enabled using browser’s Developer tools](/guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled-advanced).
+![]()
+[]()[]()

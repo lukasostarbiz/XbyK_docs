@@ -1,35 +1,40 @@
+---
+source: https://docs.kentico.com/api/content-management/content-items
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Content management](/api/content-management)
+  * Content items 
+
+
 # Content items
-  * [ Copy page link ](api/content-management/content-items#) | [Get HelpService ID](api/content-management/content-items#)
-Core MVC 5
-
-
-[✖](api/content-management/content-items# "Close page link panel") [Copy to clipboard](api/content-management/content-items#)
   
 List of examples:
-  * [Dependency injection](api/content-management/content-items#dependency-injection)
-    * [Initialize required services](api/content-management/content-items#initialize-required-services)
-  * [Content item retrieval](api/content-management/content-items#content-item-retrieval)
-    * [Retrieve content items in web applications](api/content-management/content-items#retrieve-content-items-in-web-applications)
-    * [Retrieve content items of a single content type](api/content-management/content-items#retrieve-content-items-of-a-single-content-type)
-    * [Retrieve content items of multiple content types](api/content-management/content-items#retrieve-content-items-of-multiple-content-types)
-  * [Content item management](api/content-management/content-items#content-item-management)
-    * [Create content items](api/content-management/content-items#create-content-items)
-    * [Clone content items](api/content-management/content-items#clone-content-items)
-    * [Generate content item code names](api/content-management/content-items#generate-content-item-code-names)
-    * [Create content item language variants](api/content-management/content-items#create-content-item-language-variants)
-    * [Publish content items](api/content-management/content-items#publish-content-items)
-    * [Schedule publishing for content items](api/content-management/content-items#schedule-publishing-for-content-items)
-    * [Cancel scheduled publishing for content items](api/content-management/content-items#cancel-scheduled-publishing-for-content-items)
-    * [Unpublish content items](api/content-management/content-items#unpublish-content-items)
-    * [Schedule unpublishing for content items](api/content-management/content-items#schedule-unpublishing-for-content-items)
-    * [Cancel scheduled unpublishing for content items](api/content-management/content-items#cancel-scheduled-unpublishing-for-content-items)
-    * [Retrieve usages of a content item](api/content-management/content-items#retrieve-usages-of-a-content-item)
-    * [Delete content items](api/content-management/content-items#delete-content-items)
-    * [Create content item drafts](api/content-management/content-items#create-content-item-drafts)
-    * [Update content item drafts](api/content-management/content-items#update-content-item-drafts)
-  * [Content item assets](api/content-management/content-items#content-item-assets)
-    * [Upload content item assets from files](api/content-management/content-items#upload-content-item-assets-from-files)
-    * [Upload content item assets from data streams](api/content-management/content-items#upload-content-item-assets-from-data-streams)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Content item retrieval](#content-item-retrieval)
+    * [Retrieve content items in web applications](#retrieve-content-items-in-web-applications)
+    * [Retrieve content items of a single content type](#retrieve-content-items-of-a-single-content-type)
+    * [Retrieve content items of multiple content types](#retrieve-content-items-of-multiple-content-types)
+  * [Content item management](#content-item-management)
+    * [Create content items](#create-content-items)
+    * [Clone content items](#clone-content-items)
+    * [Generate content item code names](#generate-content-item-code-names)
+    * [Create content item language variants](#create-content-item-language-variants)
+    * [Publish content items](#publish-content-items)
+    * [Schedule publishing for content items](#schedule-publishing-for-content-items)
+    * [Cancel scheduled publishing for content items](#cancel-scheduled-publishing-for-content-items)
+    * [Unpublish content items](#unpublish-content-items)
+    * [Schedule unpublishing for content items](#schedule-unpublishing-for-content-items)
+    * [Cancel scheduled unpublishing for content items](#cancel-scheduled-unpublishing-for-content-items)
+    * [Retrieve usages of a content item](#retrieve-usages-of-a-content-item)
+    * [Delete content items](#delete-content-items)
+    * [Create content item drafts](#create-content-item-drafts)
+    * [Update content item drafts](#update-content-item-drafts)
+  * [Content item assets](#content-item-assets)
+    * [Upload content item assets from files](#upload-content-item-assets-from-files)
+    * [Upload content item assets from data streams](#upload-content-item-assets-from-data-streams)
 
 
 ## Dependency injection
@@ -71,7 +76,7 @@ public ContentItemsServices(IContentItemManagerFactory contentItemManagerFactory
 }
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ## Content item retrieval
 ### Retrieve content items in web applications
 C#
@@ -116,7 +121,7 @@ var schemaNames = new[] { "ProductFields", "MetadataSchema" };
 IEnumerable<IContentItemFieldsSource> contentWithSchemas = await contentRetriever.RetrieveContentOfReusableSchemas<IContentItemFieldsSource>(schemaNames);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Retrieve content items of a single content type
 C#
 Copy
@@ -146,7 +151,7 @@ IEnumerable<CandyStore> candyStores =
         await contentQueryExecutor.GetMappedResult<CandyStore>(builder);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Retrieve content items of multiple content types
 C#
 Copy
@@ -205,7 +210,7 @@ public class Dto
 }
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ## Content item management
 ### Create content items
 C#
@@ -262,7 +267,7 @@ ContentItemData itemData = new ContentItemData(new Dictionary<string, object>{
 await contentItemManager.Create(createParams, itemData);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Clone content items
 C#
 Copy
@@ -316,7 +321,7 @@ var cloneParameters = new CloneContentItemParameters
 await contentItemManager.Clone(cloneParameters);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Generate content item code names
 C#
 Copy
@@ -336,7 +341,7 @@ string codeName = await contentItemCodeNameProvider.Get(displayName);
 // Use the 'codeName' value in content item APIs...
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Create content item language variants
 C#
 Copy
@@ -399,7 +404,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Publish content items
 C#
 Copy
@@ -438,7 +443,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Schedule publishing for content items
 C#
 Copy
@@ -478,7 +483,7 @@ var itemId = await contentQueryExecutor
 await contentItemManager.SchedulePublish(itemId.First(), languageName, publishDateTime);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Cancel scheduled publishing for content items
 C#
 Copy
@@ -518,7 +523,7 @@ if (await contentItemManager.IsPublishScheduled(itemId.First(), languageName))
 }
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Unpublish content items
 C#
 Copy
@@ -554,7 +559,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Schedule unpublishing for content items
 C#
 Copy
@@ -593,7 +598,7 @@ var itemId = await contentQueryExecutor
 await contentItemManager.ScheduleUnpublish(itemId.First(), languageName, unpublishDateTime);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Cancel scheduled unpublishing for content items
 C#
 Copy
@@ -630,7 +635,7 @@ if (await contentItemManager.IsUnpublishScheduled(itemId.First(), languageName))
 }
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Retrieve usages of a content item
 C#
 Copy
@@ -661,7 +666,7 @@ var itemId = await contentQueryExecutor
 await contentItemUsageRetriever.Retrieve(itemId.First(), languageName);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Delete content items
 C#
 Copy
@@ -698,7 +703,7 @@ await contentItemManager.Delete(
             });
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Create content item drafts
 C#
 Copy
@@ -732,7 +737,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Update content item drafts
 C#
 Copy
@@ -772,7 +777,7 @@ await contentItemManager.TryUpdateDraft(itemId.First(),
                                         updatedItemData);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ## Content item assets
 ### Upload content item assets from files
 C#
@@ -825,7 +830,7 @@ ContentItemData itemData = new ContentItemData(new Dictionary<string, object>{
 await contentItemManager.Create(createParams, itemData);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
 ### Upload content item assets from data streams
 C#
 Copy
@@ -878,4 +883,6 @@ ContentItemData itemData = new ContentItemData(new Dictionary<string, object>{
 await contentItemManager.Create(createParams, itemData);
 ```
 
-[> Back to list of examples](api/content-management/content-items#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

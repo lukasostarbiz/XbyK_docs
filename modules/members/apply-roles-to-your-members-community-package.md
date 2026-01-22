@@ -1,10 +1,12 @@
+---
+source: https://docs.kentico.com/modules/members/apply-roles-to-your-members-community-package
+scrape_date: 2026-01-22
+---
+
+Module: Members
+11 of 12 Pages
 # Apply roles to your members with this community package
-  * [ Copy page link ](modules/members/apply-roles-to-your-members-community-package#) | [Get HelpService ID](modules/members/apply-roles-to-your-members-community-package#)
-Core MVC 5
-
-
-[✖](modules/members/apply-roles-to-your-members-community-package# "Close page link panel") [Copy to clipboard](modules/members/apply-roles-to-your-members-community-package#)
-Some businesses have more complicated requirements for their authenticated members than the [earlier membership examples](guides/development/members/create-a-profile-page) cover.
+Some businesses have more complicated requirements for their authenticated members than the [earlier membership examples](/guides/development/members/create-a-profile-page) cover.
 For example, a business may need to have multiple groups of members, each of which has access to different pages. You could achieve this behavior if it were possible to assign roles to members, using those roles to restrict access to certain pages.
 ## The package
 Kentico plans to include roles for members in Xperience, though it it does not yet have a firm position in our [roadmap](https://roadmap.kentico.com/tabs/4-planned) at the time of writing this guide.
@@ -14,7 +16,7 @@ This guide will give a brief overview of this member roles package and highlight
 ## How it works
 Let’s take a high-level look at the components of the member roles package.
 ### How do the objects relate?
-Instead of creating a new object type, Trevor’s repository uses [taxonomy tags](documentation/developers-and-admins/configuration/taxonomies) to represent the roles members can have.
+Instead of creating a new object type, Trevor’s repository uses [taxonomy tags](/documentation/developers-and-admins/configuration/taxonomies) to represent the roles members can have.
 There are three binding classes used to create relationships between these roles and the following objects:
   1. **Members** in the _Members_ application. 
      * A binding object relating a role to a member means the member is assigned to the given role.
@@ -29,12 +31,12 @@ Then, there are two **Permission settings** classes: one for content folders and
   2. Whether the list of permitted roles should be inherited from the parent or directly defined for the given object.
 
 
-Finally, _XperienceCommunity.MemberRoles_ includes a **Member Permission Configuration** [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas), which indicates whether the package should check role permissions for a given content type. We’ll cover this vital schema in more detail under the next heading.
+Finally, _XperienceCommunity.MemberRoles_ includes a **Member Permission Configuration** [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas), which indicates whether the package should check role permissions for a given content type. We’ll cover this vital schema in more detail under the next heading.
 ### How do you configure an item’s permissions?
 You may have noticed the phrase “with correct configuration” qualifying a few statements under the previous heading. Let’s dive into that a bit further.
 There are two important factors that designate _if_ and _how_ the member role code should check an item’s permissions:
 #### Reusable field schema (the “If”)
-As mentioned above, an item’s content type must have the **Member Permission Configuration** schema if you want to evaluate its permissions. You need to apply the schema _both in the database_ (by assigning it through the admin UI) _and in the code_ (by [re-generating code files](documentation/developers-and-admins/api/generate-code-files-for-system-objects) for the content type).
+As mentioned above, an item’s content type must have the **Member Permission Configuration** schema if you want to evaluate its permissions. You need to apply the schema _both in the database_ (by assigning it through the admin UI) _and in the code_ (by [re-generating code files](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) for the content type).
 A content type **must** use the schema for the filters from _XperienceCommunity.MemberRoles_ to check its items’ permissions.
 However, permission settings for an item can still exist, _even when they do not apply_. **MemberPermissions** still exist on the **Properties** tab of a web page item, even if its content type does not use the schema. Similarly, it’s possible to set **Folder permissions** for a content folder that does not contain items using the schema.
 If an item’s content type does not have the correct schema, changes to these permissions will have _no direct effect_. However, if the item is a web page whose children inherit its permissions, changes will affect the children.
@@ -47,7 +49,7 @@ There is an exception, however: language variants of items can override the perm
 This is true for variants of both reusable items, which can override their containing folder’s permissions, and web pages, which can override their associated item’s permissions.
 ### How do you check permissions?
 The _Member roles_ module provides new code that can filter unauthorized content from the current member. It’s important to note that **Xperience does not automatically apply this new logic** , so you need to adjust your code wherever you retrieve content that may be restricted by member role.
-This process will be easier if you use some form of [abstraction](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) that centralizes your data access logic.
+This process will be easier if you use some form of [abstraction](/guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) that centralizes your data access logic.
 You can find details on how to check permissions for content in the [Developer guide](https://github.com/KenticoDevTrev/MembershipRoles_Temp/blob/master/DEVELOPER-GUIDE.md) of Trevor’s repository.
 ### Can you tie it in with authorization?
 The _Member roles_ package includes logic to filter queries for content items based on member roles, but you can expand its utility further using another of Trevor’s tools.
@@ -80,16 +82,8 @@ Find instructions for installing and using the package in [the repository](https
 The project is open-source, so you are free to fork and customize it to fit any of your specific needs.
 If you encounter any problems, please report them through the [Issues tab](https://github.com/KenticoDevTrev/MembershipRoles_Temp/issues) of the repository.
 If you have any ideas for functionality you’d like to see training materials about, please let us know with the _Send us feedback_ button below!
-[ Previous page ](modules/members/expand-restricted-content-and-sign-in-functionality)
+[ Previous page ](/modules/members/expand-restricted-content-and-sign-in-functionality)
 11 of 12
-[ Mark complete and continue ](modules/members/members-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/apply-roles-to-your-members-community-package)
-[](https://docs.kentico.com/modules/members/apply-roles-to-your-members-community-package)[](https://docs.kentico.com/modules/members/apply-roles-to-your-members-community-package)
+[ Mark complete and continue ](/modules/members/members-learn-more)
+![]()
+[]()[]()

@@ -1,10 +1,16 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/xperience-essentials/work-with-users-essentials
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Xperience essentials](/guides/digital-marketing/xperience-essentials)
+  * Work with users 
+
+
 # Work with users
-  * [ Copy page link ](guides/digital-marketing/xperience-essentials/work-with-users-essentials#) | [Get HelpService ID](guides/digital-marketing/xperience-essentials/work-with-users-essentials#) | This page is part of a module: [ User management essentials ](modules/user-management-essentials)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/xperience-essentials/work-with-users-essentials# "Close page link panel") [Copy to clipboard](guides/digital-marketing/xperience-essentials/work-with-users-essentials#)
-[![](docsassets/guides/work-with-users-essentials/Users-icon.png)](https://docs.kentico.com/docsassets/guides/work-with-users-essentials/Users-icon.png)
+[![](/docsassets/guides/work-with-users-essentials/Users-icon.png)](/docsassets/guides/work-with-users-essentials/Users-icon.png)
 Users represent individual user accounts that can be accessed in the system with their own credentials. Anytime a user reaches out that they need to change something in their profile or a team lead wants you to add a new team member to your Xperience application, follow along to find your way around the Xperience **Users** application.
 ## How to create or edit a user
 To create a new user, you must have Xperience configured to send transactional emails. 
@@ -15,7 +21,7 @@ To create a new user, you must have Xperience configured to send transactional e
   4. Change the user’s general information and **roles** , or activate or deactivate the user.
 
 
-[![](docsassets/guides/work-with-users-essentials/Users-general.png)](https://docs.kentico.com/docsassets/guides/work-with-users-essentials/Users-general.png)
+[![](/docsassets/guides/work-with-users-essentials/Users-general.png)](/docsassets/guides/work-with-users-essentials/Users-general.png)
 ## How to update your password
   1. On the application dashboard, locate the **User menu** (bottom-left button).
   2. Go to your personal **Account**.
@@ -23,7 +29,7 @@ To create a new user, you must have Xperience configured to send transactional e
   4. **Save** your changes.
 
 
-[![](docsassets/guides/work-with-users-essentials/Users-password.png)](https://docs.kentico.com/docsassets/guides/work-with-users-essentials/Users-password.png)
+[![](/docsassets/guides/work-with-users-essentials/Users-password.png)](/docsassets/guides/work-with-users-essentials/Users-password.png)
 ## Create a user
 Suppose a new digital marketer starts working for your company next week. Create a new user, assign them the role of _Digital Channel Marketer_ , and email them an invitation.
 Xperience sends invitations to new users, so you need to have Email-sending functionality configured. See our [Email configuration](https://devnet.kentico.com/CMSPages/DocLinkMapper.ashx?version=xp&link=smtp_servers_config) documentation to learn how to set up email sending.
@@ -45,7 +51,9 @@ Your Xperience demo website doesn’t send any invitations for this exercise.
 
 If you sign in as the user you’ve created, you will see only the applications with assigned permissions on the dashboard.
 _Laura Miller, the Digital Channel Manager_ :
-[![](docsassets/guides/work-with-users-essentials/role-dashboard.png)](https://docs.kentico.com/docsassets/guides/work-with-users-essentials/role-dashboard.png)
+[![](/docsassets/guides/work-with-users-essentials/role-dashboard.png)](/docsassets/guides/work-with-users-essentials/role-dashboard.png)
 Users and roles are an essential part of Xperience by Kentico administration. By setting them up, you can help everyone focus on their daily jobs.
 ## Next step
-Continue learning about your [next steps with user management](guides/digital-marketing/xperience-essentials/next-steps-with-user-management-essentials).
+Continue learning about your [next steps with user management](/guides/digital-marketing/xperience-essentials/next-steps-with-user-management-essentials).
+![]()
+[]()[]()

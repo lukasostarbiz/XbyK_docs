@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys)
+  * Analyze your customer's behavior to improve user engagement 
+
+
 # Analyze your customer's behavior to improve user engagement
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -28,6 +34,8 @@ Each of these scenarios highlights a **real-world challenge** marketers face whe
 ### How can we help?
 Xperience by Kentico’s _Customer journeys_ help to understand both the data, and the **people behind that data** , thus resolving common digital marketing pitfalls such as **high drop-off rates, low engagement, ineffective campaigns** , and **poor customer retention**.
 Ultimately, this powerful feature is here to soothe your ROIal headache and **improve your ROIs**.
-[![Customer journeys in Xperience by Kentico – mapping made simple](docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)](https://docs.kentico.com/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)
+[![Customer journeys in Xperience by Kentico – mapping made simple](/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)](/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)
 ## Next step
-You explored how understanding _customer journeys_ fosters better engagement on three commonplace scenarios, now let’s get familiar with [what is a _customer journey_](guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey) as a concept.
+You explored how understanding _customer journeys_ fosters better engagement on three commonplace scenarios, now let’s get familiar with [what is a _customer journey_](/guides/customer-journeys/get-started-with-customer-journeys/what-is-a-customer-journey) as a concept.
+![]()
+[]()[]()

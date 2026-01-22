@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/update-an-existing-form
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Update an existing form 
+
+
 # Update an existing form
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-forms/update-an-existing-form#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/update-an-existing-form#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/update-an-existing-form# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/update-an-existing-form#)
 See how you can update a form or reuse an old unused one.
   1. Go to the **Forms** application.
   2. Open the form you want to change.
@@ -21,4 +27,6 @@ If you’re unsure whether the names of the form are used anywhere, please, chec
 
 
 ### Next step
-The next guide helps you to [add a custom form field to the form](guides/digital-marketing/work-with-forms/add-a-custom-form-field).
+The next guide helps you to [add a custom form field to the form](/guides/digital-marketing/work-with-forms/add-a-custom-form-field).
+![]()
+[]()[]()

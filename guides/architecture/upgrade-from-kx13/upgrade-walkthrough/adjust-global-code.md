@@ -1,18 +1,25 @@
+---
+source: https://docs.kentico.com/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Upgrade from Kentico Xperience 13](/guides/architecture/upgrade-from-kx13)
+  * [Walk through the upgrade step-by-step](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough)
+  * Adjust global code on the backend 
+
+
 # Adjust global code on the backend
-  * How-to| [ Copy page link ](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#) | [Get HelpService ID](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#) | This page is part of a module: [ Upgrading to Xperience by Kentico - Walkthrough ](modules/upgrade-walkthrough)
-Core MVC 5
-
-
-[✖](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code# "Close page link panel") [Copy to clipboard](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#)
 Now that you have successfully migrated the data and media files from the source instance of Dancing Goat, let’s work toward displaying them. First, we’ll look into tasks and code that are global for the whole solution.
 ## Generate new code files for system objects
-There are a several differences between code files generated for system objects by [KX13](13/developing-websites/generating-classes-for-xperience-objects) and [XbyK](documentation/developers-and-admins/api/generate-code-files-for-system-objects). Therefore we need to generate them fresh, rather than transfer the code files from the source instance.
+There are a several differences between code files generated for system objects by [KX13](/13/developing-websites/generating-classes-for-xperience-objects) and [XbyK](/documentation/developers-and-admins/api/generate-code-files-for-system-objects). Therefore we need to generate them fresh, rather than transfer the code files from the source instance.
 ### Add a new project to hold generated files
 For separation of concerns, we recommend storing the generated files in a special project. Let’s create a new _DancingGoat.Entities_ project for this purpose.
 Add a new _Class library_ project to your _DancingGoat_ solution, called _DancingGoat.Entities_.
 Ensure it targets your desired version of .NET framework and includes the _Kentico.Xperience.Core_ NuGet package compatible with the version in _DancingGoat.Web_.
 Our code samples are targeting .NET 8.
-Then, add an `AssemblyAttribute` to _DancingGoat.Entities.csproj_ to [enable class discovery](documentation/developers-and-admins/customization/integrate-custom-code).
+Then, add an `AssemblyAttribute` to _DancingGoat.Entities.csproj_ to [enable class discovery](/documentation/developers-and-admins/customization/integrate-custom-code).
 XML
 **DancingGoat.Entities.csproj**
 Copy
@@ -52,7 +59,7 @@ Copy
 Rebuild your solution.
 If you have trouble building, double-check that the .NET and Kentico NuGet packages versions in your two projects are matching.
 ### Generate code files
-Xperience by Kentico allows you to [generate code files](documentation/developers-and-admins/api/generate-code-files-for-system-objects) using .NET CLI and the `dotnet run` command.
+Xperience by Kentico allows you to [generate code files](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) using .NET CLI and the `dotnet run` command.
 For this upgrade walk-through, we need to generate `PageContentTypes` and `ReusableContentTypes`.
 Run the following command from your _./src/DancingGoat.Web_ folder:
 PS
@@ -62,7 +69,7 @@ dotnet run --no-build -- --kxp-codegen --type "PageContentTypes" --location "../
 ```
 
 After a successful run, you should see a new _PageContentTypes_ folder in _DancingGoat.Entities_ with generated files.
-[![An example of a generated code file](docsassets/guides/adjust-global-code/contact-generated.png)](https://docs.kentico.com/docsassets/guides/adjust-global-code/contact-generated.png)
+[![An example of a generated code file](/docsassets/guides/adjust-global-code/contact-generated.png)](/docsassets/guides/adjust-global-code/contact-generated.png)
 Similarly, run the command to generate files for _ReusableContentTypes_. It will create a _ReusableContentTypes_ folder with files for _Attachment_ and _MediaFile_ content types.
 PS
 Copy
@@ -70,7 +77,7 @@ Copy
 dotnet run --no-build -- --kxp-codegen --type "ReusableContentTypes" --location "../DancingGoat.Entities/{type}/{name}"
 ```
 
-In your own project, consider what other types of objects you need to regenerate files for. See details about the command parameters in [our documentation](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files).
+In your own project, consider what other types of objects you need to regenerate files for. See details about the command parameters in [our documentation](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files).
 ## Configure the projects
 In the .csproj files for _DancingGoat.Web_ and _DancingGoat.Entities_ , configure each project to use [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives) and [enable nullables](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-context).
 XML
@@ -171,7 +178,7 @@ Copy
 app.MapGet("/", () => "The DancingGoat.Web site has not been configured yet.");
 ```
 
-Next, enable the [Page Builder](documentation/developers-and-admins/development/builders/page-builder) and [Content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing) in your middleware pipeline.
+Next, enable the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) and [Content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing) in your middleware pipeline.
 Un-comment the lines calling `UsePageBuilder` and `UseWebPageRouting` from the `features` collection passed to `builder.Services.AddKentico`, and add the necessary `using` directives.
 C#
 **Program.cs**
@@ -231,9 +238,11 @@ If you are unable to build your solution, make sure you have commented out all t
 ### Adjust system URL
 If you are running your site locally, notice that it is running on a certain port. In our example, it’s _localhost:56305_.
 However, if you look at any of your migrated DancingGoatCore pages in your content tree, e.g., Contacts, you’ll see the port is not included in the URL. This is because we didn’t create the page directly in Xperience but migrated it over.
-[![Port not included in the URL](docsassets/guides/adjust-global-code/URL-port-not-included.png)](https://docs.kentico.com/docsassets/guides/adjust-global-code/URL-port-not-included.png)
+[![Port not included in the URL](/docsassets/guides/adjust-global-code/URL-port-not-included.png)](/docsassets/guides/adjust-global-code/URL-port-not-included.png)
 To avoid errors when navigating to pages in the future, let’s fix it in the **Channel management → DancingGoatCore → General**.
 Add the port into the **Website domain** field and hit **Save**. Now the page URLs include the port and we are all set to continue with the next step.
 Your browser does not support the video tag. 
 ### Walkthrough progress
-Learn how you can [display an upgraded page](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/display-an-upgraded-page) that contains both Page Builder and structured data.
+Learn how you can [display an upgraded page](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/display-an-upgraded-page) that contains both Page Builder and structured data.
+![]()
+[]()[]()

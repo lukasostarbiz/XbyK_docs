@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-email/leverage-email-data-in-customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with email](/guides/digital-marketing/work-with-email)
+  * Leverage email data in customer journeys 
+
+
 # Leverage email data in customer journeys
-  * Concept| [ Copy page link ](guides/digital-marketing/work-with-email/leverage-email-data-in-customer-journeys#) | [Get HelpService ID](guides/digital-marketing/work-with-email/leverage-email-data-in-customer-journeys#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-email/leverage-email-data-in-customer-journeys# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-email/leverage-email-data-in-customer-journeys#)
-Email campaigns aren’t just messages you send to achieve marketing goals. They can become stepping stones that guide people on their [**customer journeys**](guides/customer-journeys/get-started-with-customer-journeys). Every open, click, or unsubscribe is a signal that shows where someone is and what they might need next as they move **from curiosity to conversion**.
+Email campaigns aren’t just messages you send to achieve marketing goals. They can become stepping stones that guide people on their [**customer journeys**](/guides/customer-journeys/get-started-with-customer-journeys). Every open, click, or unsubscribe is a signal that shows where someone is and what they might need next as they move **from curiosity to conversion**.
 Let’s look at how you can connect the dots between your customer’s email activities and the broader customer journey. You’ll learn how to use email data to **track progress** and uncover **what drives your users forward**. That way, you’re not just sending emails but building momentum.
 ## Shape better experiences with Customer journeys
-_Customer journeys_ help you map your contact’s real-world path as they interact with your brand, one [touchpoint](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision) at a time.
+_Customer journeys_ help you map your contact’s real-world path as they interact with your brand, one [touchpoint](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision) at a time.
 Each journey is a **sequence of stages** that represent a contact’s progress toward a **specific goal** , such as filling out a form, attending a webinar, or completing a purchase. You define the stages, and the system tracks contacts’ movement through the stages of the journey. The result? A clear, **funnel-like view** that shows how people move, stall, or drop off on their way to conversion.
-[![Customer journeys map](docsassets/guides/leverage-email-data-in-customer-journeys/customer-journey-map.png)](https://docs.kentico.com/docsassets/guides/leverage-email-data-in-customer-journeys/customer-journey-map.png)
+[![Customer journeys map](/docsassets/guides/leverage-email-data-in-customer-journeys/customer-journey-map.png)](/docsassets/guides/leverage-email-data-in-customer-journeys/customer-journey-map.png)
 Each journey can reflect a **different goal or experience**.
 For example, a lead-nurturing journey might follow contacts from first awareness to sales contact, while a customer onboarding journey could focus on activation and retention. You can then leverage the insights into contacts’ behaviour to optimize your content and tailor your approach to fulfill your users’ current needs, no matter the stage of their journey.
-Understanding how _customer journeys_ connect to [email statistics](documentation/business-users/digital-marketing/emails/track-email-statistics) gives you more than visibility. It gives you leverage that you can use to update your content or strategy to move your contacts forward. If you can see at which touchpoint the contacts are stalling, you can fix the friction points. If you know what nudges the users forward, you can double down.
+Understanding how _customer journeys_ connect to [email statistics](/documentation/business-users/digital-marketing/emails/track-email-statistics) gives you more than visibility. It gives you leverage that you can use to update your content or strategy to move your contacts forward. If you can see at which touchpoint the contacts are stalling, you can fix the friction points. If you know what nudges the users forward, you can double down.
 That means better campaign results, more conversions, and ultimately, more substantial ROI.
 ## Discover where emails fit in
 Let’s be honest – email is still one of your most reliable ways to reach people directly. But its power isn’t just in what you send; it’s in what your contacts **do** next.
@@ -43,15 +49,15 @@ Here are a few examples of how to set up stage transitions in _Customer journeys
 
 This approach helps you stay relevant without guessing. A contact who keeps clicking is clearly interested. But if someone hasn’t clicked any of your recent emails, it might be time to rethink your message, or move them to a slower nurture stream.
 You’re not working harder. You’re putting the data you already have to work.
-For inspiration on how different actions map to different customer journey stages, check out our [Stages, touchpoints, and guiding the customer’s decision](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision) material.
+For inspiration on how different actions map to different customer journey stages, check out our [Stages, touchpoints, and guiding the customer’s decision](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision) material.
 ## Track key email data
 Behind every customer journey is a data trail, and your email metrics are some of the clearest footprints. These numbers don’t just tell you how a campaign performed. They tell you how real people behave and what might help them take the next step.
-In _Xperience_ , you can view these metrics in the **Statistics** section of every email created in the **Marketing Emails** channel app (or in the **Email metrics** app in the [SaaS Portal](documentation/developers-and-admins/saas/saas-overview)).
-[![Email Statistics view](docsassets/guides/leverage-email-data-in-customer-journeys/email-statistics.png)](https://docs.kentico.com/docsassets/guides/leverage-email-data-in-customer-journeys/email-statistics.png)
+In _Xperience_ , you can view these metrics in the **Statistics** section of every email created in the **Marketing Emails** channel app (or in the **Email metrics** app in the [SaaS Portal](/documentation/developers-and-admins/saas/saas-overview)).
+[![Email Statistics view](/docsassets/guides/leverage-email-data-in-customer-journeys/email-statistics.png)](/docsassets/guides/leverage-email-data-in-customer-journeys/email-statistics.png)
 Want to explore the topic further? Use the **Contact activities** view to see exactly who clicked what and when. While it might be too detailed for high-level customer journey mapping, it’s still a great way to understand individual user behavior when needed.
-[![Email Contact activities view](docsassets/guides/leverage-email-data-in-customer-journeys/email-contact-activities.png)](https://docs.kentico.com/docsassets/guides/leverage-email-data-in-customer-journeys/email-contact-activities.png)
-To track statistics and activities for emails, the application must be [properly configured](documentation/developers-and-admins/digital-marketing-setup/set-up-email-tracking). If statistics or activities are not logged for your emails, contact your project’s administrator or developers.
-Xperience doesn’t track statistics and activities for [draft emails](documentation/business-users/digital-marketing/emails#send-draft-emails)
+[![Email Contact activities view](/docsassets/guides/leverage-email-data-in-customer-journeys/email-contact-activities.png)](/docsassets/guides/leverage-email-data-in-customer-journeys/email-contact-activities.png)
+To track statistics and activities for emails, the application must be [properly configured](/documentation/developers-and-admins/digital-marketing-setup/set-up-email-tracking). If statistics or activities are not logged for your emails, contact your project’s administrator or developers.
+Xperience doesn’t track statistics and activities for [draft emails](/documentation/business-users/digital-marketing/emails#send-draft-emails)
 Here are the core metrics to watch and what they can tell you:
   * **Sent emails:** The total number of emails your system attempted to send, including those that may have bounced. 
     * _Impact:_ A high number here doesn’t always mean your message reached people, it’s just the starting point. Always pair this with delivery metrics to understand your real reach.
@@ -63,7 +69,7 @@ Here are the core metrics to watch and what they can tell you:
     * _Impact:_ This is your most reliable engagement signal, especially when it comes to customer journeys. It reflects actual interaction and intent. Focus on this metric when building and adjusting your journey, and use it to trigger journey transitions, prioritize follow-ups, or segment contacts based on topic interest.
   * **Unsubscribed:** How many recipients opted out of receiving future emails via your unsubscribe link? 
     * _Impact:_ A small number is expected, but spikes may indicate content fatigue, poor targeting, or over-emailing. Watch closely after new nurture sequences or one-off promotional sends.
-  * **Spam reports:** How many recipients marked the email as spam in their inbox. (Available when using [SendGrid](documentation/developers-and-admins/configuration/email-configuration#sendgrid-integration). Developers can also implement custom support for displaying complaints from other email providers, as long as those providers include this information in their reporting.) 
+  * **Spam reports:** How many recipients marked the email as spam in their inbox. (Available when using [SendGrid](/documentation/developers-and-admins/configuration/email-configuration#sendgrid-integration). Developers can also implement custom support for displaying complaints from other email providers, as long as those providers include this information in their reporting.) 
     * _Impact:_ Spam reports harm sender reputation and can affect future deliverability. More than a few per campaign should prompt an urgent review of subject lines, content tone, frequency, and list quality.
 
 
@@ -98,3 +104,5 @@ Even seemingly small steps, such as a single click, can reveal powerful patterns
 Let your emails guide the way.
 **How did you like this material?**
 We hope you have enjoyed this short introduction to leveraging email data in customer journeys in _Xperience by Kentico_. Tell us how you liked the learning experience by clicking the **Send us feedback** button at the end of this page.
+![]()
+[]()[]()

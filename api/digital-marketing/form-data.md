@@ -1,17 +1,22 @@
+---
+source: https://docs.kentico.com/api/digital-marketing/form-data
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Digital marketing](/api/digital-marketing)
+  * Form data 
+
+
 # Form data
-  * [ Copy page link ](api/digital-marketing/form-data#) | [Get HelpService ID](api/digital-marketing/form-data#)
-Core MVC 5
-
-
-[✖](api/digital-marketing/form-data# "Close page link panel") [Copy to clipboard](api/digital-marketing/form-data#)
   
 List of examples:
-  * [Dependency injection](api/digital-marketing/form-data#dependency-injection)
-    * [Initialize required services](api/digital-marketing/form-data#initialize-required-services)
-    * [Add data records to a form](api/digital-marketing/form-data#add-data-records-to-a-form)
-    * [Load data records from a form](api/digital-marketing/form-data#load-data-records-from-a-form)
-    * [Update the data records of a form](api/digital-marketing/form-data#update-the-data-records-of-a-form)
-    * [Delete form data records](api/digital-marketing/form-data#delete-form-data-records)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+    * [Add data records to a form](#add-data-records-to-a-form)
+    * [Load data records from a form](#load-data-records-from-a-form)
+    * [Update the data records of a form](#update-the-data-records-of-a-form)
+    * [Delete form data records](#delete-form-data-records)
 
 
 ## Dependency injection
@@ -29,7 +34,7 @@ public FormDataServices(IInfoProvider<BizFormInfo> bizFormInfoProvider)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/form-data#toc)
+[> Back to list of examples](#toc)
 ### Add data records to a form
 C#
 Copy
@@ -55,7 +60,7 @@ if (formObject != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/form-data#toc)
+[> Back to list of examples](#toc)
 ### Load data records from a form
 C#
 Copy
@@ -82,7 +87,7 @@ if (formObject != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/form-data#toc)
+[> Back to list of examples](#toc)
 ### Update the data records of a form
 C#
 Copy
@@ -110,7 +115,7 @@ if (formObject != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/form-data#toc)
+[> Back to list of examples](#toc)
 ### Delete form data records
 C#
 Copy
@@ -140,4 +145,6 @@ if (formObject != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/form-data#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

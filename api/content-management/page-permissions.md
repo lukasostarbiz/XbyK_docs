@@ -1,18 +1,23 @@
+---
+source: https://docs.kentico.com/api/content-management/page-permissions
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Content management](/api/content-management)
+  * Page permissions 
+
+
 # Page permissions
-  * [ Copy page link ](api/content-management/page-permissions#) | [Get HelpService ID](api/content-management/page-permissions#)
-Core MVC 5
-
-
-[✖](api/content-management/page-permissions# "Close page link panel") [Copy to clipboard](api/content-management/page-permissions#)
   
 List of examples:
-  * [Dependency injection](api/content-management/page-permissions#dependency-injection)
-    * [Initialize required services](api/content-management/page-permissions#initialize-required-services)
-  * [Page permissions management](api/content-management/page-permissions#page-permissions-management)
-    * [Set page permissions](api/content-management/page-permissions#set-page-permissions)
-    * [Retrieve page permissions](api/content-management/page-permissions#retrieve-page-permissions)
-    * [Break page permission inheritance](api/content-management/page-permissions#break-page-permission-inheritance)
-    * [Restore page permission inheritance](api/content-management/page-permissions#restore-page-permission-inheritance)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Page permissions management](#page-permissions-management)
+    * [Set page permissions](#set-page-permissions)
+    * [Retrieve page permissions](#retrieve-page-permissions)
+    * [Break page permission inheritance](#break-page-permission-inheritance)
+    * [Restore page permission inheritance](#restore-page-permission-inheritance)
 
 
 ## Dependency injection
@@ -40,7 +45,7 @@ public PagePermissionsServices(IContentQueryExecutor contentQueryExecutor,
 }
 ```
 
-[> Back to list of examples](api/content-management/page-permissions#toc)
+[> Back to list of examples](#toc)
 ## Page permissions management
 ### Set page permissions
 C#
@@ -90,7 +95,7 @@ webPageAclConfiguration.Roles.Add(webPageAclRole);
 await webPageAclManager.SetPermissions(pageId.First(), webPageAclConfiguration);
 ```
 
-[> Back to list of examples](api/content-management/page-permissions#toc)
+[> Back to list of examples](#toc)
 ### Retrieve page permissions
 C#
 Copy
@@ -122,7 +127,7 @@ var pageId = await contentQueryExecutor
 await webPageAclManager.GetPermissions(pageId.First());
 ```
 
-[> Back to list of examples](api/content-management/page-permissions#toc)
+[> Back to list of examples](#toc)
 ### Break page permission inheritance
 C#
 Copy
@@ -152,7 +157,7 @@ var pageId = await contentQueryExecutor
 await webPageAclManager.BreakInheritance(pageId.First());
 ```
 
-[> Back to list of examples](api/content-management/page-permissions#toc)
+[> Back to list of examples](#toc)
 ### Restore page permission inheritance
 C#
 Copy
@@ -182,4 +187,6 @@ var pageId = await contentQueryExecutor
 await webPageAclManager.RestoreInheritance(pageId.First());
 ```
 
-[> Back to list of examples](api/content-management/page-permissions#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

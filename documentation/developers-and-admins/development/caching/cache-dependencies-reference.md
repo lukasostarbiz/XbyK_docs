@@ -1,13 +1,21 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/caching/cache-dependencies-reference
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Caching](/documentation/developers-and-admins/development/caching)
+  * [Cache dependencies](/documentation/developers-and-admins/development/caching/cache-dependencies)
+  * Reference - Cache dependency keys 
+
+
 # Reference - Cache dependency keys
-  * [ Copy page link ](documentation/developers-and-admins/development/caching/cache-dependencies-reference#) | [Get HelpService ID](documentation/developers-and-admins/development/caching/cache-dependencies-reference#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/caching/cache-dependencies-reference# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/caching/cache-dependencies-reference#)
 This page list dummy cache keys and their format for all supported objects in the system.
 Avoid setting dependencies on all objects of a particular type via `|all`. Clearing the cache every time any object of a given type changes has a high chance of significantly reducing the effectivness of your caching solution. Always prefer targeting specific objects either via code name or GUID.
 ## Reusable content items
-The following cache keys are touched when the **Published** version of the target reusable [content item](documentation/business-users/content-hub) changes.
+The following cache keys are touched when the **Published** version of the target reusable [content item](/documentation/business-users/content-hub) changes.
 If you need to set cache dependencies for other workflow states, use the `contentitem|allstates|*` prefix. Where `*` can be substituted for any expression from the table that begins with `contentitem`. For example:
   * `contentitem|allstates|all`
   * `contentitem|allstates|byschema|MySchema`
@@ -24,10 +32,10 @@ GUID |  contentitem|byguid|<GUID> **Example:** `contentitem|byguid|affc44f3-...`
 GUID and language variant |  contentitem|<GUID>|<languageName> **Example:** `contentitem|byguid|affc44f3-...|czech`  
 Content type |  contentitem|bycontenttype|<contentType> **Example:** `contentitem|bycontenttype|Medio.Clinic` |  Targets all items of the given content type and optionally language variant. `contentType` must match the full code name (namespace and name) of the targeted content type. `languageName` must match the code name of a language registered in the **Languages** application.  
 Content type and language variant |  contentitem|bycontenttype|<contentType>|<languageName> **Example:** `contentitem|bycontenttype|Medio.Clinic|czech`  
-[Reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) name |  contentitem|byschema|{schemaname} **Example:** `contentitem|byschema|MySchema` |  Targets all items using the given schema name and optionally language variant. `schemaname` must match the name of the targeted schema. `languageName` must match the code name of a language registered in the **Languages** application.  
+[Reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) name |  contentitem|byschema|{schemaname} **Example:** `contentitem|byschema|MySchema` |  Targets all items using the given schema name and optionally language variant. `schemaname` must match the name of the targeted schema. `languageName` must match the code name of a language registered in the **Languages** application.  
 Reusable field schema name and item language variant |  contentitem|byschema|{schemaname}|{language} **Example:** `contentitem|byschema|MySchema|czech`  
 ## Pages
-The following cache keys are touched when the **Published** version of the target [page](documentation/business-users/website-content) changes.
+The following cache keys are touched when the **Published** version of the target [page](/documentation/business-users/website-content) changes.
 If you need to set cache dependencies for other workflow states, use the `webpageitem|allstates|*` prefix. Where `*` can be substituted for any expression from the table, omitting the `webpageitem` prefix. For example: `webpageitem|allstates|all`.
 Dependency on |  Cache key format |  Description  
 ---|---|---  
@@ -45,20 +53,20 @@ Page path in website channel |  webpageitem|bychannel|<channelName>|bypath|<page
 Page path and language variant in website channel |  webpageitem|bychannel|<channelName>|bypath|<pagePath>|<languageName> **Example:** `webpageitem|bychannel|MyChannel|bypath|/Home|greek`  
 Page path children in website channel |  webpageitem|bychannel|<channelName>|childrenofpath|<pagePath> **Example:** `webpageitem|bychannel|MyChannel|childrenofpath|/Articles` |  Targets all children on all sublevels of the specified page path. Optionally targets only specified language variants. `pagePath` must be a valid tree path. `languageName` must match the code name of a language registered in the **Languages** application.  
 Page path children of language variant in website channel |  webpageitem|bychannel|<channelName>|childrenofpath|<pagePath>|<languageName> **Example:** `webpageitem|bychannel|MyChannel|childrenofpath|/Articles|greek`  
-[Reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) name |  webpageitem|bychannel|{channel}|byschema|{schemaname} **Example:** `webpageitem|bychannel|MyChannel|byschema|MySchema` |  Targets all pages using the specified schema name and optionally language variant in the given channel. `schemaname` must match the name of the targeted schema. `languageName` must match the code name of a language registered in the **Languages** application.  
+[Reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) name |  webpageitem|bychannel|{channel}|byschema|{schemaname} **Example:** `webpageitem|bychannel|MyChannel|byschema|MySchema` |  Targets all pages using the specified schema name and optionally language variant in the given channel. `schemaname` must match the name of the targeted schema. `languageName` must match the code name of a language registered in the **Languages** application.  
 Reusable field schema name and page language variant |  webpageitem|bychannel|{channel}|byschema|{schemaname}|{language} **Example:** `webpageitem|bychannel|MyChannel|byschema|MySchema|czech`  
 ## Reusable field schemas
 Dependency on |  Cache key format |  Description  
 ---|---|---  
-Schema name |  reusablefieldschema|byname|{name} **Example:** `reusablefieldschema|byname|MySchema` |  Targets a [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) by its name. Touched when anything related to the schema changes (e.g., schema update, assignment to content type, removal).  
+Schema name |  reusablefieldschema|byname|{name} **Example:** `reusablefieldschema|byname|MySchema` |  Targets a [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) by its name. Touched when anything related to the schema changes (e.g., schema update, assignment to content type, removal).  
 ## Media files
 Dependency on |  Cache key format |  Example |  Description  
 ---|---|---|---  
-GUID |  mediafile|<guid> |  mediafile|1ced44f3-f2fc- … |  Cache dependencies can only target [media library files](documentation/business-users/media-libraries/manage-media-files) using their GUID.  
+GUID |  mediafile|<guid> |  mediafile|1ced44f3-f2fc- … |  Cache dependencies can only target [media library files](/documentation/business-users/media-libraries/manage-media-files) using their GUID.  
 ## Settings
 Dependency on |  Cache key format |  Description  
 ---|---|---  
-Code name |  cms.settingskey|byname|<settingCodeName> |  Targets the [settings](documentation/developers-and-admins/configuration/settings) specified by the given code name.  
+Code name |  cms.settingskey|byname|<settingCodeName> |  Targets the [settings](/documentation/developers-and-admins/configuration/settings) specified by the given code name.  
 ## General objects
 Dependency on |  Cache key format |  Example |  Description  
 ---|---|---|---  
@@ -67,8 +75,8 @@ ID |  <object type>|byid|<id> |  cms.user|byid|53 |  Targets the administration 
 Code name |  <object type>|byname|<code name> |  cms.user|byname|administrator |  Targets the administration user with the specific code name.  
 GUID |  <object type>|byguid|<guid> |  cms.user|byguid|1ced44f3-f2fc- … |  Targets the administration user with the specific GUID.  
 ## Form data records
-The system currently does not touch any dummy cache keys when changes occur for data submitted via [forms](documentation/business-users/digital-marketing/forms).
-As a workaround, developers can prepare custom [event handlers](documentation/developers-and-admins/customization/handle-global-events) for `BizFormItemEvents`. Use the handler method to touch a custom cache key, and then enter the key into your cache dependencies. For example:
+The system currently does not touch any dummy cache keys when changes occur for data submitted via [forms](/documentation/business-users/digital-marketing/forms).
+As a workaround, developers can prepare custom [event handlers](/documentation/developers-and-admins/customization/handle-global-events) for `BizFormItemEvents`. Use the handler method to touch a custom cache key, and then enter the key into your cache dependencies. For example:
 C#
 Copy
 ```
@@ -78,3 +86,6 @@ private void FormItem_InsertAfterHandler(object sender, BizFormItemEventArgs e)
     CacheHelper.TouchKey("customformdata|" + e.Item.BizFormClassName);
 }
 ```
+
+![]()
+[]()[]()

@@ -1,15 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Form Builder](/documentation/developers-and-admins/development/builders/form-builder)
+  * [Form sections](/documentation/developers-and-admins/development/builders/form-builder/form-sections)
+  * Form section properties 
+
+
 # Form section properties
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#)
-When developing [form sections](documentation/developers-and-admins/development/builders/form-builder/form-sections), you can define properties that allow editors to adjust the content or behavior of the sections directly in the Form Builder interface. Users interact with the section properties through section configuration dialogs.
+When developing [form sections](/documentation/developers-and-admins/development/builders/form-builder/form-sections), you can define properties that allow editors to adjust the content or behavior of the sections directly in the Form Builder interface. Users interact with the section properties through section configuration dialogs.
 Use the following process to develop properties for a section:
-  1. [Create a model class that defines the section properties](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#create-property-models)
-  2. [Define the configuration dialog to allow form editors to modify the properties](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#define-the-configuration-dialog)
-  3. [Handle the properties in the section’s code](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#handle-properties-in-section-code)
-  4. [Specify the property model class in the section’s registration attribute](documentation/developers-and-admins/development/builders/form-builder/form-sections/form-section-properties#register-sections-with-properties)
+  1. [Create a model class that defines the section properties](#create-property-models)
+  2. [Define the configuration dialog to allow form editors to modify the properties](#define-the-configuration-dialog)
+  3. [Handle the properties in the section’s code](#handle-properties-in-section-code)
+  4. [Specify the property model class in the section’s registration attribute](#register-sections-with-properties)
 
 
 ## Create property models
@@ -27,13 +36,13 @@ public class TitledSectionProperties : IFormSectionProperties
 ```
 
 **Register sections with properties**
-When [registering](documentation/developers-and-admins/development/builders/form-builder/form-sections) form sections with properties, you additionally need to set the `PropertiesType` property of the `RegisterFormSection` attribute to the `System.Type` of the section’s property model class.
+When [registering](/documentation/developers-and-admins/development/builders/form-builder/form-sections) form sections with properties, you additionally need to set the `PropertiesType` property of the `RegisterFormSection` attribute to the `System.Type` of the section’s property model class.
 ## Define the configuration dialog
-The configuration dialog provides a simple way for form editors to set the values of section properties. In the property model class, you need to define [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for section properties which you want to make editable in the configuration dialog. 
+The configuration dialog provides a simple way for form editors to set the values of section properties. In the property model class, you need to define [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for section properties which you want to make editable in the configuration dialog. 
   1. Edit the section’s property model class in your live site project.
   2. Define the visual interface of the configuration dialog:
-     * Decorate the appropriate properties using the [editing component’s attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
-     * The attribute assigns and configures an [admin UI form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), which is used as the input element for the given property in the configuration dialog. You can use the system’s [default UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) or develop [custom UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) depending on the type of input required.
+     * Decorate the appropriate properties using the [editing component’s attribute](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+     * The attribute assigns and configures an [admin UI form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), which is used as the input element for the given property in the configuration dialog. You can use the system’s [default UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) or develop [custom UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) depending on the type of input required.
 
 
 C#
@@ -47,9 +56,9 @@ using Kentico.Xperience.Admin.Base.FormAnnotations;
 public string Title { get; set; } = "General";
 ```
 
-Users can now select the **Configure** ([working with sections in the Form Builder interface](documentation/business-users/digital-marketing/forms). This opens the section properties dialog, and the configured property values affect the section’s content and functionality.
+Users can now select the **Configure** ([working with sections in the Form Builder interface](/documentation/business-users/digital-marketing/forms). This opens the section properties dialog, and the configured property values affect the section’s content and functionality.
 ## Handle properties in section code
-In order for properties to have an effect on a section’s content or functionality, you need to retrieve the property values and adjust the section’s output code or logic correspondingly. The required steps depend on the development approach used to create the section (see [Form sections](documentation/developers-and-admins/development/builders/form-builder/form-sections) for more information).
+In order for properties to have an effect on a section’s content or functionality, you need to retrieve the property values and adjust the section’s output code or logic correspondingly. The required steps depend on the development approach used to create the section (see [Form sections](/documentation/developers-and-admins/development/builders/form-builder/form-sections) for more information).
 ### Basic sections
 For basic sections implemented only as a partial view (without a view component) and a properties class, handle the property values directly in the section’s view.
 The view must use the generic `FormSectionViewModel<TPropertyModel>` class as its model, with the appropriate property model class as the generic type parameter. The system ensures that the property values configured for the currently processed section are passed to the view. Retrieve the property values from the model’s `Properties` member, which returns an object of the specified property model class.
@@ -101,7 +110,7 @@ public class TitledSectionViewComponent : ViewComponent
 ```
 
 ## Register sections with properties
-When [registering](documentation/developers-and-admins/development/builders/form-builder/form-sections) form sections with properties, you additionally need to set the `PropertiesType` property of the `RegisterFormSection` attribute to the `System.Type` of the section’s property model class.
+When [registering](/documentation/developers-and-admins/development/builders/form-builder/form-sections) form sections with properties, you additionally need to set the `PropertiesType` property of the `RegisterFormSection` attribute to the `System.Type` of the section’s property model class.
 C#
 **Example**
 Copy
@@ -129,3 +138,6 @@ using Kentico.Forms.Web.Mvc;
                                 Description = "Organizes fields into a section with a configurable title.",
                                 IconClass = "icon-square")]
 ```
+
+![]()
+[]()[]()

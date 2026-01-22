@@ -1,21 +1,29 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * [Files API and CMS.IO](/documentation/developers-and-admins/api/files-api-and-cms-io)
+  * [File system providers](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers)
+  * Amazon S3 
+
+
 # Amazon S3
-  * [ Copy page link ](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3#) | [Get HelpService ID](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3#)
-Xperience by Kentico supports file system providers that allow you to map parts of the file system to [Amazon S3](https://aws.amazon.com/s3/) storage. You can use Amazon S3 when hosting your project in [private cloud](documentation/developers-and-admins/deployment/deploy-to-private-cloud) or when you wish to store parts of the application file system in external shared storage. For example, shared storage is a requirement for all [scaled](documentation/developers-and-admins/configuration/auto-scaling-support) Xperience environments.
+Xperience by Kentico supports file system providers that allow you to map parts of the file system to [Amazon S3](https://aws.amazon.com/s3/) storage. You can use Amazon S3 when hosting your project in [private cloud](/documentation/developers-and-admins/deployment/deploy-to-private-cloud) or when you wish to store parts of the application file system in external shared storage. For example, shared storage is a requirement for all [scaled](/documentation/developers-and-admins/configuration/auto-scaling-support) Xperience environments.
 **Filename case**
 Unlike regular file systems (NTFS, VFAT), Amazon S3 storage is case-sensitive. To ensure consistent behavior, Xperience automatically converts all file and folder names to lower case when processing files on Amazon S3.
 ## Media library files in Amazon S3
 **Media libraries sunset**
 Media libraries have been officially sunset. Support for media libraries will continue for one more year (until July 24, 2026), after which the feature and all associated APIs will be completely removed.
-Before mapping media library files to the [Amazon S3](https://aws.amazon.com/s3/) storage, consider migrating media libraries and mapping content item assets instead. See [Media library migration](guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](documentation/business-users/content-hub).
+Before mapping media library files to the [Amazon S3](https://aws.amazon.com/s3/) storage, consider migrating media libraries and mapping content item assets instead. See [Media library migration](/guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](/documentation/business-users/content-hub).
 Media library files stored in Amazon S3 have the following limitations:
-  * **Storing a large number (thousands) of media library files in a single media library can significantly affect the performance and user experience of the[Media libraries](documentation/business-users/media-libraries/create-media-libraries) application.**
+  * **Storing a large number (thousands) of media library files in a single media library can significantly affect the performance and user experience of the[Media libraries](/documentation/business-users/media-libraries/create-media-libraries) application.**
     * We recommend structuring media library files into multiple media libraries and storing at most 100 files in a single media library folder.
   * Mapping subfolders of media libraries is not supported. You can map either the directory containing the media libraries (**~/assets/media**), or individual media libraries (**~/assets/media/ <MediaLibraryName>**).
-  * The system’s automatic clearing of files from the server-side cache does not work for files stored in an external storage. If you modify a media file, the website may still display the old version until the cache expires (unless you manually clear the application’s cache). See also: [File caching](documentation/developers-and-admins/development/caching/file-caching).
+  * The system’s automatic clearing of files from the server-side cache does not work for files stored in an external storage. If you modify a media file, the website may still display the old version until the cache expires (unless you manually clear the application’s cache). See also: [File caching](/documentation/developers-and-admins/development/caching/file-caching).
 
 
 ## Map files to Amazon storage
@@ -49,8 +57,8 @@ Copy
 
 With the Amazon account connected and configured, use the following process to map parts of the file system to the specified bucket:
   1. Open the Xperience project in Visual Studio.
-  2. [Add a custom Class Library project](documentation/developers-and-admins/customization/integrate-custom-code) and install the **Kentico.Xperience.AmazonStorage** NuGet package as a dependency.
-  3. Create a [custom module class](documentation/developers-and-admins/customization/run-code-on-application-startup) in the created library.
+  2. [Add a custom Class Library project](/documentation/developers-and-admins/customization/integrate-custom-code) and install the **Kentico.Xperience.AmazonStorage** NuGet package as a dependency.
+  3. Create a [custom module class](/documentation/developers-and-admins/customization/run-code-on-application-startup) in the created library.
   4. Override the module’s `OnInit` method and for each folder that you want to store in the shared storage:
     1. Create a new instance of the Amazon S3 storage provider.
     2. Specify the target bucket using the `CustomRootPath`property of the provider.
@@ -148,3 +156,5 @@ Without this configuration you may receive [Mixed Content](https://developers.go
 
 
 Your project now uses the created CDN service.
+![]()
+[]()[]()

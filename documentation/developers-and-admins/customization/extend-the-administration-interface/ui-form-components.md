@@ -1,66 +1,73 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * UI form components 
+
+
 # UI form components
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#)
 Admin UI form components define the editing interface for fields that comprise forms used to edit objects and pages in the Xperience administration.
 Each form field is assigned a single form component. The component then manages the field’s editing interface by providing, for example, a text box, a group of radio buttons, or a drop-down selector.
 Form components are usable with all editing forms based on the Xperience form engine, including the following:
-  * [Content type](documentation/developers-and-admins/development/content-types) editing forms (_Content_ view mode)
+  * [Content type](/documentation/developers-and-admins/development/content-types) editing forms (_Content_ view mode)
   * Editing forms of system objects (classes)
-  * As [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) within configuration dialogs of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) components, [Form Builder](documentation/developers-and-admins/development/builders/form-builder) components, and other admin UI components
+  * As [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) within configuration dialogs of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) components, [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) components, and other admin UI components
 
 
-Xperience provides a robust set of form components by default. See [Reference - Admin UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). Additionally, the system allows you to create custom form components for your specific use cases.
+Xperience provides a robust set of form components by default. See [Reference - Admin UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). Additionally, the system allows you to create custom form components for your specific use cases.
 Table of contents:
-  * [Assign form components to fields](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#assign-form-components-to-fields)
-    * [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#editing-components)
-  * [Create custom form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#create-custom-form-components)
-    * [Form component back end](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-back-end)
-      * [Components without configuration properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#components-without-configuration-properties)
-      * [Modify form component value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#modify-form-component-value)
-      * [Add validation rules and visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#add-validation-rules-and-visibility-conditions)
-    * [Form component front end](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-front-end)
-      * [EditMode on the front end](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#editmode-on-the-front-end)
-      * [Example - Form component front end](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#example---form-component-front-end)
-      * [Define an editing interface consisting of multiple input elements](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#define-an-editing-interface-consisting-of-multiple-input-elements)
-      * [Add support for form field metadata](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#add-support-for-form-field-metadata)
-    * [Register form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#register-form-components)
-  * [Component commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#component-commands)
-    * [Command invokers](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#command-invokers)
-    * [Command handlers](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#command-handlers)
-      * [Receive data from client commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#receive-data-from-client-commands)
-      * [Formulate command response](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#formulate-command-response)
-      * [Designate command handlers](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#designate-command-handlers)
-  * [Field data type management](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#field-data-type-management)
+  * [Assign form components to fields](#assign-form-components-to-fields)
+    * [Editing components](#editing-components)
+  * [Create custom form components](#create-custom-form-components)
+    * [Form component back end](#form-component-back-end)
+      * [Components without configuration properties](#components-without-configuration-properties)
+      * [Modify form component value](#modify-form-component-value)
+      * [Add validation rules and visibility conditions](#add-validation-rules-and-visibility-conditions)
+    * [Form component front end](#form-component-front-end)
+      * [EditMode on the front end](#editmode-on-the-front-end)
+      * [Example - Form component front end](#example---form-component-front-end)
+      * [Define an editing interface consisting of multiple input elements](#define-an-editing-interface-consisting-of-multiple-input-elements)
+      * [Add support for form field metadata](#add-support-for-form-field-metadata)
+    * [Register form components](#register-form-components)
+  * [Component commands](#component-commands)
+    * [Command invokers](#command-invokers)
+    * [Command handlers](#command-handlers)
+      * [Receive data from client commands](#receive-data-from-client-commands)
+      * [Formulate command response](#formulate-command-response)
+      * [Designate command handlers](#designate-command-handlers)
+  * [Field data type management](#field-data-type-management)
 
 
 ## Assign form components to fields
-Form components are assigned to individual fields when creating or editing Xperience objects via the [field editor](documentation/developers-and-admins/customization/field-editor).
-[![Assigning a form component to a new field](docsassets/documentation/ui-form-components/FieldEditorNewField.png)](https://docs.kentico.com/docsassets/documentation/ui-form-components/FieldEditorNewField.png)
+Form components are assigned to individual fields when creating or editing Xperience objects via the [field editor](/documentation/developers-and-admins/customization/field-editor).
+[![Assigning a form component to a new field](/docsassets/documentation/ui-form-components/FieldEditorNewField.png)](/docsassets/documentation/ui-form-components/FieldEditorNewField.png)
 ### Editing components
 In addition to the field editor, form components are also used programmatically to create editing dialogs for the properties of other objects within the admin UI. The documentation refers to such components as **editing components**.
 Using form components in this fashion allows developers to build configuration interfaces for the properties of:
-  * components used by [Page Builder](documentation/developers-and-admins/development/builders/page-builder) (widgets, sections, templates, personalization conditions)
-  * components used by [Form Builder](documentation/developers-and-admins/development/builders/form-builder) (form components, sections, validation rules, visibility conditions)
+  * components used by [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) (widgets, sections, templates, personalization conditions)
+  * components used by [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) (form components, sections, validation rules, visibility conditions)
   * admin UI form components (other form components, validation rules, visibility conditions, UI pages with forms)
 
 
-For more information, see [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+For more information, see [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
 ## Create custom form components
 **Custom UI form components with links to content items**
-If you create custom form components that allow users to add links to content items and use them as [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) in [widget properties](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties) or [content type fields](documentation/developers-and-admins/customization/field-editor), you need to create a [custom reference extractor](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-reference-extractors) in order to enable [usage tracking](documentation/business-users/content-hub/content-items#track-usage-of-content-items) for these components.
-In addition to form components [provided by the system](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), you can implement custom form components fulfilling your particular requirements. 
+If you create custom form components that allow users to add links to content items and use them as [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) in [widget properties](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties) or [content type fields](/documentation/developers-and-admins/customization/field-editor), you need to create a [custom reference extractor](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-reference-extractors) in order to enable [usage tracking](/documentation/business-users/content-hub/content-items#track-usage-of-content-items) for these components.
+In addition to form components [provided by the system](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), you can implement custom form components fulfilling your particular requirements. 
 A form component implementation consists of the following parts:
-  * [Back-end definition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-back-end) – the form component base class and corresponding properties classes that store its configuration. Located in the ASP.NET Core project.
-  * [Front-end React component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-front-end) – a React component that renders the editing interface for obtaining input from users. Located in the [client JS module](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development).
-  * [Registration attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#register-form-components) – a C# assembly attribute that registers the component to the system and ties the back-end definition to the React component.
+  * [Back-end definition](#form-component-back-end) – the form component base class and corresponding properties classes that store its configuration. Located in the ASP.NET Core project.
+  * [Front-end React component](#form-component-front-end) – a React component that renders the editing interface for obtaining input from users. Located in the [client JS module](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development).
+  * [Registration attribute](#register-form-components) – a C# assembly attribute that registers the component to the system and ties the back-end definition to the React component.
 
 
 The following diagram provides an overview of form component architecture:
-[![Form component architecture](docsassets/documentation/ui-form-components/overview2.png)](https://docs.kentico.com/docsassets/documentation/ui-form-components/overview2.png)
-See [Example - Color selector UI form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component) for a simple UI form component implementation.
+[![Form component architecture](/docsassets/documentation/ui-form-components/overview2.png)](/docsassets/documentation/ui-form-components/overview2.png)
+See [Example - Color selector UI form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component) for a simple UI form component implementation.
 ### Form component back end
 **Form component namespaces**
 Unless specified otherwise, all classes and members mentioned in this section can be found in the following namespaces:
@@ -88,18 +95,18 @@ public class InputFormComponent : FormComponent<TProperties, TClientProperties, 
 
 When creating the class, you are forced to implement the `ClientComponentName` property. This property must be set to the name of the client React component used for the form component’s editing interface. You must provide a full name in the _{orgName}/{projectName}/componentName_ format, as specified when you set up your custom admin JS module.
 The client application automatically suffixes the component name with _FormComponent_. Make sure the component is exported (visible to other modules). For example:
-  * _@acme/web-admin-custom/Input_ (the client suffixes ‘FormComponent’ automatically and attempts to load the **InputFormComponent** component exported from the _@acme/web-admin-custom_ [module](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development))
+  * _@acme/web-admin-custom/Input_ (the client suffixes ‘FormComponent’ automatically and attempts to load the **InputFormComponent** component exported from the _@acme/web-admin-custom_ [module](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development))
 
 
 This next section describes the generic parameters required by the `FormComponent` base class.
 `TType` is the C# type (`string`, `int`, custom composite types) used by the back end when working with values returned by the component.
-  1. To offer the component in the [field editor](documentation/developers-and-admins/customization/field-editor), the type must be set to a data type registered in the system via `DataTypeManager` – see [Field data type management](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#field-data-type-management) for more information and default field types.
-  2. To use the form component in various configuration dialogs ([Page Builder](documentation/developers-and-admins/development/builders/page-builder), [Form Builder](documentation/developers-and-admins/development/builders/form-builder), or [model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms), for example), you can use any type suitable for their functionality (no need for additional registration).
+  1. To offer the component in the [field editor](/documentation/developers-and-admins/customization/field-editor), the type must be set to a data type registered in the system via `DataTypeManager` – see [Field data type management](#field-data-type-management) for more information and default field types.
+  2. To use the form component in various configuration dialogs ([Page Builder](/documentation/developers-and-admins/development/builders/page-builder), [Form Builder](/documentation/developers-and-admins/development/builders/form-builder), or [model-based edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms), for example), you can use any type suitable for their functionality (no need for additional registration).
 
 
 `TProperties` must be a class that inherits from the `FormComponentProperties` base class. The class holds properties that are used to configure the component:
-  * when assigned to a field via the field editor (_Form component configuration_ section). For these properties to be visible in the configuration interface, they need to have corresponding [editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) assigned.
-  * when used as an [editing component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for other properties.
+  * when assigned to a field via the field editor (_Form component configuration_ section). For these properties to be visible in the configuration interface, they need to have corresponding [editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) assigned.
+  * when used as an [editing component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for other properties.
 
 
 The `FormComponentProperties` base class contains the following properties:
@@ -127,7 +134,7 @@ public class InputComponentProperties : FormComponentProperties
 ```
 
 **Form component attributes**
-Note that the `PlaceholderText` property is decorated with the `TextInputComponent` attribute. This indicates the property got assigned another form component to act as it’s value editor within admin UI dialogs. All editing component attributes are located in the `Kentico.Xperience.Admin.Base.FormAnnotations` namespace. See [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for more information.
+Note that the `PlaceholderText` property is decorated with the `TextInputComponent` attribute. This indicates the property got assigned another form component to act as it’s value editor within admin UI dialogs. All editing component attributes are located in the `Kentico.Xperience.Admin.Base.FormAnnotations` namespace. See [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for more information.
 `TClientProperties` must be a class that inherits from the `FormComponentClientProperties<TType>` base class, where `TType` must match the type specified in the main form component class.
 This class holds properties required by the client React component. Typically, this equals the set of configuration properties from `TProperties` and any additional data required by the client component to render the editing interface (e.g., contextual information or some external data retrieved by custom logic). The class serves only as a data transfer object and should not contain any additional logic.
 C#
@@ -142,7 +149,7 @@ public class InputComponentClientProperties : FormComponentClientProperties<stri
 }
 ```
 
-The client properties class needs to be manually populated with data that are to be sent to the client. For this purpose, the main form component class provides the `ConfigureClientProperties` method. The method is called by the system before component data is sent to the client and when processing [component commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#component-commands). A component’s current properties configuration can be accessed via the `Properties` member.
+The client properties class needs to be manually populated with data that are to be sent to the client. For this purpose, the main form component class provides the `ConfigureClientProperties` method. The method is called by the system before component data is sent to the client and when processing [component commands](#component-commands). A component’s current properties configuration can be accessed via the `Properties` member.
 The method’s single parameter contains the component’s client properties class:
 C#
 **Example - configuring a form component's client properties**
@@ -174,13 +181,13 @@ public class InputFormComponent : FormComponent<InputComponentProperties, InputC
 ```
 
 **Dependency injection support**
-Form components support constructor [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) by default. You can use dependency injection to resolve instances of external services on which your component depends.
+Form components support constructor [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) by default. You can use dependency injection to resolve instances of external services on which your component depends.
 The main form component class together with the properties classes form the back end implementation of form component.
-The following sections cover additional features that can be added depending your requirements. Or you can continue directly to the [front end portion](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-front-end) of the implementation:
-  * [Components without configuration properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#components-without-configuration-properties)
-  * [Modify form component value](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#modify-form-component-value)
-  * [Add validation rules and visibility conditions programatically](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#add-validation-rules-and-visibility-conditions)
-  * [Define form component commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#component-commands)
+The following sections cover additional features that can be added depending your requirements. Or you can continue directly to the [front end portion](#form-component-front-end) of the implementation:
+  * [Components without configuration properties](#components-without-configuration-properties)
+  * [Modify form component value](#modify-form-component-value)
+  * [Add validation rules and visibility conditions programatically](#add-validation-rules-and-visibility-conditions)
+  * [Define form component commands](#component-commands)
 
 
 #### Components without configuration properties
@@ -212,10 +219,10 @@ public override string GetValue()
 }
 ```
 
-The following diagram below illustrates the data flow between the client and the database for form components on [edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template). The back end form component definition is used to evaluate field visibility conditions, perform validation, and define component commands.
-[![Setting and retrieving values from form components](docsassets/documentation/ui-form-components/ValueBinding.png)](https://docs.kentico.com/docsassets/documentation/ui-form-components/ValueBinding.png)
+The following diagram below illustrates the data flow between the client and the database for form components on [edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template). The back end form component definition is used to evaluate field visibility conditions, perform validation, and define component commands.
+[![Setting and retrieving values from form components](/docsassets/documentation/ui-form-components/ValueBinding.png)](/docsassets/documentation/ui-form-components/ValueBinding.png)
 #### Add validation rules and visibility conditions
-[UI form component validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) can be added directly to a component via `AddValidationRule` and `AddVisibilityCondition`.
+[UI form component validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) can be added directly to a component via `AddValidationRule` and `AddVisibilityCondition`.
 Use this approach if you need certain rules and conditions to always apply, regardless of the specific form field configuration. You can also add validation that you do not wish to offer in the field editor (not registered via the `RegisterValidationRule` attribute).
 For this purpose, form components provide a `ConfigureComponent` method, which is called during component instantiation. Within the method, you also have access to the component’s configuration properties (via the `Properties` member).
 C#
@@ -260,7 +267,7 @@ export const MyFormComponent = (props: FormComponentProps) => {
 
 Form component classes must be suffixed with _FormComponent_. The client application loads form components based on the name supplied to the `ClientComponentName` property from the back end and the _FormComponent_ suffix. 
 The component’s properties class contains the same set of shared form component properties available on the back end. If the form component requires additional component-specific properties (as specified in the `TClientProperties` class on the back end), extend the `FormComponentProps` class and mirror the properties within.
-Continuing with the input component example from the [back end section](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#form-component-back-end):
+Continuing with the input component example from the [back end section](#form-component-back-end):
 JS
 **Example - creating an extended properties class**
 Copy
@@ -308,13 +315,13 @@ return(
 );
 ```
 
-When defining form component interfaces, use React components from the `@kentico/xperience-admin-components` package. The components come preconfigured for use in the admin UI and simplify maintaining overall look and feel. For an overview of all input components available in the package, see [Reference - React input components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components).
+When defining form component interfaces, use React components from the `@kentico/xperience-admin-components` package. The components come preconfigured for use in the admin UI and simplify maintaining overall look and feel. For an overview of all input components available in the package, see [Reference - React input components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components).
 The state of individual inputs contained within the form is managed by a stateful variable in a parent component. To maintain this state with up to date input values, `FormComponentProps` contains an `onChange` property with a callback function (provided by a parent component when the form component is loaded by the client application). The function expects the new component value as its argument – `onChange(newComponentValue)`. The callback function ensures form field state can be uniformly updated across all fields comprising the form – instead of input state being stored by individual input elements, it’s maintained in one place by a stateful variable. In React, this pattern is known as [controlled components](https://reactjs.org/docs/forms.html#controlled-components).
 Form components **must call** the `onChange` function with an updated value every time their input changes (e.g., by passing the function to an `onChange` handler of the child component used to obtain user input).
   1. Declare a function with a single parameter of the type expected by the `onChange` property of the input component.
-     * _onChange_ property types of Xperience input components from the `@kentico/xperience-admin-components` package are listed under **onChange Type** in [Reference - React input components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components).
+     * _onChange_ property types of Xperience input components from the `@kentico/xperience-admin-components` package are listed under **onChange Type** in [Reference - React input components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components).
   2. Within this method, call `onChange` with the value received from the change event.
-     * For components with whose editing interface consists of [multiple inputs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#define-an-editing-interface-consisting-of-multiple-input-elements), the `onChange` callback must be handled for each input separately.
+     * For components with whose editing interface consists of [multiple inputs](#define-an-editing-interface-consisting-of-multiple-input-elements), the `onChange` callback must be handled for each input separately.
   3. Pass the method as a parameter to the input component’s `onChange` property.
 For input components that don’t implement `onChange` events (e.g., custom elements with unconventional ways of obtaining user input), you need to ensure `FormComponentProps.onChange` is called appropriately after the input component’s state changes (e.g., after a user performs a selection). 
 
@@ -361,8 +368,8 @@ export const InputFormComponent = (props: InputFormComponentProps) => {
 #### EditMode on the front end
 The back-end properties of form components use the `EditMode` property to set whether the component should be in the editable default state, or should be displayed as read-only or disabled. Custom front end React components should implement the read-only and disabled mode to allow the component to behave accordingly to the selected value.
 The read-only mode is intended for better readability than the disabled mode, while still preventing users from editing the component. It should be used in situations when the component is not expected to be edited by any user. On the other hand, the disabled mode signals that the component could be editable under different circumstances, for example, when the user has sufficient permissions.
-When implementing component support for read-only mode, follow these general guidelines: action buttons should be hidden, and the contents should be easily readable. For example, this can be achieved by returning a different component that satisfies the desired properties when the read-only look should be used, such as an input component returning a text component which displays the current value. See [Example - Color selector UI form component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component) for a code sample.
-While the `FormComponentProps` include the `editMode` property, the [React input components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components) from the `@kentico/xperience-admin-components` package expect the `disabled` and `readOnly` property. When implementing a custom UI form component with the provided React input components, the `editMode` property has to be converted, for example as shown in the example below. However, the `FormItemWrapper` component, which can be used to wrap the input components, uses the `editMode` property directly.
+When implementing component support for read-only mode, follow these general guidelines: action buttons should be hidden, and the contents should be easily readable. For example, this can be achieved by returning a different component that satisfies the desired properties when the read-only look should be used, such as an input component returning a text component which displays the current value. See [Example - Color selector UI form component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/example-color-selector-ui-form-component) for a code sample.
+While the `FormComponentProps` include the `editMode` property, the [React input components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-react-input-components) from the `@kentico/xperience-admin-components` package expect the `disabled` and `readOnly` property. When implementing a custom UI form component with the provided React input components, the `editMode` property has to be converted, for example as shown in the example below. However, the `FormItemWrapper` component, which can be used to wrap the input components, uses the `editMode` property directly.
 #### Example - Form component front end
 The following code snippet shows a full front end implementation of a simple form component that uses a single text input field to receive user input.
 JS
@@ -467,7 +474,7 @@ Form field metadata comprises all the supporting information that can be configu
   * Field label and caption (tooltip text)
   * Tooltip icon
   * Field explanation text (shown below the input)
-  * Validation messages from assigned [validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
+  * Validation messages from assigned [validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules)
 
 
 This data gets passed to the client via the `FormComponentProps` object. Xperience input components from the `@kentico/xperience-admin-components` package already contain properties that allow you to map this information by default.
@@ -519,8 +526,8 @@ using Kentico.Xperience.Admin.Base.Forms;
 ## Component commands
 Components commands allow UI form components to communicate with the back end after the initial render and before form submission. You can use commands to dynamically fetch data or alter component behavior (e.g., refresh data available for selection), based on user interaction, input, or other contextual events.
 A component command consists of a:
-  * [Command invoker](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#command-invokers) – function defined in and called by the client React component (e.g., in response to a user action).
-  * [Command handler](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#command-handlers) – method defined in the form component class on the back end. Contains logic to execute in response to command invocation.
+  * [Command invoker](#command-invokers) – function defined in and called by the client React component (e.g., in response to a user action).
+  * [Command handler](#command-handlers) – method defined in the form component class on the back end. Contains logic to execute in response to command invocation.
 
 
 ### Command invokers
@@ -594,7 +601,7 @@ export const MyComponent = ( props: FormComponentProperties ) => {
 };
 ```
 
-When a component command is invoked, the admin app sends a request to the back end, which invokes a corresponding handler method [assigned to the command](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components#designate-command-handlers).
+When a component command is invoked, the admin app sends a request to the back end, which invokes a corresponding handler method [assigned to the command](#designate-command-handlers).
 ### Command handlers
 Command handlers are methods defined in the form component main class (derived from `FormComponent<TClientProperties, TType>`).
 The purpose of handler methods is to respond to component commands on the back end and return a response (with data) back to the component. 
@@ -772,4 +779,6 @@ All field data types assignable via the field editor must be explicitly register
 
 
 When writing form components, this data type corresponds to the **TType** generic (specified in `FormComponent` and `FormComponentProperties`) provided when creating form component classes on the back end.
-For information about data types registered in the system by default and the API used to registered custom data types, see [Data type management](documentation/developers-and-admins/customization/field-editor/data-type-management).
+For information about data types registered in the system by default and the API used to registered custom data types, see [Data type management](/documentation/developers-and-admins/customization/field-editor/data-type-management).
+![]()
+[]()[]()

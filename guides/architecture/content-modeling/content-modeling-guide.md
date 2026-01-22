@@ -1,39 +1,45 @@
+---
+source: https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-guide
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Content modeling](/guides/architecture/content-modeling)
+  * Content modeling guide 
+
+
 # Content modeling guide
-  * [ Copy page link ](guides/architecture/content-modeling/content-modeling-guide#) | [Get HelpService ID](guides/architecture/content-modeling/content-modeling-guide#)
-Core MVC 5
-
-
-[✖](guides/architecture/content-modeling/content-modeling-guide# "Close page link panel") [Copy to clipboard](guides/architecture/content-modeling/content-modeling-guide#)
 ## About this guide
 This page is the beginning of the **Content modeling guide**. To get the most out of this part of the documentation, we strongly recommend following this guide sequentially from beginning to end.
   * **Content modeling guide**
-    * [What is a content type](guides/architecture/content-modeling/content-modeling-guide/what-is-a-content-type)
-    * [Structured and unstructured content](guides/architecture/content-modeling/content-modeling-guide/structured-and-unstructured-content)
-    * [Start with business needs](guides/architecture/content-modeling/content-modeling-guide/content-modeling-business-requirements)
-    * [Content modeling process](guides/architecture/content-modeling/content-modeling-guide/content-modeling-process)
-    * [Model taxonomies](guides/architecture/content-modeling/content-modeling-guide/model-taxonomies)
-    * [Store content](guides/architecture/content-modeling/content-modeling-guide/store-content)
-    * [Store files](guides/architecture/content-modeling/content-modeling-guide/store-files)
-    * [Design content](guides/architecture/content-modeling/content-modeling-guide/design-content)
-    * [Design page-based content models](guides/architecture/content-modeling/content-modeling-guide/design-page-based-content-model)
-    * [Design atomic content models](guides/architecture/content-modeling/content-modeling-guide/design-atomic-content-model)
-    * [Design website content](guides/architecture/content-modeling/content-modeling-guide/design-website-content)
-    * [Design email content](guides/architecture/content-modeling/content-modeling-guide/design-email-content)
-    * [Design headless content](guides/architecture/content-modeling/content-modeling-guide/design-headless-content)
-    * [General content modeling recommendations](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations)
+    * [What is a content type](/guides/architecture/content-modeling/content-modeling-guide/what-is-a-content-type)
+    * [Structured and unstructured content](/guides/architecture/content-modeling/content-modeling-guide/structured-and-unstructured-content)
+    * [Start with business needs](/guides/architecture/content-modeling/content-modeling-guide/content-modeling-business-requirements)
+    * [Content modeling process](/guides/architecture/content-modeling/content-modeling-guide/content-modeling-process)
+    * [Model taxonomies](/guides/architecture/content-modeling/content-modeling-guide/model-taxonomies)
+    * [Store content](/guides/architecture/content-modeling/content-modeling-guide/store-content)
+    * [Store files](/guides/architecture/content-modeling/content-modeling-guide/store-files)
+    * [Design content](/guides/architecture/content-modeling/content-modeling-guide/design-content)
+    * [Design page-based content models](/guides/architecture/content-modeling/content-modeling-guide/design-page-based-content-model)
+    * [Design atomic content models](/guides/architecture/content-modeling/content-modeling-guide/design-atomic-content-model)
+    * [Design website content](/guides/architecture/content-modeling/content-modeling-guide/design-website-content)
+    * [Design email content](/guides/architecture/content-modeling/content-modeling-guide/design-email-content)
+    * [Design headless content](/guides/architecture/content-modeling/content-modeling-guide/design-headless-content)
+    * [General content modeling recommendations](/guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations)
 
 
-You can also follow this series in [Content modeling guide](modules/content-modeling-guide), which helps you keep track of your progress as you move through this sequential material.
+You can also follow this series in [Content modeling guide](/modules/content-modeling-guide), which helps you keep track of your progress as you move through this sequential material.
 ## Why does content modeling matter?
 Marketers today need to deliver content that stands out, resonates with existing customers, and attracts new audiences. To succeed, your content must be easy to find, update, reuse in different channels and platforms, and remove when no longer needed. The _content modeling_ process helps marketing teams define the structure of their content, making it adaptable and easily repurposed across different distribution channels, mediums, and outlets.
 A well-defined content model improves the consistency of your content across channels, simplifies content management, and enhances content discoverability. It makes your marketing team effective as they can focus on creating superior content without being bogged down by operational challenges. They can stay agile and respond to evolving audience needs and marketing trends.
 In this guide, you can learn about:
   1. What is content modeling.
-  2. How to tie content modeling to [your marketing goals](guides/architecture/content-modeling/content-modeling-guide/content-modeling-business-requirements).
-  3. Ways to [categorize content](guides/architecture/content-modeling/content-modeling-guide/model-taxonomies).
-  4. Available options for [storing content](guides/architecture/content-modeling/content-modeling-guide/store-content).
-  5. Ways to design and display content on a [website page](guides/architecture/content-modeling/content-modeling-guide/design-content) or in [emails](guides/architecture/content-modeling/content-modeling-guide/design-email-content).
-  6. General content modeling [recommendations](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations).
+  2. How to tie content modeling to [your marketing goals](/guides/architecture/content-modeling/content-modeling-guide/content-modeling-business-requirements).
+  3. Ways to [categorize content](/guides/architecture/content-modeling/content-modeling-guide/model-taxonomies).
+  4. Available options for [storing content](/guides/architecture/content-modeling/content-modeling-guide/store-content).
+  5. Ways to design and display content on a [website page](/guides/architecture/content-modeling/content-modeling-guide/design-content) or in [emails](/guides/architecture/content-modeling/content-modeling-guide/design-email-content).
+  6. General content modeling [recommendations](/guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations).
 
 
 ## What is content?
@@ -78,6 +84,8 @@ That’s why it is essential that you think about the following:
 
 ## Dive into the Content modeling guide
 The _Content modeling_ guide will help you understand different options for storing and displaying content within Xperience by Kentico. You will also learn about the recommended approaches for modeling content in Xperience, collected internally and externally from our selected partners. You can apply these recommendations when creating the content model for your digital marketing content.
-Find out about different types of content, the [content modeling process](guides/architecture/content-modeling/content-modeling-guide/content-modeling-process), how and in what way you can [store](guides/architecture/content-modeling/content-modeling-guide/store-content) and [display content in Xperience](guides/architecture/content-modeling/content-modeling-guide/store-content) or what are the [general recommendations](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations) for modeling your digital content using in Xperience by Kentico DXP.
+Find out about different types of content, the [content modeling process](/guides/architecture/content-modeling/content-modeling-guide/content-modeling-process), how and in what way you can [store](/guides/architecture/content-modeling/content-modeling-guide/store-content) and [display content in Xperience](/guides/architecture/content-modeling/content-modeling-guide/store-content) or what are the [general recommendations](/guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations) for modeling your digital content using in Xperience by Kentico DXP.
 ## What’s next
-The [next part](guides/architecture/content-modeling/content-modeling-guide/what-is-a-content-type) discusses the essential component of the content modeling process - content types. Understanding the content types and what’s available in Xperience for defining content types will help you identify the best approach to defining (or modeling) the content types you identified for your project during the content audit and modeling sessions.
+The [next part](/guides/architecture/content-modeling/content-modeling-guide/what-is-a-content-type) discusses the essential component of the content modeling process - content types. Understanding the content types and what’s available in Xperience for defining content types will help you identify the best approach to defining (or modeling) the content types you identified for your project during the content audit and modeling sessions.
+![]()
+[]()[]()

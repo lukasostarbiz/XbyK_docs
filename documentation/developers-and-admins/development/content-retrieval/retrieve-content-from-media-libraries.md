@@ -1,17 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Content retrieval](/documentation/developers-and-admins/development/content-retrieval)
+  * Retrieve content from media libraries 
+
+
 # Retrieve content from media libraries
-  * [ Copy page link ](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#) | [Get HelpService ID](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#)
 **Media libraries sunset**
 Media libraries have been officially sunset, and their related API members have been marked as obsolete. Support for media libraries will continue for one more year (until July 24, 2026), after which the feature and all associated APIs will be completely removed.
-See [Media library migration](guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](documentation/business-users/content-hub).
-Media libraries serve as one type of data storage for your application. They can store different types of audio, video, image, and document files. For a complete list of the file types supported by default, see [Media library configuration](documentation/developers-and-admins/configuration/media-library-configuration).
+See [Media library migration](/guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](/documentation/business-users/content-hub).
+Media libraries serve as one type of data storage for your application. They can store different types of audio, video, image, and document files. For a complete list of the file types supported by default, see [Media library configuration](/documentation/developers-and-admins/configuration/media-library-configuration).
 This page covers how you can:
-  * [Retrieve media library files](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#retrieve-media-library-files)
-  * [Get media file URLs](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#get-media-file-urls)
-  * [Display media files](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#display-media-library-files)
+  * [Retrieve media library files](#retrieve-media-library-files)
+  * [Get media file URLs](#get-media-file-urls)
+  * [Display media files](#display-media-library-files)
 
 
 ## Retrieve media library files
@@ -92,12 +99,12 @@ To resolve the URLs of retrieved media library files (`MediaFileInfo` objects), 
   * `RelativePath` – the application relative (starting with `~/`) permanent path to the file. For example: _~/getmedia/0140bccc-9d47-41ea-94a9-ca5d35b2964c/sample_image.jpg_. This format ensures that the image remains accessible if the file is renamed or moved to a different media library or directory on the file system.
   * `DirectPath` – the direct path to the media file on the file system. For example: _~/MediaLibraryFolder/sample_image.jpg_. These URLs change whenever the file is renamed or moved to a different media library (directory on the file system).
   * `QueryStringParameters` – a collection of query string parameters appended to the URL.
-  * `IsImage` – a boolean flag indicating whether the URL leads to an image file. See [Resize images](documentation/developers-and-admins/development/content-retrieval/retrieve-content-from-media-libraries#resize-images).
+  * `IsImage` – a boolean flag indicating whether the URL leads to an image file. See [Resize images](#resize-images).
 
 
 ## Resize images
 **Image processing**
-Image operations are provided by _IImageProcessingService_ from the [Kentico.Xperience.ImageProcessing NuGet package](documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages). The package doesn’t guarantee compatibility with niche distributions and platforms. If you run into issues with image processing on the hosting platform of your choice, you will need to provide your own implementation of `IImageProcessingService` registered using the [RegisterImplementation attribute](documentation/developers-and-admins/customization/integrate-custom-code).
+Image operations are provided by _IImageProcessingService_ from the [Kentico.Xperience.ImageProcessing NuGet package](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages). The package doesn’t guarantee compatibility with niche distributions and platforms. If you run into issues with image processing on the hosting platform of your choice, you will need to provide your own implementation of `IImageProcessingService` registered using the [RegisterImplementation attribute](/documentation/developers-and-admins/customization/integrate-custom-code).
 **Resizing not supported for avif images**
 The default _IImageProcessingService_ used for resizing media library images does not support the avif image format.
 You can resize images via extension methods for the `IMediaFileUrl` object. The methods add query string parameters that change the URL behavior and allow you to customize the format of the files.
@@ -148,3 +155,6 @@ Copy
     <img src="@url" alt="@mediaFile.FileTitle" />
 }
 ```
+
+![]()
+[]()[]()

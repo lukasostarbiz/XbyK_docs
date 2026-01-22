@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/members/expand-restricted-content-and-sign-in-functionality
+scrape_date: 2026-01-22
+---
+
+Module: Members
+10 of 12 Pages
 # Expand restricted content and sign-in functionality
-  * [ Copy page link ](modules/members/expand-restricted-content-and-sign-in-functionality#) | [Get HelpService ID](modules/members/expand-restricted-content-and-sign-in-functionality#)
-Core MVC 5
-
-
-[✖](modules/members/expand-restricted-content-and-sign-in-functionality# "Close page link panel") [Copy to clipboard](modules/members/expand-restricted-content-and-sign-in-functionality#)
 Let’s expand the _Sign in_ widget view component to redirect a member back to the provided _return URL_ after successful authentication.
 It needs to find the `returnUrl` value in the query string of the request, so we should start with a new method in the `HttpRequestService`.
 C#
@@ -73,18 +75,18 @@ public class SignInWidgetViewComponent : ViewComponent
 }
 ```
 
-See [this section of the language selector guide](guides/development/multilingual/implement-language-selector-for-your-website#handle-urls-and-routing) or [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/Services/HttpRequestService.cs) for details about how to implement the `GetBaseUrlWithLanguage` method.
+See [this section of the language selector guide](/guides/development/multilingual/implement-language-selector-for-your-website#handle-urls-and-routing) or [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/Services/HttpRequestService.cs) for details about how to implement the `GetBaseUrlWithLanguage` method.
 If you ensure the return URL only works with relative paths, you can prevent attackers from exploiting the query string to redirect members to phishing sites after successful authentication on your site.
 ## See the redirect in action
 Now the sign in form should correctly redirect you to the _return URL_ after you authenticate.
 Your browser does not support the video tag. 
-However, you may notice that even if you followed along [earlier](modules/members/set-up-restricted-pages) and set a reusable item to require authentication, it is still visible to signed out users on the page.
-[![Screenshot of the ‘About frogs’ article displaying on the site even though the underlying reusable item is secured](docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)
+However, you may notice that even if you followed along [earlier](/modules/members/set-up-restricted-pages) and set a reusable item to require authentication, it is still visible to signed out users on the page.
+[![Screenshot of the ‘About frogs’ article displaying on the site even though the underlying reusable item is secured](/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)](/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)
 This happens because the web page that references this reusable article is not secured. The _content tree-based router_ only knows to check security of the pages it is retrieving, and not any reusable content they might reference.
 ## Handle secured reusable content
 Ideally, content editors should mark all pages that reference secured items to require authentication, but we shouldn’t assume that they will never make mistakes.
 When pages display reusable content, you need one of the following approaches to for security:
-  1. Set the query that retrieves the content to [filter out secured items](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration).
+  1. Set the query that retrieves the content to [filter out secured items](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration).
   2. Check the `ContentItemIsSecured` value of the linked items you want to secure, and react accordingly. For example, you can redirect or display an error message.
 
 
@@ -121,7 +123,7 @@ public bool IsReusableArticleSecured(ArticlePage articlePage)
 ...
 ```
 
-Depending on whether you’ve followed along with the [Advanced content](guides/development/advanced-content) series, the `ArticlePageArticleContent` field may or may not exist in the `ArticlePage` type.
+Depending on whether you’ve followed along with the [Advanced content](/guides/development/advanced-content) series, the `ArticlePageArticleContent` field may or may not exist in the `ArticlePage` type.
 Then, use your new method in the article page controller, returning the _403 Forbidden_ status code when the current visitor is unauthenticated and the item is secured.
 C#
 **ArticlePageController.cs**
@@ -185,16 +187,8 @@ Specifically, check out:
 
 
 The branch also contains other useful features for your reference, like [password reset functionality](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Membership/Widgets/ResetPassword) and a [dynamic widget](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Membership/Widgets/LinkOrSignOut) that shows a sign-out button or a link depending on whether or not the current visitor is authenticated.
-[ Previous page ](modules/members/set-up-restricted-pages)
+[ Previous page ](/modules/members/set-up-restricted-pages)
 10 of 12
-[ Mark complete and continue ](modules/members/apply-roles-to-your-members-community-package)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/expand-restricted-content-and-sign-in-functionality)
-[](https://docs.kentico.com/modules/members/expand-restricted-content-and-sign-in-functionality)[](https://docs.kentico.com/modules/members/expand-restricted-content-and-sign-in-functionality)
+[ Mark complete and continue ](/modules/members/apply-roles-to-your-members-community-package)
+![]()
+[]()[]()

@@ -1,9 +1,14 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * Get started with customer journeys 
+
+
 # Get started with customer journeys
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys#)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -20,4 +25,6 @@ In this article, you’ll learn:
 This is your essential starting point before diving into the practical steps of building and managing journeys in Xperience by Kentico.
 See how to analyze customer behavior to improve user engagement and increase conversions.
 ## Ready for takeoff?
-Dive into the exciting world of customer journeys and learn how you can [analyze your customer’s behavior to improve user engagement](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen).
+Dive into the exciting world of customer journeys and learn how you can [analyze your customer’s behavior to improve user engagement](/guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen).
+![]()
+[]()[]()

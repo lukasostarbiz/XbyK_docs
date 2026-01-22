@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/create-a-contact-us-form
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Create a Contact us form 
+
+
 # Create a Contact us form
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-forms/create-a-contact-us-form#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/create-a-contact-us-form#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/create-a-contact-us-form# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/create-a-contact-us-form#)
 Create a simple yet effective **Contact us** form with a custom title and a **“thank you” message**.
 We walk through this example scenario in Xperience by Kentico’s [Kbank demo website](https://www.kentico.com/services/training/training-website-requests). To work along with us in this safe sandbox environment, you can request a hosted trial at the link above by selecting the following option: _Xperience by Kentico - Business Tutorial KBank demo site_.
 ## Create the form in the Forms app
@@ -50,5 +56,7 @@ We walk through this example scenario in Xperience by Kentico’s [Kbank demo we
 
 
 ## Next step
-Once your form is placed on the page, learn how to [change a form’s name](guides/digital-marketing/work-with-forms/change-a-forms-name).
-You can also further [adjust the form’s thank you message](guides/digital-marketing/work-with-forms/adjust-the-forms-thank-you-message) to confirm submissions with a personalized touch.
+Once your form is placed on the page, learn how to [change a form’s name](/guides/digital-marketing/work-with-forms/change-a-forms-name).
+You can also further [adjust the form’s thank you message](/guides/digital-marketing/work-with-forms/adjust-the-forms-thank-you-message) to confirm submissions with a personalized touch.
+![]()
+[]()[]()

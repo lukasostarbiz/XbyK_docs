@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/add-a-custom-form-field
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Add a custom form field 
+
+
 # Add a custom form field
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-forms/add-a-custom-form-field#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/add-a-custom-form-field#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/add-a-custom-form-field# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/add-a-custom-form-field#)
 Learn how you can create customized field that fulfills the unique needs of your form.
   1. Go to the **Forms** application.
   2. Create a **New form**.
@@ -15,4 +21,6 @@ Learn how you can create customized field that fulfills the unique needs of your
 
 
 ### Next step
-To be able to adjust a form further, learn how to [move or delete a form field](guides/digital-marketing/work-with-forms/move-or-delete-a-form-field).
+To be able to adjust a form further, learn how to [move or delete a form field](/guides/digital-marketing/work-with-forms/move-or-delete-a-form-field).
+![]()
+[]()[]()

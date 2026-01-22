@@ -1,16 +1,22 @@
+---
+source: https://docs.kentico.com/guides/development/deployment/deploy-to-private-cloud
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Deployment](/guides/development/deployment)
+  * Deploy to your private cloud 
+
+
 # Deploy to your private cloud
-  * How-to| [ Copy page link ](guides/development/deployment/deploy-to-private-cloud#) | [Get HelpService ID](guides/development/deployment/deploy-to-private-cloud#)
-Core MVC 5
-
-
-[✖](guides/development/deployment/deploy-to-private-cloud# "Close page link panel") [Copy to clipboard](guides/development/deployment/deploy-to-private-cloud#)
-This guide goes over the process of using _Command-line interfaces_ to deploy an Xperience by Kentico application, focusing specifically on hosting in either Azure Web Apps or IIS in your [private cloud](documentation/developers-and-admins/deployment/deploy-to-private-cloud).
+This guide goes over the process of using _Command-line interfaces_ to deploy an Xperience by Kentico application, focusing specifically on hosting in either Azure Web Apps or IIS in your [private cloud](/documentation/developers-and-admins/deployment/deploy-to-private-cloud).
 Headings that are specific to either platform will be labelled accordingly.
-If you want guidance on how to deploy to the Xperience SaaS environment, where you can manage your projects through the [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal), see the [documentation’s instructions](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) for how to do so.
+If you want guidance on how to deploy to the Xperience SaaS environment, where you can manage your projects through the [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal), see the [documentation’s instructions](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) for how to do so.
 ## Before you start
 This guide requires the following:
   * Familiarity with [.NET Core](https://learn.microsoft.com/en-us/dotnet/), general development operations concepts, and working with [Command-line interfaces (CLIs)](https://en.wikipedia.org/wiki/Command-line_interface)
-  * An instance of Xperience by Kentico to deploy. The samples in this guide use an instance running on version [29.3.0](documentation/changelog).
+  * An instance of Xperience by Kentico to deploy. The samples in this guide use an instance running on version [29.3.0](/documentation/changelog).
 
 
 ## Start with a working project
@@ -20,7 +26,7 @@ Start by following the Kickstart repository’s instructions to set up the proje
 ## Configure external storage
 We recommend hosting assets, form files, and media files in some kind of external storage in all cases, but especially when your application is hosted in _Azure Web Apps_ or other similar environments that do not guarantee persistent storage.
 Aside from preserving your files in the event of unexpected restarts, using external storage will prevent future code deployments from destroying or overwriting them.
-Xperience offers two solutions out-of-the-box. The documentation contains instructions for [setting up Azure Blob Storage](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) and [Amazon S3](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3), along with a way to [customize file system providers](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/custom-file-system-providers) to integrate with alternative services.
+Xperience offers two solutions out-of-the-box. The documentation contains instructions for [setting up Azure Blob Storage](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) and [Amazon S3](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3), along with a way to [customize file system providers](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/custom-file-system-providers) to integrate with alternative services.
 If you plan to have more than one published environment, or use external storage in your development environment as well, make sure to use a separate container or bucket per environment to prevent them from overwriting one another’s files.
 ## Set up the database
 Whether you plan to host your deployed application files in Azure or on your own server with IIS, you can theoretically host your database anywhere the application can access. You can have on-premise servers accessing Azure SQL databases, Azure Web Apps that talk to on-premise SQL servers, or any number of combinations involving other hosting providers. This guide will focus on two options: hosting your database in Azure, or in your own SQL server.
@@ -100,8 +106,8 @@ Now, when you access your site, wherever it is hosted, you’ll likely see an [H
 This error appears because the Kickstart repo does not contain a license key for the domain that hosts your published application.
 Access the **/admin** path of your application to sign in to the Xperience admin UI. Add a license key for all necessary domains in the **License keys** application.
 ## Deploy new code to an existing published application
-You will have to take a different approach for deploying new code to an existing published project depending on whether or not you [configured external storage](guides/development/deployment/deploy-to-private-cloud#configure-external-storage).
-If you’ve configured external storage according to our recommendations, you should be able to clear the existing deployment and re-deploy with the same steps as the initial deployment- first [publish](guides/development/deployment/deploy-to-private-cloud#create-a-publishable-package) your application and then deploy the published files according to your platform.
+You will have to take a different approach for deploying new code to an existing published project depending on whether or not you [configured external storage](#configure-external-storage).
+If you’ve configured external storage according to our recommendations, you should be able to clear the existing deployment and re-deploy with the same steps as the initial deployment- first [publish](#create-a-publishable-package) your application and then deploy the published files according to your platform.
 If you host your app in an _Azure Web App_ , you can use the `--clean` parameter of the `az webapp deploy` command to clear out the deployment slot before you do anything.
 If you use IIS, we recommend creating a reusable script that clears out the deployment location and copies the publishable files.
 **If you do not use external storage** , you’ll need to copy _asset files_ , _media files_ , and _form submission files_ to a safe location before clearing the existing deployment, then copy them back after deployment.
@@ -110,26 +116,26 @@ We recommend creating a script to automate this process.
 ## Deploy new data to an existing published application
 ### Standard Continuous Deployment
 In some cases, you may want to create some data in your development environment and deploy it to the published environment. For example, you might create a custom module, which contains classes and class data alongside code.
-We recommend using **Continuous deployment (CD)** to keep the data in sync between your environments. You can follow the guidance in the [Continuous Deployment documentation](documentation/developers-and-admins/ci-cd/continuous-deployment).
+We recommend using **Continuous deployment (CD)** to keep the data in sync between your environments. You can follow the guidance in the [Continuous Deployment documentation](/documentation/developers-and-admins/ci-cd/continuous-deployment).
 ### Asymmetric Continuous Deployment workaround
 If you want to have different data between your development environment and your published environment, standard CD procedures may cause issues, overwriting objects in the production database with data that you only want to exist locally.
 In this case, you can use the following workaround:
 #### Set up your environments
-Make sure CD is enabled locally, along with some kind of source control. Also follow the advice in the [CD documentation](documentation/developers-and-admins/ci-cd/continuous-deployment#synchronize-macro-signatures) to keep macro signatures in sync with your production environment.
+Make sure CD is enabled locally, along with some kind of source control. Also follow the advice in the [CD documentation](/documentation/developers-and-admins/ci-cd/continuous-deployment#synchronize-macro-signatures) to keep macro signatures in sync with your production environment.
 #### Make your data changes
 Add the data to your development instance, allowing Continuous Deployment to serialize the data in your source control repository.
 #### Copy your dev environment
 Make a new copy of your _Development application_ that exists outside of your source control system. We’ll refer to it as the **Copy instance** in this section. Make sure the _Copy instance_ exists outside of your source control. It should be a distinct project, not a branch.
-Disable your _Published app_ , and change the connection string of the _Copy instance_ to point to the _Published database_. Then run a [CD store](documentation/developers-and-admins/ci-cd/continuous-deployment#store-objects-to-a-cd-repository) from the _Copy instance_. This serializes the data from the _Published database_ into the _Copy instance_ ’s CD repository folder.
+Disable your _Published app_ , and change the connection string of the _Copy instance_ to point to the _Published database_. Then run a [CD store](/documentation/developers-and-admins/ci-cd/continuous-deployment#store-objects-to-a-cd-repository) from the _Copy instance_. This serializes the data from the _Published database_ into the _Copy instance_ ’s CD repository folder.
 #### Transfer the data
 Using your source control history, isolate the new serialized files that were created or modified as a result of your data changes in your _Development app_ , including any dependent objects that may have been affected.
-Copy these files into the corresponding folders of the _Copy instance_ ’s CD repository. Then, run a [CD restore](documentation/developers-and-admins/ci-cd/continuous-deployment#restore-the-cd-repository-to-the-database) to propagate the changes to the _Published database_.
-Then you can delete the _Copy instance_ and [deploy any new code changes](guides/development/deployment/deploy-to-private-cloud#deploy-new-code-to-an-existing-published-application) to the _Published app_ before reactivating it.
+Copy these files into the corresponding folders of the _Copy instance_ ’s CD repository. Then, run a [CD restore](/documentation/developers-and-admins/ci-cd/continuous-deployment#restore-the-cd-repository-to-the-database) to propagate the changes to the _Published database_.
+Then you can delete the _Copy instance_ and [deploy any new code changes](#deploy-new-code-to-an-existing-published-application) to the _Published app_ before reactivating it.
 ## Update the Xperience version of a published deployment
 At some point after deploying your application, you’ll probably want to apply a hotfix or refresh to your application. Let’s look into the update process.
 Your approach can vary depending on what your environment allows, we will look into examples that are relevant to the deployment processes described in this guide.
 ### Upgrade directly in your published environment
-In some cases, you can access your published environment directly and perform a large part of the upgrade there. See [the documentation’s update overview](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects#update-process-overview) for more details.
+In some cases, you can access your published environment directly and perform a large part of the upgrade there. See [the documentation’s update overview](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects#update-process-overview) for more details.
 For this approach, you need to run dotnet CLI commands directly on your published environment to update the published database.
 This can be done through the [Kudu console](https://github.com/projectkudu/kudu/wiki/Kudu-console) for Azure Web Apps, or by logging in or remotely accessing your web server if you are using standard IIS.
 ### Update a local copy of your published site
@@ -141,7 +147,7 @@ Start by creating a new branch or copy of your development project. Update the X
 Fix any code errors that appear as a result of the updated libraries.
 Then, take your published application offline, or institute a content freeze.
 #### Copy the database to your local machine
-Move a copy of the live database to your local SQL server using the same [.bacpac](guides/development/deployment/deploy-to-private-cloud#export-the-database-locally) or [.bak](guides/development/deployment/deploy-to-private-cloud#host-your-database-in-your-own-sql-server) method you used to initially copy it to the published SQL server.
+Move a copy of the live database to your local SQL server using the same [.bacpac](#export-the-database-locally) or [.bak](#host-your-database-in-your-own-sql-server) method you used to initially copy it to the published SQL server.
 Update the connection string of the development instance to point to the new copy of the live database
 #### Run the update
 Disable Continuous Integration (CI) and Continuous Deployment (CD). Then run the `kxp-update` command of the .NET CLI to update database data. After the update completes successfully, you can re-enable CI and/or CD.
@@ -159,3 +165,5 @@ Then clear and deploy your updated application files, and bring the published ap
 At this point, you can access your updated published application normally.
 ## What’s next?
 Keep your eye out for future materials covering other deployment scenarios, and let us know if you think anything needs specific attention.
+![]()
+[]()[]()

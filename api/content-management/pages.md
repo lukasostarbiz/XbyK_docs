@@ -1,36 +1,41 @@
+---
+source: https://docs.kentico.com/api/content-management/pages
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Content management](/api/content-management)
+  * Pages 
+
+
 # Pages
-  * [ Copy page link ](api/content-management/pages#) | [Get HelpService ID](api/content-management/pages#)
-Core MVC 5
-
-
-[✖](api/content-management/pages# "Close page link panel") [Copy to clipboard](api/content-management/pages#)
   
 List of examples:
-  * [Dependency injection](api/content-management/pages#dependency-injection)
-    * [Initialize required services](api/content-management/pages#initialize-required-services)
-  * [Page retrieval](api/content-management/pages#page-retrieval)
-    * [Retrieve pages in web applications](api/content-management/pages#retrieve-pages-in-web-applications)
-    * [Retrieve pages of a single content type](api/content-management/pages#retrieve-pages-of-a-single-content-type)
-    * [Retrieve parent page of known content type](api/content-management/pages#retrieve-parent-page-of-known-content-type)
-    * [Retrieve parent page of unknown content type](api/content-management/pages#retrieve-parent-page-of-unknown-content-type)
-  * [Page management](api/content-management/pages#page-management)
-    * [Create pages](api/content-management/pages#create-pages)
-    * [Clone pages](api/content-management/pages#clone-pages)
-    * [Create a folder for pages](api/content-management/pages#create-a-folder-for-pages)
-    * [Generate code names](api/content-management/pages#generate-code-names)
-    * [Create page language variants](api/content-management/pages#create-page-language-variants)
-    * [Create page drafts](api/content-management/pages#create-page-drafts)
-    * [Update page drafts](api/content-management/pages#update-page-drafts)
-    * [Publish pages](api/content-management/pages#publish-pages)
-    * [Schedule publishing for pages](api/content-management/pages#schedule-publishing-for-pages)
-    * [Cancel scheduled publishing for pages](api/content-management/pages#cancel-scheduled-publishing-for-pages)
-    * [Unpublish pages](api/content-management/pages#unpublish-pages)
-    * [Schedule unpublishing for pages](api/content-management/pages#schedule-unpublishing-for-pages)
-    * [Cancel scheduled unpublishing for pages](api/content-management/pages#cancel-scheduled-unpublishing-for-pages)
-    * [Move pages](api/content-management/pages#move-pages)
-    * [Secure pages](api/content-management/pages#secure-pages)
-    * [Retrieve usages of a page](api/content-management/pages#retrieve-usages-of-a-page)
-    * [Delete pages](api/content-management/pages#delete-pages)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Page retrieval](#page-retrieval)
+    * [Retrieve pages in web applications](#retrieve-pages-in-web-applications)
+    * [Retrieve pages of a single content type](#retrieve-pages-of-a-single-content-type)
+    * [Retrieve parent page of known content type](#retrieve-parent-page-of-known-content-type)
+    * [Retrieve parent page of unknown content type](#retrieve-parent-page-of-unknown-content-type)
+  * [Page management](#page-management)
+    * [Create pages](#create-pages)
+    * [Clone pages](#clone-pages)
+    * [Create a folder for pages](#create-a-folder-for-pages)
+    * [Generate code names](#generate-code-names)
+    * [Create page language variants](#create-page-language-variants)
+    * [Create page drafts](#create-page-drafts)
+    * [Update page drafts](#update-page-drafts)
+    * [Publish pages](#publish-pages)
+    * [Schedule publishing for pages](#schedule-publishing-for-pages)
+    * [Cancel scheduled publishing for pages](#cancel-scheduled-publishing-for-pages)
+    * [Unpublish pages](#unpublish-pages)
+    * [Schedule unpublishing for pages](#schedule-unpublishing-for-pages)
+    * [Cancel scheduled unpublishing for pages](#cancel-scheduled-unpublishing-for-pages)
+    * [Move pages](#move-pages)
+    * [Secure pages](#secure-pages)
+    * [Retrieve usages of a page](#retrieve-usages-of-a-page)
+    * [Delete pages](#delete-pages)
 
 
 ## Dependency injection
@@ -70,7 +75,7 @@ public PageServices(IContentQueryExecutor contentQueryExecutor,
 }
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ## Page retrieval
 ### Retrieve pages in web applications
 C#
@@ -124,7 +129,7 @@ IEnumerable<IWebPageFieldsSource> channelPages = await contentRetriever.Retrieve
     });
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Retrieve pages of a single content type
 C#
 Copy
@@ -154,7 +159,7 @@ IEnumerable<CandyStorePage> candyStorePages =
         await contentQueryExecutor.GetMappedResult<CandyStorePage>(builder);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Retrieve parent page of known content type
 C#
 Copy
@@ -183,7 +188,7 @@ else
     throw new Exception("Parent page ID is 0, indicating that the selected page has no parent.");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Retrieve parent page of unknown content type
 C#
 Copy
@@ -245,7 +250,7 @@ IEnumerable<IWebPageFieldsSource> parentPageOption2 = await contentRetriever.Ret
         new RetrievalCacheSettings($"WebPageItemID|{parentId}"));
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ## Page management
 ### Create pages
 C#
@@ -299,7 +304,7 @@ var createPageParameters = new CreateWebPageParameters(pageDisplayName,
 await webPageManager.Create(createPageParameters);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Clone pages
 C#
 Copy
@@ -355,7 +360,7 @@ var cloneParameters = new ClonePageParameters
 await webPageManager.Clone(cloneParameters);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Create a folder for pages
 C#
 Copy
@@ -377,7 +382,7 @@ var createFolderParameters = new CreateFolderParameters(folderDisplayName,
 await webPageManager.CreateFolder(createFolderParameters);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Generate code names
 C#
 Copy
@@ -398,7 +403,7 @@ string codeName = await contentItemCodeNameProvider.Get(displayName);
 // Use the 'codeName' value in content item APIs...
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Create page language variants
 C#
 Copy
@@ -463,7 +468,7 @@ else
     throw new Exception("Something went wrong");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Create page drafts
 C#
 Copy
@@ -499,7 +504,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Update page drafts
 C#
 Copy
@@ -550,7 +555,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Publish pages
 C#
 Copy
@@ -590,7 +595,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Schedule publishing for pages
 C#
 Copy
@@ -630,7 +635,7 @@ var pageId = await contentQueryExecutor
 await webPageManager.SchedulePublish(pageId.First(), languageName, publishDateTime);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Cancel scheduled publishing for pages
 C#
 Copy
@@ -670,7 +675,7 @@ if (await webPageManager.IsPublishScheduled(pageId.First(), languageName))
 }
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Unpublish pages
 C#
 Copy
@@ -706,7 +711,7 @@ else
     throw new Exception("Something went wrong.");
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Schedule unpublishing for pages
 C#
 Copy
@@ -745,7 +750,7 @@ var pageId = await contentQueryExecutor
 await webPageManager.ScheduleUnpublish(pageId.First(), languageName, unpublishDateTime);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Cancel scheduled unpublishing for pages
 C#
 Copy
@@ -782,7 +787,7 @@ if (await webPageManager.IsUnpublishScheduled(pageId.First(), languageName))
 }
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Move pages
 C#
 Copy
@@ -830,7 +835,7 @@ var movePageParameters = new MoveWebPageParameters(pageId.First(), parentId.Firs
 await webPageManager.Move(movePageParameters);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Secure pages
 C#
 Copy
@@ -861,7 +866,7 @@ bool isSecured = true;
 await webPageManager.UpdateSecuritySettings(pageId.First(), isSecured);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Retrieve usages of a page
 C#
 Copy
@@ -892,7 +897,7 @@ var pageId = await contentQueryExecutor
 await webPageItemUsageRetriever.Retrieve(pageId.First(), languageName);
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
 ### Delete pages
 C#
 Copy
@@ -930,4 +935,6 @@ await webPageManager.Delete(
                     });
 ```
 
-[> Back to list of examples](api/content-management/pages#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

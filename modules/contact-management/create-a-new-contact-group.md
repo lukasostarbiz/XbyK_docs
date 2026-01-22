@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/contact-management/create-a-new-contact-group
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+10 of 44 Pages
 # Create a new contact group
-  * [ Copy page link ](modules/contact-management/create-a-new-contact-group#) | [Get HelpService ID](modules/contact-management/create-a-new-contact-group#)
-Core MVC 5
-
-
-[✖](modules/contact-management/create-a-new-contact-group# "Close page link panel") [Copy to clipboard](modules/contact-management/create-a-new-contact-group#)
 See how to create a new group of contacts and how to work with group conditions.
   1. Go to the **Contact groups** application.
   2. Create a **New contact group**.
@@ -23,17 +25,9 @@ You can choose between **Add another condition** or **Add another group** when c
       * For example, see the logical operator OR between unit 1 and unit 2. Thanks to the OR operator, contact will be included in the group when either of these units is evaluated as true.
 
 
-[![Conditions set up for a new contact group](docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)](https://docs.kentico.com/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)
-[ Previous page ](modules/contact-management/contact-groups)
+[![Conditions set up for a new contact group](/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)](/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)
+[ Previous page ](/modules/contact-management/contact-groups)
 10 of 44
-[ Mark complete and continue ](modules/contact-management/update-existing-contact-group)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/create-a-new-contact-group)
-[](https://docs.kentico.com/modules/contact-management/create-a-new-contact-group)[](https://docs.kentico.com/modules/contact-management/create-a-new-contact-group)
+[ Mark complete and continue ](/modules/contact-management/update-existing-contact-group)
+![]()
+[]()[]()

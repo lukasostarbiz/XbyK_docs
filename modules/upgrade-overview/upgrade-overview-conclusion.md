@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/upgrade-overview/upgrade-overview-conclusion
+scrape_date: 2026-01-22
+---
+
+Module: Upgrading to Xperience by Kentico - Overview
+6 of 6 Pages
 # Keep learning about upgrading to Xperience by Kentico
-  * [ Copy page link ](modules/upgrade-overview/upgrade-overview-conclusion#) | [Get HelpService ID](modules/upgrade-overview/upgrade-overview-conclusion#)
-Core MVC 5
-
-
-[✖](modules/upgrade-overview/upgrade-overview-conclusion# "Close page link panel") [Copy to clipboard](modules/upgrade-overview/upgrade-overview-conclusion#)
 You’ve reached the end of the module on upgrading to Xperience by Kentico. Re-platforming a solution is no small task, but with the right guidance and tools, it becomes far more manageable – and even an opportunity to modernize your architecture and improve your long-term maintainability.
 Let’s wrap it up:
   * You now have a high-level understanding of the upgrade process from Kentico Xperience 13 to Xperience by Kentico.
@@ -19,4 +21,9 @@ Refer to our [Migration Tool](https://github.com/Kentico/xperience-by-kentico-ke
 ## Help us improve
 We’re always looking to improve our learning materials. If anything in this module was unclear or could be explained better, please let us know. Your feedback helps us create more relevant and helpful content for your development journey.
 Thanks for learning with us – and best of luck with your upgrade to Xperience by Kentico!
-Mark module as completed Congrats! Module is completed You're almost done! You need to finish all pages before you can complete the module. Select “Go back and finish” to jump to the first page you haven’t finished, then hit “Mark complete and continue” at the bottom to move forward.
+Mark module as completed Congrats! Module is completed You're almost done! You need to finish all pages before you can complete the module. Select “Go back and finish” to jump to the first page you haven’t finished, then hit “Mark complete and continue” at the bottom to move forward. 
+[ Previous page ](/modules/upgrade-overview/adjust-your-code-and-adapt)
+6 of 6
+[ Go back and finish ](https://docs.kentico.com/modules/upgrade-overview)
+![]()
+[]()[]()

@@ -1,16 +1,22 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * Deploy to a new environment 
+
+
 # Deploy to a new environment
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment#) | This page is part of a module: [ Xperience implementation handbook ](modules/xperience-implementation-handbook)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/deploy-to-a-new-environment#)
 ## Deploying
 Deployment is one of the most crucial steps in a project’s lifecycle. You will deploy continuously throughout the life of a project, as the need for maintenance and new features arises. Most people associate deployment with the production environment, but it also includes local, integration, staging, and testing environments. This section provides an overview of the process of deploying your solution from one environment to another, describing the basic approaches, available tools, and steps to deploy.
 ### Deployment approaches
 The first part of deployment to consider is the deployment method. The best approach for your project depends on a number of factors, such as the nature of the changes, project resources, team size, project type, and the details of the source and target environments.
 There are two basic approaches: **manual** and **automatic** deployment. In some scenarios, you might **combine** these approaches, manually deploying a subset of the changes and automatically deploying the rest.
-  * Manual deployment involves copying files to the target environment, for example, via FTP or over a network. For manual deployment of database changes, you may recreate the changes on the target environment, execute SQL scripts, or copy serialized data files and run commands to propagate them to the database via [Continuous Deployment (CD)](documentation/developers-and-admins/ci-cd/continuous-deployment) or [Continuous Integration (CI)](documentation/developers-and-admins/ci-cd/continuous-integration).
-  * Automated deployment of code typically involves special services or servers for builds and deployment. For example, you might set up a pipeline that automatically builds and deploys to a preview environment when a certain branch of your source control is updated. You can handle automatic database changes with built-in Xperience features. For example, include **CI** or **CD** commands in your automated pipelines, or, if the source and target servers connect to the same database, allow **Web farm** functionality to synchronize the Xperience instances automatically.
+  * Manual deployment involves copying files to the target environment, for example, via FTP or over a network. For manual deployment of database changes, you may recreate the changes on the target environment, execute SQL scripts, or copy serialized data files and run commands to propagate them to the database via [Continuous Deployment (CD)](/documentation/developers-and-admins/ci-cd/continuous-deployment) or [Continuous Integration (CI)](/documentation/developers-and-admins/ci-cd/continuous-integration).
+  * Automated deployment of code typically involves special services or servers for builds and deployment. For example, you might set up a pipeline that automatically builds and deploys to a preview environment when a certain branch of your source control is updated. You can handle automatic database changes with built-in Xperience features. For example, include **CI** or **CD** commands in your automated pipelines, or, if the source and target servers connect to the same database, allow **multi-instance support** to synchronize the Xperience instances automatically.
 
 
 Regardless of the deployment mechanism, you need to determine **who** will be responsible for deploying changes. You may find it best to have different people or groups be responsible for certain types of changes. Responsibility may vary depending on the target environment.
@@ -18,14 +24,14 @@ Sometimes, you might automate the process, so a server or service handles deploy
 Finally, make sure the responsible party knows **when** to deploy. For example, should changes be scheduled for a pre-determined maintenance window or pushed immediately? Ideally, you should determine this in advance, establishing rules that prevent conflicts and ensure you know who to talk to if something goes wrong.
 ### Deployment tools
 Xperience by Kentico is a standard .NET project, meaning its code and files support any compatible deployment process or pipeline.
-If you use the [Xperience SaaS environment](documentation/developers-and-admins/saas/saas-overview), you can upload your deployment through the [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal) UI, or by posting to the deployment API endpoint through an automated process.
-For deploying data to Xperience, we recommend using the [Continuous Deployment](documentation/developers-and-admins/ci-cd/continuous-deployment) feature. Continuous Deployment serializes Xperience data in files which can be transferred by source control or a code deployment process. Then, dotnet CLI commands allow you to restore the serialized data into the target database, in a way that can be integrated into most automated deployment processes and pipelines.
+If you use the [Xperience SaaS environment](/documentation/developers-and-admins/saas/saas-overview), you can upload your deployment through the [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal) UI, or by posting to the deployment API endpoint through an automated process.
+For deploying data to Xperience, we recommend using the [Continuous Deployment](/documentation/developers-and-admins/ci-cd/continuous-deployment) feature. Continuous Deployment serializes Xperience data in files which can be transferred by source control or a code deployment process. Then, dotnet CLI commands allow you to restore the serialized data into the target database, in a way that can be integrated into most automated deployment processes and pipelines.
 Some common third-party tools for deploying different parts of projects include TeamCity, GitHub Actions, Azure DevOps Pipelines, FTP, WebDeploy, Visual Studio, and Redgate SQL Data Compare.
-If you use any third-party tools that modify database data directly, you may need to [clear the Xperience cache](documentation/developers-and-admins/development/caching#clear-the-cache) before the changes take effect.
+If you use any third-party tools that modify database data directly, you may need to [clear the Xperience cache](/documentation/developers-and-admins/development/caching#clear-the-cache) before the changes take effect.
 **Read-only mode**
-[Read-only deployments](documentation/developers-and-admins/deployment/read-only-deployments) allow zero-downtime updates, serving content from a snapshot of the database while you deploy the new code.
-You just need to [make sure your code supports read-only mode](documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes).
-Zero-downtime deployments are [seamlessly integrated into SaaS](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#zero-downtime-deployments).
+[Read-only deployments](/documentation/developers-and-admins/deployment/read-only-deployments) allow zero-downtime updates, serving content from a snapshot of the database while you deploy the new code.
+You just need to [make sure your code supports read-only mode](/documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes).
+Zero-downtime deployments are [seamlessly integrated into SaaS](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#zero-downtime-deployments).
 ### Deployment process
 Before you start deploying to any environment, spend some time preparing to eliminate possible issues. The following list of tasks should help you understand the types of things to check:
   * Disable unused features to avoid consuming unnecessary resources.
@@ -35,12 +41,12 @@ Before you start deploying to any environment, spend some time preparing to elim
     * Filter or remove unwanted objects from deployment (e.g., exclude files stored in a “test” folder or add config files for CI and CD repositories).
     * Validate that you have included all dependencies.
   * Prepare your deployment package(s). 
-    * If you are deploying to the [SaaS environment](documentation/developers-and-admins/saas/saas-overview), you can find specific instructions for creating your deployment package [in the documentation](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#create-a-deployment-package).
-    * If you are deploying to _Azure Web Apps_ or _IIS_ in a [private cloud](documentation/developers-and-admins/deployment/deploy-to-private-cloud) environment, you can find examples in the [Deploy to your private cloud](guides/development/deployment/deploy-to-private-cloud) guide.
+    * If you are deploying to the [SaaS environment](/documentation/developers-and-admins/saas/saas-overview), you can find specific instructions for creating your deployment package [in the documentation](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#create-a-deployment-package).
+    * If you are deploying to _Azure Web Apps_ or _IIS_ in a [private cloud](/documentation/developers-and-admins/deployment/deploy-to-private-cloud) environment, you can find examples in the [Deploy to your private cloud](/guides/development/deployment/deploy-to-private-cloud) guide.
   * Test the deployment before synchronizing. 
     * Be aware that the built-in deployment features do not support a bulk roll-back in case of a failed deployment.
   * Back up the target environment so you can recover if something goes wrong. 
-    * If you are using the Xperience SaaS environment, it creates an [automatic restore point for each service](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#automatic-restore-points-and-exports) before deployment, but you can also create a [manual restore point](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#create-a-manual-restore-point) or [manual export](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#create-a-manual-export) when you need to.
+    * If you are using the Xperience SaaS environment, it creates an [automatic restore point for each service](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#automatic-restore-points-and-exports) before deployment, but you can also create a [manual restore point](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#create-a-manual-restore-point) or [manual export](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#create-a-manual-export) when you need to.
   * Plan the order in which things are synchronized (e.g., code, then database objects or vice-versa). 
     * In most cases, agencies deploy code before data.
   * Prepare a maintenance message when deploying with downtime (e.g., an _App_Offline.html_ file).
@@ -65,4 +71,6 @@ A client had a strict requirement to keep the production website running even du
 They needed to apply the latest hotfix, so they took a backup of the production website (both the database and codebase) and applied the hotfix in a local development environment. After testing the website, they restored it to another server in the production environment.
 Once the hotfixed website was running, they redirected the traffic to it instead of the old server through a load balancer. During the maintenance window, they disabled visitor submission of forms with a customization they built. The customization put forms in a read-only mode and displayed a maintenance message, so that the client would not need to migrate form submission data to the hotfixed website.
 ## What’s next?
-The [next guide](guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built) in this handbook goes over strategies for maintaining and monitoring your project after it goes live.
+The [next guide](/guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built) in this handbook goes over strategies for maintaining and monitoring your project after it goes live.
+![]()
+[]()[]()

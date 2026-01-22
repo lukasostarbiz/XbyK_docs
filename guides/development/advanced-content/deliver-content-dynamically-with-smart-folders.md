@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/guides/development/advanced-content/deliver-content-dynamically-with-smart-folders
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Advanced content](/guides/development/advanced-content)
+  * Deliver content dynamically using smart folders 
+
+
 # Deliver content dynamically using smart folders
-  * How-to| [ Copy page link ](guides/development/advanced-content/deliver-content-dynamically-with-smart-folders#) | [Get HelpService ID](guides/development/advanced-content/deliver-content-dynamically-with-smart-folders#) | This page is part of a module: [ Advanced content ](modules/advanced-content)
-Core MVC 5
-
-
-[✖](guides/development/advanced-content/deliver-content-dynamically-with-smart-folders# "Close page link panel") [Copy to clipboard](guides/development/advanced-content/deliver-content-dynamically-with-smart-folders#)
-[Smart folders](documentation/business-users/content-hub/content-hub-folders#smart-folders) provide content editors with a high level of flexibility, allowing them to organize content and dynamically control its delivery in their channels.
-Smart folders out-of-the-box do **not** allow for dynamic content delivery in [headless](documentation/developers-and-admins/configuration/headless-channel-management) and [email](documentation/developers-and-admins/digital-marketing-setup/email-channel-management) channels. Read more in our [documentation](documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders).
+[Smart folders](/documentation/business-users/content-hub/content-hub-folders#smart-folders) provide content editors with a high level of flexibility, allowing them to organize content and dynamically control its delivery in their channels.
+Smart folders out-of-the-box do **not** allow for dynamic content delivery in [headless](/documentation/developers-and-admins/configuration/headless-channel-management) and [email](/documentation/developers-and-admins/digital-marketing-setup/email-channel-management) channels. Read more in our [documentation](/documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders).
 Let’s explore how you, as a developer, can enable these flexible features for editors in a widget. We will build a simple Gallery widget that dynamically loads content from a smart folder of the editor’s choice.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Experience with [Page Builder widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [taxonomies](documentation/developers-and-admins/configuration/taxonomies), [Content hub](documentation/business-users/content-hub) and [smart folders](documentation/business-users/content-hub/content-hub-folders#smart-folders) in Xperience by Kentico.
+  * Experience with [Page Builder widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [taxonomies](/documentation/developers-and-admins/configuration/taxonomies), [Content hub](/documentation/business-users/content-hub) and [smart folders](/documentation/business-users/content-hub/content-hub-folders#smart-folders) in Xperience by Kentico.
 
 
 **Code samples**
@@ -24,20 +30,20 @@ They come from a project that uses [implicit using directives](https://learn.mic
 Your client owns a vacation resort. On their website they want to feature several image galleries showcasing the rooms, the amenities, the surroundings and other categories of images. The editors need the flexibility to adjust which images and which categories of images they display, based on the season and marketing requirements.
 To fulfill these requirements you are going to build a gallery widget that displays images from a smart folder of editor’s choice.
 In your client’s system you have already created a _Gallery image_ content type. It contains an **Asset** to hold the image to display, and a **Category** of the image defined by a Taxonomy.
-[![Gallery image content item in the Xperience administration](docsassets/guides/deliver-content-dynamically-with-smart-folders/gallery-image-content-type.png)](https://docs.kentico.com/docsassets/guides/deliver-content-dynamically-with-smart-folders/gallery-image-content-type.png)
+[![Gallery image content item in the Xperience administration](/docsassets/guides/deliver-content-dynamically-with-smart-folders/gallery-image-content-type.png)](/docsassets/guides/deliver-content-dynamically-with-smart-folders/gallery-image-content-type.png)
 The editors will organize _Gallery image_ content items into smart folders based on **Category** field.
 Smart folders enable content editors to save complex content views for dynamic delivery across channels.
 In this example, a smart folder will automatically update the Gallery widget on your client’s website, ensuring the desired images replace previous ones **without manual intervention**. This is what makes the smart folders such a powerful tool that’s worth considering in your solution’s content modeling.
-[![Smart folder example in the Xperience administration](docsassets/guides/deliver-content-dynamically-with-smart-folders/smart-folders.png)](https://docs.kentico.com/docsassets/guides/deliver-content-dynamically-with-smart-folders/smart-folders.png)
+[![Smart folder example in the Xperience administration](/docsassets/guides/deliver-content-dynamically-with-smart-folders/smart-folders.png)](/docsassets/guides/deliver-content-dynamically-with-smart-folders/smart-folders.png)
 Your job is to implement the widget that lets the editors select a specific smart folder and retrieve and display the appropriate _Gallery image_ content items.
 Additionally, the client wants the option to decide how many content items to display and sort them by newest or oldest first.
 The examples here assume your system already includes several **Gallery image** content items organized into smart folders based on the **Category**.
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of our Training guides repository has all this data prepared. To follow along, we recommend starting there, or you can set up your own content type and data in your system similarly.
 ## Retrieve content from smart folder
 Let’s start with implementing smart folder content retrieval in your project.
-You can [retrieve items from a smart folder](documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders) using [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api) and its `RetrieveContent` extension method with `InSmartFolder` parametrization.
+You can [retrieve items from a smart folder](/documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders) using [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) and its `RetrieveContent` extension method with `InSmartFolder` parametrization.
 In the `ContentItemRetrieverService` (located in _TrainingGuides.Web/Features/Shared/Services/_), create a generic `RetrieveReusableContentItemsFromSmartFolder` method that utilizes this method and retrieves data from a smart folder identified by its `Guid`. Let’s also add other parameters to allow more data filtering and ordering - `orderBy`, `topN` and `depth`, and an optional parameter to specify language of the content.
-Remember that to be able to retrieve content from a smart folder, the folder has to have [_Dynamic content delivery_ enabled](documentation/business-users/content-hub/content-hub-folders#enable-content-delivery-for-smart-folders).
+Remember that to be able to retrieve content from a smart folder, the folder has to have [_Dynamic content delivery_ enabled](/documentation/business-users/content-hub/content-hub-folders#enable-content-delivery-for-smart-folders).
 C#
 **IContentItemRetrieverService.cs**
 Copy
@@ -117,7 +123,7 @@ public class ContentItemRetrieverService : IContentItemRetrieverService
 Now let’s implement the _Gallery widget_. If you’re working in the Training guides repository, create a _Features/Gallery/Widgets/GalleryWidget_ folder in the _TrainingGuides.Web_ project for all the widget files.
 ### Widget properties
 Define gallery widget properties in a `GalleryWidgetProperties` class. In this example, we allow editors to specify the smart folder, gallery title, number of images to display and a choice to order items by newest or by oldest first.
-To let the editor select a smart folder, use the [SmartFolderSelectorComponent](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#smart-folder-selector).
+To let the editor select a smart folder, use the [SmartFolderSelectorComponent](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#smart-folder-selector).
 Allow only items of type `GalleryImage` by implementing a new custom class `GalleryImageContentTypeFilter` that implements the `IContentTypesNameFilter` and assigning it in the `AllowedContentTypeIdentifiersFilter` option.
 Smart folders can include items of multiple content types. Specifying the `AllowedContentTypeIdentifiersFilter` ensures that only the content types you define in the custom class will load from the specified smart folder.
 C#
@@ -165,7 +171,7 @@ public class GalleryImageContentTypeFilter : IContentTypesNameFilter
 }
 ```
 
-Add `OrderByOption` enumeration. We are utilizing the `DropdownEnumOptionProvider` to map the enumeration to a dropdown. See details in our [guide series about Page Builder](guides/development/page-builder/map-enum-to-dropdown).
+Add `OrderByOption` enumeration. We are utilizing the `DropdownEnumOptionProvider` to map the enumeration to a dropdown. See details in our [guide series about Page Builder](/guides/development/page-builder/map-enum-to-dropdown).
 C#
 **TrainingGuides.Web/Features/Shared/OptionProviders/OrderBy /OrderByOption.cs**
 Copy
@@ -352,5 +358,7 @@ Build and run your application. You should now be able to add and configure the 
 Your browser does not support the video tag. 
 Play around with selecting different smart folders or changing the filter criteria in the existing ones and observe how the displayed website content dynamically changes.
 ## What’s next?
-Using smart folders to dynamically display content in a widget is only one example of possibilities the smart folders open for editors. [Our content modeling guide](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations) explores another use case - utilizing smart folders to model navigation.
-Feel free to explore our [Content hub documentation](documentation/business-users/content-hub/content-hub-folders#smart-folders) to learn more about smart folders from the editor’s perspective. You can also read about the [smart folders and Content hub folders](documentation/developers-and-admins/configuration/content-hub-configuration#enable-content-hub-folders) from the configuration point of view.
+Using smart folders to dynamically display content in a widget is only one example of possibilities the smart folders open for editors. [Our content modeling guide](/guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations) explores another use case - utilizing smart folders to model navigation.
+Feel free to explore our [Content hub documentation](/documentation/business-users/content-hub/content-hub-folders#smart-folders) to learn more about smart folders from the editor’s perspective. You can also read about the [smart folders and Content hub folders](/documentation/developers-and-admins/configuration/content-hub-configuration#enable-content-hub-folders) from the configuration point of view.
+![]()
+[]()[]()

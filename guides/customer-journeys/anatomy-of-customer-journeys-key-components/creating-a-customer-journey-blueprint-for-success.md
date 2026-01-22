@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Anatomy of customer journeys - Key components](/guides/customer-journeys/anatomy-of-customer-journeys-key-components)
+  * Creating a customer journey - blueprint for success 
+
+
 # Creating a customer journey - blueprint for success
-  * [ Copy page link ](guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success#) | [Get HelpService ID](guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success# "Close page link panel") [Copy to clipboard](guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -39,4 +45,6 @@ A customer journey map turns **insights into action**. It gives teams a clear vi
 Seeing data in one place makes it easier for teams to **spot patterns, understand customer behavior, and make informed decisions**.
 When everyone works from the **same source of truth** – whether it’s a table of key actions or a visual map of the journey – it reduces confusion and keeps goals aligned. This approach made it easier for teams to collaborate across departments, track progress over time, and adjust strategies quickly based on real customer needs.
 ## Next steps
-Now that we’ve established the **core stages of a customer journey** using our own example, let’s take it one step further by analyzing how the individual _stages_ correlate with [**specific touchpoints and customer segments**.](guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision)
+Now that we’ve established the **core stages of a customer journey** using our own example, let’s take it one step further by analyzing how the individual _stages_ correlate with [**specific touchpoints and customer segments**.](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/stages-touchpoints-guiding-customers-decision)
+![]()
+[]()[]()

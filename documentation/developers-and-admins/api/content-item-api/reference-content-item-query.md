@@ -1,13 +1,20 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/reference-content-item-query
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * [Content API](/documentation/developers-and-admins/api/content-item-api)
+  * Reference - Content item query 
+
+
 # Reference - Content item query
-  * [ Copy page link ](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#) | [Get HelpService ID](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/content-item-api/reference-content-item-query# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#)
-This page provides information about the parameterization methods available for the [Content item API](documentation/developers-and-admins/api/content-item-api/content-item-query-api). The methods allow you to adjust queries and limit which items are retrieved or specify which columns are loaded to improve performance, for example.
+This page provides information about the parameterization methods available for the [Content item API](/documentation/developers-and-admins/api/content-item-api/content-item-query-api). The methods allow you to adjust queries and limit which items are retrieved or specify which columns are loaded to improve performance, for example.
 ## ContentItemQueryBuilder methods
 ### ForContentType 
-Retrieves all items of the specified content type. Generates a subquery that can be further configured. See [Content query parameterization](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#content-query-parameterization) and [ForContentType parameterization](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#forcontenttype-parameterization).
+Retrieves all items of the specified content type. Generates a subquery that can be further configured. See [Content query parameterization](#content-query-parameterization) and [ForContentType parameterization](#forcontenttype-parameterization).
 C#
 Copy
 ```
@@ -18,8 +25,8 @@ builder.ForContentType("Sample.Type");
 ```
 
 ### ForContentTypes 
-Retrieves all content items across all content types. Use the method’s [inner parameterization](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#forcontenttypes-parameterization) to limit the selection to a subset of items.
-Does not include content type field data and web page data by default. Use [WithContentTypeFields](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCTs-WCTF) or [WithWebPageData](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCTs-WWPD) to include it.
+Retrieves all content items across all content types. Use the method’s [inner parameterization](#forcontenttypes-parameterization) to limit the selection to a subset of items.
+Does not include content type field data and web page data by default. Use [WithContentTypeFields](#FCTs-WCTF) or [WithWebPageData](#FCTs-WWPD) to include it.
 C#
 Copy
 ```
@@ -33,7 +40,7 @@ builder.ForContentTypes(parameters =>
 ```
 
 ### Parameters 
-Specifies a set of parameters that apply to all items selected by individual subqueries. See [Content query parameterization](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#content-query-parameterization).
+Specifies a set of parameters that apply to all items selected by individual subqueries. See [Content query parameterization](#content-query-parameterization).
 C#
 Copy
 ```
@@ -74,9 +81,9 @@ builder.ForContentType("project.store", subqueryParameters =>
 ```
 
 You can see the order in which the query methods are evaluated in the following diagram:
-[![InLanguage method used on ForContentType query with linked items](docsassets/documentation/reference-content-item-query/InLanguageWithLinkedItems.png)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/InLanguageWithLinkedItems.png)
+[![InLanguage method used on ForContentType query with linked items](/docsassets/documentation/reference-content-item-query/InLanguageWithLinkedItems.png)](/docsassets/documentation/reference-content-item-query/InLanguageWithLinkedItems.png)
 ### InWorkspaces
-Selects items from the specified [workspaces](documentation/developers-and-admins/configuration/users/role-management/workspaces). Use workspace code names as specified in the **Workspaces** application. The `InLanguage` method is applied to the result of all its preceding subqueries in a query.
+Selects items from the specified [workspaces](/documentation/developers-and-admins/configuration/users/role-management/workspaces). Use workspace code names as specified in the **Workspaces** application. The `InLanguage` method is applied to the result of all its preceding subqueries in a query.
 C#
 Copy
 ```
@@ -88,7 +95,7 @@ builder.ForContentType("Sample.Type")
        .InWorkspaces("WonkaFactory", "Acme");
 ```
 
-Website channel pages are not scoped under workspaces. Combining this method with [ForWebsite](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-ForWebsite) in a single query leads to an empty query result.
+Website channel pages are not scoped under workspaces. Combining this method with [ForWebsite](#ReferenceContentitemquery-ForWebsite) in a single query leads to an empty query result.
 More advanced scenario including linked items:
 C#
 Copy
@@ -105,10 +112,10 @@ builder.ForContentType("project.store", subqueryParameters =>
 ```
 
 You can see the order in which the query methods are evaluated in the following diagram:
-[![InWorkspaces method used on ForContentType query with linked items](docsassets/documentation/reference-content-item-query/InWorkspacesWithLinkedItems.png)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/InWorkspacesWithLinkedItems.png)
+[![InWorkspaces method used on ForContentType query with linked items](/docsassets/documentation/reference-content-item-query/InWorkspacesWithLinkedItems.png)](/docsassets/documentation/reference-content-item-query/InWorkspacesWithLinkedItems.png)
 ## Content query parameterization
 ### Columns
-Limits the columns that are retrieved by the query. See [Content item database structure](documentation/developers-and-admins/api/content-item-api/content-item-database-structure).
+Limits the columns that are retrieved by the query. See [Content item database structure](/documentation/developers-and-admins/api/content-item-api/content-item-database-structure).
 If not specified, the query by default includes all columns from all selected content types.
 C#
 Copy
@@ -142,8 +149,8 @@ ForContentType("Sample.Type2", subqueryParameters =>
 ```
 
 #### UrlPathColumns
-A specialized extension method that adds only the columns required for [web page URL retrieval](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls). This method helps optimize performance when you need only URL-related data.
-When used with [ForContentType](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#forcontenttype-parameterization), call the method inside the subquery parameterization action:
+A specialized extension method that adds only the columns required for [web page URL retrieval](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls). This method helps optimize performance when you need only URL-related data.
+When used with [ForContentType](#forcontenttype-parameterization), call the method inside the subquery parameterization action:
 C#
 **UrlPathColumns usage**
 Copy
@@ -161,7 +168,7 @@ builder.ForContentType("Sample.Page", subqueryParameters =>
 
 ```
 
-When used with [ForContentTypes](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#forcontenttypes-parameterization), call the method on the global `Parameters` object:
+When used with [ForContentTypes](#forcontenttypes-parameterization), call the method on the global `Parameters` object:
 C#
 **UrlPathColumns usage**
 Copy
@@ -201,7 +208,7 @@ builder.ForContentType("Sample.Page", subqueryParameters =>
 
 ### Offset
 Offsets the records by the specified `index` (zero-based) and takes the next `X` items specified by `fetch`.
-Must be used together with [OrderBy](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-OrderByParam), otherwise the pagination is not applied (as the system cannot guarantee a deterministic ordering of the returned results).
+Must be used together with [OrderBy](#ReferenceContentitemquery-OrderByParam), otherwise the pagination is not applied (as the system cannot guarantee a deterministic ordering of the returned results).
 C#
 Copy
 ```
@@ -320,7 +327,7 @@ builder.ForContentType("Sample.Type", subqueryParameters =>
 
 The set of available `Where`extensions matches the expressivity of the SQL WHERE syntax. This page provides examples of only a few of the available methods.
 ### WhereContainsTags
-Limits the query to content items that contain the [specified tags](documentation/developers-and-admins/configuration/taxonomies).
+Limits the query to content items that contain the [specified tags](/documentation/developers-and-admins/configuration/taxonomies).
 C#
 **WhereContainsTags**
 Copy
@@ -359,7 +366,7 @@ var builder = new ContentItemQueryBuilder()
 ## ForContentType parameterization
 Methods described in this section can only be called from within subqueries generated by a `ContentItemBuilder.ForContentType` call. 
 ### ForWebsite 
-Configures the query to [retrieve pages](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) from a specified [website channel](documentation/developers-and-admins/configuration/website-channel-management). Specify the following parameters:
+Configures the query to [retrieve pages](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) from a specified [website channel](/documentation/developers-and-admins/configuration/website-channel-management). Specify the following parameters:
   * `websiteChannelName` – code name of the website channel from which the pages are retrieved.
   * `pathMatch` – a parameter of type `PathMatch` used to limit the retrieved pages only to a certain section of the website’s content tree.
   * `includeUrlPath` – indicates if the URL path should be included in the retrieved data.
@@ -381,9 +388,9 @@ builder.ForContentType("Sample.Type", subqueryParameters =>
 });
 ```
 
-See [Retrieve page content](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) for more information.
+See [Retrieve page content](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content) for more information.
 ### WithLinkedItems 
-Configures query to include [linked content items](documentation/business-users/content-hub/content-items#link-content-items) recursively up to the specified depth.
+Configures query to include [linked content items](/documentation/business-users/content-hub/content-items#link-content-items) recursively up to the specified depth.
 C#
 **WithLinkedItems**
 Copy
@@ -413,7 +420,7 @@ builder.ForContentType("Sample.Type", subqueryParameters =>
 });
 ```
 
-To see how the query result is bound to a model class, check out [WithLinkedItems mapping](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-WithLinkedItemsMap).
+To see how the query result is bound to a model class, check out [WithLinkedItems mapping](#ReferenceContentitemquery-WithLinkedItemsMap).
 ### Linking 
 Retrieves all content items of the type specified in `ForContentType` that reference any of the content items from the provided collection in the given field. Enables loading data on-demand (lazily).
 C#
@@ -431,7 +438,7 @@ builder.ForContentType("project.staff", subqueryParameters =>
 });
 ```
 
-For more information see [Linking details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-Linking).
+For more information see [Linking details](#ReferenceContentitemquery-Linking).
 ### LinkedFrom 
 Retrieves content items of the type specified in `ForContentType` that are linked from the given field of items in the provided collection with the given content type. Enables loading data on-demand (lazily).
 C#
@@ -449,9 +456,9 @@ builder.ForContentType("project.staff", subqueryParameters =>
 });
 ```
 
-For more information see [LinkedFrom details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-LinkedFrom).
+For more information see [LinkedFrom details](#ReferenceContentitemquery-LinkedFrom).
 ### LinkedFromSchemaField
-Retrieves all content items of the type specified in `ForContentType` that are linked from a collection of items via a [reusable schema field](documentation/developers-and-admins/development/content-types/reusable-field-schemas).
+Retrieves all content items of the type specified in `ForContentType` that are linked from a collection of items via a [reusable schema field](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
 C#
 **LinkedFromSchemaField usage example**
 Copy
@@ -464,11 +471,11 @@ builder.ForContentType("Sample.Type", subqueryParameters =>
 });
 ```
 
-For more information see [LinkedFromSchemaField details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkedFromSchemaField).
+For more information see [LinkedFromSchemaField details](#FCT-LinkedFromSchemaField).
 ### SetUrlLanguageBehavior
-Defines the behavior for the language slug of URL paths when web pages are retrieved in a fallback language. This method is relevant when requesting multilingual content ([InLanguage](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#inlanguage)) and [retrieving page URL](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) information (e.g., through methods like [GetUrl()](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls), often with [ForWebsite](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-ForWebsite) or [WithWebPageData](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCTs-WWPD)).
+Defines the behavior for the language slug of URL paths when web pages are retrieved in a fallback language. This method is relevant when requesting multilingual content ([InLanguage](#inlanguage)) and [retrieving page URL](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) information (e.g., through methods like [GetUrl()](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls), often with [ForWebsite](#ReferenceContentitemquery-ForWebsite) or [WithWebPageData](#FCTs-WWPD)).
 It accepts a `UrlLanguageBehavior` enum value:
-  * `UrlLanguageBehavior.UseRequestedLanguage` – When a page is served in a [fallback language](documentation/developers-and-admins/configuration/languages#language-fallbacks), its URL path is generated based on the language originally requested by the `InLanguage` method. For instance, if Spanish is requested and an English page is returned as a fallback, the URL path will still be structured as if it were a Spanish page (e.g., using URL prefixes as configured in the [Languages](documentation/developers-and-admins/configuration/languages#set-up-a-new-language) application).
+  * `UrlLanguageBehavior.UseRequestedLanguage` – When a page is served in a [fallback language](/documentation/developers-and-admins/configuration/languages#language-fallbacks), its URL path is generated based on the language originally requested by the `InLanguage` method. For instance, if Spanish is requested and an English page is returned as a fallback, the URL path will still be structured as if it were a Spanish page (e.g., using URL prefixes as configured in the [Languages](/documentation/developers-and-admins/configuration/languages#set-up-a-new-language) application).
   * `UrlLanguageBehavior.UseFallbackLanguage` (Default) – When a page is served in a fallback language, its URL path is generated based on the language of the actual fallback content. In the example below, the URL path would be structured as an English page.
 
 
@@ -522,7 +529,7 @@ builder.ForContentTypes(parameters =>
 ```
 
 ### OfReusableSchema
-Selects items with the specified [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas).
+Selects items with the specified [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
 C#
 **Retrieve based on reusable field schema**
 Copy
@@ -540,7 +547,7 @@ builder.ForContentTypes(parameters =>
 Provides multiple overloads that can:
   * select all pages in the system
   * select pages based on their ID, GUID, or code names
-  * select pages from specific [website channels](documentation/developers-and-admins/configuration/website-channel-management) and paths
+  * select pages from specific [website channels](/documentation/developers-and-admins/configuration/website-channel-management) and paths
 
 
 C#
@@ -569,9 +576,9 @@ builder.ForContentTypes(parameters =>
 ```
 
 Each overload also provides the optional `includeUrlPath` path parameter. `true` by default, it indicates whether web page URL data should be included in the query.
-If you want to retrieve pages and reusable content items in a single query, see the [WithWebPageData](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCTs-WWPD) method.
+If you want to retrieve pages and reusable content items in a single query, see the [WithWebPageData](#FCTs-WWPD) method.
 ### WithContentTypeFields 
-By default, the result returned by `ForContentTypes` contains content item metadata (_CMS_ContentItem_ table [Content item database structure](documentation/developers-and-admins/api/content-item-api/content-item-database-structure#content-items)) and [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) data. `WithContentTypeFields` also adds [content type-specific fields](documentation/developers-and-admins/development/content-types#add-fields) to the result.
+By default, the result returned by `ForContentTypes` contains content item metadata (_CMS_ContentItem_ table [Content item database structure](/documentation/developers-and-admins/api/content-item-api/content-item-database-structure#content-items)) and [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) data. `WithContentTypeFields` also adds [content type-specific fields](/documentation/developers-and-admins/development/content-types#add-fields) to the result.
 C#
 **WithContentTypeFields example**
 Copy
@@ -588,7 +595,7 @@ builder.ForContentTypes(parameters =>
 ```
 
 ### WithWebPageData 
-By default, the result returned by `ForContentTypes` contains content item metadata (_CMS_ContentItem_ table [Content item database structure](documentation/developers-and-admins/api/content-item-api/content-item-database-structure#content-items)) and [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) data. `WithWebPageData` also adds website content-specific fields (such as URL and tree path) to the result.
+By default, the result returned by `ForContentTypes` contains content item metadata (_CMS_ContentItem_ table [Content item database structure](/documentation/developers-and-admins/api/content-item-api/content-item-database-structure#content-items)) and [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) data. `WithWebPageData` also adds website content-specific fields (such as URL and tree path) to the result.
 C#
 **WithWebPageData example**
 Copy
@@ -605,7 +612,7 @@ builder.ForContentTypes(parameters =>
 ```
 
 ### WithLinkedItems
-Configures query to include [linked content items](documentation/business-users/content-hub/content-items#link-content-items) recursively up to the specified depth. The parameterization behaves identically to its alternative in [ForContentType](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-WithLinkedItems).
+Configures query to include [linked content items](/documentation/business-users/content-hub/content-items#link-content-items) recursively up to the specified depth. The parameterization behaves identically to its alternative in [ForContentType](#ReferenceContentitemquery-WithLinkedItems).
 C#
 **WithLinkedItems usage**
 Copy
@@ -638,9 +645,9 @@ builder.ForContentTypes(subqueryParameters =>
 });
 ```
 
-To see how the query result is bound to a model class, check out [WithLinkedItems mapping](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-WithLinkedItemsMap).
+To see how the query result is bound to a model class, check out [WithLinkedItems mapping](#ReferenceContentitemquery-WithLinkedItemsMap).
 ### Linking
-The method behaves identically to [ForContentType.Linking](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-ForContentTypeLinking), with the following exceptions:
+The method behaves identically to [ForContentType.Linking](#ReferenceContentitemquery-ForContentTypeLinking), with the following exceptions:
   * You need to specify the name of the content type whose items you want to retrieve, in addition to the field used to link the items. This is necessary to prevent ambiguities in case the searched content types contain identical field names.
   * The usage is limited to one `Linking` call for each `ForContentTypes` subquery.
 
@@ -658,12 +665,12 @@ builder.ForContentTypes(subqueryParameters =>
 });
 ```
 
-For more information see [Linking details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-Linking).
+For more information see [Linking details](#ReferenceContentitemquery-Linking).
 ### LinkedFrom
-The behavior is identical to [ForContentType.LinkedFrom](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-ForContentTypeLinkedFrom), with the only difference being that you cannot chain multiple calls within a single subquery.
-For more information see [LinkedFrom details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-LinkedFrom).
+The behavior is identical to [ForContentType.LinkedFrom](#ReferenceContentitemquery-ForContentTypeLinkedFrom), with the only difference being that you cannot chain multiple calls within a single subquery.
+For more information see [LinkedFrom details](#ReferenceContentitemquery-LinkedFrom).
 ### LinkingSchemaField
-Retrieves all content items that link to a collection of items via the specified [reusable schema field](documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkedFromSchemaField](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkedFromSchemaField) complements this method by retrieving links from the opposite direction.
+Retrieves all content items that link to a collection of items via the specified [reusable schema field](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkedFromSchemaField](#FCT-LinkedFromSchemaField) complements this method by retrieving links from the opposite direction.
 C#
 **LinkingSchemaField method usage**
 Copy
@@ -676,9 +683,9 @@ var builder = new ContentItemQueryBuilder().ForContentTypes(q =>
 });
 ```
 
-For more information see [LinkingSchemaField details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkingSchemaField).
+For more information see [LinkingSchemaField details](#FCT-LinkingSchemaField).
 ### LinkedFromSchemaField
-Retrieves all content items that are linked from a collection of items via a [reusable schema field](documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkingSchemaField](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkingSchemaField) complements this method by retrieving links from the opposite direction.
+Retrieves all content items that are linked from a collection of items via a [reusable schema field](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkingSchemaField](#FCT-LinkingSchemaField) complements this method by retrieving links from the opposite direction.
 C#
 **LinkedFromSchemaField method usage**
 Copy
@@ -689,10 +696,10 @@ var builder = new ContentItemQueryBuilder().ForContentTypes(q =>
 });
 ```
 
-For more information see [LinkedFromSchemaField details](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkedFromSchemaField).
+For more information see [LinkedFromSchemaField details](#FCT-LinkedFromSchemaField).
 ### InSmartFolder
-Retrieves content items that fulfill the filter conditions of the specified [smart folder](documentation/business-users/content-hub/content-hub-folders#smart-folders). This allows content editors to control which items are retrieved directly in the _Content hub_ UI, without needing to adjust the code.
-The smart folder can be specified by its ID, GUID, or code name. You can get the smart folder GUID from a field using the [Smart folder selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#smart-folder-selector) UI form component. You can also find the identifiers of smart folders in the _Content hub_ application – expand the menu actions of a folder and select _Properties_.
+Retrieves content items that fulfill the filter conditions of the specified [smart folder](/documentation/business-users/content-hub/content-hub-folders#smart-folders). This allows content editors to control which items are retrieved directly in the _Content hub_ UI, without needing to adjust the code.
+The smart folder can be specified by its ID, GUID, or code name. You can get the smart folder GUID from a field using the [Smart folder selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#smart-folder-selector) UI form component. You can also find the identifiers of smart folders in the _Content hub_ application – expand the menu actions of a folder and select _Properties_.
 C#
 **InSmartFolder method usage**
 Copy
@@ -730,9 +737,9 @@ builder.ForContentTypes(parameters =>
 ```
 
 ### SetUrlLanguageBehavior
-Defines the behavior for the language of URL paths when web pages are retrieved in a fallback language. This method is particularly relevant when using [InLanguage](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#inlanguage) and retrieving page URL information (e.g., through methods like [GetUrl()](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) after ensuring necessary columns are loaded, often with [ForWebsite](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-ForWebsite) or [WithWebPageData](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCTs-WWPD)).
+Defines the behavior for the language of URL paths when web pages are retrieved in a fallback language. This method is particularly relevant when using [InLanguage](#inlanguage) and retrieving page URL information (e.g., through methods like [GetUrl()](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) after ensuring necessary columns are loaded, often with [ForWebsite](#ReferenceContentitemquery-ForWebsite) or [WithWebPageData](#FCTs-WWPD)).
 It accepts a `UrlLanguageBehavior` enum value:
-  * `UrlLanguageBehavior.UseRequestedLanguage` – When a page is served in a [fallback language](documentation/developers-and-admins/configuration/languages#language-fallbacks), its URL path is generated based on the language originally requested by the `InLanguage` method. For instance, if Spanish is requested and an English page is returned as a fallback, the URL path will still be structured as if it were a Spanish page (e.g., using URL prefixes as configured in the [Languages](documentation/developers-and-admins/configuration/languages#set-up-a-new-language) application).
+  * `UrlLanguageBehavior.UseRequestedLanguage` – When a page is served in a [fallback language](/documentation/developers-and-admins/configuration/languages#language-fallbacks), its URL path is generated based on the language originally requested by the `InLanguage` method. For instance, if Spanish is requested and an English page is returned as a fallback, the URL path will still be structured as if it were a Spanish page (e.g., using URL prefixes as configured in the [Languages](/documentation/developers-and-admins/configuration/languages#set-up-a-new-language) application).
   * `UrlLanguageBehavior.UseFallbackLanguage` (Default) – When a page is served in a fallback language, its URL path is generated based on the language of the actual fallback content. In the example below, the URL path would be structured as an English page.
 
 
@@ -769,7 +776,7 @@ foreach (var page in pages)
 ```
 
 ### Where conditions
-Where parameterization can be added to `ForContentTypes` queries using [Parameters](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#Builder-Parameters).
+Where parameterization can be added to `ForContentTypes` queries using [Parameters](#Builder-Parameters).
 C#
 **Adding Where conditions**
 Copy
@@ -826,8 +833,8 @@ private ContentItemDto resultSelector(IContentQueryDataContainer itemData)
 ### Linking 
 Retrieves all content items which reference any of the content items from the provided collection in the specified field. Enables loading data on-demand (lazily).
 The following diagram illustrates the behavior on a simple content model:
-[![Linking usage visualization](docsassets/documentation/reference-content-item-query/LinkingBasic.jpg)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkingBasic.jpg)
-Combining this method with [LinkedFrom](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-LinkedFrom) in a single subquery is not supported.
+[![Linking usage visualization](/docsassets/documentation/reference-content-item-query/LinkingBasic.jpg)](/docsassets/documentation/reference-content-item-query/LinkingBasic.jpg)
+Combining this method with [LinkedFrom](#ReferenceContentitemquery-LinkedFrom) in a single subquery is not supported.
 The method can also be used together with `WithLinkedItems`. For example:
 C#
 **Linking and WithLinkedItems**
@@ -846,9 +853,9 @@ builder.ForContentType("project.staff", subqueryParameters =>
 });
 ```
 
-[![Linking usage visualization](docsassets/documentation/reference-content-item-query/LinkingCombined.jpg)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkingCombined.jpg)
+[![Linking usage visualization](/docsassets/documentation/reference-content-item-query/LinkingCombined.jpg)](/docsassets/documentation/reference-content-item-query/LinkingCombined.jpg)
 The collection of items for which to retrieve references must implement the `IContentItemIdentifier` interface. The interface ensures fields required by each data model that wants to leverage this method. The fields must be bound to the model during model binding within `ContentQueryExecutor.GetResult`.
-[Generated content type classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) already implement `IContentItemIdentifier` via the `SystemFields` property. The following approach applies for custom model classes.
+[Generated content type classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) already implement `IContentItemIdentifier` via the `SystemFields` property. The following approach applies for custom model classes.
 C#
 **IContentItemIdentifier fields in custom model classes**
 Copy
@@ -881,8 +888,8 @@ class ManagerDto : IContentItemIdentifier
 ### LinkedFrom 
 Retrieves content items of a specific type linked from the given field in the provided collection. Enables loading data on-demand (lazily).
 The following diagram illustrates the behavior on a simple content model. Red arrows trace query evaluation:
-[![LinkedFrom usage visualization](docsassets/documentation/reference-content-item-query/LinkedFromBasic.jpg)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkedFromBasic.jpg)
-Combining this method with [Linking](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#ReferenceContentitemquery-Linking) in a single subquery is not supported.
+[![LinkedFrom usage visualization](/docsassets/documentation/reference-content-item-query/LinkedFromBasic.jpg)](/docsassets/documentation/reference-content-item-query/LinkedFromBasic.jpg)
+Combining this method with [Linking](#ReferenceContentitemquery-Linking) in a single subquery is not supported.
 The method can also be used together with `WithLinkedItems`. For example:
 C#
 **Linked from and WithLinkedItems**
@@ -900,9 +907,9 @@ builder.ForContentType("project.staff", subqueryParameters =>
 });
 ```
 
-[![LinkedFrom usage visualization](docsassets/documentation/reference-content-item-query/LinkedFromCombined.jpg)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkedFromCombined.jpg)
+[![LinkedFrom usage visualization](/docsassets/documentation/reference-content-item-query/LinkedFromCombined.jpg)](/docsassets/documentation/reference-content-item-query/LinkedFromCombined.jpg)
 The collection of items for which to retrieve references must implement the `IContentItemIdentifier` interface. The interface ensures fields required by each data model that wants to leverage this method. The fields must be bound to the model during model binding within `ContentQueryExecutor.GetResult`.
-[Generated content type classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default implement `IContentItemIdentifier` via the `SystemFields` property. The following approach applies for custom model classes.
+[Generated content type classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default implement `IContentItemIdentifier` via the `SystemFields` property. The following approach applies for custom model classes.
 C#
 **IContentItemIdentifier fields in custom model classes**
 Copy
@@ -935,29 +942,31 @@ class StoreDto : IContentItemIdentifier
 
 ### LinkingSchemaField 
 This method can only be called from within subqueries generated by a `ContentItemBuilder.ForContentTypes` call.
-Retrieves all content items that link to a collection of items via the specified [reusable schema field](documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkedFromSchemaField](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkedFromSchemaField) complements this method by retrieving links from the opposite direction.
+Retrieves all content items that link to a collection of items via the specified [reusable schema field](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkedFromSchemaField](#FCT-LinkedFromSchemaField) complements this method by retrieving links from the opposite direction.
 See the following diagram for an illustration of the method’s behavior on a simplified content model. The query retrieves all content items that link to the images from `imageIdentifiers` via the _ProductImage_ reusable schema field. Red arrows trace the query evaluation:
-[![LinkinkSchemaField method demonstration](docsassets/documentation/reference-content-item-query/LinkingSchemaFields.png)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkingSchemaFields.png)
+[![LinkinkSchemaField method demonstration](/docsassets/documentation/reference-content-item-query/LinkingSchemaFields.png)](/docsassets/documentation/reference-content-item-query/LinkingSchemaFields.png)
 In the diagram above, the method is called with the following parameters:
   * `"ProductImage"` – the code name of a field that belongs to a reusable field schema. Reusable schema field code names must be unique across the system, it’s therefore sufficient to target fields directly.
   * `imageIdentifiers` – IDs of content items with the _Image_ content type.
 
 
 ### LinkedFromSchemaField 
-Retrieves all content items that are linked from a collection of items via a [reusable schema field](documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkingSchemaField](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#FCT-LinkingSchemaField) complements this method by retrieving links from the opposite direction.
+Retrieves all content items that are linked from a collection of items via a [reusable schema field](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). [LinkingSchemaField](#FCT-LinkingSchemaField) complements this method by retrieving links from the opposite direction.
 See the following diagram for an illustration of the method’s behavior on a simplified content model. The query retrieves all _Image_ content items that are linked from `productIdentifiers` via the _ProductImage_ reusable schema field. Red arrows trace the query evaluation:
-[![LinkedFromSchemaField method demonstration](docsassets/documentation/reference-content-item-query/LinkedFromSchemaFields.png)](https://docs.kentico.com/docsassets/documentation/reference-content-item-query/LinkedFromSchemaFields.png)
+[![LinkedFromSchemaField method demonstration](/docsassets/documentation/reference-content-item-query/LinkedFromSchemaFields.png)](/docsassets/documentation/reference-content-item-query/LinkedFromSchemaFields.png)
 In the diagram above, the method is called with the following parameters:
   * `"ProductImage"` – the code name of a field that belongs to a reusable field schema. Reusable schema field code names are unique and can be targeted directly without specifying the corresponding schema.
   * `productIdentifiers` – a collection of content items from content types using the _ProductFields_ reusable field schema.
 
 
 The collection of items for which to retrieve references must implement the `IContentItemIdentifier` interface. The interface ensures fields required by each data model that wants to leverage this method.
-[Generated content type classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default implement `IContentItemIdentifier` via the `SystemFields` property.
+[Generated content type classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default implement `IContentItemIdentifier` via the `SystemFields` property.
 ## IContentQueryExecutor configuration
 Apart from configuring the query itself, you can also fine tune its execution. You can do so by setting the properties of the `ContentQueryExecutionOptions` attribute and providing it to the `IContentQueryExecutor` interface.
 Property |  Description  
 ---|---  
 `ForPreview` |  If set to _true_ , the query executor retrieves the queried items in their latest available version, regardless of their workflow state. Otherwise, the latest published version is retrieved. Default value: _false_.  
 `IncludeSecuredItems` |  If set to _true_ , the query executor retrieves all items according to the query, including secured items. Otherwise, only items that are not secured are included in the query. Default value: _false_.  
-To see how the configuration affects the data retrieval, check out the examples at [Retrieve page content](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content).
+To see how the configuration affects the data retrieval, check out the examples at [Retrieve page content](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content).
+![]()
+[]()[]()

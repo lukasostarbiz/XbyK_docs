@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/gather-analytics-data.for-customer-journey
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+13 of 17 Pages
 # Gather website and app analytics data
-  * [ Copy page link ](modules/customer-journeys/gather-analytics-data.for-customer-journey#) | [Get HelpService ID](modules/customer-journeys/gather-analytics-data.for-customer-journey#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/gather-analytics-data.for-customer-journey# "Close page link panel") [Copy to clipboard](modules/customer-journeys/gather-analytics-data.for-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -42,13 +44,13 @@ Here are the key behavior flow indicators and how they help inform your journey 
 Conversion tracking shows how effectively your website or app moves users toward meaningful actions such as becoming a lead, making a purchase, or engaging with content. These conversion points will be represented by the stages of the customer journey. Analyzing them helps you understand where your touchpoints are working well and where improvements are needed.
 Tracking conversions provides a clearer picture of how users interact with your site beyond just page views. When mapped against other customer behavior, these metrics help identify which stages of the customer journey successfully drive action and in which stages customers hesitate or even drop-off.
 Before your start building customer journeys, collect data for the following conversion-related metrics:
-  * **Sign-ups and form submissions** – Forms include [newsletter sign-ups](documentation/developers-and-admins/development/builders/email-builder), demo requests or booking calls through [forms](documentation/developers-and-admins/development/builders/form-builder), [account creation](documentation/business-users/members), or [lead capture](guides/digital-marketing/work-with-contacts). These are important indicators of user interest and intent. _Low submission rates_ may point to friction – such as forms being too long, asking for unnecessary information, or lacking a compelling reason to convert. _High abandonment_ can also signal trust issues, especially if you request personal data and don’t provide sufficient context or reassurance.
+  * **Sign-ups and form submissions** – Forms include [newsletter sign-ups](/documentation/developers-and-admins/development/builders/email-builder), demo requests or booking calls through [forms](/documentation/developers-and-admins/development/builders/form-builder), [account creation](/documentation/business-users/members), or [lead capture](/guides/digital-marketing/work-with-contacts). These are important indicators of user interest and intent. _Low submission rates_ may point to friction – such as forms being too long, asking for unnecessary information, or lacking a compelling reason to convert. _High abandonment_ can also signal trust issues, especially if you request personal data and don’t provide sufficient context or reassurance.
   * **Call-to-action (CTA) performance** – CTAs guide users toward a desired action, such as _Download now_ , _Book a demo_ , or _Start free trial_. Tracking CTA clicks and conversion rates help determine whether users are compelled to act. Low-performing CTAs may suffer from vague wording, poor placement, or visual design that fails to attract attention.
   * **Goal completions** – Custom goals (e.g., watching a video or downloading a guide) help assess whether users progress through the intended journey.
-  * **Commerce transactions** – If you can enrich data in Xperience by Kentico with data about customer transactions, their purchases, cart additions, and checkout completions from [integrations with Kentico 13](https://github.com/Kentico/xperience-by-kentico-k13ecommerce) or [third-party commerce solution](https://github.com/Kentico/xperience-by-kentico-shopify), for example, using [Xperience API](api/digital-marketing/contacts) from your CRM, customer journeys will help you streamline the checkout process, provide multiple payment options, and include reassurance elements to build trust.
+  * **Commerce transactions** – If you can enrich data in Xperience by Kentico with data about customer transactions, their purchases, cart additions, and checkout completions from [integrations with Kentico 13](https://github.com/Kentico/xperience-by-kentico-k13ecommerce) or [third-party commerce solution](https://github.com/Kentico/xperience-by-kentico-shopify), for example, using [Xperience API](/api/digital-marketing/contacts) from your CRM, customer journeys will help you streamline the checkout process, provide multiple payment options, and include reassurance elements to build trust.
 
 
-Xperience by Kentico includes [built-in contact activity tracking](documentation/business-users/digital-marketing/contact-activities) for common interactions such as page visits, form submissions, and email clicks. However, every business has its own unique set of customer interactions that may not be captured by default. If there are specific activities you want to track like product views, feature usage, or custom engagement you can use [custom activities](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities). Work with your development team to implement [automatic logging for these events](guides/development/activities-and-marketing/log-custom-activities), ensuring you capture the data most relevant to your customer journey.
+Xperience by Kentico includes [built-in contact activity tracking](/documentation/business-users/digital-marketing/contact-activities) for common interactions such as page visits, form submissions, and email clicks. However, every business has its own unique set of customer interactions that may not be captured by default. If there are specific activities you want to track like product views, feature usage, or custom engagement you can use [custom activities](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities). Work with your development team to implement [automatic logging for these events](/guides/development/activities-and-marketing/log-custom-activities), ensuring you capture the data most relevant to your customer journey.
 Conversion data viewed alongside behavior flow, traffic sources, and your audience will give your team a complete picture of how users move through the customer journey.
 It helps you understand:
   * Which actions users are willing to take.
@@ -57,16 +59,8 @@ It helps you understand:
 
 
 When you back these insights with data and tie them to specific stages in the customer journey, your team will immediately see quick wins that bring immediate conversions or what they need to optimize to improve engagement and business outcomes.
-[ Previous page ](modules/customer-journeys/prepare-to-build-customer-journey)
+[ Previous page ](/modules/customer-journeys/prepare-to-build-customer-journey)
 13 of 17
-[ Mark complete and continue ](modules/customer-journeys/identify-customer-segments-for-customer-journey)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/gather-analytics-data.for-customer-journey)
-[](https://docs.kentico.com/modules/customer-journeys/gather-analytics-data.for-customer-journey)[](https://docs.kentico.com/modules/customer-journeys/gather-analytics-data.for-customer-journey)
+[ Mark complete and continue ](/modules/customer-journeys/identify-customer-segments-for-customer-journey)
+![]()
+[]()[]()

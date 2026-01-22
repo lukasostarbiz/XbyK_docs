@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/optimize-images-during-upgrade
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Optimize images during your upgrade 
+
+
 # Optimize images during your upgrade
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/optimize-images-during-upgrade#) | [Get HelpService ID](guides/development/upgrade-deep-dives/optimize-images-during-upgrade#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/optimize-images-during-upgrade# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/optimize-images-during-upgrade#)
 Xperience by Kentico (XbyK) boasts powerful features for working with images.
-With [image variants](documentation/developers-and-admins/development/content-types#configure-image-variants), you can automatically generate cropped versions of image assets across the system at a specified size. [Automatic asset optimization](documentation/developers-and-admins/development/content-types#automatically-optimize-image-assets) allows you to define a format, quality, and maximum dimensions to improve load times and consistency. These attributes are applied to each image uploaded to a given content type field, allowing you to tailor the specifications for each use case.
+With [image variants](/documentation/developers-and-admins/development/content-types#configure-image-variants), you can automatically generate cropped versions of image assets across the system at a specified size. [Automatic asset optimization](/documentation/developers-and-admins/development/content-types#automatically-optimize-image-assets) allows you to define a format, quality, and maximum dimensions to improve load times and consistency. These attributes are applied to each image uploaded to a given content type field, allowing you to tailor the specifications for each use case.
 While _image variants_ can be generated at any time, _automatic image optimization_ applies to images the moment they are uploaded—a problem if you’ve already migrated thousands of media library files and attachments from Kentico Xperience 13 (KX13) to XbyK.
 It’s possible to optimize already-uploaded images, but editors can only process each image individually, which is not scalable.
 Let’s go over the three quick steps to optimize all your images during migration and save time for your team!
 ## Before you start
 To follow along with the example in this guide, we recommend you have the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) and [.NET Core](https://learn.microsoft.com/en-us/dotnet/).
-  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](documentation/changelog).
-  * A running instance of Kentico Xperience 13 that contains page attachments and media files (such as the Dancing Goat sample site), running on [Refresh 5](13/installation/hotfix-instructions-xperience-13) or higher.
+  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](/documentation/changelog).
+  * A running instance of Kentico Xperience 13 that contains page attachments and media files (such as the Dancing Goat sample site), running on [Refresh 5](/13/installation/hotfix-instructions-xperience-13) or higher.
   * A local copy of the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool), version **3.12.0** , connected to each instance.
 
 
@@ -27,7 +33,7 @@ Start by considering the parameters you want to set for image optimization.
 
 For reference, go to the **Content types** application in a non-production instance of Xperience by Kentico and create a new reusable content type with a **Content item asset** field called _Asset_. The **Automatic image format conversion** properties of the **Asset uploader** form control will allow you to configure image optimization.
 For our example, let’s convert the other supported formats to _WEBP_ and set the quality to _90%_ , meaning Xperience only applies a small degree of lossy compression to the images.
-[![A screenshot of form component configuration of the new content type showing the conversion settings.](docsassets/guides/optimize-images-during-upgrade/FieldConfiguration.png)](https://docs.kentico.com/docsassets/guides/optimize-images-during-upgrade/FieldConfiguration.png)
+[![A screenshot of form component configuration of the new content type showing the conversion settings.](/docsassets/guides/optimize-images-during-upgrade/FieldConfiguration.png)](/docsassets/guides/optimize-images-during-upgrade/FieldConfiguration.png)
 Since we’re going to apply these transformations to _all media files and attachments_ , which could have a wide variety of purposes and sizes, let’s not set maximum dimensions in this case.
 We recommend ensuring that the target extension you choose is allowed in your KX13 site. Allowed extension settings are copied to XbyK during the upgrade by default, so you might see an error if the extension is not allowed.
 If the extension is forbidden in KX13, you can change the setting in XbyK afterward.
@@ -86,7 +92,7 @@ Copy
 ## Configure the form control in code
 So far, we’ve decided which parameters to set and learned how to structure their data. Now, let’s move on to the code.
 In your local copy of the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/), find the `AssetFacade` class in the **Migration.Tool.Source** project.
-Here you can find definitions of the content types that correspond to KX13’s [attachments](13/managing-website-content/working-with-files/page-attachments) and [media library files](13/configuring-xperience/configuring-the-environment-for-content-editors/configuring-media-libraries). By default, they are called **Legacy attachment** and **Legacy media file** , and contain fields called `LegacyMediaFileAsset` and `LegacyAttachmentAsset` respectively.
+Here you can find definitions of the content types that correspond to KX13’s [attachments](/13/managing-website-content/working-with-files/page-attachments) and [media library files](/13/configuring-xperience/configuring-the-environment-for-content-editors/configuring-media-libraries). By default, they are called **Legacy attachment** and **Legacy media file** , and contain fields called `LegacyMediaFileAsset` and `LegacyAttachmentAsset` respectively.
 You can _Ctrl+F_ to the definitions of each relevant field to see how it is defined:
   * `internal static readonly FormField LegacyMediaFileAssetField`
   * `internal static readonly FormField LegacyAttachmentAssetField`
@@ -199,7 +205,9 @@ Copy
 ```
 
 KX13:
-[![Screenshot of an image in KX13](docsassets/guides/optimize-images-during-upgrade/ImagePreConversion.png)](https://docs.kentico.com/docsassets/guides/optimize-images-during-upgrade/ImagePreConversion.png)
+[![Screenshot of an image in KX13](/docsassets/guides/optimize-images-during-upgrade/ImagePreConversion.png)](/docsassets/guides/optimize-images-during-upgrade/ImagePreConversion.png)
 XbyK:
-[![Screenshot of a converted image in XbyK](docsassets/guides/optimize-images-during-upgrade/ImagePostConversion.png)](https://docs.kentico.com/docsassets/guides/optimize-images-during-upgrade/ImagePostConversion.png)
+[![Screenshot of a converted image in XbyK](/docsassets/guides/optimize-images-during-upgrade/ImagePostConversion.png)](/docsassets/guides/optimize-images-during-upgrade/ImagePostConversion.png)
 Now your images utilize the WebP format, helping reduce file sizes for faster loading.
+![]()
+[]()[]()

@@ -1,15 +1,17 @@
+---
+source: https://docs.kentico.com/modules/data-protection/create-cookie-consent-widget
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+4 of 13 Pages
 # Create a cookie consent widget
-  * [ Copy page link ](modules/data-protection/create-cookie-consent-widget#) | [Get HelpService ID](modules/data-protection/create-cookie-consent-widget#)
-Core MVC 5
-
-
-[✖](modules/data-protection/create-cookie-consent-widget# "Close page link panel") [Copy to clipboard](modules/data-protection/create-cookie-consent-widget#)
 Let’s dive into the process of creating a cookie configuration page similar to the [cookie policy page](https://www.kentico.com/cookies-policy) on [Kentico.com](http://Kentico.com).
-[![Kentico.com cookie configuration page](docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)](https://docs.kentico.com/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)
+[![Kentico.com cookie configuration page](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)
 We will demonstrate how to create more granular cookie tiers than the built-in cookie levels using a widget, helper classes, and a custom controller to tie in with specially-designated consents.
 ## Define the widget properties and view model
   1. Create the following folder structure in _TrainingGuides.Web_ project: _Features/DataProtection/Widgets/CookiePreferences_.
-  2. Create a `CookiePreferencesWidgetProperties` class that inherits from `IWidgetProperties`, as outlined in the [widget documentation](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
+  2. Create a `CookiePreferencesWidgetProperties` class that inherits from `IWidgetProperties`, as outlined in the [widget documentation](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
   3. Add properties to hold the header and description for the essential cookie level and the text for the submit button, and assign appropriate form components to each.
 
 
@@ -50,8 +52,8 @@ public class CookiePreferencesWidgetProperties : IWidgetProperties
 }
 ```
 
-The _Essential_ cookie level is not associated with a consent here, as the example site is designed such that essential cookies cannot be disabled. The other cookie levels, _Preference_ , _Analytical_ , and _Marketing_ , also have headers and descriptions, but their data will not come from the widget properties. Instead, this data will be retrieved based on the consents mapped to each cookie level via the UI page set up [earlier in this series](modules/data-protection/define-cookie-consent-module):
-[![Cookie level consent mapping](docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)](https://docs.kentico.com/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)
+The _Essential_ cookie level is not associated with a consent here, as the example site is designed such that essential cookies cannot be disabled. The other cookie levels, _Preference_ , _Analytical_ , and _Marketing_ , also have headers and descriptions, but their data will not come from the widget properties. Instead, this data will be retrieved based on the consents mapped to each cookie level via the UI page set up [earlier in this series](/modules/data-protection/define-cookie-consent-module):
+[![Cookie level consent mapping](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)
 Next, create a view model for the widget in the _CookiePreferences folder_ :
   1. Add properties corresponding to those from the widget properties. 
     1. `EssentialHeader`
@@ -250,6 +252,7 @@ C#
 **CookieConsentService.cs**
 Copy
 ```
+using CMS.DataEngine;
 using TrainingGuides.DataProtectionCustomizations;
 
 namespace TrainingGuides.Web.Features.DataProtection.Services;
@@ -259,9 +262,9 @@ namespace TrainingGuides.Web.Features.DataProtection.Services;
 /// </summary>
 public class CookieConsentService : ICookieConsentService
 {
-    private readonly ICookieLevelConsentMappingInfoProvider cookieLevelConsentMappingInfoProvider;
+    private readonly IInfoProvider<CookieLevelConsentMappingInfo> cookieLevelConsentMappingInfoProvider;
 
-    public CookieConsentService(ICookieLevelConsentMappingInfoProvider cookieLevelConsentMappingInfoProvider)
+    public CookieConsentService(IInfoProvider<CookieLevelConsentMappingInfo> cookieLevelConsentMappingInfoProvider)
     {
         this.cookieLevelConsentMappingInfoProvider = cookieLevelConsentMappingInfoProvider;
     }
@@ -357,7 +360,7 @@ As the comment indicates, these cookies correspond to the System cookie level in
 Now, you can register these cookie names when the app starts so that they can easily be added, updated, and removed from the visitor’s browser:
   1. Navigate to the  _Program.cs_ file in the _TrainingGuides.Web_ project.
   2. In the area where you configure the application builder, add cookies using the `System` level to the `CookieLevelOptions.CookieConfigurations` dictionary. 
-Whenever you use the default [`ICookieAccessor`](documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies) implementation to set a cookie in a visitor’s browser, Xperience compares the cookie level defined here to that visitor’s current cookie level in order to decide whether or not the cookie is allowed.
+Whenever you use the default [`ICookieAccessor`](/documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies) implementation to set a cookie in a visitor’s browser, Xperience compares the cookie level defined here to that visitor’s current cookie level in order to decide whether or not the cookie is allowed.
 C#
 **Program.cs**
 Copy
@@ -375,7 +378,7 @@ If you want to use Xperience to manage any custom cookies with the cookie helper
 
 
 ## Add the view component
-With the reusable code in place, you can return to the widget. As mentioned in the [widget documentation](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component), widgets that need complex business logic should be based on view components.
+With the reusable code in place, you can return to the widget. As mentioned in the [widget documentation](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component), widgets that need complex business logic should be based on view components.
   1. Add a file to the _CookiePreferences_ widget folder called `CookiePreferencesWidgetViewComponent.cs`.
   2. Register the class as a widget, referencing `CookiePreferencesWidgetProperties`.
   3. Define a method called `InvokeAsync`, which retrieves all consents that are currently mapped to cookie levels from the database and uses them to populate the corresponding view model fields.
@@ -610,16 +613,8 @@ Copy
 }
 ```
 
-[ Previous page ](modules/data-protection/implement-cookie-consent-module)
+[ Previous page ](/modules/data-protection/implement-cookie-consent-module)
 4 of 13
-[ Mark complete and continue ](modules/data-protection/handle-cookie-consent-requests)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/create-cookie-consent-widget)
-[](https://docs.kentico.com/modules/data-protection/create-cookie-consent-widget)[](https://docs.kentico.com/modules/data-protection/create-cookie-consent-widget)
+[ Mark complete and continue ](/modules/data-protection/handle-cookie-consent-requests)
+![]()
+[]()[]()

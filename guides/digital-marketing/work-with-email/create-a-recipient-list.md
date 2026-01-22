@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-email/create-a-recipient-list
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with email](/guides/digital-marketing/work-with-email)
+  * Create a recipient list 
+
+
 # Create a recipient list
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-email/create-a-recipient-list#) | [Get HelpService ID](guides/digital-marketing/work-with-email/create-a-recipient-list#) | This page is part of a module: [ Work with emails ](modules/work-with-emails)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-email/create-a-recipient-list# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-email/create-a-recipient-list#)
 Start with setting up a newsletter recipient list and set up a subscription and unsubscription email.
 Contacts who decide to subscribe are stored in **recipient lists**. You want to create the correct recipient list for your email and inform your colleagues about its purpose.
   1. Open the **Recipient lists** application.
@@ -18,4 +24,6 @@ Contacts who decide to subscribe are stored in **recipient lists**. You want to 
 
 To complete the subscription process, you will link the recipient list to the form on the _Mortgages_ page. Once a visitor fills in the form, Xperience adds them to the recipient list.
 ### Next step
-Once you have a recipient list ready, you can [create a marketing email](guides/digital-marketing/work-with-email/create-a-marketing-email).
+Once you have a recipient list ready, you can [create a marketing email](/guides/digital-marketing/work-with-email/create-a-marketing-email).
+![]()
+[]()[]()

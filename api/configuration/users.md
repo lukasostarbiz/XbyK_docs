@@ -1,21 +1,26 @@
+---
+source: https://docs.kentico.com/api/configuration/users
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Users 
+
+
 # Users
-  * [ Copy page link ](api/configuration/users#) | [Get HelpService ID](api/configuration/users#)
-Core MVC 5
-
-
-[✖](api/configuration/users# "Close page link panel") [Copy to clipboard](api/configuration/users#)
   
 List of examples:
-  * [Dependency injection](api/configuration/users#dependency-injection)
-    * [Initialize required services](api/configuration/users#initialize-required-services)
-  * [Users](api/configuration/users#users)
-    * [Create new users with administration access](api/configuration/users#create-new-users-with-administration-access)
-    * [Update existing users](api/configuration/users#update-existing-users)
-    * [Update multiple users](api/configuration/users#update-multiple-users)
-    * [Work with custom user fields](api/configuration/users#work-with-custom-user-fields)
-    * [Delete users](api/configuration/users#delete-users)
-  * [User authentication and authorization](api/configuration/users#user-authentication-and-authorization)
-    * [Check user administration access](api/configuration/users#check-user-administration-access)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+  * [Users](#users)
+    * [Create new users with administration access](#create-new-users-with-administration-access)
+    * [Update existing users](#update-existing-users)
+    * [Update multiple users](#update-multiple-users)
+    * [Work with custom user fields](#work-with-custom-user-fields)
+    * [Delete users](#delete-users)
+  * [User authentication and authorization](#user-authentication-and-authorization)
+    * [Check user administration access](#check-user-administration-access)
 
 
 ## Dependency injection
@@ -33,7 +38,7 @@ public UsersServices(IUserInfoProvider userInfoProvider)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ## Users
 ### Create new users with administration access
 C#
@@ -57,7 +62,7 @@ newUser.UserAdministrationAccess = true;
 userInfoProvider.Set(newUser);
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ### Update existing users
 C#
 Copy
@@ -75,7 +80,7 @@ if (updateUser != null)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ### Update multiple users
 C#
 Copy
@@ -95,7 +100,7 @@ foreach (UserInfo modifyUser in users)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ### Work with custom user fields
 C#
 Copy
@@ -116,7 +121,7 @@ if (user != null)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ### Delete users
 C#
 Copy
@@ -131,7 +136,7 @@ if (deleteUser != null)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
 ## User authentication and authorization
 ### Check user administration access
 C#
@@ -150,4 +155,6 @@ if (user != null)
 }
 ```
 
-[> Back to list of examples](api/configuration/users#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

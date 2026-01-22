@@ -1,19 +1,21 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+1 of 28 Pages
 # Content modeling guide
-  * [ Copy page link ](modules/content-modeling-guide#) | [Get HelpService ID](modules/content-modeling-guide#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide#)
 ## Why does content modeling matter?
 Marketers today need to deliver content that stands out, resonates with existing customers, and attracts new audiences. To succeed, your content must be easy to find, update, reuse in different channels and platforms, and remove when no longer needed. The _content modeling_ process helps marketing teams define the structure of their content, making it adaptable and easily repurposed across different distribution channels, mediums, and outlets.
 A well-defined content model improves the consistency of your content across channels, simplifies content management, and enhances content discoverability. It makes your marketing team effective as they can focus on creating superior content without being bogged down by operational challenges. They can stay agile and respond to evolving audience needs and marketing trends.
 In this guide, you can learn about:
   1. What is content modeling.
-  2. How to tie content modeling to [your marketing goals](modules/content-modeling-guide/content-modeling-business-requirements).
-  3. Ways to [categorize content](modules/content-modeling-guide/model-taxonomies).
-  4. Available options for [storing content](modules/content-modeling-guide/store-all-content-in-xperience).
-  5. Ways to design and display content on a [website page](guides/architecture/content-modeling/content-modeling-guide/design-content) or in [emails](modules/content-modeling-guide/design-email-content).
-  6. General content modeling [recommendations](modules/content-modeling-guide/content-modeling-digital-marketing-features).
+  2. How to tie content modeling to [your marketing goals](/modules/content-modeling-guide/content-modeling-business-requirements).
+  3. Ways to [categorize content](/modules/content-modeling-guide/model-taxonomies).
+  4. Available options for [storing content](/modules/content-modeling-guide/store-all-content-in-xperience).
+  5. Ways to design and display content on a [website page](/guides/architecture/content-modeling/content-modeling-guide/design-content) or in [emails](/modules/content-modeling-guide/design-email-content).
+  6. General content modeling [recommendations](/modules/content-modeling-guide/content-modeling-digital-marketing-features).
 
 
 ## What is content?
@@ -58,17 +60,9 @@ That’s why it is essential that you think about the following:
 
 ## Dive into the Content modeling guide
 The _Content modeling_ guide will help you understand different options for storing and displaying content within Xperience by Kentico. You will also learn about the recommended approaches for modeling content in Xperience, collected internally and externally from our selected partners. You can apply these recommendations when creating the content model for your digital marketing content.
-Find out about different types of content, the [content modeling process](modules/content-modeling-guide/content-modeling-process), how and in what way you can [store](modules/content-modeling-guide/store-all-content-in-xperience) and [display content in Xperience](modules/content-modeling-guide/store-all-content-in-xperience) or what are the [general recommendations](modules/content-modeling-guide/content-modeling-digital-marketing-features) for modeling your digital content using in Xperience by Kentico DXP.
+Find out about different types of content, the [content modeling process](/modules/content-modeling-guide/content-modeling-process), how and in what way you can [store](/modules/content-modeling-guide/store-all-content-in-xperience) and [display content in Xperience](/modules/content-modeling-guide/store-all-content-in-xperience) or what are the [general recommendations](/modules/content-modeling-guide/content-modeling-digital-marketing-features) for modeling your digital content using in Xperience by Kentico DXP.
 Previous page
 1 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/what-is-a-content-type)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide)
-[](https://docs.kentico.com/modules/content-modeling-guide)[](https://docs.kentico.com/modules/content-modeling-guide)
+[ Mark complete and continue ](/modules/content-modeling-guide/what-is-a-content-type)
+![]()
+[]()[]()

@@ -1,10 +1,12 @@
+---
+source: https://docs.kentico.com/modules/email-builder/build-reusable-columns-component
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+11 of 13 Pages
 # Build a reusable columns component
-  * [ Copy page link ](modules/email-builder/build-reusable-columns-component#) | [Get HelpService ID](modules/email-builder/build-reusable-columns-component#)
-Core MVC 5
-
-
-[✖](modules/email-builder/build-reusable-columns-component# "Close page link panel") [Copy to clipboard](modules/email-builder/build-reusable-columns-component#)
-Now, let’s create a Razor component analogous to the [Page Builder columns view component](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/ViewComponents/PageBuilderColumnsViewComponent.cs) from the [page builder module](modules/page-builder).
+Now, let’s create a Razor component analogous to the [Page Builder columns view component](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/ViewComponents/PageBuilderColumnsViewComponent.cs) from the [page builder module](/modules/page-builder).
 In this case, we’ll render only widget zones. Allowing the component to conditionally render both editable areas and widget zones, like we did in the Page Builder component, would cause problems with the hierarchy of [MJML components](https://documentation.mjml.io/#standard-body-components).
 Alternately, you can modify the component to render editable areas instead. This will require you to take a different approach regarding which level of the Email Builder hierarchy you can use certain MJML elements (templates vs sections vs widgets).
 ### Define the models
@@ -255,16 +257,8 @@ Copy
 }
 ```
 
-[ Previous page ](modules/email-builder/prepare-template-styling-options)
+[ Previous page ](/modules/email-builder/prepare-template-styling-options)
 11 of 13
-[ Mark complete and continue ](modules/email-builder/complete-flexible-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/build-reusable-columns-component)
-[](https://docs.kentico.com/modules/email-builder/build-reusable-columns-component)[](https://docs.kentico.com/modules/email-builder/build-reusable-columns-component)
+[ Mark complete and continue ](/modules/email-builder/complete-flexible-template)
+![]()
+[]()[]()

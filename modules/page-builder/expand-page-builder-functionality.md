@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/page-builder/expand-page-builder-functionality
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+9 of 16 Pages
 # Expand the template's Page Builder functionality
-  * [ Copy page link ](modules/page-builder/expand-page-builder-functionality#) | [Get HelpService ID](modules/page-builder/expand-page-builder-functionality#)
-Core MVC 5
-
-
-[✖](modules/page-builder/expand-page-builder-functionality# "Close page link panel") [Copy to clipboard](modules/page-builder/expand-page-builder-functionality#)
 An editable area is fairly flexible on its own, especially if you have multiple options for sections and lots of widgets, but let’s try to make it even more versatile.
 We’ll create a view component that uses template properties to determine the number of columns the template has, and how they are laid out.
 ### Expand the template properties
@@ -36,7 +38,7 @@ public enum ColumnLayoutOption
 
   3. Return to the _~/Features/Products/ProductPagePageTemplateProperties_ file and add a new string property to represent the column layout. 
     1. Set the property to use a dropdown component, supplied by our new enumeration.
-    2. Add a [visibility condition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to ensure that it only appears if the `UsePageBuilder` property’s checkbox is true (enabled). 
+    2. Add a [visibility condition](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to ensure that it only appears if the `UsePageBuilder` property’s checkbox is true (enabled). 
 C#
 **ProductPagePageTemplateProperties.cs**
 Copy
@@ -113,7 +115,7 @@ private const string COL = "col-md";
 ```
 
   2. Use properties to access the identifier constants.
-This will allow for more complicated logic in the future. [Later on in the series](modules/page-builder/implement-flexible-sections), we will modify this view component to work with [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones) for [Page Builder sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). 
+This will allow for more complicated logic in the future. [Later on in the series](/modules/page-builder/implement-flexible-sections), we will modify this view component to work with [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones) for [Page Builder sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). 
 C#
 **PageBuilderColumnsViewComponent.cs**
 Copy
@@ -590,16 +592,8 @@ Copy
 ```
 
 Your browser does not support the video tag. 
-[ Previous page ](modules/page-builder/enable-widgets-in-the-template)
+[ Previous page ](/modules/page-builder/enable-widgets-in-the-template)
 9 of 16
-[ Mark complete and continue ](modules/page-builder/create-general-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/expand-page-builder-functionality)
-[](https://docs.kentico.com/modules/page-builder/expand-page-builder-functionality)[](https://docs.kentico.com/modules/page-builder/expand-page-builder-functionality)
+[ Mark complete and continue ](/modules/page-builder/create-general-template)
+![]()
+[]()[]()

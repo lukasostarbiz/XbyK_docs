@@ -1,24 +1,30 @@
+---
+source: https://docs.kentico.com/guides/development/data-protection/create-a-cookie-preferences-widget
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Data protection](/guides/development/data-protection)
+  * Create a cookie preferences widget 
+
+
 # Create a cookie preferences widget
-  * [ Copy page link ](guides/development/data-protection/create-a-cookie-preferences-widget#) | [Get HelpService ID](guides/development/data-protection/create-a-cookie-preferences-widget#)
-Core MVC 5
-
-
-[✖](guides/development/data-protection/create-a-cookie-preferences-widget# "Close page link panel") [Copy to clipboard](guides/development/data-protection/create-a-cookie-preferences-widget#)
 Let’s dive into the process of creating a cookie configuration page similar to the [cookie policy page](https://www.kentico.com/cookies-policy) on [Kentico.com](http://Kentico.com).
-[![Kentico.com cookie configuration page](docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)](https://docs.kentico.com/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)
+[![Kentico.com cookie configuration page](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-54-31.png)
 We will demonstrate how to create more granular cookie tiers than the built-in cookie levels using a widget, helper classes, and a custom controller to tie in with specially-designated consents.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the [earlier guides in the series](guides/development/data-protection).
+  * Have followed along with the samples from the [earlier guides in the series](/guides/development/data-protection).
 
 
-The example presented in this [Data protection guide series](guides/development/data-protection) is a **valid implementation of data protection for[Contacts](documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](documentation/business-users/members) and their associated data.)
+The example presented in this [Data protection guide series](/guides/development/data-protection) is a **valid implementation of data protection for[Contacts](/documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](/documentation/business-users/members) and their associated data.)
 You can copy-paste the code samples into your own solution.
 However, if you choose to do so, **make sure to consult your legal team** to determine whether the implementation, texts, and consent levels **meet the requirements of your region and market**.
 **Code samples**
@@ -28,7 +34,7 @@ The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-u
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Define the widget properties and view model
   1. Create the following folder structure in _TrainingGuides.Web_ project: _Features/DataProtection/Widgets/CookiePreferences_.
-  2. Create a `CookiePreferencesWidgetProperties` class that inherits from `IWidgetProperties`, as outlined in the [widget documentation](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
+  2. Create a `CookiePreferencesWidgetProperties` class that inherits from `IWidgetProperties`, as outlined in the [widget documentation](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
   3. Add properties to hold the header and description for the essential cookie level and the text for the submit button, and assign appropriate form components to each.
 
 
@@ -69,8 +75,8 @@ public class CookiePreferencesWidgetProperties : IWidgetProperties
 }
 ```
 
-The _Essential_ cookie level is not associated with a consent here, as the example site is designed such that essential cookies cannot be disabled. The other cookie levels, _Preference_ , _Analytical_ , and _Marketing_ , also have headers and descriptions, but their data will not come from the widget properties. Instead, this data will be retrieved based on the consents mapped to each cookie level via the UI page set up [earlier in this series](guides/development/data-protection/map-consents-to-cookie-levels):
-[![Cookie level consent mapping](docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)](https://docs.kentico.com/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)
+The _Essential_ cookie level is not associated with a consent here, as the example site is designed such that essential cookies cannot be disabled. The other cookie levels, _Preference_ , _Analytical_ , and _Marketing_ , also have headers and descriptions, but their data will not come from the widget properties. Instead, this data will be retrieved based on the consents mapped to each cookie level via the UI page set up [earlier in this series](/guides/development/data-protection/map-consents-to-cookie-levels):
+[![Cookie level consent mapping](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)](/docsassets/guides/create-a-cookie-preferences-widget/image-2023-10-31_10-59-49.png)
 Next, create a view model for the widget in the _CookiePreferences folder_ :
   1. Add properties corresponding to those from the widget properties. 
     1. `EssentialHeader`
@@ -269,6 +275,7 @@ C#
 **CookieConsentService.cs**
 Copy
 ```
+using CMS.DataEngine;
 using TrainingGuides.DataProtectionCustomizations;
 
 namespace TrainingGuides.Web.Features.DataProtection.Services;
@@ -278,9 +285,9 @@ namespace TrainingGuides.Web.Features.DataProtection.Services;
 /// </summary>
 public class CookieConsentService : ICookieConsentService
 {
-    private readonly ICookieLevelConsentMappingInfoProvider cookieLevelConsentMappingInfoProvider;
+    private readonly IInfoProvider<CookieLevelConsentMappingInfo> cookieLevelConsentMappingInfoProvider;
 
-    public CookieConsentService(ICookieLevelConsentMappingInfoProvider cookieLevelConsentMappingInfoProvider)
+    public CookieConsentService(IInfoProvider<CookieLevelConsentMappingInfo> cookieLevelConsentMappingInfoProvider)
     {
         this.cookieLevelConsentMappingInfoProvider = cookieLevelConsentMappingInfoProvider;
     }
@@ -376,7 +383,7 @@ As the comment indicates, these cookies correspond to the System cookie level in
 Now, you can register these cookie names when the app starts so that they can easily be added, updated, and removed from the visitor’s browser:
   1. Navigate to the  _Program.cs_ file in the _TrainingGuides.Web_ project.
   2. In the area where you configure the application builder, add cookies using the `System` level to the `CookieLevelOptions.CookieConfigurations` dictionary. 
-Whenever you use the default [`ICookieAccessor`](documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies) implementation to set a cookie in a visitor’s browser, Xperience compares the cookie level defined here to that visitor’s current cookie level in order to decide whether or not the cookie is allowed.
+Whenever you use the default [`ICookieAccessor`](/documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies) implementation to set a cookie in a visitor’s browser, Xperience compares the cookie level defined here to that visitor’s current cookie level in order to decide whether or not the cookie is allowed.
 C#
 **Program.cs**
 Copy
@@ -394,7 +401,7 @@ If you want to use Xperience to manage any custom cookies with the cookie helper
 
 
 ## Add the view component
-With the reusable code in place, you can return to the widget. As mentioned in the [widget documentation](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component), widgets that need complex business logic should be based on view components.
+With the reusable code in place, you can return to the widget. As mentioned in the [widget documentation](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component), widgets that need complex business logic should be based on view components.
   1. Add a file to the _CookiePreferences_ widget folder called `CookiePreferencesWidgetViewComponent.cs`.
   2. Register the class as a widget, referencing `CookiePreferencesWidgetProperties`.
   3. Define a method called `InvokeAsync`, which retrieves all consents that are currently mapped to cookie levels from the database and uses them to populate the corresponding view model fields.
@@ -631,7 +638,7 @@ Copy
 
 ## Handle the request
 To handle the POST request generated by the widget, you’ll need a controller action.
-However, this action requires some additional functionality to be added to the `CookieConsentService` from [earlier](guides/development/data-protection/create-a-cookie-preferences-widget#create-supplementary-utilities).
+However, this action requires some additional functionality to be added to the `CookieConsentService` from [earlier](#create-supplementary-utilities).
 ### Expand the CookieConsentService
 You need a new method to facilitate the controller action that handles cookie preference data from the widget.
   1. Inject the following services into the `CookieConsentService` class.
@@ -831,9 +838,9 @@ private void SetCookieAcceptanceCookie() =>
 
 Remember to add all new public method signatures to the `ICookieConsentService` interface as well.
 **CMSCookieLevel**
-If [_Activity tracking_ is enabled](documentation/developers-and-admins/digital-marketing-setup/set-up-activities#enable-the-activity-tracking-feature), Xperience will track _Page visits_ and _Landing page_ activities for any site visitors with the _Visitor_ cookie level or higher by default.
+If [_Activity tracking_ is enabled](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities#enable-the-activity-tracking-feature), Xperience will track _Page visits_ and _Landing page_ activities for any site visitors with the _Visitor_ cookie level or higher by default.
 In our example, there are lesser consents that do not include activity tracking. However, _Visitor_ cookie level is required to include the _CurrentContact_ cookie and track which consents a visitor has accepted.
-To ensure that these activities are tracked only when the cookie level is set to _All_ , follow the steps described in the [Enable activity tracking](guides/development/activities-and-marketing/enable-activity-tracking) guide, where the tracking scripts are conditionally rendered to the page based on cookie level.
+To ensure that these activities are tracked only when the cookie level is set to _All_ , follow the steps described in the [Enable activity tracking](/guides/development/activities-and-marketing/enable-activity-tracking) guide, where the tracking scripts are conditionally rendered to the page based on cookie level.
 Always check with your legal team to ensure that the texts of your consents align with the functionality you map to these cookie levels.
 ### Add the controller
 With these new service methods, you can set up the controller to handle the POST request created by the form in the cookie preferences widget.
@@ -1024,4 +1031,6 @@ Now, the widget is available for use.
 Now, users who visit the page can configure their cookie level, as shown in the video below:
 Your browser does not support the video tag. 
 ## What’s next?
-The [next part of this series](guides/development/data-protection/build-a-tracking-consent-banner) will cover the process of creating a cookie banner, where a site visitor can quickly accept all cookie consents.
+The [next part of this series](/guides/development/data-protection/build-a-tracking-consent-banner) will cover the process of creating a cookie banner, where a site visitor can quickly accept all cookie consents.
+![]()
+[]()[]()

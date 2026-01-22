@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/email-builder/build-widget-component
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+7 of 13 Pages
 # Build the widget Razor component
-  * [ Copy page link ](modules/email-builder/build-widget-component#) | [Get HelpService ID](modules/email-builder/build-widget-component#)
-Core MVC 5
-
-
-[✖](modules/email-builder/build-widget-component# "Close page link panel") [Copy to clipboard](modules/email-builder/build-widget-component#)
 Now we’ve completed all the setup, and it’s time to implement the actual razor component that represents the widget.
 ### Create the code-behind
 Start by creating a file called **ArticleEmailWidget.razor.cs** in the _~/Features/Articles/EmailWidgets_ folder. Use the mapper to populate the widget model.
@@ -64,7 +66,7 @@ public partial class ArticleEmailWidget : ComponentBase
 
 ### Design the widget front-end
 With the code-behind in place, we can move on to the widget’s display.
-[Email builder components](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components) also support HTML markup, though we recommend MJML as it automatically handles the messy conditional markup required for handling diverse email clients.
+[Email builder components](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components) also support HTML markup, though we recommend MJML as it automatically handles the messy conditional markup required for handling diverse email clients.
 Add a file called **ArticleEmailWidget.razor** in the same folder and use MJML markup to define the widget’s appearance:
 cshtml
 **ArticleEmailWidget.razor**
@@ -113,16 +115,8 @@ Then, you only need these steps for each project where you use the widget:
 If your agency uses standardized content types for common scenarios, you’ll be able to copy-paste the code for each of these steps with minimal edits.
 To see more examples of Email Builder components in action, we recommend checking out those used on the [Community Portal](https://github.com/Kentico/community-portal/tree/v30.5.1.6/src/Kentico.Community.Portal.Web/Components/EmailBuilder).
 Here, you can see the code that makes up [community.kentico.com](https://community.kentico.com/), our site for the Xperience by Kentico developer community that features many helpful resources.
-[ Previous page ](modules/email-builder/work-with-widget-model)
+[ Previous page ](/modules/email-builder/work-with-widget-model)
 7 of 13
-[ Mark complete and continue ](modules/email-builder/design-structured-data-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/build-widget-component)
-[](https://docs.kentico.com/modules/email-builder/build-widget-component)[](https://docs.kentico.com/modules/email-builder/build-widget-component)
+[ Mark complete and continue ](/modules/email-builder/design-structured-data-template)
+![]()
+[]()[]()

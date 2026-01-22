@@ -1,10 +1,12 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/work-with-semantic-content-types
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+11 of 28 Pages
 # Plan your content modeling approach in Xperience
-  * [ Copy page link ](modules/content-modeling-guide/work-with-semantic-content-types#) | [Get HelpService ID](modules/content-modeling-guide/work-with-semantic-content-types#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/work-with-semantic-content-types# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/work-with-semantic-content-types#)
-Different CMS solutions allow editors to approach their content in different ways. Although using a single _content type_ for _free-form content_ in Xperience may seem easier, we recommend creating a _structured content model_ with clearly defined content types and presentation layers to help editors maintain a [consistent content experience](modules/content-modeling-guide/content-modeling-business-requirements) across teams and channels.
+Different CMS solutions allow editors to approach their content in different ways. Although using a single _content type_ for _free-form content_ in Xperience may seem easier, we recommend creating a _structured content model_ with clearly defined content types and presentation layers to help editors maintain a [consistent content experience](/modules/content-modeling-guide/content-modeling-business-requirements) across teams and channels.
 #### Aim for semantic content types
 _Semantic content types_ organize information into [conventional data types](https://schema.org/) and make the data easier for both humans and machines to understand and interact with. _Semantic content types_ go beyond just presenting a few images or texts; they provide a clear semantic context and give the data meaning. This meaning remains the same when editors adapt this content for different channels, like a website, mobile applications, or emails. At the same time, editors can enrich this content with relevant information, such as date, time, or location, or personalize the message to tailor the experience further.
 _Semantic content types_ are particularly valuable when customers integrate Xperience with third-party systems like ERPs or external product catalogs. Making the data shaped and scoped into a consistent structure in Xperience and other systems allows for efficient data synchronization. As a result, maintaining meaningful content and ensuring a seamless flow of information between systems is much easier.
@@ -35,17 +37,9 @@ _Semantic content types_ also help provide a better [AI agentic web experience](
 Developers can add semantic metadata to website-specific content and define a clear and concise structure that [LLMs understand](https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346). This helps [search engines and AI agents](https://searchengineland.com/how-search-generative-experience-works-and-why-retrieval-augmented-generation-is-our-future-433393), including [AI Overviews](https://developers.google.com/search/docs/appearance/ai-features) and [NLWeb](https://news.microsoft.com/source/features/company-news/introducing-nlweb-bringing-conversational-interfaces-directly-to-the-web/), understand, interpret, and present your content more accurately.
 Preparing the content for AI-driven tools will support your client’s long-term content strategy and discoverability across search and other emerging AI-driven platforms.
 #### Help editors with content creation and curation
-Providing structured, semantically relevant editing experiences helps editors deliver high-quality content efficiently. Editors can submit their content using elaborate editing [workflows](documentation/developers-and-admins/configuration/workflows) to reduce mistakes during content creation, publishing, and curation throughout the content lifecycle.
-[ Previous page ](modules/content-modeling-guide/choose-the-right-approach-for-storing-content)
+Providing structured, semantically relevant editing experiences helps editors deliver high-quality content efficiently. Editors can submit their content using elaborate editing [workflows](/documentation/developers-and-admins/configuration/workflows) to reduce mistakes during content creation, publishing, and curation throughout the content lifecycle.
+[ Previous page ](/modules/content-modeling-guide/choose-the-right-approach-for-storing-content)
 11 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/select-content-modeling-approach)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/work-with-semantic-content-types)
-[](https://docs.kentico.com/modules/content-modeling-guide/work-with-semantic-content-types)[](https://docs.kentico.com/modules/content-modeling-guide/work-with-semantic-content-types)
+[ Mark complete and continue ](/modules/content-modeling-guide/select-content-modeling-approach)
+![]()
+[]()[]()

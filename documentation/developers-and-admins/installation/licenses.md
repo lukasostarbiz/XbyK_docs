@@ -1,54 +1,60 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/installation/licenses
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Installation](/documentation/developers-and-admins/installation)
+  * Licenses 
+
+
 # Licenses
-  * [ Copy page link ](documentation/developers-and-admins/installation/licenses#) | [Get HelpService ID](documentation/developers-and-admins/installation/licenses#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/installation/licenses# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/installation/licenses#)
 Activate your Xperience by Kentico application by following the steps described below for each **subscription** type:
-  * **Xperience by Kentico subscription** providing an [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal) project for [deploying to the SaaS environment](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment). 
-    * See [Licensing Xperience by Kentico](documentation/developers-and-admins/installation/licenses#licensing-xperience-by-kentico).
-  * **License-only subscription** – for [private cloud deployments](documentation/developers-and-admins/deployment/deploy-to-private-cloud). 
-    * See [Licensing private cloud deployments](documentation/developers-and-admins/installation/licenses#licensing-private-cloud-deployments).
+  * **Xperience by Kentico subscription** providing an [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal) project for [deploying to the SaaS environment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment). 
+    * See [Licensing Xperience by Kentico](#licensing-xperience-by-kentico).
+  * **License-only subscription** – for [private cloud deployments](/documentation/developers-and-admins/deployment/deploy-to-private-cloud). 
+    * See [Licensing private cloud deployments](#licensing-private-cloud-deployments).
   * **Evaluation license** – a 30-day evaluation license. 
-    * See [Evaluate Xperience by Kentico](documentation/developers-and-admins/installation/licenses#evaluate-xperience-by-kentico).
+    * See [Evaluate Xperience by Kentico](#evaluate-xperience-by-kentico).
 
 
 ## Subscription expiration and renewal
 Contact Kentico sales to renew your subscription.
 Subscriptions expire at midnight (0 hours) at the **start** of the expiration date. For example, if a subscription expires on December 31, the last day it remains valid is December 30.
-[Private cloud deployments](documentation/developers-and-admins/installation/licenses#licensing-private-cloud-deployments) and [Xperience Portal projects (SaaS deployment)](documentation/developers-and-admins/saas/xperience-portal) expiration dates include a 30-day grace period. The grace period **does not** apply to evaluation licenses.
+[Private cloud deployments](#licensing-private-cloud-deployments) and [Xperience Portal projects (SaaS deployment)](/documentation/developers-and-admins/saas/xperience-portal) expiration dates include a 30-day grace period. The grace period **does not** apply to evaluation licenses.
 ## Evaluate Xperience by Kentico
-Create an account in [Kentico Client Portal](https://client.kentico.com) to receive a 30-day evaluation license key. For more information, see [License keys](documentation/developers-and-admins/installation/licenses#license-keys).
+Create an account in [Kentico Client Portal](https://client.kentico.com) to receive a 30-day evaluation license key. For more information, see [License keys](#license-keys).
 ## Licensing Xperience by Kentico
-When you purchase an Xperience by Kentico SaaS subscription, you receive access to an [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal) project. The purchased **service plan** defines the set of available features in the Xperience Portal. You can see your current service plan on the **Dashboard** in the **Xperience Portal**.
+When you purchase an Xperience by Kentico SaaS subscription, you receive access to an [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal) project. The purchased **service plan** defines the set of available features in the Xperience Portal. You can see your current service plan on the **Dashboard** in the **Xperience Portal**.
 **Service plan change**
-Over time, your requirements for the service plan you use may change. When they do, contact Kentico sales and renegotiate with them your subscription plan and agree on a time for a [scheduled Xperience Portal project maintenance](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments). Your new service plan will be active once the scheduled maintenance finishes.
-To help you decide which service plan best fits your needs, see [SaaS service plans](documentation/developers-and-admins/saas/saas-service-plans).
-Licensing for applications in the SaaS deployment environments (_QA_ , _UAT_ , _STG_ , _Production_) is automatically handled by the [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal), except for local development environments.
+Over time, your requirements for the service plan you use may change. When they do, contact Kentico sales and renegotiate with them your subscription plan and agree on a time for a [scheduled Xperience Portal project maintenance](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments). Your new service plan will be active once the scheduled maintenance finishes.
+To help you decide which service plan best fits your needs, see [SaaS service plans](/documentation/developers-and-admins/saas/saas-service-plans).
+Licensing for applications in the SaaS deployment environments (_QA_ , _UAT_ , _STG_ , _Production_) is automatically handled by the [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal), except for local development environments.
 ### License keys for SaaS local development
-Activate your local development instance by generating a license key in [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal):
+Activate your local development instance by generating a license key in [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal):
   1. Open the **License key generator** application in Xperience Portal.
   2. Select your Xperience by Kentico version.
   3. Select **Generate license key**.
   4. Store the license key in a text file before you leave the license key generator.
 **Lost license keys** cannot be recovered. If you lose the license key, you will need to generate a new one. 
-  5. Register the license key in the Xperience administration to activate your local Xperience instance. See [Register license keys in Xperience](documentation/developers-and-admins/installation/licenses#register-license-keys-in-xperience).
+  5. Register the license key in the Xperience administration to activate your local Xperience instance. See [Register license keys in Xperience](#register-license-keys-in-xperience).
 
 
-The local development instance is activated. The license key expires with your [subscription](documentation/developers-and-admins/installation/licenses#subscription-expiration-and-renewal), but its expiration date is automatically extended with every subscription renewal when **your local Xperience instance is connected to the Internet**.
+The local development instance is activated. The license key expires with your [subscription](#subscription-expiration-and-renewal), but its expiration date is automatically extended with every subscription renewal when **your local Xperience instance is connected to the Internet**.
 ## Licensing private cloud deployments
-Private cloud licenses are available in two [license tiers](https://www.kentico.com/how-to-buy): _Standard_ and _Advanced_. Activate Xperience by registering your [license keys](documentation/developers-and-admins/installation/licenses#license-keys) in the Xperience administration. For more information, see [Register license keys in Xperience](documentation/developers-and-admins/installation/licenses#register-license-keys-in-xperience).
+Private cloud licenses are available in two [license tiers](https://www.kentico.com/how-to-buy): _Standard_ and _Advanced_. Activate Xperience by registering your [license keys](#license-keys) in the Xperience administration. For more information, see [Register license keys in Xperience](#register-license-keys-in-xperience).
 Obtain license keys by registering the serial number you received with your Xperience by Kentico purchase in the [Kentico Client Portal](https://client.kentico.com/).
 Contact Kentico support if you cannot sign in to the Kentico Client Portal.
 ## License keys
 Each Xperience by Kentico instance must be activated using a license key tied to a license in the [Kentico Client Portal](https://client.kentico.com). You can generate the following types of license keys:
   * **Evaluation** – provides full access to all features of the product for 30 days.
-  * **Production** – for live deployments. See [Production license keys](documentation/developers-and-admins/installation/licenses#production-license-keys).
-  * **Non-production** – for local development and pre-production environments (deployment pipelines, QA). See [Non-production license keys](documentation/developers-and-admins/installation/licenses#non-production-license-keys).
+  * **Production** – for live deployments. See [Production license keys](#production-license-keys).
+  * **Non-production** – for local development and pre-production environments (deployment pipelines, QA). See [Non-production license keys](#non-production-license-keys).
 
 
-License keys must be registered [via the Xperience administration](documentation/developers-and-admins/installation/licenses#register-license-keys-in-xperience) or during [project database installation](documentation/developers-and-admins/installation#Installation-CreateProjectDatabase).
-All license keys support unlimited [auto-scaling](documentation/developers-and-admins/configuration/auto-scaling-support), allowing sites to accommodate increased traffic and performance demands.
+License keys must be registered [via the Xperience administration](#register-license-keys-in-xperience) or during [project database installation](/documentation/developers-and-admins/installation#Installation-CreateProjectDatabase).
+All license keys support unlimited [auto-scaling](/documentation/developers-and-admins/configuration/auto-scaling-support), allowing sites to accommodate increased traffic and performance demands.
 ### Best practices for license key management
 #### Use one license key per instance
 As a best practice, generate a unique license key for each Xperience instance in the [Kentico Client Portal](https://client.kentico.com). This approach provides the following benefits:
@@ -73,7 +79,7 @@ License server communication uses the following specifications:
   * **Response** : JSON with license validation results
 
 
-[![License server communication sequence diagram](docsassets/documentation/licenses/CommunicationSequenceDiagram.png)](https://docs.kentico.com/docsassets/documentation/licenses/CommunicationSequenceDiagram.png)
+[![License server communication sequence diagram](/docsassets/documentation/licenses/CommunicationSequenceDiagram.png)](/docsassets/documentation/licenses/CommunicationSequenceDiagram.png)
 **Security considerations**
 The license verification process uses encrypted HTTPS communication and only transmits the minimum required information to validate your license. No sensitive customer data or content is ever transmitted to the license server.
 When an Xperience instance cannot reach the Kentico license server for longer than five days, the administration interface starts notifying users via information popups and the event log. If you keep encountering issues after verifying that your instance is connected to the internet and the communication endpoint is accessible, contact our support department at support@kentico.com.
@@ -82,7 +88,7 @@ To verify your network connectivity to the license server, you can use the follo
   1. **Manual synchronization** in the admin interface: 
      * Go to **Settings → System → License**.
      * Select **Synchronize**.
-     * View the [event log](documentation/developers-and-admins/configuration/event-log) to see the result of the synchronization operation. If unsuccessfull, consult the event log entry for subsequent troubleshooting steps.
+     * View the [event log](/documentation/developers-and-admins/configuration/event-log) to see the result of the synchronization operation. If unsuccessfull, consult the event log entry for subsequent troubleshooting steps.
   2. **Command-line testing** (using curl, for example): 
 ```
 # Test basic connectivity to the license server using a HEAD request
@@ -143,7 +149,7 @@ The product is now activated using the provided key.
 **Important** : When you register a license key through the Xperience administration interface, the system automatically generates a new **instance identifier**. This unique identifier distinguishes your instance from others under the same license. After the instance is synchronized, you will find an entry matching the identifier under the corresponding license in the [Kentico Client Portal](https://client.kentico.com/).
 **Database cloning considerations**
 When cloning databases (for example when creating test environments), be aware that the instance identifier and license key are preserved in the cloned database. This can lead to licensing issues where license usage may not be accurately tracked across separate environments.
-The recommended approach when creating new environments is to use [CI](documentation/developers-and-admins/ci-cd/continuous-integration)/[CD](documentation/developers-and-admins/ci-cd/continuous-deployment) store/restore operations, which exclude license data by default, and then register the correct license key for the target environment.
+The recommended approach when creating new environments is to use [CI](/documentation/developers-and-admins/ci-cd/continuous-integration)/[CD](/documentation/developers-and-admins/ci-cd/continuous-deployment) store/restore operations, which exclude license data by default, and then register the correct license key for the target environment.
   1. Navigate to **Settings → System → License** in the cloned environment
   2. Enter the appropriate license key
   3. Save the changes (this automatically generates a new instance identifier)
@@ -163,4 +169,6 @@ When the system detects a license violation, such as instances exceeding the num
 License violation notifications are displayed across all instances registered under the same license.
 For example, assume an environment with three instances (**A** , **B** , and **C**) registered using three separate production license keys generated from a single license. If instance **A** violates the license, instances **B** and **C** start displaying license violation notifications as well. However, instances **B** and **C** only know that a license violation occurred, they aren’t provided any specific details. They will only highlight the type of violation, not the instance responsible (**A** in this example). After correcting the violation, all instances return to normal once they synchronize with the license server.
 **Resolving persistent license violations**
-If you encounter persistent license violations after addressing the underlying issue, consider [disabling unused license keys](documentation/developers-and-admins/installation/licenses#disable-unused-license-keys) in the [Kentico Client Portal](https://client.kentico.com). When an instance is decommissioned but its license key remains active, the license server continues to track its usage for up to 14 days. By disabling the license key immediately, you can resolve the violation without waiting for the automatic cleanup period.
+If you encounter persistent license violations after addressing the underlying issue, consider [disabling unused license keys](#disable-unused-license-keys) in the [Kentico Client Portal](https://client.kentico.com). When an instance is decommissioned but its license key remains active, the license server continues to track its usage for up to 14 days. By disabling the license key immediately, you can resolve the violation without waiting for the automatic cleanup period.
+![]()
+[]()[]()

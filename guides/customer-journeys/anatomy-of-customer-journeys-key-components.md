@@ -1,9 +1,14 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/anatomy-of-customer-journeys-key-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * Anatomy of customer journeys - Key components 
+
+
 # Anatomy of customer journeys - Key components
-  * [ Copy page link ](guides/customer-journeys/anatomy-of-customer-journeys-key-components#) | [Get HelpService ID](guides/customer-journeys/anatomy-of-customer-journeys-key-components#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/anatomy-of-customer-journeys-key-components# "Close page link panel") [Copy to clipboard](guides/customer-journeys/anatomy-of-customer-journeys-key-components#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -18,4 +23,6 @@ In this guide, you’ll learn:
 
 This is your go-to guide for connecting the dots between strategy and execution – perfect for marketers looking to deepen their understanding and start building journeys smarter with **Xperience by Kentico**.
 ## Ready to dive deeper?
-Explore the key components of a successful customer journey and learn how to [creating a customer journey can become your blueprint for success](guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success).
+Explore the key components of a successful customer journey and learn how to [creating a customer journey can become your blueprint for success](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/creating-a-customer-journey-blueprint-for-success).
+![]()
+[]()[]()

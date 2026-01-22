@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-assets/understanding-image-variants
+scrape_date: 2026-01-22
+---
+
+Module: Work with assets
+16 of 21 Pages
 # Image variants basics
-  * [ Copy page link ](modules/work-with-assets/understanding-image-variants#) | [Get HelpService ID](modules/work-with-assets/understanding-image-variants#)
-Core MVC 5
-
-
-[✖](modules/work-with-assets/understanding-image-variants# "Close page link panel") [Copy to clipboard](modules/work-with-assets/understanding-image-variants#)
 An **image variant** is a **resized and cropped** version of your original image that that follows your company’s graphic design guidelines. Your developers ensured that the image stays responsive and on brand across different marketing channels or in your marketing campaigns.
 For example:
   * A wide **hero banner** might use a landscape variant.
@@ -12,9 +14,9 @@ For example:
   * A **social media card** might need yet another size and ratio.
 
 
-You don’t need to create these versions yourself. Once configured, Xperience automatically generates them from the **primary optimized image** you upload into [Content hub](guides/digital-marketing/xperience-essentials/manage-content-hub-essentials).
+You don’t need to create these versions yourself. Once configured, Xperience automatically generates them from the **primary optimized image** you upload into [Content hub](/guides/digital-marketing/xperience-essentials/manage-content-hub-essentials).
 Each project can have its own set of image variants, depending on the design and channel requirements. Your project’s UX and graphic designers work with developers to decide which aspect ratios and sizes are needed, and they set up the rules in advance.
-That means you don’t need to create multiple sizes of your images manually, or worry about compression settings under time pressure – you can leave the basic optimization to [AIRA](documentation/business-users/aira). If you ever find a particular variant that isn’t currently available, you can ask your administrator or developer to create one for you. You’re not restricted in how many variants your project can support.
+That means you don’t need to create multiple sizes of your images manually, or worry about compression settings under time pressure – you can leave the basic optimization to [AIRA](/documentation/business-users/aira). If you ever find a particular variant that isn’t currently available, you can ask your administrator or developer to create one for you. You’re not restricted in how many variants your project can support.
 ## Why image variants matter, and what they do
 Image variants are more than just a matter of convenience. When you upload your image assets into Content hub, _AIRA_ automatically transforms them, giving you several image variants to choose from. But what do you do with these variants once they’re ready?
 Image variants, in short, help you:
@@ -26,16 +28,8 @@ Image variants, in short, help you:
 
 
 Currently, image variants are natively supported in the Kentico API **only for the website channel**.
-[ Previous page ](modules/work-with-assets/work-with-image-variants-and-focal-point)
+[ Previous page ](/modules/work-with-assets/work-with-image-variants-and-focal-point)
 16 of 21
-[ Mark complete and continue ](modules/work-with-assets/manual-cropping-and-focal-points)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-assets/understanding-image-variants)
-[](https://docs.kentico.com/modules/work-with-assets/understanding-image-variants)[](https://docs.kentico.com/modules/work-with-assets/understanding-image-variants)
+[ Mark complete and continue ](/modules/work-with-assets/manual-cropping-and-focal-points)
+![]()
+[]()[]()

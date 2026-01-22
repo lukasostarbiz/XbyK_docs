@@ -1,17 +1,23 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/configuration/event-log
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Configuration](/documentation/developers-and-admins/configuration)
+  * Event log 
+
+
 # Event log
-  * [ Copy page link ](documentation/developers-and-admins/configuration/event-log#) | [Get HelpService ID](documentation/developers-and-admins/configuration/event-log#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/configuration/event-log# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/configuration/event-log#)
 The event log stores information about significant events that occur in the system. It is useful to view logged information if unwanted behavior occurs in the system and you want to find out where the problem originates or get additional details.
 To view the event log, open the **Event log** application.
-[![Event log overview](docsassets/documentation/event-log/event_log.png)](https://docs.kentico.com/docsassets/documentation/event-log/event_log.png)
+[![Event log overview](/docsassets/documentation/event-log/event_log.png)](/docsassets/documentation/event-log/event_log.png)
 **Find relevant events**
 When investigating issues or errors in the system, try to examine the **Source** and **Event code** of logged events. These two properties uniquely describe the nature of the event in most cases. For more information, select specific events in the log and view their full **Description** or other relevant properties.
 The search bar allows you to find items with a source or event code matching the entered text. You can also **Filter** the list of events.
 ## Configure the event log
-The verbosity and severity of the entries in the event log can be adjusted via application settings. For detailed instructions and technical information about logging, see [Logging](documentation/developers-and-admins/development/logging).
+The verbosity and severity of the entries in the event log can be adjusted via application settings. For detailed instructions and technical information about logging, see [Logging](/documentation/developers-and-admins/development/logging).
 Additionally, you can configure the event log functionality in the **Settings** application within the Xperience administration. The following settings are available in the **System → Event log** category.
 Setting |  Description  
 ---|---  
@@ -23,4 +29,6 @@ Event log size |  Limits the maximum number of events stored in the Event log.
   
 Log object actions |  If enabled, basic create, edit, and delete actions for Xperience objects are logged in the Event log.  
 Log to database |  Indicates if events are logged to the database, i.e., the default log displayed in the _Event log_ application. Does not apply if the **Event log size** setting is 0.  
-Log to file system |  Indicates if events are logged to an **App_Data\logEvents.log** file in the project directory. Does not apply if the **Event log size** setting is 0.
+Log to file system |  Indicates if events are logged to an **App_Data\logEvents.log** file in the project directory. Does not apply if the **Event log size** setting is 0.  
+![]()
+[]()[]()

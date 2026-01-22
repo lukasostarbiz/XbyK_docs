@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-roles/update-user-permissions
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with roles](/guides/configuration/work-with-users-and-roles/work-with-roles)
+  * Update role permissions 
+
+
 # Update role permissions
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-roles/update-user-permissions#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-roles/update-user-permissions#)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-roles/update-user-permissions# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-roles/update-user-permissions#)
   1. Go to the **Role management** application.
   2. Select the role you want to change.
   3. Switch to the **Permissions** tab and update the permissions.
@@ -11,4 +18,6 @@ Core MVC 5
   5. **Save** your changes.
 
 
-[Find out more in the documentation](documentation/developers-and-admins/configuration/users/role-management) ➡
+[Find out more in the documentation](/documentation/developers-and-admins/configuration/users/role-management) ➡
+![]()
+[]()[]()

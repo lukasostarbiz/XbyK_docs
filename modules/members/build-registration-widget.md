@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/members/build-registration-widget
+scrape_date: 2026-01-22
+---
+
+Module: Members
+3 of 12 Pages
 # Build the registration widget
-  * [ Copy page link ](modules/members/build-registration-widget#) | [Get HelpService ID](modules/members/build-registration-widget#)
-Core MVC 5
-
-
-[✖](modules/members/build-registration-widget# "Close page link panel") [Copy to clipboard](modules/members/build-registration-widget#)
 Let’s start the process of building our registration widget.
 In the _TrainingGuides.Web_ project, create a _~/Features/Membership/Widgets/Registration_ folder. This will contain the files relating to our registration widget.
 ### Define the widget properties
 When creating a widget, it’s helpful to start by considering what editors should be able to configure.
-According to our [requirements](modules/members/groundwork-registration-widget), editors need the ability to display a minimal registration form with only required fields, or a fully detailed form that includes optional fields. They also need to define the form’s labels.
+According to our [requirements](/modules/members/groundwork-registration-widget), editors need the ability to display a minimal registration form with only required fields, or a fully detailed form that includes optional fields. They also need to define the form’s labels.
 Let’s say that a _minimal_ registration form contains only **username** , **email** , **password** , and **password confirmation** fields. Add boolean properties to indicate whether to show optional form fields, like those related to the member’s name and favorite coffee.
 C#
 **RegistrationWidgetProperties.cs**
@@ -143,7 +145,7 @@ Setting default values for the labels in the default language will save your edi
 ### Set up a view model
 Now let’s move on to creating a view model for the widget.
 We’re going to use .NET [Model validation](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation) to handle validation of this form, so we’ll need to include properties for the data that visitors will fill in alongside those for managing the widget’s configuration and display.
-It will be useful in other related features (e.g., [member profile page](guides/development/members/create-a-profile-page)) to have a view model class containing all of the custom fields we added to the _Member_ object type. Let’s create a dedicated class for that and have our widget view model inherit from it. Add a _Profile_ folder under _Membership_ and add analogs of the four custom member fields with data annotations.
+It will be useful in other related features (e.g., [member profile page](/guides/development/members/create-a-profile-page)) to have a view model class containing all of the custom fields we added to the _Member_ object type. Let’s create a dedicated class for that and have our widget view model inherit from it. Add a _Profile_ folder under _Membership_ and add analogs of the four custom member fields with data annotations.
 C#
 **GuidesMemberProfileViewModel.cs**
 Copy
@@ -387,7 +389,7 @@ public interface IHttpRequestService
 }
 ```
 
-If you’ve already completed the [multilingual guides](guides/development/multilingual), you might already have a different overload of `GetBaseUrlWithLanguage`.
+If you’ve already completed the [multilingual guides](/guides/development/multilingual), you might already have a different overload of `GetBaseUrlWithLanguage`.
 Optionally, you can modify the logic of the existing method with optional parameters, rather than creating an overload.
 C#
 **HttpRequestService.cs**
@@ -512,7 +514,7 @@ public class HttpRequestService : IHttpRequestService
 
 #### Hide the form from signed-in users
 The new `DisplayForm` property also needs new logic. We should hide the registration form from members who are already signed in, because they already have accounts, so we need a method in the membership service to determine if the current member is authenticated.
-Add a new method to the membership service that [retrieves the current member](documentation/developers-and-admins/development/registration-and-authentication#retrieve-the-currently-authenticated-member), then utilize it in a separate boolean method that returns `false` if no such member is found.
+Add a new method to the membership service that [retrieves the current member](/documentation/developers-and-admins/development/registration-and-authentication#retrieve-the-currently-authenticated-member), then utilize it in a separate boolean method that returns `false` if no such member is found.
 In some cases, it is useful for the editor to see restricted content in the administration even if no member is signed in. This is why our `IsMemberAuthenticated` method also returns `true` if running in Page Builder or Preview mode.
 C#
 **IMembershipService.cs**
@@ -815,16 +817,8 @@ Copy
 </div>
 ```
 
-[ Previous page ](modules/members/groundwork-registration-widget)
+[ Previous page ](/modules/members/groundwork-registration-widget)
 3 of 12
-[ Mark complete and continue ](modules/members/register-the-member)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/build-registration-widget)
-[](https://docs.kentico.com/modules/members/build-registration-widget)[](https://docs.kentico.com/modules/members/build-registration-widget)
+[ Mark complete and continue ](/modules/members/register-the-member)
+![]()
+[]()[]()

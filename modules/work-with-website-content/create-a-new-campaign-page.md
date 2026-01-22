@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/work-with-website-content/create-a-new-campaign-page
+scrape_date: 2026-01-22
+---
+
+Module: Work with website content
+6 of 20 Pages
 # Create a new campaign page
-  * [ Copy page link ](modules/work-with-website-content/create-a-new-campaign-page#) | [Get HelpService ID](modules/work-with-website-content/create-a-new-campaign-page#)
-Core MVC 5
-
-
-[✖](modules/work-with-website-content/create-a-new-campaign-page# "Close page link panel") [Copy to clipboard](modules/work-with-website-content/create-a-new-campaign-page#)
 Learn step-by-step how to create a campaign page from scratch.
-This sample shows how to create a landing page from scratch, add widgets, and populate them with content, including [an online form](guides/digital-marketing/xperience-essentials/collect-visitor-data-essentials#exercise---collecting-visitor-data).
+This sample shows how to create a landing page from scratch, add widgets, and populate them with content, including [an online form](/guides/digital-marketing/xperience-essentials/collect-visitor-data-essentials#exercise---collecting-visitor-data).
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site.
 ## Prepare the landing page
   1. Go to the **Pages** application.
@@ -68,17 +70,9 @@ Now add another section, but this time choose the **Form column**.
 
 
 **Save** the page and open it in **Preview**. If you like what it looks like, you can **Publish** the page.
-[![Final look of the campaign page](docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)](https://docs.kentico.com/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)
-[ Previous page ](modules/work-with-website-content/working-with-widgets)
+[![Final look of the campaign page](/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)](/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)
+[ Previous page ](/modules/work-with-website-content/working-with-widgets)
 6 of 20
-[ Mark complete and continue ](modules/work-with-website-content/create-a-landing-page-from-page-components)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-website-content/create-a-new-campaign-page)
-[](https://docs.kentico.com/modules/work-with-website-content/create-a-new-campaign-page)[](https://docs.kentico.com/modules/work-with-website-content/create-a-new-campaign-page)
+[ Mark complete and continue ](/modules/work-with-website-content/create-a-landing-page-from-page-components)
+![]()
+[]()[]()

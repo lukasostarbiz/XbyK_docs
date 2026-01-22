@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/work-with-taxonomies/creating-taxonomies
+scrape_date: 2026-01-22
+---
+
+Module: Work with taxonomies
+3 of 8 Pages
 # Taxonomies in the admin UI
-  * [ Copy page link ](modules/work-with-taxonomies/creating-taxonomies#) | [Get HelpService ID](modules/work-with-taxonomies/creating-taxonomies#)
-Core MVC 5
-
-
-[✖](modules/work-with-taxonomies/creating-taxonomies# "Close page link panel") [Copy to clipboard](modules/work-with-taxonomies/creating-taxonomies#)
 Before you enable content editors to assign tags to content, you need to create taxonomies and tags.
-  1. [Create a taxonomy](modules/work-with-taxonomies/creating-taxonomies#create-a-taxonomy)
-  2. [Create tags in a taxonomy](modules/work-with-taxonomies/creating-taxonomies#create-tags-in-a-taxonomy)
+  1. [Create a taxonomy](#create-a-taxonomy)
+  2. [Create tags in a taxonomy](#create-tags-in-a-taxonomy)
 
 
 ### Create a taxonomy
@@ -32,21 +34,13 @@ To create new tags:
      * **Title** – the name that is displayed to users and visitors.
      * _(Optional)_ **Identifiers** – specify code name if you wish to use code name different than the default.
      * _(Optional)_ **Description** – an explanation of the tag that can be displayed publicly depending on the implementation.
-     * _(Optional)_ In the **Translations** section, you can localize the _Title_ and _Description_ fields of the tag for any [languages](documentation/developers-and-admins/configuration/languages) that are configured in the system.
+     * _(Optional)_ In the **Translations** section, you can localize the _Title_ and _Description_ fields of the tag for any [languages](/documentation/developers-and-admins/configuration/languages) that are configured in the system.
   6. **Save** the tag. 
      * If you with to save the tag and continue creating other tags in the same location, select **Save and create another**.
 
 
-[ Previous page ](modules/work-with-taxonomies/taxonomies)
+[ Previous page ](/modules/work-with-taxonomies/taxonomies)
 3 of 8
-[ Mark complete and continue ](modules/work-with-taxonomies/taxonomies-in-kbank)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-taxonomies/creating-taxonomies)
-[](https://docs.kentico.com/modules/work-with-taxonomies/creating-taxonomies)[](https://docs.kentico.com/modules/work-with-taxonomies/creating-taxonomies)
+[ Mark complete and continue ](/modules/work-with-taxonomies/taxonomies-in-kbank)
+![]()
+[]()[]()

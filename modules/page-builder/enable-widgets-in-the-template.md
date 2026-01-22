@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/page-builder/enable-widgets-in-the-template
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+8 of 16 Pages
 # Enable widgets in the template
-  * [ Copy page link ](modules/page-builder/enable-widgets-in-the-template#) | [Get HelpService ID](modules/page-builder/enable-widgets-in-the-template#)
-Core MVC 5
-
-
-[✖](modules/page-builder/enable-widgets-in-the-template# "Close page link panel") [Copy to clipboard](modules/page-builder/enable-widgets-in-the-template#)
-So far, we have [walked through](modules/page-builder/model-template-data) the steps of creating a page template that displays structured product data with different styling options.
-Next, let’s make the template truly flexible by adding the option to dynamically add [Editable areas](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to the template based on configurable properties.
+So far, we have [walked through](/modules/page-builder/model-template-data) the steps of creating a page template that displays structured product data with different styling options.
+Next, let’s make the template truly flexible by adding the option to dynamically add [Editable areas](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) to the template based on configurable properties.
 ## Enable widgets on the template
 Let’s start by adding a single conditional _editable area_ to the template. This will allow editors to put widgets on the page if a certain checkbox is enabled. Afterward, we can expand the functionality for more flexibility.
 ### Add a new checkbox to the template properties
@@ -147,20 +149,12 @@ Copy
 
 ### Check your progress
 Now, if you sign in to the Xperience admin and apply this template to one of the pages under _Store_ in the _Training guides pages_ channel, you’ll see a new checkbox in the properties.
-[![Screenshot of page template properties](docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)
+[![Screenshot of page template properties](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderCheckbox.png)
 If you tick the box and click apply, the standard product content should disappear. It will be replaced with an editable area, where you can add and drag widgets.
-[![Screenshot of page template with editable area](docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)
+[![Screenshot of page template with editable area](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)](/docsassets/guides/create-versatile-templates-part-2/ScreenshotTemplatePageBuilderArea.png)
 If you un-tick the property, you may see a warning telling you that any content in the removed editable area will be lost upon saving.
-[ Previous page ](modules/page-builder/finish-the-structured-data-template)
+[ Previous page ](/modules/page-builder/finish-the-structured-data-template)
 8 of 16
-[ Mark complete and continue ](modules/page-builder/expand-page-builder-functionality)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/enable-widgets-in-the-template)
-[](https://docs.kentico.com/modules/page-builder/enable-widgets-in-the-template)[](https://docs.kentico.com/modules/page-builder/enable-widgets-in-the-template)
+[ Mark complete and continue ](/modules/page-builder/expand-page-builder-functionality)
+![]()
+[]()[]()

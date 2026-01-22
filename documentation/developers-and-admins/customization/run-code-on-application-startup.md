@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/run-code-on-application-startup
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * Run code on application startup 
+
+
 # Run code on application startup
-  * [ Copy page link ](documentation/developers-and-admins/customization/run-code-on-application-startup#) | [Get HelpService ID](documentation/developers-and-admins/customization/run-code-on-application-startup#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/run-code-on-application-startup# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/run-code-on-application-startup#)
 Xperience customization scenarios sometimes require you to call specific system API during application startup to achieve the desired behavior. Some examples include: 
-  * assigning handlers to [global system events](documentation/developers-and-admins/customization/handle-global-events)
-  * adding custom implementations of objects to global collections (e.g., [personal data erasers](documentation/developers-and-admins/data-protection/personal-data-erasure) and [collectors](documentation/developers-and-admins/data-protection/personal-data-collection))
-  * registering custom JavaScript modules containing [admin UI customizations](documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * assigning handlers to [global system events](/documentation/developers-and-admins/customization/handle-global-events)
+  * adding custom implementations of objects to global collections (e.g., [personal data erasers](/documentation/developers-and-admins/data-protection/personal-data-erasure) and [collectors](/documentation/developers-and-admins/data-protection/personal-data-collection))
+  * registering custom JavaScript modules containing [admin UI customizations](/documentation/developers-and-admins/customization/extend-the-administration-interface)
 
 
-The system provides a convenient entry point for such code in the form of **code-only modules**. Modules are [custom classes](documentation/developers-and-admins/customization/integrate-custom-code) that provide the following methods:
+The system provides a convenient entry point for such code in the form of **code-only modules**. Modules are [custom classes](/documentation/developers-and-admins/customization/integrate-custom-code) that provide the following methods:
   * `OnInit` – the system executes the code during the initialization (start) of the application. A typical example of `OnInit` code is assigning handler methods to system events.
-  * `OnPreInit` – the system executes the code before `OnInit`. Does _not_ support any operations that require access to the database. For example, can be used to register [custom data types](documentation/developers-and-admins/customization/field-editor/data-type-management).
+  * `OnPreInit` – the system executes the code before `OnInit`. Does _not_ support any operations that require access to the database. For example, can be used to register [custom data types](/documentation/developers-and-admins/customization/field-editor/data-type-management).
 
 
 Xperience collects all module classes during application startup and executes their `OnInit` and `OnPreInit` methods. The initialization order of modules is not guaranteed and cannot be controlled (modules can be initialized in a different order every time the application starts). For this reason, we don’t recommend relying on the initialization order in your custom code.
@@ -20,7 +26,7 @@ Xperience collects all module classes during application startup and executes th
 To run custom code on application startup:
   1. Open your Xperience project in Visual Studio.
   2. Create a custom class that inherits from `CMS.DataEngine.Module`.
-     * See [Integrate custom code](documentation/developers-and-admins/customization/integrate-custom-code) for best practices about adding custom classes to Xperience projects.
+     * See [Integrate custom code](/documentation/developers-and-admins/customization/integrate-custom-code) for best practices about adding custom classes to Xperience projects.
   3. Define the constructor of the module class:
      * Inherit from the base constructor.
      * Enter the code name of the module as the base constructor parameter. The code name must be unique within the application.
@@ -95,3 +101,6 @@ public class CustomModule : Module
     }
 }
 ```
+
+![]()
+[]()[]()

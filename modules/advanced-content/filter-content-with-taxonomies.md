@@ -1,16 +1,18 @@
+---
+source: https://docs.kentico.com/modules/advanced-content/filter-content-with-taxonomies
+scrape_date: 2026-01-22
+---
+
+Module: Advanced content
+5 of 11 Pages
 # Filter content with taxonomies
-  * [ Copy page link ](modules/advanced-content/filter-content-with-taxonomies#) | [Get HelpService ID](modules/advanced-content/filter-content-with-taxonomies#)
-Core MVC 5
-
-
-[✖](modules/advanced-content/filter-content-with-taxonomies# "Close page link panel") [Copy to clipboard](modules/advanced-content/filter-content-with-taxonomies#)
 Now, we can implement filtering based on the _Article category_ taxonomy.
 ### Add new widget property
-First, let’s add a [tag selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#tag-selector) to the widget UI to so that editors can select the desired tags.
+First, let’s add a [tag selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#tag-selector) to the widget UI to so that editors can select the desired tags.
 Find the definition of the [Article list widget properties](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Articles/Widgets/ArticleList/ArticleListWidgetProperties.cs) in the Training guides repository.
 Add a new `IEnumerable<TagReference>` property called `Tags` between the existing `ContentTreeSection` and `TopN`. Decorate the property with `TagSelectorComponent` attribute.
 Specify allowed taxonomy passing our taxonomy code name, `ArticleCategory`, as the first parameter.
-To refresh your memory on defining widget properties revisit our [Build a simple call-to-action widget](guides/development/page-builder/build-simple-cta-widget#define-widget-properties) guide.
+To refresh your memory on defining widget properties revisit our [Build a simple call-to-action widget](/guides/development/page-builder/build-simple-cta-widget#define-widget-properties) guide.
 C#
 **ArticleListWidgetProperties.cs**
 Copy
@@ -131,7 +133,7 @@ using CMS.ContentEngine;
 
 Now there is one issue we need to solve:
 Our widget expects **Article page** content items to construct its view model. However, the property holding our taxonomy tags is on the reusable content item linked by the page.
-Because of the current limitations of the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api), we will do this in two steps:
+Because of the current limitations of the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api), we will do this in two steps:
   1. Retrieve the IDs of all reusable content items that implement **Article schema** and contain the specified tags.
   2. Retrieve **Article page** content items on the specified path that link these reusable items.
 
@@ -139,10 +141,10 @@ Because of the current limitations of the [ContentRetriever API](documentation/d
 ### Implement the service methods
 Let’s go implement these service methods in our [ContentItemRetrieverService.cs file](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs) .
 #### Retrieve reusable content items by schema and tags
-The ContentRetriever API has a [`RetrieveContentOfReusableSchemas` extension method](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-sharing-reusable-field-schema) that is exactly suited for our scenario.
+The ContentRetriever API has a [`RetrieveContentOfReusableSchemas` extension method](/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-sharing-reusable-field-schema) that is exactly suited for our scenario.
 We will utilize it to retrieve the reusable content items that contain:
   * Our _Article schema_ , passing in the schema codename as a parameter (`schemaName`)
-  * GUIDs of specific tags, using the [WhereContainsTags](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#wherecontainstags) extension method.
+  * GUIDs of specific tags, using the [WhereContainsTags](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#wherecontainstags) extension method.
 
 
 The data we need to perform this query will become additional method parameters:
@@ -314,7 +316,7 @@ public class ContentItemRetrieverService : IContentItemRetrieverService
 ```
 
 Last but not least, implement a new public method that retrieves pages from a given path which link to the specified content items. This method needs two new parameters beyond the existing path and depth: the **code name of the reference field** and the **IEnumerable of content item IDs**.
-Call our new **private** `RetrieveWebPageChildrenByPath` method and pass in custom query configuration - an anonymous function calling the [Linking](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#linking) extension method.
+Call our new **private** `RetrieveWebPageChildrenByPath` method and pass in custom query configuration - an anonymous function calling the [Linking](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#linking) extension method.
 C#
 **ContentItemRetrieverService.cs**
 Copy
@@ -432,16 +434,8 @@ public async Task<ViewViewComponentResult> InvokeAsync(ArticleListWidgetProperti
 Rebuild and run your project. Navigate to a page (e.g., _Home_) where you added the Article list widget. Configure the widget to show articles with different tags, and see the filtered results when you **Apply** the changes.
 Your browser does not support the video tag. 
 Find the complete and working implementation of this example in the [finished branch of the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) . If you are experiencing any issues or errors, double-check that your references, methods, parameters and `using` directives match the ones in the repo.
-[ Previous page ](modules/advanced-content/think-about-filtering-with-taxonomies)
+[ Previous page ](/modules/advanced-content/think-about-filtering-with-taxonomies)
 5 of 11
-[ Mark complete and continue ](modules/advanced-content/prepare-to-convert-items)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/advanced-content/filter-content-with-taxonomies)
-[](https://docs.kentico.com/modules/advanced-content/filter-content-with-taxonomies)[](https://docs.kentico.com/modules/advanced-content/filter-content-with-taxonomies)
+[ Mark complete and continue ](/modules/advanced-content/prepare-to-convert-items)
+![]()
+[]()[]()

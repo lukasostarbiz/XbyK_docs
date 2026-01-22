@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/email-builder/set-up-widget-properties
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+5 of 13 Pages
 # Set up properties for an article widget
-  * [ Copy page link ](modules/email-builder/set-up-widget-properties#) | [Get HelpService ID](modules/email-builder/set-up-widget-properties#)
-Core MVC 5
-
-
-[✖](modules/email-builder/set-up-widget-properties# "Close page link panel") [Copy to clipboard](modules/email-builder/set-up-widget-properties#)
-[Email Builder](documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico allows marketers to design emails using a drag-and-drop interface. By creating custom widgets, developers can extend the functionality of Email Builder to meet specific project requirements.
-Let’s explore how to create an [Email Builder widget](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets) for displaying articles. The example here uses tools and follows conventions from our [Xperience Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit).
+[Email Builder](/documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico allows marketers to design emails using a drag-and-drop interface. By creating custom widgets, developers can extend the functionality of Email Builder to meet specific project requirements.
+Let’s explore how to create an [Email Builder widget](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets) for displaying articles. The example here uses tools and follows conventions from our [Xperience Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit).
 ## Configure allowed content types
 To ensure the widget can select only articles, start by configuring the allowed content types.
 For this example, we want our widget to be portable to other solutions, so we’ll go through extra steps to create options for developers to configure during startup, and use them in a filter.
@@ -131,17 +133,9 @@ public sealed class ArticleEmailWidgetProperties : IEmailWidgetProperties
 }
 ```
 
-You can find details about the various form controls available for Email Builder component properties in [the documentation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
-[ Previous page ](modules/email-builder/configure-the-starter-kit-and-email-builder)
+You can find details about the various form controls available for Email Builder component properties in [the documentation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
+[ Previous page ](/modules/email-builder/configure-the-starter-kit-and-email-builder)
 5 of 13
-[ Mark complete and continue ](modules/email-builder/work-with-widget-model)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/set-up-widget-properties)
-[](https://docs.kentico.com/modules/email-builder/set-up-widget-properties)[](https://docs.kentico.com/modules/email-builder/set-up-widget-properties)
+[ Mark complete and continue ](/modules/email-builder/work-with-widget-model)
+![]()
+[]()[]()

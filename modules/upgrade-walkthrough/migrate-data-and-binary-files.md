@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/upgrade-walkthrough/migrate-data-and-binary-files
+scrape_date: 2026-01-22
+---
+
+Module: Upgrading to Xperience by Kentico - Walkthrough
+3 of 6 Pages
 # Migrate data and binary files
-  * [ Copy page link ](modules/upgrade-walkthrough/migrate-data-and-binary-files#) | [Get HelpService ID](modules/upgrade-walkthrough/migrate-data-and-binary-files#)
-Core MVC 5
-
-
-[✖](modules/upgrade-walkthrough/migrate-data-and-binary-files# "Close page link panel") [Copy to clipboard](modules/upgrade-walkthrough/migrate-data-and-binary-files#)
 Now, we will migrate the data from the KX13 (source) instance to the XbyK (target) instance. The video below goes over the migration tool configuration and shows how to run the data migration.
 In the video we run the data migration in **two iterations** :
   * first to migrate _sites_ only.
@@ -117,17 +119,9 @@ For successful data migration, make sure that:
 
 Create a **database backup** each time before you run the `migrate` command.
 If you run into issues during the data migration process, check out the [Migration Protocol Reference](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/MIGRATION_PROTOCOL_REFERENCE.md#migration-protocol-reference) to troubleshoot common errors.
-In the video, we utilize [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#api-discovery-setup) to ensure the migrated Page Builder data can work with the new [Editing components in Xperience by Kentico](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) rather than in the legacy compatibility mode. While it is not a mandatory step, **we highly recommend this approach.**
-[ Previous page ](modules/upgrade-walkthrough/setup-your-environment)
+In the video, we utilize [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#api-discovery-setup) to ensure the migrated Page Builder data can work with the new [Editing components in Xperience by Kentico](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) rather than in the legacy compatibility mode. While it is not a mandatory step, **we highly recommend this approach.**
+[ Previous page ](/modules/upgrade-walkthrough/setup-your-environment)
 3 of 6
-[ Mark complete and continue ](modules/upgrade-walkthrough/adjust-global-code)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/upgrade-walkthrough/migrate-data-and-binary-files)
-[](https://docs.kentico.com/modules/upgrade-walkthrough/migrate-data-and-binary-files)[](https://docs.kentico.com/modules/upgrade-walkthrough/migrate-data-and-binary-files)
+[ Mark complete and continue ](/modules/upgrade-walkthrough/adjust-global-code)
+![]()
+[]()[]()

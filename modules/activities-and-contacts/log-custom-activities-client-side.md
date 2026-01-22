@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-client-side
+scrape_date: 2026-01-22
+---
+
+Module: Activities and contacts
+4 of 9 Pages
 # Log custom activities from the client side
-  * [ Copy page link ](modules/activities-and-contacts/log-custom-activities-client-side#) | [Get HelpService ID](modules/activities-and-contacts/log-custom-activities-client-side#)
-Core MVC 5
-
-
-[✖](modules/activities-and-contacts/log-custom-activities-client-side# "Close page link panel") [Copy to clipboard](modules/activities-and-contacts/log-custom-activities-client-side#)
 ### Write logging javascript
-The client-side activity logging example from the [documentation](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#client-side-code) calls a function from the _onclick_ attribute of a specific button.
+The client-side activity logging example from the [documentation](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#client-side-code) calls a function from the _onclick_ attribute of a specific button.
 This example uses a similar function, but stores it in a separate file rather than inline, and dynamically registers it to any links with the  _download_ attribute. Make sure to include this attribute on any downloadable file links that you want to track.
   1. Add a new file called  _FileDownloadActivityLogger.js_ to the _~/wwwroot/assets/js_ folder of the  _TrainingGuides.Web_ project.
-  2. Create a function called `handleClick` that logs a custom activity as outlined in the [documentation example](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#client-side-code). 
+  2. Create a function called `handleClick` that logs a custom activity as outlined in the [documentation example](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#client-side-code). 
     1. Assign the  _filedownload_ custom activity type.
     2. Set the value to the path of the current page.
     3. Assign a meaningful title that includes the `alt` attribute of the specific download link if it exists.
@@ -42,7 +44,7 @@ function handleClick() {
 
 For the sake of readability, this example is not minified. In production scenarios, consider storing this file elsewhere and using an automated tool to render a minified version of this script to the _wwwroot_ folder. 
 ### Create a view component
-Following the same process as [earlier in this series](guides/development/activities-and-marketing/enable-activity-tracking), create a view component class to conditionally render a script reference to your new JavaScript file to the page.
+Following the same process as [earlier in this series](/guides/development/activities-and-marketing/enable-activity-tracking), create a view component class to conditionally render a script reference to your new JavaScript file to the page.
   1. Add a folder called _CustomActivityScripts_ in _TrainingGuides.Web/Features/Activities/ViewComponents._
   2. Create a view component to conditionally render the custom activity script if the current contact has consented to tracking.
 C#
@@ -130,16 +132,8 @@ If you’ve completed the consent-related training guides, go to the _/cookie-po
   5. Navigate to the **Activities** tab of the **Contact management** application to see that the download activity has been logged.
 
 Your browser does not support the video tag. 
-[ Previous page ](modules/activities-and-contacts/define-custom-activities)
+[ Previous page ](/modules/activities-and-contacts/define-custom-activities)
 4 of 9
-[ Mark complete and continue ](modules/activities-and-contacts/log-custom-activities-server-side)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-client-side)
-[](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-client-side)[](https://docs.kentico.com/modules/activities-and-contacts/log-custom-activities-client-side)
+[ Mark complete and continue ](/modules/activities-and-contacts/log-custom-activities-server-side)
+![]()
+[]()[]()

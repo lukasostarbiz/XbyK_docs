@@ -1,17 +1,19 @@
+---
+source: https://docs.kentico.com/modules/contact-management/contact-groups
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+9 of 44 Pages
 # Contact groups
-  * [ Copy page link ](modules/contact-management/contact-groups#) | [Get HelpService ID](modules/contact-management/contact-groups#)
-Core MVC 5
-
-
-[✖](modules/contact-management/contact-groups# "Close page link panel") [Copy to clipboard](modules/contact-management/contact-groups#)
-**Contact groups** are segments that allow you to organize [contacts](modules/contact-management/contact-management). Segmentation divides contacts into groups of people with shared characteristics, which you can then accurately target in your marketing efforts. For example, you can use contact groups to filter recipients when [sending regular emails](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
+**Contact groups** are segments that allow you to organize [contacts](/modules/contact-management/contact-management). Segmentation divides contacts into groups of people with shared characteristics, which you can then accurately target in your marketing efforts. For example, you can use contact groups to filter recipients when [sending regular emails](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
 The system assigns contacts to groups automatically based on dynamic conditions. A single contact can belong to any number of different contact groups.
 **Relationship with channels**
-Contact groups are global and shared across all [channels](documentation/developers-and-admins/configuration/website-channel-management) (e.g., website, email, headless).
+Contact groups are global and shared across all [channels](/documentation/developers-and-admins/configuration/website-channel-management) (e.g., website, email, headless).
 **Merged contacts**
-For contacts that have been [merged](modules/contact-management/contact-management) by the system, only the parent contacts are assigned to contact groups.
+For contacts that have been [merged](/modules/contact-management/contact-management) by the system, only the parent contacts are assigned to contact groups.
 You can create and manage contact groups in the **Contact groups** application of the administration.
-[![Viewing the list of contact groups](docsassets/documentation/contact-groups/Contact_Group_List.png)](https://docs.kentico.com/docsassets/documentation/contact-groups/Contact_Group_List.png)
+[![Viewing the list of contact groups](/docsassets/documentation/contact-groups/Contact_Group_List.png)](/docsassets/documentation/contact-groups/Contact_Group_List.png)
 Select **New contact group** to add a contact group.
 ## Set up dynamic contact groups
 Dynamic contact groups automatically gather all contacts who fulfill certain criteria. You define the criteria through conditions.
@@ -21,7 +23,7 @@ Dynamic contact groups automatically gather all contacts who fulfill certain cri
   4. Select **Add condition group**.
   5. Pick a condition.
      * Use the search or select categories to find the appropriate condition.  
-[![Conditions for building contact groups](docsassets/documentation/contact-groups/Contact_Group_Conditions.png)](https://docs.kentico.com/docsassets/documentation/contact-groups/Contact_Group_Conditions.png)
+[![Conditions for building contact groups](/docsassets/documentation/contact-groups/Contact_Group_Conditions.png)](/docsassets/documentation/contact-groups/Contact_Group_Conditions.png)
   6. Fill in any required parameters for the condition.
   7. Repeat the process to add any number of conditions.
      * Conditions are organized together within condition groups.
@@ -31,13 +33,13 @@ Dynamic contact groups automatically gather all contacts who fulfill certain cri
   8. Select **Save**.
 
 
-[![Building a condition for a dynamic contact group](docsassets/documentation/contact-groups/Condition_Builder.png)](https://docs.kentico.com/docsassets/documentation/contact-groups/Condition_Builder.png)
+[![Building a condition for a dynamic contact group](/docsassets/documentation/contact-groups/Condition_Builder.png)](/docsassets/documentation/contact-groups/Condition_Builder.png)
 You can find all contacts added through the overall condition on the group’s **Contacts** tab.
 ### Recalculate contact groups
 When a contact is created or updated, the **system automatically** checks if the contact fulfills the conditions of contact groups and adds or removes the contact accordingly.
 However, if you modify a group’s condition, you need to recalculate it to ensure that the group only contains contacts that fulfill the new condition.
 To manually run the recalculation, select **Recalculate contact group** on the group’s **General** tab. This option appears only if the group has not yet been recalculated after an update of the condition.
-[![Recalculating a contact group after updating its condition](docsassets/documentation/contact-groups/Contact_Group_Recalc.png)](https://docs.kentico.com/docsassets/documentation/contact-groups/Contact_Group_Recalc.png)
+[![Recalculating a contact group after updating its condition](/docsassets/documentation/contact-groups/Contact_Group_Recalc.png)](/docsassets/documentation/contact-groups/Contact_Group_Recalc.png)
 **Time the recalculation**
 If your application is hosting a live website, do not run the recalculation during the site’s peak traffic hours. Contact group recalculation can be a resource-intensive process that may reduce the application’s performance.
 **Schedule automatic recalculation**
@@ -52,16 +54,8 @@ If you frequently change a group’s condition, or regularly perform bulk import
 When you enable this option for a contact group, the system randomly selects a time between 2 AM and 6 AM (in the time zone of the server where the application is running). The group is then recalculated automatically once per day at this time.
 The goal of this approach is to run recalculations during off-peak hours, and avoid recalculating multiple groups at the same time.
 However, keep in mind that scheduled recalculation is not required in most scenarios. When contacts are updated or created based on natural website activity, the system automatically evaluates contact groups conditions and adds or removes the contacts accordingly.
-[ Previous page ](modules/contact-management/segmenting-anonymous-contacts)
+[ Previous page ](/modules/contact-management/segmenting-anonymous-contacts)
 9 of 44
-[ Mark complete and continue ](modules/contact-management/create-a-new-contact-group)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/contact-groups)
-[](https://docs.kentico.com/modules/contact-management/contact-groups)[](https://docs.kentico.com/modules/contact-management/contact-groups)
+[ Mark complete and continue ](/modules/contact-management/create-a-new-contact-group)
+![]()
+[]()[]()

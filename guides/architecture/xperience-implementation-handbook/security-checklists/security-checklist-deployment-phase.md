@@ -1,16 +1,23 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * [Security checklists](/guides/architecture/xperience-implementation-handbook/security-checklists)
+  * Security checklist - deployment phase 
+
+
 # Security checklist - deployment phase
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase#)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase#)
-If you don’t want to spend time configuring and maintaining deployments on your own, consider leveraging our [SaaS](documentation/developers-and-admins/saas) offering, where Kentico takes care of security, compliance, and infrastructure management for you.
+If you don’t want to spend time configuring and maintaining deployments on your own, consider leveraging our [SaaS](/documentation/developers-and-admins/saas) offering, where Kentico takes care of security, compliance, and infrastructure management for you.
 ## Web.config and application settings
   * Make sure to disable debug and developer modes to prevent leaks of sensitive information.
   * Ensure that the application and server error messages do not expose detailed information to end users.
   * Store sensitive configuration values (like connection strings) securely using a secrets manager or encrypted storage. Never store secrets in plain text.
   * Forbid access to sensitive directories to protect the servers against data harvesting attacks.
-  * Set _HttpOnly_ , _Secure_ , and _SameSite_ flags for [cookies](documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies).
+  * Set _HttpOnly_ , _Secure_ , and _SameSite_ flags for [cookies](/documentation/developers-and-admins/data-protection/cookies#set-and-work-with-cookies).
   * Enforce HTTPS and enable HSTS.
 
 
@@ -34,3 +41,7 @@ If you don’t want to spend time configuring and maintaining deployments on you
   * Enable logging and monitoring via [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview) or similar.
   * Harden your infrastructure to ensure high-availability and security of all resources.
   * Establish disaster recovery plans and validate them periodically.
+
+
+![]()
+[]()[]()

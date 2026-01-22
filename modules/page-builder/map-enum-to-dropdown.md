@@ -1,20 +1,22 @@
+---
+source: https://docs.kentico.com/modules/page-builder/map-enum-to-dropdown
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+3 of 16 Pages
 # Create a dropdown provider
-  * [ Copy page link ](modules/page-builder/map-enum-to-dropdown#) | [Get HelpService ID](modules/page-builder/map-enum-to-dropdown#)
-Core MVC 5
-
-
-[✖](modules/page-builder/map-enum-to-dropdown# "Close page link panel") [Copy to clipboard](modules/page-builder/map-enum-to-dropdown#)
-When editors create pages with [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder), they utilize components (page templates, sections, widgets), prepared by the developers. Each component has properties, that editors set in the Xperience administration using [UI controls](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), for example, a dropdown selector.
-[![Example of a dropdown page template property in Xperience by Kentico administration](docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)](https://docs.kentico.com/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)
-As a developer, you can populate an [Xperience dropdown selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) with data in two ways:
+When editors create pages with [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder), they utilize components (page templates, sections, widgets), prepared by the developers. Each component has properties, that editors set in the Xperience administration using [UI controls](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), for example, a dropdown selector.
+[![Example of a dropdown page template property in Xperience by Kentico administration](/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)](/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)
+As a developer, you can populate an [Xperience dropdown selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) with data in two ways:
   1. Pass a “hardcoded” string of options, as you can see in [this example](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/a58ae4215eaba8941ab98d797c1b8146875b8525/src/TrainingGuides.Web/Features/LandingPages/LandingPageTemplateProperties.cs#L24).
   2. Create a dropdown provider that maps options dynamically.
 
 
 This guide covers the second approach. In our example, we use an **enumeration** to define the dropdown options.
-Setting up dropdown mapping is an important building block for the later guides in this [Page Builder series](modules/page-builder/meet-requirements-with-page-builder), which use dropdown components heavily.
+Setting up dropdown mapping is an important building block for the later guides in this [Page Builder series](/modules/page-builder/meet-requirements-with-page-builder), which use dropdown components heavily.
 ## Implement a generic mapper class
-The [Xperience Dropdown selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) has a `DataProviderType` property that can take a class, mapping a custom enumeration to specific dropdown options. 
+The [Xperience Dropdown selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) has a `DataProviderType` property that can take a class, mapping a custom enumeration to specific dropdown options. 
 While it is viable to implement a custom class per enumeration, a reusable **generic** class will save you time and lines of code.
 First, create a generic `DropdownEnumOptionProvider` class that:
   * Implements `IDropDownOptionsProvider`
@@ -55,7 +57,7 @@ public class DropdownEnumOptionProvider<T> : IDropDownOptionsProvider where T : 
 
 ## Create a service to parse enumeration values from strings
 With the provider in place, we need another element before we can start to use it.
-Although we feed the dropdown list with options from the enumeration, the value from the dropdown selector control comes back as `string` by definition. As a result, we need a generic service to parse `enum` values from `string` objects when we want to work with them [later in the Page Builder series](guides/development/page-builder/create-versatile-templates-part-1#style-the-template-based-on-properties).
+Although we feed the dropdown list with options from the enumeration, the value from the dropdown selector control comes back as `string` by definition. As a result, we need a generic service to parse `enum` values from `string` objects when we want to work with them [later in the Page Builder series](/guides/development/page-builder/create-versatile-templates-part-1#style-the-template-based-on-properties).
 C#
 **IEnumStringService.cs**
 Copy
@@ -180,16 +182,8 @@ public enum LandingPageHeadingTypeOption
 
 If you followed along with the example above, run the _TrainingGuides.Web_ project. When you edit the **Home page** template in the Xperience administration, the **Message tag type** property should let you change the style of the _“Welcome to Training guides!”_ message – the same way as before the refactor.
 Your browser does not support the video tag. 
-[ Previous page ](modules/page-builder/meet-requirements-with-page-builder)
+[ Previous page ](/modules/page-builder/meet-requirements-with-page-builder)
 3 of 16
-[ Mark complete and continue ](modules/page-builder/model-template-data)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/map-enum-to-dropdown)
-[](https://docs.kentico.com/modules/page-builder/map-enum-to-dropdown)[](https://docs.kentico.com/modules/page-builder/map-enum-to-dropdown)
+[ Mark complete and continue ](/modules/page-builder/model-template-data)
+![]()
+[]()[]()

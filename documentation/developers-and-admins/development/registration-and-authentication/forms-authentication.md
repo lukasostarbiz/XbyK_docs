@@ -1,20 +1,27 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/registration-and-authentication/forms-authentication
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Registration and authentication](/documentation/developers-and-admins/development/registration-and-authentication)
+  * Forms authentication 
+
+
 # Forms authentication
-  * [ Copy page link ](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#) | [Get HelpService ID](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#)
 Forms authentication is a method of authenticating users in web applications where users are required to enter their credentials (such as a username and password) on a login page, which is then validated against a database or other data source to confirm their identity. The user’s credentials reach the server via a form submitted from the login page (hence the naming).
 Once the user is authenticated, a session is created for them and they can access protected pages and features of the application. The user’s identity is typically stored in an encrypted cookie for the duration of the session.
-Xperience by Kentico uses [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/identity/overview/getting-started/introduction-to-aspnet-identity) to manage membership in web applications. The types and API to set up forms authentication is located in the **Kentico.Membership** namespace (provided as part of the _Kentico.Xperience.WebApp_ [NuGet package](documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages)).
+Xperience by Kentico uses [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/identity/overview/getting-started/introduction-to-aspnet-identity) to manage membership in web applications. The types and API to set up forms authentication is located in the **Kentico.Membership** namespace (provided as part of the _Kentico.Xperience.WebApp_ [NuGet package](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages)).
 ## Prerequisites
-Before implementing forms authentication, you must [enable and configure ASP.NET Identity](documentation/developers-and-admins/development/registration-and-authentication) in your web application.
+Before implementing forms authentication, you must [enable and configure ASP.NET Identity](/documentation/developers-and-admins/development/registration-and-authentication) in your web application.
 ## Implement forms authentication
 Use the following approach to develop actions that allow visitors to register on your website:
-  * [Registration](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#registration)
-  * [Sign in and sign out](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#sign-in-and-sign-out)
-  * [Password policy](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#password-policy)
-  * [Password reset](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication#password-reset)
+  * [Registration](#registration)
+  * [Sign in and sign out](#sign-in-and-sign-out)
+  * [Password policy](#password-policy)
+  * [Password reset](#password-reset)
 
 
 ### Registration
@@ -107,7 +114,7 @@ public class AccountController : Controller
 }
 ```
 
-In Xperience, registered users are stored as members in the **CMS_Member** database table and displayed in the administration’s **Members** application. In the example above, `ApplicationUser` represents the Xperience member object that is being created. The default implementation lets you collect only basic data (username, email, password). To collect a broader set of visitor data, the `ApplicationUser` class can be extended with additional fields (first name, title, etc.). See [Add fields to member objects](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects). 
+In Xperience, registered users are stored as members in the **CMS_Member** database table and displayed in the administration’s **Members** application. In the example above, `ApplicationUser` represents the Xperience member object that is being created. The default implementation lets you collect only basic data (username, email, password). To collect a broader set of visitor data, the `ApplicationUser` class can be extended with additional fields (first name, title, etc.). See [Add fields to member objects](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects). 
 Next, create a view model for the Register action (`RegisterViewModel` in the example above). The view model:
   * Passes parameters from the registration form (name, email address, password and confirmation field).
 The name is required for every account. See the [IUserValidator](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.iuservalidator-1) implementation in the default Identity implementation.
@@ -824,3 +831,5 @@ Design the user interface required for registration on your website:
 
 
 Visitors can now register accounts on your site. Upon registration, the system creates a disabled member in the connected Xperience database – **CMS_Member** table – and sends a confirmation email to the submitted address. After clicking the confirmation link, the visitor’s account becomes enabled and they can sign in.
+![]()
+[]()[]()

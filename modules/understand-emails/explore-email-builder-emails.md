@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/understand-emails/explore-email-builder-emails
+scrape_date: 2026-01-22
+---
+
+Module: Understand emails in Xperience
+7 of 31 Pages
 # Explore Email Builder
-  * [ Copy page link ](modules/understand-emails/explore-email-builder-emails#) | [Get HelpService ID](modules/understand-emails/explore-email-builder-emails#)
-Core MVC 5
-
-
-[✖](modules/understand-emails/explore-email-builder-emails# "Close page link panel") [Copy to clipboard](modules/understand-emails/explore-email-builder-emails#)
 The _Email Builder_ offers a visual, drag-and-drop experience for creating emails. Similar to Xperience’s **Page Builder** , it lets you put together content using developer-configured **email widgets** inside customizable **email sections**.
-[![Email Builder developer-built widgets and customizable sections](docsassets/guides/structured-emails-vs-email-builder/email-builder-widgets-and-sections.png)](https://docs.kentico.com/docsassets/guides/structured-emails-vs-email-builder/email-builder-widgets-and-sections.png)
+[![Email Builder developer-built widgets and customizable sections](/docsassets/guides/structured-emails-vs-email-builder/email-builder-widgets-and-sections.png)](/docsassets/guides/structured-emails-vs-email-builder/email-builder-widgets-and-sections.png)
 This approach is perfect if you want more flexibility in how your content looks, whether you’re crafting a one-off blast or tailoring messages for different audiences.
 ### How does Email Builder work
-Unlike [structured emails](modules/understand-emails/understand-structured-emails), where you fill a pre-set form with your content, _Email Builder_ gives you the freedom to build your message visually, using a what-you-see-is-what-you-get approach.
+Unlike [structured emails](/modules/understand-emails/understand-structured-emails), where you fill a pre-set form with your content, _Email Builder_ gives you the freedom to build your message visually, using a what-you-see-is-what-you-get approach.
 With _Email Builder_ , you can:
   * Build emails by dragging sections and widgets into place.
   * You can see your layout changes as you work.
@@ -32,9 +34,17 @@ Your developers set up the widgets for you. They can even add styling options so
 
 
 #### Contact group-based personalization
-_Email Builder_ widgets allow you to personalize email content using Contact groups, just like you would in the [Page Builder](documentation/business-users/digital-marketing/widget-personalization).
+_Email Builder_ widgets allow you to personalize email content using Contact groups, just like you would in the [Page Builder](/documentation/business-users/digital-marketing/widget-personalization).
 This means you can tailor sections of your email content to different segments of your audience, without needing to duplicate the entire email, or leave the _Email Builder_ environment.
 _Email Builder_ makes it easy to:
   * Show different content to different personas using **Contact groups**.
   * Tailor messages for new customers, loyal subscribers, or re-engagement messaging.
   * This approach is currently supported only in _Email Builder_.
+
+
+* * *
+[ Previous page ](/modules/understand-emails/understand-structured-emails)
+7 of 31
+[ Mark complete and continue ](/modules/understand-emails/comparing-structured-and-email-builder-emails)
+![]()
+[]()[]()

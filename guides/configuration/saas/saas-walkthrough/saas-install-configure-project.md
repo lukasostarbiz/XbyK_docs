@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/saas/saas-walkthrough/saas-install-configure-project
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [SaaS](/guides/configuration/saas)
+  * [Deploy to SaaS step-by-step](/guides/configuration/saas/saas-walkthrough)
+  * Install, configure and develop a SaaS-ready project 
+
+
 # Install, configure and develop a SaaS-ready project
-  * [ Copy page link ](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#) | [Get HelpService ID](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#) | This page is part of a module: [ Deploy to SaaS step-by-step ](modules/deploy-to-saas-step-by-step)
-Core MVC 5
-
-
-[✖](guides/configuration/saas/saas-walkthrough/saas-install-configure-project# "Close page link panel") [Copy to clipboard](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#)
 Now that you’ve set up your Xperience Portal, let’s prepare your project for Kentico SaaS deployment.
 ## Before you start
 To follow along, we recommend your machine has the following installed:
@@ -14,9 +21,9 @@ To follow along, we recommend your machine has the following installed:
 
 ## Install SaaS-ready project
 Kentico provides an easy way to ensure all the default configuration is in place with our .NET templates and installation parameters.
-First, [check your existing Kentico template versions](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#check-your-existing-template-versions) and [install the desired one](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#install-the-required-version-of-templates).
+First, [check your existing Kentico template versions](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#check-your-existing-template-versions) and [install the desired one](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#install-the-required-version-of-templates).
 Then, create a project using the _kentico-xperience-sample-mvc_ template (the Dancing Goat sample site).
-The [`--cloud` parameter](documentation/developers-and-admins/installation#create-a-project) will automatically add SaaS-specific sample configuration to your newly generated project.
+The [`--cloud` parameter](/documentation/developers-and-admins/installation#create-a-project) will automatically add SaaS-specific sample configuration to your newly generated project.
 CMD
 **Create a new cloud-ready project**
 Copy
@@ -34,7 +41,7 @@ Obtain a license key from your Xperience Portal (you only need this for local de
 
 Your browser does not support the video tag. 
 Make sure to **store the key before you click _OK_**. The generated key is NOT stored in the Portal so you will not be able to access it later.
-Next, obtain the hash string salt for your project from the Xperience Portal dashboard: [![Hash string salt in Xperience Portal](docsassets/guides/saas-install-configure-project/hash-string-salt.png)](https://docs.kentico.com/docsassets/guides/saas-install-configure-project/hash-string-salt.png)
+Next, obtain the hash string salt for your project from the Xperience Portal dashboard: [![Hash string salt in Xperience Portal](/docsassets/guides/saas-install-configure-project/hash-string-salt.png)](/docsassets/guides/saas-install-configure-project/hash-string-salt.png)
 Your browser does not support the video tag. 
 Run the following command to create and connect a database to your project.
 CMD
@@ -46,15 +53,15 @@ dotnet kentico-xperience-dbmanager -- -s "<sql_server_name>" -a "dg123*" -d "Xpe
 
 Remember to replace the `<sql_server_name>` and `<path_to_your_license_txt_file>` placeholders with values relevant to your local environment.
 The **hash string salt value has to match** the value from your Xperience Portal dashboard.
-For more information about database creation and the command’s parameters, visit [our documentation](documentation/developers-and-admins/installation#create-the-project-database).
+For more information about database creation and the command’s parameters, visit [our documentation](/documentation/developers-and-admins/installation#create-the-project-database).
 After successful database installation, run the project. You should see the Dancing Goat sample site Home page. Visit the _/admin_ path and sign in to the administration to ensure everything installed correctly.
-[![Dancing Goat project administration showing the Home screen of the website channel](docsassets/guides/saas-install-configure-project/dancing-goat-admin.jpg)](https://docs.kentico.com/docsassets/guides/saas-install-configure-project/dancing-goat-admin.jpg)
+[![Dancing Goat project administration showing the Home screen of the website channel](/docsassets/guides/saas-install-configure-project/dancing-goat-admin.jpg)](/docsassets/guides/saas-install-configure-project/dancing-goat-admin.jpg)
 ## Enable Continuous Integration (CI) - optional
-Enabling [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration) is not a must from the perspective of Kentico SaaS; it’s more of the choice of your project’s development team.
+Enabling [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration) is not a must from the perspective of Kentico SaaS; it’s more of the choice of your project’s development team.
 If you wish to enable CI for your project, sign in to your administration interface, navigate to the **Settings** application (under **Configuration** in the dashboard). Under **Synchronization - > Continuous Integration** check the **Enable Continuous Integration** checkbox.
 Save.
-[![How to enable CI in the administration interface](docsassets/guides/saas-install-configure-project/enable-ci.png)](https://docs.kentico.com/docsassets/guides/saas-install-configure-project/enable-ci.png)
-Now you can use the `--kxp-ci-store` and `--kxp-ci-restore` commands as explained in [our documentation](documentation/developers-and-admins/ci-cd/continuous-integration).
+[![How to enable CI in the administration interface](/docsassets/guides/saas-install-configure-project/enable-ci.png)](/docsassets/guides/saas-install-configure-project/enable-ci.png)
+Now you can use the `--kxp-ci-store` and `--kxp-ci-restore` commands as explained in [our documentation](/documentation/developers-and-admins/ci-cd/continuous-integration).
 ## Examine and adjust the SaaS-specific configuration
 Thanks to the `--cloud` parameter, your new project now includes the necessary NuGet packages, including the [Kentico.Xperience.Cloud](https://www.nuget.org/packages/Kentico.Xperience.Cloud) and all the default SaaS-specific configuration:
   * _repository.config_ - a file holding the default Continuous Deployment (CD) configuration
@@ -63,16 +70,16 @@ Thanks to the `--cloud` parameter, your new project now includes the necessary N
   * _StorageInitializationModule.cs_ - a file holding the Azure Blob storage mapping
 
 
-[![Screenshot from an IDE \(Visual Studio\) showing the project structure, pointing out cloud-specific default configuration](docsassets/guides/saas-install-configure-project/default-config.png)](https://docs.kentico.com/docsassets/guides/saas-install-configure-project/default-config.png)
+[![Screenshot from an IDE \(Visual Studio\) showing the project structure, pointing out cloud-specific default configuration](/docsassets/guides/saas-install-configure-project/default-config.png)](/docsassets/guides/saas-install-configure-project/default-config.png)
 Let’s examine the default configuration one-by-one.
 ### Continuous Deployment
-[Continuous deployment (CD)](documentation/developers-and-admins/ci-cd/continuous-deployment) in Xperience converts content and objects from the database into XML files. These files are deployed with your code and restored in target environments through automated pipelines. This is a mechanism that Kentico SaaS uses for project data deployment.
+[Continuous deployment (CD)](/documentation/developers-and-admins/ci-cd/continuous-deployment) in Xperience converts content and objects from the database into XML files. These files are deployed with your code and restored in target environments through automated pipelines. This is a mechanism that Kentico SaaS uses for project data deployment.
 **Content sync**
-After your initial deployment, you don’t necessarily need CD every time you want to move content changes between SaaS environments. For [supported content](documentation/business-users/content-sync#supported-content), you can use [content sync](documentation/business-users/content-sync) to deploy updates (_Advanced_ license required).
-See [Content sync configuration](documentation/developers-and-admins/configuration/content-sync-configuration) for configuration details. If the updated content is not supported by content sync or if the feature is not available, deploy the changes via a new [deployment package](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package).
+After your initial deployment, you don’t necessarily need CD every time you want to move content changes between SaaS environments. For [supported content](/documentation/business-users/content-sync#supported-content), you can use [content sync](/documentation/business-users/content-sync) to deploy updates (_Advanced_ license required).
+See [Content sync configuration](/documentation/developers-and-admins/configuration/content-sync-configuration) for configuration details. If the updated content is not supported by content sync or if the feature is not available, deploy the changes via a new [deployment package](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package).
 Take a look at the _$CDRepository_ folder and its _repository.config_ file.
-The _repository.config_ holds the default CD configuration in an XML format. It [includes and excludes objects](documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories), determining which ones will be a part of the deployment in the Xperience portal.
-The object types are identified by their **CI/CD folder names**. Visit [our documentation](documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types) for a list of objects supported by CD, their [CI/CD folder names](documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types#general), and additional notes.
+The _repository.config_ holds the default CD configuration in an XML format. It [includes and excludes objects](/documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories), determining which ones will be a part of the deployment in the Xperience portal.
+The object types are identified by their **CI/CD folder names**. Visit [our documentation](/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types) for a list of objects supported by CD, their [CI/CD folder names](/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types#general), and additional notes.
 Your file right now is set up correctly for the Dancing Goat sample site project and should look like this:
 XML
 **repository.config**
@@ -199,7 +206,7 @@ Copy
 For this series, we don’t need to adjust the CD configuration. If you decide to modify the _repository.config_ file in your own project, be careful about including all the necessary objects.
 If you realize your deployment is missing anything (e.g., can’t see pages), check your _repository.config_. It may be excluding or including some objects incorrectly.
 ### Identification of your working environment
-Sometimes, you may need to run certain code only in a specific environment. You can do this using the [environment identification extension methods](documentation/developers-and-admins/configuration/saas-configuration#environment-identification-extension-methods).
+Sometimes, you may need to run certain code only in a specific environment. You can do this using the [environment identification extension methods](/documentation/developers-and-admins/configuration/saas-configuration#environment-identification-extension-methods).
 Take a look at the _Program.cs_ file in the root of your project to see an example usage.
 C#
 **Program.cs**
@@ -229,7 +236,7 @@ For this series, we don’t need to change this configuration. However, if your 
 If you do make changes, remember to rebuild the solution for them to take effect.
 ### Microsoft Application Insights
 This integration allows you to see errors and warnings from Xperience event log and .NET exceptions (including ones that occur before the Xperience app is fully running) in the Xperience Portal.
-Our generated project already has the [Microsoft Application Insights enabled](documentation/developers-and-admins/configuration/saas-configuration#microsoft-application-insights-integration) - you can see the line of code in the _Program.cs_ file, when building the web application:
+Our generated project already has the [Microsoft Application Insights enabled](/documentation/developers-and-admins/configuration/saas-configuration#microsoft-application-insights-integration) - you can see the line of code in the _Program.cs_ file, when building the web application:
 C#
 **Program.cs**
 Copy
@@ -243,7 +250,7 @@ You can turn off the insights entirely by simply removing the line.
 If your project uses client-side telemetry, you can add the logs by following the [Microsoft documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications).
 If you make changes to this setting, rebuild the solution for them to take effect.
 ### SendGrid integration
-The [SendGrid integration](documentation/developers-and-admins/configuration/email-configuration#managed-sendgrid-integration) to send emails is also a part of your generated _Program.cs_ file:
+The [SendGrid integration](/documentation/developers-and-admins/configuration/email-configuration#managed-sendgrid-integration) to send emails is also a part of your generated _Program.cs_ file:
 C#
 **Program.cs**
 Copy
@@ -259,11 +266,11 @@ if (builder.Environment.IsQa()
 }
 ```
 
-We are using the [environment identification extension](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#identification-of-your-working-environment) methods mentioned above to enable SendGrid only in the SaaS environment, as it will not work locally.
-Read more about the [SendGrid integration in our documentation](documentation/developers-and-admins/configuration/email-configuration#managed-sendgrid-integration).
+We are using the [environment identification extension](#identification-of-your-working-environment) methods mentioned above to enable SendGrid only in the SaaS environment, as it will not work locally.
+Read more about the [SendGrid integration in our documentation](/documentation/developers-and-admins/configuration/email-configuration#managed-sendgrid-integration).
 ### Cloudflare CDN configuration
-Kentico SaaS integrates with the [Cloudflare CDN](documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn) to perform caching.
-For this series, you can stick to the default caching configuration, which you can read more about in [our documentation](documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn).
+Kentico SaaS integrates with the [Cloudflare CDN](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn) to perform caching.
+For this series, you can stick to the default caching configuration, which you can read more about in [our documentation](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn).
 If you’d like to override the default caching, you can, for example, set the TTL to a specific number by setting the _Cache-Control_ HTTP header for each HTTP response. See an example in the documentation.
 ### Azure Blob storage folder mapping
 By default, Kentico SaaS uses Azure Blob storage to store media or binary files.
@@ -295,7 +302,7 @@ protected override void OnInit()
 
 Unless you use a different folder structure for media files than Xperience by Kentico’s default, you don’t need to change this configuration at all.
 ### Custom static page to display when app is unavailable
-In case your app is temporarily offline, it is a good practice to define a [custom static page](documentation/developers-and-admins/configuration/saas-configuration#define-a-custom-app-offline-file) that the visitor will see instead of a default generic page.
+In case your app is temporarily offline, it is a good practice to define a [custom static page](/documentation/developers-and-admins/configuration/saas-configuration#define-a-custom-app-offline-file) that the visitor will see instead of a default generic page.
 Add this file to your project’s root (including the ’_’ suffix). Feel free to modify the structure or style to your linking or branding needs:
 HTML
 **app_offline.htm_**
@@ -318,4 +325,6 @@ Copy
 Your project is now ready from the configuration standpoint.
 If you are following along using the Dancing Goat sample site, there’s no need for any code adjustments at this time. In your own solution, you can now perform any development, adjustments, or data/code migration, before you move to the next step - the initial project deployment.
 ## Continue learning
-When you’re ready, move on to the next page: [Deploy your solution to Xperience Portal](guides/configuration/saas/saas-walkthrough/saas-initial-deployment).
+When you’re ready, move on to the next page: [Deploy your solution to Xperience Portal](/guides/configuration/saas/saas-walkthrough/saas-initial-deployment).
+![]()
+[]()[]()

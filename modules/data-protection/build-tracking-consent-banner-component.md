@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/data-protection/build-tracking-consent-banner-component
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+6 of 13 Pages
 # Build a tracking consent banner component
-  * [ Copy page link ](modules/data-protection/build-tracking-consent-banner-component#) | [Get HelpService ID](modules/data-protection/build-tracking-consent-banner-component#)
-Core MVC 5
-
-
-[✖](modules/data-protection/build-tracking-consent-banner-component# "Close page link panel") [Copy to clipboard](modules/data-protection/build-tracking-consent-banner-component#)
 Many websites offer a simple banner that allows visitors to agree to all tracking. With this kind of banner, visitors don’t need to go to a dedicated cookie policy page to read the full details of each consent and configure their preferences accordingly.
 Here, we will look over the process of creating a banner that allows visitors to consent to all tracking cookies.
-[![Consent tracking banner example](docsassets/guides/build-a-tracking-consent-banner/2023-12-06+14_51_16-Kentico+training+guides.png)](https://docs.kentico.com/docsassets/guides/build-a-tracking-consent-banner/2023-12-06+14_51_16-Kentico+training+guides.png)
+[![Consent tracking banner example](/docsassets/guides/build-a-tracking-consent-banner/2023-12-06+14_51_16-Kentico+training+guides.png)](/docsassets/guides/build-a-tracking-consent-banner/2023-12-06+14_51_16-Kentico+training+guides.png)
 The banner in this example also ensures that contacts who have revoked consent in a different browser will have tracking cookies removed from their current browser.
 ## Define the model
 To start out, consider what kind of data the banner will need to display and create a view model with properties that reflect those needs.
@@ -35,7 +37,7 @@ public class TrackingConsentViewModel
 
 ## Add a view component
 This example does not need configurable properties and should be rendered on every page by way of the Layout view. It is well-suited for a view component.
-Looking at the [tracking consent view component example](documentation/developers-and-admins/data-protection/consent-development) from the documentation, the component behaves in the following ways:
+Looking at the [tracking consent view component example](/documentation/developers-and-admins/data-protection/consent-development) from the documentation, the component behaves in the following ways:
   * It retrieves the consent the user will be presented with.
   * It checks whether the current contact has agreed to that consent, and if not, it ensures that the contact no longer has tracking cookies.
     * This covers the scenario of a visitor being identified on two different browsers and revoking consent on one.
@@ -48,7 +50,7 @@ This example will follow the same principle but with multiple consents to accoun
   3. Check which consent the current contact has agreed to and ensure that their cookies reflect the corresponding level.
   4. Assemble a view model with the relevant consent short texts.
 **Consent data encryption**
-As with the [cookie preferences widget](modules/data-protection/create-cookie-consent-widget), the view model needs to hold encrypted data about the consents it renders. This ensures that no consent agreements are created between the contact and the wrong consent, in the event that an editor changes the cookie level mapping after the banner is rendered but before it is submitted.
+As with the [cookie preferences widget](/modules/data-protection/create-cookie-consent-widget), the view model needs to hold encrypted data about the consents it renders. This ensures that no consent agreements are created between the contact and the wrong consent, in the event that an editor changes the cookie level mapping after the banner is rendered but before it is submitted.
 This time, however, since the banner always accepts the highest cookie consent level, we only need to include a list of consents, with no need for information about which cookie level they are mapped to.
 
 
@@ -227,16 +229,8 @@ Notice the `EnsureCorrectCookieLevel` method, which checks the contact’s conse
 This is necessary because the same contact can be identified across multiple browsers. If they were to consent to the highest cookie level, then revoke their consent in one browser before visiting the site in a second browser or device, the second browser would still contain tracking cookies based on their previous consent. As a result, your app would directly violate their personal data rights.
 For this reason, this example will indiscriminately invoke the consent banner from the layout view so that this code always executes, regardless of whether or not it displays anything.
 Also, note the `RedirectUrl` property, which sets the URL of the cookie configuration page. It is hard-coded in this example, but you can change it to pull a URL from a specific content item or custom configuration class.
-[ Previous page ](modules/data-protection/handle-cookie-consent-requests)
+[ Previous page ](/modules/data-protection/handle-cookie-consent-requests)
 6 of 13
-[ Mark complete and continue ](modules/data-protection/handle-tracking-consent-banner-data)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/build-tracking-consent-banner-component)
-[](https://docs.kentico.com/modules/data-protection/build-tracking-consent-banner-component)[](https://docs.kentico.com/modules/data-protection/build-tracking-consent-banner-component)
+[ Mark complete and continue ](/modules/data-protection/handle-tracking-consent-banner-data)
+![]()
+[]()[]()

@@ -1,28 +1,34 @@
+---
+source: https://docs.kentico.com/guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Data protection](/guides/development/data-protection)
+  * Identity collectors - Gather contacts associated with a visitor 
+
+
 # Identity collectors - Gather contacts associated with a visitor
-  * [ Copy page link ](guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#) | [Get HelpService ID](guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#) | This page is part of a module: [ Data protection ](modules/data-protection)
-Core MVC 5
-
-
-[✖](guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor# "Close page link panel") [Copy to clipboard](guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#)
 Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
-Let’s create an identity collector for gathering [Contacts](documentation/business-users/digital-marketing/contact-management). Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
-Let’s create an identity collector for gathering [Contacts](documentation/business-users/digital-marketing/contact-management).
-You can read more about GDPR compliance in the [Xperience by Kentico Documentation](documentation/developers-and-admins/data-protection/gdpr-compliance).
+Let’s create an identity collector for gathering [Contacts](/documentation/business-users/digital-marketing/contact-management). Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
+Let’s create an identity collector for gathering [Contacts](/documentation/business-users/digital-marketing/contact-management).
+You can read more about GDPR compliance in the [Xperience by Kentico Documentation](/documentation/developers-and-admins/data-protection/gdpr-compliance).
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the [earlier guides in the series](guides/development/data-protection).
+  * Have followed along with the samples from the [earlier guides in the series](/guides/development/data-protection).
 
 
-The example presented in this [Data protection guide series](guides/development/data-protection) is a **valid implementation of data protection for[Contacts](documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](documentation/business-users/members) and their associated data.)
+The example presented in this [Data protection guide series](/guides/development/data-protection) is a **valid implementation of data protection for[Contacts](/documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](/documentation/business-users/members) and their associated data.)
 You can copy-paste the code samples into your own solution.
 However, if you choose to do so, **make sure to consult your legal team** to determine whether the implementation, texts, and consent levels **meet the requirements of your region and market**.
-The example presented in this [Data protection guide series](guides/development/data-protection) is a **valid implementation of data protection for[Contacts](documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](documentation/business-users/members) and their associated data.)
+The example presented in this [Data protection guide series](/guides/development/data-protection) is a **valid implementation of data protection for[Contacts](/documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](/documentation/business-users/members) and their associated data.)
 You can copy-paste the code samples into your own solution.
 However, if you choose to do so, **make sure to consult your legal team** to determine whether the implementation, texts, and consent levels **meet the requirements of your region and market**.
 **Code samples**
@@ -47,10 +53,10 @@ Note: The system uses identifiers, such as an email address, to find Identity ob
 
 Consider an example where you use an email address as the identifier and create a form that collects the first and last name of a visitor but no email address. In such a case, there would be no way to find that information using a supplied email address, and GDPR compliance would be impossible when a visitor exercises their _right to be forgotten_.
 ## Implement the identity collector
-This code sample will assume the site collects only contacts as identities — it does not account for visitors saved as [users](documentation/developers-and-admins/configuration/users/user-management), [members](documentation/business-users/members), or [custom objects](documentation/developers-and-admins/customization/object-types).
+This code sample will assume the site collects only contacts as identities — it does not account for visitors saved as [users](/documentation/developers-and-admins/configuration/users/user-management), [members](/documentation/business-users/members), or [custom objects](/documentation/developers-and-admins/customization/object-types).
   1. Create a _Collectors_ folder in _~/Features/DataProtection_ of the _TrainingGuides.Web_ project.
   2. Add a _ContactIdentityCollector.cs_ file to the folder, and add a namespace matching the folder structure (`TrainingGuides.Web.Features.DataProtection.Collectors`).
-  3. Copy the [example identity collector from the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#create-the-identity-collector), and add it to the same namespace.
+  3. Copy the [example identity collector from the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#create-the-identity-collector), and add it to the same namespace.
   4. Add a constant to replace the hard-coded `“email”` string, as it occurs more than once.
   5. Define additional logic that creates a new contact with the supplied email address if the query finds none.
 It is possible for form data containing an email address to exist even if there is no contact in the database with that email. Creating this dummy contact allows the _Data collector_ , which will be covered in the next part of this series, to find form data associated with the provided email address in such a case.
@@ -148,8 +154,10 @@ public class DataProtectionRegistrationModule : Module
 }
 ```
 
-Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them. Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them.
+Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them. Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them.
 The `IdentityCollectorRegister`, like the other data protection registers, is a queue that can contain multiple collectors. If the same class is registered to this queue more than once, it will be called multiple times.
 ## What’s next?
 ## What’s next?
-The [following guide](guides/development/data-protection/data-collectors-find-contact-personal-data) in this series will cover the process of creating a _Data collector_ and some utility classes to help it run smoothly.
+The [following guide](/guides/development/data-protection/data-collectors-find-contact-personal-data) in this series will cover the process of creating a _Data collector_ and some utility classes to help it run smoothly.
+![]()
+[]()[]()

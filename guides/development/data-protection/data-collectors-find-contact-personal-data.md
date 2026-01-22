@@ -1,26 +1,32 @@
+---
+source: https://docs.kentico.com/guides/development/data-protection/data-collectors-find-contact-personal-data
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Data protection](/guides/development/data-protection)
+  * Data collectors - Find contact personal data 
+
+
 # Data collectors - Find contact personal data
-  * [ Copy page link ](guides/development/data-protection/data-collectors-find-contact-personal-data#) | [Get HelpService ID](guides/development/data-protection/data-collectors-find-contact-personal-data#)
-Core MVC 5
-
-
-[✖](guides/development/data-protection/data-collectors-find-contact-personal-data# "Close page link panel") [Copy to clipboard](guides/development/data-protection/data-collectors-find-contact-personal-data#)
 Some data protection laws require all of a visitor’s tracked personal data to be gathered and delivered to them upon request. A data collector is necessary to implement such functionality in Xperience by Kentico.
 Data collectors find other objects associated with a provided set of identities from the Identity collector. In this example, the identities are contacts, and the data collector will find accounts, consent agreements, form data, activities, and other auxiliary data associated with those contacts.
 This example includes _accounts_ and other related objects which are considered obsolete as of version **30.9.0**.
-More details are available in the [changelog](documentation/changelog#refresh-august-25-2025).
+More details are available in the [changelog](/documentation/changelog#refresh-august-25-2025).
 If you are using a newer version, you can remove the affected code from these samples.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the [earlier guides in the series](guides/development/data-protection).
+  * Have followed along with the samples from the [earlier guides in the series](/guides/development/data-protection).
 
 
-The example presented in this [Data protection guide series](guides/development/data-protection) is a **valid implementation of data protection for[Contacts](documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](documentation/business-users/members) and their associated data.)
+The example presented in this [Data protection guide series](/guides/development/data-protection) is a **valid implementation of data protection for[Contacts](/documentation/business-users/digital-marketing/contact-management)** in Xperience by Kentico. (Note that it does not cover the collection and erasure of [Members](/documentation/business-users/members) and their associated data.)
 You can copy-paste the code samples into your own solution.
 However, if you choose to do so, **make sure to consult your legal team** to determine whether the implementation, texts, and consent levels **meet the requirements of your region and market**.
 **Code samples**
@@ -58,7 +64,7 @@ public class CollectedColumn
 ```
 
   4. Create a _Writers_ subfolder in _~/Features/DataProtection_ and add an interface that both the human and machine-readable writer classes can implement.
-  5. Similar to the [example in the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), add signatures for void methods that create beginning and ending sections and info objects.
+  5. Similar to the [example in the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), add signatures for void methods that create beginning and ending sections and info objects.
   6. Create an additional method signature for writing values.
   7. Add a method signature for a string method that outputs the result of the writer’s operations.
 C#
@@ -84,10 +90,10 @@ public interface IPersonalDataWriter : IDisposable
 
 ### Add a human-readable writer
   1. In the same folder, define a `HumanReadablePersonalDataWriter` that implements the `IPersonalDataWriter` interface.
-  2. Define it similarly to the [documentation example](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), utilizing a private string builder property.
+  2. Define it similarly to the [documentation example](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes), utilizing a private string builder property.
   3. Add a method called `WriteSectionValue` that prints a key and value, ignoring the section name, which the machine-readable counterpart can utilize.
   4. Leave the `Dispose` method empty.
-You don’t need the method here, but it is important for the machine-readable data writer covered in the [next step](guides/development/data-protection/data-collectors-find-contact-personal-data#create-a-machine-readable-writer).
+You don’t need the method here, but it is important for the machine-readable data writer covered in the [next step](#create-a-machine-readable-writer).
 
 
 C#
@@ -214,7 +220,7 @@ public class HumanReadablePersonalDataWriter : IPersonalDataWriter
 ```
 
 ### Create a machine-readable writer
-Add an XML writer that closely mirrors the [example in the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes).
+Add an XML writer that closely mirrors the [example in the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes).
 In this case, `WriteSectionValue` needs to use the `sectionName` property for the XML tags rather than the display name.
 C#
 **XmlPersonalDataWriter.cs**
@@ -1094,7 +1100,9 @@ var serviceProvider = parameters.Services.GetRequiredService<IServiceProvider>()
 
 
 Now, the system will use this data collector on the **Data portability** and **Right to access** tabs of the **Data protection** application in the **Configuration** section of the Xperience administration interface.
-If you search the email address of an existing contact on one of these tabs, Xperience will use this data collector, in conjunction with the identity collector from [earlier in this series](guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor), to retrieve data associated with that contact. See an example in the following video:
+If you search the email address of an existing contact on one of these tabs, Xperience will use this data collector, in conjunction with the identity collector from [earlier in this series](/guides/development/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor), to retrieve data associated with that contact. See an example in the following video:
 Your browser does not support the video tag. 
 ## What’s next?
-The [next guide in this series](guides/development/data-protection/data-erasers-clear-contact-information-from-the-site) will cover the process of creating a _Data eraser_ for removing visitors’ personal data from the site.
+The [next guide in this series](/guides/development/data-protection/data-erasers-clear-contact-information-from-the-site) will cover the process of creating a _Data eraser_ for removing visitors’ personal data from the site.
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/email-builder/complete-flexible-template
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+12 of 13 Pages
 # Complete the flexible template and its section
-  * [ Copy page link ](modules/email-builder/complete-flexible-template#) | [Get HelpService ID](modules/email-builder/complete-flexible-template#)
-Core MVC 5
-
-
-[✖](modules/email-builder/complete-flexible-template# "Close page link panel") [Copy to clipboard](modules/email-builder/complete-flexible-template#)
 With the Razor component in place, let’s create a section that utilizes our email builder columns component. Create the _~/Features/Shared/EmailBuilder/Sections_ folder.
 ### Define section properties.
 To feed the parameters of our columns component, we need properties that allow editors to choose different layout and styling options.
@@ -127,7 +129,7 @@ public class Invisible : VisibilityCondition
 ```
 
 ### Define the section’s Razor component
-Thanks to the `EmailBuilderColumns` component [we built earlier](modules/email-builder/build-reusable-columns-component), the section component can be fairly simple.
+Thanks to the `EmailBuilderColumns` component [we built earlier](/modules/email-builder/build-reusable-columns-component), the section component can be fairly simple.
 In the code-behind, register the component and include a `GeneralEmailSectionProperties` parameter to access marketers’ configurations. Then utilize the `IEnumStringService` to parse enumeration values from the properties.
 C#
 **GeneralEmailSection.razor.cs**
@@ -265,7 +267,7 @@ public class GeneralEmailTemplateProperties : IEmailTemplateProperties
 
 Now we can move on to the Razor component for the template. The approach for the template’s layout is much simpler than dealing with columns, so there’s no need to break it out into a separate component.
 Aside from the layout, we also need to account for information in the header of the email, like styles and metadata, and the unsubscribe link.
-If you haven’t been following along, make sure you have the [email data mapper](guides/development/email-marketing/use-email-builder-starter-kit#create-the-data-mapper) from earlier in this series.
+If you haven’t been following along, make sure you have the [email data mapper](/guides/development/email-marketing/use-email-builder-starter-kit#create-the-data-mapper) from earlier in this series.
 C#
 **GeneralEmailTemplate.razor.cs**
 Copy
@@ -407,19 +409,11 @@ Now your new Email Builder components are in working order!
 Create a new email using the _General email template_ to test it out!
 Your browser does not support the video tag. 
 You can use these components along with widgets from the Email Builder Starter Kit to create an email like this:
-[![Screenshot of a finished email](docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](https://docs.kentico.com/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
+[![Screenshot of a finished email](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)](/docsassets/guides/build-a-flexible-email-builder-template/FinishedEmail.png)
 Due to current system limitations at the time this guide was authored, the text color on the **Email Builder** tab may not match the color specified in a template or section. The correct color will appear on the **Preview** tab and in the sent email.
 Your marketers should consider the **Preview** tab as the _source of truth_.
-[ Previous page ](modules/email-builder/build-reusable-columns-component)
+[ Previous page ](/modules/email-builder/build-reusable-columns-component)
 12 of 13
-[ Mark complete and continue ](modules/email-builder/email-builder-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/complete-flexible-template)
-[](https://docs.kentico.com/modules/email-builder/complete-flexible-template)[](https://docs.kentico.com/modules/email-builder/complete-flexible-template)
+[ Mark complete and continue ](/modules/email-builder/email-builder-learn-more)
+![]()
+[]()[]()

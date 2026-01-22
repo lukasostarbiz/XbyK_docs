@@ -1,10 +1,16 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/installation/mcp-server
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Installation](/documentation/developers-and-admins/installation)
+  * Documentation MCP server 
+
+
 # Documentation MCP server
-  * [ Copy page link ](documentation/developers-and-admins/installation/mcp-server#) | [Get HelpService ID](documentation/developers-and-admins/installation/mcp-server#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/installation/mcp-server# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/installation/mcp-server#)
-The Xperience by Kentico Documentation MCP Server allows AI agents to securely access complete and up-to-date documentation, including guides and API examples. The MCP server provides guidance for all areas of Xperience by Kentico, for example [content management](documentation/business-users/content-hub), [digital marketing](documentation/developers-and-admins/digital-marketing-setup), or [digital commerce](documentation/developers-and-admins/digital-commerce-setup), directly within your integrated development environment (IDE).
+The Xperience by Kentico Documentation MCP Server allows AI agents to securely access complete and up-to-date documentation, including guides and API examples. The MCP server provides guidance for all areas of Xperience by Kentico, for example [content management](/documentation/business-users/content-hub), [digital marketing](/documentation/developers-and-admins/digital-marketing-setup), or [digital commerce](/documentation/developers-and-admins/digital-commerce-setup), directly within your integrated development environment (IDE).
 The MCP server is built on the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), an open standard that lets clients dynamically discover and query external data sources in real time. The server provides accurate, context-aware responses by combining semantic search with high-quality content retrieval from the official documentation in markdown format. Since the server syncs continuously with the published documentation, you’ll always get the most recent information and implementation details available.
 ## Install the MCP server
 The MCP server supports quick installation across multiple IDEs. Choose your preferred client below for a streamlined setup:
@@ -17,14 +23,14 @@ _URL_ : “https://docs.kentico.com/mcp” |  [Visual Studio MCP Official Guide]
 Claude Desktop |  Manual configuration required. For the URL, use https://docs.kentico.com/mcp. |  [Claude Desktop Remote MCP Guide](https://modelcontextprotocol.io/docs/develop/connect-remote-servers)  
 Cursor IDE |  [Install in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=kentico-docs-mcp&config=eyAiY29tbWFuZCI6ICJucHgiLCAiYXJncyI6IFsiLXkiLCAibWNwLXJlbW90ZSIsICJodHRwczovL2RvY3Mua2VudGljby5jb20vbWNwIl0gfQ==) |  [Cursor MCP Official Guide](https://cursor.com/docs/context/mcp)  
 ### Add the MCP server to VS Code
-Before adding the MCP server to your VS Code, make sure you have set up the [GitHub Copilot](https://code.visualstudio.com/docs/copilot/setup) and [installed](documentation/developers-and-admins/installation/mcp-server#install-the-mcp-server) the MCP server.
+Before adding the MCP server to your VS Code, make sure you have set up the [GitHub Copilot](https://code.visualstudio.com/docs/copilot/setup) and [installed](#install-the-mcp-server) the MCP server.
   1. Open GitHub Copilot in VS Code and [switch to Agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode).
   2. **Select** _Configure Tools_ in the right bottom corner of the chat window, next to the Send button.
   3. **Check** the box next to the _MCP Server: kentico-docs-mcp_.
   4. Confirm by selecting the **OK** button above the list.
 
 
-The agent should now be able to use the [MCP server tools](documentation/developers-and-admins/installation/mcp-server#mcp-server-tools) to complete your query.
+The agent should now be able to use the [MCP server tools](#mcp-server-tools) to complete your query.
 ## The Xperience by Kentico MCP server endpoint
 The Xperience by Kentico MCP Server is accessible to any IDE, agent, or tool that supports the Model Context Protocol (MCP). Any compatible client can connect to the following remote MCP endpoint: _https://docs.kentico.com/mcp_.
 JSON
@@ -39,7 +45,7 @@ Copy
 }
 ```
 
-This URL is intended for use within a compliant MCP client via [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http), such as the recommended clients listed in the [installation](documentation/developers-and-admins/installation/mcp-server#install-the-mcp-server) section. It does not support direct access from a web browser and may return a _405 Method Not Allowed_ error if accessed manually.
+This URL is intended for use within a compliant MCP client via [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http), such as the recommended clients listed in the [installation](#install-the-mcp-server) section. It does not support direct access from a web browser and may return a _405 Method Not Allowed_ error if accessed manually.
 If your client doesn’t support native remote MCP servers or if you prefer local configuration, you can use [mcp-remote](https://www.npmjs.com/package/mcp-remote) as a proxy. Configure MCP servers in `.mcp.json` at your project root.
 JSON
 **mcp-remote example**
@@ -88,4 +94,6 @@ Connection errors |  Verify your network connection and that the server URL is c
 No results returned |  Try rephrasing your query with more specific Xperience by Kentico terms  
 Tool not appearing in VS Code |  Restart VS Code or check that the MCP extension is properly installed  
 HTTP status 405 |  Method not allowed happens when a browser tries to connect to the endpoint. Try using the MCP Server through VS Code GitHub Copilot or MCP Inspector instead.  
-Fetch tool returns error |  Ensure the URL is from _docs.kentico.com_ domain only
+Fetch tool returns error |  Ensure the URL is from _docs.kentico.com_ domain only  
+![]()
+[]()[]()

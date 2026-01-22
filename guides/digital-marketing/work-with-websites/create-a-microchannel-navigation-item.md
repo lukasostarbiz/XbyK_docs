@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-websites/create-a-microchannel-navigation-item
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with websites](/guides/digital-marketing/work-with-websites)
+  * Create a microchannel navigation item 
+
+
 # Create a microchannel navigation item
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-websites/create-a-microchannel-navigation-item#) | [Get HelpService ID](guides/digital-marketing/work-with-websites/create-a-microchannel-navigation-item#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-websites/create-a-microchannel-navigation-item# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-websites/create-a-microchannel-navigation-item#)
 This guide walks you through the steps to add a navigation menu item for your microchannel. You’ll learn how to create new content items for the menu, reorder them for clarity, and add external links when needed.
 In microchannels (smaller or single-purpose sites), navigation menus are simple and usually contain only a few items. How you manage navigation in a microsite depends on how the project is set up. A common and recommended option is to use a dedicated settings element in the content tree. Editors can use this element to configure navigation and other settings specific to the microchannel. For navigation, they choose which items appear in the menu and arrange them in the order that matches the desired structure.
 **Prerequisites** : you have a [Kbank demo site](https://www.kentico.com/services/training/training-website-requests) Kbank demo site running to follow along with the exercise.
@@ -38,4 +44,6 @@ The new _Personal Banking_ navigation item is now included in the microchannel�
 
 
 ## Next steps
-You’ve now created a navigation menu item for your microchannel. A well-structured menu helps visitors quickly find what they need and improves their experience on your site. As your microchannel grows, revisit your navigation to keep it clear and relevant. To see how to create a navigation menu for a channel, see [Create a navigation menu](guides/digital-marketing/work-with-websites/create-a-navigation-menu) guide.
+You’ve now created a navigation menu item for your microchannel. A well-structured menu helps visitors quickly find what they need and improves their experience on your site. As your microchannel grows, revisit your navigation to keep it clear and relevant. To see how to create a navigation menu for a channel, see [Create a navigation menu](/guides/digital-marketing/work-with-websites/create-a-navigation-menu) guide.
+![]()
+[]()[]()

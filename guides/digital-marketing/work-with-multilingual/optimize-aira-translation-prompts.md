@@ -1,16 +1,22 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-multilingual/optimize-aira-translation-prompts
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with multilingual](/guides/digital-marketing/work-with-multilingual)
+  * Optimize AIRA translation prompts 
+
+
 # Optimize AIRA translation prompts
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-multilingual/optimize-aira-translation-prompts#) | [Get HelpService ID](guides/digital-marketing/work-with-multilingual/optimize-aira-translation-prompts#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-multilingual/optimize-aira-translation-prompts# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-multilingual/optimize-aira-translation-prompts#)
 **Advanced license required**  
 Features described on this page require the Xperience by Kentico Advanced license tier.
 Marketers spend a lot of time creating content that turns a first‑time visitor into a loyal customer. But if they just swap words between languages and call this content “translated”, all their effort can be ruined. A bad translation will not keep the **intent, brand voice, and clarity intact** , and all the work your team put in may be wasted.
 With AIRA, they can evaluate the translated content and then adjust the prompt to improve translation quality. Once they nail the prompt, they can use it for every other translation which will reduce the need for retranslation. In short: better quality in, better quality out.
 ## Prerequisites to translations with AIRA
 Make sure a few basics are in place before you start optimizing prompts:
-  * [AIRA](documentation/business-users/aira) needs to be available in your project and enabled for translations.
+  * [AIRA](/documentation/business-users/aira) needs to be available in your project and enabled for translations.
   * You know how to set up and start a translation in AIRA (the workflow itself is covered “Automate your translations with AIRA”).
   * You have access to AIRA app, where you can adjust and optimize your prompts in the **Translations** tab.
 
@@ -256,3 +262,5 @@ Not sure where to start? Here are some small ideas that you can add to the worki
 
 As you experiment with prompt iteration and expand your library of ready-to-use prompts for different content types or campaigns, you also grow your confidence. With each project, you’ll see how a few extra lines of clear guidance can elevate translation accuracy, protect your brand voice, and make every localization effort faster and smoother. AIRA becomes most powerful when you pair its automation with your own creative direction.
 Keep experimenting, keep improving, and watch your content resonate naturally across every local market.
+![]()
+[]()[]()

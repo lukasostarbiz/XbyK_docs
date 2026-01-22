@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/digital-marketing-essentials/collect-visitor-data-essentials
+scrape_date: 2026-01-22
+---
+
+Module: Digital marketing essentials
+3 of 7 Pages
 # Collect visitor data
-  * [ Copy page link ](modules/digital-marketing-essentials/collect-visitor-data-essentials#) | [Get HelpService ID](modules/digital-marketing-essentials/collect-visitor-data-essentials#)
-Core MVC 5
-
-
-[✖](modules/digital-marketing-essentials/collect-visitor-data-essentials# "Close page link panel") [Copy to clipboard](modules/digital-marketing-essentials/collect-visitor-data-essentials#)
 Xperience’s built-in **Forms** application takes your contact management to the next level. The online forms you build in the application help you **collect valuable visitor information**. And since the application is a part of Xperience, you can **convert collected data into actionable insights** and use it to segment your contacts or trigger personalized customer journeys.
-See how you can work with [forms](documentation/business-users/digital-marketing/forms) in Xperience by Kentico.
+See how you can work with [forms](/documentation/business-users/digital-marketing/forms) in Xperience by Kentico.
 Here are a few ideas for website forms to collect valuable customer data:
   * Request additional information through a contact form.
   * Provide visitors access to gated content after form submission.
@@ -13,7 +15,7 @@ Here are a few ideas for website forms to collect valuable customer data:
   * And many more.
 
 
-Find out more about Xperience [forms](documentation/developers-and-admins/development/builders/form-builder) in the documentation.
+Find out more about Xperience [forms](/documentation/developers-and-admins/development/builders/form-builder) in the documentation.
 Your browser does not support the video tag. 
 ## Exercise - Collecting visitor data
 In the following exercise, you’ll learn how to create and display a form on the website and use it to collect contact data.
@@ -35,7 +37,7 @@ Your content manager discovered a page without a form. They asked you to create 
     2. Add **Explanation text** : _Share any specifications or ideas with us so we can tailor the loan offer to your needs_.
     3. **Apply** to save the changes.
 You can use **validation rules** to make sure people enter the **right kind of information** in your form fields. For example, you can limit the number of characters in a text field or set a maximum value for numbers. Keep in mind: Validation rules don’t apply to empty fields. If you want to make sure a field is filled in, mark it as _Required_ in the field’s properties.
-Interested? Learn more about the available [form fields validations](documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-validation). 
+Interested? Learn more about the available [form fields validations](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-validation). 
   5. Make the _Email_ field and any other fields required. Select the field’s **Configure** button, select the **Required** checkbox field, and hit **Apply**.
   6. To complete the form, add the **Consent agreement** field and:
     1. Select the **Configure** button and, for this tutorial, select _Marketing cookies_.
@@ -64,17 +66,9 @@ Interested? Learn more about the available [form fields validations](documentati
 
 
 Your page with a new form may look like the following:
-[![](docsassets/guides/collect-visitor-data-essentials/form-loans-page.png)](https://docs.kentico.com/docsassets/guides/collect-visitor-data-essentials/form-loans-page.png)
-[ Previous page ](modules/digital-marketing-essentials/manage-visitor-data-essentials)
+[![](/docsassets/guides/collect-visitor-data-essentials/form-loans-page.png)](/docsassets/guides/collect-visitor-data-essentials/form-loans-page.png)
+[ Previous page ](/modules/digital-marketing-essentials/manage-visitor-data-essentials)
 3 of 7
-[ Mark complete and continue ](modules/digital-marketing-essentials/segment-your-website-audience-essentials)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/digital-marketing-essentials/collect-visitor-data-essentials)
-[](https://docs.kentico.com/modules/digital-marketing-essentials/collect-visitor-data-essentials)[](https://docs.kentico.com/modules/digital-marketing-essentials/collect-visitor-data-essentials)
+[ Mark complete and continue ](/modules/digital-marketing-essentials/segment-your-website-audience-essentials)
+![]()
+[]()[]()

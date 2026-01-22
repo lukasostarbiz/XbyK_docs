@@ -1,11 +1,17 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-websites/create-a-new-campaign-page
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with websites](/guides/digital-marketing/work-with-websites)
+  * Create a new campaign page 
+
+
 # Create a new campaign page
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-websites/create-a-new-campaign-page#) | [Get HelpService ID](guides/digital-marketing/work-with-websites/create-a-new-campaign-page#) | This page is part of a module: [ Work with website content ](modules/work-with-website-content)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-websites/create-a-new-campaign-page# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-websites/create-a-new-campaign-page#)
 Learn step-by-step how to create a campaign page from scratch.
-This sample shows how to create a landing page from scratch, add widgets, and populate them with content, including [an online form](guides/digital-marketing/xperience-essentials/collect-visitor-data-essentials#exercise---collecting-visitor-data).
+This sample shows how to create a landing page from scratch, add widgets, and populate them with content, including [an online form](/guides/digital-marketing/xperience-essentials/collect-visitor-data-essentials#exercise---collecting-visitor-data).
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site.
 ## Prepare the landing page
   1. Go to the **Pages** application.
@@ -68,6 +74,8 @@ Now add another section, but this time choose the **Form column**.
 
 
 **Save** the page and open it in **Preview**. If you like what it looks like, you can **Publish** the page.
-[![Final look of the campaign page](docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)](https://docs.kentico.com/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)
+[![Final look of the campaign page](/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)](/docsassets/guides/create-a-new-campaign-page/new-campaign-page.png)
 ### Next step
-The next guide shows you how to prepare a [a landing page](guides/digital-marketing/work-with-websites/create-a-landing-page-from-page-components).
+The next guide shows you how to prepare a [a landing page](/guides/digital-marketing/work-with-websites/create-a-landing-page-from-page-components).
+![]()
+[]()[]()

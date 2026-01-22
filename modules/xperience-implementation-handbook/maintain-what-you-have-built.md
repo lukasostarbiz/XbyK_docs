@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/xperience-implementation-handbook/maintain-what-you-have-built
+scrape_date: 2026-01-22
+---
+
+Module: Xperience implementation handbook
+8 of 9 Pages
 # Maintain what you have built
-  * [ Copy page link ](modules/xperience-implementation-handbook/maintain-what-you-have-built#) | [Get HelpService ID](modules/xperience-implementation-handbook/maintain-what-you-have-built#)
-Core MVC 5
-
-
-[✖](modules/xperience-implementation-handbook/maintain-what-you-have-built# "Close page link panel") [Copy to clipboard](modules/xperience-implementation-handbook/maintain-what-you-have-built#)
 ## Maintaining
 Analyze the data you gather from your project to determine what actions to take. Focus on optimizations of content and performance.
 ### Environment maintenance
@@ -14,8 +16,8 @@ Analyze the data you gather from your project to determine what actions to take.
 
 ### Application maintenance
   * Review and address performance issues [using tools like MiniProfiler](https://dev.to/michael419/get-to-know-xperience-by-kentico-unlocking-performance-insights-with-miniprofiler-2b2c).
-  * Keep software patched and up-to-date, [including Xperience](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), the operating system, SQL server, etc. 
-    * if you [prepare your code for read-only mode](documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes), you can use [zero-downtime deployments](documentation/developers-and-admins/deployment/read-only-deployments) when you update Xperience by Kentico.
+  * Keep software patched and up-to-date, [including Xperience](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), the operating system, SQL server, etc. 
+    * if you [prepare your code for read-only mode](/documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes), you can use [zero-downtime deployments](/documentation/developers-and-admins/deployment/read-only-deployments) when you update Xperience by Kentico.
 
 
 ### Data maintenance
@@ -35,7 +37,7 @@ With the data cleaned up, they implemented a plan to monitor the database size a
 Monitoring your project provides insight into what you can optimize and improve, and informs you of the solution’s overall health.
 ### Environment
   * Monitor resource utilization on the server (e.g., CPU, RAM, HDD). 
-    * Consider tools offered by your hosting environment, like the Xperience SaaS environment’s [Monitoring tools](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring), Azure’s [Application insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview), etc.
+    * Consider tools offered by your hosting environment, like the Xperience SaaS environment’s [Monitoring tools](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring), Azure’s [Application insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview), etc.
   * Monitor website availability with uptime services.
   * Monitor website responsiveness / performance. 
     * Consider checking the performance from different geographic locations.
@@ -56,16 +58,8 @@ Monitoring your project provides insight into what you can optimize and improve,
   * Monitor content for broken links.
 
 
-[ Previous page ](modules/xperience-implementation-handbook/deploy-to-a-new-environment)
+[ Previous page ](/modules/xperience-implementation-handbook/deploy-to-a-new-environment)
 8 of 9
-[ Mark complete and continue ](modules/xperience-implementation-handbook/conclusion)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/xperience-implementation-handbook/maintain-what-you-have-built)
-[](https://docs.kentico.com/modules/xperience-implementation-handbook/maintain-what-you-have-built)[](https://docs.kentico.com/modules/xperience-implementation-handbook/maintain-what-you-have-built)
+[ Mark complete and continue ](/modules/xperience-implementation-handbook/conclusion)
+![]()
+[]()[]()

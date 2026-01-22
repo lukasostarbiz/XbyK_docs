@@ -1,3 +1,31 @@
+---
+source: https://docs.kentico.com/paths/xperience-essentials-for-marketers
+scrape_date: 2026-01-22
+---
+
+Xperience by Kentico
+  * [Xperience by Kentico](/ "Xperience by Kentico")
+  * [Kentico Xperience 13](/13 "Kentico Xperience 13")
+  * All versions
+    * [Kentico Xperience 12 Service Pack](/k12sp "Kentico Xperience 12 Service Pack")
+    * [Kentico Xperience 11](/k11 "Kentico Xperience 11")
+    * [Kentico Xperience 10](/k10 "Kentico Xperience 10")
+    * [Kentico Xperience 9](/k9 "Kentico Xperience 9")
+    * [Kentico Xperience 8.2](/k82 "Kentico Xperience 8.2")
+    * [Kentico Xperience 8.1](/k81 "Kentico Xperience 8.1")
+    * [Kentico Xperience 8](/k8 "Kentico Xperience 8")
+
+
+  * [ Documentation ](/documentation "Documentation")
+[ Administration interface basics ](/documentation/administration-interface-basics) [ Developers and admins ](/documentation/developers-and-admins) [ Business users ](/documentation/business-users) [ Changelog ](/documentation/changelog) [ Security advisories ](/documentation/security-advisories) [ Glossary ](/documentation/glossary)
+  * [ Guides ](/guides "Guides")
+[ Administration interface basics ](/guides/administration-interface-basics) [ Customer journeys ](/guides/customer-journeys) [ Digital marketing ](/guides/digital-marketing) [ Configuration ](/guides/configuration) [ Development ](/guides/development) [ Architecture ](/guides/architecture)
+  * [ Training ](/personas "Training")
+[ For Admins ](/personas/admin) [ For Business users ](/personas/business) [ For Developers ](/personas/developer) [ For Solution architects ](/personas/architect)
+  * [ API Examples ](/api "API Examples")
+[ Configuration ](/api/configuration) [ Content management ](/api/content-management) [ Development ](/api/development) [ Digital marketing ](/api/digital-marketing)
+
+
 #  Learning path: Xperience essentials for marketers and editors.
 Learn content and user management basics in Xperience and keep building your digital marketing strategy.
 Get started with the core tools for your digital success.
@@ -12,31 +40,23 @@ By the end of this learning path, you’ll know how to:
 Each of the following modules builds your confidence in using _Xperience_ for your daily work, but you can keep returning to this path anytime you need a refresher of your knowledge.
   1. Module
 Completed In progress
-###  [ ](modules/content-management-essentials)
+###  [ ](/modules/content-management-essentials)
 Learn the basics of creating, editing, and managing content in Xperience by Kentico to support your website and marketing goals.
 5 Module Pages
 Start Module Keep Learning Review Module
   2. Module
 Completed In progress
-###  [ ](modules/user-management-essentials)
+###  [ ](/modules/user-management-essentials)
 Learn how to create and manage user accounts, assign roles, and set permissions in your system.
 4 Module Pages
 Start Module Keep Learning Review Module
   3. Module
 Completed In progress
-###  [ ](modules/digital-marketing-essentials)
+###  [ ](/modules/digital-marketing-essentials)
 See how you can run digital campaigns in Xperience, including SEO, content personalization, and email marketing tools.
 7 Module Pages
 Start Module Keep Learning Review Module
 
 
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/paths/xperience-essentials-for-marketers)
-[](https://docs.kentico.com/paths/xperience-essentials-for-marketers)[](https://docs.kentico.com/paths/xperience-essentials-for-marketers)
+![]()
+[]()[]()

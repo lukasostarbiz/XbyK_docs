@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/store-all-content-in-xperience
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+7 of 28 Pages
 # Store content
-  * [ Copy page link ](modules/content-modeling-guide/store-all-content-in-xperience#) | [Get HelpService ID](modules/content-modeling-guide/store-all-content-in-xperience#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/store-all-content-in-xperience# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/store-all-content-in-xperience#)
 This material explains the options for creating, storing, categorizing, and managing reusable content available in Xperience by Kentico.
 Up to this point, we’ve focused on general principles of content modeling that apply to many platforms. Now, we’ll look specifically at how Xperience stores content so you can make informed decisions for your project.
 Before building your Xperience project, you should evaluate how the system stores content. The business use cases you identified during your content modeling sessions will help you choose the most suitable approach for storing and organizing the data.
@@ -12,7 +14,7 @@ Xperience delivers content through channels and doesn’t allow for tapping dire
 Marketing channels refer to platforms, tools, and strategies businesses use to communicate with their end consumers, suppliers, partners, and other business entities. In Xperience, a channel represents the platform where you deliver your content to customers, such as your main website, microsites, email channel, or a headless channel.
 Marketers often copy content separately to each channel, which creates extra work and potentially leads to content and message inconsistency. With Xperience, you can store your marketing content in one place and distribute it to your digital channels from the same interface. This helps editor teams keep the campaigns and other marketing communications consistent and efficient.
 The current version of Xperience allows you to distribute content across websites, email, and headless channels. When preparing the content model, you need to respect each channel’s content requirements. As you continue through the guide, you’ll learn more about these differences and how to model content for each channel.
-Find more details about [digital marketing channels](guides/digital-marketing/work-with-channels/digital-marketing-channels) in a separate guide.
+Find more details about [digital marketing channels](/guides/digital-marketing/work-with-channels/digital-marketing-channels) in a separate guide.
 ## Keep all digital content in Xperience
 From a high-level perspective, you can look at creating and managing content in Xperience in two different ways:
 Content is created |  Content is managed |  Description  
@@ -28,23 +30,15 @@ Note that the last two options introduce multiple content management systems wit
   * **Storing and managing content directly in Xperience is recommended** for most projects.
     * It ensures a single source of truth for content distribution across different channels. Moreover, editors know where the content for which they are responsible resides.
     * It prevents synchronization errors with third-party integrations and ensures that editors always have the latest version of the content available in one place.
-    * We recommend storing content in Xperience if editors want to leverage digital marketing features, such as [content personalization](documentation/developers-and-admins/digital-marketing-setup/content-personalization) or segmenting your audience into [contact groups](documentation/business-users/digital-marketing/contact-groups) for various marketing activities.
+    * We recommend storing content in Xperience if editors want to leverage digital marketing features, such as [content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization) or segmenting your audience into [contact groups](/documentation/business-users/digital-marketing/contact-groups) for various marketing activities.
   * If you **need to display content from a third-party solution** in an Xperience project:
     * We recommend **building a custom bidirectional content synchronization tool** that automatically updates the data across different systems.
     * Implementation partners should **provide sufficient project documentation** to help editors and marketers locate and efficiently manage their content.
     * Your editors should **manage their content in the production environment** using the default Xperience publishing workflow.
 
 
-[ Previous page ](modules/content-modeling-guide/model-taxonomies)
+[ Previous page ](/modules/content-modeling-guide/model-taxonomies)
 7 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/understand-storing-data-in-content-type)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/store-all-content-in-xperience)
-[](https://docs.kentico.com/modules/content-modeling-guide/store-all-content-in-xperience)[](https://docs.kentico.com/modules/content-modeling-guide/store-all-content-in-xperience)
+[ Mark complete and continue ](/modules/content-modeling-guide/understand-storing-data-in-content-type)
+![]()
+[]()[]()

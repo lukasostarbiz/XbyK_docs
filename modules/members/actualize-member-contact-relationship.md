@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/members/actualize-member-contact-relationship
+scrape_date: 2026-01-22
+---
+
+Module: Members
+6 of 12 Pages
 # Actualize the member-contact relationship
-  * [ Copy page link ](modules/members/actualize-member-contact-relationship#) | [Get HelpService ID](modules/members/actualize-member-contact-relationship#)
-Core MVC 5
-
-
-[✖](modules/members/actualize-member-contact-relationship# "Close page link panel") [Copy to clipboard](modules/members/actualize-member-contact-relationship#)
 The basic data synchronization is in place, but there are still a few things we need to handle. The first one is handling the event of member signing in.
 ### Merge duplicate contacts
 Because with each cookie consent the system creates a new contact, you can end up with several for one visitor. It is a good practice to clean up the redundant contacts periodically.
@@ -217,16 +219,8 @@ public async Task SignOut()
 ...
 ```
 
-[ Previous page ](modules/members/create-member-contact-relationship)
+[ Previous page ](/modules/members/create-member-contact-relationship)
 6 of 12
-[ Mark complete and continue ](modules/members/profile-form)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/actualize-member-contact-relationship)
-[](https://docs.kentico.com/modules/members/actualize-member-contact-relationship)[](https://docs.kentico.com/modules/members/actualize-member-contact-relationship)
+[ Mark complete and continue ](/modules/members/profile-form)
+![]()
+[]()[]()

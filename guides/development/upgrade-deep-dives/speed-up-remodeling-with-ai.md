@@ -1,17 +1,23 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Speed up remodeling with AI 
+
+
 # Speed up remodeling with AI
-  * Concept| [ Copy page link ](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai#) | [Get HelpService ID](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai#)
 In many cases, your client or organization may want to make many changes during the upgrade to Xperience by Kentico (XbyK) to modernize the project’s content model and take advantage of new features.
 When you need to restructure several classes, the process can be tedious, as you specify a mapping for every individual field in the new content model. For this type of monotonous work, AI coding assistants can come in handy.
 In this example, we used [GitHub Copilot](https://github.com/features/copilot) in **Agent** mode with the **GPT-4.1** model to significantly speed up the migration of an _Article_ page type in Kentico Xperience 13 (KX13) to XbyK. The _Article_ page type included fields related directly to the article, as well as Open Graph metadata fields, which we wanted to move into a reusable field schema in XbyK.
 ## Before you start
 To follow along with the example in this guide, we recommend you have the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) and [.NET Core](https://learn.microsoft.com/en-us/dotnet/).
-  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](documentation/changelog).
-  * A running instance of Kentico Xperience 13 that contains page attachments and media files (such as the Dancing Goat sample site), running on [Refresh 5](13/installation/hotfix-instructions-xperience-13) or higher.
+  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](/documentation/changelog).
+  * A running instance of Kentico Xperience 13 that contains page attachments and media files (such as the Dancing Goat sample site), running on [Refresh 5](/13/installation/hotfix-instructions-xperience-13) or higher.
   * A local copy of the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool), version **3.12.0** , connected to each instance.
   * Access to an agentic AI coding assistant such as Cursor or GitHub Copilot.
 
@@ -19,12 +25,12 @@ To follow along with the example in this guide, we recommend you have the follow
 ## Give samples of the type of output you want
 In our experience, AI coding assistants provide much better output when you provide them with an example of a similar finished product.
 They excel in scenarios where you need to repeat the same process with different but analogous input each time.
-In this case, we were able to provide Copilot with the existing class mapping from our [Remodel page types as reusable field schemas](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) guide.
+In this case, we were able to provide Copilot with the existing class mapping from our [Remodel page types as reusable field schemas](/guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) guide.
 We told Copilot to pay special attention to this file using the **Add context** button in the chat window.
 **Grinder schema example**
 At the time we created this example, the Grinder class mapping manually defined its schema fields, rather than using `IReusableFieldSchema.ConvertFrom`. In this case, manually-defined schema fields are preferable, as the KX13 _Article_ page type includes several fields we do not want in our OG schema.
-If you’re following along with the example, you can point your coding assistant to the `AddReusableSchemaIntegrationSample` example from [ClassMappingSample.cs](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.Extensions/ClassMappings/ClassMappingSample.cs), or provide the [original version of the Grinder class mapping](docsassets/guides/speed-up-remodeling-with-ai/GrinderClassMapping.cs) as context.
-You can also add the code from [the end of this guide](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai#see-the-results) as reference material.
+If you’re following along with the example, you can point your coding assistant to the `AddReusableSchemaIntegrationSample` example from [ClassMappingSample.cs](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.Extensions/ClassMappings/ClassMappingSample.cs), or provide the [original version of the Grinder class mapping](/docsassets/guides/speed-up-remodeling-with-ai/GrinderClassMapping.cs) as context.
+You can also add the code from [the end of this guide](#see-the-results) as reference material.
 In similar cases, it often helps to manually complete the first repetition of a process and provide its input and output to the coding assistant as context.
 ## Provide structured input
 AI tools are most effective when working with data in a structured format, such as JSON or XML.
@@ -373,7 +379,7 @@ public static class ArticleClassMapping
 }
 ```
 
-As you can see, the code sample here follows the conventions of the [Grinder example](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas), with a large set of private constants to centralize and organize string values. Feel free to take a different approach based on your project’s conventions.
+As you can see, the code sample here follows the conventions of the [Grinder example](/guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas), with a large set of private constants to centralize and organize string values. Feel free to take a different approach based on your project’s conventions.
 You can use an AI coding assistant to quickly refactor our sample code to match your project’s style, creating better reference material for your prompts.
 We also made the name of the schema public, in case it needs to be applied to other class mappings outside of this file.
 Once you register the mapper, the migration tool will utilize it when bringing the Article page type to XbyK.
@@ -397,4 +403,6 @@ public static class ServiceCollectionExtensions
 For the sake of this example, we only created a custom mapping for a single page type, but you’ll likely encounter several page types that benefit from remodeling when you upgrade larger projects.
 With each successful round of generation, you’ll have more context to provide your AI assistant, which will help improve the quality of output going forward and save you more time on current and future upgrades.
 ## What’s next?
-In [our next guide](guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub), move pages to the Content hub creating automatic relationships to preserve parent-child structure.
+In [our next guide](/guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub), move pages to the Content hub creating automatic relationships to preserve parent-child structure.
+![]()
+[]()[]()

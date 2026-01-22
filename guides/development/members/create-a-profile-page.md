@@ -1,22 +1,28 @@
+---
+source: https://docs.kentico.com/guides/development/members/create-a-profile-page
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Members](/guides/development/members)
+  * Create a profile page 
+
+
 # Create a profile page
-  * How-to| [ Copy page link ](guides/development/members/create-a-profile-page#) | [Get HelpService ID](guides/development/members/create-a-profile-page#)
-Core MVC 5
-
-
-[✖](guides/development/members/create-a-profile-page# "Close page link panel") [Copy to clipboard](guides/development/members/create-a-profile-page#)
 If you allow members to register and sign in to your site, they will expect the ability to update their information.
-[An earlier part of this series](guides/development/members/implement-member-registration) covered how to use configurable widgets for the registration and sign-in forms. Let’s explore an alternative approach now, utilizing a pre-defined [page template](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) on a page.
+[An earlier part of this series](/guides/development/members/implement-member-registration) covered how to use configurable widgets for the registration and sign-in forms. Let’s explore an alternative approach now, utilizing a pre-defined [page template](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) on a page.
 In some ways, our approach will be similar to using a dedicated MVC route that displays a view. However, using a _page template_ on a page allows editors to see the page in the content tree. That way, editors can easily link the page with Xperience’s built-in form components and control the page’s URL slug.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
   * Have installed the The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the _Training guides_ repository.
-  * Have completed the previous guides in the [Members series](guides/development/members).
+  * Have completed the previous guides in the [Members series](/guides/development/members).
 
 
 **Code samples**
@@ -31,13 +37,13 @@ Email and username should be a bit more closely guarded, with processes similar 
 We can also display the date the member’s account was created, but this should not be editable for factual reasons.
 We can, however, allow members to edit their name and name order, and their favorite coffee.
 The form should display a success message when it’s able to update a member’s information, and validation errors when the member submits improperly formatted data.
-While it is possible to add page template properties that allow editors to configure the form in a similar manner to the [registration widget](guides/development/members/implement-member-registration), this example will not go over the process.
+While it is possible to add page template properties that allow editors to configure the form in a similar manner to the [registration widget](/guides/development/members/implement-member-registration), this example will not go over the process.
 ## Build the _Update profile_ form
 Let’s make a view component for managing the update profile form. This way, in case we ever decide to include it somewhere aside from this template, it’s easier to reuse.
 Under the _~/Features/Membership/Profile_ folder in the _TrainingGuides.Web_ project, create a _ViewComponents_ folder to house the files.
 Overall, the view component will be somewhat similar to the registration form widget, using an AJAX form with a partial view to manage validation and results.
 ### Define the view model
-The `GuidesMemberProfileViewModel` from [earlier in the series](guides/development/members/implement-member-registration#set-up-a-view-model) contains the custom fields that we used to expand the built-in _Member_ type, so we can inherit from this class for our update form, adding the extra fields that we need.
+The `GuidesMemberProfileViewModel` from [earlier in the series](/guides/development/members/implement-member-registration#set-up-a-view-model) contains the custom fields that we used to expand the built-in _Member_ type, so we can inherit from this class for our update form, adding the extra fields that we need.
 Let’s take another peek at that class as a refresher.
 C#
 **GuidesMemberProfileViewModel.cs**
@@ -202,8 +208,8 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 ### Create the view component class
 Now we can define the main file of our view component for updating the profile of the current member. **Make sure to pre-populate the model with data about the current member** , so the member does not need to manually re-fill all of their information every time.
 To improve the editor experience, add functionality to display a dummy member in **Preview** or **Page Builder** view of the profile page. This way, editors who have not signed in as members won’t see a broken, empty profile when they visit the page in the Xperience admin UI.
-You can prevent unauthenticated members from seeing the profile form by setting its page to [require authentication.](documentation/business-users/website-content/secure-pages)
-We’ll explore this process in more detail [later in the membership series](guides/development/members/require-authentication-for-certain-content).
+You can prevent unauthenticated members from seeing the profile form by setting its page to [require authentication.](/documentation/business-users/website-content/secure-pages)
+We’ll explore this process in more detail [later in the membership series](/guides/development/members/require-authentication-for-certain-content).
 C#
 **UpdateProfileViewComponent.cs**
 Copy
@@ -286,7 +292,7 @@ public GuidesMember DummyMember => new()
 
 ### Create views for the view component
 Let’s start by creating the view returned by the component’s `InvokeAsync` method.
-Much like with the [registration widget](guides/development/members/implement-member-registration), create an AJAX form that posts to a special action, and use a separate partial view for the form fields within the update target element.
+Much like with the [registration widget](/guides/development/members/implement-member-registration), create an AJAX form that posts to a special action, and use a separate partial view for the form fields within the update target element.
 cshtml
 **UpdateProfile.cshtml**
 Copy
@@ -564,7 +570,7 @@ Create a new content type with the following properties:
 
 
 You don’t need to add anything on the **Fields** tab, since we haven’t defined ways for editors to configure the profile page.
-Now run the [Code generation tool](documentation/developers-and-admins/api/generate-code-files-for-system-objects) to generate a C# class for this content type in your project:
+Now run the [Code generation tool](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) to generate a C# class for this content type in your project:
 CMD
 **.NET CLI**
 Copy
@@ -609,7 +615,7 @@ public static class ProfilePagePageTemplate
 
 Use the `ContentTypeNames` parameter to make sure only pages of the _Profile page_ type can use the template.
 ### Serve the template from a controller
-Now we need to tell Xperience’s [Content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing) to use a template for the _Profile page_ content type.
+Now we need to tell Xperience’s [Content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing) to use a template for the _Profile page_ content type.
 Create a controller that returns a `TemplateResult` from its `Index` action and register it with the router.
 C#
 **ProfilePageController.cs**
@@ -635,10 +641,12 @@ public class ProfilePageController : Controller
 With the template now bound to the content type, you can create a new _Profile page_ in Xperience and assign the new template.
 Your browser does not support the video tag. 
 Make sure to secure the page by enabling the **Requires authentication** checkbox in the **Membership** section of its **Properties** tab.
-[![Screenshot of the page’s properties](docsassets/guides/create-a-profile-page/SecuredProfilePage.png)](https://docs.kentico.com/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)
+[![Screenshot of the page’s properties](/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)](/docsassets/guides/create-a-profile-page/SecuredProfilePage.png)
 ## Consider the possibilities
 If you want to expand on the functionality here, you can create allows members to change their email address, and tie it to a button on the profile page.
 You can create new methods in your membership service that use the `UserManager<T>`’s `GenerateChangeEmailTokenAsync` and `ChangeEmailAsync` methods in a flow similar to the existing [password reset process](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/Membership/Widgets/ResetPassword) in the [finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) of the _Training guides_ repository. Send an email with a link that contains the token.
 You can further expand the functionality by allowing members to define a recovery email address, or a phone number to use in case their primary email is no longer accessible.
 ## What’s next?
-The [next guide in this series](guides/development/members/require-authentication-for-certain-content) will cover the process of hiding certain content from unauthenticated visitors.
+The [next guide in this series](/guides/development/members/require-authentication-for-certain-content) will cover the process of hiding certain content from unauthenticated visitors.
+![]()
+[]()[]()

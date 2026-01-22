@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/private-cloud-deployment/deploy-to-private-cloud
+scrape_date: 2026-01-22
+---
+
+Module: Private cloud deployment
+6 of 7 Pages
 # Explore the private cloud reference
-  * [ Copy page link ](modules/private-cloud-deployment/deploy-to-private-cloud#) | [Get HelpService ID](modules/private-cloud-deployment/deploy-to-private-cloud#)
-Core MVC 5
-
-
-[✖](modules/private-cloud-deployment/deploy-to-private-cloud# "Close page link panel") [Copy to clipboard](modules/private-cloud-deployment/deploy-to-private-cloud#)
 Xperience supports a wide variety of private cloud hosting options. You can deploy and manage Xperience projects using
   * Managed or unmanaged cloud hosting providers like Microsoft Azure, Amazon AWS, GCP, Digital Ocean (on Windows or Linux)
   * Hybrid cloud combining public cloud and private hosting
@@ -14,11 +16,11 @@ and similar hosting solutions.
 ## Deploy the project
 Xperience is a conventional .NET project, so its code and other files support any compatible deployment process or pipeline. For general information, see the [Host and deploy](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/) chapter of the .NET documentation.
 ### Map parts of the file system to a shared storage
-Some deployment environments, like [Microsoft Azure](modules/private-cloud-deployment/deploy-to-private-cloud#microsoft-azure-deployment) for example, don’t provide a persistent file system. This can potentially lead to a loss of certain binary files when running new deployments, swapping slots, switching servers, etc. To prevent the possible loss, we recommend mapping the **~/assets/** folders from your project’s file system to a shared storage. The folder contains content item assets, media libraries and files uploaded through forms using the _Upload file_ [form component](documentation/developers-and-admins/development/builders/form-builder/reference-form-builder-components).
+Some deployment environments, like [Microsoft Azure](#microsoft-azure-deployment) for example, don’t provide a persistent file system. This can potentially lead to a loss of certain binary files when running new deployments, swapping slots, switching servers, etc. To prevent the possible loss, we recommend mapping the **~/assets/** folders from your project’s file system to a shared storage. The folder contains content item assets, media libraries and files uploaded through forms using the _Upload file_ [form component](/documentation/developers-and-admins/development/builders/form-builder/reference-form-builder-components).
 Xperience already provides built-in support for mapping of this folder to [Azure Blob](https://azure.microsoft.com/en-us/services/storage/blobs/) or [Amazon S3](https://aws.amazon.com/s3/) cloud-based storage.
-For more information, see [Azure Blob storage](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage#azure-blob-storage-for-private-cloud-deployments) and [Amazon S3](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3).
+For more information, see [Azure Blob storage](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage#azure-blob-storage-for-private-cloud-deployments) and [Amazon S3](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3).
 ### IIS application initialization
-When hosting the application on IIS with the [Application initialization](https://learn.microsoft.com/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization) feature enabled and configured to send a preload request (often enabled by default, for example on [Microsoft Azure](https://azure.microsoft.com/)), you may encounter preload errors in your [event log](documentation/developers-and-admins/configuration/event-log). To prevent these issues from occurring, configure `IISApplicationInitializationOptions` for your application and enable the `UseDefaultSystemResponseForPreload` property in the **Program.cs** file.
+When hosting the application on IIS with the [Application initialization](https://learn.microsoft.com/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization) feature enabled and configured to send a preload request (often enabled by default, for example on [Microsoft Azure](https://azure.microsoft.com/)), you may encounter preload errors in your [event log](/documentation/developers-and-admins/configuration/event-log). To prevent these issues from occurring, configure `IISApplicationInitializationOptions` for your application and enable the `UseDefaultSystemResponseForPreload` property in the **Program.cs** file.
 C#
 **Program.cs**
 Copy
@@ -34,15 +36,15 @@ builder.Services.Configure<IISApplicationInitializationOptions>(options =>
 
 ## Deploy the database
 Prepare the Xperience database within your development environment, and then use a standard backup&restore process to move the database to the target environment.
-If you wish to deploy an empty database with default data necessary to run Xperience by Kentico, create a project using the `kentico-xperience-mvc` boilerplate template and run the `kentico-xperience-dbmanager` CLI utility. See [Installation](documentation/developers-and-admins/installation).
-To update database content as part of later deployments, we recommend using the Xperience [Continuous Deployment](documentation/developers-and-admins/ci-cd/continuous-deployment) feature. Note that CD data does not include the [license key](documentation/developers-and-admins/installation/licenses#license-keys), which needs to be added manually after the deployment.
+If you wish to deploy an empty database with default data necessary to run Xperience by Kentico, create a project using the `kentico-xperience-mvc` boilerplate template and run the `kentico-xperience-dbmanager` CLI utility. See [Installation](/documentation/developers-and-admins/installation).
+To update database content as part of later deployments, we recommend using the Xperience [Continuous Deployment](/documentation/developers-and-admins/ci-cd/continuous-deployment) feature. Note that CD data does not include the [license key](/documentation/developers-and-admins/installation/licenses#license-keys), which needs to be added manually after the deployment.
 **Database server time zones**
 To ensure consistent handling of time values, the server running your Xperience by Kentico application must be configured to use the same time zone as the database server.
 If possible, use the same time zone for both your local environment and the production server hosting your database. Otherwise you may encounter time shift problems with the deployed data.
 ## Update the Xperience version of deployments
-To learn how to update a deployment to a newer version of Xperience by Kentico, see [Update Xperience by Kentico projects](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects).
+To learn how to update a deployment to a newer version of Xperience by Kentico, see [Update Xperience by Kentico projects](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects).
 ## Update content with content sync
-To use [content sync](documentation/business-users/content-sync) for transferring supported content between environments, see [Content sync configuration](documentation/developers-and-admins/configuration/content-sync-configuration).
+To use [content sync](/documentation/business-users/content-sync) for transferring supported content between environments, see [Content sync configuration](/documentation/developers-and-admins/configuration/content-sync-configuration).
 ## Microsoft Azure deployment
 For most Microsoft Azure deployments, we recommend [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/). Azure Web Apps are quick to create and easy to set up and manage.
 Xperience applications that require heavy customization may benefit from [Azure Virtual Machine](https://docs.microsoft.com/en-us/azure/virtual-machines/) deployments, where developers have the ability to control every aspect of the environment.
@@ -63,16 +65,8 @@ We also recommend that you perform a load test when switching to a new Azure SQL
 You can switch between deployment models and adjust their configuration on the [Azure Management Portal](https://portal.azure.com/) → Select your database → **Configure** tab.
 **Azure SQL database elastic pools**
 In environments where multiple independent projects each use a single database, you can store individual databases in an  _elastic pool_. The databases in an elastic pool are on a single Azure SQL Database server and share a set number of dynamically allocated resources (DTUs or vCores), which helps minimize overall expenses. See the [Elastic pools](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-elastic-pool) Microsoft documentation for more information.
-[ Previous page ](modules/private-cloud-deployment/deploy-without-the-administration)
+[ Previous page ](/modules/private-cloud-deployment/deploy-without-the-administration)
 6 of 7
-[ Mark complete and continue ](modules/private-cloud-deployment/private-cloud-deployment-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/private-cloud-deployment/deploy-to-private-cloud)
-[](https://docs.kentico.com/modules/private-cloud-deployment/deploy-to-private-cloud)[](https://docs.kentico.com/modules/private-cloud-deployment/deploy-to-private-cloud)
+[ Mark complete and continue ](/modules/private-cloud-deployment/private-cloud-deployment-learn-more)
+![]()
+[]()[]()

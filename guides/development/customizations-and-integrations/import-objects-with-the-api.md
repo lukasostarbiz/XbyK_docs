@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/guides/development/customizations-and-integrations/import-objects-with-the-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Customizations and integrations](/guides/development/customizations-and-integrations)
+  * Import objects in bulk using the API 
+
+
 # Import objects in bulk using the API
-  * How-to| [ Copy page link ](guides/development/customizations-and-integrations/import-objects-with-the-api#) | [Get HelpService ID](guides/development/customizations-and-integrations/import-objects-with-the-api#) | This page is part of a module: [ Additional customizations ](modules/additional-customizations)
-Core MVC 5
-
-
-[✖](guides/development/customizations-and-integrations/import-objects-with-the-api# "Close page link panel") [Copy to clipboard](guides/development/customizations-and-integrations/import-objects-with-the-api#)
 In Xperience by Kentico, many of the entities you interact with are represented by _info objects_ in code, such as `UserInfo`, `ChannelInfo`, and `ActivityInfo`.
 Xperience provides APIs for working with these objects, in most cases by resolving an `IInfoProvider<TInfo>`. Using these APIs, you can retrieve and manipulate info objects in code.
-This comes in handy when integrating Xperience with external systems, for example, when initially importing a large number of objects from an external system, or keeping Xperience in sync with changes to a [decoupled system](documentation/developers-and-admins/integrate-with-decoupled-systems).
+This comes in handy when integrating Xperience with external systems, for example, when initially importing a large number of objects from an external system, or keeping Xperience in sync with changes to a [decoupled system](/documentation/developers-and-admins/integrate-with-decoupled-systems).
 This example will focus on a bulk-import scenario, which can apply both to “lift and shift” migrations of external functionality into Xperience, and to the start of ongoing integrations. We’ll import contacts from an imagined third-party marketing system called _Contactish_.
 The code samples in this sample will mostly exist in the **~/Features/ContactImport** folder of the **TrainingGuides.Web** project and its subdirectories. Files located elsewhere will start with the **~** character, representing the root of the **TrainingGuides.Web** project.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -30,7 +36,7 @@ We chose XML for this example because we are able to work with it in .NET withou
 Create a dedicated folder for files you want to import, such as **~/App_Data/TrainingGuidesContactImport/Contactish**.
 For the sake of example, we’ll use [just one file](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/App_Data/TrainingGuidesContactImport/Contactish/ContactishContactsExport.xml), though in some high-volume cases, you may find data spread across multiple files.
 ## Extend the contact class
-In cases where you import objects from external systems, you’ll likely want to store some attributes from those systems in the Xperience objects. In these cases, you can [extend the system object type](documentation/developers-and-admins/customization/object-types/extend-system-object-types) if applicable, or create a [custom object type](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#one-to-many-relationships) that relates to the built-in type and contains additional fields.
+In cases where you import objects from external systems, you’ll likely want to store some attributes from those systems in the Xperience objects. In these cases, you can [extend the system object type](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) if applicable, or create a [custom object type](/documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#one-to-many-relationships) that relates to the built-in type and contains additional fields.
 For our example, the Contact class is extensible, so we can add custom fields from our Contactish system. Add the following fields to the Contact class under **Modules → Contact management → Classes → Contact management - Contact → Database columns** :
   * _Contactish identifier_ - the identifier of the contact in Contactish 
     * **Field name:** TrainingGuidesContactishIdentifier
@@ -54,7 +60,7 @@ For our example, the Contact class is extensible, so we can add custom fields fr
     * **Required:** False (disabled)
 
 
-You can find a more detailed exploration of extending the **Contact** class in our [custom contact field materials](guides/development/customizations-and-integrations/add-custom-contact-field).
+You can find a more detailed exploration of extending the **Contact** class in our [custom contact field materials](/guides/development/customizations-and-integrations/add-custom-contact-field).
 ## Create an import service
 Now that we’ve extended our object type to include additional fields, we can move on to code.
 For the sake of simplicity, we’ll work with the Xperience API directly in the service. In real-world scenarios, we recommend using some form of abstraction, such as the repository pattern, for testability.
@@ -175,8 +181,8 @@ internal static class ContactishValues
 ```
 
 **BulkInsert performance considerations**
-`BulkInsert` uses a single query to insert many records, avoiding dozens of separate queries from calling `Insert` in a loop. This improves performance significantly, but does not trigger the same automatic functions as standard `Insert` functionality for individual contacts, such as [contact group evaluation](documentation/business-users/digital-marketing/contact-groups#recalculate-contact-groups) and [object events](documentation/developers-and-admins/customization/handle-global-events/handle-object-events).
-Additionally, `BulkInsert` doesn’t give you a chance to check if an object already exists before deciding whether or not to insert it. [Contact merging](documentation/business-users/digital-marketing/contact-management#contact-merging) should take care of duplicates in the case of `ContactInfo` objects, but we recommend avoiding this where possible. Only use `BulkInsert` for initial imports from an external system, or when your integration ensures only new entries are in the exported file.
+`BulkInsert` uses a single query to insert many records, avoiding dozens of separate queries from calling `Insert` in a loop. This improves performance significantly, but does not trigger the same automatic functions as standard `Insert` functionality for individual contacts, such as [contact group evaluation](/documentation/business-users/digital-marketing/contact-groups#recalculate-contact-groups) and [object events](/documentation/developers-and-admins/customization/handle-global-events/handle-object-events).
+Additionally, `BulkInsert` doesn’t give you a chance to check if an object already exists before deciding whether or not to insert it. [Contact merging](/documentation/business-users/digital-marketing/contact-management#contact-merging) should take care of duplicates in the case of `ContactInfo` objects, but we recommend avoiding this where possible. Only use `BulkInsert` for initial imports from an external system, or when your integration ensures only new entries are in the exported file.
 ## Define a scheduled task
 To execute the import process, we’ll create a scheduled task.
 While developers often associate scheduled tasks with recurring operations, they execute code on demand when you manually trigger them through the admin UI.
@@ -348,7 +354,7 @@ Make sure to set the **Start time** to a day that has already passed, so the tas
 ## Execute the contact import
 In the **Scheduled tasks** application in Xperience by Kentico, find your configured task and click the **Run** button under **Actions** to import the contacts. (You may have to refresh the page to see the updated result.)
 You can check for any errors in the **Event log** application and the task’s execution log. Once completed successfully, navigate to the **Contacts** application to verify that your contacts are present. You can check their values in the database, or the UI if you added them to an accessible UI form.
-[![Screenshot of resulting imported contacts in the database](docsassets/guides/import-objects-with-the-api/results-db.png)](https://docs.kentico.com/docsassets/guides/import-objects-with-the-api/results-db.png) [![Screenshot of resulting imported contacts in the UI](docsassets/guides/import-objects-with-the-api/results-ui.png)](https://docs.kentico.com/docsassets/guides/import-objects-with-the-api/results-ui.png)
+[![Screenshot of resulting imported contacts in the database](/docsassets/guides/import-objects-with-the-api/results-db.png)](/docsassets/guides/import-objects-with-the-api/results-db.png) [![Screenshot of resulting imported contacts in the UI](/docsassets/guides/import-objects-with-the-api/results-ui.png)](/docsassets/guides/import-objects-with-the-api/results-ui.png)
 ## Expand the scenario
 Congratulations! You’ve successfully implemented a bulk import system for external contact data. This approach can be adapted for other info object types in Xperience by Kentico, such as users, custom objects, or other extensible system objects.
 Consider the following enhancements to make this proof-of-concept production-ready:
@@ -360,5 +366,7 @@ Consider the following enhancements to make this proof-of-concept production-rea
 
 
 ## What’s next?
-The [next guide in this series](guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients) expands upon the contact import scenario, adding the contacts to a dynamic contact group and transferring them to a recipient list.
+The [next guide in this series](/guides/development/customizations-and-integrations/add-imported-contacts-groups-recipients) expands upon the contact import scenario, adding the contacts to a dynamic contact group and transferring them to a recipient list.
 If you have ideas you’d like us to cover in future guides, or if you’ve encountered any problems or issues in our existing materials, please click the **Send us feedback** button below to let us know.
+![]()
+[]()[]()

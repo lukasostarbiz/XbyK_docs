@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/integrate-custom-code
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * Integrate custom code 
+
+
 # Integrate custom code
-  * [ Copy page link ](documentation/developers-and-admins/customization/integrate-custom-code#) | [Get HelpService ID](documentation/developers-and-admins/customization/integrate-custom-code#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/integrate-custom-code# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/integrate-custom-code#)
 When customizing or extending Xperience, developers often need to add code files (classes). Classes are required when integrating custom services (interface implementations) or other components.
 Instead of adding classes directly into the main web project, create the files as part of a separate **Class Library** project (assembly). Custom assemblies provide a cleaner separation of code and better reusability between different projects.
 **Group project assemblies within a solution**
@@ -13,7 +19,7 @@ To create an assembly for custom classes in your Xperience solution:
   2. Create a new _Class Library_ project in the solution.
   3. Add the Xperience API libraries to the project: 
     1. Right-click the solution in the **Solution Explorer** and select **Manage NuGet Packages for Solution**.
-    2. Select the desired [package](documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages) (e.g. **Kentico.Xperience.Core**).
+    2. Select the desired [package](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages) (e.g. **Kentico.Xperience.Core**).
     3. Install the package into the project (the version must match your main web project’s _Kentico.Xperience.WebApp_ package).
   4. Reference the project from your main web project.
 
@@ -52,11 +58,11 @@ Create and register resource files in Xperience:
   1. Create a new .NET resource file. See [Create resource files for .NET apps](https://learn.microsoft.com/en-us/dotnet/core/extensions/create-resource-files).
 Each resource class must be defined in its own separate .cs file. .NET localization resource conventions do not allow combining multiple resource classes into a single file. 
   2. Register the resource file in the system using the `RegisterLocalizationResource` attribute. The registration requires the type encapsulating the resource file, the language for which to use the resource, and optionally the resource target.
-`SystemContext.SYSTEM_CULTURE_NAME` contains the default language code for English and should be used when creating English resource files. For localizing the admin UI to other languages, see [Admin UI localization](documentation/developers-and-admins/customization/admin-ui-localization).
+`SystemContext.SYSTEM_CULTURE_NAME` contains the default language code for English and should be used when creating English resource files. For localizing the admin UI to other languages, see [Admin UI localization](/documentation/developers-and-admins/customization/admin-ui-localization).
 The available resource targets are:
      * **LocalizationTarget.Server** – Localization resources intended for the server. These resources are resolved dynamically and sent as part of API responses during request lifecycle processing. Default when no target provided.
      * **LocalizationTarget.Client** – Localization resources intended for the client. These resources are bundled and sent to the browser during admin UI initialization, making them immediately available for client components.
-     * **LocalizationTarget.Builder** – Localization resources intended for [builder](documentation/developers-and-admins/development/builders) components. These resources are resolved and sent later as part of builder-specific request lifecycle operations.
+     * **LocalizationTarget.Builder** – Localization resources intended for [builder](/documentation/developers-and-admins/development/builders) components. These resources are resolved and sent later as part of builder-specific request lifecycle operations.
 C#
 **Example resource file registration - ~/Resources/AdminResourcesServer.cs**
 Copy
@@ -223,3 +229,6 @@ await Task.WhenAll(tasks);
 
 
 ```
+
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Developer kickstart](/guides/development/developer-kickstart)
+  * Set up an Xperience by Kentico project 
+
+
 # Set up an Xperience by Kentico project
-  * [ Copy page link ](guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project#) | [Get HelpService ID](guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project#) | This page is part of a module: [ Xperience by Kentico Developer kickstart ](modules/developer-kickstart)
-Core MVC 5
-
-
-[✖](guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project# "Close page link panel") [Copy to clipboard](guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project#)
 Before you begin building the site, you need to set up an Xperience project.
 Xperience provides [.NET project templates](https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates) you can install via the [.NET command-line tool](https://docs.microsoft.com/en-us/dotnet/core/tools/) (included with the .NET SDK).
 A template is a great place to start because it comes with:
@@ -14,7 +20,7 @@ A template is a great place to start because it comes with:
 
 ## Install the Xperience project templates package
 We will work with the **Xperience by Kentico version 30.6.1** in this series.
-If you have previously installed other versions of Xperience on your machine, we recommend [clearing any unwanted templates](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#check-your-existing-template-versions) first.
+If you have previously installed other versions of Xperience on your machine, we recommend [clearing any unwanted templates](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico#check-your-existing-template-versions) first.
 Run the following command in your command line prompt:
 CMD
 **Install project templates**
@@ -25,7 +31,7 @@ dotnet new install kentico.xperience.templates::30.6.1 --force
 
 If you have other Xperience templates on your machine (for example after playing around with the latest version), the `--force` parameter will ensure the 30.6.1 version gets installed correctly.
 You should see an output showing you have successfully installed three project templates on your computer:
-[![Command line output showing three Xperience templates have been installed successfully: Boilerplate, Admin sample and Sample](docsassets/guides/set-up-an-xperience-by-kentico-project/templates-installed.png)](https://docs.kentico.com/docsassets/guides/set-up-an-xperience-by-kentico-project/templates-installed.png)
+[![Command line output showing three Xperience templates have been installed successfully: Boilerplate, Admin sample and Sample](/docsassets/guides/set-up-an-xperience-by-kentico-project/templates-installed.png)](/docsassets/guides/set-up-an-xperience-by-kentico-project/templates-installed.png)
 ## Create a project
 Let’s use the **Boilerplate** template (`kentico-xperience-mvc`) to create an empty project called _Kickstart.Web_.
 Navigate to your desired project directory and add the following folder structure: _~/src/Kickstart.Web_.
@@ -50,7 +56,7 @@ Do you want to run this action [Y(yes)|N(no)]?
 
 Agree by typing `Y`.
 After the successful run, you should see a new .NET project generated in your Kickstart.Web directory.
-[![New project structure in File explorer](docsassets/guides/set-up-an-xperience-by-kentico-project/project-created.png)](https://docs.kentico.com/docsassets/guides/set-up-an-xperience-by-kentico-project/project-created.png)
+[![New project structure in File explorer](/docsassets/guides/set-up-an-xperience-by-kentico-project/project-created.png)](/docsassets/guides/set-up-an-xperience-by-kentico-project/project-created.png)
 ### Add a solution
 Adding a solution file will allow other projects to work in tandem with _Kickstart.Web_ and keep things organized.
 You can add a solution [via the .NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln) or using an IDE of your choice.
@@ -68,7 +74,7 @@ Add a file called _license.txt_ with the content of a valid localhost license ke
 You can obtain the license key from your agency, supervisor, or team lead.
 Alternatively, you can create an account at the [Client Portal](https://client.kentico.com/), and generate a [temporary key](https://client.kentico.com/evaluation-keys) valid for 30 days.
 Your browser does not support the video tag. 
-Learn more about licensing in our [documentation](documentation/developers-and-admins/installation/licenses).
+Learn more about licensing in our [documentation](/documentation/developers-and-admins/installation/licenses).
 ## Connect the database
 The last thing we need is to set up the database.
 Run this command from the _~/src/Kickstart.Web_ directory:
@@ -88,7 +94,7 @@ In this example, we are using the following parameters:
 
 
 Run `dotnet kentico-xperience-dbmanager -- --help` to see the complete list of available commands.
-For more details about parameters and configuration options, visit our [documentation](documentation/developers-and-admins/installation#create-the-project-database).
+For more details about parameters and configuration options, visit our [documentation](/documentation/developers-and-admins/installation#create-the-project-database).
 That’s it for the installation process. You now have a basic project with a database on your machine.
 ## Set up local hosting
 When developing websites, you often need to build and test code changes quickly. For this reason, it’s helpful to have the site hosted locally on your machine. In this aspect, ASP.NET Core is very flexible, as it supports multiple hosting options.
@@ -119,10 +125,12 @@ There’s not much to see yet, but we’ll get to that in the following steps. F
 Add _/admin_ to your site’s URL and sign in using the default _administrator_ account and the password _‘kickstart’_ , as you specified when installing the project database.
 Your browser does not support the video tag. 
 **Useful resources for your reference**
-Take a look at [Administration interface basics](guides/administration-interface-basics) – a short overview of the Xperience administration and its common navigation and interaction patterns.
+Take a look at [Administration interface basics](/guides/administration-interface-basics) – a short overview of the Xperience administration and its common navigation and interaction patterns.
 Watch [this video](https://www.youtube.com/watch?v=Uyr0J6Ws4R8&ab_channel=Kentico) for a quick walkthrough on installing Xperience by Kentico.
-Check out our [Install a specific version of Xperience by Kentico](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico) guide to learn how to manage different Xperience template versions on your machine.
+Check out our [Install a specific version of Xperience by Kentico](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico) guide to learn how to manage different Xperience template versions on your machine.
 Explore the [Xperience Manager](https://github.com/Kentico/xperience-by-kentico-manager) tool, which can help you simplify installing and managing Xperience by Kentico instances in future projects.
 Now, let’s continue with the next step, where you will learn how to create a reusable content type, an essential building block in developing multichannel experiences with Xperience by Kentico.
 ## Continue learning
-When you’re ready, move on to the next page: [Create a reusable content type](guides/development/developer-kickstart/create-a-reusable-content-type)
+When you’re ready, move on to the next page: [Create a reusable content type](/guides/development/developer-kickstart/create-a-reusable-content-type)
+![]()
+[]()[]()

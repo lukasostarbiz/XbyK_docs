@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/page-builder/finish-the-structured-data-template
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+7 of 16 Pages
 # Finish the structured data template
-  * [ Copy page link ](modules/page-builder/finish-the-structured-data-template#) | [Get HelpService ID](modules/page-builder/finish-the-structured-data-template#)
-Core MVC 5
-
-
-[✖](modules/page-builder/finish-the-structured-data-template# "Close page link panel") [Copy to clipboard](modules/page-builder/finish-the-structured-data-template#)
 Comparing the current template to the mockup from the start of this series, you’ll notice that the Product features table is missing.
-[![Mockup of a product detail page](docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
+[![Mockup of a product detail page](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
 Its data is already in the template model, so it should be fairly straightforward to render to the page.
 However, if you inspect the _ProductFeature_ content type, you may notice that its value can come from multiple different places depending on the selected _ProductFeatureValueType_.
 Let’s make one last tag helper, so that we don’t need to clutter the view with conditionals.
@@ -85,7 +87,7 @@ Copy
 
 ### Finish styling the template.
 Now if you run the site, you’ll see all the data, but it’s still not formatted in a way that matches the mockup.
-[![Screenshot of unfinished template](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)
+[![Screenshot of unfinished template](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)
 Add CSS styles and any necessary elements to make the template more visually appealing.
 cshtml
 **ProductPagePageTemplate.cshtml**
@@ -133,17 +135,9 @@ Copy
 ```
 
 At the end of it all, you should be able to achieve this by configuring your template.
-[![Screenshot of unfinished, but nicely formatted template](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)
-[ Previous page ](modules/page-builder/style-the-template)
+[![Screenshot of unfinished, but nicely formatted template](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)
+[ Previous page ](/modules/page-builder/style-the-template)
 7 of 16
-[ Mark complete and continue ](modules/page-builder/enable-widgets-in-the-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/finish-the-structured-data-template)
-[](https://docs.kentico.com/modules/page-builder/finish-the-structured-data-template)[](https://docs.kentico.com/modules/page-builder/finish-the-structured-data-template)
+[ Mark complete and continue ](/modules/page-builder/enable-widgets-in-the-template)
+![]()
+[]()[]()

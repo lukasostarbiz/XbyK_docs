@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/xperience-essentials/personalize-website-content-essentials
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Xperience essentials](/guides/digital-marketing/xperience-essentials)
+  * Personalize website content 
+
+
 # Personalize website content
-  * [ Copy page link ](guides/digital-marketing/xperience-essentials/personalize-website-content-essentials#) | [Get HelpService ID](guides/digital-marketing/xperience-essentials/personalize-website-content-essentials#) | This page is part of a module: [ Digital marketing essentials ](modules/digital-marketing-essentials)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/xperience-essentials/personalize-website-content-essentials# "Close page link panel") [Copy to clipboard](guides/digital-marketing/xperience-essentials/personalize-website-content-essentials#)
 Marketing communication should never be a “one-size-fits-all” interaction. With the correct content served at the right time, you can **turn your visitors into loyal followers of your brands**.
 Personalization allows you to **custom-tailor the content** for your website visitors. Xperience can dynamically recommend content visitors might find interesting based on their previous behavior.  
 You can **personalize website content using page builder widgets** because you know what your audience segment is looking for. Once your developers prepare the widgets for personalization, you can start building contact groups and ensure that your **website content automatically changes** based on who interacts with it.
@@ -14,7 +20,7 @@ Here are a few ideas on how to use the widget personalization:
   * And many more.
 
 
-Find out more about the [widget personalization](documentation/business-users/digital-marketing/widget-personalization) in the documentation.
+Find out more about the [widget personalization](/documentation/business-users/digital-marketing/widget-personalization) in the documentation.
 ## Exercise - Personalizing website content
 In this exercise, you’ll learn how to use content personalization to point potential partners to content they might find interesting. You’ll create and then use a contact group and personalize the website’s content.
 **Task** :
@@ -71,6 +77,8 @@ Test how your new personalization works for a website visitor using the incognit
   4. Return to the _Home_ page. Your personalized _Home_ page should look like the following:
 
 
-[![](docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)](https://docs.kentico.com/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)
+[![](/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)](/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)
 ## Next step
-Continue learning about [email marketing](guides/digital-marketing/xperience-essentials/email-marketing-essentials).
+Continue learning about [email marketing](/guides/digital-marketing/xperience-essentials/email-marketing-essentials).
+![]()
+[]()[]()

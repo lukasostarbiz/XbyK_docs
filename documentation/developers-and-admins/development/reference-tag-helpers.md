@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/reference-tag-helpers
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * Reference - Tag Helpers 
+
+
 # Reference - Tag Helpers
-  * [ Copy page link ](documentation/developers-and-admins/development/reference-tag-helpers#) | [Get HelpService ID](documentation/developers-and-admins/development/reference-tag-helpers#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/reference-tag-helpers# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/reference-tag-helpers#)
 This page serves as a reference of all [ASP.NET Core Tag Helpers](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers) provided by the Xperience API.
 ## Add Tag Helpers to views
 You can add individual Tag Helpers to your views via the `@addTagHelper` directive. Specify the fully qualified name of the Tag Helper class and the name of the assembly where it is located (both provided in the corresponding sections below). Alternatively, you can use the ‘*’ wildcard to include all Tag Helpers matching a specified pattern.
@@ -29,7 +35,7 @@ To simplify the work with content item images when developing your website (e.g.
 The Tag Helpers provide the following attributes:
   * `kxp-img`
     * Renders markup of the `src` (inside of `<img>`) or `srcset` (inside of `<source>`) attributes with the image URL as their value.
-    * Accepts a [ContentItemAsset](documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-assets) object. 
+    * Accepts a [ContentItemAsset](/documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-assets) object. 
 cshtml
 Copy
 ```
@@ -50,7 +56,7 @@ Copy
 ```
 
   * `kxp-img-variant`
-    * Specifies which [image variant](documentation/developers-and-admins/development/content-types#configure-image-variants) is rendered in `kxp-img`.
+    * Specifies which [image variant](/documentation/developers-and-admins/development/content-types#configure-image-variants) is rendered in `kxp-img`.
     * Accepts the code name identifier of the image variant.
     * Requires concurrent usage of `kxp-img`. 
 cshtml
@@ -76,8 +82,8 @@ Currently, there is no attribute Tag Helper in the Xperience API that supports r
 ### Page Builder scripts
 **Fully qualified name:** Kentico.Content.Web.Mvc.PageBuilderScriptsTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders markup that includes scripts required by the [Page Builder](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderScripts` extension method.
-The Tag Helper includes scripts used in the system’s editing interface, as well as those of individual Page Builder components ([widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), [inline property editors](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties)). See the linked documentation to learn how to correctly add custom scripts for your own components.
+Renders markup that includes scripts required by the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderScripts` extension method.
+The Tag Helper includes scripts used in the system’s editing interface, as well as those of individual Page Builder components ([widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), [inline property editors](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties)). See the linked documentation to learn how to correctly add custom scripts for your own components.
 cshtml
 Copy
 ```
@@ -89,8 +95,8 @@ Copy
 ### Page Builder styles
 **Fully qualified name:** Kentico.Content.Web.Mvc.PageBuilderStylesTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders markup that includes style sheets required by the [Page Builder](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderStyles` extension method.
-The Tag Helper includes style sheets used in the system’s editing interface, as well as those of individual Page Builder components ([widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), [inline property editors](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties)). See the linked documentation to learn how to correctly add custom style sheets for your own components.
+Renders markup that includes style sheets required by the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderStyles` extension method.
+The Tag Helper includes style sheets used in the system’s editing interface, as well as those of individual Page Builder components ([widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), [inline property editors](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties)). See the linked documentation to learn how to correctly add custom style sheets for your own components.
 cshtml
 Copy
 ```
@@ -102,7 +108,7 @@ Copy
 ### Editable area
 **Fully qualified name:** Kentico.Content.Web.Mvc.EditableAreaTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Marks a location where a Page Builder [editable area](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) is to be rendered when editing the page via the administration interface. Can be used as an alternative to the `HtmlHelper.Kentico().EditableAreaAsync` extension method.
+Marks a location where a Page Builder [editable area](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) is to be rendered when editing the page via the administration interface. Can be used as an alternative to the `HtmlHelper.Kentico().EditableAreaAsync` extension method.
 The helper has the following required attributes:
   * `area-identifier` – identifier of the area unique within the context of the given page.
 
@@ -115,7 +121,7 @@ Copy
 <editable-area area-identifier="areaSimple" />
 ```
 
-Optionally, you can pass an `EditableAreaOptions` object via the `area-options` attribute to further configure the area. See [Create pages with editable areas](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) for details.
+Optionally, you can pass an `EditableAreaOptions` object via the `area-options` attribute to further configure the area. See [Create pages with editable areas](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) for details.
 cshtml
 Copy
 ```
@@ -135,10 +141,10 @@ Copy
 ```
 
 Alternatively, you can pass each property of the `EditableAreaOptions` object as an individual attribute:
-  * `area-options-allowed-sections` – a list of [section](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) identifiers that can be added to the area. If left empty, all sections are allowed.
-  * `area-options-allowed-widgets` – a list of [widget](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) identifiers that can be added to the area. If left empty, all widgets are allowed.
+  * `area-options-allowed-sections` – a list of [section](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) identifiers that can be added to the area. If left empty, all sections are allowed.
+  * `area-options-allowed-widgets` – a list of [widget](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) identifiers that can be added to the area. If left empty, all widgets are allowed.
   * `area-options-default-section-identifier` – identifier of the default section for the area.
-  * `allow-widget-output-cache` – indicates whether the output of individual widgets placed into the area can be [cached](documentation/developers-and-admins/development/caching/output-caching). This value is combined with the _AllowCache_ property of widgets (specified during [widget registration](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder)) to determine whether output caching is enabled for each widget instance contained within the area. The default value is _false_.
+  * `allow-widget-output-cache` – indicates whether the output of individual widgets placed into the area can be [cached](/documentation/developers-and-admins/development/caching/output-caching). This value is combined with the _AllowCache_ property of widgets (specified during [widget registration](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder)) to determine whether output caching is enabled for each widget instance contained within the area. The default value is _false_.
   * `widget-output-cache-expires-on` – a _DateTimeOffset_ value that sets the absolute expiration date for cached content.
   * `widget-output-cache-expires-after` – a _TimeSpan_ value that sets the length of time from the first request time to cache the contents.
   * `widget-output-cache-expires-sliding` – a _TimeSpan_ value that defines a sliding window of expiration for the cached content. Content not accessed within the specified time frame gets evicted.
@@ -166,7 +172,7 @@ Copy
 ### Widget zone
 **Fully qualified name:** Kentico.Content.Web.Mvc.WidgetZoneTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Marks a location where widgets can be placed within a [Page Builder section](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). Serves as an alternative to the `HtmlHelper.Kentico().WidgetZoneAsync` extension method.
+Marks a location where widgets can be placed within a [Page Builder section](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder). Serves as an alternative to the `HtmlHelper.Kentico().WidgetZoneAsync` extension method.
 Every section must contain at least one widget zone – sections without widget zones are not supported.
 cshtml
 Copy
@@ -178,7 +184,7 @@ Copy
 
 The helper also has the following optional attributes:
   * `zone-name` – identifier of the zone used when changing the type of the zone in the Page Builder.
-  * `allowed-widgets` – a list of [widget](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) identifiers that can be added to the zone. If left empty, all widgets are allowed.
+  * `allowed-widgets` – a list of [widget](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) identifiers that can be added to the zone. If left empty, all widgets are allowed.
 
 
 cshtml
@@ -196,7 +202,7 @@ Copy
 ### Page data
 **Fully qualified name:** Kentico.Content.Web.Mvc.WidgetZoneTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders an invisible form field that includes contextual information about the page. Necessary when developing components that use [POST actions](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder). Serves as an alternative to the `HtmlHelper.Kentico().PageData` extension method.
+Renders an invisible form field that includes contextual information about the page. Necessary when developing components that use [POST actions](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder). Serves as an alternative to the `HtmlHelper.Kentico().PageData` extension method.
 cshtml
 Copy
 ```
@@ -234,10 +240,10 @@ Copy
 ### Stand-alone widget
 **Fully qualified name:** Kentico.Content.Web.Mvc.StandaloneWidgetTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders a specified widget directly. Serves as an alternative to the `HtmlHelper.Kentico().RenderStandaloneWidgetAsync` extension method. See [Render widgets in code](documentation/developers-and-admins/development/builders/page-builder/render-widgets-in-code).
+Renders a specified widget directly. Serves as an alternative to the `HtmlHelper.Kentico().RenderStandaloneWidgetAsync` extension method. See [Render widgets in code](/documentation/developers-and-admins/development/builders/page-builder/render-widgets-in-code).
 The helper has the following attributes:
   * `widget-type-identifier` – the `string` identifier under which the widget was registered.
-  * (Optional) `widget-properties` – `IWidgetProperties` object representing the widget’s [properties](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties). Create an instance of the appropriate property model class and set any required values.
+  * (Optional) `widget-properties` – `IWidgetProperties` object representing the widget’s [properties](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties). Create an instance of the appropriate property model class and set any required values.
 
 
 cshtml
@@ -265,7 +271,7 @@ Copy
 ### Nested widget
 **Fully qualified name:** Kentico.Content.Web.Mvc.NestedWidgetTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders a widget nested inside another widget. Serves as an alternative to the `HtmlHelper.Kentico().RenderNestedWidgetAsync` extension method. See [Extend widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/extend-widgets).
+Renders a widget nested inside another widget. Serves as an alternative to the `HtmlHelper.Kentico().RenderNestedWidgetAsync` extension method. See [Extend widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/extend-widgets).
 cshtml
 Copy
 ```
@@ -304,9 +310,9 @@ Copy
 ### Cache dependency
 **Fully qualified name:** Kentico.Web.Mvc.Caching.CacheDependencyTagHelper
 **Assembly name:** Kentico.Web.Mvc
-Allows for specification of dependency cache keys within the [Cache tag helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cache-tag-helper) element. See [Output caching](documentation/developers-and-admins/development/caching/output-caching) and [Cache dependencies](documentation/developers-and-admins/development/caching/cache-dependencies).
+Allows for specification of dependency cache keys within the [Cache tag helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cache-tag-helper) element. See [Output caching](/documentation/developers-and-admins/development/caching/output-caching) and [Cache dependencies](/documentation/developers-and-admins/development/caching/cache-dependencies).
 The helper has the following attributes:
-  * `cache-keys` – an array of [cache dependency dummy keys](documentation/developers-and-admins/development/caching/cache-dependencies).
+  * `cache-keys` – an array of [cache dependency dummy keys](/documentation/developers-and-admins/development/caching/cache-dependencies).
   * `enabled` – indicates whether the dependencies get injected. Enabled by default.
 
 
@@ -326,3 +332,6 @@ Copy
     Time: @DateTime.Now
 </cache>
 ```
+
+![]()
+[]()[]()

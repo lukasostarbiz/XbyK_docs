@@ -1,16 +1,23 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital marketing setup](/documentation/developers-and-admins/digital-marketing-setup)
+  * [Set up activities](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities)
+  * Custom activities 
+
+
 # Custom activities
-  * [ Copy page link ](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#) | [Get HelpService ID](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#)
-Core MVC 5
+Activities represent actions that your [contacts](/documentation/business-users/digital-marketing/contact-management) perform. In addition to the [default activity types](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities), you can also define custom activity types, which allow you to track any other required actions.
+  1. [Add custom activity types in the Xperience administration](#add-custom-activity-types)
+  2. [Implement custom activity logging](#log-custom-activities)
 
 
-[✖](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#)
-Activities represent actions that your [contacts](documentation/business-users/digital-marketing/contact-management) perform. In addition to the [default activity types](documentation/developers-and-admins/digital-marketing-setup/set-up-activities), you can also define custom activity types, which allow you to track any other required actions.
-  1. [Add custom activity types in the Xperience administration](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#add-custom-activity-types)
-  2. [Implement custom activity logging](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#log-custom-activities)
-
-
-Marketers can view custom activities in the standard [activity log](documentation/business-users/digital-marketing/contact-activities) for contacts. You can also segment contacts according to custom activities by preparing [contact groups](documentation/business-users/digital-marketing/contact-groups) with activity-based conditions. The contact groups can then be used to [personalize content](documentation/developers-and-admins/digital-marketing-setup/content-personalization) on your websites.
-For example, a custom activity could be used on a bank’s website in the following scenario. The site uses a custom [Page Builder widget](documentation/business-users/website-content/widgets-and-page-builder) to display a loan calculator. The widget logs a custom “Loan calculator usage” activity whenever a visitor runs the calculator. A contact group stores all contacts who have performed this custom activity, which marketers can use to send targeted loan offers and display personalized content on other pages.
+Marketers can view custom activities in the standard [activity log](/documentation/business-users/digital-marketing/contact-activities) for contacts. You can also segment contacts according to custom activities by preparing [contact groups](/documentation/business-users/digital-marketing/contact-groups) with activity-based conditions. The contact groups can then be used to [personalize content](/documentation/developers-and-admins/digital-marketing-setup/content-personalization) on your websites.
+For example, a custom activity could be used on a bank’s website in the following scenario. The site uses a custom [Page Builder widget](/documentation/business-users/website-content/widgets-and-page-builder) to display a loan calculator. The widget logs a custom “Loan calculator usage” activity whenever a visitor runs the calculator. A contact group stores all contacts who have performed this custom activity, which marketers can use to send targeted loan offers and display personalized content on other pages.
 ## Add custom activity types
   1. Open the **Contact management** application in the Xperience administration.
   2. Switch to the **Activity** **types** tab.
@@ -18,29 +25,29 @@ For example, a custom activity could be used on a bank’s website in the follow
   4. Fill in the fields:
      * **Activity type name** – the name of the activity type displayed in the Xperience administration.
      * _(Optional)_ **Identifiers** – specify the code name if you wish to use a code name different than the pre-filled value. 
-       * The code name is used when [logging activities](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#log-custom-activities) of the given type.
+       * The code name is used when [logging activities](#log-custom-activities) of the given type.
      * **Description** – we strongly recommend adding a description for all custom activity types. Describe the purpose of the activity and what actions are tracked. The description is displayed to other marketers in the Xperience administration.
      * **Enabled** – controls whether activities of this type are logged. Can be disabled or enabled at any time.
   5. Select **Save**.
 
 
 Your custom activity type is now ready to be logged.
-[![Viewing activity types, with several custom types](docsassets/documentation/custom-activities/Activity_Types.png)](https://docs.kentico.com/docsassets/documentation/custom-activities/Activity_Types.png)
+[![Viewing activity types, with several custom types](/docsassets/documentation/custom-activities/Activity_Types.png)](/docsassets/documentation/custom-activities/Activity_Types.png)
 ## Log custom activities
 After defining custom activity types, developers need to set up the system to log the activities when the corresponding visitor actions occur. The following options are available:
-  * [Server-side code](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#server-side-code)
-  * [Client-side code](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#client-side-code)
-  * [Headless tracking](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#headless-tracking)
-  * [Cross-site tracking](documentation/developers-and-admins/digital-marketing-setup/set-up-activities/custom-activities#cross-site-tracking)
+  * [Server-side code](#server-side-code)
+  * [Client-side code](#client-side-code)
+  * [Headless tracking](#headless-tracking)
+  * [Cross-site tracking](#cross-site-tracking)
 
 
 **Tracking consent required**
-Due to [personal data protection](documentation/developers-and-admins/data-protection) policies, custom activities on [website channels](documentation/developers-and-admins/configuration/website-channel-management) are only logged for visitors who give [consent to be tracked as contacts](documentation/developers-and-admins/data-protection/consent-development) and have the required [cookie level](documentation/developers-and-admins/data-protection/cookies) set (_Visitor_ or _All_).
+Due to [personal data protection](/documentation/developers-and-admins/data-protection) policies, custom activities on [website channels](/documentation/developers-and-admins/configuration/website-channel-management) are only logged for visitors who give [consent to be tracked as contacts](/documentation/developers-and-admins/data-protection/consent-development) and have the required [cookie level](/documentation/developers-and-admins/data-protection/cookies) set (_Visitor_ or _All_).
 ### Server-side code
-You can log custom activities using the Xperience server-side API. For example, this approach can be used in the code of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) components.
+You can log custom activities using the Xperience server-side API. For example, this approach can be used in the code of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) components.
   1. Edit the code where you want the activity to be logged. 
      * Custom activities are logged for the **current contact** , so you cannot use code where the HTTP request context is not available (e.g., asynchronous worker threads).
-  2. Call the `Log` method of the `ICustomActivityLogger` service (e.g., obtained using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection)).
+  2. Call the `Log` method of the `ICustomActivityLogger` service (e.g., obtained using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection)).
   3. Specify the method’s parameters: 
      * `customActivityType` – the _Code name_ of the activity type.
      * `activityData` – a `CustomActivityData` object that specifies the properties of the logged activity. We recommend setting at least the `ActivityTitle` (displayed in the activity log). Optionally, you can set a `string` as the `ActivityValue` for every logged activity.
@@ -106,7 +113,7 @@ Copy
 </script>
 ```
 
-The `kxt('`customactivity`')` function sends a request that logs the specified custom activity for the **current contact**. These activity logging requests are handled by a dedicated endpoint, which is added by calling the `UseActivityTracking` method in your Xperience application’s startup code (see [Set up activities](documentation/developers-and-admins/digital-marketing-setup/set-up-activities)).
+The `kxt('`customactivity`')` function sends a request that logs the specified custom activity for the **current contact**. These activity logging requests are handled by a dedicated endpoint, which is added by calling the `UseActivityTracking` method in your Xperience application’s startup code (see [Set up activities](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities)).
 #### Script conflicts
 If you encounter script conflicts with the `kxt` function (for example when using custom or third-party JavaScript libraries), you can rename the function by setting a custom name in the `loggingFunctionName` parameter of the `ActivityLoggingScriptV2` registration method.
 cshtml
@@ -128,7 +135,7 @@ Copy
 ```
 
 ### Headless tracking
-You can log custom activities through the [headless tracking API](documentation/developers-and-admins/digital-marketing-setup/headless-tracking).
+You can log custom activities through the [headless tracking API](/documentation/developers-and-admins/digital-marketing-setup/headless-tracking).
   1. Make sure the tracking API is enabled.
   2. Consider and evaluate consent requirements for the current contact.
   3. Send a POST request from your external application to the **/Kentico.Tracking/activities** endpoint. The following example demonstrates the data structure required for the request body:
@@ -150,7 +157,7 @@ Copy
 
 
 ### Cross-site tracking
-You can log custom activities from external sites covered by [cross-site tracking](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking). Call the `kxt('`customactivity`')` function in your cross-site tracking scripts.
+You can log custom activities from external sites covered by [cross-site tracking](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking). Call the `kxt('`customactivity`')` function in your cross-site tracking scripts.
 JS
 Copy
 ```
@@ -161,3 +168,6 @@ kxt('customactivity', {
     value: 'value'
 });
 ```
+
+![]()
+[]()[]()

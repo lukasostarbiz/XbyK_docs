@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/the-real-value-of-customer-journeys
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+5 of 17 Pages
 # The real value of customer journeys
-  * [ Copy page link ](modules/customer-journeys/the-real-value-of-customer-journeys#) | [Get HelpService ID](modules/customer-journeys/the-real-value-of-customer-journeys#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/the-real-value-of-customer-journeys# "Close page link panel") [Copy to clipboard](modules/customer-journeys/the-real-value-of-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -22,16 +24,8 @@ Emma notices that many users tend to drop off shortly after registering. These n
 Early resolution of pain points **prevents customer dissatisfaction**.
 After improving the registration journey, Emma’s team also sets up a welcome email series to guide new members. This onboarding experience builds trust and encourages continued engagement.
 Customer journey mapping is a natural part of digital marketing, and it doesn’t just drive sales – it builds **lasting customer relationships**.
-[ Previous page ](modules/customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare)
+[ Previous page ](/modules/customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare)
 5 of 17
-[ Mark complete and continue ](modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/the-real-value-of-customer-journeys)
-[](https://docs.kentico.com/modules/customer-journeys/the-real-value-of-customer-journeys)[](https://docs.kentico.com/modules/customer-journeys/the-real-value-of-customer-journeys)
+[ Mark complete and continue ](/modules/customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
+![]()
+[]()[]()

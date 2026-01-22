@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/prepare-to-build-customer-journey
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+12 of 17 Pages
 # Prepare to build customer journey
-  * [ Copy page link ](modules/customer-journeys/prepare-to-build-customer-journey#) | [Get HelpService ID](modules/customer-journeys/prepare-to-build-customer-journey#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/prepare-to-build-customer-journey# "Close page link panel") [Copy to clipboard](modules/customer-journeys/prepare-to-build-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -20,16 +22,8 @@ Customer journey mapping is a collaborative process. You’ll need insights from
 Understanding the customer journey starts with gathering the right people and the right information. By involving key stakeholders from marketing, sales, support, and analytics, you ensure that every touchpoint you define is grounded in real customer behavior and team expertise. With your team in place, you’re ready to start collecting the data that will shape your journey map.
 ## Collect resources
 Before mapping the customer journey, you should gather key resources to ensure that your map provides accurate and actionable information. These resources will build the foundation you will use to identify customer behavior patterns, pain points, and opportunities for improvement. In the following pages, we’ll look at different resources you should have at hand when you start mapping your customer journeys.
-[ Previous page ](modules/customer-journeys/XbyK-integrating-data-for-seamless-journeys)
+[ Previous page ](/modules/customer-journeys/XbyK-integrating-data-for-seamless-journeys)
 12 of 17
-[ Mark complete and continue ](modules/customer-journeys/gather-analytics-data.for-customer-journey)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/prepare-to-build-customer-journey)
-[](https://docs.kentico.com/modules/customer-journeys/prepare-to-build-customer-journey)[](https://docs.kentico.com/modules/customer-journeys/prepare-to-build-customer-journey)
+[ Mark complete and continue ](/modules/customer-journeys/gather-analytics-data.for-customer-journey)
+![]()
+[]()[]()

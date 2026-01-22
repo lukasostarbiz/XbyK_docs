@@ -1,10 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/saas/saas-comparison
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [SaaS](/guides/configuration/saas)
+  * Private cloud vs. Kentico SaaS - The deployment journey 
+
+
 # Private cloud vs. Kentico SaaS - The deployment journey
-  * [ Copy page link ](guides/configuration/saas/saas-comparison#) | [Get HelpService ID](guides/configuration/saas/saas-comparison#)
-Core MVC 5
-
-
-[✖](guides/configuration/saas/saas-comparison# "Close page link panel") [Copy to clipboard](guides/configuration/saas/saas-comparison#)
-Choosing the right deployment model for Xperience by Kentico is an important decision. This page offers a side-by-side comparison of [Kentico SaaS](documentation/developers-and-admins/saas) and [private cloud solutions](documentation/developers-and-admins/deployment/deploy-to-private-cloud). It focuses on real deployment tasks and troubleshooting, building on top of our [feature comparison page](documentation/developers-and-admins/saas/differences-saas-private-cloud).
+Choosing the right deployment model for Xperience by Kentico is an important decision. This page offers a side-by-side comparison of [Kentico SaaS](/documentation/developers-and-admins/saas) and [private cloud solutions](/documentation/developers-and-admins/deployment/deploy-to-private-cloud). It focuses on real deployment tasks and troubleshooting, building on top of our [feature comparison page](/documentation/developers-and-admins/saas/differences-saas-private-cloud).
 You’ll find actionable insights to help you select the best hosting approach, understand the benefits of Kentico SaaS, and streamline your deployment process.
 We structured the material as a table comparison of deployment tasks, where each task is clickable. You can find more detailed explanations and guidance for each task below the table, to dive deeper into any area of interest.
 ## Resources
@@ -20,17 +26,17 @@ Some of these blog posts mention “upcoming” and “roadmap” features that 
 ## Table overview
 Deployment area |  Private cloud (e.g., Azure) |  Kentico SaaS  
 ---|---|---  
-[Infrastructure setup](guides/configuration/saas/saas-comparison#infrastructure-setup) |  You design and deploy infra (Azure, AWS, etc.). Must handle networks, certs, access, scaling, and monitoring. |  Fully hosted by Kentico. [Preconfigured environments](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) (QA, UAT, STG, PROD). Scalable, monitored, and secure.  
-[Initial deployment](guides/configuration/saas/saas-comparison#initial-deployment) |  Manual work to push code, configure CMS, run migrations. |  Easy to upload deployment package via Xperience Portal. CMS and DB come preconfigured.  
-[CI/CD pipeline setup](guides/configuration/saas/saas-comparison#cicd-pipeline-setup) |  Create GitHub Actions or Azure DevOps pipelines for each environment. Must integrate testing, secrets, infra provisioning. |  Kentico .NET cloud templates come with sample default configuration for CD and Xperience Portal, reducing custom setup.  
-[UAT and Staging environments](guides/configuration/saas/saas-comparison#uat-and-staging-environments) |  You create and maintain your own UAT and Staging environments. You manage coordination between editors, developers, and testers in terms of content edits. |  Preview (QA, UAT) and Staging (STG) are built-in (depending on your license). The Portal supports seamless [deployment flow](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-the-package-to-another-deployment-environment) from one environment to another.  
-[Content synchronization](guides/configuration/saas/saas-comparison#content-synchronization) |  Additional configuration required to [set up content sync](documentation/developers-and-admins/configuration/content-sync-configuration#set-up-content-sync). |  Xperience Portal automatically handles [content sync for Kentico SaaS](documentation/developers-and-admins/configuration/content-sync-configuration#content-sync-for-saas-environments).  
-[Automated testing](guides/configuration/saas/saas-comparison#automated-testing) |  You manually integrate tests and manage environment resets. |  Include GitHub workflows and automated testing steps in your deployment pipeline using [Xperience Portal API](guides/configuration/saas/saas-walkthrough/saas-update-with-xperience-portal-api).  
-[Go live](guides/configuration/saas/saas-comparison#go-live) |  Manual deployment, DNS, final checks, and backups. |  Promote to PROD from Portal. DNS and infra managed by Kentico.  
-[Post-go-live operations](guides/configuration/saas/saas-comparison#post-go-live-operations) |  You monitor uptime, apply patches, handle scaling and logs. |  Kentico handles observability, scaling, platform patches, and backups.  
-[Troubleshooting](guides/configuration/saas/saas-comparison#troubleshooting) |  You debug across cloud logs, services, and app monitoring. |  Xperience Portal gives access to logs, deployment results, and rollback.  
-[Configuration](guides/configuration/saas/saas-comparison#configuration) |  You store secrets in Key Vault or config files and handle configuration for each environment. |  Managed via GitHub and the Xperience Portal.  
-[Media & image handling](guides/configuration/saas/saas-comparison#media-image-handling) |  You configure blob storage, CDN, image rules manually. |  Default Azure blob storage configuration included in Kentico .NET template. Media files deployment happens automatically.  
+[Infrastructure setup](#infrastructure-setup) |  You design and deploy infra (Azure, AWS, etc.). Must handle networks, certs, access, scaling, and monitoring. |  Fully hosted by Kentico. [Preconfigured environments](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) (QA, UAT, STG, PROD). Scalable, monitored, and secure.  
+[Initial deployment](#initial-deployment) |  Manual work to push code, configure CMS, run migrations. |  Easy to upload deployment package via Xperience Portal. CMS and DB come preconfigured.  
+[CI/CD pipeline setup](#cicd-pipeline-setup) |  Create GitHub Actions or Azure DevOps pipelines for each environment. Must integrate testing, secrets, infra provisioning. |  Kentico .NET cloud templates come with sample default configuration for CD and Xperience Portal, reducing custom setup.  
+[UAT and Staging environments](#uat-and-staging-environments) |  You create and maintain your own UAT and Staging environments. You manage coordination between editors, developers, and testers in terms of content edits. |  Preview (QA, UAT) and Staging (STG) are built-in (depending on your license). The Portal supports seamless [deployment flow](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-the-package-to-another-deployment-environment) from one environment to another.  
+[Content synchronization](#content-synchronization) |  Additional configuration required to [set up content sync](/documentation/developers-and-admins/configuration/content-sync-configuration#set-up-content-sync). |  Xperience Portal automatically handles [content sync for Kentico SaaS](/documentation/developers-and-admins/configuration/content-sync-configuration#content-sync-for-saas-environments).  
+[Automated testing](#automated-testing) |  You manually integrate tests and manage environment resets. |  Include GitHub workflows and automated testing steps in your deployment pipeline using [Xperience Portal API](/guides/configuration/saas/saas-walkthrough/saas-update-with-xperience-portal-api).  
+[Go live](#go-live) |  Manual deployment, DNS, final checks, and backups. |  Promote to PROD from Portal. DNS and infra managed by Kentico.  
+[Post-go-live operations](#post-go-live-operations) |  You monitor uptime, apply patches, handle scaling and logs. |  Kentico handles observability, scaling, platform patches, and backups.  
+[Troubleshooting](#troubleshooting) |  You debug across cloud logs, services, and app monitoring. |  Xperience Portal gives access to logs, deployment results, and rollback.  
+[Configuration](#configuration) |  You store secrets in Key Vault or config files and handle configuration for each environment. |  Managed via GitHub and the Xperience Portal.  
+[Media & image handling](#media-image-handling) |  You configure blob storage, CDN, image rules manually. |  Default Azure blob storage configuration included in Kentico .NET template. Media files deployment happens automatically.  
 ## Deployment area details
 ### Infrastructure setup
 #### Private cloud
@@ -96,8 +102,8 @@ _“Before migrating to SaaS, my existing CI/CD flow was built around deploying 
   * Xperience Portal and Xperience Portal API simplify deployment and environment management.
 
 
-  * Take advantage of the default CD configuration that comes with a [Kentico .NET cloud template](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#install-saas-ready-project).
-  * Utilize the [Xperience Portal API](guides/configuration/saas/saas-walkthrough/saas-update-with-xperience-portal-api) to include any automated tasks in your pipeline.
+  * Take advantage of the default CD configuration that comes with a [Kentico .NET cloud template](/guides/configuration/saas/saas-walkthrough/saas-install-configure-project#install-saas-ready-project).
+  * Utilize the [Xperience Portal API](/guides/configuration/saas/saas-walkthrough/saas-update-with-xperience-portal-api) to include any automated tasks in your pipeline.
   * Watch your deployment progress in the Xperience Portal.
 
 
@@ -110,12 +116,12 @@ _“…Xperience SaaS takes over with a robust process, deploying application fi
 
 
 #### Kentico SaaS
-  * Preview (QA, UAT) and [Staging](documentation/developers-and-admins/configuration/content-sync-configuration#content-staging-best-practices) environments are built-in dedicated spaces in the Xperience Portal.
+  * Preview (QA, UAT) and [Staging](/documentation/developers-and-admins/configuration/content-sync-configuration#content-staging-best-practices) environments are built-in dedicated spaces in the Xperience Portal.
   * The Portal supports seamless deployment flow from one environment to another.
   * You can assign appropriate access to UAT testers and content editors through the Xperience Portal.
 
 
-Developers can take advantage of the [environment identification extension methods](documentation/developers-and-admins/configuration/saas-configuration#environment-identification-extension-methods) to run certain code only in a specific environment.
+Developers can take advantage of the [environment identification extension methods](/documentation/developers-and-admins/configuration/saas-configuration#environment-identification-extension-methods) to run certain code only in a specific environment.
 ### Content synchronization
 #### Private cloud
   * You must configure content sync and blob storage.
@@ -130,7 +136,7 @@ _“At present, customers [can] edit content directly in Production using Xperie
   * You still have control and an option to adjust the default configuration.
 
 
-See the [Content sync documentation](documentation/developers-and-admins/configuration/content-sync-configuration).
+See the [Content sync documentation](/documentation/developers-and-admins/configuration/content-sync-configuration).
 ### Automated testing
 #### Private cloud
   * Integrate automated tests into your pipeline.
@@ -148,14 +154,14 @@ _“The core CI/CD principles hadn’t changed, I was still building, testing, p
 #### Private cloud
   * You are responsible for coordinating all go-live activities and communication.
   * Rollback and recovery plans must be in place.
-  * [Zero-downtime deployment](documentation/developers-and-admins/deployment/read-only-deployments#private-cloud) requires multiple databases, deployment slots, blob storage, and read-only support in code.
+  * [Zero-downtime deployment](/documentation/developers-and-admins/deployment/read-only-deployments#private-cloud) requires multiple databases, deployment slots, blob storage, and read-only support in code.
 
 
 #### Kentico SaaS
   * Promoting to PROD is managed through the Xperience Portal.
   * DNS and infrastructure are handled by Kentico.
-  * Xperience Portal provides status and rollback options with [automatic restore points](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#automatic-restore-points-and-exports).
-  * The SaaS environment orchestrates [Zero-downtime deployment](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#zero-downtime-deployments) when you generate deployment packages with `-ZeroDowntimeSupportEnabled` parameter and make sure your code supports read-only mode.
+  * Xperience Portal provides status and rollback options with [automatic restore points](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#automatic-restore-points-and-exports).
+  * The SaaS environment orchestrates [Zero-downtime deployment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#zero-downtime-deployments) when you generate deployment packages with `-ZeroDowntimeSupportEnabled` parameter and make sure your code supports read-only mode.
 
 
 _“You can now use the Deploy to button to promote the same package to the Production environment.”_
@@ -174,8 +180,8 @@ _“You can now use the Deploy to button to promote the same package to the Prod
 
 
 **Optimize and automate/Automate monitoring and backups**
-  * Set up [automated notifications](guides/configuration/saas/saas-walkthrough/saas-setup#set-up-notifications).
-  * Utilize automatic and manual [restore points and exports](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#restore-points-and-exports) for frequent backups.
+  * Set up [automated notifications](/guides/configuration/saas/saas-walkthrough/saas-setup#set-up-notifications).
+  * Utilize automatic and manual [restore points and exports](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#restore-points-and-exports) for frequent backups.
 
 
 _“The platform automatically backs up databases and files before deployments, supports manual backups, and can download backups for refreshing local dev environments or debugging issues. You can also restore the QA and Production environments right from the portal.”_
@@ -197,7 +203,7 @@ _“Full infrastructure access delivers control but also significant burden: DNS
 _“Teams sometimes fear losing low-level access, but we retain what we need while facing far fewer failure points. … We have all the access we need, have much less to worry about, and avoid risky, ad-hoc fixes.”_
 — [Mike Wills, Say Yes to SaaS](https://community.kentico.com/blog/say-yes-to-xperience-saas#saas-troubleshooting)
   * Check out the [troubleshooting tips](https://www.goldfinch.me/blog/the-kentico-saas-migration-lessons-learned-and-troubleshooting-tips) and lessons learned from Liam Goldfinch’s experiments.
-  * Visit our [FAQ documentation page](documentation/developers-and-admins/saas/saas-frequently-asked-questions).
+  * Visit our [FAQ documentation page](/documentation/developers-and-admins/saas/saas-frequently-asked-questions).
 
 
 ### Configuration
@@ -224,8 +230,10 @@ _“The release pipeline picks up the artifact, extracts it onto the shared serv
   * Built-in CDN and image optimization improve performance out of the box.
 
 
-If images fail to load, verify your [`StorageInitializationModule` configuration](guides/configuration/saas/saas-walkthrough/saas-install-configure-project#azure-blob-storage-folder-mapping).
+If images fail to load, verify your [`StorageInitializationModule` configuration](/guides/configuration/saas/saas-walkthrough/saas-install-configure-project#azure-blob-storage-folder-mapping).
 _“Next, I came across the StorageInitializationModule.cs file, which contains sample code for initializing Azure Blob Storage. I made sure to include this in my project!”_
 — [Liam Goldfinch, Step by step](https://www.goldfinch.me/blog/the-kentico-saas-migration-a-step-by-step-guide)
 ## Let us know what you think
 We are continuously working on improving our materials. Are you missing any information or need further explanation on any aspect of our SaaS? Would you like to contribute to this guide by sharing your own SaaS deployment experience? Use the **Send us feedback** button at the end of this page to let us know.
+![]()
+[]()[]()

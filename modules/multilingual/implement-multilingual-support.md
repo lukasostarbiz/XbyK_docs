@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/multilingual/implement-multilingual-support
+scrape_date: 2026-01-22
+---
+
+Module: Multilingual content
+3 of 6 Pages
 # Implement multilingual support for your site
-  * [ Copy page link ](modules/multilingual/implement-multilingual-support#) | [Get HelpService ID](modules/multilingual/implement-multilingual-support#)
-Core MVC 5
-
-
-[✖](modules/multilingual/implement-multilingual-support# "Close page link panel") [Copy to clipboard](modules/multilingual/implement-multilingual-support#)
 Although creating the language versions of content is a task for editors, as a developer, you must take steps to ensure a consistent experience for your website visitors.
 ### Retrieve preferred language
 The first important building block is the **preferred language retriever.** Its `Get()` method returns the language of the request (if defined) or the primary language of the current website channel. You can simply inject `IPreferredLanguageRetriever` anywhere you need, using dependency injection. For example:
@@ -31,14 +33,14 @@ public class MyClass
 ```
 
 The value returned is a **Code name** that has been defined for the language in the Xperience administration interface. 
-[![Code name of a language in Xperience administration](docsassets/guides/display-your-website-content-in-multiple-languages/code-name.png)](https://docs.kentico.com/docsassets/guides/display-your-website-content-in-multiple-languages/code-name.png)
+[![Code name of a language in Xperience administration](/docsassets/guides/display-your-website-content-in-multiple-languages/code-name.png)](/docsassets/guides/display-your-website-content-in-multiple-languages/code-name.png)
 ### Retrieve localized content items
-Based on whether you are using the [ContentRetriever API](documentation/developers-and-admins/api/content-item-api/content-retriever-api) or the [Content item query API](documentation/developers-and-admins/api/content-item-api/content-item-query-api), to retrieve a specific language variant of a content item, you:
+Based on whether you are using the [ContentRetriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api) or the [Content item query API](/documentation/developers-and-admins/api/content-item-api/content-item-query-api), to retrieve a specific language variant of a content item, you:
   1. Pass the language **Code name** (see picture above) as the `languageName` parameter to the ContentRetriever’s extension method (ContentRetriever API).
-  2. Call the `InLanguage` extension method of [ContentItemQueryBuilder](documentation/developers-and-admins/api/content-item-api/reference-content-item-query), passing it a language **Code name** as a parameter (Content item query API).
+  2. Call the `InLanguage` extension method of [ContentItemQueryBuilder](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query), passing it a language **Code name** as a parameter (Content item query API).
 
 
-By passing in the [preferred language](modules/multilingual/implement-multilingual-support#retrieve-preferred-language), you will get your content item(s) in a language variant consistent with your current context.
+By passing in the [preferred language](#retrieve-preferred-language), you will get your content item(s) in a language variant consistent with your current context.
 Take a look at the place in your code where you call the `ContentRetriever` or the `ContentItemQueryBuilder`. If you have been working off [the main branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/main) or are following along looking at [the finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished), one example is located in the _TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs_. 
 C#
 **ContentItemRetrieverService.cs (main branch)**
@@ -110,23 +112,23 @@ public async Task<IWebPageFieldsSource?> RetrieveWebPageById(
 When retrieving a deeper structure of content items (e.g., a page that references another content item, which also references another content item), the call will return the whole structure of content items localized.
 **Editor’s task (optional): Display Home page in Spanish**
 Now, if your implementation is correct, your application is able to retrieve and display content items in different languages. You can test this, for example, by creating a new language version of one of your pages in the Xperience administration.
-  1. Navigate to **Channels → Training guides pages** and [translate the Home page into the new language](documentation/business-users/website-content/translate-pages).
-  2. Remember to [translate and publish the reusable content item](documentation/business-users/content-hub/content-items#translate-content-items) referenced by the Home page (Landing content) as well.
+  1. Navigate to **Channels → Training guides pages** and [translate the Home page into the new language](/documentation/business-users/website-content/translate-pages).
+  2. Remember to [translate and publish the reusable content item](/documentation/business-users/content-hub/content-items#translate-content-items) referenced by the Home page (Landing content) as well.
      * _Welcome to Training guides!_ in Spanish is _¡Bienvenidos a las guías de formación!_.
      * _Hello world!_ translates into _¡Hola Mundo!_.
   3. Visit the root of your website and add _/es_ to the end of the URL (e.g., _http://localhost:53415/es_). You should see your home page content in Spanish, like in the screenshot below.  
-[![Image of the home page displaying Spanish content](docsassets/guides/display-your-website-content-in-multiple-languages/homepage-es.png)](https://docs.kentico.com/docsassets/guides/display-your-website-content-in-multiple-languages/homepage-es.png)
+[![Image of the home page displaying Spanish content](/docsassets/guides/display-your-website-content-in-multiple-languages/homepage-es.png)](/docsassets/guides/display-your-website-content-in-multiple-languages/homepage-es.png)
 
 
 ### Retrieve localized consent texts
-Localizing consent texts looks very similar to [localizing content items](modules/multilingual/implement-multilingual-support#retrieve-localized-content-items) - you utilize the `IPreferredLanguageRetriever`. Simply pass the **preferred language** to the `GetConsentTextAsync` method as a parameter:
+Localizing consent texts looks very similar to [localizing content items](#retrieve-localized-content-items) - you utilize the `IPreferredLanguageRetriever`. Simply pass the **preferred language** to the `GetConsentTextAsync` method as a parameter:
 C#
 Copy
 ```
 await consent.GetConsentTextAsync(preferredLanguageRetriever.Get()))
 ```
 
-A good example of this in practice is a cookie preferences widget or a tracking consent banner. If you have previously followed our [Create a cookie preferences widget](guides/development/data-protection/create-a-cookie-preferences-widget) and [Build a tracking consent banner](guides/development/data-protection/build-a-tracking-consent-banner) guides, your code likely already handles multilingual situations, but let’s take a closer look.
+A good example of this in practice is a cookie preferences widget or a tracking consent banner. If you have previously followed our [Create a cookie preferences widget](/guides/development/data-protection/create-a-cookie-preferences-widget) and [Build a tracking consent banner](/guides/development/data-protection/build-a-tracking-consent-banner) guides, your code likely already handles multilingual situations, but let’s take a closer look.
   1. **Cookie preferences widget**
 Navigate to _CookiePreferencesWidgetViewComponent.cs_ in _TrainingGuides.Web/Features/DataProtection/Widgets/CookiePreferences:_
 C#
@@ -162,8 +164,8 @@ public async Task<ViewViewComponentResult> InvokeAsync(CookiePreferencesWidgetPr
 ...
 ```
 
-If you are showing the _ConsentDisplayName_ to the visitor (e.g., as a consent header), be advised, that _ConsentDisplayName_ does **not** support multiple language versions at this time. We recommend utilizing stringLocalizer and Shared resources in your .Net project to handle this, as you will see in [the next section](modules/multilingual/implement-multilingual-support#translate-other-application-texts).
-See [this guide](guides/development/data-protection/create-a-cookie-preferences-widget#WidgetViewComponent) to view the code in context.
+If you are showing the _ConsentDisplayName_ to the visitor (e.g., as a consent header), be advised, that _ConsentDisplayName_ does **not** support multiple language versions at this time. We recommend utilizing stringLocalizer and Shared resources in your .Net project to handle this, as you will see in [the next section](#translate-other-application-texts).
+See [this guide](/guides/development/data-protection/create-a-cookie-preferences-widget#WidgetViewComponent) to view the code in context.
   2. **Tracking consent banner**
 Navigate to _TrackingConsentViewComponent.cs_ in _TrainingGuides.Web/Features/DataProtection/ViewComponents/TrackingConsent:_
 C#
@@ -204,16 +206,16 @@ public async Task<IViewComponentResult> InvokeAsync()
 ...
 ```
 
-Feel free to look over this code [in the context of its guide](guides/development/data-protection/build-a-tracking-consent-banner#BannerViewComponent).
+Feel free to look over this code [in the context of its guide](/guides/development/data-protection/build-a-tracking-consent-banner#BannerViewComponent).
 
 
 **Editor’s task (optional): Display cookie texts in Spanish**
-  1. Navigate to **Data protection** in your Xperience administration interface and follow [the documentation to translate your consent texts](documentation/developers-and-admins/data-protection/consent-management#translate-consents-to-other-languages) into Spanish (Español).
-  2. Navigate to **Training guides pages** website channel (**Channels → Training guides pages)** , [translate the Cookie policy page](documentation/business-users/website-content/translate-pages), including the Cookie preferences widget, and publish.
+  1. Navigate to **Data protection** in your Xperience administration interface and follow [the documentation to translate your consent texts](/documentation/developers-and-admins/data-protection/consent-management#translate-consents-to-other-languages) into Spanish (Español).
+  2. Navigate to **Training guides pages** website channel (**Channels → Training guides pages)** , [translate the Cookie policy page](/documentation/business-users/website-content/translate-pages), including the Cookie preferences widget, and publish.
   3. Visit the Spanish version of your Cookie policy page by inserting the ‘es’ language code after the base URL (e.g., _http://localhost:53415/es/cookie-policy_). You should see your translated Cookie preferences banner content.  
-[![Image of the cookie policy page displaying consent texts in Spanish, but not consent names](docsassets/guides/display-your-website-content-in-multiple-languages/cookie-policy-spanish-first-step.png)](https://docs.kentico.com/docsassets/guides/display-your-website-content-in-multiple-languages/cookie-policy-spanish-first-step.png)
+[![Image of the cookie policy page displaying consent texts in Spanish, but not consent names](/docsassets/guides/display-your-website-content-in-multiple-languages/cookie-policy-spanish-first-step.png)](/docsassets/guides/display-your-website-content-in-multiple-languages/cookie-policy-spanish-first-step.png)
   4. Open your site in a new browser incognito window, appending _/es_ to the base URL. You should see your Tracking consent banner, looking similar to the picture below:
-[![Screenshot of the tracking consent banner showing consent texts in Spanish, but not other texts](docsassets/guides/display-your-website-content-in-multiple-languages/tracking-consent_half-done.png)](https://docs.kentico.com/docsassets/guides/display-your-website-content-in-multiple-languages/tracking-consent_half-done.png)
+[![Screenshot of the tracking consent banner showing consent texts in Spanish, but not other texts](/docsassets/guides/display-your-website-content-in-multiple-languages/tracking-consent_half-done.png)](/docsassets/guides/display-your-website-content-in-multiple-languages/tracking-consent_half-done.png)
 
 
 ### Translate other application texts
@@ -274,23 +276,15 @@ To localize strings inside views, simply `@inject IStringLocalizer<SharedResourc
 Here is a [link to the full _SharedResources.es.resx_ file in our repository](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/2d03b90663e2853d23895688d25f06fae2719d7d/src/TrainingGuides.Web/Resources/SharedResources.es.resx), for your reference. It contains texts from _TrainingGuides.Web_ project translated into Spanish.
 
 
-You can see this `IStringLocalizer` approach applied to the cookie preferences widget and the tracking consent banner in [the finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished). We’ll use this approach to make some improvements [later in this series](modules/multilingual/handle-multilingual-urls):
+You can see this `IStringLocalizer` approach applied to the cookie preferences widget and the tracking consent banner in [the finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished). We’ll use this approach to make some improvements [later in this series](/modules/multilingual/handle-multilingual-urls):
   * [Cookie preferences widget](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/DataProtection/Widgets/CookiePreferences/CookiePreferencesWidgetViewComponent.cs)
   * [Tracking consent view component](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/DataProtection/ViewComponents/TrackingConsent/TrackingConsentViewComponent.cs)
 
 
 Your website visitors can now view individual pages’ content in English (the default language) and Spanish (by typing ‘/es’ after the base URL in the browser navigation bar):
 Your browser does not support the video tag. 
-[ Previous page ](modules/multilingual/explore-languages-in-xperience)
+[ Previous page ](/modules/multilingual/explore-languages-in-xperience)
 3 of 6
-[ Mark complete and continue ](modules/multilingual/handle-multilingual-urls)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/multilingual/implement-multilingual-support)
-[](https://docs.kentico.com/modules/multilingual/implement-multilingual-support)[](https://docs.kentico.com/modules/multilingual/implement-multilingual-support)
+[ Mark complete and continue ](/modules/multilingual/handle-multilingual-urls)
+![]()
+[]()[]()

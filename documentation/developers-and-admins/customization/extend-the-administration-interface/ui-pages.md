@@ -1,33 +1,40 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * UI pages 
+
+
 # UI pages
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#)
-UI pages are individual administration pages accessible under a specific URL. They derive their layout from templates in the client application and functionality from classes that represent them on the back end. The URL of each page is derived from its ancestors – pages specify their parent during registration. When extending the administration, you can add new pages to existing applications or create entirely new page structures for [custom applications](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages).
+UI pages are individual administration pages accessible under a specific URL. They derive their layout from templates in the client application and functionality from classes that represent them on the back end. The URL of each page is derived from its ancestors – pages specify their parent during registration. When extending the administration, you can add new pages to existing applications or create entirely new page structures for [custom applications](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages).
 A UI page consists of the following components:
-  * Back-end definition – a class in the Xperience .NET application. Used to retrieve data and describe [commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) for the UI page.
+  * Back-end definition – a class in the Xperience .NET application. Used to retrieve data and describe [commands](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) for the UI page.
   * Front-end page template – a React component that describes the appearance and layout of the UI page. Formats data received from the back end and invokes commands.
   * Registration attribute – ties the back-end definition and a corresponding client template together.
 
 
-The system provides predefined page back-end definitions and client templates on which most of the pages in the administration are built. These pages are designed to handle the majority of common scenarios and use case requirements – typically listing and editing of objects. Use them as a base when creating custom pages and [applications](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages). See [Reference - UI page templates](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) for more information. 
+The system provides predefined page back-end definitions and client templates on which most of the pages in the administration are built. These pages are designed to handle the majority of common scenarios and use case requirements – typically listing and editing of objects. Use them as a base when creating custom pages and [applications](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages). See [Reference - UI page templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) for more information. 
 The following diagram illustrates the full structure of UI pages:
-[![UI page structure overview](docsassets/documentation/ui-pages/UIPagesModelOverview.png)](https://docs.kentico.com/docsassets/documentation/ui-pages/UIPagesModelOverview.png)
+[![UI page structure overview](/docsassets/documentation/ui-pages/UIPagesModelOverview.png)](/docsassets/documentation/ui-pages/UIPagesModelOverview.png)
 **Front end**
   * JSX React component – a conventional React component that gets invoked by the admin React app when accessing a specific URL. Ensures page layout.
   * Template properties – templates can optionally define properties that allow interactivity with the page and parameterization of its contents.
-  * Page command templates – client templates can define command templates whose behavior is specified by the implementation of back-end command handler methods. See [UI page commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
+  * Page command templates – client templates can define command templates whose behavior is specified by the implementation of back-end command handler methods. See [UI page commands](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
 
 
 **Back end**
   * Page definition – the main page definition configures the default properties of the client template. Consists of a C# class that inherits from specific base classes depending on the type of the page.
-  * Template properties – for [templates with properties](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#define-template-properties), back-end page definitions need to contain a strongly-typed definition of client-side properties.
-  * Command handler methods – the back-end page definition contains methods that handle command execution logic on the back end. See [UI page commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
+  * Template properties – for [templates with properties](#define-template-properties), back-end page definitions need to contain a strongly-typed definition of client-side properties.
+  * Command handler methods – the back-end page definition contains methods that handle command execution logic on the back end. See [UI page commands](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
 
 
 ## Write client page template definitions
-Before you begin developing client components, add the [boilerplate project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development) for admin development to your solution. The boilerplate bootstraps the development of client code for the admin UI by providing a prepared environment with all dependencies and configuration required by Xperience. 
+Before you begin developing client components, add the [boilerplate project](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development) for admin development to your solution. The boilerplate bootstraps the development of client code for the admin UI by providing a prepared environment with all dependencies and configuration required by Xperience. 
 Client templates are defined as conventional React components that ensure page layout:
 JS
 Copy
@@ -44,7 +51,7 @@ export const ClientPageTemplate = () => {
 }
 ```
 
-For the template to be visible to the system, it needs to be exported from the client module. Add the export to the **entry.tsx** file provided by the [admin development boilerplate project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development).
+For the template to be visible to the system, it needs to be exported from the client module. Add the export to the **entry.tsx** file provided by the [admin development boilerplate project](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development).
 TSX
 **entry.tsx**
 Copy
@@ -119,7 +126,7 @@ public class PageTemplateClientProperties : TemplateClientProperties
 ```
 
 **Dependency injection support**
-UI pages support constructor [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) by default. You can use DI to resolve instances of external services on which the page depends.
+UI pages support constructor [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) by default. You can use DI to resolve instances of external services on which the page depends.
 ### Configure page properties
 UI pages contain methods that allow you to manipulate their state at certain points in their lifecycle:
   * `ConfigurePage`
@@ -130,7 +137,7 @@ UI pages contain methods that allow you to manipulate their state at certain poi
 The ConfigurePage method allows you to set and configure the back-end state of the page.
 The method is called:
   * on initial load, when the page is requested from the client
-  * before a [page command](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) handler is called
+  * before a [page command](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) handler is called
 
 
 #### ConfigureTemplateProperties
@@ -155,9 +162,9 @@ public class MyPage : Page<PageTemplateClientProperties>
 
 ### Configure page meta attributes
 Pages allow you to set the following attributes that affect their behavior within corresponding admin UI applications:
-  * [Page render location](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-render-location)
-  * [Breadcrumbs navigation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#breadcrumbs-navigation)
-  * [Navigation menu visibility](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#navigation-menu-visibility)
+  * [Page render location](#page-render-location)
+  * [Breadcrumbs navigation](#breadcrumbs-navigation)
+  * [Navigation menu visibility](#navigation-menu-visibility)
 
 
 #### Page render location
@@ -197,9 +204,9 @@ public class MyPage : Page<PageTemplateClientProperties>
 }
 ```
 
-For example, you can use the attribute in conjunction with [page location](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-render-location) to prevent pages opened in modal dialogs from showing in breadcrumbs.
+For example, you can use the attribute in conjunction with [page location](#page-render-location) to prevent pages opened in modal dialogs from showing in breadcrumbs.
 #### Navigation menu visibility
-For more clarity, applications or specific pages can display a [navigation menu](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template) on the left-hand side. The menu is always visible. However, you can use the `UINavigation` attribute to prevent certain pages from being offered. For example, you can use the attribute together with [page location](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-render-location) to hide pages opened in modal dialogs.
+For more clarity, applications or specific pages can display a [navigation menu](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template) on the left-hand side. The menu is always visible. However, you can use the `UINavigation` attribute to prevent certain pages from being offered. For example, you can use the attribute together with [page location](#page-render-location) to hide pages opened in modal dialogs.
 C#
 **Hide a page from the navigation menu**
 Copy
@@ -218,18 +225,18 @@ Pages need to be registered in the system before users can access them. To regis
 Parameter |  Description  
 ---|---  
 `parentType` |  The type of the parent page. Child pages inherit the full URL path of their parents.
-  * When adding new applications, create a [UI application page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) to serve as the parent.
-  * When adding pages to default applications, use **System → UI** tree to [find the type implementing the parent](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#UIpages-UITree).
+  * When adding new applications, create a [UI application page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) to serve as the parent.
+  * When adding pages to default applications, use **System → UI** tree to [find the type implementing the parent](#UIpages-UITree).
 
   
-`slug` |  The URL segment under which the page is accessed. See the [Page URLs and routing](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-urls-and-routing) section for details.  
+`slug` |  The URL segment under which the page is accessed. See the [Page URLs and routing](#page-urls-and-routing) section for details.  
 `uiPageType` |  The type implementing the page on the back-end.  
 `name` |  The name of the page.   
-`templateName` |  The name of the client template used by the page. Names of templates provided by the system can be accessed via the `TemplateNames` class (`Kentico.Xperience.Admin.Base` namespace). See [Reference - UI page templates](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) for details. Entered in the following format: `@orgName/projectName/templateName` For custom templates `orgName` and `projectName` corresponds to the properties specified in the admin module’s webpack configuration (see [Prepare your environment for admin development](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development)).  The `templateName` segment must be set to the name of the client React component used for the form component’s editing interface. The client application automatically suffixes the component name with `Template`. Make sure the component is exported (visible to other modules). For example:
+`templateName` |  The name of the client template used by the page. Names of templates provided by the system can be accessed via the `TemplateNames` class (`Kentico.Xperience.Admin.Base` namespace). See [Reference - UI page templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) for details. Entered in the following format: `@orgName/projectName/templateName` For custom templates `orgName` and `projectName` corresponds to the properties specified in the admin module’s webpack configuration (see [Prepare your environment for admin development](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development)).  The `templateName` segment must be set to the name of the client React component used for the form component’s editing interface. The client application automatically suffixes the component name with `Template`. Make sure the component is exported (visible to other modules). For example:
   * _@acme/web-admin-custom/Input_ (the client suffixes ‘Template’ automatically and attempts to load the **InputTemplate.tsx** component exported from the  _@acme/web-admin-custom_ module)
 
   
-`order` |  The order of the page in corresponding navigation elements (if present). See [Application side navigation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template).
+`order` |  The order of the page in corresponding navigation elements (if present). See [Application side navigation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/side-navigation-ui-page-template).
   * All default application pages are registered using 100 increments (100 for the first page, 200 for the second, etc.), to give you space to register and position your custom pages as required.
 
   
@@ -237,7 +244,7 @@ You can also set the following optional properties:
 Property |  Description  
 ---|---  
 `Icon` |  The icon of the page seen in the administration interface.  
-`ParameterDefaultValue` |  Sets the default value of a [parameterized URL slug](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs), which is used when generating links for the page.  
+`ParameterDefaultValue` |  Sets the default value of a [parameterized URL slug](#parameterized-url-slugs), which is used when generating links for the page.  
 C#
 **Example registration**
 Copy
@@ -250,13 +257,13 @@ using Kentico.Xperience.Admin.Base
 Registered pages are accessible under the specified URL slug.
 When adding new pages to existing applications, you need to provide the type of the class implementing the page on the back end. This can be problematic when extending default system applications, or any other third-party extensions that don’t freely distribute their source code.
 For this purpose, the admin UI provides the **UI tree** view available in the **System** application. The view renders all categories and their assigned UI pages in a hierarchical structure similar to the page content tree in the **Pages** application.
-Selecting a node from the tree displays its [registration](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#register-ui-pages) and [configuration](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#configure-page-meta-attributes) metadata, including the `uiPageType` property that stores the fully qualified name of the class that implements it on the back-end.
+Selecting a node from the tree displays its [registration](#register-ui-pages) and [configuration](#configure-page-meta-attributes) metadata, including the `uiPageType` property that stores the fully qualified name of the class that implements it on the back-end.
 The following screenshot shows the metadata of the content item listing page from the **Content hub** application.
-[![Users listing UI page metadata via the UI tree view](docsassets/documentation/ui-pages/UITree_page_metadata.png)](https://docs.kentico.com/docsassets/documentation/ui-pages/UITree_page_metadata.png)
+[![Users listing UI page metadata via the UI tree view](/docsassets/documentation/ui-pages/UITree_page_metadata.png)](/docsassets/documentation/ui-pages/UITree_page_metadata.png)
 ## Page URLs and routing
 Page URLs are set via the `slug` property of UI page registration attributes:
   * `UIPage` assembly attribute – for child pages of another page in the admin UI
-  * `UIApplication` assembly attribute – for [root pages of new applications](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) in the admin UI
+  * `UIApplication` assembly attribute – for [root pages of new applications](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) in the admin UI
 
 
 The full URL of a page is determined by the used registration method.
@@ -297,7 +304,7 @@ using Kentico.Xperience.Admin.Base;
 [assembly: UIPage(typeof(ParentPage), PageParameterConstants.PARAMETERIZED_SLUG, typeof(Page), "pageName", "@orgName/projectName/templateComponentName", 0, Icon = Icons.Trophy, ParameterDefaultValue = 1)]
 ```
 
-When [generating URLs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#generate-urls-to-other-administration-pages) for such pages, you need to pass correct parameters at runtime. Use the `IPageLinkGenerator.GetPath` method and its overloads.
+When [generating URLs](#generate-urls-to-other-administration-pages) for such pages, you need to pass correct parameters at runtime. Use the `IPageLinkGenerator.GetPath` method and its overloads.
 #### Retrieve parameters from the URL
 Parameters stored in the URLs of pages can be bound to page properties using the `PageParameter` attribute. In the constructor, specify a model binder to use when binding parameters:
   * `GuidPageModelBinder`
@@ -360,10 +367,10 @@ public class IntPageModelBinder : PageModelBinder
 ```
 
 The following diagram illustrates how parameter retrieval functions.
-[![Example - Retrieving a parameter from a URL](docsassets/documentation/ui-pages/PageURLParameterization.png)](https://docs.kentico.com/docsassets/documentation/ui-pages/PageURLParameterization.png)
+[![Example - Retrieving a parameter from a URL](/docsassets/documentation/ui-pages/PageURLParameterization.png)](/docsassets/documentation/ui-pages/PageURLParameterization.png)
 In the diagram, the `ObjectId` property gets set with the value from _id_parameter_. The `UserGeneral` page can then use the bound value within its logic (e.g., to retrieve and display details of the corresponding object).
 ## Generate URLs to other administration pages
-You can generate URLs to other pages in the administration interface. This can be useful, for example, if you wish to redirect to other pages from within [page commands](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
+You can generate URLs to other pages in the administration interface. This can be useful, for example, if you wish to redirect to other pages from within [page commands](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands).
 To generate URLs, use the `IPageLinkGenerator` service and its `GetPath` method.
 C#
 **Example - Generate a URL**
@@ -390,9 +397,13 @@ public class CustomPage : Page
 }
 ```
 
-To generate URLs that lead to [pages with parameterized URLs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs), pass an instance of `PageParameterValues` to be substituted. Default URL parameter values can be set using the `ParameterDefaultValue` property of the UIPage attribute. Order the params as they would appear in the resulting URL.
+To generate URLs that lead to [pages with parameterized URLs](#parameterized-url-slugs), pass an instance of `PageParameterValues` to be substituted. Default URL parameter values can be set using the `ParameterDefaultValue` property of the UIPage attribute. Order the params as they would appear in the resulting URL.
 Workspace-scoped applications and pages under them have an additional `WorkspaceID` slug in their URL path. Before generating URLs to such pages make sure to include their `WorkspaceID` in an instance of the `PageParameterValues` class.
 ## UI pages with forms
 To create pages with forms that submit data to the back end, use:
-  * [Object type edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) for data intended to directly modify a single [object type](documentation/developers-and-admins/customization/object-types).
-  * [Model edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) for data not bound to a particular Xperience object.
+  * [Object type edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) for data intended to directly modify a single [object type](/documentation/developers-and-admins/customization/object-types).
+  * [Model edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) for data not bound to a particular Xperience object.
+
+
+![]()
+[]()[]()

@@ -1,20 +1,26 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/configuration/saas-configuration
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Configuration](/documentation/developers-and-admins/configuration)
+  * SaaS configuration 
+
+
 # SaaS configuration
-  * [ Copy page link ](documentation/developers-and-admins/configuration/saas-configuration#) | [Get HelpService ID](documentation/developers-and-admins/configuration/saas-configuration#)
-Core MVC 5
+Kentico’s [SaaS](/documentation/developers-and-admins/saas) offering provides infrastructure and supporting services that allow you to deploy, host and manage Xperience by Kentico projects in the cloud. With the features and benefits of hosting your projects in the cloud also comes some necessary configuration you need to do for your projects to work optimally. To configure your application:
+  1. [Identify your working environment](#environment-identification-extension-methods).
+  2. [Enable Microsoft Application Insights](#DeploytotheSaaSenvironment-EnableAppInsights).
+  3. [Enable managed SendGrid integration](/documentation/developers-and-admins/configuration/email-configuration#Emailconfiguration-EnableManagedSendGrid).
+  4. (_Optional_) Configure [Cloudflare CDN](#cloudflare-cdn).
+  5. (_Optional_) Configure [Azure Blob storage folder mapping](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) for [physical files](/guides/architecture/content-modeling/content-modeling-guide/store-files) and any [unmanaged binary files](/guides/architecture/content-modeling/content-modeling-guide/store-files#unmanaged-files-and-when-to-use-them) referenced by your application. Consider this configuration, especially if your application works with binary files stored outside of the dedicated _~/assets_ directory that is mapped to the blob by default. Persisting binary data outside of the blob storage can be unreliable and lead to data loss in case the hosting service recycles the application (e.g., due to infrastructure changes).
+  6. (_Optional_) [Configure the content synchronization feature](/documentation/developers-and-admins/configuration/content-sync-configuration).
+  7. (_Optional_) [Define a custom static page to display when your application is unavailable](#define-a-custom-app-offline-file).
 
 
-[✖](documentation/developers-and-admins/configuration/saas-configuration# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/configuration/saas-configuration#)
-Kentico’s [SaaS](documentation/developers-and-admins/saas) offering provides infrastructure and supporting services that allow you to deploy, host and manage Xperience by Kentico projects in the cloud. With the features and benefits of hosting your projects in the cloud also comes some necessary configuration you need to do for your projects to work optimally. To configure your application:
-  1. [Identify your working environment](documentation/developers-and-admins/configuration/saas-configuration#environment-identification-extension-methods).
-  2. [Enable Microsoft Application Insights](documentation/developers-and-admins/configuration/saas-configuration#DeploytotheSaaSenvironment-EnableAppInsights).
-  3. [Enable managed SendGrid integration](documentation/developers-and-admins/configuration/email-configuration#Emailconfiguration-EnableManagedSendGrid).
-  4. (_Optional_) Configure [Cloudflare CDN](documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn).
-  5. (_Optional_) Configure [Azure Blob storage folder mapping](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) for [physical files](guides/architecture/content-modeling/content-modeling-guide/store-files) and any [unmanaged binary files](guides/architecture/content-modeling/content-modeling-guide/store-files#unmanaged-files-and-when-to-use-them) referenced by your application. Consider this configuration, especially if your application works with binary files stored outside of the dedicated _~/assets_ directory that is mapped to the blob by default. Persisting binary data outside of the blob storage can be unreliable and lead to data loss in case the hosting service recycles the application (e.g., due to infrastructure changes).
-  6. (_Optional_) [Configure the content synchronization feature](documentation/developers-and-admins/configuration/content-sync-configuration).
-  7. (_Optional_) [Define a custom static page to display when your application is unavailable](documentation/developers-and-admins/configuration/saas-configuration#define-a-custom-app-offline-file).
-
-
-To see more information about the configuration of custom domains visit [website domains](documentation/developers-and-admins/configuration/website-channel-management#configure-a-domain-name-in-the-xperience-administration) or [email sending domains](documentation/developers-and-admins/configuration/email-configuration#configurable-sender-email-addresses).
+To see more information about the configuration of custom domains visit [website domains](/documentation/developers-and-admins/configuration/website-channel-management#configure-a-domain-name-in-the-xperience-administration) or [email sending domains](/documentation/developers-and-admins/configuration/email-configuration#configurable-sender-email-addresses).
 ### Environment identification extension methods
 Use the following extension methods to identify your application’s currently active environment:
   * `IsQa()` and `IsUat()` (available in the `Kentico.Xperience.Cloud` namespace)
@@ -24,7 +30,7 @@ Use the following extension methods to identify your application’s currently a
     * [IsEnvironment()](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.hostenvironmentenvextensions.isenvironment) with the environment names from `CloudEnvironments` (available in the `Kentico.Xperience.Cloud` namespace)
 
 
-For example, use the environment identification extension methods to [integrate Twilio SendGrid](documentation/developers-and-admins/configuration/email-configuration#Emailconfiguration-EnableManagedSendGrid) in SaaS deployment environments but not in your local development environment.
+For example, use the environment identification extension methods to [integrate Twilio SendGrid](/documentation/developers-and-admins/configuration/email-configuration#Emailconfiguration-EnableManagedSendGrid) in SaaS deployment environments but not in your local development environment.
 C#
 **Environment identification in Program.cs**
 Copy
@@ -55,12 +61,12 @@ if (builder.Environment.IsQa() ||
 
 ### Microsoft Application Insights integration
 Xperience integrates [Application Insights for ASP.NET Core applications](https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core) to enable monitoring and aggregation of metrics for your website:
-  * Event log – errors and warnings from the [Xperience event log](documentation/developers-and-admins/configuration/event-log).
+  * Event log – errors and warnings from the [Xperience event log](/documentation/developers-and-admins/configuration/event-log).
   * .NET exceptions and errors – in addition to errors that are included in the Xperience event log, also covers exceptions that can occur before the Xperience application is fully running.
   * (_Optional_) [Client-side telemetry](https://docs.microsoft.com/en-us/azure/azure-monitor/app/usage-overview)
 
 
-You can view the Application Insights logs for your deployments in [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal) using the corresponding applications under the **Monitoring** section:
+You can view the Application Insights logs for your deployments in [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal) using the corresponding applications under the **Monitoring** section:
   * **Event log** – displays entries from the Xperience event log and any custom messages sent via the Application Insights SDK.
   * **Exceptions** – displays all .NET exceptions (errors) from Application Insights.
 
@@ -69,7 +75,7 @@ Enabling the Application Insights integration is also helpful if you ever need t
 #### Enable Microsoft Application Insights integration
   1. Open your Xperience project in Visual Studio and edit the **Program.cs** file.
   2. Call `WebApplicationBuilder.Services.AddXperienceCloudApplicationInsights` when building the web application. 
-     * See [Configure new projects](documentation/developers-and-admins/development/website-development-basics/configure-new-projects) for the recommended middleware order.
+     * See [Configure new projects](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects) for the recommended middleware order.
 C#
 **Enabling AppInsights integration**
 Copy
@@ -127,7 +133,9 @@ app.UseStaticFiles();
 ```
 
 ### Define a custom App Offline file
-When the application is offline, for example, when [scheduled Xperience Portal project maintenance](documentation/developers-and-admins/saas/xperience-portal#schedule-maintenance-of-xperience-portal-projects) is in progress, a generic .NET static page is displayed when accessing the application.
-Create an **app_offline.htm_** file in the project’s root to replace the default generic page. The **app_offline.htm** page is displayed only if the database is updated during the run of the deployment pipeline. The file will be packaged with the deployment package. See [Deploy](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package).
+When the application is offline, for example, when [scheduled Xperience Portal project maintenance](/documentation/developers-and-admins/saas/xperience-portal#schedule-maintenance-of-xperience-portal-projects) is in progress, a generic .NET static page is displayed when accessing the application.
+Create an **app_offline.htm_** file in the project’s root to replace the default generic page. The **app_offline.htm** page is displayed only if the database is updated during the run of the deployment pipeline. The file will be packaged with the deployment package. See [Deploy](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package).
 Use the file name suffixed with an underscore (_), as **app_offline.htm** is not a valid custom App Offline name in Xperience.
 See Microsoft documentation for more information about the [App Offline file (app_offline.htm)](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/app-offline?view=aspnetcore-6.0).
+![]()
+[]()[]()

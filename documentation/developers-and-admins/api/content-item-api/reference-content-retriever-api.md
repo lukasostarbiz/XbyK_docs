@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * [Content API](/documentation/developers-and-admins/api/content-item-api)
+  * Reference - ContentRetriever API 
+
+
 # Reference - ContentRetriever API
-  * [ Copy page link ](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#) | [Get HelpService ID](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#)
 ## Page queries
 ### Retrieve the current page
 **Method:** `RetrieveCurrentPage<TResult>(...)`
@@ -91,10 +98,10 @@ ArticlePage page = await contentRetriever.RetrieveCurrentPage<ArticlePage>(
 );
 ```
 
-Some overloads of `RetrieveCurrentPage` require an instance of `RetrieveCurrentPageParameters`. This object allows you to fine-tune how the current page is retrieved. For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+Some overloads of `RetrieveCurrentPage` require an instance of `RetrieveCurrentPageParameters`. This object allows you to fine-tune how the current page is retrieved. For available parameters, see the [Page query parameters](#page-query-parameters) table.
 ### Retrieve pages sharing reusable field schema
 Method: `RetrievePagesOfReusableSchemas<TResult>(...)`
-Retrieves a collection of pages whose content types use one or more of the specified [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas), mapping them to the `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+Retrieves a collection of pages whose content types use one or more of the specified [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas), mapping them to the `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](#page-query-parameters) table.
 C#
 **Basic usage**
 Copy
@@ -146,11 +153,11 @@ IEnumerable<IPageMetadata> pageInfo =
 );
 ```
 
-For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+For available parameters, see the [Page query parameters](#page-query-parameters) table.
 ### Retrieve pages of a single content type
 Method: `RetrievePages<TSource, TResult>(...)`
-Retrieves a collection of pages of a specific content type, represented by the `TResult` generic. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
-The provided `TSource` type determines the content type to retrieve. It must be a model class registered using [RegisterContentTypeMapping](documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute) (applied to [generated system classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default). For this method, `TSource` also serves as the intermediate mapped result provided to the `configureModel` delegate.
+Retrieves a collection of pages of a specific content type, represented by the `TResult` generic. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](#page-query-parameters) table.
+The provided `TSource` type determines the content type to retrieve. It must be a model class registered using [RegisterContentTypeMapping](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute) (applied to [generated system classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default). For this method, `TSource` also serves as the intermediate mapped result provided to the `configureModel` delegate.
 C#
 **Basic usage**
 Copy
@@ -198,7 +205,7 @@ var parameters = new RetrievePagesParameters
 // Disables caching
 var cacheSettings = RetrievalCacheSettings.CacheDisabled;
 
-// NewsArticle is `TSource`, avalilable in configureModel
+// NewsArticle is `TSource`, available in configureModel
 // NewsArticleSummary is `TResult`, the final type returned by the call
 IEnumerable<NewsArticle> latestNews =
   await contentRetriever.RetrievePages<NewsArticle, NewsArticleSummary>(
@@ -220,36 +227,88 @@ IEnumerable<NewsArticle> latestNews =
 );
 ```
 
-For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+For available parameters, see the [Page query parameters](#page-query-parameters) table.
 ### Retrieve pages of multiple content types
 Method: `RetrievePagesOfContentTypes<TResult>(...)`
-Description: Retrieves a collection of web pages belonging to one of the specified content type code names, mapping them to the `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+Retrieves a collection of web pages belonging to one of the specified content type code names, mapping them to the `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](#page-query-parameters) table.
+When retrieving pages of multiple content types, you can use either `IWebPageFieldsSource` for maximum flexibility or create a custom base class that implements `IWebPageFieldsSource` and includes common properties shared across your content types.
 C#
-**Basic usage**
+**Basic usage with IWebPageFieldsSource**
 Copy
 ```
 var contentTypes = new[] { ArticlePage.CONTENT_TYPE_NAME, BlogPage.CONTENT_TYPE_NAME };
 
-// Gets all articles and blogs using default settings
-// Assuming 'BaseViewModel' is a suitable base class or interface
-// You can also use 'IWebPageFieldsSource' as the shared type
-// Suitable model classes are paired with content types using
-// 'RegisterContentTypeMappingAttribute' (automatically added to generated classes)
-IEnumerable<BaseViewModel> pages =
-  await contentRetriever.RetrievePagesOfContentTypes<BaseViewModel>(contentTypes);
+// Gets all articles and blogs using IWebPageFieldsSource
+IEnumerable<IWebPageFieldsSource> pages =
+  await contentRetriever.RetrievePagesOfContentTypes<IWebPageFieldsSource>(contentTypes);
 
 // Uses pattern matching to handle the specific type
 switch (pages.FirstOrDefault())
 {
   case ArticlePage article:
     // Specific logic for ArticlePage
-    Console.WriteLine($"Displaying Article: {article.Title}");
+    Console.WriteLine($"Displaying Article: {article.ArticleTitle}");
     // Render article view...
     break;
 
   case BlogPage blog:
     // Specific logic for BlogPage
-    Console.WriteLine($"Displaying Blog Page: {blog.Headline}");
+    Console.WriteLine($"Displaying Blog Page: {blog.BlogTitle}");
+    // Render blog page view...
+    break;
+
+  default:
+    // Handle any other unexpected page types
+    // Render a default view...
+    break;
+}
+```
+
+For more complex scenarios involving multiple content types that share common properties, you can create a custom base class. This approach provides strongly-typed access to common properties while maintaining the ability to use pattern matching for handling specific content types.
+For pattern matching to work with a custom base class, you must extend the generated model classes to inherit from your base class using the partial class mechanism (since [generated classes are partial](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#customize-generated-classes)).
+C#
+**Advanced usage with custom base class**
+Copy
+```
+// Example of a custom base class for bulk page retrieval.
+// This is a sample implementation that users can create based on their specific requirements when retrieving pages of multiple content types that share common properties.
+public class BaseViewModel : IWebPageFieldsSource
+{
+    // Common custom fields that exist across different page content types
+    public string Title { get; set; }
+    public DateTime PublishedDate { get; set; }
+}
+
+// Since generated model classes are partial, you can extend them to inherit from BaseViewModel.
+// This enables pattern matching to work properly with the custom base class.
+public partial class ArticlePage : BaseViewModel
+{
+}
+
+public partial class BlogPage : BaseViewModel
+{
+}
+
+var contentTypes = new[] { ArticlePage.CONTENT_TYPE_NAME, BlogPage.CONTENT_TYPE_NAME };
+
+// Gets all articles and blogs using the custom base class
+// This provides strongly-typed access to common properties while maintaining pattern matching
+IEnumerable<BaseViewModel> pages =
+  await contentRetriever.RetrievePagesOfContentTypes<BaseViewModel>(contentTypes);
+
+// Uses pattern matching to handle the specific type
+// This works because ArticlePage and BlogPage both inherit from BaseViewModel
+switch (pages.FirstOrDefault())
+{
+  case ArticlePage article:
+    // Access both common properties from BaseViewModel and specific ArticlePage properties
+    Console.WriteLine($"Displaying Article: {article.Title} - Published: {article.PublishedDate}");
+    // Render article view...
+    break;
+
+  case BlogPage blog:
+    // Access both common properties from BaseViewModel and specific BlogPage properties
+    Console.WriteLine($"Displaying Blog: {blog.Title} - Published: {blog.PublishedDate}");
     // Render blog page view...
     break;
 
@@ -306,14 +365,14 @@ IEnumerable<BaseViewModel> links = await contentRetriever.RetrievePagesOfContent
 );
 ```
 
-For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+For available parameters, see the [Page query parameters](#page-query-parameters) table.
 ### Retrieve pages by GUIDs
 **Method:** `RetrievePagesByGuids<TResult>(...)`
 Retrieves a collection of specific pages identified by their `WebPageItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
-This method is useful when you have a list of specific page identifiers, for example obtained using [page selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#page-selector), and need to fetch their data efficiently.
+This method is useful when you have a list of specific page identifiers, for example obtained using [page selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#page-selector), and need to fetch their data efficiently.
 **Combined content selector usage limitations**
-The GUIDs returned by [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) cannot be used with this method because they are incompatible with the page GUIDs this method expects. The combined content selector returns `ContentItemGUID` values inside its `ContentItemReference` return type, while this method expects `WebPageItemGUID` values.
-Passing collections of GUIDs from the combined content selector returns an empty result. Use [RetrieveContentByGuids](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-by-guids) to work with combined selector data.
+The GUIDs returned by [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) cannot be used with this method because they are incompatible with the page GUIDs this method expects. The combined content selector returns `ContentItemGUID` values inside its `ContentItemReference` return type, while this method expects `WebPageItemGUID` values.
+Passing collections of GUIDs from the combined content selector returns an empty result. Use [RetrieveContentByGuids](#retrieve-content-items-by-guids) to work with combined selector data.
 C#
 **Basic usage**
 Copy
@@ -326,12 +385,12 @@ IEnumerable<ArticlePage> specificPages =
   await contentRetriever.RetrievePagesByGuids<ArticlePage>(specificPageGuids);
 ```
 
-The rest of the usage is identical to [Retrieve pages of a single content type](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-pages-of-a-single-content-type).
-The `RetrievePagesByGuids` method utilizes the `RetrievePagesParameters` object, which is also used by the [Retrieve pages of a single content type](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-pages-of-a-single-content-type) method. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
-**Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate [cache dependencies](documentation/developers-and-admins/development/caching/cache-dependencies#by-idguidcodename) based on the provided `SystemFields.WebPageItemGuid` values are automatically included.
+The rest of the usage is identical to [Retrieve pages of a single content type](#retrieve-pages-of-a-single-content-type).
+The `RetrievePagesByGuids` method utilizes the `RetrievePagesParameters` object, which is also used by the [Retrieve pages of a single content type](#retrieve-pages-of-a-single-content-type) method. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](#page-query-parameters) table.
+**Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate [cache dependencies](/documentation/developers-and-admins/development/caching/cache-dependencies#by-idguidcodename) based on the provided `SystemFields.WebPageItemGuid` values are automatically included.
 ### Retrieve all pages
 Method: `RetrieveAllPages<TSource, TResult>(...)`
-Retrieves all pages (by default from the current channel), mapping them to the specified `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+Retrieves all pages (by default from the current channel), mapping them to the specified `TResult` model. Allows filtering by path, language, and other criteria using the parameters described in the [Page query parameters](#page-query-parameters) table.
 C#
 **Basic usage**
 Copy
@@ -410,23 +469,23 @@ IEnumerable<PageTitleModel> pageLinks =
 );
 ```
 
-Some overloads of `RetrieveAllPages` require an instance of `RetrieveAllPagesParameters`. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#page-query-parameters) table.
+Some overloads of `RetrieveAllPages` require an instance of `RetrieveAllPagesParameters`. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](#page-query-parameters) table.
 ### Page query parameters
 The following table contains all parameters available for page query methods. Each parameter row specifies which methods support that parameter.
 Property |  Default value |  Applicable methods |  Description  
 ---|---|---|---  
 ChannelName |  `null` |  `RetrievePagesOfReusableSchemas`, `RetrievePages`, `RetrievePagesOfContentTypes`, `RetrievePagesByGuids`, `RetrieveAllPages` |  Name of the website channel to fetch the pages from. If `null`, the channel from the current request context is used.  
-PathMatch |  `null` |  `RetrievePagesOfReusableSchemas`, `RetrievePages`, `RetrievePagesOfContentTypes`, `RetrievePagesByGuids`, `RetrieveAllPages` |  Limits results based on the [content tree path](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#filter-pages-based-on-content-tree-structure) (e.g., children of a path, specific path). If `null`, no path filtering is used.  
-IncludeUrlPath |  `true` |  All page query methods |  Specifies if page URL data should be included in the results. This data is necessary when [resolving page URLs](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) and saves a database roundtrip if included.  
-LinkedItemsMaxLevel |  `0` |  All page query methods |  Controls the depth of [linked content items](documentation/business-users/content-hub/content-items#link-content-items) to retrieve recursively along with the main page. A value of `0` means no linked items are retrieved.  
-LanguageName |  `null` |  All page query methods |  Allows you to override the default content [language](documentation/developers-and-admins/configuration/languages) determined by the [current context](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language). If left `null`, the language retrieved from the current HTTP request is used.  
-UseLanguageFallbacks |  `true` |  All page query methods |  Determines if the system should attempt to retrieve content in [fallback languages](documentation/developers-and-admins/configuration/languages#language-fallbacks) if the content is not available in the primary specified language.  
-IncludeSecuredItems |  `false` |  All page query methods |  Specifies whether content items requiring special permissions (e.g., [secured sections](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration)) should be included in the results.  
+PathMatch |  `null` |  `RetrievePagesOfReusableSchemas`, `RetrievePages`, `RetrievePagesOfContentTypes`, `RetrievePagesByGuids`, `RetrieveAllPages` |  Limits results based on the [content tree path](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#filter-pages-based-on-content-tree-structure) (e.g., children of a path, specific path). If `null`, no path filtering is used.  
+IncludeUrlPath |  `true` |  All page query methods |  Specifies if page URL data should be included in the results. This data is necessary when [resolving page URLs](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) and saves a database roundtrip if included.  
+LinkedItemsMaxLevel |  `0` |  All page query methods |  Controls the depth of [linked content items](/documentation/business-users/content-hub/content-items#link-content-items) to retrieve recursively along with the main page. A value of `0` means no linked items are retrieved.  
+LanguageName |  `null` |  All page query methods |  Allows you to override the default content [language](/documentation/developers-and-admins/configuration/languages) determined by the [current context](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language). If left `null`, the language retrieved from the current HTTP request is used.  
+UseLanguageFallbacks |  `true` |  All page query methods |  Determines if the system should attempt to retrieve content in [fallback languages](/documentation/developers-and-admins/configuration/languages#language-fallbacks) if the content is not available in the primary specified language.  
+IncludeSecuredItems |  `false` |  All page query methods |  Specifies whether content items requiring special permissions (e.g., [secured sections](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration)) should be included in the results.  
 IsForPreview |  `null` |  All page query methods |  Allows overriding the preview mode context. If left `null`, the retrieval respects the current website context (whether the request is in preview mode or live). Set to `true` to force preview data or `false` to force live data.  
 ## Content item queries
 ### Retrieve content items sharing reusable field schema
 Method: `RetrieveContentOfReusableSchemas<TResult>(...)`
-Retrieves a collection of reusable content items whose content types use one or more of the specified [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas), mapping them to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+Retrieves a collection of reusable content items whose content types use one or more of the specified [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas), mapping them to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](#content-item-query-parameters) table.
 C#
 **Basic usage**
 Copy
@@ -481,11 +540,11 @@ IEnumerable<IMetadata> oldestMetadataItems =
 );
 ```
 
-For available parameters, see the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
 ### Retrieve content items of a single content type
 Method: `RetrieveContent<TSource, TResult>(...)`
-Retrieves a collection of content items of a specific [content type](documentation/developers-and-admins/development/content-types), mapped to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
-The provided `TSource` type determines the content type to retrieve. It must be a model class registered using [RegisterContentTypeMapping](documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute) (applied to [generated system classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default). For this method, `TSource` also serves as the intermediate mapped result provided to the `configureModel` delegate.
+Retrieves a collection of content items of a specific [content type](/documentation/developers-and-admins/development/content-types), mapped to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](#content-item-query-parameters) table.
+The provided `TSource` type determines the content type to retrieve. It must be a model class registered using [RegisterContentTypeMapping](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute) (applied to [generated system classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) by default). For this method, `TSource` also serves as the intermediate mapped result provided to the `configureModel` delegate.
 C#
 **Basic usage**
 Copy
@@ -553,12 +612,16 @@ IEnumerable<AuthorSummary> topAuthors = await contentRetriever.RetrieveContent<A
 );
 ```
 
-For available parameters, see the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
 ### Retrieve content items of multiple content types
 Method: `RetrieveContentOfContentTypes<TResult>(...)`
-Retrieves a collection of reusable content items belonging to the specified content types, mapping them to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+Retrieves a collection of reusable content items belonging to the specified content types, mapping them to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](#content-item-query-parameters) table.
+When retrieving items of multiple content types, you can use either `IContentItemFieldsSource` for maximum flexibility or create a custom base class that implements `IContentItemFieldsSource` and includes common properties shared across your content types.
+**Custom base class for content type models**
+A custom base class implementing `IContentItemFieldsSource` is suitable for more complex scenarios involving multiple content types that share common properties. This approach provides strongly-typed access to common properties while maintaining the ability to use pattern matching for handling specific content types.
+For pattern matching to work with a custom base class, you must extend the generated model classes to inherit from your base class using the partial class mechanism (since [generated classes are partial](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#customize-generated-classes)).
 C#
-**Basic usage**
+**Basic usage with IContentItemFieldsSource**
 Copy
 ```
 var contentTypes = new[] { Author.CONTENT_TYPE_NAME, Article.CONTENT_TYPE_NAME };
@@ -645,11 +708,11 @@ IEnumerable<IContentInfo> recentContent =
 );
 ```
 
-For available parameters, see the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
 ### Retrieve content items by GUIDs
 **Method:** `RetrieveContentByGuids<TResult>(...)`
 Retrieves a collection of specific reusable content items identified by their `ContentItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
-This method is useful when you have a list of specific content item identifiers (e.g., from a [related items](documentation/developers-and-admins/customization/field-editor/data-type-management) field) and need to fetch their data efficiently.
+This method is useful when you have a list of specific content item identifiers (e.g., from a [related items](/documentation/developers-and-admins/customization/field-editor/data-type-management) field) and need to fetch their data efficiently.
 C#
 **Basic usage when expecting a single type**
 Copy
@@ -662,17 +725,19 @@ IEnumerable<Author> specificAuthors =
   await contentRetriever.RetrieveContentByGuids<Author>(specificAuthorGuids);
 ```
 
-The rest of the usage is identical to [Retrieve content items of a single content type](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-content-items-of-a-single-content-type).
-The `RetrieveContentByGuids` method uses the `RetrieveContentParameters` object. This object allows you to fine-tune how the content items are retrieved. For available parameters, see the [Content item query parameters](documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#content-item-query-parameters) table.
+The rest of the usage is identical to [Retrieve content items of a single content type](#retrieve-content-items-of-a-single-content-type).
+The `RetrieveContentByGuids` method uses the `RetrieveContentParameters` object. This object allows you to fine-tune how the content items are retrieved. For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
 **Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate cache dependencies based on the provided `contentItemGuids` are automatically included.
 ### Content item query parameters
 The following table contains all parameters available for content item query methods. Each parameter row specifies which methods support that parameter.
 Property |  Default value |  Applicable methods |  Description  
 ---|---|---|---  
-IncludeUrlPath |  `true` |  All content item query methods |  Specifies if page URL data should be included in the results. This data is necessary when [resolving page URLs](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) and saves a database roundtrip if included.  
-WorkspaceNames |  `[]` (Empty _Enumerable_) |  All content item query methods |  Names of the [workspaces](documentation/developers-and-admins/configuration/users/role-management/workspaces) from which content should be retrieved.  
+IncludeUrlPath |  `true` |  All content item query methods |  Specifies if page URL data should be included in the results. This data is necessary when [resolving page URLs](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) and saves a database roundtrip if included.  
+WorkspaceNames |  `[]` (Empty _Enumerable_) |  All content item query methods |  Names of the [workspaces](/documentation/developers-and-admins/configuration/users/role-management/workspaces) from which content should be retrieved.  
 LinkedItemsMaxLevel |  `0` |  All content item query methods |  Controls the depth of linked content items to retrieve recursively. `0` means no linked items are retrieved.  
-LanguageName |  `null` |  All content item query methods |  Allows you to override the default content [language](documentation/developers-and-admins/configuration/languages) determined by the [current context](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language). If left `null`, the language retrieved from the current HTTP request is used.  
-UseLanguageFallbacks |  `true` |  All content item query methods |  Determines if the system should attempt to retrieve content in [fallback languages](documentation/developers-and-admins/configuration/languages#language-fallbacks) if the content is not available in the primary specified language.  
-IncludeSecuredItems |  `false` |  All content item query methods |  Specifies whether content items requiring special permissions (e.g., [secured sections](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration)) should be included in the results.  
-IsForPreview |  `null` |  All content item query methods |  Allows overriding the preview mode context. If left null, the retrieval respects the current website context (whether the request is in preview mode or live). Set to true to force preview data or false to force live data.
+LanguageName |  `null` |  All content item query methods |  Allows you to override the default content [language](/documentation/developers-and-admins/configuration/languages) determined by the [current context](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language). If left `null`, the language retrieved from the current HTTP request is used.  
+UseLanguageFallbacks |  `true` |  All content item query methods |  Determines if the system should attempt to retrieve content in [fallback languages](/documentation/developers-and-admins/configuration/languages#language-fallbacks) if the content is not available in the primary specified language.  
+IncludeSecuredItems |  `false` |  All content item query methods |  Specifies whether content items requiring special permissions (e.g., [secured sections](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration)) should be included in the results.  
+IsForPreview |  `null` |  All content item query methods |  Allows overriding the preview mode context. If left null, the retrieval respects the current website context (whether the request is in preview mode or live). Set to true to force preview data or false to force live data.  
+![]()
+[]()[]()

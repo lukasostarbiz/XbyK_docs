@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/content-item-query-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * [Content API](/documentation/developers-and-admins/api/content-item-api)
+  * Content item query API 
+
+
 # Content item query API
-  * [ Copy page link ](documentation/developers-and-admins/api/content-item-api/content-item-query-api#) | [Get HelpService ID](documentation/developers-and-admins/api/content-item-api/content-item-query-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/content-item-api/content-item-query-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/content-item-api/content-item-query-api#)
-Content item query is the default system API for content item retrieval. It allows you to retrieve content items based on their [content type](documentation/developers-and-admins/development/content-types). Each query can be modified using SQL-like fluent API.
+Content item query is the default system API for content item retrieval. It allows you to retrieve content items based on their [content type](/documentation/developers-and-admins/development/content-types). Each query can be modified using SQL-like fluent API.
 Using content query consists of the following steps:
   1. Building the query using `ContentItemQueryBuilder`.
   2. Running the query using `IContentQueryExecutor` and mapping the result to a model class for further use.
@@ -50,7 +57,7 @@ builder.ForContentType("Acme.Article", subqueryConfiguration =>
 
 ```
 
-For all available parameterization options, see [Reference - Content item query](documentation/developers-and-admins/api/content-item-api/reference-content-item-query).
+For all available parameterization options, see [Reference - Content item query](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query).
 Finally, the entire query can be modified.
 C#
 **Parameterize the entire query**
@@ -68,15 +75,15 @@ builder.ForContentTypes(parameters =>
 ```
 
 The following diagram illustrates the general structure of content queries:
-[![Content item query structure diagram](docsassets/documentation/content-item-query-api/ContentItemQueryStructure.png)](https://docs.kentico.com/docsassets/documentation/content-item-query-api/ContentItemQueryStructure.png)
+[![Content item query structure diagram](/docsassets/documentation/content-item-query-api/ContentItemQueryStructure.png)](/docsassets/documentation/content-item-query-api/ContentItemQueryStructure.png)
 **Loading other objects**
-To learn how to retrieve other types of data from the Xperience database, see [ObjectQuery API](documentation/developers-and-admins/api/objectquery-api).
+To learn how to retrieve other types of data from the Xperience database, see [ObjectQuery API](/documentation/developers-and-admins/api/objectquery-api).
 ## Run queries and map the result
 Queries are executed using `IContentQueryExecutor`, which retrieves data according to the passed `ContentItemQueryBuilder` instance. When retrieved, the query result is a collection of database rows. To transform the data into a typed format suitable for C#, part of query execution is a process known as _model binding_.
-Model binding maps the data from each row to a C# object, assigning each column an appropriate C# type in the process. The resulting object instance is called a _strongly-typed representation_ of the database data. Xperience provides [code generators](documentation/developers-and-admins/api/generate-code-files-for-system-objects) that enable developers to generate model classes (C# objects) directly mirroring each content type’s database representation. These classes are directly used in the model binding process.
+Model binding maps the data from each row to a C# object, assigning each column an appropriate C# type in the process. The resulting object instance is called a _strongly-typed representation_ of the database data. Xperience provides [code generators](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) that enable developers to generate model classes (C# objects) directly mirroring each content type’s database representation. These classes are directly used in the model binding process.
 `IContentQueryExecutor` provides two approaches to facilitate model binding:
-  * [GetMappedResult<TModel>](documentation/developers-and-admins/api/content-item-api/content-item-query-api#using-getmappedresult-methods) (`GetMappedWebPageResult<TModel>` for page content types). These methods fully abstract the model binding process, directly returning strongly-typed models.
-  * [GetResult<TModel>](documentation/developers-and-admins/api/content-item-api/content-item-query-api#using-getresult-methods) (`GetWebPageResult<TModel>` for page content types). These methods expose the model binding logic that gives you direct access to each row of the database data, allowing you to customize the mapping process.
+  * [GetMappedResult<TModel>](#using-getmappedresult-methods) (`GetMappedWebPageResult<TModel>` for page content types). These methods fully abstract the model binding process, directly returning strongly-typed models.
+  * [GetResult<TModel>](#using-getresult-methods) (`GetWebPageResult<TModel>` for page content types). These methods expose the model binding logic that gives you direct access to each row of the database data, allowing you to customize the mapping process.
 
 
 ### Using GetMappedResult methods
@@ -106,7 +113,7 @@ IEnumerable<Article> articles =
 
 The model binding logic matches database column names to the model’s properties, with certain exceptions made for system data.
 When retrieving data that consists of multiple content types, you must, using the _TModel_ generic, cast the result to a type shared by all model classes. Depending on the contents of the result, you have the following options:
-  * Use `IContentItemFieldsSource`. This interface is by default implemented by all [generated model classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects).
+  * Use `IContentItemFieldsSource`. This interface is by default implemented by all [generated model classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects).
 C#
 **Getting items of multiple content types**
 Copy
@@ -137,7 +144,7 @@ List<Blog> blogs = result.OfType<Blog>().ToList();
 
 ```
 
-  * When retrieving items that share a [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas), reference the schema interface in _TModel_ :
+  * When retrieving items that share a [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas), reference the schema interface in _TModel_ :
 C#
 **Getting items that share a reusable field schema**
 Copy
@@ -234,7 +241,7 @@ private MyModelClass ModelBinder(IContentQueryDataContainer container)
 ```
 
 Models can be either
-  * [generated classes](documentation/developers-and-admins/api/generate-code-files-for-system-objects) – generated classes directly mirror content type fields as defined via the [field editor](documentation/developers-and-admins/customization/field-editor) and work seamlessly with the mapper API.
+  * [generated classes](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) – generated classes directly mirror content type fields as defined via the [field editor](/documentation/developers-and-admins/customization/field-editor) and work seamlessly with the mapper API.
   * (advanced use case) custom classes – using custom classes enables you to map only desired columns. Before using custom classes, familiarize yourself with the mapper API or prepare custom mapping logic. Note that some Xperience APIs that work with content items expect certain system fields to be present in the model and will not work as expected otherwise.
 
 
@@ -263,7 +270,7 @@ IEnumerable<VacationSpot> result =
                            container => mapper.Map<VacationSpot>(container));
 ```
 
-See the **Content items** section in the [API Examples](api/) for more examples.
+See the **Content items** section in the [API Examples](/api/) for more examples.
 C#
 **Example - Retrieve and bind to a custom model class**
 Copy
@@ -306,7 +313,7 @@ public class Dto
 ```
 
 ### Query execution options
-The `ContentQueryExecutionOptions` class allows you to optionally configure querying behavior. See [Reference - Content item query](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#icontentqueryexecutor-configuration) for a list of available configuration options.
+The `ContentQueryExecutionOptions` class allows you to optionally configure querying behavior. See [Reference - Content item query](/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#icontentqueryexecutor-configuration) for a list of available configuration options.
 C#
 **Example - Configure query execution**
 Copy
@@ -321,3 +328,6 @@ contentQueryExecutor.GetResult(contentItemQueryBuilder,
 
 
 ```
+
+![]()
+[]()[]()

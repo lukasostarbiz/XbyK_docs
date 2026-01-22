@@ -1,13 +1,15 @@
+---
+source: https://docs.kentico.com/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+9 of 13 Pages
 # Understand the Identity collectors
-  * [ Copy page link ](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#) | [Get HelpService ID](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#)
-Core MVC 5
-
-
-[✖](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor# "Close page link panel") [Copy to clipboard](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor#)
 Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
-Let’s create an identity collector for gathering [Contacts](documentation/business-users/digital-marketing/contact-management). Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
-Let’s create an identity collector for gathering [Contacts](documentation/business-users/digital-marketing/contact-management).
-You can read more about GDPR compliance in the [Xperience by Kentico Documentation](documentation/developers-and-admins/data-protection/gdpr-compliance).
+Let’s create an identity collector for gathering [Contacts](/documentation/business-users/digital-marketing/contact-management). Data protection laws such as the European Union’s GDPR often specify that visitors to a site must be able to see their personal data that has been collected, and they can request that it be removed. Identity collection is a key part of this process.
+Let’s create an identity collector for gathering [Contacts](/documentation/business-users/digital-marketing/contact-management).
+You can read more about GDPR compliance in the [Xperience by Kentico Documentation](/documentation/developers-and-admins/data-protection/gdpr-compliance).
 ## Understand the components
 In the **Configuration → Data Protection** application in _Xperience by Kentico_ , you’ll notice tabs for **Data portability** , **Right to access** , and **Right to be forgotten**.
 These correspond to aspects of the GDPR but are applicable to other regulations as well, and each is used for dealing with visitors’ personal data.
@@ -25,10 +27,10 @@ Note: The system uses identifiers, such as an email address, to find Identity ob
 
 Consider an example where you use an email address as the identifier and create a form that collects the first and last name of a visitor but no email address. In such a case, there would be no way to find that information using a supplied email address, and GDPR compliance would be impossible when a visitor exercises their _right to be forgotten_.
 ## Implement the identity collector
-This code sample will assume the site collects only contacts as identities — it does not account for visitors saved as [users](documentation/developers-and-admins/configuration/users/user-management), [members](documentation/business-users/members), or [custom objects](documentation/developers-and-admins/customization/object-types).
+This code sample will assume the site collects only contacts as identities — it does not account for visitors saved as [users](/documentation/developers-and-admins/configuration/users/user-management), [members](/documentation/business-users/members), or [custom objects](/documentation/developers-and-admins/customization/object-types).
   1. Create a _Collectors_ folder in _~/Features/DataProtection_ of the _TrainingGuides.Web_ project.
   2. Add a _ContactIdentityCollector.cs_ file to the folder, and add a namespace matching the folder structure (`TrainingGuides.Web.Features.DataProtection.Collectors`).
-  3. Copy the [example identity collector from the documentation](documentation/developers-and-admins/data-protection/personal-data-collection#create-the-identity-collector), and add it to the same namespace.
+  3. Copy the [example identity collector from the documentation](/documentation/developers-and-admins/data-protection/personal-data-collection#create-the-identity-collector), and add it to the same namespace.
   4. Add a constant to replace the hard-coded `“email”` string, as it occurs more than once.
   5. Define additional logic that creates a new contact with the supplied email address if the query finds none.
 It is possible for form data containing an email address to exist even if there is no contact in the database with that email. Creating this dummy contact allows the _Data collector_ , which will be covered in the next part of this series, to find form data associated with the provided email address in such a case.
@@ -126,20 +128,12 @@ public class DataProtectionRegistrationModule : Module
 }
 ```
 
-Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them. Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them.
+Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them. Now, Xperience will know how to utilize the `ContactIdentityCollector` class for data portability, collection, and erasure requests. When you implement a _Data collector_ , covered [later on in this series](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), Xperience will use the identity collector class to gather a list of contacts and pass them to the data collector to retrieve personal data associated with them.
 The `IdentityCollectorRegister`, like the other data protection registers, is a queue that can contain multiple collectors. If the same class is registered to this queue more than once, it will be called multiple times.
 ## What’s next?
-The [following guide](modules/data-protection/prepare-data-writers) in this series will cover the process of creating a _Data collector_ and some utility classes to help it run smoothly.
-[ Previous page ](modules/data-protection/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
+The [following guide](/modules/data-protection/prepare-data-writers) in this series will cover the process of creating a _Data collector_ and some utility classes to help it run smoothly.
+[ Previous page ](/modules/data-protection/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
 9 of 13
-[ Mark complete and continue ](modules/data-protection/prepare-data-writers)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor)
-[](https://docs.kentico.com/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor)[](https://docs.kentico.com/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor)
+[ Mark complete and continue ](/modules/data-protection/prepare-data-writers)
+![]()
+[]()[]()

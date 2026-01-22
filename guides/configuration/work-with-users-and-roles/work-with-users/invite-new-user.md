@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with users](/guides/configuration/work-with-users-and-roles/work-with-users)
+  * Invite a new user 
+
+
 # Invite a new user
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user#)
 Let’s create a new user account for a new Data Protection officer that just joined your organization.
   1. Navigate to the **Users** application.
   2. Select **New user**.
@@ -18,4 +25,6 @@ Let’s create a new user account for a new Data Protection officer that just jo
   7. **Save** the changes.
 
 
-[![](docsassets/guides/invite-new-user/data-protection-officer-invite.png)](https://docs.kentico.com/docsassets/guides/invite-new-user/data-protection-officer-invite.png)
+[![](/docsassets/guides/invite-new-user/data-protection-officer-invite.png)](/docsassets/guides/invite-new-user/data-protection-officer-invite.png)
+![]()
+[]()[]()

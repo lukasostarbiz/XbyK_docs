@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/stages-touchpoints-guiding-customers-decision
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+9 of 17 Pages
 # Stages and touchpoints
-  * [ Copy page link ](modules/customer-journeys/stages-touchpoints-guiding-customers-decision#) | [Get HelpService ID](modules/customer-journeys/stages-touchpoints-guiding-customers-decision#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/stages-touchpoints-guiding-customers-decision# "Close page link panel") [Copy to clipboard](modules/customer-journeys/stages-touchpoints-guiding-customers-decision#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -90,16 +92,8 @@ _On customer journey:_ In this stage, include activities such as guided setup or
 One of the ultimate goals of journey mapping is to foster a **long-term working relationship with a customer**.
 Just as each customer journey is uniquely shaped by the customer’s needs, each customer journey will look a little different, bending and looping, following the customer’s current progress along the path towards conversion. But chasing the individual contacts like _Spudnik_ won’t bring you the large-scale success you’re looking for.
 Instead, keep things simple and organized – Xperience’s _Customer journeys_ empower you to do just that, retaining the **linear format** of a sales funnel in a neat little graph, and giving you a **high-level overview** of the different stages the contacts go through, so necessary to any **strategic decission-making**.
-[ Previous page ](modules/customer-journeys/creating-a-customer-journey-blueprint-for-success)
+[ Previous page ](/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success)
 9 of 17
-[ Mark complete and continue ](modules/customer-journeys/campaigns-the-engine-driving-customer-journeys)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
-[](https://docs.kentico.com/modules/customer-journeys/stages-touchpoints-guiding-customers-decision)[](https://docs.kentico.com/modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
+[ Mark complete and continue ](/modules/customer-journeys/campaigns-the-engine-driving-customer-journeys)
+![]()
+[]()[]()

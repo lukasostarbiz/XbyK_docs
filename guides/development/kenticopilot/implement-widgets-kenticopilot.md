@@ -1,11 +1,17 @@
+---
+source: https://docs.kentico.com/guides/development/kenticopilot/implement-widgets-kenticopilot
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [KentiCopilot](/guides/development/kenticopilot)
+  * Rapidly implement widgets with KentiCopilot 
+
+
 # Rapidly implement widgets with KentiCopilot
-  * How-to| [ Copy page link ](guides/development/kenticopilot/implement-widgets-kenticopilot#) | [Get HelpService ID](guides/development/kenticopilot/implement-widgets-kenticopilot#)
-Core MVC 5
-
-
-[✖](guides/development/kenticopilot/implement-widgets-kenticopilot# "Close page link panel") [Copy to clipboard](guides/development/kenticopilot/implement-widgets-kenticopilot#)
-With the [documentation MCP server](documentation/developers-and-admins/installation/mcp-server), your agentic coding assistant has access to a rich collection of reference materials about Xperience by Kentico.
-As part of our [KentiCopilot initiative](guides/development/kenticopilot), we’ve put together some detailed prompts and reference materials to help your agent rapidly build functional widgets.
+With the [documentation MCP server](/documentation/developers-and-admins/installation/mcp-server), your agentic coding assistant has access to a rich collection of reference materials about Xperience by Kentico.
+As part of our [KentiCopilot initiative](/guides/development/kenticopilot), we’ve put together some detailed prompts and reference materials to help your agent rapidly build functional widgets.
 Check out this five minute video to see an example widget implementation from start to finish!
 ## Resources
 ### The repository
@@ -496,3 +502,5 @@ namespace DancingGoat.Widgets
 ```
 
 Try using the [KentiCopilot repository](https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/main) today to speed up your widget creation process!
+![]()
+[]()[]()

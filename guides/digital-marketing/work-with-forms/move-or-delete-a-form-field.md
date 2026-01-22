@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/move-or-delete-a-form-field
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Move or delete a form field 
+
+
 # Move or delete a form field
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-forms/move-or-delete-a-form-field#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/move-or-delete-a-form-field#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/move-or-delete-a-form-field# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/move-or-delete-a-form-field#)
 See how you can further adjust your form by moving or removing its fields.
 To improve a form experience, you might want to:
   * Adjust the order of fields, and
@@ -17,4 +23,6 @@ To improve a form experience, you might want to:
 
 
 ### Next steps
-Xperience gives you tools to [provide meaningful help with your form](guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form).
+Xperience gives you tools to [provide meaningful help with your form](/guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form).
+![]()
+[]()[]()

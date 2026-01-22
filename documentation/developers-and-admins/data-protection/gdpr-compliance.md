@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/data-protection/gdpr-compliance
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
+  * GDPR compliance 
+
+
 # GDPR compliance
-  * [ Copy page link ](documentation/developers-and-admins/data-protection/gdpr-compliance#) | [Get HelpService ID](documentation/developers-and-admins/data-protection/gdpr-compliance#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/data-protection/gdpr-compliance# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/data-protection/gdpr-compliance#)
 The General Data Protection Regulation (GDPR) is a regulation on the protection and free movement of personal data of all individuals within the European Union. The regulation was put together by the European Parliament and the Council of the European Union and is effective from the 25th of May 2018. The regulation applies to organizations that collect or process data from EU residents or cooperate with EU-based organizations that process the data on their behalf.
 For example, you need to comply with the GDPR in the following cases:
   * Your company uses Xperience by Kentico and is based in the EU.
@@ -13,18 +19,18 @@ For example, you need to comply with the GDPR in the following cases:
 
 For more information about the GDPR, see the [Official Journal of the European Union](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679).
 Xperience provides features and guidelines to help you comply with the regulation. For more information, see the following sub-sections and pages:
-  * [Manage personal data](documentation/developers-and-admins/data-protection/gdpr-compliance#manage-personal-data)
-  * [Secure personal data](documentation/developers-and-admins/data-protection/gdpr-compliance#secure-personal-data)
-  * [Consent management](documentation/developers-and-admins/data-protection/consent-management)
-  * [Consent development](documentation/developers-and-admins/data-protection/consent-development)
+  * [Manage personal data](#manage-personal-data)
+  * [Secure personal data](#secure-personal-data)
+  * [Consent management](/documentation/developers-and-admins/data-protection/consent-management)
+  * [Consent development](/documentation/developers-and-admins/data-protection/consent-development)
 
 
 ## Manage personal data
 **Prerequisite**
 The **Data protection** application does not provide any data collection or erasure functionality by default. These features require exact knowledge of how your website gathers, processes and stores personal data. Your developers need to implement the functionality based on the specifics of your website and any other legal requirements that you wish to fulfill.
 For a technical implementation guide, see:
-  * [Personal data collection](documentation/developers-and-admins/data-protection/personal-data-collection)
-  * [Personal data erasure](documentation/developers-and-admins/data-protection/personal-data-erasure)
+  * [Personal data collection](/documentation/developers-and-admins/data-protection/personal-data-collection)
+  * [Personal data erasure](/documentation/developers-and-admins/data-protection/personal-data-erasure)
 
 
 ### Collect personal data
@@ -56,3 +62,5 @@ The following data encryption technologies are recommended if you wish to secure
 Transparent Data Encryption is available only in the **Enterprise** edition of MS SQL server (for on-premise or hosted database servers). If you use Azure SQL Database, [TDE is available](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql), and all newly created SQL databases are encrypted by default using service-managed TDE.
 ### BitLocker
 If you have full control over the server hosting your Xperience database, you can use the [BitLocker](https://docs.microsoft.com/en-us/windows/device-security/bitlocker/bitlocker-overview) full disk encryption feature. BitLocker is available in supported Windows and Windows Server operating systems. It is intended to be used with a Trusted Platform Module (TPM) cryptoprocessor version 1.2 or later. BitLocker integrates with the operating system and protects the system and data from being misused in case of a theft, loss, or inappropriate decommission of the computer.
+![]()
+[]()[]()

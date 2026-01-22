@@ -1,28 +1,34 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-email/create-newsletter-email-and-template-in-Email-Builder
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with email](/guides/digital-marketing/work-with-email)
+  * Create a newsletter email and template in Email Builder 
+
+
 # Create a newsletter email and template in Email Builder
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-email/create-newsletter-email-and-template-in-Email-Builder#) | [Get HelpService ID](guides/digital-marketing/work-with-email/create-newsletter-email-and-template-in-Email-Builder#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-email/create-newsletter-email-and-template-in-Email-Builder# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-email/create-newsletter-email-and-template-in-Email-Builder#)
 Creating marketing emails often feels more complicated than it should be. You have to worry about HTML quirks, ensuring emails display correctly across all kinds of inboxes, devices, and operating systems. It’s a lot, especially if you always need a developer’s help.
 That’s why Xperience includes the **Email Builder** : a no-code email editing tool that helps you create professional, responsive emails without writing a single line of code. Developers create the reusable building blocks called components once, and from then on, you can simply **drag and drop** them into place.
-The result? You can create your emails faster. It’s easy to use and everybody who knows [Page Builder](documentation/developers-and-admins/development/builders/page-builder), so you don’t run into bottlenecks. And since the Email Builder aims to build once, reuse everywhere, it asks for less back-and-forth with the dev team.
+The result? You can create your emails faster. It’s easy to use and everybody who knows [Page Builder](/documentation/developers-and-admins/development/builders/page-builder), so you don’t run into bottlenecks. And since the Email Builder aims to build once, reuse everywhere, it asks for less back-and-forth with the dev team.
 ## Email Builder components
 As an editor, you don’t need to write any code. Developers prepare building blocks like **templates, sections, and widgets** to put your emails together piece by piece.
 It’s as easy as building castles out of Lego bricks: choose a template, drop in content blocks, and create an email to share your big, bold marketing message.
 Here’s a quick look at the building blocks you’ll use:
   * **Sections** Sections divide the layout of your email into logical parts. Each section can hold one or more widgets in one or more email widget _zones_. For example, you might add a section for your header (and header image), another for the main content, and a final one for the footer.
-[![Sections in Email Builder](docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-sections.png)](https://docs.kentico.com/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-sections.png)
+[![Sections in Email Builder](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-sections.png)](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-sections.png)
   * **Widgets**  
 Widgets are content blocks you drag into your email, such as text areas, images, buttons, and more. You can mix and match them to build your content.
 
 
-[![Widgets in Email Builder](docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-widgets.png)](https://docs.kentico.com/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-widgets.png)
+[![Widgets in Email Builder](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-widgets.png)](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-widgets.png)
   * **Templates**  
 Templates allow you to save the structure, layout, and other email configurations of your email to reuse it for other emails as many times as you need. You can create and save a **template preset** that suits your campaign, then adjust the layout and content to match your message.
 
 
-[![Preset template](docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/choose-preset-template.png)](https://docs.kentico.com/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/choose-preset-template.png)
+[![Preset template](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/choose-preset-template.png)](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/choose-preset-template.png)
 Now, let’s put all this theory into practice.
 ## Create your first marketing newsletter
 Imagine you’re creating a simple newsletter email for Kbank’s upcoming summer event—a fun-filled gathering for colleagues to connect, relax, and celebrate the season. The email should capture the event’s playful tone while remaining clean and professional.
@@ -36,7 +42,7 @@ You’ll use **Email Builder** to structure and style the message. If you’re e
     1. **Email purpose** : _Regular_
     2. **Content type** : _Simple email_
     3. **Continue** to save your choices.
-  4. Select **Email template** : [_MJML Starter Kit template_](guides/development/email-marketing/use-email-builder-starter-kit) and **Create** your new email.
+  4. Select **Email template** : [_MJML Starter Kit template_](/guides/development/email-marketing/use-email-builder-starter-kit) and **Create** your new email.
 
 
 ### Step 2: Add sections and widgets
@@ -69,7 +75,7 @@ Keep the number of sections to a minimum to avoid overwhelming your layout. Keep
 ### Step 3: Improve the email
 Let’s see if you’ve grasped the basics of creating email with _Email Builder_. Here’s a challenge:
 **Can you turn your email to look like the following?**
-[![Sample email exercise](docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-kbank-newsletter-exercise.png)](https://docs.kentico.com/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-kbank-newsletter-exercise.png)
+[![Sample email exercise](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-kbank-newsletter-exercise.png)](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/email-builder-kbank-newsletter-exercise.png)
 Use fewer sections, **Text** , **Button** , and **Divider** widgets in the email body. Set the logo width to 250.
 **A note on subject lines** Before you send your email, be sure to write a strong subject line. It’s the first thing your readers will see and can make a big difference. Stay within your brand guidelines and:
   * Be clear and specific.
@@ -141,7 +147,7 @@ Let’s create a new version of the newsletter, this time with a reusable layout
   4. When you **Save as preset template** , it should look similar to the following:
 
 
-[![Saved reusable email preset](docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/reusable-layout-preset.png)](https://docs.kentico.com/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/reusable-layout-preset.png)
+[![Saved reusable email preset](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/reusable-layout-preset.png)](/docsassets/guides/create-newsletter-email-and-template-in-Email-Builder/reusable-layout-preset.png)
 ### Step 4: Save your layout as a template
   1. Use the **Save as template** button once your layout is ready.
   2. Choose a clear name, like **Newsletter with logo and footer**.
@@ -164,3 +170,5 @@ Now, you can jump straight into building strong content without worrying about t
 ## What you learned and what’s next
 First, you’ve learned the basic components of the _Email Builder_ and got a hands-on demonstration of how easy it is to create and send a newsletter email with these building blocks.
 In the second part of this guide, you built on this knowledge and created your own email template to simplify your workflow and speed up email creation in the _Marketing Emails_ channel.
+![]()
+[]()[]()

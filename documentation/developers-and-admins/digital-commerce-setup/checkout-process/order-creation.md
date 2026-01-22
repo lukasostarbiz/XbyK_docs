@@ -1,27 +1,34 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital commerce setup](/documentation/developers-and-admins/digital-commerce-setup)
+  * [Checkout process](/documentation/developers-and-admins/digital-commerce-setup/checkout-process)
+  * Order creation 
+
+
 # Order creation
-  * [ Copy page link ](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#) | [Get HelpService ID](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 The system provides a streamlined way to create orders from shopping cart data using `IOrderCreationService`. The API automates the entire order creation workflow, including customer management, price calculation, and order persistence.
 `IOrderCreationService` handles the complete order creation process. The API:
   1. **Manages customers and addresses** – Creates or updates customer records and their addresses based on the order data.
-  2. **Calculates prices** – Integrates with the [price calculation API](documentation/developers-and-admins/digital-commerce-setup/price-calculation) to calculate order totals, taxes, and shipping costs.
+  2. **Calculates prices** – Integrates with the [price calculation API](/documentation/developers-and-admins/digital-commerce-setup/price-calculation) to calculate order totals, taxes, and shipping costs.
   3. **Creates order records** – Generates and persists the order, order items, and order addresses in the database.
   4. **Sends notifications** – Triggers external and internal order notifications for corresponding order states.
 
 
 ## Prerequisites
-The order creation API uses the [price calculation API](documentation/developers-and-admins/digital-commerce-setup/price-calculation) internally to calculate order totals, taxes, and shipping costs. Before implementing order creation, you must implement the mandatory components for price calculation:
+The order creation API uses the [price calculation API](/documentation/developers-and-admins/digital-commerce-setup/price-calculation) internally to calculate order totals, taxes, and shipping costs. Before implementing order creation, you must implement the mandatory components for price calculation:
   * **Product data retriever** (`IProductDataRetriever<ProductIdentifier, ProductData>`) – provides product information and pricing data from your product catalog.
   * **Tax calculation step** (`ITaxPriceCalculationStep`) – calculates applicable taxes (the default implementation does not add any taxes).
 
 
-See [Implement price calculation](documentation/developers-and-admins/digital-commerce-setup/price-calculation) for complete implementation details and examples.
+See [Implement price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation) for complete implementation details and examples.
 Without a properly configured price calculation service, the order creation process cannot calculate order totals and will fail when you attempt to create an order.
 ## Quick start
 This example shows the minimal required setup to use the API:
@@ -91,7 +98,7 @@ The service automatically:
   * Creates or retrieves the appropriate customer object.
   * Calculates final order prices using `IPriceCalculationService`.
   * Creates the order and all related entities.
-  * Sends order confirmation [notifications](documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses).
+  * Sends order confirmation [notifications](/documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses).
 
 
 ## Key concepts
@@ -100,15 +107,15 @@ When you call `CreateOrder`, the service executes the following steps in order:
   1. **Validation** – validates that order data contains required fields (billing address, at least one order item).
   2. **Customer creation** – creates or retrieves customer entities based on member ID or email address.
   3. **Customer address creation** – creates missing customer addresses (with duplicate detection).
-  4. **Price calculation** – calculates order totals using the [price calculation API](documentation/developers-and-admins/digital-commerce-setup/price-calculation).
+  4. **Price calculation** – calculates order totals using the [price calculation API](/documentation/developers-and-admins/digital-commerce-setup/price-calculation).
   5. **Order entity creation** – creates the order, order addresses, and order items in a database transaction.
-  6. **Notification** – sends order confirmation [notifications](documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses).
+  6. **Notification** – sends order confirmation [notifications](/documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses#configure-notifications-for-order-statuses).
 
 
 **Transaction scope**
 Only order entities (`OrderInfo`, `OrderAddress`, `OrderItem`) are created within a database transaction. If order creation fails, these entities are rolled back.
 Customer entities (`CustomerInfo`, `CustomerAddressInfo`) are persisted outside the transaction. If order creation fails after customer entities are created, those customer records remain in the database even though no order is created.
-[![Order creation flow](docsassets/documentation/order-creation/order-creation-flow.drawio.svg)](https://docs.kentico.com/docsassets/documentation/order-creation/order-creation-flow.drawio.svg)
+[![Order creation flow](/docsassets/documentation/order-creation/order-creation-flow.drawio.svg)](/docsassets/documentation/order-creation/order-creation-flow.drawio.svg)
 ### Order data model
 Order data is represented by the `IOrderData` interface and its implementation `OrderData`. It contains:
   * **Customer information** – Member ID (for authenticated users).
@@ -151,7 +158,7 @@ Addresses are represented by the `AddressDto` record, which includes:
 
 The service automatically:
   * Creates customer addresses if they don’t already exist
-  * Compares addresses to avoid duplicates (case-insensitive comparison, including [custom fields](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#address-mapping))
+  * Compares addresses to avoid duplicates (case-insensitive comparison, including [custom fields](#address-mapping))
   * Uses shipping address data as primary source for customer information when available
 
 
@@ -159,22 +166,22 @@ The service automatically:
 The shipping address is optional. If `ShippingAddress` is `null`, the service assumes the billing address should be used for both billing and shipping purposes. Only the billing address will be created as an order address in this case.
 **Address comparison logic** : The service uses case-insensitive, trimmed comparison when checking for duplicate customer addresses. For example, “123 Main St” and “123 MAIN ST” are considered the same address.
 ### Customer management
-The service handles both [authenticated](documentation/business-users/members) and anonymous users:
-  * **Authenticated users (members)** – Retrieves existing customer records by [member](documentation/business-users/members) ID or creates new ones if the member doesn’t have a customer record yet.
+The service handles both [authenticated](/documentation/business-users/members) and anonymous users:
+  * **Authenticated users (members)** – Retrieves existing customer records by [member](/documentation/business-users/members) ID or creates new ones if the member doesn’t have a customer record yet.
   * **Anonymous users (guests)** – Looks up existing customers by email address from the order data, or creates a new customer record if no match is found.
 
 
 **Customer data updates**
 When an existing customer is found (by member ID or email), the service uses the existing customer record without updating customer information fields (such as first name, last name, email, or phone). Customer data is only populated when creating a new customer record.
-If you need to update customer information during order creation, implement a custom `ICustomerInfoMapper<TOrderData>` to modify the customer record before it’s used in the order. See [Customer information mapping](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#customer-information-mapping).
-[Customer addresses](documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation#address-handling) are stored separately and reused across orders when they match existing addresses.
+If you need to update customer information during order creation, implement a custom `ICustomerInfoMapper<TOrderData>` to modify the customer record before it’s used in the order. See [Customer information mapping](#customer-information-mapping).
+[Customer addresses](#address-handling) are stored separately and reused across orders when they match existing addresses.
 ### Price calculation integration
 The order creation API uses `IPriceCalculationService` to compute order totals. You can customize the price calculation by:
   * Implementing `IPriceCalculationRequestMapper<TPriceCalculationRequest, TOrderData>` to add custom data to calculation requests.
   * Using custom calculation steps to modify pricing logic.
 
 
-For more information on price calculation, see [Price calculation](documentation/developers-and-admins/digital-commerce-setup/price-calculation).
+For more information on price calculation, see [Price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation).
 ### Promotion handling
 The order creation service automatically persists promotion information calculated during price calculation:
   * **Catalog promotions** – Product-level discounts calculated during price calculation are saved as `OrderPromotionInfo` records linked to specific order items.
@@ -183,7 +190,7 @@ The order creation service automatically persists promotion information calculat
 
 
 You don’t need to manually handle promotion data during order creation – the service extracts it from the `IPriceCalculationResult` and creates appropriate order promotion records.
-For information on implementing catalog discount rules, see [Implement catalog discounts](documentation/developers-and-admins/digital-commerce-setup/promotions/catalog-discounts).
+For information on implementing catalog discount rules, see [Implement catalog discounts](/documentation/developers-and-admins/digital-commerce-setup/promotions/catalog-discounts).
 ## Create orders
 To use the service in your checkout process:
   1. Inject `IOrderCreationService<TOrderData, TPriceCalculationRequest, TPriceCalculationResult, TAddressDto>` into your controller or service.
@@ -272,7 +279,7 @@ You have successfully created orders from shopping cart data. Customer records, 
 ## Customization points
 The API provides several interfaces that allow you to customize the order creation process without modifying core functionality.
 ### Customer information mapping
-Implement `ICustomerInfoMapper<TOrderData>` to add [custom fields](documentation/developers-and-admins/customization/object-types/extend-system-object-types) to customer records:
+Implement `ICustomerInfoMapper<TOrderData>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to customer records:
 C#
 **Example - Custom customer mapper**
 Copy
@@ -295,7 +302,7 @@ builder.Services.AddTransient<ICustomerInfoMapper<CustomOrderData>, CustomCustom
 ```
 
 ### Order information mapping
-Implement `IOrderInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order records:
+Implement `IOrderInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order records:
 C#
 **Example - Custom order mapper**
 Copy
@@ -322,7 +329,7 @@ builder.Services.AddTransient<IOrderInfoMapper<CustomOrderData, PriceCalculation
 ```
 
 ### Address mapping
-Implement `ICustomerAddressInfoMapper<TAddressDto>` or `IOrderAddressInfoMapper<TAddressDto>` to add [custom fields](documentation/developers-and-admins/customization/object-types/extend-system-object-types) to address records:
+Implement `ICustomerAddressInfoMapper<TAddressDto>` or `IOrderAddressInfoMapper<TAddressDto>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to address records:
 C#
 **Example - Custom address mapper**
 Copy
@@ -353,7 +360,7 @@ builder.Services.AddTransient<IOrderAddressInfoMapper<CustomAddressDto>, CustomA
 ```
 
 ### Order item mapping
-Implement `IOrderItemInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order items:
+Implement `IOrderItemInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order items:
 C#
 **Example - Custom order item mapper**
 Copy
@@ -382,7 +389,7 @@ builder.Services.AddTransient<IOrderItemInfoMapper<CustomOrderData, PriceCalcula
 ```
 
 ### Price calculation customization
-Implement `IPriceCalculationRequestMapper<TPriceCalculationRequest, TOrderData>` to add custom data to [price calculation requests](documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#extend-data-transfer-objects):
+Implement `IPriceCalculationRequestMapper<TPriceCalculationRequest, TOrderData>` to add custom data to [price calculation requests](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#extend-data-transfer-objects):
 C#
 **Example - Custom calculation request mapper**
 Copy
@@ -406,3 +413,6 @@ builder.Services
     .AddTransient<IPriceCalculationRequestMapper<PriceCalculationRequest, rderData>,
         CustomCalculationRequestMapper>();
 ```
+
+![]()
+[]()[]()

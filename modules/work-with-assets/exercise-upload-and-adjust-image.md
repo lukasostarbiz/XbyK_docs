@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-assets/exercise-upload-and-adjust-image
+scrape_date: 2026-01-22
+---
+
+Module: Work with assets
+18 of 21 Pages
 # Exercise -- Upload and adjust an image
-  * [ Copy page link ](modules/work-with-assets/exercise-upload-and-adjust-image#) | [Get HelpService ID](modules/work-with-assets/exercise-upload-and-adjust-image#)
-Core MVC 5
-
-
-[✖](modules/work-with-assets/exercise-upload-and-adjust-image# "Close page link panel") [Copy to clipboard](modules/work-with-assets/exercise-upload-and-adjust-image#)
 Let’s put the practices mentioned in the first section to the test by working with an image in the _Content hub_.
 Imagine you’re a content editor, working on an ad push for Kbank’s sponsorship of a celebrated English football club. The club’s marketing team wants to commemorate the occasion by holding a flash sale of the club’s jersey dresses, and they have provided you with a batch of images to work on.
 After selecting an image for the promo banners, you have to ensure that it will display correctly on all users’ devices and channels.
@@ -26,7 +28,7 @@ The **Primary image** is already resized and compressed by the system. This keep
     3. **Save** your changes.
 
 
-For more details on how to manunally adjust an image, see how to [optimize image assets](documentation/business-users/content-hub/content-item-assets#optimize-image-assets).
+For more details on how to manunally adjust an image, see how to [optimize image assets](/documentation/business-users/content-hub/content-item-assets#optimize-image-assets).
 ### 3. Preview variants
   1. Open the uploaded image asset in _Content hub_.  
 
@@ -58,22 +60,14 @@ You cannot share the image variant via URL without publishing it, so **always pu
 ### 6. Share an image variant via URL
 You updated the focal point and manually adjusted the image variants to your liking. Satisfied with your work, you want to share the asset outside _Xperience_ , for example, on social media.
 You can:
-  * Copy the **URL of the primary image** , which is already optimized for online use. [![Copy primary image URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)
-  * Copy the **URL of a specific variant** , if you need a certain size or crop. [![Copy image variant URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)
-  * Or copy the **URL of the whole asset**. [![Copy asset URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)
+  * Copy the **URL of the primary image** , which is already optimized for online use. [![Copy primary image URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)
+  * Copy the **URL of a specific variant** , if you need a certain size or crop. [![Copy image variant URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)
+  * Or copy the **URL of the whole asset**. [![Copy asset URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)
 
 
 Downloading the original uploaded image asset isn’t available yet, but watch our [roadmap](https://roadmap.kentico.com/tabs/6-next-refreshes) to stay updated on the latest refreshes.
-[ Previous page ](modules/work-with-assets/manual-cropping-and-focal-points)
+[ Previous page ](/modules/work-with-assets/manual-cropping-and-focal-points)
 18 of 21
-[ Mark complete and continue ](modules/work-with-assets/image-variants-best-practices)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-assets/exercise-upload-and-adjust-image)
-[](https://docs.kentico.com/modules/work-with-assets/exercise-upload-and-adjust-image)[](https://docs.kentico.com/modules/work-with-assets/exercise-upload-and-adjust-image)
+[ Mark complete and continue ](/modules/work-with-assets/image-variants-best-practices)
+![]()
+[]()[]()

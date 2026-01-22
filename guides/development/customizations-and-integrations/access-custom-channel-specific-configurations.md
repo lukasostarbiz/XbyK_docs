@@ -1,23 +1,29 @@
+---
+source: https://docs.kentico.com/guides/development/customizations-and-integrations/access-custom-channel-specific-configurations
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Customizations and integrations](/guides/development/customizations-and-integrations)
+  * Access custom channel-specific configurations 
+
+
 # Access custom channel-specific configurations
-  * How-to| [ Copy page link ](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations#) | [Get HelpService ID](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations#)
-Core MVC 5
-
-
-[✖](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations# "Close page link panel") [Copy to clipboard](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations#)
-When you build [custom module UIs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) with Xperience by Kentico, chances are you’ll need to access and react to the [data stored in the modules’ classes](documentation/developers-and-admins/customization/object-types).
+When you build [custom module UIs](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) with Xperience by Kentico, chances are you’ll need to access and react to the [data stored in the modules’ classes](/documentation/developers-and-admins/customization/object-types).
 Let’s go over the process of accessing and utilizing the values of module classes that are associated with specific web channels with practical examples. We will explore how to access custom channel-specific settings with Microsoft’s [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0), then later without.
-[Earlier in this series](guides/development/customizations-and-integrations/add-channels-to-module), we went over the process of creating custom channel-specific settings:
+[Earlier in this series](/guides/development/customizations-and-integrations/add-channels-to-module), we went over the process of creating custom channel-specific settings:
 Your browser does not support the video tag. 
 Now, we’ll dive into the process of accessing these settings in code.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from [the previous guide](guides/development/customizations-and-integrations/add-channels-to-module) about creating the UI for channel-specific configurations.
+  * Have followed along with the samples from [the previous guide](/guides/development/customizations-and-integrations/add-channels-to-module) about creating the UI for channel-specific configurations.
 
 
 **Code samples**
@@ -26,8 +32,8 @@ The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guide
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Work with the Options pattern (Serve robots.txt)
-As with the global configurations described in the [earlier guide](guides/development/customizations-and-integrations/access-custom-global-configurations#expose-your-custom-configuration), you can use channel-specific custom module configurations with the [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0).
-To put this into practice, let’s create functionality to serve the **robots.txt** file specified in the _SEO settings_ of the [we created earlier](guides/development/customizations-and-integrations/add-channels-to-module).
+As with the global configurations described in the [earlier guide](/guides/development/customizations-and-integrations/access-custom-global-configurations#expose-your-custom-configuration), you can use channel-specific custom module configurations with the [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0).
+To put this into practice, let’s create functionality to serve the **robots.txt** file specified in the _SEO settings_ of the [we created earlier](/guides/development/customizations-and-integrations/add-channels-to-module).
 ### Populate the data
 Start by adding data for the code to retrieve.
 For this guide’s example, navigate to **Project settings → Channel settings → Training guides pages → SEO settings** in the admin UI.
@@ -144,7 +150,7 @@ public class RobotsController : Controller
 ### See the result
 If you’ve followed along with the example, try visiting the **/robots.txt** path of the live site.
 You should see a response containing the value you saved in the SEO settings.
-[![Screenshot of robots.txt page](docsassets/guides/access-custom-channel-specific-configurations/Robots.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)
+[![Screenshot of robots.txt page](/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)](/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)
 Feel free to change the value of the setting, and see that it is reflected in this response.
 ## Access data directly (Render snippets to the site)
 We recommend using the options pattern to follow .NET best practices, but if it does not fit your team’s code style, it is not necessary.
@@ -232,7 +238,7 @@ public class CodeSnippetViewModel
 ```
 
 ### Retrieve the values
-In general, retrieving channel-specific module class values without the options pattern is the same approach you used in the [options setup file](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations#OptionsSetupFile). You can use an `IWebsiteChannelContext` object to get the current channel, and an `IInfoProvider<TInfo>` object or [dedicated provider](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) to access objects of your module class.
+In general, retrieving channel-specific module class values without the options pattern is the same approach you used in the [options setup file](#OptionsSetupFile). You can use an `IWebsiteChannelContext` object to get the current channel, and an `IInfoProvider<TInfo>` object or [dedicated provider](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) to access objects of your module class.
 For our example, add an asynchronous view component to the _CodeSnippets_ folder. Add parameters to `InvokeAsync` that specify which type of snippet should be retrieved, and whether the snippet should be labelled with an HTML comment.
 C#
 **CodeSnippetsViewComponent.cs**
@@ -344,9 +350,11 @@ Copy
 For reference, you can find the completed layout file [in the _finished_ branch of the _Training guides_ repo](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Views/Shared/_Layout.cshtml).
 ### Check the result
 If you’ve followed the example, you should be able to find the tags in the source view of the page, and see the message rendered by the javascript at the very bottom.
-[![View component output for metadata and CSS](docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)
-[![View component output for Javascript](docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)
+[![View component output for metadata and CSS](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)
+[![View component output for Javascript](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)
 ## What’s next?
-Throughout the [Custom module series](guides/development/customizations-and-integrations#custom-modules), you’ve seen how to create custom module, including data associated with specific channels, and how to put the module data into practice.
+Throughout the [Custom module series](/guides/development/customizations-and-integrations#custom-modules), you’ve seen how to create custom module, including data associated with specific channels, and how to put the module data into practice.
 Use this experience to expand upon the samples, or to build your your own complex module.
-Check out [this guide](guides/development/customizations-and-integrations/add-custom-contact-field) to see how to add custom pages to existing system applications.
+Check out [this guide](/guides/development/customizations-and-integrations/add-custom-contact-field) to see how to add custom pages to existing system applications.
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with multilingual](/guides/digital-marketing/work-with-multilingual)
+  * Multilingual variant of content 
+
+
 # Multilingual variant of content
-  * Concept| [ Copy page link ](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content#) | [Get HelpService ID](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content#) | This page is part of a module: [ Manage content ](modules/manage-content)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content#)
 Creating language variants to reach diverse audiences in different countries is a strategic move with several benefits. First, it allows the company to expand its market reach by connecting with potential customers who speak other languages. By offering content in users’ native languages, the company can enhance the user experience, leading to higher engagement and conversions.
 Language variants can also help to improve search engine optimization (SEO). Optimizing content for local keywords in each language helps the company rank higher in search results across diverse regions. Investing in creating an appropriately localized content variant demonstrates cultural relevance and trust. Tailoring content to local languages and contexts shows that the company values its audience.
 ## What is multilingual, or language variant
@@ -19,7 +25,7 @@ When content is in different languages, not everything has to be translated. Som
 You can see if a page or content item has a language variant and whether it was published. Xperience uses three different icons to show you the translation status.
 ### Pages
 In the respective **channel** (in our example, _Personal banking_), switch the language variant using the languages drop-down above the content tree to the desired language. Then, in the content tree, see the icons on the right side.
-[![Icons indicating the translation status of pages in content tree](docsassets/guides/multilingual-variant-of-content/language-variant-content-tree.png)](https://docs.kentico.com/docsassets/guides/multilingual-variant-of-content/language-variant-content-tree.png)
+[![Icons indicating the translation status of pages in content tree](/docsassets/guides/multilingual-variant-of-content/language-variant-content-tree.png)](/docsassets/guides/multilingual-variant-of-content/language-variant-content-tree.png)
   * The ‘pause’ icon means the page exists in the selected language but it’s not been published yet.
   * The square icon means the page is not translated and will show in the fallback language. If the content doesn’t fall back on a specific language, visitors will receive 404 messages (page not found).
   * The green icon means the page exists and is published in the targeted language.
@@ -27,13 +33,15 @@ In the respective **channel** (in our example, _Personal banking_), switch the l
 
 ### Content items
 In the **Content hub** , you can see the language variant in the drop-down menu above the list of content items. The list includes the translated but not yet published items, translated and published items, and those that exist in the fallback language and haven’t been translated yet.
-[![Icons indicating the translation status of content items](docsassets/guides/multilingual-variant-of-content/language-variant-content-hub.png)](https://docs.kentico.com/docsassets/guides/multilingual-variant-of-content/language-variant-content-hub.png)
+[![Icons indicating the translation status of content items](/docsassets/guides/multilingual-variant-of-content/language-variant-content-hub.png)](/docsassets/guides/multilingual-variant-of-content/language-variant-content-hub.png)
 When you open a content item, Xperience shows you which linked content hasn’t been translated yet (if there is any). The pencil icon opens the translation dialogue in a new tab and allows you to directly translate the linked content item.
-[![Notification warning you that specific content is still not translated to the target language](docsassets/guides/multilingual-variant-of-content/new-language-variant-content-item.png)](https://docs.kentico.com/docsassets/guides/multilingual-variant-of-content/new-language-variant-content-item.png)
+[![Notification warning you that specific content is still not translated to the target language](/docsassets/guides/multilingual-variant-of-content/new-language-variant-content-item.png)](/docsassets/guides/multilingual-variant-of-content/new-language-variant-content-item.png)
 ## AIRA content translations
-Editors can now use [AIRA translations](documentation/business-users/aira#aira-translations) to translate their content when creating new language variants of [pages](documentation/business-users/website-content/translate-pages) or [content items](documentation/business-users/content-hub/content-items#translate-content-items).
-Keep in mind that _AIRA translations_ don’t yet support automatic translation of linked content items or [taxonomies](guides/digital-marketing/work-with-taxonomies/taxonomies). After translating a page, review your content and links to ensure they point to the correct language variants.
+Editors can now use [AIRA translations](/documentation/business-users/aira#aira-translations) to translate their content when creating new language variants of [pages](/documentation/business-users/website-content/translate-pages) or [content items](/documentation/business-users/content-hub/content-items#translate-content-items).
+Keep in mind that _AIRA translations_ don’t yet support automatic translation of linked content items or [taxonomies](/guides/digital-marketing/work-with-taxonomies/taxonomies). After translating a page, review your content and links to ensure they point to the correct language variants.
 ## To sum up
 Creating language variants of your channels is an investment that pays off by reaching more people and expanding the company’s global presence. It helps companies to connect with potential customers who speak different languages. Offering content in users’ native languages improves the user experience, which can lead to higher engagement and conversions.
 ### What’s next?
-You just read about the basic concept of multilingual variants of content items, and how to tell which item is translated and which is not. In the next step, you’ll learn how to [translate a page into another language](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-page).
+You just read about the basic concept of multilingual variants of content items, and how to tell which item is translated and which is not. In the next step, you’ll learn how to [translate a page into another language](/guides/digital-marketing/work-with-multilingual/multilingual-variant-of-page).
+![]()
+[]()[]()

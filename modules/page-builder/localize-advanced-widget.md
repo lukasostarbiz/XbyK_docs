@@ -1,14 +1,16 @@
+---
+source: https://docs.kentico.com/modules/page-builder/localize-advanced-widget
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+15 of 16 Pages
 # Localize the widget (optional)
-  * [ Copy page link ](modules/page-builder/localize-advanced-widget#) | [Get HelpService ID](modules/page-builder/localize-advanced-widget#)
-Core MVC 5
-
-
-[✖](modules/page-builder/localize-advanced-widget# "Close page link panel") [Copy to clipboard](modules/page-builder/localize-advanced-widget#)
-If you are [localizing your Admin UI](documentation/developers-and-admins/customization/admin-ui-localization) into other languages, you can localize the widget’s name, description, and property labels so editors see them in their preferred language.
-The localization process has two parts: first, you’ll replace hardcoded strings in your code with localization expressions. Then, you’ll define the actual translations in resource (`.resx`) files and register them with Xperience, as described in the [Admin UI localization documentation](documentation/developers-and-admins/customization/admin-ui-localization#register-localized-resources).
+If you are [localizing your Admin UI](/documentation/developers-and-admins/customization/admin-ui-localization) into other languages, you can localize the widget’s name, description, and property labels so editors see them in their preferred language.
+The localization process has two parts: first, you’ll replace hardcoded strings in your code with localization expressions. Then, you’ll define the actual translations in resource (`.resx`) files and register them with Xperience, as described in the [Admin UI localization documentation](/documentation/developers-and-admins/customization/admin-ui-localization#register-localized-resources).
 For a complete example of a localized widget, see the [CallToAction sample widget in the finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/LandingPages/Widgets/CallToAction) of the Training guides repository.
 ### Localize widget properties
-To localize the widget’s configuration interface, update widget property annotations to use [localization expressions](documentation/developers-and-admins/customization/admin-ui-localization#admin-ui-fields) in the format `{$ resource.key $}`.
+To localize the widget’s configuration interface, update widget property annotations to use [localization expressions](/documentation/developers-and-admins/customization/admin-ui-localization#admin-ui-fields) in the format `{$ resource.key $}`.
 Here’s an example showing how to localize the `Label` and `ExplanationText` for one property in the Product widget:
 C#
 **ProductWidgetProperties.cs (localized example)**
@@ -103,17 +105,9 @@ Provide both the updated C# code and the complete .resx XML content.
 
 This approach reduces repetitive work while maintaining consistency across your localized content.
 Note that this is just an example prompt. Adjust it to match your project’s naming conventions and specific needs, and provide the AI agent with the relevant code context.
-**We recommend using the[Xperience by Kentico Documentation MCP server](documentation/developers-and-admins/installation/mcp-server) to help AI agents better understand Xperience widgets and localization patterns.**
-[ Previous page ](modules/page-builder/build-advanced-widget-view-component)
+**We recommend using the[Xperience by Kentico Documentation MCP server](/documentation/developers-and-admins/installation/mcp-server) to help AI agents better understand Xperience widgets and localization patterns.**
+[ Previous page ](/modules/page-builder/build-advanced-widget-view-component)
 15 of 16
-[ Mark complete and continue ](modules/page-builder/page-builder-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/localize-advanced-widget)
-[](https://docs.kentico.com/modules/page-builder/localize-advanced-widget)[](https://docs.kentico.com/modules/page-builder/localize-advanced-widget)
+[ Mark complete and continue ](/modules/page-builder/page-builder-learn-more)
+![]()
+[]()[]()

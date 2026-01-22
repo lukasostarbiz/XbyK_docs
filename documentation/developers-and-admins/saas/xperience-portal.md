@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/saas/xperience-portal
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [SaaS](/documentation/developers-and-admins/saas)
+  * Xperience Portal 
+
+
 # Xperience Portal
-  * [ Copy page link ](documentation/developers-and-admins/saas/xperience-portal#) | [Get HelpService ID](documentation/developers-and-admins/saas/xperience-portal#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/saas/xperience-portal# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/saas/xperience-portal#)
 This page discusses **Xperience Portal** administration (available at <https://xperience-portal.com>). To prepare your project:
-  * [Access your Xperience Portal project](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-AccessPortal)
-  * [Provide access to the project for your team members](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-UsersApp)
-  * Set up the resources ([hash string salt](documentation/developers-and-admins/saas/xperience-portal#hash-string-salt-for-the-xperience-portal-project) and [personal access tokens](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-PAT)) needed before [deploying to the SaaS environment](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment)
-  * Select preferred timeslots for the [scheduled Xperience Portal project maintenance](documentation/developers-and-admins/saas/xperience-portal#schedule-maintenance-of-xperience-portal-projects)
+  * [Access your Xperience Portal project](#XperiencePortal-AccessPortal)
+  * [Provide access to the project for your team members](#XperiencePortal-UsersApp)
+  * Set up the resources ([hash string salt](#hash-string-salt-for-the-xperience-portal-project) and [personal access tokens](#XperiencePortal-PAT)) needed before [deploying to the SaaS environment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment)
+  * Select preferred timeslots for the [scheduled Xperience Portal project maintenance](#schedule-maintenance-of-xperience-portal-projects)
 
 
 Use the **Dashboard** application to see the information about your project, including the region where your application is deployed (**service region**), **service plan** , **project expiration date** , and **project GUID**.
 ## Access Xperience Portal projects
-To access Xperience Portal, you need to receive an invitation to a specific Xperience Portal project. Kentico sends the invitation to join the project to the project’s primary contact whose contact information is provided to Kentico for the creation of the project. The primary contact can then [invite other users](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-InviteNewUser) from Xperience Portal.
+To access Xperience Portal, you need to receive an invitation to a specific Xperience Portal project. Kentico sends the invitation to join the project to the project’s primary contact whose contact information is provided to Kentico for the creation of the project. The primary contact can then [invite other users](#XperiencePortal-InviteNewUser) from Xperience Portal.
 Access your Xperience Portal project:
   1. Select the link in the email invitation.
   2. Create a password. You will use the email and password to access all projects you were invited to.
@@ -33,30 +39,30 @@ To regain account access if you cannot access the device or account used for Mul
 
 After resetting the MFA, you will be signed out of the project. After you sign in again, you will be asked to set up the MFA again.
 ## Users
-Xperience Portal and Xperience by Kentico projects operate on an entirely separate user base with different roles. This documentation section describes user management specific to Xperience Portal projects. For management of users within Xperience by Kentico projects, see [User management](documentation/developers-and-admins/configuration/users/user-management).
-Access to Xperience Portal is restricted to accounts associated with unique email addresses using [Role-based access control](https://en.wikipedia.org/wiki/Role-based_access_control) (RBAC) and is managed via [Auth0](https://auth0.com/) by Kentico. To learn more about roles in Xperience Portal and their privileges, see [Reference - Xperience Portal user roles](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles).
+Xperience Portal and Xperience by Kentico projects operate on an entirely separate user base with different roles. This documentation section describes user management specific to Xperience Portal projects. For management of users within Xperience by Kentico projects, see [User management](/documentation/developers-and-admins/configuration/users/user-management).
+Access to Xperience Portal is restricted to accounts associated with unique email addresses using [Role-based access control](https://en.wikipedia.org/wiki/Role-based_access_control) (RBAC) and is managed via [Auth0](https://auth0.com/) by Kentico. To learn more about roles in Xperience Portal and their privileges, see [Reference - Xperience Portal user roles](/documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles).
 Sign in as a user with the _Tenant Administrator_ role to access the **Users** application where you can:
-  * [Invite a new user to a project](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-InviteNewUser)
-  * [Change a role of an existing user](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-ChangeRole)
-  * [Remove a user from the project](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-RemoveUser)
+  * [Invite a new user to a project](#XperiencePortal-InviteNewUser)
+  * [Change a role of an existing user](#XperiencePortal-ChangeRole)
+  * [Remove a user from the project](#XperiencePortal-RemoveUser)
 
 
-[![Users application](docsassets/documentation/xperience-portal/Cloud_users_application.png)](https://docs.kentico.com/docsassets/documentation/xperience-portal/Cloud_users_application.png)
+[![Users application](/docsassets/documentation/xperience-portal/Cloud_users_application.png)](/docsassets/documentation/xperience-portal/Cloud_users_application.png)
 **Primary contact for a project**
 You can identify which user is the primary contact for a project by a _crown_ icon next to their _Role_ in the _Users_ listing.
-[![Primary contact in a Users listing](docsassets/documentation/xperience-portal/primary-contact.png)](https://docs.kentico.com/docsassets/documentation/xperience-portal/primary-contact.png)
+[![Primary contact in a Users listing](/docsassets/documentation/xperience-portal/primary-contact.png)](/docsassets/documentation/xperience-portal/primary-contact.png)
 ### Invite a new user to a project
   1. Open the **Users** application.
   2. Select **Invite user**.
   3. Enter the email address of the user you want to invite.
-  4. Assign an [Xperience Portal role](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) to the user and select **Invite**.
-  5. Refer the invited user to [Access Xperience Portal for the first time](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-AccessPortal).
+  4. Assign an [Xperience Portal role](/documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) to the user and select **Invite**.
+  5. Refer the invited user to [Access Xperience Portal for the first time](#XperiencePortal-AccessPortal).
 
 
 The user will receive an email with an access link to join a project in Xperience Portal. If the email address is not associated with an Xperience Portal account, the user will receive an invitation to create an Xperience Portal account.
 ### Change a role of an existing user
   1. In the **Users** Application, select the **Edit** (
-  2. Select the role from the **Role** drop-down menu. See [Reference - Xperience portal user roles](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) to decide which role to assign to the existing user.
+  2. Select the role from the **Role** drop-down menu. See [Reference - Xperience portal user roles](/documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) to decide which role to assign to the existing user.
   3. Select **Save**.
 
 
@@ -65,14 +71,14 @@ The user will receive an email with an access link to join a project in Xperienc
   2. Confirm by selecting **Remove**.
 
 
-The user is removed from the project, and the [Personal access tokens](documentation/developers-and-admins/saas/xperience-portal#XperiencePortal-PAT) associated with the account are revoked. The user does not lose access to other projects after removal from a specific project.
+The user is removed from the project, and the [Personal access tokens](#XperiencePortal-PAT) associated with the account are revoked. The user does not lose access to other projects after removal from a specific project.
 ## Hash string salt for the Xperience Portal project
-Set your .NET project [hash string salt](documentation/developers-and-admins/configuration/macro-expressions/macro-signatures#configure-the-hash-salt-for-macro-signatures) to the hash string salt available in the **Project info** section of the Xperience Portal project **Dashboard**.
+Set your .NET project [hash string salt](/documentation/developers-and-admins/configuration/macro-expressions/macro-signatures#configure-the-hash-salt-for-macro-signatures) to the hash string salt available in the **Project info** section of the Xperience Portal project **Dashboard**.
 Wait until the project infrastructure is created for the Hash string salt to be displayed in your **Xperience Portal** project **Dashboard**.
 ## Personal access tokens
 Personal access tokens are used to authenticate API requests to Xperience Portal, for example, when you upload the deployment package to Xperience Portal.
 Use the **Personal access tokens** application to **Create** , **Edit** , or **Revoke** tokens.
-[![Tokens in Xperience Cloud](docsassets/documentation/xperience-portal/Cloud_Tokens.png)](https://docs.kentico.com/docsassets/documentation/xperience-portal/Cloud_Tokens.png)
+[![Tokens in Xperience Cloud](/docsassets/documentation/xperience-portal/Cloud_Tokens.png)](/docsassets/documentation/xperience-portal/Cloud_Tokens.png)
 ### Create a new Personal access token (PAT)
   1. In the **Personal access tokens** application, select **Create token**.
   2. Enter the required data into the form:
@@ -80,7 +86,7 @@ Use the **Personal access tokens** application to **Create** , **Edit** , or **R
      * **Expiration date** – defines a period during which the token is valid. By default, a token is valid for one year.
      * **Permissions** – select permissions to associate with the currently created token.
        * At least one permission has to be associated with a token.
-       * The **Deploy to QA** permission is suitable for most usual cases. The rest of the permissions are for [emergency deployments](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment).
+       * The **Deploy to QA** permission is suitable for most usual cases. The rest of the permissions are for [emergency deployments](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment).
   3. **Create** the token.
   4. Store the created token in a safe location before you proceed. After you close the dialog, the token string cannot be displayed again.
 **Lost personal access token strings** cannot be recovered. You will need to revoke the lost token and create a new one.
@@ -96,7 +102,7 @@ Kentico regularly provides updates to Xperience Portal, ensuring the required in
     * **Production** site availability may be affected
 
 
-To minimize the impact on your projects, [users](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) with _Tenant administrator_ or _DevOps engineer_ roles can select a preferred time slot for the scheduled maintenance of the customer infrastructure:
+To minimize the impact on your projects, [users](/documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles) with _Tenant administrator_ or _DevOps engineer_ roles can select a preferred time slot for the scheduled maintenance of the customer infrastructure:
   1. Open the **System - > Update schedule** application.
   2. **Edit schedule**.
   3. Select the preferred timeslots for the scheduled maintenance. 
@@ -107,4 +113,6 @@ To minimize the impact on your projects, [users](documentation/developers-and-ad
 
 Your preferred update schedule is now set. _Tenant administrators_ will be notified of any upcoming maintenance in advance via email. A notification bar with the date and time of the scheduled maintenance is displayed in Xperience Portal. Any user can also subscribe to updates on the [status page](https://status.xperience-portal.com/).
 ## Application monitoring
-See [Manage SaaS deployments – Application monitoring](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring).
+See [Manage SaaS deployments – Application monitoring](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring).
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages
+scrape_date: 2026-01-22
+---
+
+Module: Work with emails
+10 of 14 Pages
 # Create newsletter confirmation and unsubscription pages
-  * [ Copy page link ](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages#) | [Get HelpService ID](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages#)
-Core MVC 5
-
-
-[✖](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages# "Close page link panel") [Copy to clipboard](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages#)
 Learn how to create a page that your visitor sees after they subscribe to a newsletter or decide to unsubscribe.
 This sample shows steps to create an email subscription and unsubscription landing pages. Once visitors subscribe to a newsletter or decide to unsubscribe, they will be redirected to the respective landing page. Here is prepared content for you; you can follow the procedure in [this video](https://www.youtube.com/watch?v=uWkV4ALAitg&list=PL9RdJplq_ukam3poVr7YEt9_IcsRoRlsC).
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site.
@@ -31,16 +33,8 @@ To store your new landing pages, create a separate folder for them in the conten
 
 
 Remember that you created new hero banners and have to publish them to be visible. To do so, go to the **Content hub** application, filter the Hero banners, and publish them.
-[ Previous page ](modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails)
+[ Previous page ](/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-emails)
 10 of 14
-[ Mark complete and continue ](modules/work-with-emails/create-emails-in-email-builder)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages)
-[](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages)[](https://docs.kentico.com/modules/work-with-emails/create-newsletter-confirmation-and-unsubscription-pages)
+[ Mark complete and continue ](/modules/work-with-emails/create-emails-in-email-builder)
+![]()
+[]()[]()

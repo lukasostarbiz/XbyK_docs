@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/activities-and-contacts/implement-cross-site-activities
+scrape_date: 2026-01-22
+---
+
+Module: Activities and contacts
+7 of 9 Pages
 # Implement cross-site activities
-  * [ Copy page link ](modules/activities-and-contacts/implement-cross-site-activities#) | [Get HelpService ID](modules/activities-and-contacts/implement-cross-site-activities#)
-Core MVC 5
-
-
-[✖](modules/activities-and-contacts/implement-cross-site-activities# "Close page link panel") [Copy to clipboard](modules/activities-and-contacts/implement-cross-site-activities#)
 Today, digitally mature businesses often have multiple web sites contributing to their online presence. For example, they may have separate websites for different branches of the company, microsites that tie in with viral marketing campaigns, or specially designated brochure sites for upcoming events. 
 Developers often craft these sites on diverse platforms, not all of which have the same kind of activity tracking functionality as Xperience by Kentico.
 In these cases, Xperience’s _Cross-site tracking_ feature enables the activity of visitors on these external sites to be tracked. It appears in the **Activities** tab of the **Contact management** application, alongside contact activities logged directly on the Xperience by Kentico site.
@@ -12,12 +14,12 @@ Let’s explore how Xperience by Kentico can track contact activities on a separ
 As a prerequisite to this example, you must find a way to securely host the external site files provided in the _\src\TrainingGuides - External Site_ folder of the [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides).
 Note that for cross-site tracking to work, both your Xperience site and the external site that you want to use cross-site tracking on must be hosted under HTTPS with trusted SSL certificates.
 _Using self-signed certificates for local testing**will not work**._
-The site must also have unique domain names or subdomains, with no application path or port numbers. You can find more information about the prerequisites in [the documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#prerequisites).
+The site must also have unique domain names or subdomains, with no application path or port numbers. You can find more information about the prerequisites in [the documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#prerequisites).
 This example uses a static HTML page for demonstration purposes. You will likely need to do things slightly differently in the framework you are using in order to get your project to output HTML like this example.
-**We discovered conflicts between cross-site tracking and the multi-tiered consent system from the[Data protection series](guides/development/data-protection). You can find more details in [this GitHub issue](https://github.com/Kentico/xperience-by-kentico-training-guides/issues/85).**
+**We discovered conflicts between cross-site tracking and the multi-tiered consent system from the[Data protection series](/guides/development/data-protection). You can find more details in [this GitHub issue](https://github.com/Kentico/xperience-by-kentico-training-guides/issues/85).**
 If your project uses a similar data protection implementation and you encounter any issues after setting up cross-site tracking, you may need to modify the code from this example, as described in [the GitHub issue](https://github.com/Kentico/xperience-by-kentico-training-guides/issues/85).
 ## Enable cross-site tracking with dynamic consent
-The [Data protection series](guides/development/data-protection) details how to create a dynamic mapping between granular cookie levels and consents. If you have not gone through the data protection series, you can follow the [simpler example in the documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#enable-the-cross-site-tracking-feature) to enable cross-site tracking in the _Program.cs_ file.
+The [Data protection series](/guides/development/data-protection) details how to create a dynamic mapping between granular cookie levels and consents. If you have not gone through the data protection series, you can follow the [simpler example in the documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#enable-the-cross-site-tracking-feature) to enable cross-site tracking in the _Program.cs_ file.
 If you have completed the Data protection series, follow this example to dynamically use whichever consent is mapped to the Marketing cookie level.
 This example uses the _Marketing_ cookie consent for the sake of example, but you should review which consent is most applicable to cross-site tracking with your legal team and ensure that its wording accurately explains all of its uses. You may even consider making an additional mapping specifically for cross-site tracking.
   1. Create a folder in the _TrainingGuides.Web_ project with the following path: ~_/Features/Shared/Helpers/Startup_ , and define a file within called  _StartupHelper.cs_.
@@ -46,9 +48,9 @@ public class StartupHelper
         string consentCodeName;
         try
         {
-            //Do not resolve ICookieLevelConsentMappingInfoProvider or ICookieConsentService --
-            //This code runs on startup before the app is built, so no ServiceProvider exists.
-            var consentQuery = await CookieLevelConsentMappingInfo.Provider.Get()
+            // Do not resolve IInfoProvider<CookieLevelConsentMappingInfo> or ICookieConsentService --
+            // This code runs on startup before the app is built, so no ServiceProvider exists.
+            var consentQuery = await Provider<CookieLevelConsentMappingInfo>.Instance.Get()
                 .GetEnumerableTypedResultAsync();
 
             var consent = consentQuery.FirstOrDefault();
@@ -98,10 +100,10 @@ builder.Services.AddKentico(async features =>
 
 ## Register the site for cross-site tracking
 Now the external site needs to be registered in the Xperience administration application.
-Sign in to the Xperience by Kentico administration interface and follow the [steps outlined in the documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#manage-tracked-sites) to enable tracking for the external site.
+Sign in to the Xperience by Kentico administration interface and follow the [steps outlined in the documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#manage-tracked-sites) to enable tracking for the external site.
 Do not copy the tracking snippet into the site’s HTML yet. You need to modify the snippet slightly first, and we will cover the process in a later step.
 ## Add a controller to indicate the right consent
-Looking at the [Cross-site tracking documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking), you might have noticed that the [consent example](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#implement-tracking-consent) has a hard-coded consent codename.
+Looking at the [Cross-site tracking documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking), you might have noticed that the [consent example](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#implement-tracking-consent) has a hard-coded consent codename.
 The consent functionality from the data protection series dynamically maps consents to different cookie tracking levels, so you must account for this, and retrieve the correct consent from the external site.
 This section applies if you have followed along with the Data protection series, or have otherwise created a custom consent mapping.
 Create a controller to provide the codename of the relevant consent to the external site.
@@ -194,7 +196,7 @@ app.UseCors(trainingGuidesAllowSpecificOrigins);
 Now resource requests from the external domain to the Xperience application will not be blocked.
 ## Add scripts to the page
 With a CORS policy in place that allows your external site to use scripts from Xperience, there are no more blocking factors, and you can add the necessary scripts to the external site.
-Looking over the  _index.html_ page found in the /_src/TrainingGuides - External Site_ folder of the Training guides repository, you may notice the buttons and label match the [basic example for consent management found in the documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#consent-management-on-external-sites). Much of the JavaScript in this section will also mirror functionality from this example, with some key changes to fit our current scenario.
+Looking over the  _index.html_ page found in the /_src/TrainingGuides - External Site_ folder of the Training guides repository, you may notice the buttons and label match the [basic example for consent management found in the documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#consent-management-on-external-sites). Much of the JavaScript in this section will also mirror functionality from this example, with some key changes to fit our current scenario.
 Add the Xperience tracking snippet
   1. Sign in to the administration interface of Xperience and open the record for your external site in the **Cross-site tracking** application.
   2. Copy the script snippet and paste it into the header of the external site.
@@ -226,7 +228,7 @@ Copy
 
 This snippet adds a script reference to a JavaScript file in your Xperience instance which contains functions related to activities and consent.
 ### Retrieve the consent codename from the controller
-Xperience tracking scripts that rely on consent need to know the codename of the consent associated with tracking. You need to create a function that retrieves the codename from the controller action defined [earlier](modules/activities-and-contacts/implement-cross-site-activities#add-a-controller-to-indicate-the-right-consent). Create a javascript file with a function to retrieve this value to the existing script block.
+Xperience tracking scripts that rely on consent need to know the codename of the consent associated with tracking. You need to create a function that retrieves the codename from the controller action defined [earlier](#add-a-controller-to-indicate-the-right-consent). Create a javascript file with a function to retrieve this value to the existing script block.
   1. Add a new JavaScript file to the external site called _activity.js_.
   2. Create a function `getConsentCodeName`, which fetches a response from the URL of your `MarketingConsent` controller action, located at the  _/consent/marketing_ path of your Xperience site.
   3. Convert the JSON data from the response to a string in your consuming code.
@@ -250,7 +252,7 @@ function getConsentCodeName(){
 ### Add handler functions for activities
 The file also needs functions to log the activities that will be tracked on the page.
   1. Add a function that agrees to a given consent for the current contact.  
-Use a similar approach to the [example in the documentation](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#consent-management-on-external-sites), but accept a parameter to specify the consent codename.
+Use a similar approach to the [example in the documentation](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#consent-management-on-external-sites), but accept a parameter to specify the consent codename.
 JS
 **activity.js**
 Copy
@@ -313,7 +315,7 @@ function logLinkClick() {
 ...
 ```
 
-  4. Define a function that logs the file download custom activity, similar to the [custom activities example](guides/development/activities-and-marketing/log-custom-activities#log-file-downloads) from earlier in this series.
+  4. Define a function that logs the file download custom activity, similar to the [custom activities example](/guides/development/activities-and-marketing/log-custom-activities#log-file-downloads) from earlier in this series.
 JS
 **activity.js**
 Copy
@@ -428,23 +430,15 @@ Copy
 
 
 With this code in place, the external site will log page visit, file download, and link click activities on the index page, depending on the current contact’s consent. These activities can be viewed on the **Activities** tab of the **Contact management** application in the Xperience admin interface.
-[![Screenshot of the activities tab of the Contact management application](docsassets/guides/implement-cross-site-activities/image-2023-12-8_9-49-57.png)](https://docs.kentico.com/docsassets/guides/implement-cross-site-activities/image-2023-12-8_9-49-57.png)
+[![Screenshot of the activities tab of the Contact management application](/docsassets/guides/implement-cross-site-activities/image-2023-12-8_9-49-57.png)](/docsassets/guides/implement-cross-site-activities/image-2023-12-8_9-49-57.png)
 The following video demonstrates the functionality we’ve added with this example.
 After the visitor gives consent on the external site, Xperience tracks their page visit, download, and link click activity. Then, after consent is revoked, these activities are no longer tracked.
 Your browser does not support the video tag. 
 ## Looking forward
-Now that the external site logs activities with your Xperience instance, you can experiment with improvements to this basic site. For example, you can log different activities, such as the _Page like_ activity from the [Custom activities example](guides/development/activities-and-marketing/log-custom-activities#log-page-likes), and hide the corresponding buttons depending on whether the current contact has or hasn’t consented to tracking.
-You can also [handle data input to map data to contacts](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#data-input), and [handle error states](documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#handle-error-states) as shown in the documentation example.
-[ Previous page ](modules/activities-and-contacts/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
+Now that the external site logs activities with your Xperience instance, you can experiment with improvements to this basic site. For example, you can log different activities, such as the _Page like_ activity from the [Custom activities example](/guides/development/activities-and-marketing/log-custom-activities#log-page-likes), and hide the corresponding buttons depending on whether the current contact has or hasn’t consented to tracking.
+You can also [handle data input to map data to contacts](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#data-input), and [handle error states](/documentation/developers-and-admins/digital-marketing-setup/cross-site-tracking#handle-error-states) as shown in the documentation example.
+[ Previous page ](/modules/activities-and-contacts/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
 7 of 9
-[ Mark complete and continue ](modules/activities-and-contacts/add-custom-contact-field)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/activities-and-contacts/implement-cross-site-activities)
-[](https://docs.kentico.com/modules/activities-and-contacts/implement-cross-site-activities)[](https://docs.kentico.com/modules/activities-and-contacts/implement-cross-site-activities)
+[ Mark complete and continue ](/modules/activities-and-contacts/add-custom-contact-field)
+![]()
+[]()[]()

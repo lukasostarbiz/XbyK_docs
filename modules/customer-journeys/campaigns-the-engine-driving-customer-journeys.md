@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/campaigns-the-engine-driving-customer-journeys
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+10 of 17 Pages
 # Campaigns - driving success
-  * [ Copy page link ](modules/customer-journeys/campaigns-the-engine-driving-customer-journeys#) | [Get HelpService ID](modules/customer-journeys/campaigns-the-engine-driving-customer-journeys#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/campaigns-the-engine-driving-customer-journeys# "Close page link panel") [Copy to clipboard](modules/customer-journeys/campaigns-the-engine-driving-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -41,16 +43,8 @@ By connecting each campaign and touchpoint accordingly, marketers can see which 
 Once a contact is identified and mapped in the customer journey, they shouldn’t be left to drift. Check your customer journey and evaluate: “Is the momentum still going?” “Is a contact moving from Prospect to Lead?”, and adapt messages as the customer’s mindset evolves.
 A contact moving from “Prospect” to “Lead”? That’s your cue to shift from thought leadership to product positioning. An MQL showing signs of intent? Time for a targeted case study or a time-sensitive webinar invite. A loyal customer slowing down engagement? A reactivation email might bring them back into the fold.
 In essence, use insights from your journeys and effectively influence customer decisions. They give marketers a way to not only observe journeys but also to **influence them in real time**.
-[ Previous page ](modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
+[ Previous page ](/modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
 10 of 17
-[ Mark complete and continue ](modules/customer-journeys/XbyK-integrating-data-for-seamless-journeys)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/campaigns-the-engine-driving-customer-journeys)
-[](https://docs.kentico.com/modules/customer-journeys/campaigns-the-engine-driving-customer-journeys)[](https://docs.kentico.com/modules/customer-journeys/campaigns-the-engine-driving-customer-journeys)
+[ Mark complete and continue ](/modules/customer-journeys/XbyK-integrating-data-for-seamless-journeys)
+![]()
+[]()[]()

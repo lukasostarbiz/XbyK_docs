@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+2 of 17 Pages
 # Analyze customer behavior, improve engagement
-  * [ Copy page link ](modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#) | [Get HelpService ID](modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen# "Close page link panel") [Copy to clipboard](modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -28,17 +30,9 @@ Each of these scenarios highlights a **real-world challenge** marketers face whe
 ### How can we help?
 Xperience by Kentico’s _Customer journeys_ help to understand both the data, and the **people behind that data** , thus resolving common digital marketing pitfalls such as **high drop-off rates, low engagement, ineffective campaigns** , and **poor customer retention**.
 Ultimately, this powerful feature is here to soothe your ROIal headache and **improve your ROIs**.
-[![Customer journeys in Xperience by Kentico – mapping made simple](docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)](https://docs.kentico.com/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)
-[ Previous page ](modules/customer-journeys)
+[![Customer journeys in Xperience by Kentico – mapping made simple](/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)](/docsassets/guides/analyze-customer-behavior-to-improve-user-engagemen/xbyk-customer-journey-map.png)
+[ Previous page ](/modules/customer-journeys)
 2 of 17
-[ Mark complete and continue ](modules/customer-journeys/what-is-a-customer-journey)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen)
-[](https://docs.kentico.com/modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen)[](https://docs.kentico.com/modules/customer-journeys/analyze-customer-behavior-to-improve-user-engagemen)
+[ Mark complete and continue ](/modules/customer-journeys/what-is-a-customer-journey)
+![]()
+[]()[]()

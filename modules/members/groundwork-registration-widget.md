@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/members/groundwork-registration-widget
+scrape_date: 2026-01-22
+---
+
+Module: Members
+2 of 12 Pages
 # Lay the groundwork for the registration widget
-  * [ Copy page link ](modules/members/groundwork-registration-widget#) | [Get HelpService ID](modules/members/groundwork-registration-widget#)
-Core MVC 5
-
-
-[✖](modules/members/groundwork-registration-widget# "Close page link panel") [Copy to clipboard](modules/members/groundwork-registration-widget#)
-Many websites allow visitors to register and sign in for exclusive access to premium content. You can add this functionality to your website channels in Xperience by Kentico by implementing [Members](documentation/business-users/members) in your site.
-Let’s dive into the first step of this process, expanding upon the standard approach by creating a **reusable widget** that allows members to register via [Forms authentication](documentation/developers-and-admins/development/registration-and-authentication/forms-authentication). It also includes an overview of how to apply the same approach to a [Sign-in widget](modules/members/register-the-member).
+Many websites allow visitors to register and sign in for exclusive access to premium content. You can add this functionality to your website channels in Xperience by Kentico by implementing [Members](/documentation/business-users/members) in your site.
+Let’s dive into the first step of this process, expanding upon the standard approach by creating a **reusable widget** that allows members to register via [Forms authentication](/documentation/developers-and-admins/development/registration-and-authentication/forms-authentication). It also includes an overview of how to apply the same approach to a [Sign-in widget](/modules/members/register-the-member).
 Integrating the registration form into a widget requires extra complexity compared to using a standard routed MVC view.
 The registration widget will allow editors to do the following:
   * Easily link to a registration page from components like the _Page selector_ , _Combined content selector_ , and _Rich text editor_.
@@ -28,10 +30,10 @@ For this guide’s example, imagine you have the following requirements for memb
   5. Editors can choose to display the form with only required fields, or to include optional fields.
 
 
-You can [extend the member class with custom fields](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) to handle the name order requirement.
-All of the requirements regarding editors’ control of the registration forms can be met by making the registration form a [widget](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder): editors can place the widget on Page Builder zones in landing pages and use widget properties to configure the labels and fields to display in the registration form.
+You can [extend the member class with custom fields](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) to handle the name order requirement.
+All of the requirements regarding editors’ control of the registration forms can be met by making the registration form a [widget](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder): editors can place the widget on Page Builder zones in landing pages and use widget properties to configure the labels and fields to display in the registration form.
 ## Extend the Member class
-To start, let’s [add custom fields](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) that allow members to configure the order of their full names. While we’re at it, we’ll also add a field to mirror the “favorite coffee” example from our [training guide about customizing contacts](guides/development/customizations-and-integrations/add-custom-contact-field).
+To start, let’s [add custom fields](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects) that allow members to configure the order of their full names. While we’re at it, we’ll also add a field to mirror the “favorite coffee” example from our [training guide about customizing contacts](/guides/development/customizations-and-integrations/add-custom-contact-field).
 ### Define the module fields
 Navigate to the **Modules** application in Xperience, and edit the **Membership** module. Choose **Classes → Member → Database columns**. Add text fields for the given name, family name, and favorite coffee of your members, along with a boolean field to indicate if the family name should go first.
   * Given name 
@@ -60,7 +62,7 @@ Now, these custom columns exist in the database. You can read and manipulate the
 ### Adjust the UI
 While we can access our custom fields in code, they will not show up in the Xperience admin UI without further adjustment.
 After defining the fields in the **Modules** application, switch to the **UI forms** tab of the _Member_ class and click on the **Edit** form. On its **Fields** tab, add a **New field** for each of the database columns you created previously, defining appropriate captions and form components.
-[![Screenshot of the fields of the Member class’s ‘Edit’ UI form](docsassets/guides/implement-member-registration/MemberUIForm.png)](https://docs.kentico.com/docsassets/guides/implement-member-registration/MemberUIForm.png)
+[![Screenshot of the fields of the Member class’s ‘Edit’ UI form](/docsassets/guides/implement-member-registration/MemberUIForm.png)](/docsassets/guides/implement-member-registration/MemberUIForm.png)
 ### Extend the ApplicationUser class
 Xperience comes with a class called `ApplicationUser` out of the box, which ties the Xperience `MemberInfo` object to [.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity). However, this class is in an assembly and cannot be directly modified.
 To add our custom fields and any other functionality, we need to extend this class.
@@ -149,7 +151,7 @@ public static class MemberInfoExtensions
 ```
 
 ## Set up Identity
-Now, to enable .NET Identity, we need to [Configure registration and authentication](documentation/developers-and-admins/development/registration-and-authentication).
+Now, to enable .NET Identity, we need to [Configure registration and authentication](/documentation/developers-and-admins/development/registration-and-authentication).
 C#
 **Program.cs**
 Copy
@@ -234,19 +236,11 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 Make sure to register your service as **scoped** ; some crucial parts of .NET Identity are scoped services, and we’ll want to utilize them in our code.
 We’ll expand this service as needed throughout the guide, but for now let’s move on to the widget.
 ## Consider your region’s data protection laws
-Since Member objects in Xperience contain personally identifiable information about the humans they represent, real-life implementations of member registration may need to include a [consent](documentation/developers-and-admins/data-protection/consent-management) to store that data if your company does business in a region with laws governing data protection.
-It is likely that this consent will need to be separate and have distinct verbiage from consents related to contact tracking, such as the cookie consents from the [Data protection series](guides/development/data-protection).
-Managing consents alongside members is outside the scope of this example, but you can find information about working with consents in the Xperience by Kentico [documentation](documentation/developers-and-admins/data-protection/consent-development).
-[ Previous page ](modules/members)
+Since Member objects in Xperience contain personally identifiable information about the humans they represent, real-life implementations of member registration may need to include a [consent](/documentation/developers-and-admins/data-protection/consent-management) to store that data if your company does business in a region with laws governing data protection.
+It is likely that this consent will need to be separate and have distinct verbiage from consents related to contact tracking, such as the cookie consents from the [Data protection series](/guides/development/data-protection).
+Managing consents alongside members is outside the scope of this example, but you can find information about working with consents in the Xperience by Kentico [documentation](/documentation/developers-and-admins/data-protection/consent-development).
+[ Previous page ](/modules/members)
 2 of 12
-[ Mark complete and continue ](modules/members/build-registration-widget)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/groundwork-registration-widget)
-[](https://docs.kentico.com/modules/members/groundwork-registration-widget)[](https://docs.kentico.com/modules/members/groundwork-registration-widget)
+[ Mark complete and continue ](/modules/members/build-registration-widget)
+![]()
+[]()[]()

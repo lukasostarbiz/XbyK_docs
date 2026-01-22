@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/ci-cd/ci-cd-repository-structure
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [CI/CD](/documentation/developers-and-admins/ci-cd)
+  * CI/CD repository structure 
+
+
 # CI/CD repository structure
-  * [ Copy page link ](documentation/developers-and-admins/ci-cd/ci-cd-repository-structure#) | [Get HelpService ID](documentation/developers-and-admins/ci-cd/ci-cd-repository-structure#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/ci-cd/ci-cd-repository-structure# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/ci-cd/ci-cd-repository-structure#)
-When using [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration) or [Continuous Deployment](documentation/developers-and-admins/ci-cd/continuous-deployment), the system serializes database data into XML and stores the results on the file system in a repository folder.
+When using [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration) or [Continuous Deployment](/documentation/developers-and-admins/ci-cd/continuous-deployment), the system serializes database data into XML and stores the results on the file system in a repository folder.
 The files are further organized within the following folder structure:
   * **Channel level folders** – the top level separates objects based on their relationship with channels: **@global** for global objects, **< channel code name>** for content and configuration objects related to individual channels (such as pages or emails).
-    * **Object type folders** – the next level contains folders for specific types of objects, based on **_object type names_** (see [Reference - CI/CD object types](documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types) to learn more).
+    * **Object type folders** – the next level contains folders for specific types of objects, based on **_object type names_** (see [Reference - CI/CD object types](/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types) to learn more).
       * **Object files** – individual XML files are named according to the **_code name_** of the corresponding object. Object types without code names use the value of a non-unique field, followed by a unique hash. Object types without any easily readable identifying fields use their GUID value for the file name.
       * **Binding data files** – binding data is not stored in separate files for individual binding records, but combined for each main object in the relationship. The binding XML data contains an identifier of the main object (parent) in the relationship, and then identifiers of all objects that have the given relationship with the main object, along with any other data stored by the binding. The binding files are named after the main object in format: **_< object name>@<unique hash>_**
       * **Parent object folders** – object types that belong under a parent type use an additional level of subfolders – objects are separated into folders named according to the parent object in format: **_< parent object name>@<unique hash>_**. For object types that have multiple possible parent types, the folder name also contains a **_< parent object type>__** prefix.
       * **Separated field files** – certain types of objects store the values of specific data fields in separate files (placed next to the main XML file). For example, content items with a _Content item asset_ field store the asset’s binary data as a separate file. The separated files use names in format **_< object name>#<separated field identifier>_** and have an appropriate extension.
   * **Lock files** – the repository contains a **.lock** folder with temporary lock files used during store and restore operations. You can safely delete or ignore this folder in your source control system.
-  * **Repository configuration file** – the repository contains an XML configuration file (_repository.config_ by default), which is used to adjust the behavior or CI/CD operations and exclude object types or individual objects. See [Exclude objects from CI/CD](documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories).
+  * **Repository configuration file** – the repository contains an XML configuration file (_repository.config_ by default), which is used to adjust the behavior or CI/CD operations and exclude object types or individual objects. See [Exclude objects from CI/CD](/documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories).
 
 
 **Long names and forbidden characters**
@@ -24,7 +30,7 @@ If an object name contains characters that are not allowed in file names (for ex
 Certain source control systems may have ignore rules, such as _gitignore_ , which can unintentionally exclude files or folders used in the CI/CD repository (for example, the _*.class_ and _*.user_ file and folder extensions).
 Such rules may prevent your environment from working correctly. We recommend that you evaluate ignore rules for the repository and disable them as required.
 ## Example - Repository structure
-**Note** : The example does not include all [object types supported by CI/CD](documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types).
+**Note** : The example does not include all [object types supported by CI/CD](/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types).
 App_Data\CIRepository
   * @global
     * cms.channel
@@ -81,12 +87,12 @@ App_Data\CIRepository
 
 ## Storage structure for specific object types
 ### Content items
-The system uses multiple object types to store the content and settings of [content items](documentation/business-users/content-hub). As a result, the resulting CI/CD files use a more complex structure than standard objects.
+The system uses multiple object types to store the content and settings of [content items](/documentation/business-users/content-hub). As a result, the resulting CI/CD files use a more complex structure than standard objects.
 Content items are global objects serialized under the _@global_ folder. Each item is divided into multiple folders and files:
   * _cms.contentitem_ – stores general system information about the content item.
   * _cms.contentitemcommondata_ – stores metadata about the item such as the current workflow and version statuses. Organized under subfolders matching the parent content item.
   * _cms.contentitemlanguagemetadata_ – metadata for specific language variants of the item. Organized under subfolders matching the parent content item.
-  * _contentitemdata. <content type code name>_ – data stored in the [fields](documentation/developers-and-admins/customization/field-editor) of the item’s [content type](documentation/developers-and-admins/development/content-types). Items with fields of the _Content item asset_ data type also contain the referenced asset binary next to the XML definition.
+  * _contentitemdata. <content type code name>_ – data stored in the [fields](/documentation/developers-and-admins/customization/field-editor) of the item’s [content type](/documentation/developers-and-admins/development/content-types). Items with fields of the _Content item asset_ data type also contain the referenced asset binary next to the XML definition.
 
 
 For example, a _“Bolivia Finca Illimani_ ” reusable content item of the _DancingGoat.Coffee_ content type could be, depending on the type’s fields and supported language variants, serialized into the following XML files:
@@ -106,17 +112,17 @@ App_Data\CIRepository
 
 
 ### Pages
-The system uses multiple object types to store the content and settings of [pages](documentation/business-users/website-content). As a result, the resulting CI/CD files use a more complex structure than standard objects.
-Pages are serialized under a specific [website channel](documentation/developers-and-admins/configuration/website-channel-management). Each page is divided into multiple folders and files:
+The system uses multiple object types to store the content and settings of [pages](/documentation/business-users/website-content). As a result, the resulting CI/CD files use a more complex structure than standard objects.
+Pages are serialized under a specific [website channel](/documentation/developers-and-admins/configuration/website-channel-management). Each page is divided into multiple folders and files:
   * _cms.contentitem_ – stores general system information about the page.
   * _cms.contentitemcommondata_ – stores metadata about the page such as the current workflow and version statuses. Organized under subfolders matching the parent content item for the page.
   * _cms.contentitemlanguagemetadata_ – metadata for specific language variants of the page. Organized under subfolders matching the parent content item for the page.
   * _cms.webpageitem_ – data about the page’s position in the website channel’s content tree. Organized into subfolders matching the parent-child hierarchy of the page tree.
-  * _cms.webpageurlpath_ – stores the [URL path](documentation/business-users/website-content/manage-page-urls) data of the page. Organized under subfolders matching the parent content item for the page.
-  * _contentitemdata. <content type code name>_ – data stored in the [fields](documentation/developers-and-admins/customization/field-editor) of the page’s [content type](documentation/developers-and-admins/development/content-types).
+  * _cms.webpageurlpath_ – stores the [URL path](/documentation/business-users/website-content/manage-page-urls) data of the page. Organized under subfolders matching the parent content item for the page.
+  * _contentitemdata. <content type code name>_ – data stored in the [fields](/documentation/developers-and-admins/customization/field-editor) of the page’s [content type](/documentation/developers-and-admins/development/content-types).
 
 
-For example, a _“Coffee Beverages Explained”_ page with the _DancingGoat.ArticlePage_ content type under the _DancingGoat_ website channel could be, depending on the page’s [fields](documentation/developers-and-admins/customization/field-editor) and language variants, serialized into the following XML files:
+For example, a _“Coffee Beverages Explained”_ page with the _DancingGoat.ArticlePage_ content type under the _DancingGoat_ website channel could be, depending on the page’s [fields](/documentation/developers-and-admins/customization/field-editor) and language variants, serialized into the following XML files:
 App_Data\CIRepository
   * DancingGoat 
     * cms.contentitem
@@ -139,18 +145,18 @@ App_Data\CIRepository
 
 
 ### Emails
-The system uses multiple object types to store the content and settings of [emails](documentation/business-users/digital-marketing/emails). As a result, the resulting CI/CD files use a more complex structure than standard objects.
-Emails are serialized under a specific [email channel](documentation/developers-and-admins/digital-marketing-setup/email-channel-management). Each email is divided into multiple folders and files:
+The system uses multiple object types to store the content and settings of [emails](/documentation/business-users/digital-marketing/emails). As a result, the resulting CI/CD files use a more complex structure than standard objects.
+Emails are serialized under a specific [email channel](/documentation/developers-and-admins/digital-marketing-setup/email-channel-management). Each email is divided into multiple folders and files:
   * _cms.contentitem_ – stores general system information about the email.
   * _cms.contentitemcommondata_ – stores metadata about the email such as the current workflow and version statuses. Organized under subfolders matching the parent content item for the email.
   * _cms.contentitemlanguagemetadata_ – metadata for specific language variants of the email. Organized under subfolders matching the parent content item for the email.
-  * _contentitemdata. <content type code name>_ – data stored in the [fields](documentation/developers-and-admins/customization/field-editor) of the email’s [content type](documentation/developers-and-admins/development/content-types).
+  * _contentitemdata. <content type code name>_ – data stored in the [fields](/documentation/developers-and-admins/customization/field-editor) of the email’s [content type](/documentation/developers-and-admins/development/content-types).
   * _emaillibrary.emailconfiguration_ – stores the email purpose and other assorted metadata.
-  * _emaillibrary.sendconfiguration_ – sendout settings for [regular emails](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
-  * _emaillibrary.sendconfigurationcontactgroup_ – included and excluded [contact groups](documentation/business-users/digital-marketing/contact-groups) in the sendount settings for [regular emails](documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
+  * _emaillibrary.sendconfiguration_ – sendout settings for [regular emails](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
+  * _emaillibrary.sendconfigurationcontactgroup_ – included and excluded [contact groups](/documentation/business-users/digital-marketing/contact-groups) in the sendount settings for [regular emails](/documentation/business-users/digital-marketing/emails/send-regular-emails-to-subscribers).
 
 
-For example, a _“Dancing Goat Regular”_ email with the _DancingGoat.Email_ content type under the _DancingGoatEmail_ email channel could be, depending on the type’s [fields](documentation/developers-and-admins/customization/field-editor), serialized into the following XML files:
+For example, a _“Dancing Goat Regular”_ email with the _DancingGoat.Email_ content type under the _DancingGoatEmail_ email channel could be, depending on the type’s [fields](/documentation/developers-and-admins/customization/field-editor), serialized into the following XML files:
 App_Data\CIRepository
   * DancingGoatEmails 
     * cms.contentitem 
@@ -171,15 +177,15 @@ App_Data\CIRepository
 
 
 ### Headless items
-The system uses multiple object types to store the content and settings of [headless items](documentation/business-users/headless-content). As a result, the resulting CI/CD files use a more complex structure than standard objects.
-Headless items are serialized under a specific [headless channel](documentation/developers-and-admins/configuration/headless-channel-management). Each item is divided into multiple folders and files:
+The system uses multiple object types to store the content and settings of [headless items](/documentation/business-users/headless-content). As a result, the resulting CI/CD files use a more complex structure than standard objects.
+Headless items are serialized under a specific [headless channel](/documentation/developers-and-admins/configuration/headless-channel-management). Each item is divided into multiple folders and files:
   * _cms.contentitem_ and _cms.headlessitem_ – stores general system information about the headless item.
   * _cms.contentitemcommondata_ – stores metadata about the item such as the current workflow and version statuses. Organized under subfolders matching the parent headless item.
   * _cms.contentitemlanguagemetadata_ – metadata for specific language variants of the item. Organized under subfolders matching the parent headless item.
-  * _contentitemdata. <content type code name>_ – data stored in the [fields](documentation/developers-and-admins/customization/field-editor) of the item’s [content type](documentation/developers-and-admins/development/content-types).
+  * _contentitemdata. <content type code name>_ – data stored in the [fields](/documentation/developers-and-admins/customization/field-editor) of the item’s [content type](/documentation/developers-and-admins/development/content-types).
 
 
-For example, an _“Acme hammer”_ headless item with the _Acme.Product_ content type under the _AcmeStore_ headless channel could be, depending on the type’s [fields](documentation/developers-and-admins/customization/field-editor), serialized into the following XML files:
+For example, an _“Acme hammer”_ headless item with the _Acme.Product_ content type under the _AcmeStore_ headless channel could be, depending on the type’s [fields](/documentation/developers-and-admins/customization/field-editor), serialized into the following XML files:
 App_Data\CIRepository
   * AcmeStore 
     * cms.contentitem 
@@ -198,7 +204,7 @@ App_Data\CIRepository
 
 
 ### Forms
-The system uses multiple object types to store the definitions and settings of [Forms](documentation/business-users/digital-marketing/forms). As a result, the files containing the serialized data of forms use a more complex structure than standard objects.
+The system uses multiple object types to store the definitions and settings of [Forms](/documentation/business-users/digital-marketing/forms). As a result, the files containing the serialized data of forms use a more complex structure than standard objects.
 Each form is serialized into the following **global** items:
   * **cms.formclass**
   * **cms.form**
@@ -206,7 +212,7 @@ Each form is serialized into the following **global** items:
 
 **Note** :
   * CI/CD does NOT serialize form data submissions collected from visitors.
-  * Global **cms.formfeaturedfield** items hold the system’s definitions of featured form fields (options displayed in the **Featured** category when [adding fields to forms](documentation/business-users/digital-marketing/forms/create-and-edit-forms)).
+  * Global **cms.formfeaturedfield** items hold the system’s definitions of featured form fields (options displayed in the **Featured** category when [adding fields to forms](/documentation/business-users/digital-marketing/forms/create-and-edit-forms)).
 
 
 For example, a form with the  _“UserFeedback”_ code name would be serialized into the following XML files:
@@ -222,3 +228,7 @@ CMS\App_Data\CIRepository
       * kentico.featured.consentagreement.xml
       * kentico.featured.email.xml
       * …
+
+
+![]()
+[]()[]()

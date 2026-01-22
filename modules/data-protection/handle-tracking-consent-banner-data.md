@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/data-protection/handle-tracking-consent-banner-data
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+7 of 13 Pages
 # Handle the tracking consent banner data
-  * [ Copy page link ](modules/data-protection/handle-tracking-consent-banner-data#) | [Get HelpService ID](modules/data-protection/handle-tracking-consent-banner-data#)
-Core MVC 5
-
-
-[✖](modules/data-protection/handle-tracking-consent-banner-data# "Close page link panel") [Copy to clipboard](modules/data-protection/handle-tracking-consent-banner-data#)
 Before you make the controller action to handle the view component’s POST request, expand the `CookieConsentService` class with some methods that will help handle the POST.
 Since the banner posts a list of consents to accept rather than a full mapping, it requires a new overload of the `SetCurrentCookieConsentLevel` method, which accepts all consents in the provided list.
 C#
@@ -274,17 +276,9 @@ Copy
 ```
 
 Now, the cookie banner should appear at the top of the page for any users who have not set a cookie level or agreed to any consents. You can test this by running your Xperience instance a new private or incognito window (assuming one is not already open.)
-[![Tracking consent banner](docsassets/guides/build-a-tracking-consent-banner/cookie-banner-2.png)](https://docs.kentico.com/docsassets/guides/build-a-tracking-consent-banner/cookie-banner-2.png)
-[ Previous page ](modules/data-protection/build-tracking-consent-banner-component)
+[![Tracking consent banner](/docsassets/guides/build-a-tracking-consent-banner/cookie-banner-2.png)](/docsassets/guides/build-a-tracking-consent-banner/cookie-banner-2.png)
+[ Previous page ](/modules/data-protection/build-tracking-consent-banner-component)
 7 of 13
-[ Mark complete and continue ](modules/data-protection/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/handle-tracking-consent-banner-data)
-[](https://docs.kentico.com/modules/data-protection/handle-tracking-consent-banner-data)[](https://docs.kentico.com/modules/data-protection/handle-tracking-consent-banner-data)
+[ Mark complete and continue ](/modules/data-protection/hide-builder-content-from-visitors-who-have-not-consented-to-tracking)
+![]()
+[]()[]()

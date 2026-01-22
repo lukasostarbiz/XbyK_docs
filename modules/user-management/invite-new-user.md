@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/user-management/invite-new-user
+scrape_date: 2026-01-22
+---
+
+Module: User management
+8 of 20 Pages
 # Invite a new user
-  * [ Copy page link ](modules/user-management/invite-new-user#) | [Get HelpService ID](modules/user-management/invite-new-user#)
-Core MVC 5
-
-
-[✖](modules/user-management/invite-new-user# "Close page link panel") [Copy to clipboard](modules/user-management/invite-new-user#)
 Let’s create a new user account for a new Data Protection officer that just joined your organization.
   1. Navigate to the **Users** application.
   2. Select **New user**.
@@ -18,17 +20,9 @@ Let’s create a new user account for a new Data Protection officer that just jo
   7. **Save** the changes.
 
 
-[![](docsassets/guides/invite-new-user/data-protection-officer-invite.png)](https://docs.kentico.com/docsassets/guides/invite-new-user/data-protection-officer-invite.png)
-[ Previous page ](modules/user-management/update-user-details)
+[![](/docsassets/guides/invite-new-user/data-protection-officer-invite.png)](/docsassets/guides/invite-new-user/data-protection-officer-invite.png)
+[ Previous page ](/modules/user-management/update-user-details)
 8 of 20
-[ Mark complete and continue ](modules/user-management/add-user-to-role)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/user-management/invite-new-user)
-[](https://docs.kentico.com/modules/user-management/invite-new-user)[](https://docs.kentico.com/modules/user-management/invite-new-user)
+[ Mark complete and continue ](/modules/user-management/add-user-to-role)
+![]()
+[]()[]()

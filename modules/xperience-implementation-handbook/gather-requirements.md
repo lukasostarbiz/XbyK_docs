@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/xperience-implementation-handbook/gather-requirements
+scrape_date: 2026-01-22
+---
+
+Module: Xperience implementation handbook
+2 of 9 Pages
 # Gather requirements
-  * [ Copy page link ](modules/xperience-implementation-handbook/gather-requirements#) | [Get HelpService ID](modules/xperience-implementation-handbook/gather-requirements#)
-Core MVC 5
-
-
-[✖](modules/xperience-implementation-handbook/gather-requirements# "Close page link panel") [Copy to clipboard](modules/xperience-implementation-handbook/gather-requirements#)
 ## Environment requirements
 The questions in this section focus on the processes and infrastructure that your project demands. Your team’s structure and procedures address some of these questions, and your client’s needs and requirements will answer the rest. The responses further your understanding of the constraints you need to work within and provide you with sufficient opportunity to address potential shortcomings.
 ### Development team
@@ -30,7 +32,7 @@ The questions in this section focus on the processes and infrastructure that you
 
 
 ### Hosting
-  * Will you use [Xperience SaaS](documentation/developers-and-admins/saas/saas-overview) or manage your own hosting?
+  * Will you use [Xperience SaaS](/documentation/developers-and-admins/saas/saas-overview) or manage your own hosting?
   * Will you host on-premise or in the cloud?
   * Is there a preferred hosting provider (e.g., Azure, AWS)?
   * Will the SQL server be dedicated or shared? 
@@ -175,16 +177,8 @@ These questions deal with some larger features and functionality that are native
   * Do you prefer a specific search service (e.g., Lucene, Azure AI Search, Algolia)?
 
 
-[ Previous page ](modules/xperience-implementation-handbook)
+[ Previous page ](/modules/xperience-implementation-handbook)
 2 of 9
-[ Mark complete and continue ](modules/xperience-implementation-handbook/examine-xperience-capabilities)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/xperience-implementation-handbook/gather-requirements)
-[](https://docs.kentico.com/modules/xperience-implementation-handbook/gather-requirements)[](https://docs.kentico.com/modules/xperience-implementation-handbook/gather-requirements)
+[ Mark complete and continue ](/modules/xperience-implementation-handbook/examine-xperience-capabilities)
+![]()
+[]()[]()

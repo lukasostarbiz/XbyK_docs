@@ -1,12 +1,14 @@
+---
+source: https://docs.kentico.com/modules/multilingual/add-language-selector
+scrape_date: 2026-01-22
+---
+
+Module: Multilingual content
+5 of 6 Pages
 # Add a language selector
-  * [ Copy page link ](modules/multilingual/add-language-selector#) | [Get HelpService ID](modules/multilingual/add-language-selector#)
-Core MVC 5
-
-
-[✖](modules/multilingual/add-language-selector# "Close page link panel") [Copy to clipboard](modules/multilingual/add-language-selector#)
 If you followed along up to this point, your site visitors are now able to view and navigate your content in two different languages.
 The last step is to tie everything together and allow the visitor to switch languages using a simple UI control (instead of changing the URL in the browser navigation bar).
-[![Screenshot of the language selector dropdown](docsassets/guides/implement-language-selector-for-your-website/dropdown.png)](https://docs.kentico.com/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)
+[![Screenshot of the language selector dropdown](/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)](/docsassets/guides/implement-language-selector-for-your-website/dropdown.png)
 Because advanced styling and UI appearance are out of the scope of this series, let’s just use a simple Bootstrap dropdown select control:
   * The control will display the name of the current selected language (preferred language by default).
   * After the visitor opens the dropdown, it will show a list of available languages to choose from (all languages defined in the Xperience by Kentico instance).
@@ -85,8 +87,8 @@ Copy
   4. Create a method that generates a language-specific URL of the current page.
     1. Implement a new public method `GetCurrentPageUrlForLanguage` in _HttpRequestService.cs_ in _TrainingGuides.Web/Features/Shared/Services)_. Remember also to add a declaration in IHttpRequestService.
 The method will utilize two new services you need to inject using dependency injection:
-     * [`IWebPageDataContextRetriever`](documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#implement-routing) (to retrieve data about the current page)
-     * [`IWebPageUrlRetriever`](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) (to generate a language-specific URL of a page).
+     * [`IWebPageDataContextRetriever`](/documentation/developers-and-admins/development/routing/content-tree-based-routing/set-up-content-tree-based-routing#implement-routing) (to retrieve data about the current page)
+     * [`IWebPageUrlRetriever`](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) (to generate a language-specific URL of a page).
 C#
 **HttpRequestService.cs**
 Copy
@@ -213,16 +215,8 @@ Copy
 
 Build and run your application. Your visitor can now toggle between English and Spanish versions of your website.
 Your browser does not support the video tag. 
-[ Previous page ](modules/multilingual/handle-multilingual-urls)
+[ Previous page ](/modules/multilingual/handle-multilingual-urls)
 5 of 6
-[ Mark complete and continue ](modules/multilingual/final)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/multilingual/add-language-selector)
-[](https://docs.kentico.com/modules/multilingual/add-language-selector)[](https://docs.kentico.com/modules/multilingual/add-language-selector)
+[ Mark complete and continue ](/modules/multilingual/final)
+![]()
+[]()[]()

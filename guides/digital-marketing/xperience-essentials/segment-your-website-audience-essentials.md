@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/xperience-essentials/segment-your-website-audience-essentials
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Xperience essentials](/guides/digital-marketing/xperience-essentials)
+  * Segment your website audience 
+
+
 # Segment your website audience
-  * [ Copy page link ](guides/digital-marketing/xperience-essentials/segment-your-website-audience-essentials#) | [Get HelpService ID](guides/digital-marketing/xperience-essentials/segment-your-website-audience-essentials#) | This page is part of a module: [ Digital marketing essentials ](modules/digital-marketing-essentials)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/xperience-essentials/segment-your-website-audience-essentials# "Close page link panel") [Copy to clipboard](guides/digital-marketing/xperience-essentials/segment-your-website-audience-essentials#)
 You can use the contact’s demographic data, content preferences, or various website activities to shape their digital experience.
 Xperience comes with the **Contact groups** application, where you **build specific segments** for which you can **create targeted content** and **improve** their **customer experience**. The _Contact groups_ application organizes existing contacts. Any individual contact can belong to any number of contact groups.
 You can create your contact groups manually or use **built-in conditions** to populate them dynamically. In the latter case, Xperience **evaluates contacts** on the website and in the database and **automatically adds contacts to groups** based on the contact group’s conditions.
@@ -16,7 +22,7 @@ Here are a few examples of groups in which you can organize your contacts:
   * And many more.
 
 
-Find out more about [contact groups](documentation/business-users/digital-marketing/contact-groups) in the documentation.
+Find out more about [contact groups](/documentation/business-users/digital-marketing/contact-groups) in the documentation.
 Your browser does not support the video tag. 
 ## Exercise - Segmenting website audience
 In this exercise, you’ll collect all contacts with similar characteristics into a contact group and test how Xperience dynamically adds contacts to a group and removes them once their conditions don’t match the group’s conditions.
@@ -50,10 +56,12 @@ You want to work with your website visitors more effectively, so you’ve decide
 
 
 The conditions in the new Contact group should look like this:
-[![](docsassets/guides/segment-your-website-audience-essentials/form-conditions.png)](https://docs.kentico.com/docsassets/guides/segment-your-website-audience-essentials/form-conditions.png)
+[![](/docsassets/guides/segment-your-website-audience-essentials/form-conditions.png)](/docsassets/guides/segment-your-website-audience-essentials/form-conditions.png)
 You can _Recalculate_ your contact group. Xperience will filter the contact database and add every contact that meets the conditions to the group.
 ## Xperience it now: Dynamic contact segmentation in action
 Open your website in an incognito window, agree with the tracking, and visit some pages, including one or more _Accounts_ subpages. To recognize your new contact in the **Contact management** application, submit a form, for example, on the _Contact_ page, but NOT on the _Accounts_ pages. Then check your _Prospective Account Clients_ contact group. You will see Xperience added your test contact.
 Once you can see your contact in the group, you can further test how Xperience works with a contact once it doesn’t fulfill the condition anymore. Go to one of the _Accounts_ subpages and fill out the form. Go back to the Xperience administration and reload the contact group. After a few moments, you should be able to see your contact was removed.
 ## Next step
-Continue learning about [personalizing website content](guides/digital-marketing/xperience-essentials/personalize-website-content-essentials).
+Continue learning about [personalizing website content](/guides/digital-marketing/xperience-essentials/personalize-website-content-essentials).
+![]()
+[]()[]()

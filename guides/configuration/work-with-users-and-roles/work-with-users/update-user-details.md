@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-users/update-user-details
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Work with users and roles](/guides/configuration/work-with-users-and-roles)
+  * [Work with users](/guides/configuration/work-with-users-and-roles/work-with-users)
+  * Update your own user details 
+
+
 # Update your own user details
-  * Tutorial| [ Copy page link ](guides/configuration/work-with-users-and-roles/work-with-users/update-user-details#) | [Get HelpService ID](guides/configuration/work-with-users-and-roles/work-with-users/update-user-details#) | This page is part of a module: [ User management ](modules/user-management)
-Core MVC 5
-
-
-[✖](guides/configuration/work-with-users-and-roles/work-with-users/update-user-details# "Close page link panel") [Copy to clipboard](guides/configuration/work-with-users-and-roles/work-with-users/update-user-details#)
 You can update your own account information – such as your name or username – directly from your user profile.
 To update user details:
   1. Navigate to the application dashboard.
@@ -13,3 +20,7 @@ To update user details:
     1. **First name** : e.g., _Laura_.
     2. **Last name** : e.g., _Miller_.
   5. **Save** your changes.
+
+
+![]()
+[]()[]()

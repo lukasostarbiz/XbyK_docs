@@ -1,23 +1,29 @@
+---
+source: https://docs.kentico.com/guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Activities and digital marketing](/guides/development/activities-and-marketing)
+  * Hide builder content from visitors who have not consented to tracking 
+
+
 # Hide builder content from visitors who have not consented to tracking
-  * [ Copy page link ](guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking#) | [Get HelpService ID](guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking#) | This page is part of a module: [ Activities and contacts ](modules/activities-and-contacts)
-Core MVC 5
-
-
-[✖](guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking# "Close page link panel") [Copy to clipboard](guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking#)
-The [activity tracking documentation](documentation/developers-and-admins/digital-marketing-setup/set-up-activities#activity-logging-based-on-legitimate-interest) explains that Xperience logs the _Form submit_ activity automatically, even for users who have not consented to tracking. As the page notes, this means you need to ensure that usage of personal data collected through such activities falls under legitimate interest purposes.
+The [activity tracking documentation](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities#activity-logging-based-on-legitimate-interest) explains that Xperience logs the _Form submit_ activity automatically, even for users who have not consented to tracking. As the page notes, this means you need to ensure that usage of personal data collected through such activities falls under legitimate interest purposes.
 To avoid potential legal complications, you may want to display certain forms only to users who have consented to tracking.
-Let’s go over the process of creating a [Page Builder section](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) which hides its contents from users who have not given consent for tracking. The code you develop will add an alternate version of the existing _Form column section_ included in [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides).
+Let’s go over the process of creating a [Page Builder section](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) which hides its contents from users who have not given consent for tracking. The code you develop will add an alternate version of the existing _Form column section_ included in [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides).
 ## Before you start
-The code samples here rely on the value of the [_CMSCookieLevel_ cookie](documentation/developers-and-admins/data-protection/cookies#cookie-levels), and assumes this has been properly mapped to consent in your application. 
-You can find an example of this in the [data protection series](guides/development/data-protection) of training guides.
+The code samples here rely on the value of the [_CMSCookieLevel_ cookie](/documentation/developers-and-admins/data-protection/cookies#cookie-levels), and assumes this has been properly mapped to consent in your application. 
+You can find an example of this in the [data protection series](/guides/development/data-protection) of training guides.
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the _Consents_ section of the [Data protection series](guides/development/data-protection) and the [Previous guides in the series](guides/development/activities-and-marketing).
+  * Have followed along with the samples from the _Consents_ section of the [Data protection series](/guides/development/data-protection) and the [Previous guides in the series](/guides/development/activities-and-marketing).
 
 
 **Code samples**
@@ -91,7 +97,7 @@ else
 
 ## Handle the view components
 ### Create a new view component
-[Earlier in this series](guides/development/activities-and-marketing/enable-activity-tracking), you saw how you can use the value of the _CMSCookieLevel_ cookie to determine whether the current visitor is trackable. Then, you created a method called `CurrentContactCanBeTracked` to determine whether or not Xperience should track the current user.
+[Earlier in this series](/guides/development/activities-and-marketing/enable-activity-tracking), you saw how you can use the value of the _CMSCookieLevel_ cookie to determine whether the current visitor is trackable. Then, you created a method called `CurrentContactCanBeTracked` to determine whether or not Xperience should track the current user.
 If you arrived directly at this example or did not code along earlier in the series, you can simply add this method to your cookie consent service:
 C#
 **CookieConsentService.cs**
@@ -240,11 +246,13 @@ You have implemented a layout and logic that displays or hides content on the we
   1. Run your project locally, sign in to the administration interface, and navigate to the **Training guides pages** channel.
   2. Click **Edit → Create new version** to edit the  _Contact-us_ page.
   3. Set Page Builder to use the _Form column: Consent-based_ section, then **Save** and **Publish** the web page.  
-[![Screenshot of consent-based form section](docsassets/guides/hide-builder-content-from-visitors-who-have-not-consented-to-tracking/consent-based-form-section.png)](https://docs.kentico.com/docsassets/guides/hide-builder-content-from-visitors-who-have-not-consented-to-tracking/consent-based-form-section.png)
+[![Screenshot of consent-based form section](/docsassets/guides/hide-builder-content-from-visitors-who-have-not-consented-to-tracking/consent-based-form-section.png)](/docsassets/guides/hide-builder-content-from-visitors-who-have-not-consented-to-tracking/consent-based-form-section.png)
   4. Now pretend that you are a visitor and navigate to your website in a browser’s incognito window. Visit the _Cookie policy_ page, set the cookie level to essential and then visit your _Contact us_ page. The section should not display.
   5. Go back to the _Cookie policy_ page, change your consent to _Marketing_ and revisit _Contact us_ page. If you’ve implemented the functionality properly, you’ll see the form displayed on the page.
 
 Your browser does not support the video tag. 
 Your site now includes a section with a powerful custom logic. Your website editors can use the new section to hide forms on the website from specific visitors. But they are not limited to just forms. They can hide any custom widgets which might lead to, for example, a GDPR compliance breach if displayed for all the visitors.
 ## What’s next
-The [next guide](guides/development/activities-and-marketing/implement-cross-site-activities) provides a simple example of implementing cross-site activities.
+The [next guide](/guides/development/activities-and-marketing/implement-cross-site-activities) provides a simple example of implementing cross-site activities.
+![]()
+[]()[]()

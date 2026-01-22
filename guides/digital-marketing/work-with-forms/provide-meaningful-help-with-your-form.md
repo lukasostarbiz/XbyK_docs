@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Provide meaningful help with your form 
+
+
 # Provide meaningful help with your form
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form#)
 Learn about the tools you can use to guide your visitors through your form to ensure it’s easy to fill in.
 Let’s add some hints to the form fields to make your forms more accessible and user-friendly.
   1. Go to the **Forms** application.
@@ -17,4 +23,6 @@ Let’s add some hints to the form fields to make your forms more accessible and
 
 Find out more why [placeholders in forms fields are harmful](https://www.nngroup.com/articles/form-design-placeholders/) in an article by [Nielsen Norman Group](https://www.nngroup.com/).
 ### Next step
-Set up [what happens after form submission](guides/digital-marketing/work-with-forms/set-what-happens-after-form-submission).
+Set up [what happens after form submission](/guides/digital-marketing/work-with-forms/set-what-happens-after-form-submission).
+![]()
+[]()[]()

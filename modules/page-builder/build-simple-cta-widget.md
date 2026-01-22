@@ -1,13 +1,15 @@
+---
+source: https://docs.kentico.com/modules/page-builder/build-simple-cta-widget
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+12 of 16 Pages
 # Build a simple call-to-action widget
-  * [ Copy page link ](modules/page-builder/build-simple-cta-widget#) | [Get HelpService ID](modules/page-builder/build-simple-cta-widget#)
-Core MVC 5
-
-
-[✖](modules/page-builder/build-simple-cta-widget# "Close page link panel") [Copy to clipboard](modules/page-builder/build-simple-cta-widget#)
-[Widgets](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) are Page Builder components of the smallest granularity. While [sections, discussed previously](modules/page-builder/implement-flexible-sections), serve primarily to change the page layout and appearance, widgets are a tool for your editors to display and style structured data or take input from the live site visitor.
-Next, let’s create a simple [widget based on a view component](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component) - a **Simple call to action (CTA) widget**.
-Editors can use the widget anywhere they need a stand-alone CTA button. For example, the “Contact us” or the “View downloads” button from the mockups we talked about in the [beginning of this Page Builder series](modules/page-builder/meet-requirements-with-page-builder):
-[![Mockup of a promotional page with Simple CTA widgets highlighted](docsassets/guides/build-simple-cta-widget/WidgetMockups2-simple-CTA.png)](https://docs.kentico.com/docsassets/guides/build-simple-cta-widget/WidgetMockups2-simple-CTA.png)
+[Widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder) are Page Builder components of the smallest granularity. While [sections, discussed previously](/modules/page-builder/implement-flexible-sections), serve primarily to change the page layout and appearance, widgets are a tool for your editors to display and style structured data or take input from the live site visitor.
+Next, let’s create a simple [widget based on a view component](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#widgets-based-on-a-view-component) - a **Simple call to action (CTA) widget**.
+Editors can use the widget anywhere they need a stand-alone CTA button. For example, the “Contact us” or the “View downloads” button from the mockups we talked about in the [beginning of this Page Builder series](/modules/page-builder/meet-requirements-with-page-builder):
+[![Mockup of a promotional page with Simple CTA widgets highlighted](/docsassets/guides/build-simple-cta-widget/WidgetMockups2-simple-CTA.png)](/docsassets/guides/build-simple-cta-widget/WidgetMockups2-simple-CTA.png)
 ## Understand the requirements
 Editor working with the Simple CTA widget should be able to:
   * set the call to action text (e.g., **Contact us**)
@@ -35,7 +37,7 @@ Start by preparing your folder structure:
 
 
 ### Define widget properties
-Based on our [specification](modules/page-builder/build-simple-cta-widget#understand-the-requirements), the Simple CTA button needs five configurable properties for the editor:
+Based on our [specification](/modules/page-builder/build-simple-cta-widget#understand-the-requirements), the Simple CTA button needs five configurable properties for the editor:
   1. **Call to action text** - a text field to enter the button text
   2. **Target content** - a selector for the editor to chose type of target (page or an external link)
   3. **Target page** - a selector, shown only if the editor choses to target page
@@ -43,7 +45,7 @@ Based on our [specification](modules/page-builder/build-simple-cta-widget#unders
   5. **Open in new tab** - a checkbox to open the target in the new tab
 
 
-To define the configurable properties, we will use the set of existing [Xperience admin UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
+To define the configurable properties, we will use the set of existing [Xperience admin UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components).
   1. First, create a _SimpleCallToActionWidgetProperties.cs_ file in your _SimpleCallToAction_ folder, to hold your property definitions. 
 Based on this file, Xperience will know how to render the UI controls in the administration interface.
   2. Define a `SimpleCallToActionWidgetProperties` class that extends `IWidgetProperties`. 
@@ -75,9 +77,9 @@ public class SimpleCallToActionWidgetProperties : IWidgetProperties
 
 
 
-Next, we will add the UI form components. To do this, you need to decorate each property with an attribute, based on what [component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) you wish to render. Let’s look at the properties one by one.
+Next, we will add the UI form components. To do this, you need to decorate each property with an attribute, based on what [component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) you wish to render. Let’s look at the properties one by one.
 #### Call to action text
-Use `TextInputComponent` attribute, to render a [text input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-input).
+Use `TextInputComponent` attribute, to render a [text input](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-input).
 C#
 Copy
 ```
@@ -97,12 +99,12 @@ Take a closer look at the parameters:
 Always aim to provide a meaningful label for your UI controls. Based on your use case, consider adding a concise and relevant explanation text as well.
 #### Target content
 Editors will use this property to decide the type of target: **page** or **absolute URL**.
-At the moment, you only need two types, but it is likely you will have to add more options over time (e.g., asset). Choosing a [dropdown selector component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) for this property ensures you can expand the options later, without changing the UI.
-Another advantage of a dropdown component is that it supports dynamic options mapping, as described [earlier in this series](modules/page-builder/map-enum-to-dropdown).
+At the moment, you only need two types, but it is likely you will have to add more options over time (e.g., asset). Choosing a [dropdown selector component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) for this property ensures you can expand the options later, without changing the UI.
+Another advantage of a dropdown component is that it supports dynamic options mapping, as described [earlier in this series](/modules/page-builder/map-enum-to-dropdown).
   1. Decorate the **TargetContent** property with the `DropDownComponent` attribute.
   2. Set `Label`, `ExplanationText` and `Order`.
   3. Fill the dropdown with data.
-In this guide, we are using the `DropdownEnumOptionProvider` from [earlier in this series](modules/page-builder/map-enum-to-dropdown), which is the recommended way.
+In this guide, we are using the `DropdownEnumOptionProvider` from [earlier in this series](/modules/page-builder/map-enum-to-dropdown), which is the recommended way.
 Alternatively, you can skip sub-steps _a._ through _c._ and assign dropdown options as a string instead: `Options = "Page;Page\r\nAbsoluteUrl;Absolute URL"`
     1. Define a new enumeration in the _SimpleCallToActionWidgetProperties.cs_ file, underneath the `SimpleCallToActionWidgetProperties` class:
 C#
@@ -140,10 +142,10 @@ public string TargetContent { get; set; } = nameof(TargetContentOption.Page);
 
 
 #### Target page
-  1. Use a [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) for **Target page**.
+  1. Use a [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) for **Target page**.
   2. Specify the content type names of page types you want to allow.
   3. Set `MaximumItems = 1` to allow editor only pick **one page at the time**.
-  4. Add a [visibility condition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) (`VisibleIfEqualTo`) to ensure, that **Target page** property only renders if the editor set the **Target content** to `TargetContentOption.Page`.
+  4. Add a [visibility condition](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) (`VisibleIfEqualTo`) to ensure, that **Target page** property only renders if the editor set the **Target content** to `TargetContentOption.Page`.
 
 
 C#
@@ -167,8 +169,8 @@ public IEnumerable<ContentItemReference> TargetContentPage { get; set; } = [];
 ```
 
 #### Absolute URL
-  1. Like the **Call to action text** above, make the **Absolute URL** property a [text input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-input).
-  2. Add a `VisibleIfEqualTo` [visibility condition](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to only show the field if the editor sets the **Target content** to `TargetContentOption.AbsoluteUrl`.
+  1. Like the **Call to action text** above, make the **Absolute URL** property a [text input](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-input).
+  2. Add a `VisibleIfEqualTo` [visibility condition](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to only show the field if the editor sets the **Target content** to `TargetContentOption.AbsoluteUrl`.
 
 
 C#
@@ -183,7 +185,7 @@ public string TargetContentAbsoluteUrl { get; set; } = string.Empty;
 ```
 
 #### Open in new tab
-Our last property is a [checkbox component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) with a `bool` value. Set its default value to unchecked (`false`). This way, unless the editor changes it, the target will open in the same browser tab.
+Our last property is a [checkbox component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) with a `bool` value. Set its default value to unchecked (`false`). This way, unless the editor changes it, the target will open in the same browser tab.
 C#
 Copy
 ```
@@ -262,7 +264,7 @@ public enum TargetContentOption
 
 ### Implement widget component
 The next step is to define the behavior and visual design of the widget. Let’s implement widget view model, view and view component.
-[![Simple CTA button component](docsassets/guides/build-simple-cta-widget/simple-cta-component.png)](https://docs.kentico.com/docsassets/guides/build-simple-cta-widget/simple-cta-component.png)
+[![Simple CTA button component](/docsassets/guides/build-simple-cta-widget/simple-cta-component.png)](/docsassets/guides/build-simple-cta-widget/simple-cta-component.png)
 #### Create view model
   1. Create a new `SimpleCallToActionWidgetViewModel` class in your _SimpleCallToAction_ folder.
   2. From the UI perspective, the widget needs only three properties: 
@@ -289,7 +291,7 @@ Notice that the view model properties don’t exactly mirror the widget properti
 For example, in our case, there is no need for two separate properties for a page and an external link in the view model. The button only needs a target URL to navigate to.
 #### Create view
   1. Add new view file, called _SimpleCallToActionWidget.cshtml_ , in your _SimpleCallToAction_ folder.
-  2. Set your [`SimpleCallToActionWidgetViewModel`](modules/page-builder/build-simple-cta-widget#create-view-model) as the `model`.
+  2. Set your [`SimpleCallToActionWidgetViewModel`](/modules/page-builder/build-simple-cta-widget#create-view-model) as the `model`.
 cshtml
 **SimpleCallToActionWidget.cshtml**
 Copy
@@ -381,8 +383,8 @@ Copy
   2. Create a class with the same name that extends the .NET `ViewComponent` class.
   3. Create an `InvokeAsync` method that 
      * takes `SimpleCallToActionWidgetProperties` as a parameter
-     * creates an instance of [your view model](modules/page-builder/build-simple-cta-widget#create-view-model) and fills it with data, based on the values in `properties`
-     * returns [your widget view](modules/page-builder/build-simple-cta-widget#create-view) and passes in the model
+     * creates an instance of [your view model](/modules/page-builder/build-simple-cta-widget#create-view-model) and fills it with data, based on the values in `properties`
+     * returns [your widget view](/modules/page-builder/build-simple-cta-widget#create-view) and passes in the model
 C#
 **SimpleCallToActionWidgetViewComponent.cs**
 Copy
@@ -448,13 +450,13 @@ public class SimpleCallToActionWidgetViewComponent : ViewComponent
 ```
 
 Notice the `GetWebPageUrl` method above.
-When an editor selects a page using the [combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector), the value comes to the view component as a `ContentItemReference` object. Because the object doesn’t contain the page URL, we retrieve the page content item using the `RetrieveWebPageByContentItemGuid` method of our existing [ContentItemRetrieverService](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs).
-The method’s implementation uses the [`IPreferredLanguageRetriever`](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language) to ensure the content item data is accurate for the [current site language](guides/development/multilingual/display-your-website-content-in-multiple-languages).
+When an editor selects a page using the [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector), the value comes to the view component as a `ContentItemReference` object. Because the object doesn’t contain the page URL, we retrieve the page content item using the `RetrieveWebPageByContentItemGuid` method of our existing [ContentItemRetrieverService](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/main/src/TrainingGuides.Web/Features/Shared/Services/ContentItemRetrieverService.cs).
+The method’s implementation uses the [`IPreferredLanguageRetriever`](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#access-current-preferred-language) to ensure the content item data is accurate for the [current site language](/guides/development/multilingual/display-your-website-content-in-multiple-languages).
 Once we have the page, we can simply call its `GetUrl` extension method.
 
 
 ## Register the widget
-The last piece of the puzzle is to [register your new widget](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#register-widgets) so the Xperience recognizes it.
+The last piece of the puzzle is to [register your new widget](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#register-widgets) so the Xperience recognizes it.
   1. First, your widget needs an identifier. Add is as a constant in your `SimpleCallToActionWidgetViewComponent` class:
 C#
 **SimpleCallToActionWidgetViewComponent.cs**
@@ -503,7 +505,7 @@ RegisterWidget(
 
 ```
 
-See more information and individual parameters explanation in [our documentation page about widget registration](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#register-widgets).
+See more information and individual parameters explanation in [our documentation page about widget registration](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder#register-widgets).
 Place your registration at the top of your _SimpleCallToActionWidgetViewComponent.cs_ file, after the `using` statements.
 Your full _SimpleCallToActionWidgetViewComponent.cs_ file should look like this:
 C#
@@ -576,7 +578,7 @@ public class SimpleCallToActionWidgetViewComponent : ViewComponent
 
 
 ### Expose the widget identifier for future reference
-There will be cases in your project when you need to reference the widget by its identifier. For example, when restricting widgets allowed in a particular [widget zone](documentation/developers-and-admins/development/reference-tag-helpers#widget-zone).
+There will be cases in your project when you need to reference the widget by its identifier. For example, when restricting widgets allowed in a particular [widget zone](/documentation/developers-and-admins/development/reference-tag-helpers#widget-zone).
 For this purpose we recommend storing references to all your widgets in one place. In our _TrainingGuides.Web_ project, we keep all Widget identifiers as constants inside a static class called `ComponentIdentifiers`.
   1. Navigate to _ComponentIdentifiers.cs_ file in the root of the _TrainingGuides.Web_ project.
   2. Locate the `Widgets` class inside the `ComponentIdentifiers` class.
@@ -604,7 +606,7 @@ public static class ComponentIdentifiers
 
 
 Now you can reference Simple call to action widget anywhere in your project as `ComponentIdentifiers.Widgets.SIMPLE_CALL_TO_ACTION`.
-For example, if you followed [the flexible section example from earlier in this series](modules/page-builder/implement-flexible-sections#create-a-section-view), you can pass something like this into the `editable-area-options` in the view:
+For example, if you followed [the flexible section example from earlier in this series](/modules/page-builder/implement-flexible-sections#create-a-section-view), you can pass something like this into the `editable-area-options` in the view:
 cshtml
 Copy
 ```
@@ -617,18 +619,10 @@ Copy
 ## See the button in action
 Now that the work is done, it’s time to build your project and enjoy the fruits of your labor. If your implementation is correct and complete, you should be able to sign in to the administration interface and add a Simple CTA button to the Home page, as you can see in this video.
 Your browser does not support the video tag. 
-If you are not seeing your widget as an option, double-check [your widget registration](modules/page-builder/build-simple-cta-widget#register-the-widget) is correct.
+If you are not seeing your widget as an option, double-check [your widget registration](/modules/page-builder/build-simple-cta-widget#register-the-widget) is correct.
 If you are getting an error after adding the widget, see the **Event log** under **Development** in menu on the left for more information.
-[ Previous page ](modules/page-builder/implement-flexible-sections)
+[ Previous page ](/modules/page-builder/implement-flexible-sections)
 12 of 16
-[ Mark complete and continue ](modules/page-builder/set-up-advanced-widget)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/build-simple-cta-widget)
-[](https://docs.kentico.com/modules/page-builder/build-simple-cta-widget)[](https://docs.kentico.com/modules/page-builder/build-simple-cta-widget)
+[ Mark complete and continue ](/modules/page-builder/set-up-advanced-widget)
+![]()
+[]()[]()

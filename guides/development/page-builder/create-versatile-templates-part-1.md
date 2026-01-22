@@ -1,20 +1,26 @@
+---
+source: https://docs.kentico.com/guides/development/page-builder/create-versatile-templates-part-1
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Page Builder](/guides/development/page-builder)
+  * Create versatile page templates, part 1 
+
+
 # Create versatile page templates, part 1
-  * Tutorial| [ Copy page link ](guides/development/page-builder/create-versatile-templates-part-1#) | [Get HelpService ID](guides/development/page-builder/create-versatile-templates-part-1#)
-Core MVC 5
-
-
-[✖](guides/development/page-builder/create-versatile-templates-part-1# "Close page link panel") [Copy to clipboard](guides/development/page-builder/create-versatile-templates-part-1#)
 In this guide, we’ll walk through the process of creating a page template to match this product detail mockup:
-[![Mockup of a product detail page](docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
-See the [first guide in this series](guides/development/page-builder/meet-requirements-with-page-builder) for an overview of the mockup, and a breakdown of how to meet business requirements with [Page Builder](documentation/developers-and-admins/development/builders/page-builder).
+[![Mockup of a product detail page](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
+See the [first guide in this series](/guides/development/page-builder/meet-requirements-with-page-builder) for an overview of the mockup, and a breakdown of how to meet business requirements with [Page Builder](/documentation/developers-and-admins/development/builders/page-builder).
 ## Prerequisites
 This guide uses the [main branch of the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides) as a starting point.
-It relies on the dropdown provider from the [previous guide](guides/development/page-builder/map-enum-to-dropdown).
+It relies on the dropdown provider from the [previous guide](/guides/development/page-builder/map-enum-to-dropdown).
 If you’re following along while working in a different environment, make sure:
-  * Your instance of Xperience by Kentico is version [30.11.1](documentation/changelog) or higher. 
+  * Your instance of Xperience by Kentico is version [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
   * Your site has _Product_ , _ProductPage_ , _ProductFeature_ , and _Benefit_ content types that match the structure of those in the repository.
-  * [Page Builder is enabled](guides/development/developer-kickstart/configure-the-project#enable-content-tree-based-routing-and-page-builder) for the _Product page_ content type during the application’s startup sequence.
+  * [Page Builder is enabled](/guides/development/developer-kickstart/configure-the-project#enable-content-tree-based-routing-and-page-builder) for the _Product page_ content type during the application’s startup sequence.
 
 
 This guide will take place in the _TrainingGuides.Web_ project of the repository, so assume any folder paths start from the root of this project.
@@ -86,7 +92,7 @@ private static ProductFeatureValueType GetValueType(string value)
 ```
 
   5. Add a static `GetViewModel` method to create and populate a `ProductFeatureViewModel` based on a `ProductFeature` object. 
-`ProductFeature` is a generated class, created by the Xperience [code generation tool](documentation/developers-and-admins/api/generate-code-files-for-system-objects). 
+`ProductFeature` is a generated class, created by the Xperience [code generation tool](/documentation/developers-and-admins/api/generate-code-files-for-system-objects). 
 C#
 **ProductFeatureViewModel.cs**
 Copy
@@ -412,7 +418,7 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 
 ### Define page template properties
 Now that we have view models to determine the product template’s data, let’s add properties, so that editors can configure its appearance.
-The properties will utilize dropdowns fed by the dropdown provider we created [earlier in this series](guides/development/page-builder/map-enum-to-dropdown), so start by defining enumerations for different color scheme and corner style options.
+The properties will utilize dropdowns fed by the dropdown provider we created [earlier in this series](/guides/development/page-builder/map-enum-to-dropdown), so start by defining enumerations for different color scheme and corner style options.
 Decorate options with the `Description` attribute to provide user-friendly names.
   * In the _~/Features/Shared/OptionProviders/ColorScheme_ directory:
 C#
@@ -507,11 +513,11 @@ public class ProductPagePageTemplateProperties : IPageTemplateProperties
 ### Set up the template
 With the view models and service in place, we can create the page template, register it, and serve it from a controller.
 **Find more details here**
-This section briefly goes over processes covered in [Build a page template](guides/development/developer-kickstart/build-a-page-template) step of our Kickstart series. Please refer to it if you’d like more detailed steps and information in the context of a different example.
+This section briefly goes over processes covered in [Build a page template](/guides/development/developer-kickstart/build-a-page-template) step of our Kickstart series. Please refer to it if you’d like more detailed steps and information in the context of a different example.
 Note these sections in particular:
-  * [Add the page template view](guides/development/developer-kickstart/build-a-page-template#add-the-page-template-view)
-  * [Register the page template](guides/development/developer-kickstart/build-a-page-template#register-the-page-template)
-  * [Define a page template controller](guides/development/developer-kickstart/build-a-page-template#define-a-page-template-controller)
+  * [Add the page template view](/guides/development/developer-kickstart/build-a-page-template#add-the-page-template-view)
+  * [Register the page template](/guides/development/developer-kickstart/build-a-page-template#register-the-page-template)
+  * [Define a page template controller](/guides/development/developer-kickstart/build-a-page-template#define-a-page-template-controller)
 
 
 #### Define the view
@@ -570,7 +576,7 @@ public static class ProductPagePageTemplate
 #### Create the controller
   1. In the _~/Features/Products_ folder, add a file called _ProductPageController_.
   2. Use an `IContentItemRetrieverService` to get the product data from Xperience.
-  3. Use an instance of the `IProductPageService` we defined [earlier](guides/development/page-builder/create-versatile-templates-part-1#add-a-supporting-service) to convert the `ProductPage` to a `ProductPageViewModel`.
+  3. Use an instance of the `IProductPageService` we defined [earlier](#add-a-supporting-service) to convert the `ProductPage` to a `ProductPageViewModel`.
   4. Add a new `ProductFeatureViewModel` containing the product’s price, so that it appears in the table.
 
 
@@ -670,7 +676,7 @@ ColorSchemeOption GetColorScheme(string colorSchemeString);
 }
 ```
 
-  4. Implement the interface, mapping the selected options to sets of CSS classes. Use the `Parse` method from the `EnumStringService` we defined [earlier in the series](guides/development/page-builder/map-enum-to-dropdown) for the string conversion methods. 
+  4. Implement the interface, mapping the selected options to sets of CSS classes. Use the `Parse` method from the `EnumStringService` we defined [earlier in the series](/guides/development/page-builder/map-enum-to-dropdown) for the string conversion methods. 
 C#
 **ComponentStyleEnumService.cs**
 Copy
@@ -892,7 +898,7 @@ Copy
 
 If you sign in to the Xperience administration interface, you’ll notice that you can now adjust the appearance of the box containing the product’s data by clicking the gear icon in the bottom left of the _Page Builder_ pane.
 However, if you set the template to use rounded corners and a colored background, you’ll see that the corners of the image do not change to match the style of the parent div. The image may also be an unreasonable size, depending on the file.
-[![Screenshot of incomplete template with rounded corners set. Also showing the Configure template button.](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)
+[![Screenshot of incomplete template with rounded corners set. Also showing the Configure template button.](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)
 ### Create an image tag helper
   1. In the _~/Features/Shared/Helpers/TagHelpers_ folder, add a new self-closing TagHelper called `StyledImageTagHelper` with the tag name `tg-styled-image`. 
 C#
@@ -1022,7 +1028,7 @@ Copy
 
 ## Complete the template
 Comparing the current template to the mockup from the start of this series, you’ll notice that the Product features table is missing.
-[![Mockup of a product detail page](docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
+[![Mockup of a product detail page](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)](/docsassets/guides/create-versatile-templates-part-1/WidgetMockups3.png)
 Its data is already in the template model, so it should be fairly straightforward to render to the page.
 However, if you inspect the _ProductFeature_ content type, you may notice that its value can come from multiple different places depending on the selected _ProductFeatureValueType_.
 Let’s make one last tag helper, so that we don’t need to clutter the view with conditionals.
@@ -1102,7 +1108,7 @@ Copy
 
 ### Finish styling the template.
 Now if you run the site, you’ll see all the data, but it’s still not formatted in a way that matches the mockup.
-[![Screenshot of unfinished template](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)
+[![Screenshot of unfinished template](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress2.jpg)
 Add CSS styles and any necessary elements to make the template more visually appealing.
 cshtml
 **ProductPagePageTemplate.cshtml**
@@ -1150,9 +1156,13 @@ Copy
 ```
 
 At the end of it all, you should be able to achieve this by configuring your template.
-[![Screenshot of unfinished, but nicely formatted template](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)
+[![Screenshot of unfinished, but nicely formatted template](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress3.jpg)
 ## What’s next?
-[Part 2 of the _Create versatile templates_ guide](guides/development/page-builder/create-versatile-templates-part-2) covers the process of adding toggleable _Page Builder_ functionality to this template, so that your editors can customize its content in special cases.
+[Part 2 of the _Create versatile templates_ guide](/guides/development/page-builder/create-versatile-templates-part-2) covers the process of adding toggleable _Page Builder_ functionality to this template, so that your editors can customize its content in special cases.
 If you started in this guide, we recommend circling back to check out these guides form earlier in the series:
-  * [Meet business requirements with Page Builder](guides/development/page-builder/meet-requirements-with-page-builder), a guide that analyzes how and when to apply Page Builder to business scenarios
-  * [Add a custom dropdown provider for administration components](guides/development/page-builder/map-enum-to-dropdown), a guide that demonstrates the process of creating custom providers that provide options to dropdown menus in Page Builder component properties.
+  * [Meet business requirements with Page Builder](/guides/development/page-builder/meet-requirements-with-page-builder), a guide that analyzes how and when to apply Page Builder to business scenarios
+  * [Add a custom dropdown provider for administration components](/guides/development/page-builder/map-enum-to-dropdown), a guide that demonstrates the process of creating custom providers that provide options to dropdown menus in Page Builder component properties.
+
+
+![]()
+[]()[]()

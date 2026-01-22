@@ -1,45 +1,51 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/data-protection/personal-data-collection
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
+  * Personal data collection 
+
+
 # Personal data collection
-  * [ Copy page link ](documentation/developers-and-admins/data-protection/personal-data-collection#) | [Get HelpService ID](documentation/developers-and-admins/data-protection/personal-data-collection#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/data-protection/personal-data-collection# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/data-protection/personal-data-collection#)
-To comply with the requirements of personal data regulations, such as the [GDPR](documentation/developers-and-admins/data-protection/gdpr-compliance), you need to provide a way for administrators (data protection officers) to collect personal data stored within the system. This is necessary to resolve personal data queries from data subjects, and requests to transfer personal data to another system or application.
+To comply with the requirements of personal data regulations, such as the [GDPR](/documentation/developers-and-admins/data-protection/gdpr-compliance), you need to provide a way for administrators (data protection officers) to collect personal data stored within the system. This is necessary to resolve personal data queries from data subjects, and requests to transfer personal data to another system or application.
 Xperience does not provide any personal data collection functionality by default. This requires exact knowledge of how your project gathers, processes and stores personal data. You need to implement the data collection based on the specifics of your project and the nature of the legal requirements that you wish to fulfill.
 Use the following process to develop the personal data collection:
 The interfaces, registers and other related classes that you need to implement personal data collection are available in the `CMS.DataProtection` namespace of the Xperience API.
   1. Open your Xperience solution in Visual Studio.
-  2. [Add a custom assembly](documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) to your solution or re-use an existing one.
+  2. [Add a custom assembly](/documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) to your solution or re-use an existing one.
   3. Create custom classes that implement collector interfaces:
-     * [Identity collectors](documentation/developers-and-admins/data-protection/personal-data-collection#identity-collectors) – map real-world identifiers, such as email addresses or names, to corresponding Xperience objects that represent data subjects.
-     * [Data collectors](documentation/developers-and-admins/data-protection/personal-data-collection#data-collectors) – process the objects added by identity collectors, retrieve related personal data, and format the results into a string containing either human-readable text or machine-readable data (such as JSON or XML).
-  4. Register your collector implementations [on application startup](documentation/developers-and-admins/customization/run-code-on-application-startup). Place the code within a module’s `OnInit` method.
+     * [Identity collectors](#identity-collectors) – map real-world identifiers, such as email addresses or names, to corresponding Xperience objects that represent data subjects.
+     * [Data collectors](#data-collectors) – process the objects added by identity collectors, retrieve related personal data, and format the results into a string containing either human-readable text or machine-readable data (such as JSON or XML).
+  4. Register your collector implementations [on application startup](/documentation/developers-and-admins/customization/run-code-on-application-startup). Place the code within a module’s `OnInit` method.
      * You can register any number of collectors.
      * To register identity collectors, call the `IdentityCollectorRegister.Instance.Add` method. The registration order is significant – the identities added by a collector can be accessed by identity collectors that are registered after.
      * To register data collectors, call the `PersonalDataCollectorRegister.Instance.Add` method.
 
 
-The registered collectors allow users to search for personal data in the **Data protection** application. To give users the option to delete the collected data from the system (or specific parts of it), you also need to implement erasure functionality – see [Personal data erasure](documentation/developers-and-admins/data-protection/personal-data-erasure).
+The registered collectors allow users to search for personal data in the **Data protection** application. To give users the option to delete the collected data from the system (or specific parts of it), you also need to implement erasure functionality – see [Personal data erasure](/documentation/developers-and-admins/data-protection/personal-data-erasure).
 ## Identity collectors
-When searching for personal data in the **Data protection** application, users submit real-world identifiers of data subjects (email addresses). To collect personal data, you first need to create _Identity collectors_ that convert these identifiers into Xperience objects representing matching data subjects, such as [users](documentation/developers-and-admins/configuration/users/user-management) (_UserInfo_) or [contacts](documentation/business-users/digital-marketing/contact-management) (_ContactInfo_).
+When searching for personal data in the **Data protection** application, users submit real-world identifiers of data subjects (email addresses). To collect personal data, you first need to create _Identity collectors_ that convert these identifiers into Xperience objects representing matching data subjects, such as [users](/documentation/developers-and-admins/configuration/users/user-management) (_UserInfo_) or [contacts](/documentation/business-users/digital-marketing/contact-management) (_ContactInfo_).
 Identity collectors are classes that implement the `IIdentityCollector` interface. Every implementation must contain the `Collect` method, which processes the following parameters:
   * `IDictionary<string, object>` – a dictionary holding the submitted identifiers and other filtering parameters. The identifier input provides an email address value, which is available under the `email` key.
   * `List<BaseInfo>` – a list of Xperience objects representing data subjects. Contains all objects added by previously registered `IIdentityCollector` implementations.
 
 
 To create your own `IIdentityCollector` implementations:
-  1. Use the [ObjectQuery API](documentation/developers-and-admins/api/objectquery-api) to load Xperience objects (instances of _Info_ classes) that match the submitted identifier values (available in the `Collect` method’s first parameter).
+  1. Use the [ObjectQuery API](/documentation/developers-and-admins/api/objectquery-api) to load Xperience objects (instances of _Info_ classes) that match the submitted identifier values (available in the `Collect` method’s first parameter).
   2. Add the retrieved objects to the list of identity objects (the `Collect` method’s second parameter).
 
 
-See the [Example – Contact data collectors](documentation/developers-and-admins/data-protection/personal-data-collection#example-contact-data-collectors) section to view a code example.
+See the [Example – Contact data collectors](#example-contact-data-collectors) section to view a code example.
 The data of the objects retrieved by identity collectors needs to be processed into suitable text by data collectors.
 ## Data collectors
-After you implement [Identity collectors](documentation/developers-and-admins/data-protection/personal-data-collection#identity-collectors), you need to create _Data collectors_. These collectors retrieve personal data related to the identity objects provided by the registered identity collectors, and process the results into a suitable format. We recommend creating separate data collectors for different object types, depending on the types of personal data that you process in your project.
+After you implement [Identity collectors](#identity-collectors), you need to create _Data collectors_. These collectors retrieve personal data related to the identity objects provided by the registered identity collectors, and process the results into a suitable format. We recommend creating separate data collectors for different object types, depending on the types of personal data that you process in your project.
 Data collectors are classes that implement the `IPersonalDataCollector` interface. Every implementation must contain the `Collect` method.
   * The method’s `IEnumerable<BaseInfo>` parameter provides the identity objects added by your `IIdentityCollector` implementations. You can convert the `BaseInfo` objects to specific types, such as `UserInfo`, `ContactInfo`, etc.
   * The method’s second parameter is a string that specifies the requested output format. By default, the following fixed values are used for the output format:
-    * `machine` – when searching for data on the _Data portability_ tab of the _Data protection_ application. The value is available in the API under the `PersonalDataFormat.MACHINE_READABLE` constant. By default, the system assumes that machine-readable data is in XML format and adds a `<PersonalData>` root tag around the final output. To return data in another format, such as [JSON](http://www.json.org/) , you need to [Customize the data output](documentation/developers-and-admins/data-protection/personal-data-collection#customize-the-data-output) .
+    * `machine` – when searching for data on the _Data portability_ tab of the _Data protection_ application. The value is available in the API under the `PersonalDataFormat.MACHINE_READABLE` constant. By default, the system assumes that machine-readable data is in XML format and adds a `<PersonalData>` root tag around the final output. To return data in another format, such as [JSON](http://www.json.org/) , you need to [Customize the data output](#customize-the-data-output) .
     * `human` – when searching for data on the _Right to access_ and _Right to be forgotten_ tabs in the _Data protection_ application. The value is available in the API under the `PersonalDataFormat.HUMAN_READABLE` constant.
 
 
@@ -51,7 +57,7 @@ You may also need to define transformation functions that convert internally sto
   3. Return a `PersonalDataCollectorResult` object in the `Collect` method, with the resulting personal data string assigned into the `Text` property.
 
 
-See the [Example – Contact data collectors](documentation/developers-and-admins/data-protection/personal-data-collection#example-contact-data-collectors) section to view a code example.
+See the [Example – Contact data collectors](#example-contact-data-collectors) section to view a code example.
 The text provided by registered data collectors is displayed when searching for personal data in the **Data protection** application.
 ### Customize the data output
 By default, the overall data returned by the collection process is composed according to the registration order of your data collectors (starting from the first to the last). Additionally, the system assumes that machine-readable data is in XML format and adds a `<PersonalData>` root tag around the final output of all data collectors.
@@ -62,7 +68,7 @@ If your data collectors return machine-readable data in another format, such as 
      * The method’s `IEnumerable<string>` parameter provides a collection of personal data strings added by your registered `IPersonalDataCollector` implementations.
      * The method’s second parameter is a string that specifies the requested output format.
      * Compose the final data output according to your custom requirements and return it as a string.
-  4. [Register](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers) your helper class implementation using the `RegisterCustomHelper` assembly attribute.
+  4. [Register](/documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers) your helper class implementation using the `RegisterCustomHelper` assembly attribute.
 
 
 C#
@@ -118,14 +124,14 @@ public class CustomPersonalDataHelper : PersonalDataHelper
 
 The system now uses your custom data joining implementation when displaying results in the **Data protection** application.
 ## Example – Contact data collectors
-The following example demonstrates how to implement personal data collection for basic [contact](documentation/business-users/digital-marketing/contact-management) data. The sample collectors work with the email address identifier that users can submit in the **Data protection** application, and produce personal data output in plain text or XML format.
-This example only shows the basic implementation concepts and collects a very limited set of personal data. You can find more extensive code examples in the Dancing Goat sample site. [Install](documentation/developers-and-admins/installation) the Dancing Goat project and view the files in the **DataProtectionSamples** folder.
+The following example demonstrates how to implement personal data collection for basic [contact](/documentation/business-users/digital-marketing/contact-management) data. The sample collectors work with the email address identifier that users can submit in the **Data protection** application, and produce personal data output in plain text or XML format.
+This example only shows the basic implementation concepts and collects a very limited set of personal data. You can find more extensive code examples in the Dancing Goat sample site. [Install](/documentation/developers-and-admins/installation) the Dancing Goat project and view the files in the **DataProtectionSamples** folder.
 Keep in mind that you always need to adjust your own implementation based on the personal data processing used by your project and the legal requirements that you wish to fulfill.
-Start by [adding a custom assembly](documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) with discovery enabled to your solution. Add your collector implementations and other related classes under the custom project.
-  * [Create the identity collector](documentation/developers-and-admins/data-protection/personal-data-collection#create-the-identity-collector)
-  * [Implement writer classes](documentation/developers-and-admins/data-protection/personal-data-collection#implement-writer-classes)
-  * [Create the data collector](documentation/developers-and-admins/data-protection/personal-data-collection#create-the-data-collector)
-  * [Register the collectors](documentation/developers-and-admins/data-protection/personal-data-collection#register-the-collectors)
+Start by [adding a custom assembly](/documentation/developers-and-admins/customization/integrate-custom-code) (_Class Library_ project) with discovery enabled to your solution. Add your collector implementations and other related classes under the custom project.
+  * [Create the identity collector](#create-the-identity-collector)
+  * [Implement writer classes](#implement-writer-classes)
+  * [Create the data collector](#create-the-data-collector)
+  * [Register the collectors](#register-the-collectors)
 
 
 ### Create the identity collector
@@ -438,7 +444,7 @@ public class ContactDataCollector : IPersonalDataCollector
 
 The sample data collector processes the contact objects provided by the identity collector, and then uses the writer classes to create personal data text in the requested output format.
 ### Register the collectors
-To register the identity and data collectors, run the required initialization code [on application startup](documentation/developers-and-admins/customization/run-code-on-application-startup):
+To register the identity and data collectors, run the required initialization code [on application startup](/documentation/developers-and-admins/customization/run-code-on-application-startup):
 C#
 Copy
 ```
@@ -473,4 +479,6 @@ internal class CustomDataProtectionModule : Module
 
 Save all changes and **Rebuild** the custom project.
 You can now search for the email addresses of contacts on the **Data portability** and **Right to access** tabs in the **Data protection** application. If matching contacts exist in the system, the registered collectors return their data in XML or plain text format.
-[![Search for contact personal data in the Data protection application](docsassets/documentation/personal-data-collection/personal_data_search.png)](https://docs.kentico.com/docsassets/documentation/personal-data-collection/personal_data_search.png)
+[![Search for contact personal data in the Data protection application](/docsassets/documentation/personal-data-collection/personal_data_search.png)](/docsassets/documentation/personal-data-collection/personal_data_search.png)
+![]()
+[]()[]()

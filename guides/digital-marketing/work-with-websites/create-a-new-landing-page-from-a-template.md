@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with websites](/guides/digital-marketing/work-with-websites)
+  * Create a new landing page from a template 
+
+
 # Create a new landing page from a template
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template#) | [Get HelpService ID](guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template#) | This page is part of a module: [ Work with website content ](modules/work-with-website-content)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template#)
 See how to create a page using a preset page template. We’ll use a campaign Landing page template as an example.
 Your company wants you to prepare a new landing page to promote small personal loans. Use the _Landing page_ template to create the page quickly. In this exercise, you’ll create a landing page from a template and fill in prepared widgets.
 ## Prepare the landing page
@@ -61,3 +67,5 @@ Your company wants you to prepare a new landing page to promote small personal l
 
 
 **Save** the page. You can see the final page in the **Preview** tab. If you are satisfied with what the page looks like, **Publish** the page.
+![]()
+[]()[]()

@@ -1,14 +1,19 @@
+---
+source: https://docs.kentico.com/api/configuration/email-queue
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Email queue 
+
+
 # Email queue
-  * [ Copy page link ](api/configuration/email-queue#) | [Get HelpService ID](api/configuration/email-queue#)
-Core MVC 5
-
-
-[✖](api/configuration/email-queue# "Close page link panel") [Copy to clipboard](api/configuration/email-queue#)
   
 List of examples:
-  * [Dependency injection](api/configuration/email-queue#dependency-injection)
-    * [Initialize required services](api/configuration/email-queue#initialize-required-services)
-    * [Send emails](api/configuration/email-queue#send-emails)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+    * [Send emails](#send-emails)
 
 
 ## Dependency injection
@@ -26,7 +31,7 @@ public EmailQueueServices(IEmailService emailService)
 }
 ```
 
-[> Back to list of examples](api/configuration/email-queue#toc)
+[> Back to list of examples](#toc)
 ### Send emails
 C#
 Copy
@@ -58,4 +63,6 @@ EmailMessage msg = new EmailMessage()
 emailService.SendEmail(msg);
 ```
 
-[> Back to list of examples](api/configuration/email-queue#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

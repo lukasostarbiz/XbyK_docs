@@ -1,26 +1,32 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/data-protection/cookies
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
+  * Cookies 
+
+
 # Cookies
-  * [ Copy page link ](documentation/developers-and-admins/data-protection/cookies#) | [Get HelpService ID](documentation/developers-and-admins/data-protection/cookies#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/data-protection/cookies# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/data-protection/cookies#)
 A cookie is a small piece of data that a website asks your browser to store on your computer or mobile device. The cookie allows the website to “remember” your past actions or preferences.
-Xperience provides an extensible framework, built around [cookie levels](documentation/developers-and-admins/data-protection/cookies#cookie-levels), for manipulating cookies – from assigning specific levels of allowed cookies to users and contacts, to [registering custom cookies](documentation/developers-and-admins/data-protection/cookies#register-custom-cookies) and their corresponding cookie levels.
+Xperience provides an extensible framework, built around [cookie levels](#cookie-levels), for manipulating cookies – from assigning specific levels of allowed cookies to users and contacts, to [registering custom cookies](#register-custom-cookies) and their corresponding cookie levels.
 ## Set the default cookie level
 A website channel’s default cookie level determines which cookies the system stores in the browsers of visitors by default. To set the default cookie level:
   1. Open **Channel management** application in Xperience.
   2. Select a website channel.
   3. Open the **Channel settings** tab.
   4. In the **Cookies** section, choose a **Default cookie level**. 
-     * For an overview of individual cookie levels, see [Cookie levels](documentation/developers-and-admins/data-protection/cookies#cookie-levels).
+     * For an overview of individual cookie levels, see [Cookie levels](#cookie-levels).
   5. Select **Save**.
 
 
 The system now uses the selected cookie level when evaluating which cookies should be stored.
-Developers can add functionality to your website to allow visitors to give consent with tracking and increase their cookie level above the default. See [Enable users to select a preferred cookie level](documentation/developers-and-admins/data-protection/cookies#enable-users-to-select-a-preferred-cookie-level).
+Developers can add functionality to your website to allow visitors to give consent with tracking and increase their cookie level above the default. See [Enable users to select a preferred cookie level](#enable-users-to-select-a-preferred-cookie-level).
 **_All cookies_ level required for Digital marketing features to work correctly in Xperience**
-Xperience [Digital marketing features](documentation/business-users/digital-marketing) only work fully for visitors who have their cookie level set to **All** cookies.
-For example, the system does not track [contacts](documentation/business-users/digital-marketing/contact-management) for visitors whose allowed cookie level is only _System_ or _Essential_. Contacts may still be created in certain cases for visitors without the required cookie level – for example, if they submit data through a form – but such contacts only store the provided data and do not track the visitor.
+Xperience [Digital marketing features](/documentation/business-users/digital-marketing) only work fully for visitors who have their cookie level set to **All** cookies.
+For example, the system does not track [contacts](/documentation/business-users/digital-marketing/contact-management) for visitors whose allowed cookie level is only _System_ or _Essential_. Contacts may still be created in certain cases for visitors without the required cookie level – for example, if they submit data through a form – but such contacts only store the provided data and do not track the visitor.
 ### Cookie levels
 Xperience classifies cookies into several levels according to their purpose. These levels determine which cookies are set for administration users and website visitors. The following table lists the default levels available in the API (`Kentico.Web.Mvc.CookieLevel` class):
 Cookie level |  Description  
@@ -29,18 +35,18 @@ Cookie level |  Description
 **System (-100)** |  This level allows the _CookieLevel_ cookie, which stores the cookie level selected by the user. In terms of the end user and the Cookie law, this means **_“Cookies are not allowed”_**.  
 **Essential (0)** |  Cookies that are required for all website functionality needed by visitors. This includes authentication, language selection, etc. From the visitor’s perspective, this means **_“Allow only cookies that I may need, but do not track me”_**.  
 **Editor (100)** |  Cookies required for correct administration interface functionality. For example used to remember selected preferences, tabs, etc.  
-**Visitor (200)** |  All cookies that are not assigned to an explicit level are considered to be cookies identifying the visitor, i.e. tracking cookies, which are not really needed, but are useful for the website owner if using Xperience digital marketing features. This level is used for all custom cookies by default. You can [register custom cookies](documentation/developers-and-admins/data-protection/cookies#register-custom-cookies) to adjust their assigned cookie level.  
+**Visitor (200)** |  All cookies that are not assigned to an explicit level are considered to be cookies identifying the visitor, i.e. tracking cookies, which are not really needed, but are useful for the website owner if using Xperience digital marketing features. This level is used for all custom cookies by default. You can [register custom cookies](#register-custom-cookies) to adjust their assigned cookie level.  
 **All (1000)** |  Allows all cookies, no matter what their level is. From the visitor’s perspective, this means **_“Allow all cookies now and in the future”_**.  
 The numbers associated with each cookie level are integer constants, which allows you to further customize the granularity of available cookie levels. The levels ‘ _None_ ’ and ‘ _All_ ’ are set to an absolute value of 1000 to provide enough space for future Xperience updates or developer-specified custom levels.
-Automatic [tracking of contacts](documentation/business-users/digital-marketing/contact-management) and their [activities](documentation/business-users/digital-marketing/contact-activities) only works for new visitors if the **Default cookie level** setting to ‘ _Visitor_ ’ or ‘ _All_ ’. For more information, see [Consent development](documentation/developers-and-admins/data-protection/consent-development).
+Automatic [tracking of contacts](/documentation/business-users/digital-marketing/contact-management) and their [activities](/documentation/business-users/digital-marketing/contact-activities) only works for new visitors if the **Default cookie level** setting to ‘ _Visitor_ ’ or ‘ _All_ ’. For more information, see [Consent development](/documentation/developers-and-admins/data-protection/consent-development).
 **Automatic cookie consent for administrators and editors**
 If a user signs in to the Xperience administration, cookies are automatically enabled to provide full editing functionality. The system assumes that working in the administration interface identifies the user as staff, so there is no need for cookie consent.
 ## Register custom cookies
-If your website uses any custom or third-party cookies, we recommend that you register them with an appropriate [cookie level](documentation/developers-and-admins/data-protection/cookies#cookie-levels). Unregistered cookies are processed with the _Visitor_ level by default.
-When a visitor adjusts their allowed cookie level (for example by [accepting or revoking a consent](documentation/developers-and-admins/data-protection/consent-development)), the system automatically clears all cookies of a level higher than consented from the visitor’s browser. You may also encounter problems with custom or third-party cookies not being stored if your website channel’s **Default cookie level** setting has a lower value than _Visitor_ , for example when managing tracking consent.
+If your website uses any custom or third-party cookies, we recommend that you register them with an appropriate [cookie level](#cookie-levels). Unregistered cookies are processed with the _Visitor_ level by default.
+When a visitor adjusts their allowed cookie level (for example by [accepting or revoking a consent](/documentation/developers-and-admins/data-protection/consent-development)), the system automatically clears all cookies of a level higher than consented from the visitor’s browser. You may also encounter problems with custom or third-party cookies not being stored if your website channel’s **Default cookie level** setting has a lower value than _Visitor_ , for example when managing tracking consent.
 Custom cookies are registered via the `CookieLevelOptions` object on application startup. The options object exposes a `CookieConfigurations` dictionary where you can add your cookies. Use the following parameters:
   * `key` – the name of the cookie that you are registering.
-  * `value` – an integer value representing the [cookie level](documentation/developers-and-admins/data-protection/cookies#cookie-levels) required to use the cookie. You can access the default values in the `Kentico.Web.Mvc.CookieLevel` enumeration.
+  * `value` – an integer value representing the [cookie level](#cookie-levels) required to use the cookie. You can access the default values in the `Kentico.Web.Mvc.CookieLevel` enumeration.
 
 
 ### Example
@@ -62,7 +68,7 @@ builder.Services.Configure<CookieLevelOptions>(options =>
 });
 ```
 
-The _CustomCookie_ is now registered and can be used by visitors with the  _Essential_ and above cookie level (based on your website channel’s [default cookie level](documentation/developers-and-admins/data-protection/cookies#set-the-default-cookie-level), the users’ [preferred cookie level](documentation/developers-and-admins/data-protection/cookies#enable-users-to-select-a-preferred-cookie-level), or other custom actions such as [consent agreements](documentation/developers-and-admins/data-protection/consent-development)). 
+The _CustomCookie_ is now registered and can be used by visitors with the  _Essential_ and above cookie level (based on your website channel’s [default cookie level](#set-the-default-cookie-level), the users’ [preferred cookie level](#enable-users-to-select-a-preferred-cookie-level), or other custom actions such as [consent agreements](/documentation/developers-and-admins/data-protection/consent-development)). 
 **Handling cookies in ASP.NET Core**
 When setting cookies in ASP.NET Core projects, there is an option to use the [CookieOptions.IsEssential](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.cookieoptions.isessential) property.
 C#
@@ -192,3 +198,6 @@ Copy
     <input type="submit" value="Select" />
 }
 ```
+
+![]()
+[]()[]()

@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/registration-and-authentication/external-authentication
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Registration and authentication](/documentation/developers-and-admins/development/registration-and-authentication)
+  * External authentication 
+
+
 # External authentication
-  * [ Copy page link ](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#) | [Get HelpService ID](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/registration-and-authentication/external-authentication# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#)
 External authentication allows visitors to sign in to an application or website using their existing social media credentials, such as Facebook, Twitter, or Google. This eliminates the need for users to create a separate account for the application or website they want to use and simplifies signing in.
 To implement social provider authentication, the application or website must integrate with the social platforms’ authentication APIs, which allow users to grant permission for the application to access their account information. Once a user grants permission, the application receives an access token that it uses to authenticate the user for future sessions (typically a cookie).
 There are several benefits to implementing authentication using social providers.
@@ -14,12 +21,12 @@ There are several benefits to implementing authentication using social providers
 
 Xperience by Kentico uses [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity) to manage user accounts. When implementing this authentication method for Xperience projects, you can choose from the providers supported by Identity, such as Facebook, Twitter, Google, and other OAuth/OIDC-compliant platforms. See the [Identity documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social) for details.
 ## Prerequisites
-Before implementing external authentication, you must [enable and configure ASP.NET Identity](documentation/developers-and-admins/development/registration-and-authentication) in your web application.
+Before implementing external authentication, you must [enable and configure ASP.NET Identity](/documentation/developers-and-admins/development/registration-and-authentication) in your web application.
 ## Configure provider integration
 To configure social provider authentication for your application:
   1. Create and configure an application for your Xperience project on the side of the external provider. 
      * Save the _application ID_ and _application secret_ values.
-     * See [General security considerations](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#general-security-considerations) for a list of security practices to keep in mind when configuring the application.
+     * See [General security considerations](#general-security-considerations) for a list of security practices to keep in mind when configuring the application.
   2. Install the **Microsoft.AspNet.Authentication.*** NuGet package for the provider you want to support.
   3. Call the corresponding extension methods when configuring authentication for the application in **Program.cs**.
   4. Configure the integration.
@@ -49,7 +56,7 @@ builder.Services.AddAuthentication()
 ```
 
 **Storing application secrets**
-We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#securely-store-application-secrets) for recommendations.
+We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](#securely-store-application-secrets) for recommendations.
 ## Implement the authentication flow
 The implementation of an authentication flow can vary depending on the application’s specific requirements. This section introduces a basic flow that you can further extend.
 Render buttons that invoke the authentication flow for a corresponding provider in a suitable location in your application.
@@ -222,9 +229,9 @@ public class AccountController : Controller
 ```
 
 **Enabling created accounts**
-When creating `ApplicationUser` objects for new external registrations, always set the object’s `Enabled` property to `true`. The property controls whether the account can sign in to the system. See [Remarks - ApplicationUser.Enabled](documentation/developers-and-admins/development/registration-and-authentication#applicationuser.enabled) for more information.
+When creating `ApplicationUser` objects for new external registrations, always set the object’s `Enabled` property to `true`. The property controls whether the account can sign in to the system. See [Remarks - ApplicationUser.Enabled](/documentation/developers-and-admins/development/registration-and-authentication#applicationuser.enabled) for more information.
 ## Authentication scopes and claims mapping
-[Claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#key-concepts-scopes-claims-and-response-types) are key-value pairs that contain verified information about a user. In the OAuth/OIDC authentication flow, claims are sent by the identity provider within ID Tokens. Generally, these tokens are processed by the application, and the information is mapped to some internal representation. In Xperience, this is the `MemberInfo` object (for more information about Xperience’s Identity architecture, see [Registration and authentication](documentation/developers-and-admins/development/registration-and-authentication)).
+[Claims](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1#key-concepts-scopes-claims-and-response-types) are key-value pairs that contain verified information about a user. In the OAuth/OIDC authentication flow, claims are sent by the identity provider within ID Tokens. Generally, these tokens are processed by the application, and the information is mapped to some internal representation. In Xperience, this is the `MemberInfo` object (for more information about Xperience’s Identity architecture, see [Registration and authentication](/documentation/developers-and-admins/development/registration-and-authentication)).
 To facilitate working with claims, use the `ClaimTypes` class that provides the most common OIDC-compliant claim key identifiers in an easily accessible format. For example, `ClaimTypes.Email` resolves to the name of a key under which the user’s email should be stored in the ID token received by the application.
 What claims get included in ID tokens is controlled by **authentication scopes**. Authentication scopes are sent together with the authentication request.
 C#
@@ -243,13 +250,13 @@ builder.Services.AddAuthentication()
 
 See the documentation of your chosen provider for a list of available scopes. The OAuth/OIDC specification doesn’t enforce any scope naming policies.
 In most cases, the Xperience application registration on the provider’s end must also explicitly enable all additional scopes requested by the app. For Google, this is done in the [OAuth consent screen configuration](https://developers.google.com/workspace/guides/configure-oauth-consent). When signing in, visitors are notified about the information your application requests. The enabled scopes directly affect this consent screen.
-[![Google external sign in request example](docsassets/documentation/external-authentication/ExternalSignIn.png)](https://docs.kentico.com/docsassets/documentation/external-authentication/ExternalSignIn.png)
+[![Google external sign in request example](/docsassets/documentation/external-authentication/ExternalSignIn.png)](/docsassets/documentation/external-authentication/ExternalSignIn.png)
 With the additional claims now being returned as part of ID tokens, you can map the information to the visitor’s account in Xperience.
-  1. Prepare additional fields to hold your data. See [Add fields to member objects](documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects).
+  1. Prepare additional fields to hold your data. See [Add fields to member objects](/documentation/developers-and-admins/development/registration-and-authentication/add-fields-to-member-objects).
   2. Map received claims to the added fields.
 
 
-The following sample demonstrates a class extended with the `FirstName` property. You can extend the mapping logic within the sample [AccountController.SynchronizeExternalAccount](documentation/developers-and-admins/development/registration-and-authentication/external-authentication#implement-the-authentication-flow) method.
+The following sample demonstrates a class extended with the `FirstName` property. You can extend the mapping logic within the sample [AccountController.SynchronizeExternalAccount](#implement-the-authentication-flow) method.
 C#
 **Map claims to fields**
 Copy
@@ -326,3 +333,7 @@ When deploying production sites, consider the following options:
   * [Azure KeyVault](https://learn.microsoft.com/en-us/aspnet/core/security/key-vault-configuration#use-application-id-and-x509-certificate-for-non-azure-hosted-apps)
   * [DataProtection API](https://learn.microsoft.com/en-us/dotnet/standard/security/how-to-use-data-protection)
   * [Azure KeyVault](https://learn.microsoft.com/en-us/aspnet/core/security/key-vault-configuration#use-application-id-and-x509-certificate-for-non-azure-hosted-apps)
+
+
+![]()
+[]()[]()

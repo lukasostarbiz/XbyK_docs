@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys)
+  * The real value of customer journeys 
+
+
 # The real value of customer journeys
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -23,4 +29,6 @@ Early resolution of pain points **prevents customer dissatisfaction**.
 After improving the registration journey, Emma’s team also sets up a welcome email series to guide new members. This onboarding experience builds trust and encourages continued engagement.
 Customer journey mapping is a natural part of digital marketing, and it doesn’t just drive sales – it builds **lasting customer relationships**.
 ## Next step
-Are all the perks of customer journeys not enough knowledge for you? Then, let’s get down to the nitty-gritty and compare [customer journeys’ relative benefits vs. drawbacks.](guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
+Are all the perks of customer journeys not enough knowledge for you? Then, let’s get down to the nitty-gritty and compare [customer journeys’ relative benefits vs. drawbacks.](/guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping)
+![]()
+[]()[]()

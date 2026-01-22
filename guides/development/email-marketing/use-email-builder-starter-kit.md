@@ -1,16 +1,22 @@
+---
+source: https://docs.kentico.com/guides/development/email-marketing/use-email-builder-starter-kit
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Email marketing](/guides/development/email-marketing)
+  * Use the Email Builder Starter Kit in your project 
+
+
 # Use the Email Builder Starter Kit in your project
-  * How-to| [ Copy page link ](guides/development/email-marketing/use-email-builder-starter-kit#) | [Get HelpService ID](guides/development/email-marketing/use-email-builder-starter-kit#)
-Core MVC 5
-
-
-[✖](guides/development/email-marketing/use-email-builder-starter-kit# "Close page link panel") [Copy to clipboard](guides/development/email-marketing/use-email-builder-starter-kit#)
-[Email Builder](documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico empowers non-technical users to define the appearance of emails with a friendly drag-and-drop interface. Through [Templates](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#templates), [Sections](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#sections), and [Widgets](documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets), marketers have more flexibility than standard [email templates](documentation/developers-and-admins/digital-marketing-setup/email-templates) in controlling email structure, visual design, and content.
+[Email Builder](/documentation/developers-and-admins/development/builders/email-builder) in Xperience by Kentico empowers non-technical users to define the appearance of emails with a friendly drag-and-drop interface. Through [Templates](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#templates), [Sections](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#sections), and [Widgets](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components#widgets), marketers have more flexibility than standard [email templates](/documentation/developers-and-admins/digital-marketing-setup/email-templates) in controlling email structure, visual design, and content.
 The [Email Builder Starter Kit](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit) provides a pre-made set of Email Builder components that you can use in your project, saving you time to spend on additional custom components or other areas of the project.
 Let’s look into the process of integrating the Starter Kit into an existing project, using the [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides) as an example.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
@@ -117,8 +123,8 @@ public class ImageEmailWidgetModelMapper : IComponentModelMapper<ImageWidgetMode
 ```
 
 #### Product model mapper (composable content type)
-The **ProductPage** content type in the _Training guides_ repo is [composable](guides/architecture/content-modeling/content-modeling-guide/store-content#leverage-linked-content-items). It wraps a reusable _Product_ content type, which itself is made up of other content types like _Product feature_ , _Benefit_ , and _Asset_. If we compare the _Product_ content type with the properties of the **ProductWidgetViewModel** from the Starter Kit, we can see that **Product** and **Asset** are the only parts of _ProductPage_ that we need.
-[![Diagram of content type relationships](docsassets/guides/use-email-builder-starter-kit/ProductPageStructure.png)](https://docs.kentico.com/docsassets/guides/use-email-builder-starter-kit/ProductPageStructure.png)
+The **ProductPage** content type in the _Training guides_ repo is [composable](/guides/architecture/content-modeling/content-modeling-guide/store-content#leverage-linked-content-items). It wraps a reusable _Product_ content type, which itself is made up of other content types like _Product feature_ , _Benefit_ , and _Asset_. If we compare the _Product_ content type with the properties of the **ProductWidgetViewModel** from the Starter Kit, we can see that **Product** and **Asset** are the only parts of _ProductPage_ that we need.
+[![Diagram of content type relationships](/docsassets/guides/use-email-builder-starter-kit/ProductPageStructure.png)](/docsassets/guides/use-email-builder-starter-kit/ProductPageStructure.png)
 When you query the product page, remember to set the `depth` appropriately, in order to handle this content model.
 C#
 **ProductEmailWidgetModelMapper.cs**
@@ -356,7 +362,7 @@ builder.Services.AddMjmlForEmails();
 ### Configure the Starter Kit
 Similar to the Email Builder configuration, you also need to configure the Starter Kit when the application starts.
 The available options allow you to define the path to a stylesheet that Email Builder will use, and the allowed content types to restrict the selections of the _Image_ and _Product_ widgets.
-For our example, let’s use styles from the Starter Kit, and restrict the widget selectors to the content types we [already mapped](guides/development/email-marketing/use-email-builder-starter-kit#implement-the-model-mappers) to the widget models.
+For our example, let’s use styles from the Starter Kit, and restrict the widget selectors to the content types we [already mapped](#implement-the-model-mappers) to the widget models.
 #### Copy the stylesheet
 Since email CSS is beyond the scope of this example, let’s just copy the Dancing Goat stylesheet for Email Builder from the Starter Kit repository.
 In the Starter Kit repo, find the [**EmailBuilder.css**](https://github.com/Kentico/xperience-by-kentico-email-builder-starter-kit/blob/main/examples/DancingGoat/wwwroot/EmailBuilder.css) file under the _examples/DancingGoat/wwwroot_ folder and copy it to the _wwwroot_ folder of your _TrainingGuides.Web_ project.
@@ -392,4 +398,6 @@ Your browser does not support the video tag.
 To see more examples of Email Builder components in action, we recommend checking out those used on the [Community Portal](https://github.com/Kentico/community-portal/tree/v30.5.1.6/src/Kentico.Community.Portal.Web/Components/EmailBuilder).
 Here, you can see the code that makes up [community.kentico.com](https://community.kentico.com/), our site for the Xperience by Kentico community, which features many helpful resources.
 ## What’s next
-Continue to the [next guide in this series](guides/development/email-marketing/create-an-email-widget-for-articles) to walk through the construction of a custom _Article_ widget in line with the examples from the Starter Kit.
+Continue to the [next guide in this series](/guides/development/email-marketing/create-an-email-widget-for-articles) to walk through the construction of a custom _Article_ widget in line with the examples from the Starter Kit.
+![]()
+[]()[]()

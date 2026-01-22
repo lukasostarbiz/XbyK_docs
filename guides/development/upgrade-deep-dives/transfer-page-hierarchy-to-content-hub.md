@@ -1,18 +1,24 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Transfer parent-child page hierarchy to the Content hub 
+
+
 # Transfer parent-child page hierarchy to the Content hub
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub#) | [Get HelpService ID](guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub#)
-When you upgrade from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK), you’ll likely want to take advantage of the new features it offers, such as the [Content hub](documentation/business-users/content-hub): a central repository in XbyK for managing reusable content across multiple channels.
+When you upgrade from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK), you’ll likely want to take advantage of the new features it offers, such as the [Content hub](/documentation/business-users/content-hub): a central repository in XbyK for managing reusable content across multiple channels.
 However, the parent-child relationships of your pages in the content tree might be important for your use case.
 Let’s configure the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) to automatically preserve parent-child relationships when moving certain pages to the Content hub.
 For this example, we’ll use the KX13 _Dancing Goat_ sample site, transferring the _Store_ section of the content tree to the Content hub in XbyK.
 ## Before you start
 To follow along with the example in this guide, we recommend you have the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) and [.NET Core](https://learn.microsoft.com/en-us/dotnet/).
-  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](documentation/changelog).
-  * A running instance of Kentico Xperience 13 with the _Dancing Goat_ sample site, running on [Refresh 5](13/installation/hotfix-instructions-xperience-13) or higher.
+  * A running instance of Xperience by Kentico, installed with the `kentico-xperience-mvc` template, preferably version [30.8.0](/documentation/changelog).
+  * A running instance of Kentico Xperience 13 with the _Dancing Goat_ sample site, running on [Refresh 5](/13/installation/hotfix-instructions-xperience-13) or higher.
   * A local copy of the [Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool), version **3.12.0** , connected to each instance.
 
 
@@ -33,7 +39,7 @@ WHERE ClassID IN
 ```
 
 This query lists all content types used in the _Store_ subtree, helping you identify which classes to migrate.
-[![Screenshots of the result of the above query, listing the ID, name, and display name of page type classes from the /Store path](docsassets/guides/transfer-page-hierarchy-to-content-hub/Page-type-query-result.png)](https://docs.kentico.com/docsassets/guides/transfer-page-hierarchy-to-content-hub/Page-type-query-result.png)
+[![Screenshots of the result of the above query, listing the ID, name, and display name of page type classes from the /Store path](/docsassets/guides/transfer-page-hierarchy-to-content-hub/Page-type-query-result.png)](/docsassets/guides/transfer-page-hierarchy-to-content-hub/Page-type-query-result.png)
 Now that we know which page types we want to use, we need to tell the migration tool to convert them to _reusable_ content types.
 Switch to the **Migration.Tool.CLI** project and open its **appsettings.json** file. Here, you’ll find a `System` object, containing a `ConvertClassesToContentHub` property where you can add the code names of the classes you want to migrate. Let’s include all of them, except **Hot tips**.
 **Hot tips** requires a field migration, which is outside the scope of this example. We’ll cover it in the future.
@@ -152,7 +158,7 @@ Copy
 
 ## Combine with other migration features
 The director approach described in this example is compatible with the custom class mapping approach we’ve used in earlier upgrade deep dives. When you migrate your content tree hierarchy to the Content hub, you can still restructure the affected types with custom class mappings.
-For example, let’s revisit the [grinder class mapping example](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) from earlier in the upgrade deep dives. We simply need to change the `ClassContentTypeType` for each content type, and the other code can remain the same.
+For example, let’s revisit the [grinder class mapping example](/guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) from earlier in the upgrade deep dives. We simply need to change the `ClassContentTypeType` for each content type, and the other code can remain the same.
 C#
 **GrinderClassMapping.cs**
 Copy
@@ -213,5 +219,7 @@ Let’s review the key points from this example:
 
 If you have any questions or upgrade scenarios you’d like us to cover in the future, please let us know with the “Send us feedback” button at the bottom of this page.
 ## What’s next?
-If you haven’t already, we recommend checking out our [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough), to see content retrieval migration in context of the whole upgrade process, including more caching examples.
-You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](guides/development/upgrade-deep-dives).
+If you haven’t already, we recommend checking out our [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough), to see content retrieval migration in context of the whole upgrade process, including more caching examples.
+You can find more advanced upgrade and data migration use cases in our other [Upgrade deep dive guides](/guides/development/upgrade-deep-dives).
+![]()
+[]()[]()

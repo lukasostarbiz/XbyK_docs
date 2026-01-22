@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Anatomy of customer journeys - Key components](/guides/customer-journeys/anatomy-of-customer-journeys-key-components)
+  * Campaigns, or the engine driving customer journeys 
+
+
 # Campaigns, or the engine driving customer journeys
-  * [ Copy page link ](guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys#) | [Get HelpService ID](guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys# "Close page link panel") [Copy to clipboard](guides/customer-journeys/anatomy-of-customer-journeys-key-components/campaigns-the-engine-driving-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -42,4 +48,6 @@ Once a contact is identified and mapped in the customer journey, they shouldn’
 A contact moving from “Prospect” to “Lead”? That’s your cue to shift from thought leadership to product positioning. An MQL showing signs of intent? Time for a targeted case study or a time-sensitive webinar invite. A loyal customer slowing down engagement? A reactivation email might bring them back into the fold.
 In essence, use insights from your journeys and effectively influence customer decisions. They give marketers a way to not only observe journeys but also to **influence them in real time**.
 ## Next steps
-You probably got a little excited about the possibilities of the campaigns feature – now let’s see how [integrating data](guides/customer-journeys/anatomy-of-customer-journeys-key-components/XbyK-integrating-data-for-seamless-journeys) can smooth the road to success even further.
+You probably got a little excited about the possibilities of the campaigns feature – now let’s see how [integrating data](/guides/customer-journeys/anatomy-of-customer-journeys-key-components/XbyK-integrating-data-for-seamless-journeys) can smooth the road to success even further.
+![]()
+[]()[]()

@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/members/profile-form
+scrape_date: 2026-01-22
+---
+
+Module: Members
+7 of 12 Pages
 # Design and handle the profile form
-  * [ Copy page link ](modules/members/profile-form#) | [Get HelpService ID](modules/members/profile-form#)
-Core MVC 5
-
-
-[✖](modules/members/profile-form# "Close page link panel") [Copy to clipboard](modules/members/profile-form#)
 If you allow members to register and sign in to your site, they will expect the ability to update their information.
-[An earlier part of this series](guides/development/members/implement-member-registration) covered how to use configurable widgets for the registration and sign-in forms. Let’s explore an alternative approach now, utilizing a pre-defined [page template](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) on a page.
+[An earlier part of this series](/guides/development/members/implement-member-registration) covered how to use configurable widgets for the registration and sign-in forms. Let’s explore an alternative approach now, utilizing a pre-defined [page template](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder) on a page.
 In some ways, our approach will be similar to using a dedicated MVC route that displays a view. However, using a _page template_ on a page allows editors to see the page in the content tree. That way, editors can easily link the page with Xperience’s built-in form components and control the page’s URL slug.
 ## Examine the requirements
 Let’s take a moment to consider what should be possible to update on a standard profile page.
@@ -14,13 +16,13 @@ Email and username should be a bit more closely guarded, with processes similar 
 We can also display the date the member’s account was created, but this should not be editable for factual reasons.
 We can, however, allow members to edit their name and name order, and their favorite coffee.
 The form should display a success message when it’s able to update a member’s information, and validation errors when the member submits improperly formatted data.
-While it is possible to add page template properties that allow editors to configure the form in a similar manner to the [registration widget](guides/development/members/implement-member-registration), this example will not go over the process.
+While it is possible to add page template properties that allow editors to configure the form in a similar manner to the [registration widget](/guides/development/members/implement-member-registration), this example will not go over the process.
 ## Build the _Update profile_ form
 Let’s make a view component for managing the update profile form. This way, in case we ever decide to include it somewhere aside from this template, it’s easier to reuse.
 Under the _~/Features/Membership/Profile_ folder in the _TrainingGuides.Web_ project, create a _ViewComponents_ folder to house the files.
 Overall, the view component will be somewhat similar to the registration form widget, using an AJAX form with a partial view to manage validation and results.
 ### Define the view model
-The `GuidesMemberProfileViewModel` from [earlier in the series](guides/development/members/implement-member-registration#set-up-a-view-model) contains the custom fields that we used to expand the built-in _Member_ type, so we can inherit from this class for our update form, adding the extra fields that we need.
+The `GuidesMemberProfileViewModel` from [earlier in the series](/guides/development/members/implement-member-registration#set-up-a-view-model) contains the custom fields that we used to expand the built-in _Member_ type, so we can inherit from this class for our update form, adding the extra fields that we need.
 Let’s take another peek at that class as a refresher.
 C#
 **GuidesMemberProfileViewModel.cs**
@@ -185,8 +187,8 @@ public static void AddTrainingGuidesServices(this IServiceCollection services)
 ### Create the view component class
 Now we can define the main file of our view component for updating the profile of the current member. **Make sure to pre-populate the model with data about the current member** , so the member does not need to manually re-fill all of their information every time.
 To improve the editor experience, add functionality to display a dummy member in **Preview** or **Page Builder** view of the profile page. This way, editors who have not signed in as members won’t see a broken, empty profile when they visit the page in the Xperience admin UI.
-You can prevent unauthenticated members from seeing the profile form by setting its page to [require authentication.](documentation/business-users/website-content/secure-pages)
-We’ll explore this process in more detail [later in the membership series](guides/development/members/require-authentication-for-certain-content).
+You can prevent unauthenticated members from seeing the profile form by setting its page to [require authentication.](/documentation/business-users/website-content/secure-pages)
+We’ll explore this process in more detail [later in the membership series](/guides/development/members/require-authentication-for-certain-content).
 C#
 **UpdateProfileViewComponent.cs**
 Copy
@@ -269,7 +271,7 @@ public GuidesMember DummyMember => new()
 
 ### Create views for the view component
 Let’s start by creating the view returned by the component’s `InvokeAsync` method.
-Much like with the [registration widget](guides/development/members/implement-member-registration), create an AJAX form that posts to a special action, and use a separate partial view for the form fields within the update target element.
+Much like with the [registration widget](/guides/development/members/implement-member-registration), create an AJAX form that posts to a special action, and use a separate partial view for the form fields within the update target element.
 cshtml
 **UpdateProfile.cshtml**
 Copy
@@ -531,16 +533,8 @@ public async Task<IdentityResult> UpdateMemberProfile(GuidesMember guidesMember,
 ...
 ```
 
-[ Previous page ](modules/members/actualize-member-contact-relationship)
+[ Previous page ](/modules/members/actualize-member-contact-relationship)
 7 of 12
-[ Mark complete and continue ](modules/members/create-profile-page)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/members/profile-form)
-[](https://docs.kentico.com/modules/members/profile-form)[](https://docs.kentico.com/modules/members/profile-form)
+[ Mark complete and continue ](/modules/members/create-profile-page)
+![]()
+[]()[]()

@@ -1,24 +1,26 @@
+---
+source: https://docs.kentico.com/modules/content-management-essentials/manage-content-hub-essentials
+scrape_date: 2026-01-22
+---
+
+Module: Content management essentials
+2 of 5 Pages
 # Manage content in Content hub
-  * [ Copy page link ](modules/content-management-essentials/manage-content-hub-essentials#) | [Get HelpService ID](modules/content-management-essentials/manage-content-hub-essentials#)
-Core MVC 5
-
-
-[✖](modules/content-management-essentials/manage-content-hub-essentials# "Close page link panel") [Copy to clipboard](modules/content-management-essentials/manage-content-hub-essentials#)
-Xperience **Content hub** is an application that comes with every Xperience application. It is a central repository for all your **reusable content**. It stores [structured content](guides/architecture/content-modeling/content-modeling-guide/structured-and-unstructured-content) without presentation information, which significantly helps with content reuse and content governance over the content’s lifetime.
+Xperience **Content hub** is an application that comes with every Xperience application. It is a central repository for all your **reusable content**. It stores [structured content](/guides/architecture/content-modeling/content-modeling-guide/structured-and-unstructured-content) without presentation information, which significantly helps with content reuse and content governance over the content’s lifetime.
 ## Adding content into the Content hub
 When you create a new content item, you’ll input your content in a form-like editing interface. You don’t need to pay attention to what the content will look like on the website and what you need to adjust and tweak to adhere to your brand design guidelines. You can focus on the quality of information your content conveys.
 Your developers ensure that your application correctly presents content across different marketing channels. The following image shows how the structured _Featured content_ looks displayed on the website.
-[![Featured content](docsassets/guides/manage-content-hub-essentials/featured-content-display.png)](https://docs.kentico.com/docsassets/guides/manage-content-hub-essentials/featured-content-display.png)
+[![Featured content](/docsassets/guides/manage-content-hub-essentials/featured-content-display.png)](/docsassets/guides/manage-content-hub-essentials/featured-content-display.png)
 ## Filtering content in the Content hub
 _Content hub_ also comes with filters that help you quickly find the item you are looking for.
-[![Filters in Content hub](docsassets/guides/manage-content-hub-essentials/cm-guide-content-hub-filtering.png)](https://docs.kentico.com/docsassets/guides/manage-content-hub-essentials/cm-guide-content-hub-filtering.png)
+[![Filters in Content hub](/docsassets/guides/manage-content-hub-essentials/cm-guide-content-hub-filtering.png)](/docsassets/guides/manage-content-hub-essentials/cm-guide-content-hub-filtering.png)
 ## Content publishing workflows
 Each content created in Xperience _Content hub_ or other channels has a _content publishing workflow_.
-[Workflows](documentation/developers-and-admins/configuration/workflows) ensure that no content is published without proper review. Xperience contains a _default_ workflow that runs for every content item. Developers and admins of Xperience projects can use this default workflow or customize it as needed.
+[Workflows](/documentation/developers-and-admins/configuration/workflows) ensure that no content is published without proper review. Xperience contains a _default_ workflow that runs for every content item. Developers and admins of Xperience projects can use this default workflow or customize it as needed.
 **What does the _default_ workflow look like?**
 When you create a content item, Xperience puts the item into a **Draft** step. You can add your data, change its design, or reference other existing content. Once you save your changes, the data (and, in the case of _pages_ , also their design) is available for preview in the administration interface. Still, it’s not available to your audience. The content item becomes publicly available only once you **Publish** it.
 You can _edit_ an existing content item to update its content. Editing the content item creates a new version but keeps the original content public. The content version is in the _Draft_ status and becomes publicly available only after you _Publish_ this new version.
-The Kbank demo site contains examples of two custom workflows - _Article publishing workflow_ and _Article page publishing workflow_. You’ll work with [both workflows](modules/content-management-essentials/manage-website-content-essentials#exercise-1---adding-a-new-article) in this tutorial.
+The Kbank demo site contains examples of two custom workflows - _Article publishing workflow_ and _Article page publishing workflow_. You’ll work with [both workflows](/modules/content-management-essentials/manage-website-content-essentials#exercise-1---adding-a-new-article) in this tutorial.
 **Task**
 ### Exercise - Adding structured content
 You’ll need the Kbank demo website to follow up on the exercises. If you already haven’t, visit the [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. You’ll receive an automated confirmation email. Once you approve the request, we will automatically send you a link to the demo site.
@@ -51,22 +53,14 @@ You can go to the **Content hub** , switch to **Personal banking** workspace, an
 ## Reusing content makes updating easier
 Since reusable content doesn’t contain presentation information, you can easily reuse it in other channels, such as email. When you update the content item in the _Content hub_ , your change is promoted everywhere the content is reused.
 ### Locate where your content is used
-Before you edit or remove any content item, you can review impact of your changes with the _Content Reuse Locator_. You’ll find [this tool](https://www.kentico.com/discover/blog/content-reuse-locator) in the **Used in** [tab](documentation/business-users/website-content#used-in) of any content item details within _Content hub_.
+Before you edit or remove any content item, you can review impact of your changes with the _Content Reuse Locator_. You’ll find [this tool](https://www.kentico.com/discover/blog/content-reuse-locator) in the **Used in** [tab](/documentation/business-users/website-content#used-in) of any content item details within _Content hub_.
 The _Used in_ tab shows every page or content item that references the item you are editing. This allows you to confidently change, update, or remove the edited content item without disrupting the content experience, for example, on a website page that displays this item.
-[![See where your content is used before you make any changes](docsassets/guides/manage-content-hub-essentials/content_reuse_locator_used_in_content_item.png)](https://docs.kentico.com/docsassets/guides/manage-content-hub-essentials/content_reuse_locator_used_in_content_item.png)
+[![See where your content is used before you make any changes](/docsassets/guides/manage-content-hub-essentials/content_reuse_locator_used_in_content_item.png)](/docsassets/guides/manage-content-hub-essentials/content_reuse_locator_used_in_content_item.png)
 **Why use structured content?**
 Modern marketing teams do not need to recreate or copy-paste the content on their websites.
 They strategically design their content model, **allowing content reusability** and **resurfacing** based on its context or marketer’s needs. When you store your data in a structured format, you can easily **reassemble** it into a different content type, **present** it through a different design, or **repurpose** it in other [marketing channels](https://en.wikipedia.org/wiki/Marketing_channel).
-[ Previous page ](modules/content-management-essentials)
+[ Previous page ](/modules/content-management-essentials)
 2 of 5
-[ Mark complete and continue ](modules/content-management-essentials/manage-website-content-essentials)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-management-essentials/manage-content-hub-essentials)
-[](https://docs.kentico.com/modules/content-management-essentials/manage-content-hub-essentials)[](https://docs.kentico.com/modules/content-management-essentials/manage-content-hub-essentials)
+[ Mark complete and continue ](/modules/content-management-essentials/manage-website-content-essentials)
+![]()
+[]()[]()

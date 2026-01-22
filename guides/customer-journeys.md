@@ -1,9 +1,13 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * Customer journeys 
+
+
 # Customer journeys
-  * [ Copy page link ](guides/customer-journeys#) | [Get HelpService ID](guides/customer-journeys#)
-Core MVC 5
-
-
-[✖](guides/customer-journeys# "Close page link panel") [Copy to clipboard](guides/customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -19,3 +23,8 @@ Whether you’re nurturing leads, onboarding new customers, or re-engaging exist
 Explore this tutorial to learn how to turn audience insights into action – and journeys into results.
 ### Get started with customer journeys
 Learn about the basics of customer journeys and answer the all-important question – just why do they matter?
+* * *
+[Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys) CONCEPT
+Read about customer journeys, understand how they set themselves apart from other business frameworks, and see how customer journeys can make a difference in your digital strategy.
+![]()
+[]()[]()

@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/caching/file-caching
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Caching](/documentation/developers-and-admins/development/caching)
+  * File caching 
+
+
 # File caching
-  * [ Copy page link ](documentation/developers-and-admins/development/caching/file-caching#) | [Get HelpService ID](documentation/developers-and-admins/development/caching/file-caching#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/caching/file-caching# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/caching/file-caching#)
 Files represent a significant part of the data that browsers load when rendering web pages. The most common example of files are images loaded within the content of a website’s pages, or other types of page attachments.
 The system provides two types of file caching mechanisms:
   * **Client-side**
@@ -49,7 +56,9 @@ To set how long the server-side cache retains files:
 Files stay in the cache for the specified number of minutes.
 **Note**
   * File caching cannot cause the website to display outdated content in most scenarios. The cache automatically removes files when they are modified.
-  * If your project uses external file storage (such as [Azure Blob Storage](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) or [Amazon S3](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3)), you need to clear the cache manually after making changes to files or wait for the cache to expire. The automatic clearing of the server-side file cache does not work for files in external storage.
+  * If your project uses external file storage (such as [Azure Blob Storage](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) or [Amazon S3](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3)), you need to clear the cache manually after making changes to files or wait for the cache to expire. The automatic clearing of the server-side file cache does not work for files in external storage.
 
 
 If your website stores large files in the database, you can limit caching of files that exceed a certain size. Specify the threshold by typing a number of kilobytes into the **Maximum file size to cache** setting. Files larger than the specified value are only cached for 1 minute, regardless of the _Cache files (minutes)_ setting.
+![]()
+[]()[]()

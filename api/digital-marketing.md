@@ -1,9 +1,17 @@
+---
+source: https://docs.kentico.com/api/digital-marketing
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * Digital marketing 
+
+
 # Digital marketing
-  * [ Copy page link ](api/digital-marketing#) | [Get HelpService ID](api/digital-marketing#)
-Core MVC 5
+  * [Contact groups](/api/digital-marketing/contact-groups)
+  * [Contacts](/api/digital-marketing/contacts)
+  * [Form data](/api/digital-marketing/form-data)
 
 
-[✖](api/digital-marketing# "Close page link panel") [Copy to clipboard](api/digital-marketing#)
-  * [Contact groups](api/digital-marketing/contact-groups)
-  * [Contacts](api/digital-marketing/contacts)
-  * [Form data](api/digital-marketing/form-data)
+![]()
+[]()[]()

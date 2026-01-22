@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/model-website-presentation-components/ensure-page-components-support-content-personalization
+scrape_date: 2026-01-22
+---
+
+Module: Model website presentation components
+5 of 11 Pages
 # Consider content personalization
-  * [ Copy page link ](modules/model-website-presentation-components/ensure-page-components-support-content-personalization#) | [Get HelpService ID](modules/model-website-presentation-components/ensure-page-components-support-content-personalization#)
-Core MVC 5
-
-
-[✖](modules/model-website-presentation-components/ensure-page-components-support-content-personalization# "Close page link panel") [Copy to clipboard](modules/model-website-presentation-components/ensure-page-components-support-content-personalization#)
 Xperience comes with a powerful segmentation tool called contact groups.
-You can break down your audience into segments based on their shared characteristics, such as the same demographic information, like age or location, or interests, for example, consuming the same content on your website. You can then accurately target different contact groups with tailored content on the same page to improve your marketing efforts. Find out more about [contact groups](documentation/business-users/digital-marketing/contact-groups) in the documentation.
+You can break down your audience into segments based on their shared characteristics, such as the same demographic information, like age or location, or interests, for example, consuming the same content on your website. You can then accurately target different contact groups with tailored content on the same page to improve your marketing efforts. Find out more about [contact groups](/documentation/business-users/digital-marketing/contact-groups) in the documentation.
 Not all widgets have to support content personalization. Save time and implementation costs, look into your customer journey and the touch-points you want to define on your website and define only the necessary content components that support content personalization in the project requirements.
 ## Simplify content creation to help your marketing team
 The way you break down editing experience page components needs to fit your team’s experience.
@@ -19,16 +21,8 @@ The way you break down editing experience page components needs to fit your team
 Align the presentation layer with your content strategy to help editors tailor the customer experience and guide them toward their intended actions. When you understand your marketing goals and know what common data types you’ll be working with, you can define the components your team will use to effectively display the content on the website channels.
 The Kentico’s Page Builder will help your team create dynamic, personalized pages that resonate with your target audience. At the same time, your content will be stored in a way that makes reuse and content curation easier.
 Ensure your page components support content personalization, and regularly validate if all the page components and how editors use them follow Xperience by Kentico best practices. Ultimately, your editors aim to create an engaging user experience that drives conversions and nurtures leads.
-[ Previous page ](modules/model-website-presentation-components/define-presentation-components)
+[ Previous page ](/modules/model-website-presentation-components/define-presentation-components)
 5 of 11
-[ Mark complete and continue ](modules/model-website-presentation-components/model-page-builder-sections)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/model-website-presentation-components/ensure-page-components-support-content-personalization)
-[](https://docs.kentico.com/modules/model-website-presentation-components/ensure-page-components-support-content-personalization)[](https://docs.kentico.com/modules/model-website-presentation-components/ensure-page-components-support-content-personalization)
+[ Mark complete and continue ](/modules/model-website-presentation-components/model-page-builder-sections)
+![]()
+[]()[]()

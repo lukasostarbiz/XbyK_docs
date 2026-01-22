@@ -1,26 +1,32 @@
+---
+source: https://docs.kentico.com/guides/development/page-builder/define-advanced-widget
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Page Builder](/guides/development/page-builder)
+  * Define an advanced widget 
+
+
 # Define an advanced widget
-  * How-to| [ Copy page link ](guides/development/page-builder/define-advanced-widget#) | [Get HelpService ID](guides/development/page-builder/define-advanced-widget#)
-Core MVC 5
-
-
-[✖](guides/development/page-builder/define-advanced-widget# "Close page link panel") [Copy to clipboard](guides/development/page-builder/define-advanced-widget#)
 Now that we’ve gone over the process of building a simple widget, let’s dive into a more complex example with many configuration options.
 The code samples here are for a product widget with many properties to control which product data it shows and how the data are presented.
-Combined with the [Page templates](guides/development/page-builder/create-versatile-templates-part-1) and [Page Builder section](guides/development/page-builder/implement-flexible-sections) from earlier in this series, it works to achieve the page designs specified by these mockups:
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)
-[![Mockup of a product detail page](docsassets/guides/define-advanced-widget/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
-For a more detailed breakdown of how templates, sections, and widgets can be applied to achieve the mockups, check out [the start of this series](guides/development/page-builder/meet-requirements-with-page-builder).
+Combined with the [Page templates](/guides/development/page-builder/create-versatile-templates-part-1) and [Page Builder section](/guides/development/page-builder/implement-flexible-sections) from earlier in this series, it works to achieve the page designs specified by these mockups:
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)
+[![Mockup of a product detail page](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
+For a more detailed breakdown of how templates, sections, and widgets can be applied to achieve the mockups, check out [the start of this series](/guides/development/page-builder/meet-requirements-with-page-builder).
 ## Prerequisites
 This guide assumes you have:
   * basic knowledge of C# and .NET framework concepts
-  * familiarity with the basics of [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
+  * familiarity with the basics of [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
 
 
 The code samples in this guide revolve around creating a _Product_ widget, located in the _~/Features/Products/Widgets/Product_ folder of the _TrainingGuides.Web_ project in the [Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/main).
-If you are working on your own project, make sure your instance of **Xperience by Kentico is**[**version 30.11.1 or higher**](guides/development/get-started/install-a-specific-version-of-xperience-by-kentico).
-If you’d like to follow along with this specific example, we recommend starting from [the first guide in the Page Builder series](guides/development/page-builder/meet-requirements-with-page-builder). Many of the code samples in this guide rely on classes created in the previous guides.
-If you’ve never created a widget before, but you don’t have time to follow along with the whole series, we recommend starting with the [Simple CTA widget guide](guides/development/page-builder/build-simple-cta-widget).
+If you are working on your own project, make sure your instance of **Xperience by Kentico is**[**version 30.11.1 or higher**](/guides/development/get-started/install-a-specific-version-of-xperience-by-kentico).
+If you’d like to follow along with this specific example, we recommend starting from [the first guide in the Page Builder series](/guides/development/page-builder/meet-requirements-with-page-builder). Many of the code samples in this guide rely on classes created in the previous guides.
+If you’ve never created a widget before, but you don’t have time to follow along with the whole series, we recommend starting with the [Simple CTA widget guide](/guides/development/page-builder/build-simple-cta-widget).
 For a finished example implementation, take a look at the [General section folder](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/Shared/Sections/General) in the [finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished).
 ## Create the widget view model
 Begin with the widget view model, so that you have a focus on the final result the widget will render from the beginning.
@@ -305,8 +311,8 @@ Copy
 ```
 
 Alongside the tag helpers we’ve just implemented, the sample above uses multiple tag helpers from the earlier page templates examples. You can review the details of their implementation here:
-  * [ComponentStyleTagHelper](guides/development/page-builder/create-versatile-templates-part-1#apply-the-styles-with-a-tag-helper) and its [prerequisite service](guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles)
-  * [StyledImageTagHelper](guides/development/page-builder/create-versatile-templates-part-1#create-an-image-tag-helper)
+  * [ComponentStyleTagHelper](/guides/development/page-builder/create-versatile-templates-part-1#apply-the-styles-with-a-tag-helper) and its [prerequisite service](/guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles)
+  * [StyledImageTagHelper](/guides/development/page-builder/create-versatile-templates-part-1#create-an-image-tag-helper)
 
 
 ## Define the widget’s properties
@@ -314,7 +320,7 @@ Widget properties are meant to gather only necessary data from editors. They do 
 Some widgets that operate based on hard-coded values or settings stored elsewhere do not need properties at all. However, widgets meant to empower editors with flexible options rely heavily on properties.
   1. If a flexible data source suits your scenario, create a property to determine where the widget sources its data.
 For example, a widget can use data from its page by default, and pull data from a different page depending on the value of a property. 
-  2. If more details are required based on any of the data sources, use [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to display additional properties only when the corresponding option is selected.
+  2. If more details are required based on any of the data sources, use [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to display additional properties only when the corresponding option is selected.
   3. If you are displaying structured data, add properties to determine what should be included or hidden.
 For example, your editors may want to be able to choose whether or not a thumbnail image should appear alongside text-based content. 
   4. Add properties to configure the visual display of the widget.
@@ -524,12 +530,12 @@ public enum LinkStyleOption
 }
 ```
 
-For information about creating `IDropdownOptionProvider` implementations such as the `DropdownEnumOptionProvider` in this sample, see the [custom dropdown example from earlier](guides/development/page-builder/map-enum-to-dropdown).
+For information about creating `IDropdownOptionProvider` implementations such as the `DropdownEnumOptionProvider` in this sample, see the [custom dropdown example from earlier](/guides/development/page-builder/map-enum-to-dropdown).
 
 
 ## Build the widget view component
 A widget’s view component is often the core of its functionality.
-The view component contains the business logic that supplies all the values for the view model, usually by interacting with the [Xperience API](documentation/developers-and-admins/api), or some external endpoint. It often uses widget properties to parameterize API interactions based on input from the editors.
+The view component contains the business logic that supplies all the values for the view model, usually by interacting with the [Xperience API](/documentation/developers-and-admins/api), or some external endpoint. It often uses widget properties to parameterize API interactions based on input from the editors.
   1. Use an identifier constant to **register the widget**.
   2. If you have any properties that are meant to change the data source of the widget, add conditional code that reacts to them accordingly.
   3. If you have properties meant to affect how the widget interacts with APIs, make sure to take them into account.
@@ -823,21 +829,21 @@ public static class ComponentIdentifiers
 ## Document your widget
 When you develop a new widget, make sure you train your editors about how to use it, and create documentation for it. Things that seem self-explanatory to development teams may not be so clear to non-technical users, so it’s important to give editors and other business users instructions on how to use what you make for them.
 ## See the results
-If you’ve followed along with this series about Page Builder, you can now use the [General template](guides/development/page-builder/create-versatile-templates-part-1), [General section](guides/development/page-builder/implement-flexible-sections), [Simple CTA widget](guides/development/page-builder/build-simple-cta-widget), and Product widget to recreate the pages depicted in the mockups.
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups1.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups1.png)
-[![Screenshot of a promotional page](docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups2.png)
-[![Screenshot of a promotional page](docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)
-[![Mockup of a product detail page](docsassets/guides/define-advanced-widget/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
-[![Screenshot of a product page](docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)
+If you’ve followed along with this series about Page Builder, you can now use the [General template](/guides/development/page-builder/create-versatile-templates-part-1), [General section](/guides/development/page-builder/implement-flexible-sections), [Simple CTA widget](/guides/development/page-builder/build-simple-cta-widget), and Product widget to recreate the pages depicted in the mockups.
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups1.png)](/docsassets/guides/define-advanced-widget/WidgetMockups1.png)
+[![Screenshot of a promotional page](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage1.png)
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups2.png)
+[![Screenshot of a promotional page](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)](/docsassets/guides/define-advanced-widget/ScreenshotPromotionalPage2.png)
+[![Mockup of a product detail page](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
+[![Screenshot of a product page](/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)](/docsassets/guides/define-advanced-widget/ScreenshotProductPage.png)
 You’re welcome to tweak the styling to get the pages to appear even closer to the mockups. You can also apply your knowledge to add additional configurations to the template, section, and widgets.
 Additionally, the [finished branch of our Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) has several additional widgets that you can look over and modify for your own purposes.
 ## Localize the widget (optional)
-If you are [localizing your Admin UI](documentation/developers-and-admins/customization/admin-ui-localization) into other languages, you can localize the widget’s name, description, and property labels so editors see them in their preferred language.
-The localization process has two parts: first, you’ll replace hardcoded strings in your code with localization expressions. Then, you’ll define the actual translations in resource (`.resx`) files and register them with Xperience, as described in the [Admin UI localization documentation](documentation/developers-and-admins/customization/admin-ui-localization#register-localized-resources).
+If you are [localizing your Admin UI](/documentation/developers-and-admins/customization/admin-ui-localization) into other languages, you can localize the widget’s name, description, and property labels so editors see them in their preferred language.
+The localization process has two parts: first, you’ll replace hardcoded strings in your code with localization expressions. Then, you’ll define the actual translations in resource (`.resx`) files and register them with Xperience, as described in the [Admin UI localization documentation](/documentation/developers-and-admins/customization/admin-ui-localization#register-localized-resources).
 For a complete example of a localized widget, see the [CallToAction sample widget in the finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished/src/TrainingGuides.Web/Features/LandingPages/Widgets/CallToAction) of the Training guides repository.
 ### Localize widget properties
-To localize the widget’s configuration interface, update widget property annotations to use [localization expressions](documentation/developers-and-admins/customization/admin-ui-localization#admin-ui-fields) in the format `{$ resource.key $}`.
+To localize the widget’s configuration interface, update widget property annotations to use [localization expressions](/documentation/developers-and-admins/customization/admin-ui-localization#admin-ui-fields) in the format `{$ resource.key $}`.
 Here’s an example showing how to localize the `Label` and `ExplanationText` for one property in the Product widget:
 C#
 **ProductWidgetProperties.cs (localized example)**
@@ -932,4 +938,6 @@ Provide both the updated C# code and the complete .resx XML content.
 
 This approach reduces repetitive work while maintaining consistency across your localized content.
 Note that this is just an example prompt. Adjust it to match your project’s naming conventions and specific needs, and provide the AI agent with the relevant code context.
-**We recommend using the[Xperience by Kentico Documentation MCP server](documentation/developers-and-admins/installation/mcp-server) to help AI agents better understand Xperience widgets and localization patterns.**
+**We recommend using the[Xperience by Kentico Documentation MCP server](/documentation/developers-and-admins/installation/mcp-server) to help AI agents better understand Xperience widgets and localization patterns.**
+![]()
+[]()[]()

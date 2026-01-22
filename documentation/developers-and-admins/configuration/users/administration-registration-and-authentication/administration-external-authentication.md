@@ -1,12 +1,20 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Configuration](/documentation/developers-and-admins/configuration)
+  * [Users](/documentation/developers-and-admins/configuration/users)
+  * [Administration - Registration and authentication](/documentation/developers-and-admins/configuration/users/administration-registration-and-authentication)
+  * Administration - External authentication 
+
+
 # Administration - External authentication
-  * [ Copy page link ](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#) | [Get HelpService ID](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#)
 The Xperience by Kentico administration interface supports authentication via external identity and authentication providers. Identity providers are used to centralize user and role management across multiple services and to provide a unified sign-in experience for particular sets of users – often referred to as single sign-on (SSO).
 You can use any identity provider that best fits your needs, be it [Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id) (formerly known as Azure Active Directory), [Auth0](http://auth0.com), [Okta](https://www.okta.com/), [Duo](https://duo.com/) or any other platform that is OAuth/OIDC-compliant.
-This page provides detailed instructions for the set up of [Entra ID](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#microsoft-entra-id), [Auth0](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#auth0) and [Okta](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#okta), though other providers can be set up in a similar manner. Refer to the documentation of a particular provider to learn about the specific details for setting up the given integration.
+This page provides detailed instructions for the set up of [Entra ID](#microsoft-entra-id), [Auth0](#auth0) and [Okta](#okta), though other providers can be set up in a similar manner. Refer to the documentation of a particular provider to learn about the specific details for setting up the given integration.
 **Only one** external authentication provider can be enabled at a time – combining multiple providers is not supported.
 ## Microsoft Entra ID
 [Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id) is an identity service that provides single sign-on, multifactor authentication, and conditional access. You can configure Xperience to use Entra ID with the [OpenID Connect (OIDC)](https://openid.net/connect/) protocol for SSO purposes.
@@ -29,7 +37,7 @@ First, register your application in your Entra ID tenant:
       2. _family_name_ – mapped to the user’s Last name
       3. _given_name_ – mapped to the user’s First name
       4. _preferred_username_ – mapped to the user’s Username
-    4. Select **Add**. For more information about claims and their mapping to Xperience objects, see [Claims mapping and transformations](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#claims-mapping-and-transformations).
+    4. Select **Add**. For more information about claims and their mapping to Xperience objects, see [Claims mapping and transformations](#claims-mapping-and-transformations).
 
 
 The application is now registered and configured in Entra ID. Now, you need to connect your Xperience application to the Entra ID application registration:
@@ -101,12 +109,12 @@ builder.Services.AddAdminExternalAuthenticationProvider(
 
 
 The Xperience application is now set up to use Entra ID. If you run the application and navigate to the admin UI sign-in page, the external provider is now the only available sign-in method.
-[![Default admin UI sign-in page with an external authentication provider configured](docsassets/documentation/administration-external-authentication/SignInExternal.png)](https://docs.kentico.com/docsassets/documentation/administration-external-authentication/SignInExternal.png)
-Selecting **Sign in** redirects users to the Entra ID authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#sign-in-page-behavior). 
-When a user signs in for the first time, a corresponding user object is created in the system, and the application maps claims from the received token to the corresponding properties of the user object (First name, Last name, Username, and Email). The system is, by default, configured to only run this mapping once when a user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency).
-Additionally, newly created users don’t have any assigned [roles](documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Entra ID users, you have the following options:
-  * [Synchronize role assignments](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#AdministrationExternalauthentication-ADRoles) from Entra ID to Xperience
-  * Manually assign roles to Entra ID users (for example, using existing accounts or via [event handlers](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
+[![Default admin UI sign-in page with an external authentication provider configured](/docsassets/documentation/administration-external-authentication/SignInExternal.png)](/docsassets/documentation/administration-external-authentication/SignInExternal.png)
+Selecting **Sign in** redirects users to the Entra ID authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](#sign-in-page-behavior). 
+When a user signs in for the first time, a corresponding user object is created in the system, and the application maps claims from the received token to the corresponding properties of the user object (First name, Last name, Username, and Email). The system is, by default, configured to only run this mapping once when a user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](#user-data-synchronization-frequency).
+Additionally, newly created users don’t have any assigned [roles](/documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Entra ID users, you have the following options:
+  * [Synchronize role assignments](#AdministrationExternalauthentication-ADRoles) from Entra ID to Xperience
+  * Manually assign roles to Entra ID users (for example, using existing accounts or via [event handlers](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
 
 
 Xperience supports the synchronization of role assignments from Entra ID. However, only assignments to roles that already exist in the system are synchronized. The system doesn’t automatically create new roles based on data received from Entra ID.
@@ -118,8 +126,8 @@ To enable the synchronization of role assignments from Entra ID:
        * Allowed member types: Users/Groups
        * Value: contenteditors
        * Description: Members of the content editing team for our Xperience projects.the Xperience application must contain a role with the _contenteditors_ code name. Otherwise, the role assignment will not synchronize.
-     * See [Role management](documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
-  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, depending on your requirements, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency).
+     * See [Role management](/documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
+  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, depending on your requirements, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](#user-data-synchronization-frequency).
 
 
 When a user signs in, the system maps their Entra ID role assignments to roles defined in Xperience. 
@@ -131,12 +139,12 @@ The _Administrator_ role is a default system role that cannot be modified or del
     3. **Value** : administrator
     4. **Description** : Role granting the highest privilege for the Xperience administration interface
   2. [Add the desired users](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#assign-users-and-groups-to-roles) to the role. 
-     * If you are making this change after Entra ID has already been set up (and users may, as a result, already have accounts in Xperience), make sure to change the [user data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency) to `Always` to ensure the role is granted to users the next time they sign in.
+     * If you are making this change after Entra ID has already been set up (and users may, as a result, already have accounts in Xperience), make sure to change the [user data synchronization frequency](#user-data-synchronization-frequency) to `Always` to ensure the role is granted to users the next time they sign in.
 
 
 You can now grant the administrator role via Entra ID.
 ### Security considerations
-See [General security considerations](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
+See [General security considerations](#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
 For security practices related to Entra ID specifically, refer to [Identity management best practices](https://learn.microsoft.com/en-us/azure/security/fundamentals/identity-management-best-practices) and other Microsoft sources.
 ## Auth0
 [Auth0](http://auth0.com) is an authentication and authorization platform that provides identity management solutions for applications. It allows developers to authenticate, authorize, and secure access for their applications and APIs by implementing various authentication methods such as social login, single sign-on, multi-factor authentication, and more. Auth0 also provides features for user management, token generation, and security.
@@ -210,16 +218,16 @@ builder.Services.AddAdminExternalAuthenticationProvider(authBuilder =>
 ```
 
 **Storing application secrets**
-We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#securely-store-application-secrets) for recommendations.
+We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](#securely-store-application-secrets) for recommendations.
 
 
 The Xperience application is now set up. If you run the application and navigate to the admin UI sign-in page, the external provider is now the only available sign-in method.
-[![Default admin UI sign-in page with an external authentication provider configured](docsassets/documentation/administration-external-authentication/SignInExternal.png)](https://docs.kentico.com/docsassets/documentation/administration-external-authentication/SignInExternal.png)
-Selecting **Sign in** redirects users to the Auth0 authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#sign-in-page-behavior). 
-When a user signs in for the first time, a corresponding user object is created in the system and the application maps claims from the received ID token to the corresponding properties of the user object (First name, Last name, Username, and Email). By default, the system is configured to only run this mapping once when the user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency).
-Additionally, newly created users don’t have assigned [roles](documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Auth0 users, you have the following options:
-  * [Synchronize role assignments](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#AdministrationExternalauthentication-AuthRoles) from Auth0 to Xperience
-  * Manually assign roles to external users (for example, using existing accounts or via [event handlers](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
+[![Default admin UI sign-in page with an external authentication provider configured](/docsassets/documentation/administration-external-authentication/SignInExternal.png)](/docsassets/documentation/administration-external-authentication/SignInExternal.png)
+Selecting **Sign in** redirects users to the Auth0 authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](#sign-in-page-behavior). 
+When a user signs in for the first time, a corresponding user object is created in the system and the application maps claims from the received ID token to the corresponding properties of the user object (First name, Last name, Username, and Email). By default, the system is configured to only run this mapping once when the user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](#user-data-synchronization-frequency).
+Additionally, newly created users don’t have assigned [roles](/documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Auth0 users, you have the following options:
+  * [Synchronize role assignments](#AdministrationExternalauthentication-AuthRoles) from Auth0 to Xperience
+  * Manually assign roles to external users (for example, using existing accounts or via [event handlers](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
 
 
 Xperience supports the synchronization of role assignments from Auth0. However, only assignments to roles that already exist in the system are synchronized. The system doesn’t automatically create new roles based on data received from the external provider. 
@@ -229,8 +237,8 @@ To enable the synchronization of role assignments from Auth0:
      * The role **Code name** must match the **Name** of the corresponding role in Auth0. For example, for an Auth0 role with the following properties:
        * Name: Acme.ContentEditors
        * Description: Members of the content editing team for our Xperience projects.the Xperience application must contain a role with the _Acme.ContentEditors_ code name. Otherwise, the role assignment will not be synchronized.
-     * See [Role management](documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
-  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, depending on your requirements, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency).
+     * See [Role management](/documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
+  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, depending on your requirements, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](#user-data-synchronization-frequency).
   4. Add the `groups` scope to your Auth0 configuration:
 C#
 Copy
@@ -265,12 +273,12 @@ The _Administrator_ role is a default system role that cannot be modified or del
     1. **Name** : Administrator
     2. **Description** : Role granting the highest privilege for the Xperience administration interface
   2. Add the desired users to the role. 
-     * If you are making this change after Auth0 has already been set up (and users may, as a result, already have accounts in Xperience), make sure to change the [user data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency) to `Always` to ensure the role is granted to users the next time they sign in.
+     * If you are making this change after Auth0 has already been set up (and users may, as a result, already have accounts in Xperience), make sure to change the [user data synchronization frequency](#user-data-synchronization-frequency) to `Always` to ensure the role is granted to users the next time they sign in.
 
 
 You can now grant the administrator role via Auth0.
 ### Security considerations
-See [General security considerations](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
+See [General security considerations](#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
 For security practices related to Auth0 specifically, refer to the official provider documentation, such as [General usage and operations best practices](https://auth0.com/docs/troubleshoot/general-usage-and-operations-best-practices).
 ## Okta
 [Okta](https://www.okta.com/) is a cloud-based identity and access management platform that provides a secure way for organizations to manage and authenticate users for their applications and services. It offers a range of features, including single sign-on, multi-factor authentication, user provisioning, API access management, and more.
@@ -335,25 +343,25 @@ builder.Services.AddAdminExternalAuthenticationProvider(authBuilder =>
 ```
 
 **Storing application secrets**
-We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#securely-store-application-secrets) for recommendations.
+We do not recommend storing application secrets (`ClientSecret` property) directly in code or application configuration files (e.g., _appsettings.json_). See [Securely store application secrets](#securely-store-application-secrets) for recommendations.
 
 
 The Xperience application is now set up to use Okta. If you run the application and navigate to the admin UI sign-in page, the external provider is now the only available sign-in method.
-[![Default admin UI sign-in page with an external authentication provider configured](docsassets/documentation/administration-external-authentication/SignInExternal.png)](https://docs.kentico.com/docsassets/documentation/administration-external-authentication/SignInExternal.png)
-Selecting **Sign in** redirects users to the Okta authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#sign-in-page-behavior). 
-When a user signs in for the first time, a corresponding user object is created in the system, and the application maps claims from the received ID token to the corresponding properties of the user object (First name, Last name, Username, and Email). The system is, by default, configured to only run this mapping once when the user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency).
-Additionally, newly created users don’t have assigned [roles](documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Okta users, you have the following options:
-  * [Synchronize role assignments](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#AdministrationExternalauthentication-OktaRoles) from Okta to Xperience
-  * Manually assign roles to Okta users (for example, using existing accounts or via [event handlers](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
+[![Default admin UI sign-in page with an external authentication provider configured](/docsassets/documentation/administration-external-authentication/SignInExternal.png)](/docsassets/documentation/administration-external-authentication/SignInExternal.png)
+Selecting **Sign in** redirects users to the Okta authorization server, where they can authenticate using their existing credentials. If you wish to maintain the default forms authentication in parallel with external authentication, see [Sign-in page behavior](#sign-in-page-behavior). 
+When a user signs in for the first time, a corresponding user object is created in the system, and the application maps claims from the received ID token to the corresponding properties of the user object (First name, Last name, Username, and Email). The system is, by default, configured to only run this mapping once when the user first signs in and the object that represents them is created. To change the synchronization frequency for this data, see [User data synchronization frequency](#user-data-synchronization-frequency).
+Additionally, newly created users don’t have assigned [roles](/documentation/developers-and-admins/configuration/users/role-management) and therefore lack the permissions to access and work with applications in the admin UI. To manage role assignments for Okta users, you have the following options:
+  * [Synchronize role assignments](#AdministrationExternalauthentication-OktaRoles) from Okta to Xperience
+  * Manually assign roles to Okta users (for example, using existing accounts or via [event handlers](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events))
 
 
 Xperience supports the synchronization of role assignments from Okta. However, only assignments to roles that already exist in the system are synchronized. The system doesn’t automatically create new roles based on data received from Okta. 
 To enable the synchronization of role assignments from Okta, first prepare your Xperience instance:
   1. Create the roles to map onto in Xperience and define their permissions.
-     * See [Role management](documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
+     * See [Role management](/documentation/developers-and-admins/configuration/users/role-management) to learn how to create roles and assign permissions in the system.
      * Note the **code name** of each created role. You will need to use it in Okta.
-  2. Map [role claims](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#claims-mapping-and-transformations) by adding the following line to the external provider registration in **Program.cs** : `options.RoleClaimName = "XperienceAdminRoles"`
-  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency) for details.
+  2. Map [role claims](#claims-mapping-and-transformations) by adding the following line to the external provider registration in **Program.cs** : `options.RoleClaimName = "XperienceAdminRoles"`
+  3. Configure user data synchronization frequency to either `FirstLogin` or `Always`, to ensure role assignments are propagated to Xperience. See [User data synchronization frequency](#user-data-synchronization-frequency) for details.
 C#
 **Map role claims and set synchronization frequency**
 Copy
@@ -387,8 +395,8 @@ Next, switch to Okta and prepare the Xperience application registration for role
       4. **Group Priority** : Combine values across groups
   2. [Add users to groups](https://help.okta.com/en-us/Content/Topics/users-groups-profiles/usgp-assign-group-people.htm) in Okta.
   3. Open the Xperience application registration in Okta, switch to the **Assignments** tab, and under **Filters** select **Groups**. 
-    1. Edit (blue pencil icon) each group and add the **code names** of roles you want members of the group to have in Xperience using the custom _XperienceAdminRoles_ attribute. [![List all roles assigned to an Okta application](docsassets/documentation/administration-external-authentication/OktaRoleConfiguration.png)](https://docs.kentico.com/docsassets/documentation/administration-external-authentication/OktaRoleConfiguration.png)
-    2. When users sign-in via Okta, Xperience assigns the set of roles specified for their group. See the following diagram for an example scenario: [![Okta groups to Xperience roles mapping behavior illustration](docsassets/documentation/administration-external-authentication/OktaGroupRoleMapping.png)](https://docs.kentico.com/docsassets/documentation/administration-external-authentication/OktaGroupRoleMapping.png)
+    1. Edit (blue pencil icon) each group and add the **code names** of roles you want members of the group to have in Xperience using the custom _XperienceAdminRoles_ attribute. [![List all roles assigned to an Okta application](/docsassets/documentation/administration-external-authentication/OktaRoleConfiguration.png)](/docsassets/documentation/administration-external-authentication/OktaRoleConfiguration.png)
+    2. When users sign-in via Okta, Xperience assigns the set of roles specified for their group. See the following diagram for an example scenario: [![Okta groups to Xperience roles mapping behavior illustration](/docsassets/documentation/administration-external-authentication/OktaGroupRoleMapping.png)](/docsassets/documentation/administration-external-authentication/OktaGroupRoleMapping.png)
 
 
 When users sign in, the system maps their Okta roles assignments to roles defined in Xperience. 
@@ -396,12 +404,12 @@ When users sign in, the system maps their Okta roles assignments to roles define
 The _Administrator_ role is a default system role that cannot be modified or deleted. The system requires at least one user with this role assigned to exist in the system at all times. If you need to ensure the role can be granted to users via Okta (for example, if you wish to discontinue the default _administrator_ account):
   1. Open the Xperience application registration in Okta, switch to the **Assignments** tab, and under **Filters** select **Groups**.
   2. Edit (blue pencil icon) a group and add **Administrator** to the _XperienceAdminRoles_ attribute. 
-     * If you are making this change after Okta has already been set up (and users may, as a result, already have accounts in Xperience), make sure to have [user data synchronization frequency](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#user-data-synchronization-frequency) set to `Always` to ensure the role is granted the next time users sign in.
+     * If you are making this change after Okta has already been set up (and users may, as a result, already have accounts in Xperience), make sure to have [user data synchronization frequency](#user-data-synchronization-frequency) set to `Always` to ensure the role is granted the next time users sign in.
 
 
 All users from the modified group now have administrator privileges when they sign in.
 ### Security considerations
-See [General security considerations](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
+See [General security considerations](#general-security-considerations) for an overview of recommended security practices related to external authentication provider configuration and management.
 ## User data synchronization frequency
 The system allows you to configure the rate at which user information is synchronized with the external authentication provider. By default, user data is only taken when a user first signs in and their user account is created. However, this behavior can be changed via the `UserSynchronizationFrequency` option configurable within the `AddAdminExternalAuthenticationProvider` method:
 C#
@@ -435,7 +443,7 @@ Xperience synchronizes the following user data from the external provider:
   * Roles – only when synchronization is set to `FirstLogin` or `Always`.
 
 
-What data is synchronized to each property can be changed via `AdminExternalAuthenticationProviderOptions`. See [Claims mapping and transformations](documentation/developers-and-admins/configuration/users/administration-registration-and-authentication/administration-external-authentication#claims-mapping-and-transformations).
+What data is synchronized to each property can be changed via `AdminExternalAuthenticationProviderOptions`. See [Claims mapping and transformations](#claims-mapping-and-transformations).
 ## User account invalidation or lockout
 If you wish to prevent a user from accessing the Xperience admin UI or completely delete their account:
   1. In your identity provider, remove the user from the role or group assigned to the Xperience application registration (or restrict their account in some other way as permitted by the provider)
@@ -453,7 +461,7 @@ Username |  UserNameClaimName |  “preferred_username” |  The username is use
 FirstName |  FirstNameClaimName |  ClaimTypes.GivenName |  The first (given) name. If this claim is not present in the information returned from the identity provider, the property remains empty.  
 LastName |  LastNameClaimName |  ClaimTypes.Surname |  The family name. If this claim is not present in the information returned from the identity provider, the property remains empty.  
 Email |  EmailClaimName |  ClaimTypes.Email |  The user’s email. If this claim is not present in the information returned from the identity provider, the property remains empty.  
-Role claims are mapped to the `UserRoleInfo` [binding](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) [object type](documentation/developers-and-admins/customization/object-types).
+Role claims are mapped to the `UserRoleInfo` [binding](/documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships) [object type](/documentation/developers-and-admins/customization/object-types).
 Options property |  Claim key |  Description  
 ---|---|---  
 RoleClaimName |  ClaimTypes.Roles |  Contains roles assigned to the user via the external provider. The values must match the code names of roles already present in the target Xperience instance.   
@@ -518,7 +526,7 @@ public class MyClaimsTransformation : IClaimsTransformation
 }
 ```
 
-Register the transformation to the application’s [IoC container](documentation/developers-and-admins/development/website-development-basics/dependency-injection). All registered transformations are applied automatically at runtime:
+Register the transformation to the application’s [IoC container](/documentation/developers-and-admins/development/website-development-basics/dependency-injection). All registered transformations are applied automatically at runtime:
 C#
 **Program.cs**
 Copy
@@ -613,3 +621,7 @@ For projects in production, consider the following options:
 #### Private cloud hosting
   * [DataProtection API](https://learn.microsoft.com/en-us/dotnet/standard/security/how-to-use-data-protection)
   * [Azure KeyVault](https://learn.microsoft.com/en-us/aspnet/core/security/key-vault-configuration#use-application-id-and-x509-certificate-for-non-azure-hosted-apps)
+
+
+![]()
+[]()[]()

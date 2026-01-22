@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-contacts/update-existing-contact-group
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with contacts](/guides/digital-marketing/work-with-contacts)
+  * Update existing contact group 
+
+
 # Update existing contact group
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-contacts/update-existing-contact-group#) | [Get HelpService ID](guides/digital-marketing/work-with-contacts/update-existing-contact-group#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-contacts/update-existing-contact-group# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-contacts/update-existing-contact-group#)
 See how you can adjust an existing contact group to match new definition.
 Let’s say that you want to personalize the content of you website for contacts collected into a contact group. Just before you launch your campaign, you realize that your contact group definition doesn’t verify if a contact gave you a consent agreement to use this advanced marketing tactic.
 The following how-to show you steps to fix your contact group definition.
@@ -21,4 +27,6 @@ The following how-to show you steps to fix your contact group definition.
 
 
 ### Next step
-To learn more about contacts, continue to the [contact segmentation overview](guides/digital-marketing/work-with-contacts/contact-segmentation-overview).
+To learn more about contacts, continue to the [contact segmentation overview](/guides/digital-marketing/work-with-contacts/contact-segmentation-overview).
+![]()
+[]()[]()

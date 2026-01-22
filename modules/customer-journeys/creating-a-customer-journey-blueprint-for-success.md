@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success
+scrape_date: 2026-01-22
+---
+
+Module: Customer journeys
+8 of 17 Pages
 # Founding principles
-  * [ Copy page link ](modules/customer-journeys/creating-a-customer-journey-blueprint-for-success#) | [Get HelpService ID](modules/customer-journeys/creating-a-customer-journey-blueprint-for-success#)
-Core MVC 5
-
-
-[✖](modules/customer-journeys/creating-a-customer-journey-blueprint-for-success# "Close page link panel") [Copy to clipboard](modules/customer-journeys/creating-a-customer-journey-blueprint-for-success#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -38,16 +40,8 @@ To avoid miscommunication and misalignment, we ensured that each stage of the jo
 A customer journey map turns **insights into action**. It gives teams a clear visual guide for decision-making and forces them to organize seemingly unconnected data from different metrics and teams into a flow of connected customer actions. The map shows how customers move through each stage, highlighting **key conversion points** and **areas for improvement**.
 Seeing data in one place makes it easier for teams to **spot patterns, understand customer behavior, and make informed decisions**.
 When everyone works from the **same source of truth** – whether it’s a table of key actions or a visual map of the journey – it reduces confusion and keeps goals aligned. This approach made it easier for teams to collaborate across departments, track progress over time, and adjust strategies quickly based on real customer needs.
-[ Previous page ](modules/customer-journeys/anatomy-of-customer-journeys-key-components)
+[ Previous page ](/modules/customer-journeys/anatomy-of-customer-journeys-key-components)
 8 of 17
-[ Mark complete and continue ](modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success)
-[](https://docs.kentico.com/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success)[](https://docs.kentico.com/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success)
+[ Mark complete and continue ](/modules/customer-journeys/stages-touchpoints-guiding-customers-decision)
+![]()
+[]()[]()

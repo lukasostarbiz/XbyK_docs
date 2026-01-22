@@ -1,13 +1,20 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Website development basics](/documentation/developers-and-admins/development/website-development-basics)
+  * Set up local hosting 
+
+
 # Set up local hosting
-  * [ Copy page link ](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting#) | [Get HelpService ID](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting#)
 When developing websites, you often need to quickly build and test code changes made to the project. For this reason, it’s useful to have the site hosted locally on your development machine. ASP.NET Core is very flexible in this aspect as it offers multiple hosting options for its supported platforms.
 See the following sections for a breakdown of hosting options available on each platform supported by Xperience:
-  * [Windows platforms](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting#windows-platforms)
-  * [Linux distributions](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting#linux-distributions)
+  * [Windows platforms](#windows-platforms)
+  * [Linux distributions](#linux-distributions)
 
 
 ## Windows platforms
@@ -21,7 +28,7 @@ cd <project_directory>
 dotnet run
 ```
 
-This launches the application on _localhost_ using an empty port randomly assigned during the [installation process](documentation/developers-and-admins/installation). You can change the assigned defaults via the project’s [launchSettings.json file](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments#development-and-launchsettingsjson).
+This launches the application on _localhost_ using an empty port randomly assigned during the [installation process](/documentation/developers-and-admins/installation). You can change the assigned defaults via the project’s [launchSettings.json file](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments#development-and-launchsettingsjson).
 ### IIS Express
 [IIS Express](https://docs.microsoft.com/en-us/iis/extensions/introduction-to-iis-express/iis-express-overview) is a lightweight, self-contained version of IIS optimized for developers. IIS Express makes it easy to use the most current version of IIS to develop and test websites. It has all the core capabilities of IIS 7 and above as well as additional features designed to ease website development including:
   * It doesn’t run as a service or require administrator user rights to perform most tasks.
@@ -34,7 +41,7 @@ To host the installed project using IIS Express:
   2. Right-click the project file and select **Properties**.
   3. Under Debug: 
      * Set **Launch** to **IIS Express**.  
-[![Configure IIS hosting for the application](docsassets/documentation/set-up-local-hosting/CoreProjectHostingConfiguration.png)](https://docs.kentico.com/docsassets/documentation/set-up-local-hosting/CoreProjectHostingConfiguration.png)
+[![Configure IIS hosting for the application](/docsassets/documentation/set-up-local-hosting/CoreProjectHostingConfiguration.png)](/docsassets/documentation/set-up-local-hosting/CoreProjectHostingConfiguration.png)
   4. Save the changes and run the project using the profile you configured (**IIS Express** in this example).
 
 
@@ -54,7 +61,7 @@ $ cd <project_directory>
 $ dotnet run
 ```
 
-Which launches the application on _localhost_ using an empty port randomly assigned during the [installation process](documentation/developers-and-admins/installation).
+Which launches the application on _localhost_ using an empty port randomly assigned during the [installation process](/documentation/developers-and-admins/installation).
 ### Ngnix and Apache
 ASP.NET Core also supports hosting using [Apache](https://httpd.apache.org/) and [Nginx](https://www.nginx.com/).
 See the official Microsoft documentation for
@@ -86,3 +93,6 @@ builder.Services.AddKentico(features =>
 // Enables static web assets
 builder.WebHost.UseStaticWebAssets();
 ```
+
+![]()
+[]()[]()

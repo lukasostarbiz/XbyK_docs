@@ -1,13 +1,21 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages)
+  * UI page permission checks 
+
+
 # UI page permission checks
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks#)
-This page covers how to add permissions to applications and evaluate them within UI pages using the [role-based access control model](documentation/developers-and-admins/configuration/users/role-management).
+This page covers how to add permissions to applications and evaluate them within UI pages using the [role-based access control model](/documentation/developers-and-admins/configuration/users/role-management).
 ## Add and evaluate permissions for applications
 ### Define the set of application permissions
-Each application in the admin UI needs to declare the set of permissions it actively evaluates. This set is reflected when assigning permissions to roles via the **Role management** application. Define the permissions by decorating [UI application pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) with the `UIPermission` attribute and specifying permission names. The system’s default application permissions (_VIEW_ , _CREATE_ , _DELETE_ , _UPDATE_) are accessible via the `SystemPermissions` class.
+Each application in the admin UI needs to declare the set of permissions it actively evaluates. This set is reflected when assigning permissions to roles via the **Role management** application. Define the permissions by decorating [UI application pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) with the `UIPermission` attribute and specifying permission names. The system’s default application permissions (_VIEW_ , _CREATE_ , _DELETE_ , _UPDATE_) are accessible via the `SystemPermissions` class.
 C#
 **Add permissions to UI applications**
 Copy
@@ -41,7 +49,7 @@ public class OfficeManagementApplication : ApplicationPage
 ```
 
 ### Require permissions to access UI pages
-To place [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) behind permissions, use the `UIEvaluatePermission` attribute. This permission must be from the set defined for the corresponding application using the `UIPermission` attribute. Otherwise, you would be unable to assign this permission to roles via **Role management**.
+To place [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) behind permissions, use the `UIEvaluatePermission` attribute. This permission must be from the set defined for the corresponding application using the `UIPermission` attribute. Otherwise, you would be unable to assign this permission to roles via **Role management**.
 C#
 **Place UI pages behind permissions**
 Copy
@@ -56,14 +64,14 @@ public class OpenPositionListing : ListingPage
 ```
 
 **Permission evaluation in UI page templates**
-The following [UI page templates](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) provided by the API by default contain permission checks:
+The following [UI page templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates) provided by the API by default contain permission checks:
   * Listing pages – require VIEW to access.
   * Create pages – require CREATE to access.
 
 
 Roles without proper permissions attempting to access such pages receive a forbidden (HTTP 403) response.
 ### Evaluate permissions within page commands
-You can configure each [page command](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) to evaluate a single permission:
+You can configure each [page command](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands) to evaluate a single permission:
 C#
 **Page command permissions**
 Copy
@@ -77,7 +85,7 @@ public async Task<ICommandResponse<RowActionResult>> DoSomething()
 ```
 
 ### Propagate permission information to client UI templates
-You might need to send information about a user’s permissions to the [client UI template](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) to, for example, disable certain interactive elements. To check whether the current user has the required permissions, use `IUIPermissionEvaluator`:
+You might need to send information about a user’s permissions to the [client UI template](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) to, for example, disable certain interactive elements. To check whether the current user has the required permissions, use `IUIPermissionEvaluator`:
 C#
 **Send permission information to the client**
 Copy
@@ -114,7 +122,7 @@ public class PageClientProperties : TemplateClientProperties
 ```
 
 ## UI permission model and page extenders
-If you need to add permissions to system pages or pages provided via third-party integrations where you cannot access the source code, you can do so via [UI page extenders](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders):
+If you need to add permissions to system pages or pages provided via third-party integrations where you cannot access the source code, you can do so via [UI page extenders](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders):
 C#
 **Permission definition**
 Copy
@@ -126,7 +134,7 @@ using Kentico.Xperience.Admin.Base;
 public class UserListExtender : PageExtender<UserList>
 ```
 
-This applies only to application permissions that you can grant to roles via the **Role management** application. The [page permissions](documentation/developers-and-admins/configuration/users/role-management/page-permission-management) of website channel applications cannot be extended.
+This applies only to application permissions that you can grant to roles via the **Role management** application. The [page permissions](/documentation/developers-and-admins/configuration/users/role-management/page-permission-management) of website channel applications cannot be extended.
 After annotating the extender class as demonstrated in the example above, you can work with the added permission as if it was assigned directly to the application. The following example defines a new action on the users listing page from the **Users** application and places it behind the “ _Acme.Permission_ ” permission.
 C#
 **Permission usage**
@@ -154,11 +162,11 @@ public class UserListExtender : PageExtender<UserList>
 ```
 
 The added permission is now also assignable via the **Role management** application.
-[![Role management application](docsassets/documentation/ui-page-permission-checks/PageExtenderCustomPermission.png)](https://docs.kentico.com/docsassets/documentation/ui-page-permission-checks/PageExtenderCustomPermission.png)
+[![Role management application](/docsassets/documentation/ui-page-permission-checks/PageExtenderCustomPermission.png)](/docsassets/documentation/ui-page-permission-checks/PageExtenderCustomPermission.png)
 ## Add and evaluate permissions in workspace-scoped applications
-Applications scoped under [workspaces](documentation/developers-and-admins/configuration/users/role-management/workspaces) use the workspace permission model, where permissions can be set for each workspace separately. This model allows you to control access to UI pages and commands in a workspace-scoped application based on workspace-specific permissions.
+Applications scoped under [workspaces](/documentation/developers-and-admins/configuration/users/role-management/workspaces) use the workspace permission model, where permissions can be set for each workspace separately. This model allows you to control access to UI pages and commands in a workspace-scoped application based on workspace-specific permissions.
 ### Require permissions to access workspace-scoped UI pages
-To place [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) behind permissions of a given workspace, use the `WorkspaceEvaluatePermission` attribute.
+To place [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) behind permissions of a given workspace, use the `WorkspaceEvaluatePermission` attribute.
 C#
 **Place UI pages behind permissions**
 Copy
@@ -173,7 +181,7 @@ public class CustomListing : ListingPage
 ```
 
 ### Evaluate permissions with IWorkspacePermissionEvaluator
-Use the `IWorkspacePermissionEvaluator` to granularly evaluate the permissions for a given workspace specified by the `WorkspaceId`. You can retrieve the `WorkspaceId` using the `GetContentItemMetadata` method or directly from the URL of UI pages that use the `WorkspaceId` as a [parameter of a URL slug](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs).
+Use the `IWorkspacePermissionEvaluator` to granularly evaluate the permissions for a given workspace specified by the `WorkspaceId`. You can retrieve the `WorkspaceId` using the `GetContentItemMetadata` method or directly from the URL of UI pages that use the `WorkspaceId` as a [parameter of a URL slug](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs).
 C#
 **Use the IWorkspacePermissionEvaluator to evaluate permissions**
 Copy
@@ -235,3 +243,6 @@ public async Task<ICommandResponse> CommandHandler()
     return Response();
 }
 ```
+
+![]()
+[]()[]()

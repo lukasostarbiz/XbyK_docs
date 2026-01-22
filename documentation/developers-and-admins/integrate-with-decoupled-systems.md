@@ -1,44 +1,49 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/integrate-with-decoupled-systems
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * Integrate with decoupled systems 
+
+
 # Integrate with decoupled systems
-  * [ Copy page link ](documentation/developers-and-admins/integrate-with-decoupled-systems#) | [Get HelpService ID](documentation/developers-and-admins/integrate-with-decoupled-systems#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/integrate-with-decoupled-systems# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/integrate-with-decoupled-systems#)
-In modern architectures, your Xperience project may need to interact with other external systems that operate independently, without shared databases and other internal resources. You can integrate Xperience with these decoupled systems by establishing asynchronous messaging through a [messaging service](documentation/developers-and-admins/integrate-with-decoupled-systems#messaging-service), which facilitates the exchange of messages between the systems. Depending on your use case, Xperience can act as either [message producer](documentation/developers-and-admins/integrate-with-decoupled-systems#xperience-as-a-message-producer), [message consumer](documentation/developers-and-admins/integrate-with-decoupled-systems#xperience-as-a-message-consumer), or both.
+In modern architectures, your Xperience project may need to interact with other external systems that operate independently, without shared databases and other internal resources. You can integrate Xperience with these decoupled systems by establishing asynchronous messaging through a [messaging service](#messaging-service), which facilitates the exchange of messages between the systems. Depending on your use case, Xperience can act as either [message producer](#xperience-as-a-message-producer), [message consumer](#xperience-as-a-message-consumer), or both.
 The following architectural overview illustrates the flow of messages between an Xperience project and a decoupled system:
-[![Integration overview](docsassets/documentation/integrate-with-decoupled-systems/decoupled_systems.drawio.svg)](https://docs.kentico.com/docsassets/documentation/integrate-with-decoupled-systems/decoupled_systems.drawio.svg)
+[![Integration overview](/docsassets/documentation/integrate-with-decoupled-systems/decoupled_systems.drawio.svg)](/docsassets/documentation/integrate-with-decoupled-systems/decoupled_systems.drawio.svg)
 Decoupled integrations can be utilized in a wide range of scenarios. Some examples include:
-  * send data submitted by customers through [forms](documentation/business-users/digital-marketing/forms) into your CRM
-  * synchronize [product](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock) data in Xperience with your inventory management system
+  * send data submitted by customers through [forms](/documentation/business-users/digital-marketing/forms) into your CRM
+  * synchronize [product](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock) data in Xperience with your inventory management system
   * communicate with various types of business and ticketing systems
 
 
-This page explains how to set up a decoupled integration with Xperience, covering the [key concepts](documentation/developers-and-admins/integrate-with-decoupled-systems#key-concepts), configuration steps to [consume](documentation/developers-and-admins/integrate-with-decoupled-systems#xperience-as-a-message-consumer) and [produce](documentation/developers-and-admins/integrate-with-decoupled-systems#xperience-as-a-message-producer) messages, and an [example implementation](documentation/developers-and-admins/integrate-with-decoupled-systems#example).
+This page explains how to set up a decoupled integration with Xperience, covering the [key concepts](#key-concepts), configuration steps to [consume](#xperience-as-a-message-consumer) and [produce](#xperience-as-a-message-producer) messages, and an [example implementation](#example).
 ## Key concepts
 The following concepts address the key points of decoupled integrations in Xperience:
-  * [Message triggers](documentation/developers-and-admins/integrate-with-decoupled-systems#message-triggers) – determine when messages should be sent from Xperience
-  * [Message contents](documentation/developers-and-admins/integrate-with-decoupled-systems#message-contents) – define what data is exchanged
-  * [Messaging service](documentation/developers-and-admins/integrate-with-decoupled-systems#messaging-service) – handle the transmission of messages between systems
-  * [Messaging libraries](documentation/developers-and-admins/integrate-with-decoupled-systems#messaging-libraries) – use code abstractions for working with the service
+  * [Message triggers](#message-triggers) – determine when messages should be sent from Xperience
+  * [Message contents](#message-contents) – define what data is exchanged
+  * [Messaging service](#messaging-service) – handle the transmission of messages between systems
+  * [Messaging libraries](#messaging-libraries) – use code abstractions for working with the service
 
 
 ### Message triggers
-When sending messages from your project, you need to determine what actions require communication with the decoupled system. In Xperience, significant operations are represented by [events](documentation/developers-and-admins/customization/handle-global-events). Event handling allows you to implement custom logic to send messages when those events occur.
+When sending messages from your project, you need to determine what actions require communication with the decoupled system. In Xperience, significant operations are represented by [events](/documentation/developers-and-admins/customization/handle-global-events). Event handling allows you to implement custom logic to send messages when those events occur.
 **Learn about events and event handling**
-See the corresponding pages about [global events](documentation/developers-and-admins/customization/handle-global-events) and [object events](documentation/developers-and-admins/customization/handle-global-events/handle-object-events) or consult the [global events reference](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events) to learn about available events and their handling.
-You can also choose to send messages directly from appropriate places in your [custom code](documentation/developers-and-admins/customization/integrate-custom-code) without relying on the provided events.
+See the corresponding pages about [global events](/documentation/developers-and-admins/customization/handle-global-events) and [object events](/documentation/developers-and-admins/customization/handle-global-events/handle-object-events) or consult the [global events reference](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events) to learn about available events and their handling.
+You can also choose to send messages directly from appropriate places in your [custom code](/documentation/developers-and-admins/customization/integrate-custom-code) without relying on the provided events.
 ### Message contents
 Messages represent structured data to be exchanged between systems. To ensure consistency, a message can be implemented as a class in a shared library, accessible from both systems.
 For example, you can transfer:
-  * [Content item](documentation/business-users/content-hub/content-items) data
-  * [Page](documentation/business-users/website-content) data
-  * Submitted [form](documentation/business-users/digital-marketing/forms) data
-  * [Contact](documentation/business-users/digital-marketing/contact-management) data
+  * [Content item](/documentation/business-users/content-hub/content-items) data
+  * [Page](/documentation/business-users/website-content) data
+  * Submitted [form](/documentation/business-users/digital-marketing/forms) data
+  * [Contact](/documentation/business-users/digital-marketing/contact-management) data
 
 
 ### Messaging service
 To enable communication with a decoupled system, you need to set up an external messaging service. You can use cloud-based messaging services such as [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) or self-managed message brokers, for instance, [RabbitMQ](https://www.rabbitmq.com/).
-**Note:** An external messaging service is required both for [SaaS](documentation/developers-and-admins/saas/saas-overview) and [private-cloud](documentation/developers-and-admins/deployment/deploy-to-private-cloud) deployments, as it’s not a part of the system or [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal).
+**Note:** An external messaging service is required both for [SaaS](/documentation/developers-and-admins/saas/saas-overview) and [private-cloud](/documentation/developers-and-admins/deployment/deploy-to-private-cloud) deployments, as it’s not a part of the system or [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal).
 Depending on your requirements, you can configure different communication patterns:
   * [Message queues](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview#queues) – a single stream of messages typically received by one consumer.
   * [Topics and subscriptions](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview#topics) – enable one-to-many communication and categorization of messages by topic.
@@ -52,7 +57,7 @@ The following steps outline how to configure Xperience to send messages, using t
   1. Prerequisites: 
     1. [Set up a queue](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=connection-string) in your Azure Service Bus [namespace](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview#namespaces).
     2. Install the [Rebus](https://www.nuget.org/packages/Rebus) and [Rebus.ServiceProvider](https://www.nuget.org/packages/Rebus.ServiceProvider) NuGet packages.
-    3. Define a [message](documentation/developers-and-admins/integrate-with-decoupled-systems#message-contents) based on your scenario.
+    3. Define a [message](#message-contents) based on your scenario.
   2. Configure the Rebus library in the `Program.cs` file: 
 C#
 **Program.cs**
@@ -70,8 +75,8 @@ builder.Services.AddRebus(configure => configure
 ...
 ```
 
-  3. [Handle events](documentation/developers-and-admins/customization/handle-global-events) and send messages from the handler. 
-     * See the [Example](documentation/developers-and-admins/integrate-with-decoupled-systems#handle-events-and-send-messages) section for a full implementation.
+  3. [Handle events](/documentation/developers-and-admins/customization/handle-global-events) and send messages from the handler. 
+     * See the [Example](#handle-events-and-send-messages) section for a full implementation.
 
 
 ## Xperience as a message consumer
@@ -79,7 +84,7 @@ The following steps outline how to configure Xperience to receive messages, usin
   1. Prerequisites:
     1. [Set up a queue](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=connection-string) in your Azure Service Bus [namespace](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview#namespaces).
     2. Install the [Rebus](https://www.nuget.org/packages/Rebus) and [Rebus.ServiceProvider](https://www.nuget.org/packages/Rebus.ServiceProvider) NuGet packages.
-    3. Define a [message](documentation/developers-and-admins/integrate-with-decoupled-systems#message-contents) based on your scenario.
+    3. Define a [message](#message-contents) based on your scenario.
   2. Configure the Rebus library in the `Program.cs` file:
 C#
 **Program.cs**
@@ -156,7 +161,7 @@ builder.Services.AddRebus(configure => configure
 ```
 
 ### Handle events and send messages
-Create a [handler](documentation/developers-and-admins/customization/handle-global-events) for the `WebPageEvents.Publish.Execute` event that will send messages when the event takes place. Assign the handler to the event in a [custom initialization module](documentation/developers-and-admins/customization/run-code-on-application-startup).
+Create a [handler](/documentation/developers-and-admins/customization/handle-global-events) for the `WebPageEvents.Publish.Execute` event that will send messages when the event takes place. Assign the handler to the event in a [custom initialization module](/documentation/developers-and-admins/customization/run-code-on-application-startup).
 C#
 **CustomMessagingModule.cs**
 Copy
@@ -253,3 +258,6 @@ private void Article_Published_EventHandler(object sender, PublishWebPageEventAr
     bus.Send(message);
 }
 ```
+
+![]()
+[]()[]()

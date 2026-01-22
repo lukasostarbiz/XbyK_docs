@@ -1,33 +1,39 @@
+---
+source: https://docs.kentico.com/guides/development/customizations-and-integrations/add-channels-to-module
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Customizations and integrations](/guides/development/customizations-and-integrations)
+  * Add channel-specific configuration to a module 
+
+
 # Add channel-specific configuration to a module
-  * How-to| [ Copy page link ](guides/development/customizations-and-integrations/add-channels-to-module#) | [Get HelpService ID](guides/development/customizations-and-integrations/add-channels-to-module#)
-Core MVC 5
-
-
-[✖](guides/development/customizations-and-integrations/add-channels-to-module# "Close page link panel") [Copy to clipboard](guides/development/customizations-and-integrations/add-channels-to-module#)
-In the samples from the [earlier in this series](guides/development/customizations-and-integrations/create-basic-module), we created a basic module UI with standard listing, create, edit, and delete functionality.
+In the samples from the [earlier in this series](/guides/development/customizations-and-integrations/create-basic-module), we created a basic module UI with standard listing, create, edit, and delete functionality.
 Now, we will explore the process of:
   * Adding per-channel configuration to a custom module
   * Managing multiple levels of hierarchy
   * Using UI pages to ensure one-to-one relationships between objects
 
 
-The samples here will add a website-channel-specific settings section to the module defined [earlier](guides/development/customizations-and-integrations/create-basic-module).
-The new UI pages will allow designated users to select a [website channel](documentation/developers-and-admins/configuration/website-channel-management) from a list and edit its settings. These include SEO-related settings and channel-specific code snippets.
+The samples here will add a website-channel-specific settings section to the module defined [earlier](/guides/development/customizations-and-integrations/create-basic-module).
+The new UI pages will allow designated users to select a [website channel](/documentation/developers-and-admins/configuration/website-channel-management) from a list and edit its settings. These include SEO-related settings and channel-specific code snippets.
 Your browser does not support the video tag. 
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Experience with [admin UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages).
+  * Experience with [admin UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages).
 
 
 The examples in this guide require that you either:
-  * Have followed along with the samples from [the earlier guide](guides/development/customizations-and-integrations/create-basic-module) that implement a custom module holding global settings.
+  * Have followed along with the samples from [the earlier guide](/guides/development/customizations-and-integrations/create-basic-module) that implement a custom module holding global settings.
 
 
 or
-  * Have an existing [UI application page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) under which you want to create a channel-specific UI.
+  * Have an existing [UI application page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) under which you want to create a channel-specific UI.
 
 
 **Code samples**
@@ -37,17 +43,17 @@ The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-u
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Design the classes
 Before we define our UI pages themselves, we need to design the classes they will display.
-If you plan to use [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration) for a given class, make sure to include either a _Code name_ or _Guid_ field. Similarly, include a _Display name_ field if you want objects of the class to automatically display nicely in a listing.
+If you plan to use [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration) for a given class, make sure to include either a _Code name_ or _Guid_ field. Similarly, include a _Display name_ field if you want objects of the class to automatically display nicely in a listing.
 If you’re following along with our example, create three new classes in the **Project settings** module:
-  * [Web channel settings](guides/development/customizations-and-integrations/add-channels-to-module#web-channel-settings), to represent the collection of all settings for a given web channel.
-  * [SEO settings](guides/development/customizations-and-integrations/add-channels-to-module#seo-settings), to hold the robots.txt specification that a given website channel provides to crawlers.
-  * [Web channel snippet](guides/development/customizations-and-integrations/add-channels-to-module#web-channel-snippet), to represent code snippets that you want to render to the channel’s website.
+  * [Web channel settings](#web-channel-settings), to represent the collection of all settings for a given web channel.
+  * [SEO settings](#seo-settings), to hold the robots.txt specification that a given website channel provides to crawlers.
+  * [Web channel snippet](#web-channel-snippet), to represent code snippets that you want to render to the channel’s website.
 
 
 ### Web channel settings
 The _web channel settings_ class will have a one-to-one relationship with the _web channel_ class in Xperience by Kentico.
 It will represent parent objects that group channel-specific settings together.
-It needs a _display name_ column, so that objects display nicely on a listing page, and a _guid column_ for the sake of [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration).
+It needs a _display name_ column, so that objects display nicely on a listing page, and a _guid column_ for the sake of [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration).
 Since objects of this class will serve as containers for other objects, and they can get their data directly from corresponding channels, they do not need an edit form for user input.
   1. **General** tab 
      * **Class name** : Web channel settings
@@ -74,10 +80,10 @@ Since objects of this class will serve as containers for other objects, and they
 
 ### SEO settings
 This class will represent a given web channel’s settings related to SEO.
-Each of its additional database fields will represent the value of a setting. As a result, it has a one-to-one relationship with [web channel settings](guides/development/customizations-and-integrations/add-channels-to-module#web-channel-settings), and by extension, [website channels](documentation/developers-and-admins/configuration/website-channel-management).
+Each of its additional database fields will represent the value of a setting. As a result, it has a one-to-one relationship with [web channel settings](#web-channel-settings), and by extension, [website channels](/documentation/developers-and-admins/configuration/website-channel-management).
 For the sake of this example, it will contain a field for setting the content of the channel’s [robots.txt file](https://developers.google.com/search/docs/crawling-indexing/robots/intro).
 For the sake of simplicity, this example is simple, but we recommend creating additional SEO setting fields in your project. For instance, you could add settings that configure automatic sitemap generation.
-The SEO settings class also needs a _foreign key_ to the _Web channel settings_ class to represent that relationship, and a _guid_ for the sake of [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration).
+The SEO settings class also needs a _foreign key_ to the _Web channel settings_ class to represent that relationship, and a _guid_ for the sake of [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration).
 Since SEO settings’ values are provided by users, the class also needs a _UI form_ to take their input.
   1. **General** tab 
      * **Class name** : SEO Settings
@@ -119,7 +125,7 @@ Leaving **Pre-fill code name automatically** checked will generate the same code
 The Web channel snippet class will represent a code snippet associated with a given website channel.
 Each channel can have many snippets, and the snippets can vary in type.
 Alongside a text field to hold the code, the class needs an indicator field to indicate the type of code snippet (metadata, CSS, or Javascript).
-It should also have a _display name_ for UI purposes, a _foreign key_ to the web channel settings class, and a _code name_ for easier code retrieval and [Continuous Integration](documentation/developers-and-admins/ci-cd/continuous-integration).
+It should also have a _display name_ for UI purposes, a _foreign key_ to the web channel settings class, and a _code name_ for easier code retrieval and [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration).
   1. General 
      * **Class name** : Web channel snippet
      * **Namespace** : TrainingGuides
@@ -195,21 +201,21 @@ javascript;Javascript
 
 ## Prepare generated classes
 ### Generate code files
-Now, as we did [in the earlier example](guides/development/customizations-and-integrations/create-basic-module#generate-code-files), generate code files for the new classes.
-See the [code generation documentation](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) for details about the available parameters.
+Now, as we did [in the earlier example](/guides/development/customizations-and-integrations/create-basic-module#generate-code-files), generate code files for the new classes.
+See the [code generation documentation](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) for details about the available parameters.
 If you have existing classes that were generated with different parameters, use either the `--include` or `--exclude` parameter to ensure that only the classes you’re currently working with are generated. Otherwise they may be overwritten.
 For scenarios with multiple groups of classes generated with different parameters, we recommend using a scripting language like Powershell or Bash to create a reusable script that re-generates all code files according to your requirements.
-If you’re following along with the example, you should be able to use something like this to keep from overwriting the cookie level consent mapping with a version that uses no generated provider: 
+If you’re following along with the example, you should be able to use something like this: 
 CMD
 Copy
 ```
-dotnet run --no-build -- --kxp-codegen --type "Classes" --location "../TrainingGuides.Entities/{type}/{name}/ " --exclude "trainingguides.cookielevelconsentmapping" --with-provider-class "false"
+dotnet run --no-build -- --kxp-codegen --type "Classes" --location "../TrainingGuides.Entities/{type}/{name}/" --with-provider-class "false"
 ```
 
 ### Override TYPEINFO definitions
-As in the [the earlier example](guides/development/customizations-and-integrations/create-basic-module) and the [cookie consent mapping guide](guides/development/data-protection/map-consents-to-cookie-levels#generate-the-code), consider any changes you may need to make to the [object type configuration](documentation/developers-and-admins/customization/object-types/object-type-configuration) of the classes.
-You can use this property to control relationships and dependencies between classes, along with [CI/CD](documentation/developers-and-admins/ci-cd) and [Caching](documentation/developers-and-admins/development/caching) behavior.
-See the [object type configuration document](documentation/developers-and-admins/customization/object-types/object-type-configuration#type-info-properties) for more details about what you can configure.
+As in the [the earlier example](/guides/development/customizations-and-integrations/create-basic-module) and the [cookie consent mapping guide](/guides/development/data-protection/map-consents-to-cookie-levels#generate-the-code), consider any changes you may need to make to the [object type configuration](/documentation/developers-and-admins/customization/object-types/object-type-configuration) of the classes.
+You can use this property to control relationships and dependencies between classes, along with [CI/CD](/documentation/developers-and-admins/ci-cd) and [Caching](/documentation/developers-and-admins/development/caching) behavior.
+See the [object type configuration document](/documentation/developers-and-admins/customization/object-types/object-type-configuration#type-info-properties) for more details about what you can configure.
 Rather than editing a generated file directly, create a partial class to configure the class’s `TYPEINFO`.
 If you’re following along with our example, go to the _~/Classes/Overrides_ folder of the _TrainingGuides.Entities_ project, or create it if it does not yet exist. Use partial classes to enable Continuous Integration for `WebChannelSettingsInfo`, `SeoSettingsInfo`, and `WebChannelSnippetInfo`.
 Then, set `WebChannelSettingsInfo` as a child of `ChannelInfo`, the class that represents channels in Xperience by Kentico. This ensures that if the _Website channel_ associated with a _Web channel settings_ object is deleted, the settings are deleted too.
@@ -271,11 +277,11 @@ public partial class WebChannelSnippetInfo
 Once the generated classes exist, the admin UI allows you to specify references pointing to them.
   1. Rebuild the application and access the **Database columns** tab of any custom class with a foreign key to another custom class.
   2. Set the **Reference to** and **Reference type** properties of the column, and click **Save**.
-  3. Re-run the code generation command you used in the [Generate code files](guides/development/customizations-and-integrations/add-channels-to-module#generate-code-files) step. This will re-generate the classes, now including this foreign key reference in their TYPEINFO definition.
+  3. Re-run the code generation command you used in the [Generate code files](#generate-code-files) step. This will re-generate the classes, now including this foreign key reference in their TYPEINFO definition.
 
 
 These references act like foreign keys in some ways, but they do not represent real foreign key constraints in the database.
-You can add foreign key constraints manually, but you will need to account for them during operations like [restoring data from CI/CD](documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts) and [updating the system](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects).
+You can add foreign key constraints manually, but you will need to account for them during operations like [restoring data from CI/CD](/documentation/developers-and-admins/ci-cd/ci-cd-database-migration-scripts) and [updating the system](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects).
 For our example, you’ll want to set the reference properties of the following columns:
   1. **SEO settings** class 
     1. Seo settings web channel settings ID 
@@ -313,11 +319,11 @@ public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(typeof(IInfo
 ```
 
 ## Create an automatic listing page
-[![screenshot of channel settings list](docsassets/guides/add-channels-to-module/ChannelSettingsList.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)
-In the previous example from this series, we saw a [listing page that displayed _global settings key_ objects](guides/development/customizations-and-integrations/create-basic-module#define-the-listing-page). Because these global settings were created and managed by users, the listing page just needed to display the objects, with links and buttons.
-However, in situations where you want to enforce one-to-one relationships, you can use the landing page to execute code that ensures the existence of the required objects. [UI pages in Xperience by Kentico](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) support dependency injection, so you should be able to use whichever services and options you need to properly set up data before the page loads.
+[![screenshot of channel settings list](/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)](/docsassets/guides/add-channels-to-module/ChannelSettingsList.png)
+In the previous example from this series, we saw a [listing page that displayed _global settings key_ objects](/guides/development/customizations-and-integrations/create-basic-module#define-the-listing-page). Because these global settings were created and managed by users, the listing page just needed to display the objects, with links and buttons.
+However, in situations where you want to enforce one-to-one relationships, you can use the landing page to execute code that ensures the existence of the required objects. [UI pages in Xperience by Kentico](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) support dependency injection, so you should be able to use whichever services and options you need to properly set up data before the page loads.
 For our example, let’s use the listing page to make sure that for each web channel, a _web channel settings_ object exists, and that each one has an _SEO settings_ child.
-Start by creating a listing page similar to the [example from earlier in this seires](guides/development/customizations-and-integrations/create-basic-module#define-the-listing-page), but with no delete button; Xperience will handle deletions automatically thanks to our class overrides that established the relationship between Web channel settings and their corresponding channels.
+Start by creating a listing page similar to the [example from earlier in this seires](/guides/development/customizations-and-integrations/create-basic-module#define-the-listing-page), but with no delete button; Xperience will handle deletions automatically thanks to our class overrides that established the relationship between Web channel settings and their corresponding channels.
 You only need one column in the `ColumnConfigurations`, showing the display name of the channel. Editors will arrive at this page to see a list of channel names. Then they can edit the settings of whichever channel they click on.
 C#
 **WebChannelSettingsListingPage.cs**
@@ -455,13 +461,13 @@ public class WebChannelSettingsListingPage : ListingPage
 ```
 
 You can find the complete file [in the finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/WebChannelSettingsListingPage.cs) for reference.
-You may notice how the above code does not check for and delete settings objects with no parent. Thanks to the parent-child relationship [we set earlier](guides/development/customizations-and-integrations/add-channels-to-module#override-typeinfo-definitions), settings are deleted automatically along with their channel.
+You may notice how the above code does not check for and delete settings objects with no parent. Thanks to the parent-child relationship [we set earlier](#override-typeinfo-definitions), settings are deleted automatically along with their channel.
 ## Edit child objects as part of a parent
 When objects have parent-child relationships, you may want to edit one or more child objects when a user selects a parent from the listing page, rather than directly editing the parent itself. In our example, the _Web channel settings_ don’t have any meaningful properties for users to edit, so instead, so when they choose a channel, we want to display the _SEO settings_ edit form instead.
 This will involve a few adjustments compared to previous examples, which involved _listing_ and _edit_ pages that worked with the same object type.
 Luckily, the type of an `InfoEditPage<T>` does not need to match the type of the `EditSectionPage<T>` registered as its `parentType`.
 Compared to the previous examples, we need an extra bound parameter to retrieve the ID of the parent object. Then we can use its value in our child pages. For editing child objects with one-to-one relationships (like our example’s parent _Web channels settings_ and child _SEO settings_), override the abstract `ObjectID` property inherited from `InfoEditPage<T>`, and use the parent’s ID to retrieve the appropriate child.
-The [next section](guides/development/customizations-and-integrations/add-channels-to-module#create-a-sub-section-for-multiple-child-objects) wil cover one-to-many relationships, where there may be mutiple child objects per parent.
+The [next section](#create-a-sub-section-for-multiple-child-objects) wil cover one-to-many relationships, where there may be mutiple child objects per parent.
 For example, several _Web channel snippets_ may relate to one _Web channel settings_ object.
 For editing pages, Xperience automatically propagates the display name of a saved object to the breadcrumbs and navigation, so you’ll need to override the `GetSubmitSuccessResponse` method to keep the name of the parent object on display.
 **See the difference**
@@ -589,17 +595,17 @@ public class SeoSettingsEditPage : InfoEditPage<SeoSettingsInfo>
 }
 ```
 
-You can see the completed file in the [finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/SeoSettingsEditPage.cs) for reference. Note that the code sample above is not localized for simplicity, but the repository version includes a localized version. For more guidance on how to localize your custom UI pages, see our [Admin UI localization documentation](documentation/developers-and-admins/customization/admin-ui-localization).
+You can see the completed file in the [finished branch of the _Training guides repository_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Admin/Pages/ProjectSettings/WebChannelSettings/SeoSettingsEditPage.cs) for reference. Note that the code sample above is not localized for simplicity, but the repository version includes a localized version. For more guidance on how to localize your custom UI pages, see our [Admin UI localization documentation](/documentation/developers-and-admins/customization/admin-ui-localization).
 If you build the project and navigate to **Project settings → Channel settings → Training guides pages** , you should see a UI like this, where you can enter a _robots.txt_ value for your website channel:
-[![Screenshot of SEO settings](docsassets/guides/add-channels-to-module/SeoSettings.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/SeoSettings.png)
+[![Screenshot of SEO settings](/docsassets/guides/add-channels-to-module/SeoSettings.png)](/docsassets/guides/add-channels-to-module/SeoSettings.png)
 ## Create a sub-section for multiple child objects
-If you want to include a listing of child objects that users can manage within the edit section of a parent object, for example, giving each _Web channel settings_ object a listing of _Web channel snippet_ objects, the process is nearly identical to the standard module page approach from the [basic module from earlier in this series](guides/development/customizations-and-integrations/create-basic-module#build-the-module-ui).
+If you want to include a listing of child objects that users can manage within the edit section of a parent object, for example, giving each _Web channel settings_ object a listing of _Web channel snippet_ objects, the process is nearly identical to the standard module page approach from the [basic module from earlier in this series](/guides/development/customizations-and-integrations/create-basic-module#build-the-module-ui).
 You can define a _Listing page_ as a child of the parent’s _Edit section_. This listing can have its own _Edit section_ and _Create page_ as children.
-[![Screenshot of the UI page hierarchy](docsassets/guides/add-channels-to-module/UITree.png)](https://docs.kentico.com/docsassets/guides/add-channels-to-module/UITree.png)
-Then, you just need to bind the parent object’s ID, like you did [earlier](guides/development/customizations-and-integrations/add-channels-to-module#edit-child-objects-as-part-of-a-parent), on any pages that need access to it. For example, you need the parent object’s ID to set the foreign key value on the create page and generate the URL for the edit page, and to filter which child objects are displayed on the listing page.
+[![Screenshot of the UI page hierarchy](/docsassets/guides/add-channels-to-module/UITree.png)](/docsassets/guides/add-channels-to-module/UITree.png)
+Then, you just need to bind the parent object’s ID, like you did [earlier](#edit-child-objects-as-part-of-a-parent), on any pages that need access to it. For example, you need the parent object’s ID to set the foreign key value on the create page and generate the URL for the edit page, and to filter which child objects are displayed on the listing page.
 For our example, complete the following steps:
   1. Create a listing page for _Web channel snippet_ objects under the _Web channel settings_ edit section. 
-Follow the same approach as [earlier](guides/development/customizations-and-integrations/create-basic-module). 
+Follow the same approach as [earlier](/guides/development/customizations-and-integrations/create-basic-module). 
   2. Bind `WebChannelSettingsId` and use it to add a `QueryModifier` to `PageConfiguration.QueryModifiers` in the `ConfigurePage` method.
 
 
@@ -787,4 +793,6 @@ With these tools you should be able to create a hierarchical custom module struc
 If you followed the example, try going to the **Channel management** application a few times to create and delete channels. Each time you navigate to **Project settings → Channel settings** , you’ll be able to see the available channel settings update accordingly, each with is own distinct _SEO settings_ and its own empty set of snippets.
 Your browser does not support the video tag. 
 ## What’s next?
-The [next guide in this series](guides/development/customizations-and-integrations/access-custom-channel-specific-configurations) will expand upon this example, demonstrating how to put the channel-specific settings to use on your live site.
+The [next guide in this series](/guides/development/customizations-and-integrations/access-custom-channel-specific-configurations) will expand upon this example, demonstrating how to put the channel-specific settings to use on your live site.
+![]()
+[]()[]()

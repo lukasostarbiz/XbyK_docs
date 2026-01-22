@@ -1,18 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital marketing setup](/documentation/developers-and-admins/digital-marketing-setup)
+  * [Content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization)
+  * Example - Personalization condition type 
+
+
 # Example - Personalization condition type
-  * [ Copy page link ](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type#) | [Get HelpService ID](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-marketing-setup/content-personalization/example-personalization-condition-type#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
-This page contains a full code sample that demonstrates how to develop a personalization condition type. To learn more about the development process in general, visit our [Develop personalization condition types](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types) page.
+This page contains a full code sample that demonstrates how to develop a personalization condition type. To learn more about the development process in general, visit our [Develop personalization condition types](/documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types) page.
 **Contact tracking**
-We recommend setting up [tracking of contacts](documentation/developers-and-admins/digital-marketing-setup/contact-configuration) on your website. The tracking is required for the example to work correctly (and for most types of conditions that utilize Xperience digital marketing features and data).
-When finished, this condition type allows you to display different live site content to visitors based on [consent agreements](documentation/developers-and-admins/data-protection/consent-management) they have given. Content editors are able to define different variants of widget content for any number of consents.
+We recommend setting up [tracking of contacts](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration) on your website. The tracking is required for the example to work correctly (and for most types of conditions that utilize Xperience digital marketing features and data).
+When finished, this condition type allows you to display different live site content to visitors based on [consent agreements](/documentation/developers-and-admins/data-protection/consent-management) they have given. Content editors are able to define different variants of widget content for any number of consents.
 Create a **HasGivenConsentConditionType** class in your project. Place the class file into a component folder for the condition type, for example: _~/Components/PageBuilder/PersonalizationConditions/HasGivenConsent/_
-We recommend using [dependency injection](documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
+We recommend using [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) to initialize service instances.
 C#
 **HasGivenConsentConditionType.cs**
 Copy
@@ -81,3 +88,6 @@ namespace MyProject.Components.PageBuilder.PersonalizationConditions.HasGivenCon
     }
 }
 ```
+
+![]()
+[]()[]()

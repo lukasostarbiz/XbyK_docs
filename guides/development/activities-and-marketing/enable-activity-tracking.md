@@ -1,20 +1,26 @@
+---
+source: https://docs.kentico.com/guides/development/activities-and-marketing/enable-activity-tracking
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Activities and digital marketing](/guides/development/activities-and-marketing)
+  * Enable activity tracking 
+
+
 # Enable activity tracking
-  * [ Copy page link ](guides/development/activities-and-marketing/enable-activity-tracking#) | [Get HelpService ID](guides/development/activities-and-marketing/enable-activity-tracking#) | This page is part of a module: [ Activities and contacts ](modules/activities-and-contacts)
-Core MVC 5
-
-
-[✖](guides/development/activities-and-marketing/enable-activity-tracking# "Close page link panel") [Copy to clipboard](guides/development/activities-and-marketing/enable-activity-tracking#)
 Businesses like to know what visitors are doing on their sites. Data about how visitors browse their site tells marketers which features are most vital, and lets them personalize content and marketing for specific contacts.
 Let’s examine how to enable standard activity tracking in Xperience by Kentico and show or hide tracking scripts depending on the visitor’s cookie level.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 The examples in this guide require that you:
-  * Have followed along with the samples from the _Consents_ section of the [Data protection series](guides/development/data-protection).
+  * Have followed along with the samples from the _Consents_ section of the [Data protection series](/guides/development/data-protection).
 
 
 **Code samples**
@@ -33,7 +39,7 @@ Xperience tracks form submit activities automatically. If no contact exists when
 It is important to ensure that one of the following conditions is met:
   1. Forms only collect data that legally qualifies as legitimate interest.
   2. Visitors who have not consented to the storage of their personal information are unable to submit forms. 
-This series includes [an example of this](guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking). 
+This series includes [an example of this](/guides/development/activities-and-marketing/hide-builder-content-from-visitors-who-have-not-consented-to-tracking). 
 
 
 Other activity types, however, require you to enable tracking during the application’s initialization.
@@ -41,16 +47,16 @@ Other activity types, however, require you to enable tracking during the applica
   2. _Page visit_ - logs a page the visitor has viewed while traversing the website.
 
 
-To track these types of activities, follow the steps outlined on the  _[Set up activities](documentation/developers-and-admins/digital-marketing-setup/set-up-activities#enable-the-activity-tracking-feature)_ documentation page.
+To track these types of activities, follow the steps outlined on the  _[Set up activities](/documentation/developers-and-admins/digital-marketing-setup/set-up-activities#enable-the-activity-tracking-feature)_ documentation page.
 Once you enable activity tracking, Xperience will log the _Landing page_ and _Page visit_ activities for anyone who visits pages where the tracking script is present.
 ## Add a view component
 To avoid legal issues related to tracking consent, you must modify the layout view to render Xperience’s tracking script only when the contact has consented to tracking.
 To avoid embedding business logic in the view, you can create a method that determines whether the current contact has consented to tracking, and use it in a view component that conditionally renders the script.
 **Tracking consent**
-This section assumes that you have completed the training guides in the [_Data protection_ section](guides/development/data-protection). If not, make sure consents have been configured to set the _CMSCookieLevel_ to _All_ (1000) or higher only when the visitor has consented to marketing tracking.
+This section assumes that you have completed the training guides in the [_Data protection_ section](/guides/development/data-protection). If not, make sure consents have been configured to set the _CMSCookieLevel_ to _All_ (1000) or higher only when the visitor has consented to marketing tracking.
 ### Create a method to check the cookie level
 The view component needs to check whether or not the current contact can be tracked. However, this functionality will be used in more places than just the view component, over the course of this series, so let’s create a reusable method for it.
-  1. In the _TrainingGuides.Web/Features/DataProtection/Services/CookieConsentService.cs_ class created in the [_Data protection_ training guides](guides/development/data-protection), add a new boolean method called `CurrentContactCanBeTracked`.
+  1. In the _TrainingGuides.Web/Features/DataProtection/Services/CookieConsentService.cs_ class created in the [_Data protection_ training guides](/guides/development/data-protection), add a new boolean method called `CurrentContactCanBeTracked`.
 If you have not completed the data protection series, you can create a new service and register it with dependency injection.
   2. Use dependency injection to resolve an `ICurrentCookieLevelProvider` object, and use it to retrieve the current cookie level.
   3. If the cookie level is greater than or equal to 1000, return `true`.
@@ -112,7 +118,7 @@ Now define the view component class that will use the `CurrentContactCanBeTracke
   1. Add a new folder called  _TrackingScripts_ to the _TrainingGuides.Web/Features/Activities/ViewComponents_ directory.
   2. Create a new file called _TrackingScriptsViewComponent.cs_.
   3. Use constructor injection to attain an `ICookieConsentservice` object.
-  4. In the _Invoke_ method, define a new `ContactTrackingAllowedViewModel` that uses `CurrentContactCanBeTracked` method created in the [previous step](guides/development/activities-and-marketing/enable-activity-tracking#create-a-method-to-check-the-cookie-level) to set its `ContactTrackingAllowed` property.
+  4. In the _Invoke_ method, define a new `ContactTrackingAllowedViewModel` that uses `CurrentContactCanBeTracked` method created in the [previous step](#create-a-method-to-check-the-cookie-level) to set its `ContactTrackingAllowed` property.
   5. Return a view, providing the path to a file you will create in the next section and the view model.
 
 
@@ -206,4 +212,6 @@ Copy
 
 Thanks to the logic in the view component’s `Invoke` method, _Landing page_ and _Page visit_ activities will not be logged for visitors who have not consented to tracking.
 ## What’s next?
-Xperience now tracks standard activities, and [the next guide in this series](guides/development/activities-and-marketing/log-custom-activities) will expand this to include custom activities. It will go over creating custom activity types, and logging them with both client-side and server-side approaches.
+Xperience now tracks standard activities, and [the next guide in this series](/guides/development/activities-and-marketing/log-custom-activities) will expand this to include custom activities. It will go over creating custom activity types, and logging them with both client-side and server-side approaches.
+![]()
+[]()[]()

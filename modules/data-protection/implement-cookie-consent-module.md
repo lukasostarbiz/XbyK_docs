@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/data-protection/implement-cookie-consent-module
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+3 of 13 Pages
 # Implement the cookie consent module
-  * [ Copy page link ](modules/data-protection/implement-cookie-consent-module#) | [Get HelpService ID](modules/data-protection/implement-cookie-consent-module#)
-Core MVC 5
-
-
-[✖](modules/data-protection/implement-cookie-consent-module# "Close page link panel") [Copy to clipboard](modules/data-protection/implement-cookie-consent-module#)
 ### Set up the project
 Now that the class, form, and files are in place, we can integrate them into the UI.
   1. Create a new Class Library project targeting your version of .NET under the _TrainingGuides_ solution. Name it _TrainingGuides.Admin._
@@ -28,7 +30,7 @@ Copy
 This attribute will allow the files in the _TrainingGuides.Admin_ project to be discovered by the Xperience API during app initialization.
 ### Add the page
   1. Add a folder called _Pages_ to the _TrainingGuides.Admin_ project, and create a new class file called `CookieLevelConsentMappingPage.cs` within. This page will be used to edit objects of the `CookieLevelConsentMapping` class. 
-     * Make the class inherit from `InfoEditPage<CookieLevelConsentMappingInfo>`. (You can find out more information about editing UI pages in the [documentation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template).)
+     * Make the class inherit from `InfoEditPage<CookieLevelConsentMappingInfo>`. (You can find out more information about editing UI pages in the [documentation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template).)
   2. Register the page as a child of the `DataProtectionContentLanguage` page in the administration interface. 
     1. Set the slug property to  _cookielevelconsentmapping_ , so that the URL of the page in the admin UI clearly indicates its purpose.
     2. Assign the _Edit_ template, so that Xperience knows this page is used to edit objects of the _CookieLevelConsentMapping_ type.
@@ -45,6 +47,7 @@ C#
 **CookieLevelConsentMappingPage.cs**
 Copy
 ```
+using CMS.DataEngine;
 using TrainingGuides.Admin.Pages;
 using TrainingGuides.DataProtectionCustomizations;
 using Kentico.Xperience.Admin.Base;
@@ -63,10 +66,10 @@ namespace TrainingGuides.Admin.Pages;
 
 internal class CookieLevelConsentMappingPage : InfoEditPage<CookieLevelConsentMappingInfo>
 {
-    private readonly ICookieLevelConsentMappingInfoProvider cookieLevelConsentMappingInfoProvider;
+    private readonly IInfoProvider<CookieLevelConsentMappingInfo> cookieLevelConsentMappingInfoProvider;
 
     public CookieLevelConsentMappingPage(IFormComponentMapper formComponentMapper, IFormDataBinder formDataBinder,
-    ICookieLevelConsentMappingInfoProvider generalSettingsInfoProvider) : base(formComponentMapper, formDataBinder)
+    IInfoProvider<CookieLevelConsentMappingInfo> generalSettingsInfoProvider) : base(formComponentMapper, formDataBinder)
     {
         cookieLevelConsentMappingInfoProvider = generalSettingsInfoProvider;
     }
@@ -116,22 +119,14 @@ The new page can be used to save cookie consent mappings.
   2. Select the corresponding consent, created in previous steps, for each cookie level.
 
 
-[![Screenshot of newly-created UI page in the Data protection app](docsassets/guides/map-consents-to-cookie-levels/ConsentMappingResult.png)](https://docs.kentico.com/docsassets/guides/map-consents-to-cookie-levels/ConsentMappingResult.png)
+[![Screenshot of newly-created UI page in the Data protection app](/docsassets/guides/map-consents-to-cookie-levels/ConsentMappingResult.png)](/docsassets/guides/map-consents-to-cookie-levels/ConsentMappingResult.png)
 Now, you can retrieve the mapping using the provider classes saved earlier. 
 **Protect the mappings**
 Some businesses may find it pertinent to remove the risk of editors accidentally deleting a consent that is used in the mapping page.
-This can be achieved using [object events](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events). You can assign handlers to the `ConsentInfo.TYPEINFO.Events.Delete.Before` and `ConsentInfo.TYPEINFO.Events.BulkDelete.Before` events, to throw an exception if any of the consents involved are referenced by the cookie-level mapping.
-You can closely follow [this example](documentation/developers-and-admins/customization/handle-global-events/handle-object-events) to register the handlers and compare the codenames of the provided consents to those in the properties of the singular `CookieLevelConsentMappingInfo` object.
-[ Previous page ](modules/data-protection/define-cookie-consent-module)
+This can be achieved using [object events](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events). You can assign handlers to the `ConsentInfo.TYPEINFO.Events.Delete.Before` and `ConsentInfo.TYPEINFO.Events.BulkDelete.Before` events, to throw an exception if any of the consents involved are referenced by the cookie-level mapping.
+You can closely follow [this example](/documentation/developers-and-admins/customization/handle-global-events/handle-object-events) to register the handlers and compare the codenames of the provided consents to those in the properties of the singular `CookieLevelConsentMappingInfo` object.
+[ Previous page ](/modules/data-protection/define-cookie-consent-module)
 3 of 13
-[ Mark complete and continue ](modules/data-protection/create-cookie-consent-widget)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/implement-cookie-consent-module)
-[](https://docs.kentico.com/modules/data-protection/implement-cookie-consent-module)[](https://docs.kentico.com/modules/data-protection/implement-cookie-consent-module)
+[ Mark complete and continue ](/modules/data-protection/create-cookie-consent-widget)
+![]()
+[]()[]()

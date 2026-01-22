@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-directly
+scrape_date: 2026-01-22
+---
+
+Module: Custom modules: custom settings
+8 of 9 Pages
 # Access channel-specific settings directly
-  * [ Copy page link ](modules/custom-settings/access-channel-specific-settings-directly#) | [Get HelpService ID](modules/custom-settings/access-channel-specific-settings-directly#)
-Core MVC 5
-
-
-[✖](modules/custom-settings/access-channel-specific-settings-directly# "Close page link panel") [Copy to clipboard](modules/custom-settings/access-channel-specific-settings-directly#)
 We recommend using the options pattern to follow .NET best practices, but if it does not fit your team’s code style, it is not necessary.
 Earlier in this series, we created a module that allows users to define code snippets associated with a given channel. For this guide’s sample, let’s create a view component that retrieves the code snippets for the current channel and renders them to the layout page.
 ### Enter the data
@@ -89,7 +91,7 @@ public class CodeSnippetViewModel
 ```
 
 ### Retrieve the values
-In general, retrieving channel-specific module class values without the options pattern is the same approach you used in the [options setup file](modules/custom-settings/access-channel-specific-settings-options-pattern). You can use an `IWebsiteChannelContext` object to get the current channel, and an `IInfoProvider<TInfo>` object or [dedicated provider](documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) to access objects of your module class.
+In general, retrieving channel-specific module class values without the options pattern is the same approach you used in the [options setup file](/modules/custom-settings/access-channel-specific-settings-options-pattern). You can use an `IWebsiteChannelContext` object to get the current channel, and an `IInfoProvider<TInfo>` object or [dedicated provider](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#generate-code-files) to access objects of your module class.
 For our example, add an asynchronous view component to the _CodeSnippets_ folder. Add parameters to `InvokeAsync` that specify which type of snippet should be retrieved, and whether the snippet should be labelled with an HTML comment.
 C#
 **CodeSnippetsViewComponent.cs**
@@ -201,18 +203,10 @@ Copy
 For reference, you can find the completed layout file [in the _finished_ branch of the _Training guides_ repo](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Views/Shared/_Layout.cshtml).
 ### Check the result
 If you’ve followed the example, you should be able to find the tags in the source view of the page, and see the message rendered by the javascript at the very bottom.
-[![View component output for metadata and CSS](docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)
-[![View component output for Javascript](docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)
-[ Previous page ](modules/custom-settings/access-channel-specific-settings-options-pattern)
+[![View component output for metadata and CSS](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput1.png)
+[![View component output for Javascript](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)](/docsassets/guides/access-custom-channel-specific-configurations/ViewComponentOutput2.png)
+[ Previous page ](/modules/custom-settings/access-channel-specific-settings-options-pattern)
 8 of 9
-[ Mark complete and continue ](modules/custom-settings/custom-settings-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-directly)
-[](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-directly)[](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-directly)
+[ Mark complete and continue ](/modules/custom-settings/custom-settings-learn-more)
+![]()
+[]()[]()

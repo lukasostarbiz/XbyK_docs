@@ -1,10 +1,16 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-websites/create-a-reusable-landing-page-template
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with websites](/guides/digital-marketing/work-with-websites)
+  * Create a reusable landing page template 
+
+
 # Create a reusable landing page template
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-websites/create-a-reusable-landing-page-template#) | [Get HelpService ID](guides/digital-marketing/work-with-websites/create-a-reusable-landing-page-template#) | This page is part of a module: [ Work with website content ](modules/work-with-website-content)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-websites/create-a-reusable-landing-page-template# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-websites/create-a-reusable-landing-page-template#)
-Xperience allows editors to save the configuration of pages based on [page templates](documentation/business-users/website-content/page-templates) into preset page templates. They can reuse the presets and work faster and more efficiently. Learn how to create these reusable page templates using a landing page template as an example.
+Xperience allows editors to save the configuration of pages based on [page templates](/documentation/business-users/website-content/page-templates) into preset page templates. They can reuse the presets and work faster and more efficiently. Learn how to create these reusable page templates using a landing page template as an example.
 Let’s say your Content manager decided they want to have all landing pages in the same layout. To help content editors, the Content manager asked you to prepare a template any of the editors can use. In this exercise, you’ll prepare a unified template for future landing pages.
 ## Prepare the page layout
   1. Go to the **Kbank for personal** channel.
@@ -39,8 +45,10 @@ In the Kbank website, editors have to provide the **SEO Title**. That’s why it
   3. **Save** the template.
 
 
-[![](docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)](https://docs.kentico.com/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)
+[![](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-unified-page-template.png)
 You can see the new template is ready to be used. You can use it to create a **New page** and select the **Content** page. Your _Landing page template_ is in the _Preset templates_.
-[![](docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)](https://docs.kentico.com/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)
+[![](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)](/docsassets/guides/create-a-reusable-landing-page-template/xbyk-tutorial-page-templates-kbank.png)
 ### Next step
-Now that you know how to prepare a preset page template, you can learn how to [create a new page from a template](guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template).
+Now that you know how to prepare a preset page template, you can learn how to [create a new page from a template](/guides/digital-marketing/work-with-websites/create-a-new-landing-page-from-a-template).
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys)
+  * Back to basics - How customer journeys, buyer's journeys, and sales funnels compare 
+
+
 # Back to basics - How customer journeys, buyer's journeys, and sales funnels compare
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -15,10 +21,10 @@ Think of these two approaches as if selling a car marks the end of the buyer’s
 This distinction highlights that while the buyer’s journey **ends at conversion** , the customer journey ensures **ongoing relationship-building and brand loyalty**.
 ## Customer journey vs. user story
 A _user story_ is a focused, step-by-step description of what a user needs from a **specific feature** – an approach commonly used in product development.
-[![User story – specific feature from UX perspective](docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-wireframe.png)](https://docs.kentico.com/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-wireframe.png)
+[![User story – specific feature from UX perspective](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-wireframe.png)](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-wireframe.png)
 In contrast, a _customer journey_ represents the **broader, multi-touchpoint experience** a person has with a brand across their entire customer lifecycle.
-[![Customer journeys from the user perspective – UX finetuning](docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-finetuning.png)](https://docs.kentico.com/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-finetuning.png)
-[![Customer journeys from the user perspective – the whole story](docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-whole-story.png)](https://docs.kentico.com/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-whole-story.png)
+[![Customer journeys from the user perspective – UX finetuning](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-finetuning.png)](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-finetuning.png)
+[![Customer journeys from the user perspective – the whole story](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-whole-story.png)](/docsassets/guides/how-customer-journeys-buyers-journeys-and-sales-funnels-compare/CJ-map-user-story-whole-story.png)
 Think of a customer journey as a full road trip from start to finish – covering everything from planning to arrival. A user story, on the other hand, focuses on a single action, like refueling the car or adjusting the GPS – addressing a specific issue or opportunity to improve one smaller part of the whole experience.
 A well-crafted user story helps fine-tune **individual moments within the broader journey** , making the overall experience smoother and more intuitive.
 ## Customer journey vs. sales funnel
@@ -35,4 +41,6 @@ Together, these frameworks provide a comprehensive overview of the customer’s 
 
 
 ## Next step
-You now have a good grasp on what differences and what intersections there are betweem customer journey, buyer’s journey, user story, and a sales funnel. Let’s move to the next stage and explore the [real value of customer journeys.](guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys)
+You now have a good grasp on what differences and what intersections there are betweem customer journey, buyer’s journey, user story, and a sales funnel. Let’s move to the next stage and explore the [real value of customer journeys.](/guides/customer-journeys/get-started-with-customer-journeys/the-real-value-of-customer-journeys)
+![]()
+[]()[]()

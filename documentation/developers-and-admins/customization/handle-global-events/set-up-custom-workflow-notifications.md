@@ -1,37 +1,44 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/handle-global-events/set-up-custom-workflow-notifications
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Handle global events](/documentation/developers-and-admins/customization/handle-global-events)
+  * Set up custom workflow notifications 
+
+
 # Set up custom workflow notifications
-  * [ Copy page link ](documentation/developers-and-admins/customization/handle-global-events/set-up-custom-workflow-notifications#) | [Get HelpService ID](documentation/developers-and-admins/customization/handle-global-events/set-up-custom-workflow-notifications#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/handle-global-events/set-up-custom-workflow-notifications# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/handle-global-events/set-up-custom-workflow-notifications#)
-As of version [30.8.0](documentation/changelog#refresh-july-24-2025), Xperience includes built-in [workflow notifications](documentation/developers-and-admins/configuration/workflows#workflow-notifications). You don’t have to create custom workflow notifications unless you need further customization.
-This page provides a full example of [custom notification](documentation/developers-and-admins/configuration/notifications#create-custom-notifications) development, including the implementation of [event handlers](documentation/developers-and-admins/customization/handle-global-events), their assignment to global events, and obtaining [user](documentation/developers-and-admins/configuration/users) IDs of the intended notification recipients.
-You can use this demonstration as a blueprint to implement your own custom notifications, or follow it more closely to set up custom [workflow](documentation/developers-and-admins/configuration/workflows) notifications if the built-in [workflow notifications](documentation/developers-and-admins/configuration/workflows#workflow-notifications) do not fit your needs. For example, this can be the case if you do not want to use email to deliver notifications, or if you need to send the notification to a different group of recipients.
+As of version [30.8.0](/documentation/changelog#refresh-july-24-2025), Xperience includes built-in [workflow notifications](/documentation/developers-and-admins/configuration/workflows#workflow-notifications). You don’t have to create custom workflow notifications unless you need further customization.
+This page provides a full example of [custom notification](/documentation/developers-and-admins/configuration/notifications#create-custom-notifications) development, including the implementation of [event handlers](/documentation/developers-and-admins/customization/handle-global-events), their assignment to global events, and obtaining [user](/documentation/developers-and-admins/configuration/users) IDs of the intended notification recipients.
+You can use this demonstration as a blueprint to implement your own custom notifications, or follow it more closely to set up custom [workflow](/documentation/developers-and-admins/configuration/workflows) notifications if the built-in [workflow notifications](/documentation/developers-and-admins/configuration/workflows#workflow-notifications) do not fit your needs. For example, this can be the case if you do not want to use email to deliver notifications, or if you need to send the notification to a different group of recipients.
 ## Workflow notifications
-When using [workflows](documentation/developers-and-admins/configuration/workflows) in your content editing process, users in various roles need to work with items at different stages of the content lifecycle. Notifications about workflow step transitions can help people keep track of their work. For example, users may wish to be notified when an item transitions to a step that requires their approval or review.
-Developers can set up notifications by handling [global events](documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events) that the system triggers when items transition between workflow steps:
+When using [workflows](/documentation/developers-and-admins/configuration/workflows) in your content editing process, users in various roles need to work with items at different stages of the content lifecycle. Notifications about workflow step transitions can help people keep track of their work. For example, users may wish to be notified when an item transitions to a step that requires their approval or review.
+Developers can set up notifications by handling [global events](/documentation/developers-and-admins/customization/handle-global-events/reference-global-system-events) that the system triggers when items transition between workflow steps:
   * `MoveToStep` – triggered when a content item, page, or headless item is moved from one workflow step to another. Handled via the _ContentItemWorkflowEvents_ , _WebPageWorkflowEvents_ or _HeadlessItemWorkflowEvents_ classes.
   * `Publish` – triggered when a content item, page or headless item finishes its workflow cycle and is published. Handled via the _ContentItemEvents_ , _WebPageEvents_ or _HeadlessItemEvents_ classes.
   * `UpdateLanguageMetadata` – triggered when a reusable content item or page is scheduled to be published or unpublished, or when a scheduled publish action is canceled. Handled via the _ContentItemEvents_ or _WebPageEvents_ classes.
 
 
-The content of notification messages can either be based on [custom notifications](documentation/developers-and-admins/configuration/notifications#create-custom-notifications) and managed in the Xperience administration, or created directly in code.
+The content of notification messages can either be based on [custom notifications](/documentation/developers-and-admins/configuration/notifications#create-custom-notifications) and managed in the Xperience administration, or created directly in code.
 Limitations:
-  * The system currently does not provide events covering workflow transitions of [emails](documentation/business-users/digital-marketing/emails). However, you can use built-in [workflow notifications](documentation/developers-and-admins/configuration/workflows#workflow-notifications) for emails.
+  * The system currently does not provide events covering workflow transitions of [emails](/documentation/business-users/digital-marketing/emails). However, you can use built-in [workflow notifications](/documentation/developers-and-admins/configuration/workflows#workflow-notifications) for emails.
   * Workflow events are not triggered when an item enters the system’s default _Draft_ step for the first time in a workflow cycle, for example after creating a completely new item or a new version of a published or unpublished item. For newly added items, you can handle the `Create` event via the _ContentItemEvents_ , _WebPageEvents_ or _HeadlessItemEvents_ classes.
 
 
 ## Example
-This example demonstrates how to set up email notifications informing about workflow step transitions. The example sends notifications when a [reusable content item](documentation/business-users/content-hub) or [website channel page](documentation/business-users/website-content) is moved to a different step in any workflow. The recipients of the emails depend on the step:
-  * **Custom workflow steps** – sent to users who are allowed to work with the item in the given step, i.e. all users belonging to the [roles](documentation/developers-and-admins/configuration/users/role-management) assigned to the step.
+This example demonstrates how to set up email notifications informing about workflow step transitions. The example sends notifications when a [reusable content item](/documentation/business-users/content-hub) or [website channel page](/documentation/business-users/website-content) is moved to a different step in any workflow. The recipients of the emails depend on the step:
+  * **Custom workflow steps** – sent to users who are allowed to work with the item in the given step, i.e. all users belonging to the [roles](/documentation/developers-and-admins/configuration/users/role-management) assigned to the step.
   * **Draft (system step)** – _Draft_ is the default first step in all workflows, and cannot have any roles assigned. The notification emails are instead sent to users with roles that have full control for the workflow, and to users with the _ContentEditor_ role (as an example). Note that notifications are not sent when an item enters the _Draft_ step for the first time in a workflow cycle, for example after creating a completely new item or a new version of a published or unpublished item.
 
 
 For the sake of simplicity, this example does **not** send notifications when pages or content items are published. However, you can set up publish notifications using a similar approach by handling the `ContentItemEvents.Publish` and `WebPageItemEvents.Publish` events.
 You can extend or simplify the implementation based on your project’s content types and workflow steps, as well as the requirements of your content editors. If you wish to use a different type of notifications than emails, replace the notification and email API calls in the example’s code (e.g., with an external messaging SDK).
 ### Prerequisites
-To integrate the code of this example, prepare a [custom Class Library project](documentation/developers-and-admins/customization/integrate-custom-code) in your solution.
-To allow the system to send out emails, you also need to set up and configure an email client (for example an SMTP server or SendGrid integration). For more information, see [Email configuration](documentation/developers-and-admins/configuration/email-configuration).
+To integrate the code of this example, prepare a [custom Class Library project](/documentation/developers-and-admins/customization/integrate-custom-code) in your solution.
+To allow the system to send out emails, you also need to set up and configure an email client (for example an SMTP server or SendGrid integration). For more information, see [Email configuration](/documentation/developers-and-admins/configuration/email-configuration).
 ### Register notification placeholders
 Add the following class to your custom Class Library project:
 C#
@@ -62,7 +69,7 @@ public class WorkflowNotificationPlaceholders : INotificationEmailPlaceholdersBy
 ```
 
 This class defines placeholders, which serve as variables in the workflow notification content.
-Next, add a [custom module](documentation/developers-and-admins/customization/run-code-on-application-startup) into the project and register the placeholders in the module’s initialization code:
+Next, add a [custom module](/documentation/developers-and-admins/customization/run-code-on-application-startup) into the project and register the placeholders in the module’s initialization code:
 C#
 **Module class with notification placeholder registration**
 Copy
@@ -98,14 +105,14 @@ namespace Custom
 ```
 
 ### Create the notification
-Add the [notification](documentation/developers-and-admins/configuration/notifications#create-custom-notifications) in Xperience:
+Add the [notification](/documentation/developers-and-admins/configuration/notifications#create-custom-notifications) in Xperience:
   1. Open the **Notifications** application in the Xperience administration.
   2. Select **New notification**.
   3. Set the following values for the properties:
      * **Notification name** : Workflow notification
      * **Identifiers → Code name** (clear the _Pre-fill code name automatically_ option): custom_workflow
      * **Notification template** : General email template (or any other template)
-     * **Sender email address** : Any sender with your application’s [sending domain](documentation/developers-and-admins/configuration/notifications#sending-domain) for system emails
+     * **Sender email address** : Any sender with your application’s [sending domain](/documentation/developers-and-admins/configuration/notifications#sending-domain) for system emails
   4. Select **Save**.
   5. Enter the following content for the notification:
      * **Subject** : Item ‘{{ItemName}}’ moved to step ‘{{CurrentStepDisplayName}}’
@@ -113,11 +120,11 @@ Add the [notification](documentation/developers-and-admins/configuration/notific
   6. Select **Save**.
 
 
-[![Workflow notification content with custom placeholders](docsassets/documentation/set-up-custom-workflow-notifications/Workflow_notification.png)](https://docs.kentico.com/docsassets/documentation/set-up-custom-workflow-notifications/Workflow_notification.png)
+[![Workflow notification content with custom placeholders](/docsassets/documentation/set-up-custom-workflow-notifications/Workflow_notification.png)](/docsassets/documentation/set-up-custom-workflow-notifications/Workflow_notification.png)
 The notification and its content are now ready
 ### Send workflow notifications
 Continue by extending the module with workflow event handlers that send the notifications.
-To get the code of the module class, you can either download the [CustomWorkflowModule.cs](docsassets/documentation/set-up-custom-workflow-notifications/CustomWorkflowModule.cs) file, or view the code blocks below.
+To get the code of the module class, you can either download the [CustomWorkflowModule.cs](/docsassets/documentation/set-up-custom-workflow-notifications/CustomWorkflowModule.cs) file, or view the code blocks below.
 C#
 **Module class and handler assignment**
 Copy
@@ -377,3 +384,6 @@ private void SendWorkflowNotificationEmail(WorkflowNotificationPlaceholders plac
     }
 }
 ```
+
+![]()
+[]()[]()

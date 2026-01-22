@@ -1,13 +1,19 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/develop-your-project
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * Develop your project 
+
+
 # Develop your project
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/develop-your-project#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/develop-your-project#) | This page is part of a module: [ Xperience implementation handbook ](modules/xperience-implementation-handbook)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/develop-your-project# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/develop-your-project#)
 ## Developing in a team
 Set your team up for success by deciding how your team will manage changes and collaborate before diving in.
 ### Distributed development approach
-In this approach, each developer has a local copy of the project’s code, which is synchronized via source control, and their own copy of the database. Database changes are synchronized through [Continuous Integration (CI)](documentation/developers-and-admins/ci-cd/continuous-integration). There is a continuous integration server (CIS) that monitors changes in source control. When changes are detected, the CIS builds and deploys code to an integrated testing environment.
+In this approach, each developer has a local copy of the project’s code, which is synchronized via source control, and their own copy of the database. Database changes are synchronized through [Continuous Integration (CI)](/documentation/developers-and-admins/ci-cd/continuous-integration). There is a continuous integration server (CIS) that monitors changes in source control. When changes are detected, the CIS builds and deploys code to an integrated testing environment.
 In this scenario, manual merges may be necessary in the event of conflicts for both code and database changes.
 The testing environment has its own copy of the database, and is used for previewing and testing.
 #### Pros
@@ -19,7 +25,7 @@ The testing environment has its own copy of the database, and is used for previe
 #### Cons
   * Database changes can, on occasion, result in complex merge conflicts.
   * Developers do not have access to real time updates to the data across environments.
-  * Not all objects are supported (you can see the list in the [documentation](documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types)).
+  * Not all objects are supported (you can see the list in the [documentation](/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types)).
 
 
 ### Centralized development approach
@@ -69,12 +75,12 @@ With Xperience by Kentico development, you need to consider the following:
 
 
 Xperience’s admin UI and APIs make it easy for you to secure your application by providing an easy to use interface, some automatic protections, and tools to make sure you are able to easily secure your code.
-Find more information about how we approach security at Kentico and an overview of the product’s security features in the [Security guidelines](documentation/developers-and-admins/security-guidelines).
+Find more information about how we approach security at Kentico and an overview of the product’s security features in the [Security guidelines](/documentation/developers-and-admins/security-guidelines).
 ### Performance
 Many times, developers primarily focus on building something functional. This can lead to scalability issues, higher running costs, and dissatisfied users.
 Xperience by Kentico does a lot of optimization automatically, and provides many ways to improve your project’s performance with features like:
-  * [Output caching](documentation/developers-and-admins/development/caching/output-caching)
-  * [Data caching](documentation/developers-and-admins/development/caching/data-caching)
+  * [Output caching](/documentation/developers-and-admins/development/caching/output-caching)
+  * [Data caching](/documentation/developers-and-admins/development/caching/data-caching)
   * APIs that can be fine-tuned to retrieve only the necessary data
 
 
@@ -93,7 +99,7 @@ When building something new, you need to consider what it depends on (data struc
 It is important to plan how what you are building will interact with its dependencies in order to avoid re-work or extra effort. This is also important when considering how to deploy new features/functionality down the line.
 Some examples of dependencies to think about in Kentico Xperience include:
   * Content types, content, and components needed to build a web page, email, or headless item.
-  * Properly configured [Cache dependencies](documentation/developers-and-admins/development/caching/cache-dependencies).
+  * Properly configured [Cache dependencies](/documentation/developers-and-admins/development/caching/cache-dependencies).
   * Code files and classes that need to exist before you can build a custom module UI.
   * Third-party libraries that your application needs to interact with in some way, such as NuGet packages, API endpoints, etc.
   * Relationships between custom-built features.
@@ -106,8 +112,8 @@ For example, you will want to pay attention to some of the following things in X
   * Name code files appropriately (e.g., use the class name of the class contained in the file).
   * Use Xperience’s logging APIs to log success/failure/warning/information appropriately.
   * Consider refactoring large methods to make code readable.
-  * Consider using [abstraction](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) to make your code more modular and resilient to changes.
-  * Use built-in extensibility points such as [global event handlers](documentation/developers-and-admins/customization/handle-global-events) and [custom providers](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers).
+  * Consider using [abstraction](/guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects) to make your code more modular and resilient to changes.
+  * Use built-in extensibility points such as [global event handlers](/documentation/developers-and-admins/customization/handle-global-events) and [custom providers](/documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers).
   * Use an appropriate naming convention to avoid collisions with system objects, especially during refreshes and hotfixes (e.g., use namespaces or prefixes with the site/project name).
 
 
@@ -137,4 +143,6 @@ Consider using Xperience’s built-in extensibility points to help with this pro
 
 
 ## What’s next?
-The next guide in this handbook covers the [Testing phase](guides/architecture/xperience-implementation-handbook/test-your-solution) of your project. It discusses what to consider when testing the functionality and performance of your site.
+The next guide in this handbook covers the [Testing phase](/guides/architecture/xperience-implementation-handbook/test-your-solution) of your project. It discusses what to consider when testing the functionality and performance of your site.
+![]()
+[]()[]()

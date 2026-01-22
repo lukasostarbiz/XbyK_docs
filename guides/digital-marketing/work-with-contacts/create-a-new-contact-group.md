@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-contacts/create-a-new-contact-group
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with contacts](/guides/digital-marketing/work-with-contacts)
+  * Create a new contact group 
+
+
 # Create a new contact group
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-contacts/create-a-new-contact-group#) | [Get HelpService ID](guides/digital-marketing/work-with-contacts/create-a-new-contact-group#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-contacts/create-a-new-contact-group# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-contacts/create-a-new-contact-group#)
 See how to create a new group of contacts and how to work with group conditions.
   1. Go to the **Contact groups** application.
   2. Create a **New contact group**.
@@ -23,6 +29,8 @@ You can choose between **Add another condition** or **Add another group** when c
       * For example, see the logical operator OR between unit 1 and unit 2. Thanks to the OR operator, contact will be included in the group when either of these units is evaluated as true.
 
 
-[![Conditions set up for a new contact group](docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)](https://docs.kentico.com/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)
+[![Conditions set up for a new contact group](/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)](/docsassets/guides/create-a-new-contact-group/xbyk-tutorial-conditions-groups.png)
 ### Next step
-In the following guide, learn how to [update existing contact group](guides/digital-marketing/work-with-contacts/update-existing-contact-group).
+In the following guide, learn how to [update existing contact group](/guides/digital-marketing/work-with-contacts/update-existing-contact-group).
+![]()
+[]()[]()

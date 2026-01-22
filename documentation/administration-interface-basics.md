@@ -1,21 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/administration-interface-basics
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * Administration interface basics 
+
+
 # Administration interface basics
-  * [ Copy page link ](documentation/administration-interface-basics#) | [Get HelpService ID](documentation/administration-interface-basics#)
-Core MVC 5
-
-
-[✖](documentation/administration-interface-basics# "Close page link panel") [Copy to clipboard](documentation/administration-interface-basics#)
 You can access the Xperience by Kentico administration using your browser:
   1. In your browser, navigate to the sign-in page: **https:// <domain>/admin** (for example: **https://localhost/admin**)
   2. Enter your credentials into the sign-in dialog.
 **Default administrator account**
-The default account is **administrator** with the password specified during the [installation process](documentation/developers-and-admins/installation).
+The default account is **administrator** with the password specified during the [installation process](/documentation/developers-and-admins/installation).
   3. Once you sign in, the Xperience administration opens.  
-[![Administration interface dashboard](docsassets/documentation/administration-interface-basics/admin_homepage.png)](https://docs.kentico.com/docsassets/documentation/administration-interface-basics/admin_homepage.png)
+[![Administration interface dashboard](/docsassets/documentation/administration-interface-basics/admin_homepage.png)](/docsassets/documentation/administration-interface-basics/admin_homepage.png)
 
 
 ## Xperience administration interface
 The system takes you to Xperience’s administration dashboard when you sign in. The dashboard consists of tiles representing various applications you will use to perform your daily tasks. No matter where you are in the administration interface, you can use the following elements to navigate around Xperience.
-[![Administration interface controls overview](docsassets/documentation/administration-interface-basics/admin_dashboard.png)](https://docs.kentico.com/docsassets/documentation/administration-interface-basics/admin_dashboard.png)
+[![Administration interface controls overview](/docsassets/documentation/administration-interface-basics/admin_dashboard.png)](/docsassets/documentation/administration-interface-basics/admin_dashboard.png)
 **Application list** |  The menu on the left side gives you access to all Xperience applications. The applications are conveniently grouped into dedicated areas according to their function, e.g., **Digital marketing** or **Configuration**. **Actions:**
   * Press **Enter** to open the selected application group or application. (**Tip:** Use **keyboard shortcut F2** to open the application list.)
   * **Search box** : search for applications inside Xperience.
@@ -47,7 +51,7 @@ Xperience by Kentico supports the latest major versions of the following browser
   * Safari on Mac OS
 
 
-See other [browser requirements](documentation/developers-and-admins/installation/system-requirements).
+See other [browser requirements](/documentation/developers-and-admins/installation/system-requirements).
 ## Applications
 The Xperience platform is split into different **_applications_**.
 Applications group functionality and can be used to accomplish various tasks. For example, you segment your audience in **Contact groups** , manage user accounts in **Users** , or view various information in the **Event log**. 
@@ -62,3 +66,5 @@ The URL of the Xperience administration interface consists of the following part
 ## Time in the administration
 All time values in the administration are displayed in the local time zone of each user. For example: _01:30 PM (GMT+02:00)_
 The time zone is detected according to the browser and environment settings of the user’s device.
+![]()
+[]()[]()

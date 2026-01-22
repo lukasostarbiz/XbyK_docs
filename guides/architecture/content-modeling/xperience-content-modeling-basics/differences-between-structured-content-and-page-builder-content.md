@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/guides/architecture/content-modeling/xperience-content-modeling-basics/differences-between-structured-content-and-page-builder-content
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Content modeling](/guides/architecture/content-modeling)
+  * [Xperience content modeling basics](/guides/architecture/content-modeling/xperience-content-modeling-basics)
+  * Differences between Page Builder content and structured content 
+
+
 # Differences between Page Builder content and structured content
-  * Concept| [ Copy page link ](guides/architecture/content-modeling/xperience-content-modeling-basics/differences-between-structured-content-and-page-builder-content#) | [Get HelpService ID](guides/architecture/content-modeling/xperience-content-modeling-basics/differences-between-structured-content-and-page-builder-content#)
-Core MVC 5
-
-
-[✖](guides/architecture/content-modeling/xperience-content-modeling-basics/differences-between-structured-content-and-page-builder-content# "Close page link panel") [Copy to clipboard](guides/architecture/content-modeling/xperience-content-modeling-basics/differences-between-structured-content-and-page-builder-content#)
-In Xperience by Kentico, working with content in the [website channel](guides/digital-marketing/work-with-channels/digital-marketing-channels) varies between two essential concepts: **Structured content** and **Page Builder content**. Both serve distinct purposes for managing content; each has unique advantages and functionalities.
+In Xperience by Kentico, working with content in the [website channel](/guides/digital-marketing/work-with-channels/digital-marketing-channels) varies between two essential concepts: **Structured content** and **Page Builder content**. Both serve distinct purposes for managing content; each has unique advantages and functionalities.
 After completing this overview, you’ll:
   * Understand the concept of structured content and its role as a foundation for content management, and what are the benefits of separating data from presentation.
   * Get acquainted with Page Builder, a user-friendly interface for managing website channel content.
@@ -21,7 +28,7 @@ Structured content is the backbone of all your content in any advanced DXP solut
 ### Editors input data via form-like UI
 In Xperience, editors manage structured content in two places. First, the Content hub is a unified repository for all reusable content. Then, editors work with the structured content on the Content tab in the website channel context.
 Both editing experiences are the same: editors input and manage content in a form-like UI. The simple UI allows them to focus on the content, quality, and accuracy.
-[![Editing UI for structured content](docsassets/guides/differences-between-structured-content-and-page-builder-content/structured_content_editing_interface.png)](https://docs.kentico.com/docsassets/guides/differences-between-structured-content-and-page-builder-content/structured_content_editing_interface.png)
+[![Editing UI for structured content](/docsassets/guides/differences-between-structured-content-and-page-builder-content/structured_content_editing_interface.png)](/docsassets/guides/differences-between-structured-content-and-page-builder-content/structured_content_editing_interface.png)
 Xperience by Kentico comes with an elegant content management API that your developers can use to migrate structured content into Xperience by Kentico from previous [Kentico](https://www.kentico.com/discover/blog/how-to-upgrade-kentico-12-to-a-cutting-edge-dxp) versions [versions](https://www.kentico.com/discover/blog/upgrading-kentico-xperience-13-to-xperience-by-kentico) or other DXP [solutions](https://www.kentico.com/discover/blog/join-kentico-with-our-new-universal-migration-toolkit).
 What are the benefits of organizing your content in a structured format?
 ### Breaks content into semantically significant elements
@@ -31,7 +38,7 @@ For example, editors can use the “Author Bio” content type to only author-re
 Structured content works best when it is independent of its presentation. What does it mean? The data should not be stored in a way they will look once displayed to the consumer. It means your team needs to input the data without the presentation information, such as where the content will be displayed, containing the exact size of padding it has from neighboring elements, or storing specific colors. Storing data separately from the presentation helps you create your content model and entities corresponding to real-life scenarios.
 For example, a fashion retailer maintains a structured database of product attributes (colors, sizes, materials). When launching a new collection, they reuse these attributes across web pages, emails, and social media posts, ensuring consistency.
 ### A predictable format makes the content reusable
-Having plain data is only a step from reusing your content on one or more websites and across different communication [channel](guides/digital-marketing/work-with-channels/digital-marketing-channels). Depending on the channel type, your data can be easily retrieved via the API and displayed in different devices and types of presentation, such as mobile apps, kiosks, or other channels.
+Having plain data is only a step from reusing your content on one or more websites and across different communication [channel](/guides/digital-marketing/work-with-channels/digital-marketing-channels). Depending on the channel type, your data can be easily retrieved via the API and displayed in different devices and types of presentation, such as mobile apps, kiosks, or other channels.
 For example, a sports club can reuse videos, images, and basic player details on their website through a headless app that communicates with the system over API on TV screens where they show updates to their audience inside their arena.
 ### Defined format improves content governance
 Storing content with what it looks like displayed makes the data hard to maintain long-term. With structured content, you can define how and in what format editors input the data, allowing you to support high-quality, standardized content from its conception. 
@@ -45,7 +52,7 @@ This approach fits scenarios where you want to display many pages with a similar
 Xperience Page Builder provides a user-friendly interface for **managing website channel content** using configurable components. Based on the project requirements, developers prepare the elements, such as **widgets** , **sections** , and **page templates** with editable areas in advance, and ensure editors have all they need in their editing environment to achieve their marketing goals.
 ### Gives editors complete control over the layout
 Content editors can experiment with different layouts and immediately see the results in a drag-and-drop interface. Depending on what features they have on their website, they can ultimately change the design and experience of every website page. They can also unify the editing experience by saving page configurations into page presets and speeding up content creation.
-For example, a customer uses the Page Builder to create campaign pages. Given the component-based approach, each landing page will differ, and using preconfigured widget properties, editors don’t need developers’ assistance when they need to change the design of a page’s [hero element](guides/digital-marketing/work-with-reusable-content/reuse-content-with-the-hero-widget).
+For example, a customer uses the Page Builder to create campaign pages. Given the component-based approach, each landing page will differ, and using preconfigured widget properties, editors don’t need developers’ assistance when they need to change the design of a page’s [hero element](/guides/digital-marketing/work-with-reusable-content/reuse-content-with-the-hero-widget).
 ### Matches the customer’s unique workflows and project requirements
 Xperience doesn’t come with Page Builders components out of the box. Business analysts define detailed content requirements during project implementation in collaboration with key stakeholders. The content model and how editors present the data on different channels is tailored to match the requirements of the editor team, which will maintain the content operations, giving them tools to lead their customers on the customer journey and achieve their marketing goals.
 For example, a customer will want to list related articles on the website. However, they want their editors to be able to override the default list of associated articles per page.
@@ -62,3 +69,5 @@ Page Builder is ideal for frequently changing content, such as campaign landing 
 ## Summary
 Structured content is similar to a well-organized library where each piece is like a distinctly labeled book on a shelf. Whether you’re part of a large team or managing heaps of information, this organized system ensures that everyone can find the right book (or content) easily.
 Xperience Page Builder offers a user-friendly interface for managing website content using configurable components called widgets, sections, and page templates that integrate well with structured content. Editors have complete control over the layout of the whole or parts of pages. They can use the Page Builder to personalize the website experience.
+![]()
+[]()[]()

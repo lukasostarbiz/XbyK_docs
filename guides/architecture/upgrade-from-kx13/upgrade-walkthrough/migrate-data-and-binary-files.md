@@ -1,9 +1,16 @@
+---
+source: https://docs.kentico.com/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Upgrade from Kentico Xperience 13](/guides/architecture/upgrade-from-kx13)
+  * [Walk through the upgrade step-by-step](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough)
+  * Migrate data and binary files 
+
+
 # Migrate data and binary files
-  * How-to| [ Copy page link ](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#) | [Get HelpService ID](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#) | This page is part of a module: [ Upgrading to Xperience by Kentico - Walkthrough ](modules/upgrade-walkthrough)
-Core MVC 5
-
-
-[✖](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files# "Close page link panel") [Copy to clipboard](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/migrate-data-and-binary-files#)
 Now, we will migrate the data from the KX13 (source) instance to the XbyK (target) instance. The video below goes over the migration tool configuration and shows how to run the data migration.
 In the video we run the data migration in **two iterations** :
   * first to migrate _sites_ only.
@@ -117,6 +124,8 @@ For successful data migration, make sure that:
 
 Create a **database backup** each time before you run the `migrate` command.
 If you run into issues during the data migration process, check out the [Migration Protocol Reference](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/MIGRATION_PROTOCOL_REFERENCE.md#migration-protocol-reference) to troubleshoot common errors.
-In the video, we utilize [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#api-discovery-setup) to ensure the migrated Page Builder data can work with the new [Editing components in Xperience by Kentico](documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) rather than in the legacy compatibility mode. While it is not a mandatory step, **we highly recommend this approach.**
+In the video, we utilize [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#api-discovery-setup) to ensure the migrated Page Builder data can work with the new [Editing components in Xperience by Kentico](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) rather than in the legacy compatibility mode. While it is not a mandatory step, **we highly recommend this approach.**
 ### Walkthrough progress
-Follow to the next article where you'll learn about [global code that you’ll need to adjust](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code).
+Follow to the next article where you'll learn about [global code that you’ll need to adjust](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code).
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/contact-management/update-an-existing-form
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+22 of 44 Pages
 # Update an existing form
-  * [ Copy page link ](modules/contact-management/update-an-existing-form#) | [Get HelpService ID](modules/contact-management/update-an-existing-form#)
-Core MVC 5
-
-
-[✖](modules/contact-management/update-an-existing-form# "Close page link panel") [Copy to clipboard](modules/contact-management/update-an-existing-form#)
 See how you can update a form or reuse an old unused one.
   1. Go to the **Forms** application.
   2. Open the form you want to change.
@@ -20,16 +22,8 @@ Do NOT change the **Codename** if the form has already been published to the liv
 If you’re unsure whether the names of the form are used anywhere, please, check with your developers.
 
 
-[ Previous page ](modules/contact-management/change-a-forms-name)
+[ Previous page ](/modules/contact-management/change-a-forms-name)
 22 of 44
-[ Mark complete and continue ](modules/contact-management/add-a-custom-form-field)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/update-an-existing-form)
-[](https://docs.kentico.com/modules/contact-management/update-an-existing-form)[](https://docs.kentico.com/modules/contact-management/update-an-existing-form)
+[ Mark complete and continue ](/modules/contact-management/add-a-custom-form-field)
+![]()
+[]()[]()

@@ -1,12 +1,17 @@
+---
+source: https://docs.kentico.com/api/configuration/web-farms
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Configuration](/api/configuration)
+  * Web farms 
+
+
 # Web farms
-  * [ Copy page link ](api/configuration/web-farms#) | [Get HelpService ID](api/configuration/web-farms#)
-Core MVC 5
-
-
-[✖](api/configuration/web-farms# "Close page link panel") [Copy to clipboard](api/configuration/web-farms#)
   
 List of examples:
-  * [Create web farm synchronization tasks](api/configuration/web-farms#create-web-farm-synchronization-tasks)
+  * [Create web farm synchronization tasks](#create-web-farm-synchronization-tasks)
 
 
 ### Create web farm synchronization tasks
@@ -23,4 +28,6 @@ WebFarmHelper.CreateTask(new InvalidateObjectWebFarmTask
 });
 ```
 
-[> Back to list of examples](api/configuration/web-farms#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

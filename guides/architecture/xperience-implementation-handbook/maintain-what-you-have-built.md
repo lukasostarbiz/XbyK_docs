@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook)
+  * Maintain what you have built 
+
+
 # Maintain what you have built
-  * Concept| [ Copy page link ](guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built#) | [Get HelpService ID](guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built#) | This page is part of a module: [ Xperience implementation handbook ](modules/xperience-implementation-handbook)
-Core MVC 5
-
-
-[✖](guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built# "Close page link panel") [Copy to clipboard](guides/architecture/xperience-implementation-handbook/maintain-what-you-have-built#)
 ## Maintaining
 Analyze the data you gather from your project to determine what actions to take. Focus on optimizations of content and performance.
 ### Environment maintenance
@@ -14,8 +20,8 @@ Analyze the data you gather from your project to determine what actions to take.
 
 ### Application maintenance
   * Review and address performance issues [using tools like MiniProfiler](https://dev.to/michael419/get-to-know-xperience-by-kentico-unlocking-performance-insights-with-miniprofiler-2b2c).
-  * Keep software patched and up-to-date, [including Xperience](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), the operating system, SQL server, etc. 
-    * if you [prepare your code for read-only mode](documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes), you can use [zero-downtime deployments](documentation/developers-and-admins/deployment/read-only-deployments) when you update Xperience by Kentico.
+  * Keep software patched and up-to-date, [including Xperience](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), the operating system, SQL server, etc. 
+    * if you [prepare your code for read-only mode](/documentation/developers-and-admins/deployment/read-only-deployments#required-project-changes), you can use [zero-downtime deployments](/documentation/developers-and-admins/deployment/read-only-deployments) when you update Xperience by Kentico.
 
 
 ### Data maintenance
@@ -35,7 +41,7 @@ With the data cleaned up, they implemented a plan to monitor the database size a
 Monitoring your project provides insight into what you can optimize and improve, and informs you of the solution’s overall health.
 ### Environment
   * Monitor resource utilization on the server (e.g., CPU, RAM, HDD). 
-    * Consider tools offered by your hosting environment, like the Xperience SaaS environment’s [Monitoring tools](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring), Azure’s [Application insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview), etc.
+    * Consider tools offered by your hosting environment, like the Xperience SaaS environment’s [Monitoring tools](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#application-monitoring), Azure’s [Application insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview), etc.
   * Monitor website availability with uptime services.
   * Monitor website responsiveness / performance. 
     * Consider checking the performance from different geographic locations.
@@ -60,4 +66,6 @@ Monitoring your project provides insight into what you can optimize and improve,
 We hope this handbook has given you an idea of some important things to consider and look out for over the course of your Xperience project.
 Let us know if you come across anything that needs additional explanation, and we will do our best to cover it in updates and future materials.
 For now, check out the [community blog](https://community.kentico.com/blog) for more useful information relating to Xperience by Kentico.
-As your team prepares for and begins development, the [training guides](guides/) and [documentation](documentation/) will also be important resources.
+As your team prepares for and begins development, the [training guides](/guides/) and [documentation](/documentation/) will also be important resources.
+![]()
+[]()[]()

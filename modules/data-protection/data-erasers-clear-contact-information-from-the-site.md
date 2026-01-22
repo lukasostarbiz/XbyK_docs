@@ -1,17 +1,19 @@
+---
+source: https://docs.kentico.com/modules/data-protection/data-erasers-clear-contact-information-from-the-site
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+12 of 13 Pages
 # Implement the data erasers
-  * [ Copy page link ](modules/data-protection/data-erasers-clear-contact-information-from-the-site#) | [Get HelpService ID](modules/data-protection/data-erasers-clear-contact-information-from-the-site#)
-Core MVC 5
-
-
-[✖](modules/data-protection/data-erasers-clear-contact-information-from-the-site# "Close page link panel") [Copy to clipboard](modules/data-protection/data-erasers-clear-contact-information-from-the-site#)
 Some data protection laws require site owners to comply when visitors request that their personal data be removed from the application. Data erasers are used to delete or anonymize a visitor’s data. They are called from the **Right to be forgotten** tab in the **Data protection** app of the Xperience by Kentico administration. Let’s examine the process of writing a data eraser.
 ## Add a data eraser
-This example’s data eraser is similar in some ways to the data collector from [earlier](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), but it differs in a few key ways. Firstly, you don’t need to choose between different types of data writers in a data eraser because you are deleting it rather than compiling it for display. This means you don’t need to move the erasure logic into a separate file, as with the data collector.
-This data eraser will follow the same principle as the [documentation example](documentation/developers-and-admins/data-protection/personal-data-erasure#create-the-data-eraser), but it will include additional options for deleting form data and form submission activities.
+This example’s data eraser is similar in some ways to the data collector from [earlier](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data), but it differs in a few key ways. Firstly, you don’t need to choose between different types of data writers in a data eraser because you are deleting it rather than compiling it for display. This means you don’t need to move the erasure logic into a separate file, as with the data collector.
+This data eraser will follow the same principle as the [documentation example](/documentation/developers-and-admins/data-protection/personal-data-erasure#create-the-data-eraser), but it will include additional options for deleting form data and form submission activities.
 Unlike the data collector, this class does not need collections of `CollectedColumn` objects. It will simply delete the objects rather than display specific fields.
 Alternatively, you can make a data eraser that only anonymizes objects (overwrites columns with personal identifying information with anonymous values) instead of deleting them. If you decide to anonymize certain object types, you can take a similar approach and specify which columns you want to anonymize.
   1. Create a new _Erasers_ folder in _TrainingGuides.Web/Features/DataProtection_ and add a new file called `ContactDataEraser.cs`.
-  2. Use the `FormCollectionService` from [earlier](guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data) to retrieve forms and form submissions.
+  2. Use the `FormCollectionService` from [earlier](/guides/development/data-protection/data-collectors-find-contact-personal-data#collect-data) to retrieve forms and form submissions.
   3. Include methods to delete form submission activities, all activities, contacts, and submitted form data.
 These methods correspond to the configuration options that users can choose on the **Right to be forgotten** tab of the **Data protection** application. You must check this configuration in each method to decide whether the object type should actually be deleted.
 
@@ -161,16 +163,8 @@ PersonalDataEraserRegister.Instance.Add(ActivatorUtilities.CreateInstance<Contac
 This code will fit anywhere within the scope of the method, though it may be best to put it after the existing code from earlier in this series in order to mirror the ordering of the data protection UI and the order in which the data eraser is called in relation to the identity collector.
 Now, you can open the **Data protection** application from the **Configuration** category of the administration interface. On the **Right to be forgotten** tab, you can enter the email of a known contact and choose which data to delete, and Xperience will use the `ContactDataEraser` to remove their information from the system, as shown in the video below:
 Your browser does not support the video tag. 
-[ Previous page ](modules/data-protection/collect-personal-data)
+[ Previous page ](/modules/data-protection/collect-personal-data)
 12 of 13
-[ Mark complete and continue ](modules/data-protection/data-protection-learn-more)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/data-erasers-clear-contact-information-from-the-site)
-[](https://docs.kentico.com/modules/data-protection/data-erasers-clear-contact-information-from-the-site)[](https://docs.kentico.com/modules/data-protection/data-erasers-clear-contact-information-from-the-site)
+[ Mark complete and continue ](/modules/data-protection/data-protection-learn-more)
+![]()
+[]()[]()

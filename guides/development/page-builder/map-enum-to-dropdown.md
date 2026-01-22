@@ -1,24 +1,30 @@
+---
+source: https://docs.kentico.com/guides/development/page-builder/map-enum-to-dropdown
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Page Builder](/guides/development/page-builder)
+  * Add a custom dropdown provider for administration components 
+
+
 # Add a custom dropdown provider for administration components
-  * How-to| [ Copy page link ](guides/development/page-builder/map-enum-to-dropdown#) | [Get HelpService ID](guides/development/page-builder/map-enum-to-dropdown#) | This page is part of a module: [ Page Builder ](modules/page-builder)
-Core MVC 5
-
-
-[✖](guides/development/page-builder/map-enum-to-dropdown# "Close page link panel") [Copy to clipboard](guides/development/page-builder/map-enum-to-dropdown#)
-When editors create pages with [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder), they utilize components (page templates, sections, widgets), prepared by the developers. Each component has properties, that editors set in the Xperience administration using [UI controls](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), for example, a dropdown selector.
-[![Example of a dropdown page template property in Xperience by Kentico administration](docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)](https://docs.kentico.com/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)
-As a developer, you can populate an [Xperience dropdown selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) with data in two ways:
+When editors create pages with [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder), they utilize components (page templates, sections, widgets), prepared by the developers. Each component has properties, that editors set in the Xperience administration using [UI controls](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components), for example, a dropdown selector.
+[![Example of a dropdown page template property in Xperience by Kentico administration](/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)](/docsassets/guides/map-enum-to-dropdown/dropdown-demo.gif)
+As a developer, you can populate an [Xperience dropdown selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) with data in two ways:
   1. Pass a “hardcoded” string of options, as you can see in [this example](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/a58ae4215eaba8941ab98d797c1b8146875b8525/src/TrainingGuides.Web/Features/LandingPages/LandingPageTemplateProperties.cs#L24).
   2. Create a dropdown provider that maps options dynamically.
 
 
 This guide covers the second approach. In our example, we use an **enumeration** to define the dropdown options.
-Setting up dropdown mapping is an important building block for the later guides in this [Page Builder series](guides/development/page-builder/meet-requirements-with-page-builder), which use dropdown components heavily.
+Setting up dropdown mapping is an important building block for the later guides in this [Page Builder series](/guides/development/page-builder/meet-requirements-with-page-builder), which use dropdown components heavily.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Basic knowledge of the [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
+  * Basic knowledge of the [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
 
 
 **Code samples**
@@ -28,7 +34,7 @@ The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-u
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 For a finished example implementation, take a look at the [_DropdownEnumOptionsProvider.cs_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/85feba75add184397fd29cc291e7f332abc75718/src/TrainingGuides.Web/Features/Shared/OptionsProviders/DropdownEnumOptionsProvider.cs) file. To see this provider in action, check out [_LandingPageTemplateProperties.cs_](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/85feba75add184397fd29cc291e7f332abc75718/src/TrainingGuides.Web/Features/LandingPages/LandingPageTemplateProperties.cs) file in the same repo.
 ## Implement a generic mapper class
-The [Xperience Dropdown selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) has a `DataProviderType` property that can take a class, mapping a custom enumeration to specific dropdown options. 
+The [Xperience Dropdown selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) has a `DataProviderType` property that can take a class, mapping a custom enumeration to specific dropdown options. 
 While it is viable to implement a custom class per enumeration, a reusable **generic** class will save you time and lines of code.
 First, create a generic `DropdownEnumOptionProvider` class that:
   * Implements `IDropDownOptionsProvider`
@@ -69,7 +75,7 @@ public class DropdownEnumOptionProvider<T> : IDropDownOptionsProvider where T : 
 
 ## Create a service to parse enumeration values from strings
 With the provider in place, we need another element before we can start to use it.
-Although we feed the dropdown list with options from the enumeration, the value from the dropdown selector control comes back as `string` by definition. As a result, we need a generic service to parse `enum` values from `string` objects when we want to work with them [later in the Page Builder series](guides/development/page-builder/create-versatile-templates-part-1#style-the-template-based-on-properties).
+Although we feed the dropdown list with options from the enumeration, the value from the dropdown selector control comes back as `string` by definition. As a result, we need a generic service to parse `enum` values from `string` objects when we want to work with them [later in the Page Builder series](/guides/development/page-builder/create-versatile-templates-part-1#style-the-template-based-on-properties).
 C#
 **IEnumStringService.cs**
 Copy
@@ -197,6 +203,8 @@ Your browser does not support the video tag.
 ## What’s next
 You can now utilize the `DropdownEnumOptionProvider` class across your project, for dropdown selector properties of page templates, Page Builder sections, or widgets alike. As you’ll see later in this series, you can work with enumerations that are shared or reuse other enumeration values.
 If you have been following along using the [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides), take a look at the [Landing page view in the finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/LandingPages/LandingPagePageTemplate.cshtml). You’ll notice it utilizes a **tag helper** that works with the heading type enum, rather than the in-template logic you can see in your version of the same file. Try to look for opportunities to extract reusable parts in your own projects.
-Note, that not all [Xperience UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) have the `DataProviderType` property and support the dynamic data source.
-If you’d like to read more about how to approach working with [_Page Builder_](documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico projects, [Meet business requirements with Page Builder](guides/development/page-builder/meet-requirements-with-page-builder) provides a great introductory explanation.
-The [next guide of this series](guides/development/page-builder/create-versatile-templates-part-1) will walk you through the process of creating versatile page templates.
+Note, that not all [Xperience UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) have the `DataProviderType` property and support the dynamic data source.
+If you’d like to read more about how to approach working with [_Page Builder_](/documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico projects, [Meet business requirements with Page Builder](/guides/development/page-builder/meet-requirements-with-page-builder) provides a great introductory explanation.
+The [next guide of this series](/guides/development/page-builder/create-versatile-templates-part-1) will walk you through the process of creating versatile page templates.
+![]()
+[]()[]()

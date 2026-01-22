@@ -1,14 +1,20 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-multilingual/automate-translations-with-aira
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with multilingual](/guides/digital-marketing/work-with-multilingual)
+  * Automate your translations with AIRA 
+
+
 # Automate your translations with AIRA
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-multilingual/automate-translations-with-aira#) | [Get HelpService ID](guides/digital-marketing/work-with-multilingual/automate-translations-with-aira#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-multilingual/automate-translations-with-aira# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-multilingual/automate-translations-with-aira#)
 **Advanced license required**  
 Features described on this page require Xperience by Kentico Advanced license tier.
 When your company expands to new markets, one of the first things your editors (or you) will have to do is to localize your content into local languages. Besides expanding your audience to users that may not be familiar with your source language, **addressing them in their native languages helps build trust in your brand**.
 However, creating engaging messaging and running seasonal promotions while you are trying to maintain consistent brand messaging across several languages can quickly become a chore. More languages, more trouble, as they say.
-[AIRA](documentation/business-users/aira) helps you meet that challenge head-on by bringing content and translation together into one workspace. With a translation capability **built directly into Xperience** , you don’t need to constantly switch tools to manually copy the translations. Instead, let AIRA handle the boring parts and translate your content automatically. This way, you’ll gain more time and headspace to focus on keeping your unique tone of voice and personality intact.
+[AIRA](/documentation/business-users/aira) helps you meet that challenge head-on by bringing content and translation together into one workspace. With a translation capability **built directly into Xperience** , you don’t need to constantly switch tools to manually copy the translations. Instead, let AIRA handle the boring parts and translate your content automatically. This way, you’ll gain more time and headspace to focus on keeping your unique tone of voice and personality intact.
 In this guide, you’ll:
   * Learn what AIRA automated translations can and can’t do.
   * Prepare your environment for smooth translation workflows.
@@ -24,7 +30,7 @@ Our internal trials showed that using AIRA’s built-in translation feature can 
 ### Currently supported AIRA functionalities
   * Translation of _text_ , _long text_ , and _rich text (HTML)_ fields.  
 
-  * Manually triggered automated translations and bulk (mass) translation from the [Content hub](guides/digital-marketing/xperience-essentials/manage-content-hub-essentials) or the individual items.
+  * Manually triggered automated translations and bulk (mass) translation from the [Content hub](/guides/digital-marketing/xperience-essentials/manage-content-hub-essentials) or the individual items.
   * Optional tone of voice guidelines that help AIRA stay on brand every time.
   * Custom translation prompts that reflect your terminology, cultural nuances, and preferences.
 
@@ -42,8 +48,8 @@ Understanding these boundaries upfront helps you plan realistic, efficient trans
 ## Prerequisites for AIRA translations
 A little preparation goes a long way toward smooth translation results. Before you start using AIRA, check that your project is ready.
   1. **Languages** – Make sure that all your desired target languages are added in the _Languages_ application.  
-This step defines the [language variants](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content) that AIRA can create for your website. See the documentation on [Languages](documentation/developers-and-admins/configuration/languages) for detailed setup info.
-  2. **Access rights** – Check that your [user role](guides/digital-marketing/xperience-essentials/user-management-essentials-introduction) can access both **AIRA configuration** and **Content hub**. If you can’t see those apps, ask your Xperience administrator to grant you access to those spaces.
+This step defines the [language variants](/guides/digital-marketing/work-with-multilingual/multilingual-variant-of-content) that AIRA can create for your website. See the documentation on [Languages](/documentation/developers-and-admins/configuration/languages) for detailed setup info.
+  2. **Access rights** – Check that your [user role](/guides/digital-marketing/xperience-essentials/user-management-essentials-introduction) can access both **AIRA configuration** and **Content hub**. If you can’t see those apps, ask your Xperience administrator to grant you access to those spaces.
   3. **Tone of voice (optional)** – To help AIRA reflect your brand’s personality, define your tone of voice in **Configuration** → **AIRA** application → **Content generation** tab.  
 For example: _Friendly and clear, with a touch of humor._  
 
@@ -84,12 +90,12 @@ _Translate the text accurately but naturally for local audiences. Keep the tone 
   6. Perform a few **test translations** to see how your setup behaves and adjust it as needed.
 
 
-[![AIRA translations configurated](docsassets/guides/automate-translations-with-aira/aira-translations-configuration.png)](https://docs.kentico.com/docsassets/guides/automate-translations-with-aira/aira-translations-configuration.png)
+[![AIRA translations configurated](/docsassets/guides/automate-translations-with-aira/aira-translations-configuration.png)](/docsassets/guides/automate-translations-with-aira/aira-translations-configuration.png)
 You’ve now built the foundation that tells AIRA _how_ to translate in a way that fits your brand voice. Although you can not adjust the **system prompt** that powers AIRA translation feature itself, you can still customize it to add your own flavor.
 ## Demo translations in Kbank
 Let’s put everything you’ve learned into practice with a real example you can follow directly in Kbank.  
 In this self-paced exercise, you’ll work with existing demo content to see how AIRA handles a complete translation workflow, from setup to review.
-If you’d first like to walk through practical examples of working with multilingual content and translating different content items, you can check out our materials on [Multilingual variant of a page](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-page) and [Multilingual variant of a product](guides/digital-marketing/work-with-multilingual/multilingual-variant-of-product).
+If you’d first like to walk through practical examples of working with multilingual content and translating different content items, you can check out our materials on [Multilingual variant of a page](/guides/digital-marketing/work-with-multilingual/multilingual-variant-of-page) and [Multilingual variant of a product](/guides/digital-marketing/work-with-multilingual/multilingual-variant-of-product).
 ### AIRA translation scenario setup
 You are a Kbank marketing specialist preparing to launch a new product campaign across several European markets. The product is the **FastTrack Savings Account** – a flexible, easy-to-manage savings account designed for young professionals who want to grow their savings with confidence.
 Your goal is to localize Kbank’s promotional content into **German** , **French** , and **Czech** , ensuring that every translation feels as confident, friendly, and inspiring as the original.
@@ -166,3 +172,5 @@ As you start experimenting with your own campaigns, you’ll notice how much fas
 Let AIRA handle the hard task of keeping every language version aligned while you can focus on shaping marketing messages that resonate with your audience, no matter where they live.
 ## Next steps
 If you’re keen to **Optimize your AIRA translation prompts** , follow the trail to the next part of this series, and discover how small tweaks to your instructions can make your translations even better.
+![]()
+[]()[]()

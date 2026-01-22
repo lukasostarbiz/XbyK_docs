@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/digital-marketing-essentials/personalize-website-content-essentials
+scrape_date: 2026-01-22
+---
+
+Module: Digital marketing essentials
+5 of 7 Pages
 # Personalize website content
-  * [ Copy page link ](modules/digital-marketing-essentials/personalize-website-content-essentials#) | [Get HelpService ID](modules/digital-marketing-essentials/personalize-website-content-essentials#)
-Core MVC 5
-
-
-[✖](modules/digital-marketing-essentials/personalize-website-content-essentials# "Close page link panel") [Copy to clipboard](modules/digital-marketing-essentials/personalize-website-content-essentials#)
 Marketing communication should never be a “one-size-fits-all” interaction. With the correct content served at the right time, you can **turn your visitors into loyal followers of your brands**.
 Personalization allows you to **custom-tailor the content** for your website visitors. Xperience can dynamically recommend content visitors might find interesting based on their previous behavior.  
 You can **personalize website content using page builder widgets** because you know what your audience segment is looking for. Once your developers prepare the widgets for personalization, you can start building contact groups and ensure that your **website content automatically changes** based on who interacts with it.
@@ -14,7 +16,7 @@ Here are a few ideas on how to use the widget personalization:
   * And many more.
 
 
-Find out more about the [widget personalization](documentation/business-users/digital-marketing/widget-personalization) in the documentation.
+Find out more about the [widget personalization](/documentation/business-users/digital-marketing/widget-personalization) in the documentation.
 ## Exercise - Personalizing website content
 In this exercise, you’ll learn how to use content personalization to point potential partners to content they might find interesting. You’ll create and then use a contact group and personalize the website’s content.
 **Task** :
@@ -71,17 +73,9 @@ Test how your new personalization works for a website visitor using the incognit
   4. Return to the _Home_ page. Your personalized _Home_ page should look like the following:
 
 
-[![](docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)](https://docs.kentico.com/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)
-[ Previous page ](modules/digital-marketing-essentials/segment-your-website-audience-essentials)
+[![](/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)](/docsassets/guides/personalize-website-content-essentials/personal-loan-hero-banner.png)
+[ Previous page ](/modules/digital-marketing-essentials/segment-your-website-audience-essentials)
 5 of 7
-[ Mark complete and continue ](modules/digital-marketing-essentials/email-marketing-essentials)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/digital-marketing-essentials/personalize-website-content-essentials)
-[](https://docs.kentico.com/modules/digital-marketing-essentials/personalize-website-content-essentials)[](https://docs.kentico.com/modules/digital-marketing-essentials/personalize-website-content-essentials)
+[ Mark complete and continue ](/modules/digital-marketing-essentials/email-marketing-essentials)
+![]()
+[]()[]()

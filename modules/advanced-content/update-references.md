@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/advanced-content/update-references
+scrape_date: 2026-01-22
+---
+
+Module: Advanced content
+8 of 11 Pages
 # Update references to converted items
-  * [ Copy page link ](modules/advanced-content/update-references#) | [Get HelpService ID](modules/advanced-content/update-references#)
-Core MVC 5
-
-
-[✖](modules/advanced-content/update-references# "Close page link panel") [Copy to clipboard](modules/advanced-content/update-references#)
 With the code we’ve authored so far, we have the tools to make schema-based `GeneralArticle` items from each of our `Article` items in Content hub.
 However, the _Training guides_ project uses `ArticlePage` items in a web channel to display content from the reusable `Article` items, referencing them via the `ArticlePageContent` field. Let’s remove these references and replace them with references to the new `GeneralArticle` items.
 #### Get new page data for the reference
@@ -225,12 +227,12 @@ private async Task<List<ConversionAttempt>> UpdatePageReferences(List<Conversion
 
 ### Update reusable item references
 In our example, `ArticlePage` items are not the only objects that reference old `Article` items.
-`Article` also contains the field `ArticleRelatedArticles`, and we copied its value into `ArticleSchemaRelatedArticles` [earlier](modules/advanced-content/convert-items-to-schemas).
+`Article` also contains the field `ArticleRelatedArticles`, and we copied its value into `ArticleSchemaRelatedArticles` [earlier](/modules/advanced-content/convert-items-to-schemas).
 This means some of our new schema-based articles could still reference old `Article` items. We can ignore references between old articles, since we will delete all of them later.
 You can optionally update these references before or after page references. We chose to do it later since the scenario is slightly more complicated, in that we need to conditionally decide which references to update (those that point to `Article` items) and which references to preserve (any other content types).
 #### Build a reference list
 For each content item, we’ll need to build a new list of references for its `ArticleSchemaRelatedArticles` field.
-As part of this process, we’ll need to find the GUID of the new `GeneralArticle` that corresponds to the old `Article`. Thankfully, we created the `GetNewReusableArticleName` method to determine the code name of each new `GeneralArticle` [earlier](modules/advanced-content/prepare-to-convert-items), which we can use to look up the schema-based article in a new `GetNewArticleItemGuid` overload.
+As part of this process, we’ll need to find the GUID of the new `GeneralArticle` that corresponds to the old `Article`. Thankfully, we created the `GetNewReusableArticleName` method to determine the code name of each new `GeneralArticle` [earlier](/modules/advanced-content/prepare-to-convert-items), which we can use to look up the schema-based article in a new `GetNewArticleItemGuid` overload.
 C#
 **ArticleConverter.cs**
 Copy
@@ -290,7 +292,7 @@ private async Task<Guid?> GetNewArticleItemGuid(Article oldArticle)
 ```
 
 #### Update and publish new related articles references
-To update a draft with new related articles, we can reuse logic from [when we updated pages](modules/advanced-content/update-references#manage-page-drafts-for-conversion), replacing `IWebPageManager` with `IContentItemManager`.
+To update a draft with new related articles, we can reuse logic from [when we updated pages](#manage-page-drafts-for-conversion), replacing `IWebPageManager` with `IContentItemManager`.
 C#
 **ArticleConverter.cs**
 Copy
@@ -456,16 +458,8 @@ public static class ServiceCollectionExtensions
 
 ```
 
-[ Previous page ](modules/advanced-content/convert-items-to-schemas)
+[ Previous page ](/modules/advanced-content/convert-items-to-schemas)
 8 of 11
-[ Mark complete and continue ](modules/advanced-content/execute-conversion-and-cleanup)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/advanced-content/update-references)
-[](https://docs.kentico.com/modules/advanced-content/update-references)[](https://docs.kentico.com/modules/advanced-content/update-references)
+[ Mark complete and continue ](/modules/advanced-content/execute-conversion-and-cleanup)
+![]()
+[]()[]()

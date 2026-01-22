@@ -1,16 +1,18 @@
+---
+source: https://docs.kentico.com/modules/private-cloud-deployment/deploy-xperience-with-cli
+scrape_date: 2026-01-22
+---
+
+Module: Private cloud deployment
+2 of 7 Pages
 # Deploy Xperience with a CLI
-  * [ Copy page link ](modules/private-cloud-deployment/deploy-xperience-with-cli#) | [Get HelpService ID](modules/private-cloud-deployment/deploy-xperience-with-cli#)
-Core MVC 5
-
-
-[✖](modules/private-cloud-deployment/deploy-xperience-with-cli# "Close page link panel") [Copy to clipboard](modules/private-cloud-deployment/deploy-xperience-with-cli#)
-This guide goes over the process of using _Command-line interfaces_ to deploy an Xperience by Kentico application, focusing specifically on hosting in either Azure Web Apps or IIS in your [private cloud](modules/private-cloud-deployment/deploy-to-private-cloud).
+This guide goes over the process of using _Command-line interfaces_ to deploy an Xperience by Kentico application, focusing specifically on hosting in either Azure Web Apps or IIS in your [private cloud](/modules/private-cloud-deployment/deploy-to-private-cloud).
 Headings that are specific to either platform will be labelled accordingly.
-If you want guidance on how to deploy to the Xperience SaaS environment, where you can manage your projects through the [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal), see the [documentation’s instructions](documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) for how to do so.
+If you want guidance on how to deploy to the Xperience SaaS environment, where you can manage your projects through the [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal), see the [documentation’s instructions](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) for how to do so.
 ## Before you start
 This guide requires the following:
   * Familiarity with [.NET Core](https://learn.microsoft.com/en-us/dotnet/), general development operations concepts, and working with [Command-line interfaces (CLIs)](https://en.wikipedia.org/wiki/Command-line_interface)
-  * An instance of Xperience by Kentico to deploy. The samples in this guide use an instance running on version [29.3.0](documentation/changelog).
+  * An instance of Xperience by Kentico to deploy. The samples in this guide use an instance running on version [29.3.0](/documentation/changelog).
 
 
 ## Start with a working project
@@ -20,7 +22,7 @@ Start by following the Kickstart repository’s instructions to set up the proje
 ## Configure external storage
 We recommend hosting assets, form files, and media files in some kind of external storage in all cases, but especially when your application is hosted in _Azure Web Apps_ or other similar environments that do not guarantee persistent storage.
 Aside from preserving your files in the event of unexpected restarts, using external storage will prevent future code deployments from destroying or overwriting them.
-Xperience offers two solutions out-of-the-box. The documentation contains instructions for [setting up Azure Blob Storage](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) and [Amazon S3](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3), along with a way to [customize file system providers](documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/custom-file-system-providers) to integrate with alternative services.
+Xperience offers two solutions out-of-the-box. The documentation contains instructions for [setting up Azure Blob Storage](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/azure-blob-storage) and [Amazon S3](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/amazon-s3), along with a way to [customize file system providers](/documentation/developers-and-admins/api/files-api-and-cms-io/file-system-providers/custom-file-system-providers) to integrate with alternative services.
 If you plan to have more than one published environment, or use external storage in your development environment as well, make sure to use a separate container or bucket per environment to prevent them from overwriting one another’s files.
 ## Set up the database
 Whether you plan to host your deployed application files in Azure or on your own server with IIS, you can theoretically host your database anywhere the application can access. You can have on-premise servers accessing Azure SQL databases, Azure Web Apps that talk to on-premise SQL servers, or any number of combinations involving other hosting providers. This guide will focus on two options: hosting your database in Azure, or in your own SQL server.
@@ -99,16 +101,8 @@ Depending on your network and security settings, this may be possible to do with
 Now, when you access your site, wherever it is hosted, you’ll likely see an [HTTP 500 error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500).
 This error appears because the Kickstart repo does not contain a license key for the domain that hosts your published application.
 Access the **/admin** path of your application to sign in to the Xperience admin UI. Add a license key for all necessary domains in the **License keys** application.
-[ Previous page ](modules/private-cloud-deployment)
+[ Previous page ](/modules/private-cloud-deployment)
 2 of 7
-[ Mark complete and continue ](modules/private-cloud-deployment/deploy-code-and-data-changes)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/private-cloud-deployment/deploy-xperience-with-cli)
-[](https://docs.kentico.com/modules/private-cloud-deployment/deploy-xperience-with-cli)[](https://docs.kentico.com/modules/private-cloud-deployment/deploy-xperience-with-cli)
+[ Mark complete and continue ](/modules/private-cloud-deployment/deploy-code-and-data-changes)
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/page-builder/style-the-template
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+6 of 16 Pages
 # Style the template
-  * [ Copy page link ](modules/page-builder/style-the-template#) | [Get HelpService ID](modules/page-builder/style-the-template#)
-Core MVC 5
-
-
-[✖](modules/page-builder/style-the-template# "Close page link panel") [Copy to clipboard](modules/page-builder/style-the-template#)
 You probably noticed in the last section that the template is not very pretty yet. You’ll also find that the dropdowns for color scheme and corner style in the template properties don’t change anything.
 Let’s create a service that maps the options from the dropdown to CSS classes, and a tag helper that uses it to style a `div` element.
 ### Create a service to retrieve styles
@@ -36,7 +38,7 @@ ColorSchemeOption GetColorScheme(string colorSchemeString);
 }
 ```
 
-  4. Implement the interface, mapping the selected options to sets of CSS classes. Use the `Parse` method from the `EnumStringService` we defined [earlier in the series](modules/page-builder/map-enum-to-dropdown) for the string conversion methods. 
+  4. Implement the interface, mapping the selected options to sets of CSS classes. Use the `Parse` method from the `EnumStringService` we defined [earlier in the series](/modules/page-builder/map-enum-to-dropdown) for the string conversion methods. 
 C#
 **ComponentStyleEnumService.cs**
 Copy
@@ -258,7 +260,7 @@ Copy
 
 If you sign in to the Xperience administration interface, you’ll notice that you can now adjust the appearance of the box containing the product’s data by clicking the gear icon in the bottom left of the _Page Builder_ pane.
 However, if you set the template to use rounded corners and a colored background, you’ll see that the corners of the image do not change to match the style of the parent div. The image may also be an unreasonable size, depending on the file.
-[![Screenshot of incomplete template with rounded corners set. Also showing the Configure template button.](docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)](https://docs.kentico.com/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)
+[![Screenshot of incomplete template with rounded corners set. Also showing the Configure template button.](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)](/docsassets/guides/create-versatile-templates-part-1/ScreenshotTemplateProgress.png)
 ### Create an image tag helper
   1. In the _~/Features/Shared/Helpers/TagHelpers_ folder, add a new self-closing TagHelper called `StyledImageTagHelper` with the tag name `tg-styled-image`. 
 C#
@@ -386,16 +388,8 @@ Copy
     class="c-product-img object-fit-cover" />
 ```
 
-[ Previous page ](modules/page-builder/define-template-properties)
+[ Previous page ](/modules/page-builder/define-template-properties)
 6 of 16
-[ Mark complete and continue ](modules/page-builder/finish-the-structured-data-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/style-the-template)
-[](https://docs.kentico.com/modules/page-builder/style-the-template)[](https://docs.kentico.com/modules/page-builder/style-the-template)
+[ Mark complete and continue ](/modules/page-builder/finish-the-structured-data-template)
+![]()
+[]()[]()

@@ -1,14 +1,23 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Page Builder](/documentation/developers-and-admins/development/builders/page-builder)
+  * [Widgets for Page Builder](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder)
+  * Rich text inline editors 
+
+
 # Rich text inline editors
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#)
-Xperience provides a rich text [inline editor](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties) that allows users to input content using conventional word processor features. The editor is based on the [Froala](https://froala.com/wysiwyg-editor/) WYSIWYG editor.
-This page describes how to work with the rich text editor as an [inline editor](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties) for [Page Builder widget properties](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
+Xperience provides a rich text [inline editor](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties) that allows users to input content using conventional word processor features. The editor is based on the [Froala](https://froala.com/wysiwyg-editor/) WYSIWYG editor.
+This page describes how to work with the rich text editor as an [inline editor](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties) for [Page Builder widget properties](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/widget-properties).
 To learn about other rich text editor scenarios, see:
-  * [Inline editors for Email Builder widgets](documentation/developers-and-admins/development/builders/email-builder/inline-editors-email-builder-widgets#rich-text-inline-editor) –using the rich text inline editor for Email Builder widget properties.
-  * [Rich text editor configuration](documentation/developers-and-admins/configuration/rich-text-editor-configuration) – modifying the editor used by the Xperience administration in general.
+  * [Inline editors for Email Builder widgets](/documentation/developers-and-admins/development/builders/email-builder/inline-editors-email-builder-widgets#rich-text-inline-editor) –using the rich text inline editor for Email Builder widget properties.
+  * [Rich text editor configuration](/documentation/developers-and-admins/configuration/rich-text-editor-configuration) – modifying the editor used by the Xperience administration in general.
 
 
 ## Add rich text inline editors to widgets
@@ -43,12 +52,12 @@ else
 The inline editor can now be used to edit the selected property of the desired widget.
 To ensure the inline rich text editor’s formatting and CSS styles are applied correctly to the editor’s HTML output, use the `fr-view` class in the HTML wrapper element of the editor’s content.
 ## HTML allowed in the editor
-To improve the security of the system, the editor sanitizes all user input and discards any HTML tags, attributes and URI values that are not allowed. See the [list of allowed HTML](documentation/developers-and-admins/configuration/rich-text-editor-configuration#html-allowed-in-the-editor), which is shared with the editor used by the Xperience administration.
+To improve the security of the system, the editor sanitizes all user input and discards any HTML tags, attributes and URI values that are not allowed. See the [list of allowed HTML](/documentation/developers-and-admins/configuration/rich-text-editor-configuration#html-allowed-in-the-editor), which is shared with the editor used by the Xperience administration.
 ## Customize rich text editor toolbars
 To provide a better experience for content editors, you can customize the toolbar of the rich text editor to display a specific set of buttons and formatting options.
 To customize the editor toolbar, you need to:
-  1. [Define toolbar configurations](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#define-toolbar-configurations)
-  2. [Assign configurations to inline editors](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#assign-configurations-to-inline-editors)
+  1. [Define toolbar configurations](#define-toolbar-configurations)
+  2. [Assign configurations to inline editors](#assign-configurations-to-inline-editors)
 
 
 ### Define toolbar configurations
@@ -88,7 +97,7 @@ Copy
 Certain plugins that can be included within toolbars were adjusted for the Xperience environment (e.g., `insertImage` and `insertLink`)_,_ but these plugins override the corresponding Froala plugins and you can use the default code names to include them in your custom toolbar configurations.
 **Custom editor plugins**
 In addition to the [listed options](https://froala.com/wysiwyg-editor/docs/options), you can use the Xperience `insertDynamicText` option in your toolbar configurations (to allow editors to include personalized text).
-You can also add further options by [implementing plugins](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#implement-custom-plugins-for-the-editor) for the Froala editor.
+You can also add further options by [implementing plugins](#implement-custom-plugins-for-the-editor) for the Froala editor.
 ### Assign configurations to inline editors
 There are two ways to assign different toolbar configurations to widget inline editors:
   * Link different configurations to specific pages
@@ -151,7 +160,7 @@ Copy
 You can provide any missing features your editors require via plugins. 
 Froala plugins are defined in JavaScript files. Within your project, create a JavaScript file for your plugin. We recommended storing plugin files under a suitable directory in the _~/wwwroot/Scripts_ folder. To implement your required functionality, follow the [Froala plugin development documentation](https://froala.com/wysiwyg-editor/docs/concepts/custom/plugin).
 **Community plugins not supported**
-[Plugins available for download directly](documentation/developers-and-admins/configuration/rich-text-editor-configuration/rich-text-editor-plugins) on Froala’s website and other community sourced plugins are not supported in the inline editor version of the rich text editor. Such plugins can only be added to the editor [used in the admin UI](documentation/developers-and-admins/configuration/rich-text-editor-configuration/rich-text-editor-plugins).
+[Plugins available for download directly](/documentation/developers-and-admins/configuration/rich-text-editor-configuration/rich-text-editor-plugins) on Froala’s website and other community sourced plugins are not supported in the inline editor version of the rich text editor. Such plugins can only be added to the editor [used in the admin UI](/documentation/developers-and-admins/configuration/rich-text-editor-configuration/rich-text-editor-plugins).
 JS
 Copy
 ```
@@ -171,7 +180,7 @@ Copy
 })(window.kentico.pageBuilder);
 ```
 
-To make the plugins available for rich text inline editors across the entire site, include the scripts into the website’s main layout (e.g.  _~/Views/Shared/_Layout.cshtml_). The scripts must be included **after** [Page Builder](documentation/developers-and-admins/development/builders/page-builder) scripts.
+To make the plugins available for rich text inline editors across the entire site, include the scripts into the website’s main layout (e.g.  _~/Views/Shared/_Layout.cshtml_). The scripts must be included **after** [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) scripts.
 cshtml
 Copy
 ```
@@ -187,7 +196,7 @@ Copy
 }
 ```
 
-After you create a new plugin, reference it by its assigned name in a [toolbar configuration](documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors#define-toolbar-configurations) to make it available in the rich text editor.
+After you create a new plugin, reference it by its assigned name in a [toolbar configuration](#define-toolbar-configurations) to make it available in the rich text editor.
 ### Example – Creating a custom toolbar button
 The following example shows how to create a simple plugin that replaces occurrences of the word ‘you’ with ‘Thou’ and makes it available for use within inline editors.
 Create a new JavaScript file: _~/wwwroot/Scripts/sampleButtonPlugin.js_
@@ -237,3 +246,5 @@ Copy
 ```
 
 The functionality is now available under the ‘?’ button in the editor of the default **Rich text** widget.
+![]()
+[]()[]()

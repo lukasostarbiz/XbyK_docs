@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/user-management/create-new-role
+scrape_date: 2026-01-22
+---
+
+Module: User management
+11 of 20 Pages
 # Create a new role
-  * [ Copy page link ](modules/user-management/create-new-role#) | [Get HelpService ID](modules/user-management/create-new-role#)
-Core MVC 5
-
-
-[✖](modules/user-management/create-new-role# "Close page link panel") [Copy to clipboard](modules/user-management/create-new-role#)
 Let’s create a **Content editor** role with specific permissions for a user that works on managing website content.
   1. Before you create a new role in Kentico, put together a list of activities users with this role should be able to perform. Consider the applications they need and the actions they must perform in each application.
   2. Go to the **Role management** application.
@@ -24,17 +26,9 @@ Let’s create a **Content editor** role with specific permissions for a user th
   10. In this example, the _Content Editor_ role should look like the following:
 
 
-[![Content editor role settings](docsassets/guides/create-new-role/content-editor-role-settings.png)](https://docs.kentico.com/docsassets/guides/create-new-role/content-editor-role-settings.png)
-[ Previous page ](modules/user-management/roles_in_xperience_overview)
+[![Content editor role settings](/docsassets/guides/create-new-role/content-editor-role-settings.png)](/docsassets/guides/create-new-role/content-editor-role-settings.png)
+[ Previous page ](/modules/user-management/roles_in_xperience_overview)
 11 of 20
-[ Mark complete and continue ](modules/user-management/update-permissions)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/user-management/create-new-role)
-[](https://docs.kentico.com/modules/user-management/create-new-role)[](https://docs.kentico.com/modules/user-management/create-new-role)
+[ Mark complete and continue ](/modules/user-management/update-permissions)
+![]()
+[]()[]()

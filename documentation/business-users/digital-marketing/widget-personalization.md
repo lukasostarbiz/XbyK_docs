@@ -1,30 +1,36 @@
+---
+source: https://docs.kentico.com/documentation/business-users/digital-marketing/widget-personalization
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Business users](/documentation/business-users)
+  * [Digital marketing](/documentation/business-users/digital-marketing)
+  * Personalize Page Builder widgets 
+
+
 # Personalize Page Builder widgets
-  * [ Copy page link ](documentation/business-users/digital-marketing/widget-personalization#) | [Get HelpService ID](documentation/business-users/digital-marketing/widget-personalization#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](documentation/business-users/digital-marketing/widget-personalization# "Close page link panel") [Copy to clipboard](documentation/business-users/digital-marketing/widget-personalization#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
-Personalization is a digital marketing technique that allows you to display different content on pages based on the situation in which they are viewed. This can help you provide more accurately targeted information to visitors and increase the effectiveness of your websites. For example, you can show modified text or additional offers to visitors who belong to a specific [contact group](documentation/business-users/digital-marketing/contact-groups).
-You can personalize content that is displayed through [Page Builder widgets](documentation/business-users/website-content/widgets-and-page-builder). Individual widgets allow you to create multiple variants, which are then displayed to a different audience based on predefined conditions.
+Personalization is a digital marketing technique that allows you to display different content on pages based on the situation in which they are viewed. This can help you provide more accurately targeted information to visitors and increase the effectiveness of your websites. For example, you can show modified text or additional offers to visitors who belong to a specific [contact group](/documentation/business-users/digital-marketing/contact-groups).
+You can personalize content that is displayed through [Page Builder widgets](/documentation/business-users/website-content/widgets-and-page-builder). Individual widgets allow you to create multiple variants, which are then displayed to a different audience based on predefined conditions.
 **Prerequisite**
 Content personalization of widgets needs to be configured by your developers. For more information, see:
-  * [Content personalization](documentation/developers-and-admins/digital-marketing-setup/content-personalization)
-  * [Develop personalization condition types](documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types)
+  * [Content personalization](/documentation/developers-and-admins/digital-marketing-setup/content-personalization)
+  * [Develop personalization condition types](/documentation/developers-and-admins/digital-marketing-setup/content-personalization/develop-personalization-condition-types)
 
 
 ## Personalize widgets
 To personalize widget content, you need to create one or more personalization variants and set up a condition. The condition decides whether the page displays the original widget or a personalized variant.
-  1. In a website channel application, select a page that contains [Page Builder widgets](documentation/business-users/website-content/widgets-and-page-builder).
+  1. In a website channel application, select a page that contains [Page Builder widgets](/documentation/business-users/website-content/widgets-and-page-builder).
   2. Select **Page Builder** in the page menu on the right side of the interface.
   3. Select the widget you want to personalize.
   4. Select the **Personalize** (
   5. Choose the condition type that you wish to use to personalize the widget.  
-[![Selecting a personalization condition type](docsassets/documentation/widget-personalization/Personalize_Button.png)](https://docs.kentico.com/docsassets/documentation/widget-personalization/Personalize_Button.png)
+[![Selecting a personalization condition type](/docsassets/documentation/widget-personalization/Personalize_Button.png)](/docsassets/documentation/widget-personalization/Personalize_Button.png)
   6. Fill in the configuration dialog and enter a name for the new variant.  
-[![Filling in the configuration dialog for a personalization variant](docsassets/documentation/widget-personalization/Add_Personalization_Variant.png)](https://docs.kentico.com/docsassets/documentation/widget-personalization/Add_Personalization_Variant.png)
+[![Filling in the configuration dialog for a personalization variant](/docsassets/documentation/widget-personalization/Add_Personalization_Variant.png)](/docsassets/documentation/widget-personalization/Add_Personalization_Variant.png)
   7. Select **Apply** within the dialog.
   8. Modify the properties or content of the new widget variant. Consider the target audience of the variant’s condition when preparing the modified content.
   9. **Save** the page to confirm the personalization.
@@ -35,13 +41,13 @@ When a visitor views the page on the live site, the system evaluates the conditi
 **Configure widget personalization variants**
 The available personalization condition types, their properties in the configuration dialog, and the properties of widgets all depend on the implementation of your website. For more information, visit your project’s documentation or contact your developer.
 **Search engine web crawlers**
-Widget personalization in Xperience does not offer any special handling of search engine web crawlers. Crawlers are treated as regular anonymous visitors. To avoid [cloaking](https://developers.google.com/search/docs/advanced/guidelines/cloaking) (presenting content to crawlers which is different than content seen by regular users), we recommend using personalization conditions based on [contact](documentation/business-users/digital-marketing/contact-management) attributes. Such conditions are not fulfilled by crawlers, so they always receive and process the original widget variant.
+Widget personalization in Xperience does not offer any special handling of search engine web crawlers. Crawlers are treated as regular anonymous visitors. To avoid [cloaking](https://developers.google.com/search/docs/advanced/guidelines/cloaking) (presenting content to crawlers which is different than content seen by regular users), we recommend using personalization conditions based on [contact](/documentation/business-users/digital-marketing/contact-management) attributes. Such conditions are not fulfilled by crawlers, so they always receive and process the original widget variant.
 However, certain conditions (e.g., time-based conditions depending on the day of the week) can be satisfied by crawlers and result in non-original variants being presented.
 ## Create additional variants
 You can add variants to a personalized widget. All variants of a single widget use the **same type of personalization condition** , but you can configure different properties for the condition of each variant. For example, if a condition type requires visitors to belong to specific contact groups, you select different groups for each personalization variant.
   1. Select **Personalize** (
   2. Select **Add variant** under the list.  
-[![Adding a personalization variant](docsassets/documentation/widget-personalization/Variant_List.png)](https://docs.kentico.com/docsassets/documentation/widget-personalization/Variant_List.png)
+[![Adding a personalization variant](/docsassets/documentation/widget-personalization/Variant_List.png)](/docsassets/documentation/widget-personalization/Variant_List.png)
   3. Fill in the configuration dialog and enter a name for the new variant.
   4. Select **Apply** within the dialog.
   5. Modify the properties or content of the new widget variant.
@@ -75,3 +81,7 @@ To delete a personalization variant for a widget:
   2. Hover over the variant you want to delete.
   3. Select **Delete variant** (
   4. **Save** the page to confirm the change.
+
+
+![]()
+[]()[]()

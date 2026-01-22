@@ -1,9 +1,14 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/continue-learning-about-customer-journeys
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * Continue learning about customer journeys 
+
+
 # Continue learning about customer journeys
-  * [ Copy page link ](guides/customer-journeys/continue-learning-about-customer-journeys#) | [Get HelpService ID](guides/customer-journeys/continue-learning-about-customer-journeys#)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/continue-learning-about-customer-journeys# "Close page link panel") [Copy to clipboard](guides/customer-journeys/continue-learning-about-customer-journeys#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -24,9 +29,13 @@ Request access to a demo Kbank website via the [form at kentico.com.](https://ww
 We hope you have enjoyed our series of guides to _Customer journeys_ in Xperience by Kentico. Tell us how you liked the series by clicking the _Send us feedback_ button at the end of this page.
 ## Continue learning about Customer journeys
 To continue learning about concepts the _Customer journeys_ are built on, see the following recommended topics:
-  * [Customer journeys](documentation/business-users/digital-marketing/customer-journeys) - take the feauture for a spin, and create your first customer journey today.
-  * [Digital marketing](guides/digital-marketing/xperience-essentials/digital-marketing-essentials-introduction) – This series covers key topics to help you make the most of Xperience by Kentico’s marketing features. You’ll learn to manage visitor data, collect insights, segment audiences, personalize content, and optimize email marketing.
-  * [Data protection](guides/configuration/data-protection) – See how you can manage personal data or customer consents.
-  * [Activity tracking](guides/digital-marketing/activity-tracking) – See how Xperience logs visitor activities you can use to track the customer journey on your website.
-  * [Work with contacts](guides/digital-marketing/work-with-contacts) – Learn how to manage contacts and contact groups, and where to see your contact’s customer journey.
-  * [Work with forms](guides/digital-marketing/work-with-forms) – See how to work with forms, adjust their fields, and make them user-friendly for website visitors to improve their user experience.
+  * [Customer journeys](/documentation/business-users/digital-marketing/customer-journeys) - take the feauture for a spin, and create your first customer journey today.
+  * [Digital marketing](/guides/digital-marketing/xperience-essentials/digital-marketing-essentials-introduction) – This series covers key topics to help you make the most of Xperience by Kentico’s marketing features. You’ll learn to manage visitor data, collect insights, segment audiences, personalize content, and optimize email marketing.
+  * [Data protection](/guides/configuration/data-protection) – See how you can manage personal data or customer consents.
+  * [Activity tracking](/guides/digital-marketing/activity-tracking) – See how Xperience logs visitor activities you can use to track the customer journey on your website.
+  * [Work with contacts](/guides/digital-marketing/work-with-contacts) – Learn how to manage contacts and contact groups, and where to see your contact’s customer journey.
+  * [Work with forms](/guides/digital-marketing/work-with-forms) – See how to work with forms, adjust their fields, and make them user-friendly for website visitors to improve their user experience.
+
+
+![]()
+[]()[]()

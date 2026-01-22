@@ -1,25 +1,31 @@
+---
+source: https://docs.kentico.com/guides/development/members/map-member-to-contact
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Members](/guides/development/members)
+  * Synchronize member data with the corresponding contact 
+
+
 # Synchronize member data with the corresponding contact
-  * How-to| [ Copy page link ](guides/development/members/map-member-to-contact#) | [Get HelpService ID](guides/development/members/map-member-to-contact#)
-Core MVC 5
-
-
-[✖](guides/development/members/map-member-to-contact# "Close page link panel") [Copy to clipboard](guides/development/members/map-member-to-contact#)
-A [Contact](documentation/business-users/digital-marketing/contact-management) object in Xperience by Kentico represents a website visitor. As you saw [earlier in this series](guides/development/members/implement-member-registration), you can enable **registration** and implement sign in logic for your solution that creates [members](documentation/business-users/members).
+A [Contact](/documentation/business-users/digital-marketing/contact-management) object in Xperience by Kentico represents a website visitor. As you saw [earlier in this series](/guides/development/members/implement-member-registration), you can enable **registration** and implement sign in logic for your solution that creates [members](/documentation/business-users/members).
 For many reasons it is useful to keep the the **member synchronized with the corresponding contact**. On successful member registration, the system logs the event for the contact and maps the member’s email to the contact if the contact’s email is empty. This synchronization aligns email data but doesn’t take care of any custom fields, such as name and other information relevant for your domain. Nor does it establish a direct link between the two objects.
-This guide expands on an [example from our documentation](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts), showing how to map custom member and contact fields, and use them to create link between the two objects.
+This guide expands on an [example from our documentation](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts), showing how to map custom member and contact fields, and use them to create link between the two objects.
 The examples here rely in part on examples from other training materials:
-  * The [Add a custom field to the Contact profile](guides/development/customizations-and-integrations/add-custom-contact-field) guide. Our example uses a custom contact field created here.
-  * The [Data protection](guides/development/data-protection) series. Our example utilizes cookie logic and the consent banner from this series.
+  * The [Add a custom field to the Contact profile](/guides/development/customizations-and-integrations/add-custom-contact-field) guide. Our example uses a custom contact field created here.
+  * The [Data protection](/guides/development/data-protection) series. Our example utilizes cookie logic and the consent banner from this series.
 
 
 If you have not completed these requirements, you can consider the parts of this example relating to _custom contact fields_ , _consent_ , and _cookie management_ optional.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Basic understanding of [Contacts](documentation/business-users/digital-marketing/contact-management) and [Members](documentation/business-users/members) in Xperience by Kentico, both form the administration and coding perspective.
-  * Completion of the [previous guide](guides/development/members/implement-member-registration).
+  * Basic understanding of [Contacts](/documentation/business-users/digital-marketing/contact-management) and [Members](/documentation/business-users/members) in Xperience by Kentico, both form the administration and coding perspective.
+  * Completion of the [previous guide](/guides/development/members/implement-member-registration).
 
 
 **Code samples**
@@ -28,10 +34,10 @@ The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guide
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Build a member-to-contact relationship
-The [documentation contact-member mapping example](documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts#example) is fairly straightforward. You implement the `IMemberToContactMapper` as a custom class and in the `Map` method you set all the custom values from the member object to the contact object. Then you call the default `Map` implementation, which ensures the mapping of the email and saving the `ContactInfo` object.
+The [documentation contact-member mapping example](/documentation/developers-and-admins/digital-marketing-setup/contact-configuration/map-custom-member-fields-to-contacts#example) is fairly straightforward. You implement the `IMemberToContactMapper` as a custom class and in the `Map` method you set all the custom values from the member object to the contact object. Then you call the default `Map` implementation, which ensures the mapping of the email and saving the `ContactInfo` object.
 In that example the contact data gets updated, but the contact has no information about which member it corresponds to.
-Let’s create a little more complex solution. We’ll look at how to map **custom member fields** to **custom contact fields** and how to utilize [custom contact field](guides/development/customizations-and-integrations/add-custom-contact-field) to create relationship with the corresponding member.
-Extending contact with custom field is out the scope of this example. Here we will use the custom fields created in [a customization guide](guides/development/customizations-and-integrations/add-custom-contact-field). Feel free to skip this part if you have not completed that guide.
+Let’s create a little more complex solution. We’ll look at how to map **custom member fields** to **custom contact fields** and how to utilize [custom contact field](/guides/development/customizations-and-integrations/add-custom-contact-field) to create relationship with the corresponding member.
+Extending contact with custom field is out the scope of this example. Here we will use the custom fields created in [a customization guide](/guides/development/customizations-and-integrations/add-custom-contact-field). Feel free to skip this part if you have not completed that guide.
 ## Create the mapping
 ### Prepare the service
 Let’s start by creating a service in which we will place methods with all the mapping logic. This way, we will be able to call the logic outside of the limited default scenarios where Xperience triggers the `IMemberToContactMapper`.
@@ -224,10 +230,10 @@ public class TrainingGuidesMemberToContactMapper : IMemberToContactMapper
 ## Check your progress
 At this point you should be able to test whether your member-contact data synchronization works.
 Run your website in an incognito browser window as a visitor and accept cookies. Open the Xperience administration dashboard in a new window and visit the **Contact management** application. You will see your newly created anonymous contact.
-Now, in your website, use the registration page we created [earlier in this series](guides/development/members/implement-member-registration) to register a new member.
+Now, in your website, use the registration page we created [earlier in this series](/guides/development/members/implement-member-registration) to register a new member.
 When you go back to your administration dashboard and reload the **Contact management** , you will see that your new contact has its fields set according to what you filled out for the member. Including the custom fields. Success!
 Your browser does not support the video tag. 
-[![Shows the custom contact fields filled out according to the member data](docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)](https://docs.kentico.com/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)
+[![Shows the custom contact fields filled out according to the member data](/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)](/docsassets/guides/map-member-to-contact/custom-contact-fields-filled-out.png)
 ## Synchronize contact with member on sign-in
 The basic data synchronization is in place, but there are still a few things we need to handle. The first one is handling the event of member signing in.
 ### Merge duplicate contacts
@@ -443,4 +449,6 @@ public async Task SignOut()
 ```
 
 ## What’s next?
-The [next guide on the membership topic](guides/development/members/create-a-profile-page) will demonstrate how you can implement a secured profile page, where members can manage their personal information.
+The [next guide on the membership topic](/guides/development/members/create-a-profile-page) will demonstrate how you can implement a secured profile page, where members can manage their personal information.
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/model-website-presentation-components/what-are-page-builder-widgets
+scrape_date: 2026-01-22
+---
+
+Module: Model website presentation components
+7 of 11 Pages
 # Model Page Builder widgets
-  * [ Copy page link ](modules/model-website-presentation-components/what-are-page-builder-widgets#) | [Get HelpService ID](modules/model-website-presentation-components/what-are-page-builder-widgets#)
-Core MVC 5
-
-
-[✖](modules/model-website-presentation-components/what-are-page-builder-widgets# "Close page link panel") [Copy to clipboard](modules/model-website-presentation-components/what-are-page-builder-widgets#)
 Xperience Page Builder is a user-friendly interface that business users, such as website editors, content administrators, or marketers, use to manage web page content. During content modeling sessions, business analysts and solution architects, in collaboration with UX designers, front-end engineers, and stakeholders from the editor team, define which page components editors will use. This article will provide several recommendations for creating Kentico Page Builder widgets.
 After reading the article, you should be able to:
   * Understand the role of widgets and their function in shaping website content and user experience.
@@ -18,7 +20,7 @@ When defining the presentation model for editors, it’s essential to understand
 **Page Builder** is not the only approach to display content on the website, but compared to other options, it’s the one that editors prefer the most. In Xperience website pages, the **page template** defines the overall look and feel of the page, while **sections** serve to arrange content, and **widgets** display and often style it.
 **Widgets** are the smallest, reusable components that website editors use to add or manage content on the website and create highly engaging pages with different layouts. Widgets play a crucial role in shaping how editors present content on the website and shape customer experience.
 ## Focus on your content goals
-From a developers perspective, widgets are view components with potential additional properties defined through a class that implements the IWidgetProperties interface. Learn more about how developers implement widgets in [guides about the Page Builder](guides/development/page-builder).
+From a developers perspective, widgets are view components with potential additional properties defined through a class that implements the IWidgetProperties interface. Learn more about how developers implement widgets in [guides about the Page Builder](/guides/development/page-builder).
 Page Builder provides a flexible environment that editors adore. Its widgets can display content from various sources, including **reusable data** stored in the _Content hub_ , **one-off data** stored on individual website pages, and data **ingested into Xperience via APIs**.
 ### Three types of widget
 When editors see how widgets work, they want to use them for everything, from adding content to the website to defining their core content, which they want to reuse across different channels, to designing what data will be served through a headless channel.
@@ -44,9 +46,9 @@ Xperience stores the combination of widgets and the content they contain or refe
 For example, the Featured content widget in the Kbank demo site displays data from the content type called Featured content. Featured content is a combination of a title, text and an image which doesn’t represent any semantic type, such as a case study, article or product. You will read more about the Featured content widget in the following article.
 ### Widgets that display data from semantic content types
 The third widget type often poses challenges for editor teams but offers significant benefits. These widgets leverage data organized into structured and meaningful types. We can call these representations _semantic_ content types as they represent not just the data, but also what this data means from the business perspective.
-For example, when editors create a listing page with latest articles, they do not add title, short texts and images per each article, but they use a widget that displays articles’s, summaries, and thumbnails which are stored as [a reusable content type](guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) and displayed through [an article page](guides/architecture/content-modeling/model-website-content-types/model-an-article-page). Structuring content into _semantic types_ that keep data separate from their presentation boosts editor’s efficiency, help ensure content consistency, and improves content curation.
-Take a look at the Kbank’s _Product_ content type. It stores [product-specific data in a reusable format](guides/architecture/content-modeling/model-reusable-content/model-a-reusable-product).
-[![Mortgage product item in the Content hub](docsassets/guides/model-page-builder-widgets/product-content-type.gif)](https://docs.kentico.com/docsassets/guides/model-page-builder-widgets/product-content-type.gif)
+For example, when editors create a listing page with latest articles, they do not add title, short texts and images per each article, but they use a widget that displays articles’s, summaries, and thumbnails which are stored as [a reusable content type](/guides/architecture/content-modeling/model-reusable-content/model-a-reusable-article) and displayed through [an article page](/guides/architecture/content-modeling/model-website-content-types/model-an-article-page). Structuring content into _semantic types_ that keep data separate from their presentation boosts editor’s efficiency, help ensure content consistency, and improves content curation.
+Take a look at the Kbank’s _Product_ content type. It stores [product-specific data in a reusable format](/guides/architecture/content-modeling/model-reusable-content/model-a-reusable-product).
+[![Mortgage product item in the Content hub](/docsassets/guides/model-page-builder-widgets/product-content-type.gif)](/docsassets/guides/model-page-builder-widgets/product-content-type.gif)
 However, editors are not limited when creating a product page, as designers modeled the widgets to display the referenced data. Even though the Product content type is composed of other content types, editors can easily create the reusable product and all its content items directly from the website channel.
 Each content type has its [role in the company’s brand experience](https://www.clearvoice.com/resources/how-to-define-content-levels-brand-experience/). We recommend designing a semantic content model and defining the content type’s data structure based on “what entity the content type represents,” even if you define the content model as “just a web page.” For example, your editors will create pages to promote events and use widgets to display [event details](https://schema.org/Event), share information about different [speakers](https://schema.org/Person), feature [brands](https://schema.org/Brand) that sponsors the event or provide details about the [event organizers](https://schema.org/Organization). You can consult [schema.org](https://schema.org/docs/full.html) to see what properties should different semantic content types contain.
 Your browser does not support the video tag. 
@@ -79,16 +81,8 @@ When defining widget properties, consider both the editing capabilities that edi
 While editors need certain functionalities, we must also be cautious about vanity requirements that could deviate from the established brand book.
 To enhance content longevity, we recommend structuring content either within a dedicated reusable type in the Content hub or by using a dedicated widget property that stores only the necessary data. Other fields will influence the data’s appearance.
 It’s quite common for editors to require control over, for example, colors they’ll use to sparkle their content. Instead of introducing, for example, a color wheel with unlimited color properties, we recommend creating dedicated collection of choices that represent brand colors. The more you limit editors’ designing capabilities, the easier it will be to support future redesigns or supporting new brand changes or rebranding.
-[ Previous page ](modules/model-website-presentation-components/model-page-builder-sections)
+[ Previous page ](/modules/model-website-presentation-components/model-page-builder-sections)
 7 of 11
-[ Mark complete and continue ](modules/model-website-presentation-components/widgets-vs-sections-to-design-content)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/model-website-presentation-components/what-are-page-builder-widgets)
-[](https://docs.kentico.com/modules/model-website-presentation-components/what-are-page-builder-widgets)[](https://docs.kentico.com/modules/model-website-presentation-components/what-are-page-builder-widgets)
+[ Mark complete and continue ](/modules/model-website-presentation-components/widgets-vs-sections-to-design-content)
+![]()
+[]()[]()

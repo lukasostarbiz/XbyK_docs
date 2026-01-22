@@ -1,21 +1,23 @@
+---
+source: https://docs.kentico.com/modules/page-builder/implement-flexible-sections
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+11 of 16 Pages
 # Implement flexible sections
-  * [ Copy page link ](modules/page-builder/implement-flexible-sections#) | [Get HelpService ID](modules/page-builder/implement-flexible-sections#)
-Core MVC 5
-
-
-[✖](modules/page-builder/implement-flexible-sections# "Close page link panel") [Copy to clipboard](modules/page-builder/implement-flexible-sections#)
-[Page Builder sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) are the primary way for your editors to change the layout and appearance of a page with a set template configuration. They control where widgets can be added.
+[Page Builder sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) are the primary way for your editors to change the layout and appearance of a page with a set template configuration. They control where widgets can be added.
 Let’s go over the steps of creating a flexible Page Builder section.
 The code samples here are for a section that allows editors to change its color scheme, corner style, and number of columns. If you use these samples specifically, you’ll be able to replicate the functionality in the following screenshot:
-[![screenshot of Page Builder section demonstrating multiple layouts](docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)](https://docs.kentico.com/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)
+[![screenshot of Page Builder section demonstrating multiple layouts](/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)](/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)
 This image depicts four instances of the same section, each configured differently.
 ## Define the section properties
-Flexible Page Builder sections provide configurable options not only for the layout of [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones), but other aspects of their appearance as well.
+Flexible Page Builder sections provide configurable options not only for the layout of [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones), but other aspects of their appearance as well.
   1. Create a file that inherits from `ISectionProperties`.
   2. Define string properties for any text data that will be rendered in the section’s output, such as attributes for HTML elements or simple text that you plan to display on the page.
-  3. Use [dropdown components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) on string properties for lists of options relating to the appearance and structure of the section. 
+  3. Use [dropdown components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) on string properties for lists of options relating to the appearance and structure of the section. 
 Use a custom `IDropDownOptionsProvider` implementation to feed your dropdowns with more manageable or dynamically-supplied options.
-You can find more information here: [Create a dropdown provider](modules/page-builder/map-enum-to-dropdown)
+You can find more information here: [Create a dropdown provider](/modules/page-builder/map-enum-to-dropdown)
 If you need to display complicated data or take user input from the live site, use a widget and its properties rather than a section. 
 
 
@@ -62,8 +64,8 @@ public class GeneralSectionProperties : ISectionProperties
 ```
 
 If you’ve happened upon this part of the series, or you need review, you can see steps outlining the enumerations above in our previous guides about page templates:
-  * [_ColorSchemeOption_ and _CornerStyleOption_](guides/development/page-builder/create-versatile-templates-part-1#define-page-template-properties)
-  * [_ColumnLayoutOption_](modules/page-builder/expand-page-builder-functionality#expand-the-template-properties)
+  * [_ColorSchemeOption_ and _CornerStyleOption_](/guides/development/page-builder/create-versatile-templates-part-1#define-page-template-properties)
+  * [_ColumnLayoutOption_](/modules/page-builder/expand-page-builder-functionality#expand-the-template-properties)
 
 
 You can also find working examples in the [finished branch of the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished).
@@ -88,7 +90,7 @@ public class GeneralSectionViewModel
 ## Create a section view
 ### Build helpful components
 Consider the functionality you want to achieve with your section, and whether tools like tag helpers and view components could help achieve your goal.
-If you’re following along with the examples in this series, start by expanding [the view component from earlier in the series](modules/page-builder/expand-page-builder-functionality#add-supporting-entities-for-the-view-component). Change it so that it works with both [editable areas](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) and [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones).
+If you’re following along with the examples in this series, start by expanding [the view component from earlier in the series](/modules/page-builder/expand-page-builder-functionality#add-supporting-entities-for-the-view-component). Change it so that it works with both [editable areas](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) and [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones).
   1. Add an enumeration to represent the two types of areas that the component should render.
 C#
 **PageBuilderColumnsViewComponent.cs**
@@ -319,7 +321,7 @@ Next, let’s add a view that handles the display of the data from the previous 
   1. Create a .cshtml file for the section.
   2. Ensure that any properties being rendered directly to the page are filled in.
   3. Use tag helpers and view components to extract complex display logic into modular, reusable components.
-  4. Include [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones) in the section, so editors can add widgets. 
+  4. Include [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones) in the section, so editors can add widgets. 
 You can include widget zones in the output of a view component used in the view, or directly in the view itself.
 If you have restrictions for which widgets should be allowed, configure the `allowed-widgets` of the widget zone accordingly.
 
@@ -351,7 +353,7 @@ Copy
 </section>
 ```
 
-Find instructions for building the tag helper from this sample here: [Component style tag helper and supporting service](modules/page-builder/style-the-template#create-a-service-to-retrieve-styles)
+Find instructions for building the tag helper from this sample here: [Component style tag helper and supporting service](/modules/page-builder/style-the-template#create-a-service-to-retrieve-styles)
 ## Implement and register the section.
 Finally, you need to register the section, and if you’re creating a complex section, you may also need to create a view component.
   1. Create a class with an `IDENTIFIER` constant and use it to register the Page Builder section, via the `RegisterSection` assembly attribute. 
@@ -440,16 +442,8 @@ Copy
 ...
 ```
 
-[ Previous page ](modules/page-builder/create-general-template)
+[ Previous page ](/modules/page-builder/create-general-template)
 11 of 16
-[ Mark complete and continue ](modules/page-builder/build-simple-cta-widget)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/implement-flexible-sections)
-[](https://docs.kentico.com/modules/page-builder/implement-flexible-sections)[](https://docs.kentico.com/modules/page-builder/implement-flexible-sections)
+[ Mark complete and continue ](/modules/page-builder/build-simple-cta-widget)
+![]()
+[]()[]()

@@ -1,17 +1,19 @@
+---
+source: https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-options-pattern
+scrape_date: 2026-01-22
+---
+
+Module: Custom modules: custom settings
+7 of 9 Pages
 # Use the Options pattern to access channel-specific settings
-  * [ Copy page link ](modules/custom-settings/access-channel-specific-settings-options-pattern#) | [Get HelpService ID](modules/custom-settings/access-channel-specific-settings-options-pattern#)
-Core MVC 5
-
-
-[✖](modules/custom-settings/access-channel-specific-settings-options-pattern# "Close page link panel") [Copy to clipboard](modules/custom-settings/access-channel-specific-settings-options-pattern#)
-When you build [custom module UIs](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) with Xperience by Kentico, chances are you’ll need to access and react to the [data stored in the modules’ classes](documentation/developers-and-admins/customization/object-types).
+When you build [custom module UIs](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) with Xperience by Kentico, chances are you’ll need to access and react to the [data stored in the modules’ classes](/documentation/developers-and-admins/customization/object-types).
 Let’s go over the process of accessing and utilizing the values of module classes that are associated with specific web channels with practical examples. We will explore how to access custom channel-specific settings with Microsoft’s [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0), then later without.
-[Earlier in this series](modules/custom-settings/model-channel-specific-settings), we went over the process of creating custom channel-specific settings:
+[Earlier in this series](/modules/custom-settings/model-channel-specific-settings), we went over the process of creating custom channel-specific settings:
 Your browser does not support the video tag. 
 Now, we’ll dive into the process of accessing these settings in code.
 ## Work with the Options pattern (Serve robots.txt)
-As with the global configurations described in the [earlier guide](modules/custom-settings/access-custom-global-configurations#expose-your-custom-configuration), you can use channel-specific custom module configurations with the [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0).
-To put this into practice, let’s create functionality to serve the **robots.txt** file specified in the _SEO settings_ of the [we created earlier](modules/custom-settings/model-channel-specific-settings).
+As with the global configurations described in the [earlier guide](/modules/custom-settings/access-custom-global-configurations#expose-your-custom-configuration), you can use channel-specific custom module configurations with the [options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0).
+To put this into practice, let’s create functionality to serve the **robots.txt** file specified in the _SEO settings_ of the [we created earlier](/modules/custom-settings/model-channel-specific-settings).
 ### Populate the data
 Start by adding data for the code to retrieve.
 For this guide’s example, navigate to **Project settings → Channel settings → Training guides pages → SEO settings** in the admin UI.
@@ -128,18 +130,10 @@ public class RobotsController : Controller
 ### See the result
 If you’ve followed along with the example, try visiting the **/robots.txt** path of the live site.
 You should see a response containing the value you saved in the SEO settings.
-[![Screenshot of robots.txt page](docsassets/guides/access-custom-channel-specific-configurations/Robots.png)](https://docs.kentico.com/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)
+[![Screenshot of robots.txt page](/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)](/docsassets/guides/access-custom-channel-specific-configurations/Robots.png)
 Feel free to change the value of the setting, and see that it is reflected in this response.
-[ Previous page ](modules/custom-settings/build-channel-specific-settings-ui)
+[ Previous page ](/modules/custom-settings/build-channel-specific-settings-ui)
 7 of 9
-[ Mark complete and continue ](modules/custom-settings/access-channel-specific-settings-directly)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-options-pattern)
-[](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-options-pattern)[](https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-options-pattern)
+[ Mark complete and continue ](/modules/custom-settings/access-channel-specific-settings-directly)
+![]()
+[]()[]()

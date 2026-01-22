@@ -1,17 +1,23 @@
+---
+source: https://docs.kentico.com/guides/development/advanced-content/convert-content-to-reusable-schemas
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Advanced content](/guides/development/advanced-content)
+  * Convert existing content to reusable field schemas 
+
+
 # Convert existing content to reusable field schemas
-  * How-to| [ Copy page link ](guides/development/advanced-content/convert-content-to-reusable-schemas#) | [Get HelpService ID](guides/development/advanced-content/convert-content-to-reusable-schemas#)
-Core MVC 5
-
-
-[✖](guides/development/advanced-content/convert-content-to-reusable-schemas# "Close page link panel") [Copy to clipboard](guides/development/advanced-content/convert-content-to-reusable-schemas#)
-In earlier examples, we explored a scenario of content model evolution; we integrated a flat-structured _Article_ content type with a newer [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas) that spanned multiple content types. We adjusted code to work with the new schema-based types alongside the original _Article_ type.
+In earlier examples, we explored a scenario of content model evolution; we integrated a flat-structured _Article_ content type with a newer [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) that spanned multiple content types. We adjusted code to work with the new schema-based types alongside the original _Article_ type.
 Let’s continue further with this example, converting articles from the old content type into a schema-based type. We’ll also update pages that referenced the old articles to point to the new schema-based items.
 This example covers conversion of data in Xperience by Kentico from one content type to another. Though it may mention an “old” content type and a “new” one, it does not cover upgrading from Kentico Xperience 13 (or older versions) to Xperience by Kentico.
 ## Before you start
-This guide is part of a series exploring the remodeling of articles. If you’d like to follow along from the beginning, we recommend visiting the [Advanced content training module](modules/advanced-content), where you can track your progress through the example. If you prefer to continue with the longer-form guide format, start with with [Work with reusable field schemas](guides/development/advanced-content/work-with-reusable-field-schemas).
+This guide is part of a series exploring the remodeling of articles. If you’d like to follow along from the beginning, we recommend visiting the [Advanced content training module](/modules/advanced-content), where you can track your progress through the example. If you prefer to continue with the longer-form guide format, start with with [Work with reusable field schemas](/guides/development/advanced-content/work-with-reusable-field-schemas).
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher.
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher.
 Some features covered in the Training guides may not work in older versions. 
 
 
@@ -21,7 +27,7 @@ The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guide
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Consider the scenario
-[Earlier in this series](guides/development/advanced-content/work-with-reusable-field-schemas), we worked with an older flat content type for articles alongside new content types based on a [reusable field schema](documentation/developers-and-admins/development/content-types/reusable-field-schemas). We updated the `ArticlePageService` to work with the new content types in parallel with the original `Article` content type, and extended the new article types to work with taxonomy - the **expand** step of the [expand and contract approach.](https://community.kentico.com/blog/safely-evolving-a-content-model-with-expand-and-contract).
+[Earlier in this series](/guides/development/advanced-content/work-with-reusable-field-schemas), we worked with an older flat content type for articles alongside new content types based on a [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas). We updated the `ArticlePageService` to work with the new content types in parallel with the original `Article` content type, and extended the new article types to work with taxonomy - the **expand** step of the [expand and contract approach.](https://community.kentico.com/blog/safely-evolving-a-content-model-with-expand-and-contract).
 With old and new article models existing in parallel, our project works, but its content model is unnecessarily bloated. Additionally, editors can still create items of the deprecated `Article` type by mistake.
 If we can adjust our article functionality so that it no longer needs the old content type, we can remove it, moving forward with only schema-based article content types. The next step toward this goal is to move the existing `Article` data to one of our new schema-based types, `GeneralArticle`, completing the **contract** step.
 For this scenario, imagine we’ve instructed our content editors to make sure that all of the `Article` items are either **published** or **deleted** , along with the pages that display them. The code will be much less complicated if we only need to work with published items.
@@ -258,7 +264,7 @@ public async Task<List<ConversionAttempt>> Convert()
 ...
 ```
 
-If you have a large number of items that leads to timeouts or memory issues, you can use the `Offset` and `OrderBy` extension methods on the `queryFilter` parameter to [process items in batches](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#offset).
+If you have a large number of items that leads to timeouts or memory issues, you can use the `Offset` and `OrderBy` extension methods on the `queryFilter` parameter to [process items in batches](https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#offset).
 ### Convert reusable items
 Now let’s convert our reusable items from the original `Article` content type to the new schema-based `GeneralArticle` type.
 #### Create items and language versions in the new type
@@ -752,12 +758,12 @@ private async Task<List<ConversionAttempt>> UpdatePageReferences(List<Conversion
 
 ### Update reusable item references
 In our example, `ArticlePage` items are not the only objects that reference old `Article` items.
-`Article` also contains the field `ArticleRelatedArticles`, and we copied its value into `ArticleSchemaRelatedArticles` [earlier](guides/development/advanced-content/convert-content-to-reusable-schemas#create-items-and-language-versions-in-the-new-type).
+`Article` also contains the field `ArticleRelatedArticles`, and we copied its value into `ArticleSchemaRelatedArticles` [earlier](#create-items-and-language-versions-in-the-new-type).
 This means some of our new schema-based articles could still reference old `Article` items. We can ignore references between old articles, since we will delete all of them later.
 You can optionally update these references before or after page references. We chose to do it later since the scenario is slightly more complicated, in that we need to conditionally decide which references to update (those that point to `Article` items) and which references to preserve (any other content types).
 #### Build a reference list
 For each content item, we’ll need to build a new list of references for its `ArticleSchemaRelatedArticles` field.
-As part of this process, we’ll need to find the GUID of the new `GeneralArticle` that corresponds to the old `Article`. Thankfully, we created the `GetNewReusableArticleName` method to determine the code name of each new `GeneralArticle` [earlier](guides/development/advanced-content/convert-content-to-reusable-schemas#retrieve-and-format-data), which we can use to look up the schema-based article in a new `GetNewArticleItemGuid` overload.
+As part of this process, we’ll need to find the GUID of the new `GeneralArticle` that corresponds to the old `Article`. Thankfully, we created the `GetNewReusableArticleName` method to determine the code name of each new `GeneralArticle` [earlier](#retrieve-and-format-data), which we can use to look up the schema-based article in a new `GetNewArticleItemGuid` overload.
 C#
 **ArticleConverter.cs**
 Copy
@@ -817,7 +823,7 @@ private async Task<Guid?> GetNewArticleItemGuid(Article oldArticle)
 ```
 
 #### Update and publish new related articles references
-To update a draft with new related articles, we can reuse logic from [when we updated pages](guides/development/advanced-content/convert-content-to-reusable-schemas#manage-page-drafts-for-conversion), replacing `IWebPageManager` with `IContentItemManager`.
+To update a draft with new related articles, we can reuse logic from [when we updated pages](#manage-page-drafts-for-conversion), replacing `IWebPageManager` with `IContentItemManager`.
 C#
 **ArticleConverter.cs**
 Copy
@@ -989,8 +995,8 @@ In this example, we’ll show a proof-of-concept for a simple controller that ex
 In real-world scenarios, we only recommend this approach if you have copied your production database to a secure local machine for remodeling, and plan to re-deploy after making the changes.
 If you plan to run this kind of code in any kind of public-facing environment, we recommend a more secure approach. For example:
   * Create a controller with a secure POST endpoint, and only execute the code upon successful validation of a secret key in the request body. This way, only people who know the secret key and the endpoint can trigger the code.
-  * Create a [custom UI page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) in the Xperience admin UI that calls the code in its `ConfigurePage` method, or upon a [button click](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands). Then, only people with access to the Xperience admin UI can trigger the code. You can also apply [permissions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks) to further control access.
-  * Create a [custom scheduled task](documentation/developers-and-admins/customization/scheduled-tasks) that executes your code. Set the **Task schedule** configuration to _Once_ , so that the system does not automatically run the task, so that users with access to the scheduled tasks application in the Xperience admin UI can manually trigger execution.
+  * Create a [custom UI page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) in the Xperience admin UI that calls the code in its `ConfigurePage` method, or upon a [button click](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-commands). Then, only people with access to the Xperience admin UI can trigger the code. You can also apply [permissions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-permission-checks) to further control access.
+  * Create a [custom scheduled task](/documentation/developers-and-admins/customization/scheduled-tasks) that executes your code. Set the **Task schedule** configuration to _Once_ , so that the system does not automatically run the task, so that users with access to the scheduled tasks application in the Xperience admin UI can manually trigger execution.
 
 
 Regardless of the approach you take, make sure to create a backup of your database prior to running the conversion, in case something goes wrong.
@@ -1017,7 +1023,7 @@ public class ConvertArticlesController(ArticleConverter articleConverter) : Cont
 }
 ```
 
-Depending on your scenario, you may want to iterate through the results and [log the collected messages and exceptions](documentation/developers-and-admins/development/logging) using `ILogger`. In this example, we will simply print them on the page for simplicity and formatting.
+Depending on your scenario, you may want to iterate through the results and [log the collected messages and exceptions](/documentation/developers-and-admins/development/logging) using `ILogger`. In this example, we will simply print them on the page for simplicity and formatting.
 ### Add a view
 With the controller in place, we can display the results in a simple view.
 C#
@@ -1056,7 +1062,7 @@ Copy
 ### Visit the endpoint
 **Make sure you create a backup of your database before executing the code**
 Now, you can run the project and trigger the code by visiting the **/ConvertArticles** path in your browser.
-[![GIF showing the result of visiting the /ConvertArticles path](docsassets/guides/convert-content-to-reusable-schemas/ConvertArticles.gif)](https://docs.kentico.com/docsassets/guides/convert-content-to-reusable-schemas/ConvertArticles.gif)
+[![GIF showing the result of visiting the /ConvertArticles path](/docsassets/guides/convert-content-to-reusable-schemas/ConvertArticles.gif)](/docsassets/guides/convert-content-to-reusable-schemas/ConvertArticles.gif)
 Depending on the number of items you are converting, our code may take a while to execute and heavily utilize resources. We recommend running this kind of code during a maintenance window, or during off-peak hours, so performance is less of a concern.
 You can see the results in the admin UI:
 Your browser does not support the video tag. 
@@ -1064,12 +1070,12 @@ Your browser does not support the video tag.
 Now our pages point to our new schema-based articles instead of our original `Article` items, but the old items still exist. Moreover, references to the `Article` type exist in several places throughout the solution, like generated classes, widgets, services, and the code we just executed.
 ### Delete old Article items
 If you filter the Content hub listing by the old **Article** content type, you can use the mass actions to delete several items at a time.
-Alternately, you can extend our existing code to [Delete the articles](api/content-management/content-items#delete-content-items) after they are successfully converted.
+Alternately, you can extend our existing code to [Delete the articles](/api/content-management/content-items#delete-content-items) after they are successfully converted.
 ### Consider references from other content types
 Before you delete a content type, we recommend taking inventory of any other types that reference it, which you did not choose to update via code. This serves as a refresher on the other functionality touched by the type.
 **Deleting types referenced by other types**
 You can delete content types that are still referenced by other types, but the form controls that reference them will display a **DELETED ITEM** message:
-[![Screenshot of the message displayed in the UI when a content type references a deleted content type.](docsassets/guides/convert-content-to-reusable-schemas/deleted-item-ui.png)](https://docs.kentico.com/docsassets/guides/convert-content-to-reusable-schemas/deleted-item-ui.png)
+[![Screenshot of the message displayed in the UI when a content type references a deleted content type.](/docsassets/guides/convert-content-to-reusable-schemas/deleted-item-ui.png)](/docsassets/guides/convert-content-to-reusable-schemas/deleted-item-ui.png)
 The `ClassFormDefinition` column of the `CMS_Class` table stores field and form control configuration for content types, including content types assigned to the _Combined content selector_. Xperience stores this data as an array of content type GUIDs:
 XML
 **Allowed content types sample (ClassFormDefinition)**
@@ -1133,7 +1139,7 @@ Copy
 If you discover a reference you’d like to change to point to new items, as we did with page references and related articles in our code, you can restore a backup and further expand the one-time code.
 **Updating references in builder properties**
 Updating references from the properties of builder objects like widgets, templates, and sections falls outside the scope of this example.
-The process of finding the replacement GUID would be the same as we used while updating references from content types, but you’d need to find those references in the JSON of fields like `ContentItemCommonDataInfo.ContentItemCommonDataVisualBuilderWidgets` and `ContentItemCommonDataInfo.ContentItemCommonDataVisualBuilderTemplateConfiguration`. Working with these fields via API requires use of [API not intended for public use](documentation/developers-and-admins/customization/stable-customization-guidelines#api-not-intended-for-public-use), from the `CMS.ContentEngine.Internal` namespace.
+The process of finding the replacement GUID would be the same as we used while updating references from content types, but you’d need to find those references in the JSON of fields like `ContentItemCommonDataInfo.ContentItemCommonDataVisualBuilderWidgets` and `ContentItemCommonDataInfo.ContentItemCommonDataVisualBuilderTemplateConfiguration`. Working with these fields via API requires use of [API not intended for public use](/documentation/developers-and-admins/customization/stable-customization-guidelines#api-not-intended-for-public-use), from the `CMS.ContentEngine.Internal` namespace.
 ### Delete the old content type
 Once you’re sure everything has been properly migrated to the new content type, you can delete the old one from the listing view in the **Content types** application.
 At this point, you’ve completed the transformation of your Article content model. The old content types no longer exist alongside the new ones, and you can move forward with schema-based articles only.
@@ -1145,5 +1151,7 @@ If you navigate to the generated class file for your type (_TrainingGuides.Entit
 Depending on which of our training materials you’ve followed along with and which branch you started with, you’ll find code that utilizes the `Article` type alongside the `IArticleSchema` in several places, including the `ArticlePageService`, `ArticlePageServiceTests` `ArticleEmailWidgetModelMapper`, and `NatureSpotlightEmailService`.
 ## What’s next?
 Congratulations on completing the article remodeling scenario!
-To see an example about working with Smart folder data in content delivery, check out [the next advanced content guide](guides/development/advanced-content/deliver-content-dynamically-with-smart-folders).
+To see an example about working with Smart folder data in content delivery, check out [the next advanced content guide](/guides/development/advanced-content/deliver-content-dynamically-with-smart-folders).
 If you have ideas you’d like us to cover in future guides, or if you’ve encountered any problems or issues in our existing materials, please click the **Send us feedback** button below to let us know.
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * Extend the administration interface 
+
+
 # Extend the administration interface
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface#)
 The Xperience administration interface exposes a comprehensive customization framework that enables developers to
   * add new functionality to existing applications and pages,
   * add entirely new pages with custom functionality to applications in the system,
@@ -22,9 +28,13 @@ All admin UI components (pages, applications) must contain a corresponding back-
 
 
 The following simplified diagram illustrates the described structure:
-[![Xperience admin UI architecture overview](docsassets/documentation/extend-the-administration-interface/BasicArchitectureOverview.png)](https://docs.kentico.com/docsassets/documentation/extend-the-administration-interface/BasicArchitectureOverview.png)
+[![Xperience admin UI architecture overview](/docsassets/documentation/extend-the-administration-interface/BasicArchitectureOverview.png)](/docsassets/documentation/extend-the-administration-interface/BasicArchitectureOverview.png)
 Both parts of the application communicate using a set of API endpoints. As a general rule, every action available in the client application has a corresponding handler on the back end that processes the request and ensures propagation to the database, if necessary. Typical examples are responding to user interactions (such as form submissions, button clicks) or during page requests to retrieve the data to display.
 ## Before you get started
-  1. Take a look at [Admin UI customization model overview](documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview) for a brief overview of the available customization options.
-  2. Follow the instructions on [Prepare your environment for admin development](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development) to set up an environment needed for admin development. Depending on the type and scope of the planned customizations, you may need to write custom JavaScript modules for the client application, which requires additional tooling.
+  1. Take a look at [Admin UI customization model overview](/documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview) for a brief overview of the available customization options.
+  2. Follow the instructions on [Prepare your environment for admin development](/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development) to set up an environment needed for admin development. Depending on the type and scope of the planned customizations, you may need to write custom JavaScript modules for the client application, which requires additional tooling.
   3. Read the pages in this section to learn more about individual extensions.
+
+
+![]()
+[]()[]()

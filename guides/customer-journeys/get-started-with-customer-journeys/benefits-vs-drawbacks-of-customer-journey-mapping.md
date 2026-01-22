@@ -1,15 +1,21 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Get started with customer journeys](/guides/customer-journeys/get-started-with-customer-journeys)
+  * Benefits vs. drawbacks of customer journey mapping 
+
+
 # Benefits vs. drawbacks of customer journey mapping
-  * [ Copy page link ](guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#) | [Get HelpService ID](guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping# "Close page link panel") [Copy to clipboard](guides/customer-journeys/get-started-with-customer-journeys/benefits-vs-drawbacks-of-customer-journey-mapping#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Like any strategic process, **customer journeys** have its pros and cons. The goal is to ensure that the benefits outweigh the challenges, and with the right tools, you can streamline the process for maximum impact.
 ## Emma’s dilemma solved: unconfirmed registrations completed with customer journeys
-Emma’s earlier challenge with [unconfirmed registrations](guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) clearly shows how _Customer journeys_ can deliver practical value.
+Emma’s earlier challenge with [unconfirmed registrations](/guides/customer-journeys/get-started-with-customer-journeys/analyze-customer-behavior-to-improve-user-engagemen) clearly shows how _Customer journeys_ can deliver practical value.
 By identifying **at which stage** of their customer journey users **dropped off** – right after submitting a form but before confirming their registration – Emma was able to refine her team’s communication strategy. Customer journey helped her implement timely reminders and more compelling messaging, ultimately driving higher registration confirmation rates.
 This use case demonstrates how customer journeys uncover actionable insights that drive business success.
 If you’re still deciding whether _Customer journeys_ are the right solution for your business, let’s review a few arguments in favor and against this feature.
@@ -28,4 +34,6 @@ Xperience by Kentico provides powerful marketing applications that enhance custo
 ### Automation and planned AIRA-driven insights
 Xperience by Kentico aims to streamline future customer journey tracking by leveraging automation and [AIRA-powered analytics](https://roadmap.kentico.com/c/251-customer-journey-insights-powered-by-aira). Our future plans icnlude reducing manual work by identifying trends, predicting customer behavior, and providing actionable recommendations, allowing marketers to focus on strategy rather than data crunching.
 ## Next step
-Get ready to jump into the next guide, exploring the anatomy of a journey, and taking a closer look at the crucial [components of customer journeys](guides/customer-journeys/anatomy-of-customer-journeys-key-components).
+Get ready to jump into the next guide, exploring the anatomy of a journey, and taking a closer look at the crucial [components of customer journeys](/guides/customer-journeys/anatomy-of-customer-journeys-key-components).
+![]()
+[]()[]()

@@ -1,23 +1,31 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Object types](/documentation/developers-and-admins/customization/object-types)
+  * [Object type configuration](/documentation/developers-and-admins/customization/object-types/object-type-configuration)
+  * Model object type relationships 
+
+
 # Model object type relationships
-  * [ Copy page link ](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#) | [Get HelpService ID](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#)
 You can model the following types of relationships between object types:
-  1. [Parent-child](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#parent-child-relationships) – A parent-child relationship is a special case of a [one-to-many relationship](https://en.wikipedia.org/wiki/One-to-many_\(data_model\)). It models dependent relationships where the existence of some objects (children) does not make sense without another object (parent). In this type of relationship, deleting the parent object also causes the deletion of all its children. An example is an employer and their employees – if the employer ceases to exist, so do all their employees.
-  2. [One-to-many (many-to-one)](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#one-to-many-relationships) – A [one-to-many relationship](https://en.wikipedia.org/wiki/One-to-many_\(data_model\)) exists when a single instance of object `A` may be linked with many instances of object `B`, but one instance of object `B` is linked to only one instance of `A`. A typical example is the set of orders a customer has made on a given site.
-  3. [Many-to-many](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#many-to-many-relationships) – A [many-to-many relationship](https://en.wikipedia.org/wiki/Many-to-many_\(data_model\)) defines an associative structure between two or more object types using a special _binding object type_ that stores the identifiers of all objects involved in the relationship as foreign keys. Modeling the relationship using a supplementary database table reduces the problem to modeling multiple one-to-many relationships. A typical example of a many-to many relationship is one between roles and users – a user can be assigned to many roles, and a role can include many users. The binding table associates the identifiers of user and role objects.
+  1. [Parent-child](#parent-child-relationships) – A parent-child relationship is a special case of a [one-to-many relationship](https://en.wikipedia.org/wiki/One-to-many_\(data_model\)). It models dependent relationships where the existence of some objects (children) does not make sense without another object (parent). In this type of relationship, deleting the parent object also causes the deletion of all its children. An example is an employer and their employees – if the employer ceases to exist, so do all their employees.
+  2. [One-to-many (many-to-one)](#one-to-many-relationships) – A [one-to-many relationship](https://en.wikipedia.org/wiki/One-to-many_\(data_model\)) exists when a single instance of object `A` may be linked with many instances of object `B`, but one instance of object `B` is linked to only one instance of `A`. A typical example is the set of orders a customer has made on a given site.
+  3. [Many-to-many](#many-to-many-relationships) – A [many-to-many relationship](https://en.wikipedia.org/wiki/Many-to-many_\(data_model\)) defines an associative structure between two or more object types using a special _binding object type_ that stores the identifiers of all objects involved in the relationship as foreign keys. Modeling the relationship using a supplementary database table reduces the problem to modeling multiple one-to-many relationships. A typical example of a many-to many relationship is one between roles and users – a user can be assigned to many roles, and a role can include many users. The binding table associates the identifiers of user and role objects.
 
 
 ## Parent-child relationships
 A parent-child relationship is a type of hierarchy where distinct, connected objects have a logical relationship. A _parent_ is something that comes before its _child_ or _children_. At the time a child is created, its parent must already exist.
-You can use the [type information](documentation/developers-and-admins/customization/object-types/object-type-configuration) to define a parent-child hierarchy for the object types representing your data model. Every object (record in the database) of a child object type contains a reference to the specified parent object. Setting parent-child relationships ensures that the system can provide automation for the connected objects, such as the automatic deletion of child objects together with their parents.
+You can use the [type information](/documentation/developers-and-admins/customization/object-types/object-type-configuration) to define a parent-child hierarchy for the object types representing your data model. Every object (record in the database) of a child object type contains a reference to the specified parent object. Setting parent-child relationships ensures that the system can provide automation for the connected objects, such as the automatic deletion of child objects together with their parents.
 To model a parent-child relationship between two object types:
   1. Open the **Modules** application and edit the data class that will be the **child** in the relationship.
   2. Switch to the **Database columns** tab and add a new database column with the _Integer number_ data type. This column will store the IDs of the parent objects (a _foreign key_). 
      * **Tip** : A common convention is to suffix columns storing the identifiers of objects with the **ID** suffix.
-  3. [Generate](documentation/developers-and-admins/api/generate-code-files-for-system-objects) the code for the object type again.
+  3. [Generate](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) the code for the object type again.
   4. Edit the code of the generated _Info_ class.
   5. Set the `parentIDColumn` and `parentObjectType` parameters in the constructor of the `TYPEINFO` member (last two parameters): 
      * **parentIDColumn** – the name of the column that stores the IDs of parent objects.
@@ -48,11 +56,11 @@ public static readonly ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(
 
 The parent-child relationship is now established. When creating new child objects via the API, ensure the added foreign key column is populated with the identifier of the parent object. Otherwise, the system cannot properly handle the referential relationship automatically.
 To reflect this relationship in the administration interface, you need to ensure your custom interface elements create and display child objects correctly. See the following sections for details:
-  * [Child object listing pages](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-listing-pages)
-  * [Child object create pages](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-create-pages)
+  * [Child object listing pages](#child-object-listing-pages)
+  * [Child object create pages](#child-object-create-pages)
 
 
-Parent-child relationships also come with certain inherent limitations, see the [Parent-child limitations](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#parent-child-limitations) section for more information.
+Parent-child relationships also come with certain inherent limitations, see the [Parent-child limitations](#parent-child-limitations) section for more information.
 ### Child object listing pages
 To show only objects that are the children of a specific parent, listing pages must filter the objects by the identifier of a specific parent. When adding listing pages, use UI page structures such as the following:
   * Parent object listing 
@@ -60,12 +68,12 @@ To show only objects that are the children of a specific parent, listing pages m
     * Parent object edit section (adds a URL slug with the identifier of the **parent** to the URL) 
       * Parent object edit
       * **Child object listing** (consumes the URL slug with the **parent** object’s identifier) 
-        * [Child object create](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-create-pages) (consumes the identifier of the **parent**)
+        * [Child object create](#child-object-create-pages) (consumes the identifier of the **parent**)
         * Child object edit section (adds a URL slug with the identifier of the **child** to the URL) 
-          * [Child object edit](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-edit-pages) (consumes the identifiers of the selected **parent** and **child**)
+          * [Child object edit](#child-object-edit-pages) (consumes the identifiers of the selected **parent** and **child**)
 
 
-And parse the parent identifier using [page model binders](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#retrieve-parameters-from-the-url). To filter the set of objects according to the currently selected parent, use a [query modifier](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#modify-loaded-data).
+And parse the parent identifier using [page model binders](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#retrieve-parameters-from-the-url). To filter the set of objects according to the currently selected parent, use a [query modifier](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#modify-loaded-data).
 C#
 **Child object listing page**
 Copy
@@ -115,15 +123,15 @@ public class ChildObjectList : ListingPage
 ```
 
 ### Child object create pages
-When creating the child object via the administration interface, [create pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#use-edit-pages-to-create-new-objects) must populate the foreign key column with the identifier of the parent object. To finalize an object after it was created via the UI, the create page template provides the `FinalizeInfoObject` method. The create page must also obtain the identifier of the parent object. You can leverage UI page hierarchies such as the following to parse the parent identifier using [page model binders](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#retrieve-parameters-from-the-url):
+When creating the child object via the administration interface, [create pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template#use-edit-pages-to-create-new-objects) must populate the foreign key column with the identifier of the parent object. To finalize an object after it was created via the UI, the create page template provides the `FinalizeInfoObject` method. The create page must also obtain the identifier of the parent object. You can leverage UI page hierarchies such as the following to parse the parent identifier using [page model binders](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#retrieve-parameters-from-the-url):
   * Parent object listing 
     * Parent object create
     * Parent object edit section (adds a URL slug with the identifier of the **parent** to the URL) 
       * Parent object edit
-      * [Child object listing](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-listing-pages) (consumes the identifier of the **parent**) 
+      * [Child object listing](#child-object-listing-pages) (consumes the identifier of the **parent**) 
         * **Child object create** (consumes the identifier of the **parent**)
         * Child object edit section (adds a URL slug with the identifier of the **child** to the URL) 
-          * [Child object edit](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-edit-pages) (consumes the identifiers of the selected **parent** and **child**)
+          * [Child object edit](#child-object-edit-pages) (consumes the identifiers of the selected **parent** and **child**)
 
 
 C#
@@ -178,8 +186,8 @@ Child object edit pages behave as regular edit page. The only difference is that
     * Parent object create
     * Parent object edit section (adds a URL slug with the identifier of the **parent** to the URL) 
       * Parent object edit
-      * [Child object listing](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-listing-pages) (consumes the identifier of the **parent**) 
-        * [Child object create](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#child-object-create-pages) (consumes the identifier of the **parent**)
+      * [Child object listing](#child-object-listing-pages) (consumes the identifier of the **parent**) 
+        * [Child object create](#child-object-create-pages) (consumes the identifier of the **parent**)
         * Child object edit section (adds a URL slug with the identifier of the **child** to the URL) 
           * **Child object edit** (consumes the identifiers of the selected **parent** and **child**)
 
@@ -189,7 +197,7 @@ The edit page URL is parameterized by:
   * the identifier of the child (child object edit section)
 
 
-When [generating links](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-urls-and-routing) to these pages, you need to keep this in mind and pass the appropriate parameters. For example, the `AddEditRowAction` [ListingPage extension method](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#add-row-actions) must be supplied with the identifier of the parent (the method ensures the identifier of the child – a row in the listing – automatically).
+When [generating links](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#page-urls-and-routing) to these pages, you need to keep this in mind and pass the appropriate parameters. For example, the `AddEditRowAction` [ListingPage extension method](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#add-row-actions) must be supplied with the identifier of the parent (the method ensures the identifier of the child – a row in the listing – automatically).
 See the following snippets for a sample implementation:
 C#
 **Child object edit section**
@@ -210,7 +218,7 @@ public class ChildObjectEditSection : EditSectionPage<ChildObjectInfo>
 }
 ```
 
-The following example assumes the object type has a corresponding [“edit” UI form](documentation/developers-and-admins/customization/object-types) defined.
+The following example assumes the object type has a corresponding [“edit” UI form](/documentation/developers-and-admins/customization/object-types) defined.
 C#
 **Child object edit page**
 Copy
@@ -243,13 +251,13 @@ Custom child objects under content item or page classes as the parent are **NOT*
 Parent-child relationships that include content items or pages do not provide the automatic functionality that works for other classes, such as deleting of child objects along with the parent page.
 #### Self-referencing parent-child relationships
 The system does **NOT** support self-referential parent child relationships. Such cases would lead to various problems, for example when creating the first object of the given object type (an existing parent must be assigned to each object).
-The recommended approach is to create a separate object type for each level of the hierarchy, with a root that does not have a parent at the top. If you need to model a tree hierarchy with variable depth, you can create [database columns that store references](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#one-to-many-relationships) to the same object type, and use those to handle the parent-child hierarchy.
+The recommended approach is to create a separate object type for each level of the hierarchy, with a root that does not have a parent at the top. If you need to model a tree hierarchy with variable depth, you can create [database columns that store references](#one-to-many-relationships) to the same object type, and use those to handle the parent-child hierarchy.
 ## One-to-many relationships
 One-to-many relationships are based on database columns that store references to objects of other types (_foreign keys_). Such references allow each object of the given object type to have a relationship with an object of another type. For example, you can assign users, members, or any other object in the system to custom objects.
-To ensure that the system automatically handles dependencies for your references, you need to register the reference fields in the [type information](documentation/developers-and-admins/customization/object-types/object-type-configuration). With correct configuration, the system maintains referential integrity of relationships for [CI/CD](documentation/developers-and-admins/ci-cd), or when removing references to deleted objects.
+To ensure that the system automatically handles dependencies for your references, you need to register the reference fields in the [type information](/documentation/developers-and-admins/customization/object-types/object-type-configuration). With correct configuration, the system maintains referential integrity of relationships for [CI/CD](/documentation/developers-and-admins/ci-cd), or when removing references to deleted objects.
 You can define references in two possible directions:
   * From a custom object type to another object type
-  * From any [extendable system class](documentation/developers-and-admins/customization/object-types/extend-system-object-types) to custom object types
+  * From any [extendable system class](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to custom object types
 
 
 **References to content item or page objects are not supported**
@@ -265,8 +273,8 @@ To create a reference from a custom object type to another object type:
      * Choose a **Reference type** to determine how the system handles referential integrity and automatic removal of objects when a referenced object is deleted. For more information about the available options, see the table describing the `ObjectDependencyEnum` values below.
 The **Required** flag in the field settings controls whether the reference field must have a target object set (not to be confused with the _Required_ option of the **Reference type** setting).
   4. Select **Save**. You can create any number of reference fields using the same approach.
-  5. [Regenerate the code](documentation/developers-and-admins/api/generate-code-files-for-system-objects) for the modified object type. If you have already customized the _Info_ , _IInfoProvider_ or _InfoProvider_ classes, manually compare and copy the differences caused by the reference fields to avoid overwriting your changes.
-  6. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#configure-foreign-key-columns-in-the-database) for more information.
+  5. [Regenerate the code](/documentation/developers-and-admins/api/generate-code-files-for-system-objects) for the modified object type. If you have already customized the _Info_ , _IInfoProvider_ or _InfoProvider_ classes, manually compare and copy the differences caused by the reference fields to avoid overwriting your changes.
+  6. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](#configure-foreign-key-columns-in-the-database) for more information.
 
 
 **Important** : The _Reference_ settings that you configure for fields on the **Database fields** tab only serve as input for the default code generated for the _Info_ class. Changing the field settings after you generate your code does NOT change the behavior of the reference fields. To make changes, you need to adjust the code of the given _Info_ class or regenerate the code.
@@ -302,20 +310,20 @@ protected override BaseInfo GetDefaultObject()
 ```
   
 Required  |  The system always maintains the integrity and consistency of the reference as long as a value is set (_strong reference_). The value can still be `null` if the **Required** flag is disabled for the given field.  If the referenced object is deleted, the system automatically deletes all objects connected as references.   
-Binding  |  Only intended for the reference fields of dedicated binding object types used to model many-to-many relationships (via [associative tables](https://en.wikipedia.org/wiki/Associative_entity)). Works the same way as the `Required` dependency type.  See: [Many-to-many relationships](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#many-to-many-relationships)  
+Binding  |  Only intended for the reference fields of dedicated binding object types used to model many-to-many relationships (via [associative tables](https://en.wikipedia.org/wiki/Associative_entity)). Works the same way as the `Required` dependency type.  See: [Many-to-many relationships](#many-to-many-relationships)  
 
 
 ### Add references from extendable system objects
 You can extend existing objects in the system to store references to custom object types.
   1. Open the **Modules** application.
   2. Edit the module and the data class that you wish to extend.
-  3. On the **Database columns** tab, create a **New field** using the [field editor](documentation/developers-and-admins/customization/field-editor). 
+  3. On the **Database columns** tab, create a **New field** using the [field editor](/documentation/developers-and-admins/customization/field-editor). 
      * A common convention is to suffix identifier columns with the **ID** suffix.
      * Set the field’s **Data type** to _Integer number_.
      * Either keep the field hidden and handle the values in code, adjust an existing UI form, or create a completely new UI form that manages the dependency.
      * There are no _Reference_ settings to configure for the field with this type of reference.
   4. **Save** the field.
-  5. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#configure-foreign-key-columns-in-the-database) for more information.
+  5. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](#configure-foreign-key-columns-in-the-database) for more information.
 
 
 You can repeat the process above for any number of customizable system object types. Once the reference database columns (_foreign keys_) are created, you need to register them as dependencies in the type information of your custom class:
@@ -328,7 +336,7 @@ You can repeat the process above for any number of customizable system object ty
 `ExtraColumn` objects accept the following parameters:
   * **extended object type (string)** – the name of the object type where you added the reference field (the extendable system object).
   * **column (string)** – the name of the foreign key column in the extended class that stores the IDs of the referenced objects.
-  * **reference type (ObjectDependencyEnum)** – determines how the system handles referential integrity and automatic removal of objects when a referenced object is deleted. The value must be one of the options from the `ObjectDependencyEnum`. See the table in the [Add references from custom object types](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#add-references-from-custom-object-types) section for details.
+  * **reference type (ObjectDependencyEnum)** – determines how the system handles referential integrity and automatic removal of objects when a referenced object is deleted. The value must be one of the options from the `ObjectDependencyEnum`. See the table in the [Add references from custom object types](#add-references-from-custom-object-types) section for details.
 
 
 C#
@@ -414,7 +422,7 @@ protected override Task FinalizeInfoObject(OfficeJobInfo infoObject, IFormFieldV
 
 
 If you navigate to the page with the edited UI form, you can use the added dropdown selector to set the target of the dependency. Note that if the edited UI form is present on multiple pages, you need to repeat the process for each affect page or separate the logic to a shared base class.
-[![Sample editing interface for the foreign key column](docsassets/documentation/model-object-type-relationships/ForeignKeyEdit.png)](https://docs.kentico.com/docsassets/documentation/model-object-type-relationships/ForeignKeyEdit.png)
+[![Sample editing interface for the foreign key column](/docsassets/documentation/model-object-type-relationships/ForeignKeyEdit.png)](/docsassets/documentation/model-object-type-relationships/ForeignKeyEdit.png)
 ## Many-to-many relationships
 A  _many-to-many relationship_ occurs when multiple records in a table are associated with multiple records in another table. A typical example of a many-to many relationship is one between roles and users. A user can be assigned to many roles, and a role can include many users.
 MSSQL doesn’t allow you to implement a direct many-to-many relationship between tables. However, you can break the many-to-many relationship into multiple one-to-many relationships by using a **binding object type** with its own table (an [associative table](https://en.wikipedia.org/wiki/Associative_entity)). Each record in the binding type’s table contains the value of the primary keys of the object types it associates (_foreign keys_).
@@ -430,7 +438,7 @@ Use the following steps to create a binding between objects:
 
 Now define the database columns storing the foreign keys of the related objects:
   1. Switch to the **Database columns** tab.
-  2. Select **New field** and fill in the following values using the [field editor](documentation/developers-and-admins/customization/field-editor). 
+  2. Select **New field** and fill in the following values using the [field editor](/documentation/developers-and-admins/customization/field-editor). 
     1. **Data type** : Integer number
     2. **Required** : yes (checkbox selected)
     3. **Reference to** : select the appropriate object type
@@ -439,18 +447,18 @@ Now define the database columns storing the foreign keys of the related objects:
 
 
 The system creates the corresponding table in the database. Perform the following steps to configure the binding and finalize the database table:
-  1. [Generate the binding’s code](documentation/developers-and-admins/api/generate-code-files-for-system-objects).
+  1. [Generate the binding’s code](/documentation/developers-and-admins/api/generate-code-files-for-system-objects).
   2. Include the files into your project. 
-     * See [Integrate custom code](documentation/developers-and-admins/customization/integrate-custom-code) for best practices.
+     * See [Integrate custom code](/documentation/developers-and-admins/customization/integrate-custom-code) for best practices.
   3. Edit the generated _Info_ class and find the `TYPEINFO` member.
-  4. Add the `IsBinding` property to the `ObjectTypeInfo` initializer and set the value to `true`. See [Object type configuration](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#Modelobjecttyperelationships-bindinginfoconfig) for details.
+  4. Add the `IsBinding` property to the `ObjectTypeInfo` initializer and set the value to `true`. See [Object type configuration](#Modelobjecttyperelationships-bindinginfoconfig) for details.
   5. Save the changes and rebuild the solution.
-  6. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](documentation/developers-and-admins/customization/object-types/object-type-configuration/model-object-type-relationships#configure-foreign-key-columns-in-the-database) for more information.
+  6. (Optional) Set the ID columns as foreign keys in your database. See [Configure foreign key columns in the database](#configure-foreign-key-columns-in-the-database) for more information.
 
 
 The binding object type is now ready. You can create relationships between objects using the API or prepare a user interface for this purpose.
 ### Object type configuration 
-The [type information](documentation/developers-and-admins/customization/object-types/object-type-configuration) is code that defines the general behavior and basic properties of object types. You can configure the type information inside the _Info_ class of a given binding using the `TYPEINFO` member.
+The [type information](/documentation/developers-and-admins/customization/object-types/object-type-configuration) is code that defines the general behavior and basic properties of object types. You can configure the type information inside the _Info_ class of a given binding using the `TYPEINFO` member.
 Generated binding  _Info_ classes have **most** of the type information set automatically by the code generator. You need to configure the remaining properties and verify the rest is set correctly.
 **Parameters of the ObjectTypeInfo constructor** :
   * **idColumn (4)** – the name of the identity column of the binding.
@@ -493,16 +501,16 @@ public static ObjectTypeInfo TYPEINFO = new ObjectTypeInfo(
 ```
 
 ### Add objects to a many-to-many relationships from the UI
-You typically add objects to many-to-many relationships from the editing interface of one of the objects in the association. That is, you can leverage the following [UI page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) structure to obtain the identifier of the object using [page model binders](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs):
+You typically add objects to many-to-many relationships from the editing interface of one of the objects in the association. That is, you can leverage the following [UI page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) structure to obtain the identifier of the object using [page model binders](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages#parameterized-url-slugs):
   * Object listing page 
     * Object edit section (adds a URL slug with the identifier of the **source object** to the URL) 
       * Source object edit
-      * Source object many-to-many relationship management (typically a [binding page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/binding-ui-page-template))
+      * Source object many-to-many relationship management (typically a [binding page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/binding-ui-page-template))
 
 
 For example, you add roles to users either when editing the role object or the user object. Therefore, you can always obtain the identifier of one of the objects in the association from the UI page hierarchy.
 #### Implementation
-To create the page that manages the many-to-many relationship (this process is analogous for all object types associated via a given binding relation), create a [binding UI page](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/binding-ui-page-template) that lists objects associated to the object being edited.
+To create the page that manages the many-to-many relationship (this process is analogous for all object types associated via a given binding relation), create a [binding UI page](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/binding-ui-page-template) that lists objects associated to the object being edited.
   * Use a page model binder to get the identifier of the edited object from the URL.
 
 
@@ -549,7 +557,9 @@ public class OfficeWorkers : InfoBindingPage<OfficeUserInfo, UserInfo>
 ```
 
 The basic management UI is now ready. Users can create and remove associations using the added interface elements.
-[![Many-to-many relationship editing interface](docsassets/documentation/model-object-type-relationships/ManyToManyManagement.png)](https://docs.kentico.com/docsassets/documentation/model-object-type-relationships/ManyToManyManagement.png)
+[![Many-to-many relationship editing interface](/docsassets/documentation/model-object-type-relationships/ManyToManyManagement.png)](/docsassets/documentation/model-object-type-relationships/ManyToManyManagement.png)
 ## Configure foreign key columns in the database
 The system does not provide automatic management of foreign keys on the database level. You need to manually set the added foreign key columns as foreign keys in the corresponding database tables. This is not required to ensure correct functionality of foreign key columns, but is recommended to leverage the performance and data consistency advantages of foreign key constraints.
 You can either use SQL Server Management Studio or execute an SQL script. See [Create Foreign Key Relationships](https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships) for more information.
+![]()
+[]()[]()

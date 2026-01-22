@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/upgrade-walkthrough/conclusion
+scrape_date: 2026-01-22
+---
+
+Module: Upgrading to Xperience by Kentico - Walkthrough
+6 of 6 Pages
 # Keep learning about Xperience by Kentico
-  * [ Copy page link ](modules/upgrade-walkthrough/conclusion#) | [Get HelpService ID](modules/upgrade-walkthrough/conclusion#)
-Core MVC 5
-
-
-[✖](modules/upgrade-walkthrough/conclusion# "Close page link panel") [Copy to clipboard](modules/upgrade-walkthrough/conclusion#)
 Upgrading from Kentico Xperience 13 to Xperience by Kentico is a significant step toward a more flexible, modern content platform. You’ve now seen what the process looks like, what to prepare for, and how to approach each part of the transition with a clear strategy.
 This module gave you a hands-on look at how to upgrade the Dancing Goat demo project — and more importantly, it showed how the same steps apply to your own real-world projects.
 ## Key Takeaways
@@ -28,4 +30,9 @@ Kentico continues to invest in and expand the toolkit, with regular enhancements
 ## Share your thoughts
 We’re always looking for ways to make our guides more helpful. If you have feedback on this module — what worked well, what could be clearer, or what you’d like to see next — we’d love to hear from you.
 Thanks for learning with us. We’re excited to see what you build next with Xperience by Kentico.
-Mark module as completed Congrats! Module is completed You're almost done! You need to finish all pages before you can complete the module. Select “Go back and finish” to jump to the first page you haven’t finished, then hit “Mark complete and continue” at the bottom to move forward.
+Mark module as completed Congrats! Module is completed You're almost done! You need to finish all pages before you can complete the module. Select “Go back and finish” to jump to the first page you haven’t finished, then hit “Mark complete and continue” at the bottom to move forward. 
+[ Previous page ](/modules/upgrade-walkthrough/display-an-upgraded-page)
+6 of 6
+[ Go back and finish ](https://docs.kentico.com/modules/upgrade-walkthrough)
+![]()
+[]()[]()

@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Customize system providers](/documentation/developers-and-admins/customization/customize-system-providers)
+  * Register custom providers 
+
+
 # Register custom providers
-  * [ Copy page link ](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers#) | [Get HelpService ID](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/customize-system-providers/register-custom-providers#)
-To replace the system implementations of [provider or helper classes](documentation/developers-and-admins/customization/customize-system-providers) with your custom ones, use assembly attributes:
+To replace the system implementations of [provider or helper classes](/documentation/developers-and-admins/customization/customize-system-providers) with your custom ones, use assembly attributes:
   1. Edit your provider class.
   2. Add a using statement for the **CMS** namespace:
 C#
@@ -31,4 +38,6 @@ Copy
 
 The system now uses your customized providers instead of the default functionality.
 **Enabling class discovery**
-If your custom class is located in its own assembly (_Class Library_ project), you need to make sure class discovery is enabled for the project. Otherwise, the _RegisterCustom_ attributes cannot work. See [Integrate custom code](documentation/developers-and-admins/customization/integrate-custom-code).
+If your custom class is located in its own assembly (_Class Library_ project), you need to make sure class discovery is enabled for the project. Otherwise, the _RegisterCustom_ attributes cannot work. See [Integrate custom code](/documentation/developers-and-admins/customization/integrate-custom-code).
+![]()
+[]()[]()

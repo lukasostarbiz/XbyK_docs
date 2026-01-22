@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/contact-management/disable-or-modify-automation
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+40 of 44 Pages
 # Disable or modify an automation process
-  * [ Copy page link ](modules/contact-management/disable-or-modify-automation#) | [Get HelpService ID](modules/contact-management/disable-or-modify-automation#)
-Core MVC 5
-
-
-[✖](modules/contact-management/disable-or-modify-automation# "Close page link panel") [Copy to clipboard](modules/contact-management/disable-or-modify-automation#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -19,16 +21,8 @@ Versioning is currently not available for automation processes. If any steps are
 You cannot delete steps if the process is currently enabled, or has been enabled in the past and has logged contact statistics. At this point, there may be contacts progressing through the process, and deleting steps could result in unexpected behavior.
 If you delete the entire automation process, the contact history is fully cleared, and no further steps will be performed for any contacts currently within the process.
 If a contact reaches the last step in a process branch, which is not connected to another step (whether it is a **Finish** step or not), the process “finishes” and the contact becomes “stuck” in the given step. Even if you add another step to an enabled process later, the contact will **not continue**.
-[ Previous page ](modules/contact-management/analyze-and-customize-automation)
+[ Previous page ](/modules/contact-management/analyze-and-customize-automation)
 40 of 44
-[ Mark complete and continue ](modules/contact-management/email-scenarios-forms)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/disable-or-modify-automation)
-[](https://docs.kentico.com/modules/contact-management/disable-or-modify-automation)[](https://docs.kentico.com/modules/contact-management/disable-or-modify-automation)
+[ Mark complete and continue ](/modules/contact-management/email-scenarios-forms)
+![]()
+[]()[]()

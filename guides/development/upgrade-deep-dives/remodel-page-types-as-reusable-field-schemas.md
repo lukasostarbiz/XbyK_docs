@@ -1,26 +1,32 @@
+---
+source: https://docs.kentico.com/guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Upgrade deep dives](/guides/development/upgrade-deep-dives)
+  * Remodel page types as reusable field schemas 
+
+
 # Remodel page types as reusable field schemas
-  * How-to| [ Copy page link ](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas#) | [Get HelpService ID](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas#)
-Core MVC 5
-
-
-[✖](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas# "Close page link panel") [Copy to clipboard](guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas#)
 The [Xperience by Kentico: Kentico migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) allows you to remodel your content on the fly during the upgrade process.
-Using a [custom class mapping](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/tree/master/Migration.Tool.Extensions#custom-class-mappings), you can discard fields, rename them, transform their values, and create [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas) that you can share among multiple classes.
+Using a [custom class mapping](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/tree/master/Migration.Tool.Extensions#custom-class-mappings), you can discard fields, rename them, transform their values, and create [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) that you can share among multiple classes.
 This guide will extract common fields from two page types from **Kentico Xperience 13 (KX13)** and move them to a _Reusable field schema_ shared by both web page content types in **Xperience by Kentico (XbyK)**.
 ## Set up the project
-If you haven’t, we recommend following along with the [upgrade walkthrough](guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to see the process of getting a migrated page working in Xperience by Kentico.
+If you haven’t, we recommend following along with the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) to see the process of getting a migrated page working in Xperience by Kentico.
 In preparation to follow along with this guide, you need:
   * A running instance of Kentico Xperience 13 with the Dancing Goat template
   * An instance of the [migration tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool)
   * A compatible install of Xperience by Kentico
 
 
-If you haven’t followed along with the walkthrough, complete the steps from its [environment setup page](guides/architecture/upgrade-from-kx13/upgrade-walkthrough/setup-your-environment) in preparation for this guide.
+If you haven’t followed along with the walkthrough, complete the steps from its [environment setup page](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/setup-your-environment) in preparation for this guide.
 ## Determine the new model
-As discussed in the [migration strategy planning guide](guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features#structured-content-page-types), **page types** in KX13 map to **content types** in XbyK.
-The migration tool automatically converts page types to content types with the same fields, and converts their pages _web page items_ in the content tree of a [website channel](documentation/developers-and-admins/configuration/website-channel-management). However, you can extend the process for specific page types, making structural adjustments as the tool converts them into content types, or changing where and how they are stored.
+As discussed in the [migration strategy planning guide](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features#structured-content-page-types), **page types** in KX13 map to **content types** in XbyK.
+The migration tool automatically converts page types to content types with the same fields, and converts their pages _web page items_ in the content tree of a [website channel](/documentation/developers-and-admins/configuration/website-channel-management). However, you can extend the process for specific page types, making structural adjustments as the tool converts them into content types, or changing where and how they are stored.
 ### Examine the source classes
-In the KX13 Dancing Goat site, there are two [page types](13/developing-websites/defining-website-content-structure/managing-page-types/creating-page-types) corresponding to coffee grinders: _Manual grinder_ and _Electric grinder_.
+In the KX13 Dancing Goat site, there are two [page types](/13/developing-websites/defining-website-content-structure/managing-page-types/creating-page-types) corresponding to coffee grinders: _Manual grinder_ and _Electric grinder_.
 The _Manual grinder_ page type has the following fields:
   * ManualGrinderID
   * ManualGrinderPromotionTitle
@@ -39,7 +45,7 @@ These are the _Electric grinder_ fields:
 ### Consolidate the common fields
 As both page types contain fields for a promotion title, promotion description, and banner text, we can move these fields to a shared schema.
 Each content type in XbyK will need its own ID, and the electric grinder content type will need a power field that is not part of the schema.
-[![Diagram of grinder reusable field schema](docsassets/guides/remodel-page-types-as-reusable-field-schemas/RFSUpgrade.jpg)](https://docs.kentico.com/docsassets/guides/remodel-page-types-as-reusable-field-schemas/RFSUpgrade.jpg)
+[![Diagram of grinder reusable field schema](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/RFSUpgrade.jpg)](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/RFSUpgrade.jpg)
 ## Implement the class mapping
 ### Add a mapping class
 In your local version of the migration tool repository, add a new file to the _ClassMappings_ folder of the _Migration.Tool.Extensions_ project.
@@ -317,14 +323,16 @@ public static class ServiceCollectionExtensions
 ## See the results
 Now, run the data migration and you will see that both grinder content types use the reusable `Grinder` schema.
 Electric grinder:
-[![Screenshot of migrated Electric grinder type](docsassets/guides/remodel-page-types-as-reusable-field-schemas/ElectricGrinder_Migrated.png)](https://docs.kentico.com/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ElectricGrinder_Migrated.png)
+[![Screenshot of migrated Electric grinder type](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ElectricGrinder_Migrated.png)](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ElectricGrinder_Migrated.png)
 Manual grinder:
-[![Screenshot of migrated Manual grinder type](docsassets/guides/remodel-page-types-as-reusable-field-schemas/ManualGrinder_Migrated.png)](https://docs.kentico.com/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ManualGrinder_Migrated.png)
+[![Screenshot of migrated Manual grinder type](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ManualGrinder_Migrated.png)](/docsassets/guides/remodel-page-types-as-reusable-field-schemas/ManualGrinder_Migrated.png)
 **Page name fields**
 You can see that the new content types include a _DocumentName_ field, corresponding to the field of the same name in KX13’s _CMS.Document_ class. The migration tool automatically adds this field to content types created from pages, to hold the un-altered display name from the KX13 page.
 If you have no use for this field, you can delete it from your content types in Xperience by Kentico.
 Certain versions of the migration tool may create multiple page name fields (_DocumentName_ and _DocumentName1_) when you use a KX13 page type for a schema, then convert it to a content type utilizing that schema. For example, this may happen to the _Manual grinder_ content type in this example.
 You can simply delete the duplicate field in these cases.
 ## What’s next?
-In [the next upgrade deep dive](guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai), we’ll explore how agentic AI coding assistants can speed up remodeling scenarios like the example we just covered. [after that](guides/development/upgrade-deep-dives/optimize-images-during-upgrade), we’ll set up XbyK’s [automatic asset optimization](documentation/developers-and-admins/development/content-types#automatically-optimize-image-assets) for images stored as media library files and page attachments in KX13.
+In [the next upgrade deep dive](/guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai), we’ll explore how agentic AI coding assistants can speed up remodeling scenarios like the example we just covered. [after that](/guides/development/upgrade-deep-dives/optimize-images-during-upgrade), we’ll set up XbyK’s [automatic asset optimization](/documentation/developers-and-admins/development/content-types#automatically-optimize-image-assets) for images stored as media library files and page attachments in KX13.
 If you encounter any roadblocks during your own migration, or if you have ideas for a subject we haven’t covered, don’t hesitate to reach out to us through the **Send us feedback** button at the bottom of this page.
+![]()
+[]()[]()

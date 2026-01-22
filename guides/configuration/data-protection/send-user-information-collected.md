@@ -1,11 +1,17 @@
+---
+source: https://docs.kentico.com/guides/configuration/data-protection/send-user-information-collected
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Configuration](/guides/configuration)
+  * [Data protection](/guides/configuration/data-protection)
+  * Send customer information about their data (Right to access) 
+
+
 # Send customer information about their data (Right to access)
-  * Tutorial| [ Copy page link ](guides/configuration/data-protection/send-user-information-collected#) | [Get HelpService ID](guides/configuration/data-protection/send-user-information-collected#) | This page is part of a module: [ Data protection configuration ](modules/data-protection-configuration)
-Core MVC 5
-
-
-[✖](guides/configuration/data-protection/send-user-information-collected# "Close page link panel") [Copy to clipboard](guides/configuration/data-protection/send-user-information-collected#)
 Let’s help a customer to know which personal data and data about their interactions with your business have your company collected and stored. Handling customer’s requests about their personal data is one of the Data Protection officer’s responsibilities. (Find out more about [GDPR-related requirements](https://gdpr.eu/what-is-gdpr/).)
-This feature requires implementing data protection, cookie consent, and activity tracking. Find out more in [Kentico Xperience documentation](documentation/developers-and-admins/data-protection).
+This feature requires implementing data protection, cookie consent, and activity tracking. Find out more in [Kentico Xperience documentation](/documentation/developers-and-admins/data-protection).
 Not a fan of a video? Follow the steps below to comply with customer’s _Right to access_ request.
   1. Navigate to the **Data protection** application.
   2. Open the **Right to access** tab.
@@ -27,3 +33,5 @@ Navigate to the **Configuration** → **Sample data generator** and use the **Ge
 
 
 Test the scenario with the email of the contact you have imitated previously or the following email: Name-20.Generated.Surname-20@localhost.local.
+![]()
+[]()[]()

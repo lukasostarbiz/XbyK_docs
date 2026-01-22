@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/work-with-website-content/create-a-new-landing-page-from-a-template
+scrape_date: 2026-01-22
+---
+
+Module: Work with website content
+9 of 20 Pages
 # Build a new landing page from a template
-  * [ Copy page link ](modules/work-with-website-content/create-a-new-landing-page-from-a-template#) | [Get HelpService ID](modules/work-with-website-content/create-a-new-landing-page-from-a-template#)
-Core MVC 5
-
-
-[✖](modules/work-with-website-content/create-a-new-landing-page-from-a-template# "Close page link panel") [Copy to clipboard](modules/work-with-website-content/create-a-new-landing-page-from-a-template#)
 See how to create a page using a preset page template. We’ll use a campaign Landing page template as an example.
 Your company wants you to prepare a new landing page to promote small personal loans. Use the _Landing page_ template to create the page quickly. In this exercise, you’ll create a landing page from a template and fill in prepared widgets.
 ## Prepare the landing page
@@ -61,16 +63,8 @@ Your company wants you to prepare a new landing page to promote small personal l
 
 
 **Save** the page. You can see the final page in the **Preview** tab. If you are satisfied with what the page looks like, **Publish** the page.
-[ Previous page ](modules/work-with-website-content/create-a-reusable-landing-page-template)
+[ Previous page ](/modules/work-with-website-content/create-a-reusable-landing-page-template)
 9 of 20
-[ Mark complete and continue ](modules/work-with-website-content/pages-from-reusable-content)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/work-with-website-content/create-a-new-landing-page-from-a-template)
-[](https://docs.kentico.com/modules/work-with-website-content/create-a-new-landing-page-from-a-template)[](https://docs.kentico.com/modules/work-with-website-content/create-a-new-landing-page-from-a-template)
+[ Mark complete and continue ](/modules/work-with-website-content/pages-from-reusable-content)
+![]()
+[]()[]()

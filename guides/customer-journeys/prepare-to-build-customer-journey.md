@@ -1,9 +1,14 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/prepare-to-build-customer-journey
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * Prepare to build customer journey 
+
+
 # Prepare to build customer journey
-  * Concept| [ Copy page link ](guides/customer-journeys/prepare-to-build-customer-journey#) | [Get HelpService ID](guides/customer-journeys/prepare-to-build-customer-journey#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/prepare-to-build-customer-journey# "Close page link panel") [Copy to clipboard](guides/customer-journeys/prepare-to-build-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -21,4 +26,6 @@ Understanding the customer journey starts with gathering the right people and th
 ## Collect resources
 Before mapping the customer journey, you should gather key resources to ensure that your map provides accurate and actionable information. These resources will build the foundation you will use to identify customer behavior patterns, pain points, and opportunities for improvement. In the following pages, we’ll look at different resources you should have at hand when you start mapping your customer journeys.
 ## Next step
-Learn about how [identifying customer segments](guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey) helps build targeted, effective customer journeys.
+Learn about how [identifying customer segments](/guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey) helps build targeted, effective customer journeys.
+![]()
+[]()[]()

@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [SaaS](/documentation/developers-and-admins/saas)
+  * [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal)
+  * Reference - Xperience Portal user roles 
+
+
 # Reference - Xperience Portal user roles
-  * [ Copy page link ](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles#) | [Get HelpService ID](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/saas/xperience-portal/reference-xperience-portal-user-roles#)
-The following table explains the [Xperience Portal](documentation/developers-and-admins/saas/xperience-portal) roles and role privileges.
+The following table explains the [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal) roles and role privileges.
 Role/Privilege |  Tenant Administrator |  DevOps Engineer |  Developer  
 ---|---|---|---  
 Access to **Users** application |  |  |   
@@ -31,4 +38,6 @@ Deployment
 Quality Assurance environment (**QA**) |  |  |   
 User Acceptance Testing environment (**UAT**) |  |  |   
 Staging environment (**STG**) |  |  |   
-Production environment (**PROD**) |  |  |
+Production environment (**PROD**) |  |  |   
+![]()
+[]()[]()

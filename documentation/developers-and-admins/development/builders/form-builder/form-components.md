@@ -1,16 +1,24 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/form-builder/form-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Builders](/documentation/developers-and-admins/development/builders)
+  * [Form Builder](/documentation/developers-and-admins/development/builders/form-builder)
+  * Form components 
+
+
 # Form components
-  * [ Copy page link ](documentation/developers-and-admins/development/builders/form-builder/form-components#) | [Get HelpService ID](documentation/developers-and-admins/development/builders/form-builder/form-components#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/builders/form-builder/form-components# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/builders/form-builder/form-components#)
-Form components are reusable elements that allow content creators and marketers to compose forms via the [Form Builder](documentation/developers-and-admins/development/builders/form-builder). Each component represents a specific form field, such as a text box for user input, a group of radio buttons, etc. Administration users are free to add, remove, or reorder individual form components and specify their properties via the [Form Builder interface](documentation/business-users/digital-marketing/forms) in the **Forms** application.
+Form components are reusable elements that allow content creators and marketers to compose forms via the [Form Builder](/documentation/developers-and-admins/development/builders/form-builder). Each component represents a specific form field, such as a text box for user input, a group of radio buttons, etc. Administration users are free to add, remove, or reorder individual form components and specify their properties via the [Form Builder interface](/documentation/business-users/digital-marketing/forms) in the **Forms** application.
 A form is a collection of form component instances, with each instance representing an individual form field.
 In addition to form components included in Form Builder by default, you can implement custom form components suitable for specific use cases and project requirements.
 This page covers how to:
-  * [Develop form components](documentation/developers-and-admins/development/builders/form-builder/form-components#develop-form-components)
-  * [Register form components](documentation/developers-and-admins/development/builders/form-builder/form-components#register-form-components)
-  * [Add scripts and styles for form components](documentation/developers-and-admins/development/builders/form-builder/form-components#add-scripts-and-styles-for-form-components)
+  * [Develop form components](#develop-form-components)
+  * [Register form components](#register-form-components)
+  * [Add scripts and styles for form components](#add-scripts-and-styles-for-form-components)
 
 
 ## Develop form components
@@ -24,7 +32,7 @@ Follow these steps to create a form component:
      * This class defines properties used for model binding from the component’s input elements.
      * The `TValue` generic determines the data type of the form component’s overall value (e.g., a basic data type such as string, `int` or `bool`).
   3. Create a form component properties class that inherits from `FormComponentProperties<TValue>`.
-     * This class is used to define the properties of the form component (i.e., the component’s underlying database column type, constraints, and other configuration options. See [Form component properties](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties)).
+     * This class is used to define the properties of the form component (i.e., the component’s underlying database column type, constraints, and other configuration options. See [Form component properties](/documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties)).
      * The `TValue` generic needs to match the data type of the corresponding form component.
 We recommend storing the classes of form components under a dedicated _~/Models/FormComponents/ <ComponentName>_ folder.
   4. In the model class derived from `FormComponent<TProperties, TValue>`:
@@ -68,15 +76,15 @@ public class CustomFormComponent : FormComponent<CustomFormComponentProperties, 
 ```
 
   5. In the class derived from `FormComponentProperties<TValue>`:
-     * Call the constructor of the base class and specify the data type of the underlying database column using the `CMS.DataEngine.FieldDataType` enumeration. For the list of available data types or to learn how to register custom data types suitable for your component, see [Data type management](documentation/developers-and-admins/customization/field-editor/data-type-management). 
+     * Call the constructor of the base class and specify the data type of the underlying database column using the `CMS.DataEngine.FieldDataType` enumeration. For the list of available data types or to learn how to register custom data types suitable for your component, see [Data type management](/documentation/developers-and-admins/customization/field-editor/data-type-management). 
 The base class constructor also takes the following optional parameters:
        * `size` – sets the size of the corresponding component’s underlying database column.
        * `precision` – governs the number of digits floating point numbers stored in the database can contain. These parameters configure the underlying database column, and need to be specified when the data type of the form component requires it, for example:
          * Specify the `size` parameter when defining components with the `FieldDataType.Text` data type – `base(FieldDataType.Text, size: 200)`
          * Specify the `precision` parameter when defining components with the `FieldDataType.Decimal` data type – `base(FieldDataType.Decimal, precision: 10)`
      * _Override_ the `DefaultValue` property, used to `get` or `set` the default value of fields based on the form component.
-       * Annotate the property with a suitable [Admin UI form component attribute](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) to specify the [editing interface](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for the default value in the Form Builder properties dialog.
-     * (Optional) Declare [additional properties](documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties) the form component requires.
+       * Annotate the property with a suitable [Admin UI form component attribute](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components) to specify the [editing interface](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components) for the default value in the Form Builder properties dialog.
+     * (Optional) Declare [additional properties](/documentation/developers-and-admins/development/builders/form-builder/form-components/form-component-properties) the form component requires.
 C#
 Copy
 ```
@@ -95,8 +103,8 @@ public CustomFormComponentProperties()
 }
 ```
 
-  6. Create a new partial view that describes the appearance of the form component and place it in the _~/Views/Shared/FormComponents_ folder. Use a view name that matches the identifier assigned to the form component [upon its registration](documentation/developers-and-admins/development/builders/form-builder/form-components#register-form-components) and prefix it with the underscore (_‘_’_) character (to indicate a partial view according to MVC best practices).
-You can place views into custom locations by specifying an optional parameter during the [component registration](documentation/developers-and-admins/development/builders/form-builder/form-components#register-form-components).
+  6. Create a new partial view that describes the appearance of the form component and place it in the _~/Views/Shared/FormComponents_ folder. Use a view name that matches the identifier assigned to the form component [upon its registration](#register-form-components) and prefix it with the underscore (_‘_’_) character (to indicate a partial view according to MVC best practices).
+You can place views into custom locations by specifying an optional parameter during the [component registration](#register-form-components).
 In the view:
     1. Retrieve the dictionary collection of system HTML attributes by calling the `ViewData.Kentico().GetEditorHtmlAttributes` extension method (from the `Kentico.Forms.Web.Mvc` namespace). You can modify the collection to include additional attributes the component requires, such as CSS classes and data attributes. Ensure the collection is included in each input element as certain features may not work otherwise.
     2. Specify input elements for the component. If possible, use extension methods provided by the framework’s `HtmlHelper` class to render individual inputs. The methods by default, provide an easy way to merge additional HTML attributes and ensure the inputs contain fully qualified names, facilitating model binding.
@@ -133,17 +141,17 @@ Copy
 @Html.TextBoxFor(m => m.Value, htmlAttributes)
 ```
 
-  7. (Optional) Write any required CSS and JavaScript code the component requires for its functionality. Place the script and style files into the _~/Content/FormComponents/ <FormComponentIdentifier>_ folder. See [Add scripts and styles for form components](documentation/developers-and-admins/development/builders/form-builder/form-components#add-scripts-and-styles-for-form-components) for more information and recommended practices.
+  7. (Optional) Write any required CSS and JavaScript code the component requires for its functionality. Place the script and style files into the _~/Content/FormComponents/ <FormComponentIdentifier>_ folder. See [Add scripts and styles for form components](#add-scripts-and-styles-for-form-components) for more information and recommended practices.
 
 
 ## Register form components
-To register a form component, annotate the class derived from `FormComponent<TProperties, TValue>`with the `RegisterFormComponent` assembly attribute. This attribute ensures the component is recognized by the system and available for [use in the Form Builder](documentation/business-users/digital-marketing/forms). When registering the component, specify the following parameters:
+To register a form component, annotate the class derived from `FormComponent<TProperties, TValue>`with the `RegisterFormComponent` assembly attribute. This attribute ensures the component is recognized by the system and available for [use in the Form Builder](/documentation/business-users/digital-marketing/forms). When registering the component, specify the following parameters:
   * `Identifier` – a `string` identifier of the form component. 
 If you are planning to distribute your components, or are using components from third-party sources, consider specifying the identifier in a format that uniquely identifies your form component to avoid potential conflicts with identifier names. For example, use `CompanyName.ModuleName.ComponentName`.
   * `FormComponentType` – the `System.Type` of the form component class.
-  * `Name` – sets the name of the form component. Displayed when [adding form fields](documentation/business-users/digital-marketing/forms/create-and-edit-forms) in the Form Builder.
+  * `Name` – sets the name of the form component. Displayed when [adding form fields](/documentation/business-users/digital-marketing/forms/create-and-edit-forms) in the Form Builder.
   * (Optional) `Description`– sets the description of the form component. Displayed when adding form fields in the Form Builder.
-  * (Optional) `IsAvailableInFormBuilderEditor` – determines if the form component can be added as a form field. `True` by default. If set to `false`, the component can only be added as an [editing component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+  * (Optional) `IsAvailableInFormBuilderEditor` – determines if the form component can be added as a form field. `True` by default. If set to `false`, the component can only be added as an [editing component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
   * (Optional) `ViewName` – specifies the name of the view used to display the component, for example _CustomComponent_. If not set, the system searches for a corresponding `_<Identifier>.cshtml` view in the  _~/Views/Shared/FormComponents/_ folder.
   * (Optional) `IconClass` – the font-icon assigned to the form component. Displayed in the component listing when adding new fields in the Form Builder. For a list of font icons available by default in the system, see the [Icon list](http://devnet.kentico.com/docs/icon-list/index.html).
 
@@ -156,14 +164,14 @@ Copy
 [assembly: RegisterFormComponent(CustomFormComponent.IDENTIFIER, typeof(CustomFormComponent), "Custom component", Description = "This is a custom form component.", IconClass = "icon-newspaper")]
 ```
 
-The form component is now created and registered in the system. Users can include it when composing forms [using the Form Builder interface](documentation/business-users/digital-marketing/forms/create-and-edit-forms).
+The form component is now created and registered in the system. Users can include it when composing forms [using the Form Builder interface](/documentation/business-users/digital-marketing/forms/create-and-edit-forms).
 ## Add scripts and styles for form components
 To add JavaScript and CSS styles required by your components, we recommend placing script and stylesheet files into sub-folders under:
   * **_~/wwwroot/FormBuilder/Public/_** – scripts intended for both the live site and administration. Styles intended for the live site.
   * **_~/wwwroot/FormBuilder/Admin/_** – scripts and styles intended for the administration interface. Note that the system already attempts to enforce a unified look and feel for components rendered in the Form Builder interface.
 
 
-You can use sub-folders that match the identifiers of individual components, or a _Shared_ sub-folder for assets used by multiple components. Note that this recommendation only applies when using the default configuration of the bundling support provided by Xperience and may be different for your project. See [Bundle static assets of builder components](documentation/developers-and-admins/development/builders/bundle-static-assets-of-builder-components).
+You can use sub-folders that match the identifiers of individual components, or a _Shared_ sub-folder for assets used by multiple components. Note that this recommendation only applies when using the default configuration of the bundling support provided by Xperience and may be different for your project. See [Bundle static assets of builder components](/documentation/developers-and-admins/development/builders/bundle-static-assets-of-builder-components).
 **CSS notes**
   * Only use the specified directories to add **basic styles** that are required for the widget to render correctly. Any **site-specific styles** that finalize the live site design of the widget should be handled separately within the given site’s main stylesheet.
   * To avoid potential conflicts between styles from other third-party components, we recommend adding a unique prefix to your CSS classes and identifiers (e.g., `#CompanyName-mid-button`), or use similar measures to ensure their uniqueness.
@@ -192,3 +200,5 @@ if (document.readyState === "loading") {
 ```
 
 **Note** : Apart from initialization code, avoid linking or executing scripts directly within form component views – this could lead to duplicated scripts for forms that contain multiple fields based on the same component, or on pages with multiple forms.
+![]()
+[]()[]()

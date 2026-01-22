@@ -1,10 +1,18 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components)
+  * Reference - Admin UI form components 
+
+
 # Reference - Admin UI form components
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#)
-This page lists all [form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) that are available in new installations of Xperience. For details on programmatically configuring these components in component configuration dialogs, see [Editing components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
+This page lists all [form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) that are available in new installations of Xperience. For details on programmatically configuring these components in component configuration dialogs, see [Editing components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components).
 Form component attributes are located in the
   * `Kentico.Xperience.Admin.Base.FormAnnotations`
   * `Kentico.Xperience.Admin.Content.FormAnnotations`
@@ -12,34 +20,34 @@ Form component attributes are located in the
 
 
 namespaces.
-  * [Selectors](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#selectors)
-    * [Combined content selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector)
-    * [Content item folder selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#content-item-folder-selector)
-    * [Email selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#email-selector)
-    * [Object selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#object-selector)
-    * [Page selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#page-selector)
-    * [URL selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#url-selector)
-    * [Smart folder selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#smart-folder-selector)
-    * [Tag selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#tag-selector)
-    * [General selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#general-selector)
-  * [Components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#components)
-    * [Checkbox](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#checkbox)
-    * [Code editor](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#code-editor)
-    * [Dropdown selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector)
-    * [Date input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#date-input)
-    * [Date and time input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#date-and-time-input)
-    * [Date and time with label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#date-and-time-with-label)
-    * [Decimal number input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#decimal-number-input)
-    * [Link](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#link)
-    * [Number input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#number-input)
-    * [Number with label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#number-with-label)
-    * [Password](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#password)
-    * [Rich text editor](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#rich-text-editor)
-    * [Radio group component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#radio-group-component)
-    * [Text area](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-area)
-    * [Text input](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-input)
-    * [Text with label](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#text-with-label)
-    * [Extension selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#extension-selector)
+  * [Selectors](#selectors)
+    * [Combined content selector](#combined-content-selector)
+    * [Content item folder selector](#content-item-folder-selector)
+    * [Email selector](#email-selector)
+    * [Object selector](#object-selector)
+    * [Page selector](#page-selector)
+    * [URL selector](#url-selector)
+    * [Smart folder selector](#smart-folder-selector)
+    * [Tag selector](#tag-selector)
+    * [General selector](#general-selector)
+  * [Components](#components)
+    * [Checkbox](#checkbox)
+    * [Code editor](#code-editor)
+    * [Dropdown selector](#dropdown-selector)
+    * [Date input](#date-input)
+    * [Date and time input](#date-and-time-input)
+    * [Date and time with label](#date-and-time-with-label)
+    * [Decimal number input](#decimal-number-input)
+    * [Link](#link)
+    * [Number input](#number-input)
+    * [Number with label](#number-with-label)
+    * [Password](#password)
+    * [Rich text editor](#rich-text-editor)
+    * [Radio group component](#radio-group-component)
+    * [Text area](#text-area)
+    * [Text input](#text-input)
+    * [Text with label](#text-with-label)
+    * [Extension selector](#extension-selector)
 
 
 ## Selectors
@@ -47,14 +55,14 @@ namespaces.
 **Field data type** : Pages and reusable content  
 **C# data type** : IEnumerable<ContentItemReference>  
 **Form component attribute** : ContentItemSelectorComponent
-Enables users to select and associate content items from the [content hub](documentation/business-users/content-hub) and pages from the [content tree of any website channel](documentation/business-users/website-content), depending on the configuration.
-When used as an [editing component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components), returns a collection of `ContentItemReference` objects that contain GUIDs of the selected content items.
+Enables users to select and associate content items from the [content hub](/documentation/business-users/content-hub) and pages from the [content tree of any website channel](/documentation/business-users/website-content), depending on the configuration.
+When used as an [editing component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components), returns a collection of `ContentItemReference` objects that contain GUIDs of the selected content items.
 #### Configuration properties
   * **Content item scoping** – The selector offers multiple ways to scope the set of content items available for selection. 
-    * [ContentTypeName](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#CiSelectorCTName) – the code name of the content type. Scopes the selector to offer items of the given content type.
-    * [ContentTypeNames[]](https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#CiSelectorCTNameMultiple) – an array of content type code names. Scopes the selector to offer items of the given content types.
-    * [IContentTypesFilter implementation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#CiSelectorCTFilter) – an implementation of the `IContentTypesFilter` interface that scopes the offered items to those whose content type is allowed by the filter.
-    * [IReusableFieldSchemasFilter implementation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#CiSelectorReusable) – an implementation of the `IReusableFieldSchemasFilter` interface that scopes the offered items to those whose content type uses one of the specified [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas).
+    * [ContentTypeName](#CiSelectorCTName) – the code name of the content type. Scopes the selector to offer items of the given content type.
+    * [ContentTypeNames[]](#CiSelectorCTNameMultiple) – an array of content type code names. Scopes the selector to offer items of the given content types.
+    * [IContentTypesFilter implementation](#CiSelectorCTFilter) – an implementation of the `IContentTypesFilter` interface that scopes the offered items to those whose content type is allowed by the filter.
+    * [IReusableFieldSchemasFilter implementation](#CiSelectorReusable) – an implementation of the `IReusableFieldSchemasFilter` interface that scopes the offered items to those whose content type uses one of the specified [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
   * **AllowContentItemCreation** – determines whether the selector displays a button that allows users to create new content items. True by default. 
     * This options is not supported when scoping the selection using reusable field schemas.
   * **DefaultViewMode** – sets the selector’s default view mode. Use the values from the `ContentItemSelectorViewMode` enum: 
@@ -317,7 +325,7 @@ public class ContentItemSelectorUsage : ViewComponent
 ### Content item folder selector
 **C# data type** : Int32  
 **Form component attribute** : ContentFolderSelectorComponent
-Enables users to select a [content folder](documentation/business-users/content-hub/content-hub-folders#content-folders). Typically, this selector is used to set the location of reusable content items. Smart folders are **not** available in the selector.
+Enables users to select a [content folder](/documentation/business-users/content-hub/content-hub-folders#content-folders). Typically, this selector is used to set the location of reusable content items. Smart folders are **not** available in the selector.
 Returns the ID of the selected folder.
 #### Configuration properties
   * **DisabledFolderIdsFilter** – optionally allows you to specify which folders are disabled for selection. Create a filter class that implements the `IContentFolderIdsFilter` interface and assign its type into the property.
@@ -369,15 +377,15 @@ public class DisabledContentFoldersFilter : IContentFolderIdsFilter
 ```
 
 ### Email selector
-**Field data type** : Emails (only available for the fields of [module classes](documentation/developers-and-admins/customization/object-types), not in the field editor for content types)  
+**Field data type** : Emails (only available for the fields of [module classes](/documentation/developers-and-admins/customization/object-types), not in the field editor for content types)  
 **C# data type** : IEnumerable<EmailRelatedItem>  
 **Form component attribute** : EmailSelectorComponent
-Enables users to select [emails](documentation/business-users/digital-marketing/emails) from an email channel.
+Enables users to select [emails](/documentation/business-users/digital-marketing/emails) from an email channel.
 When used as an editing component, returns a collection of `EmailRelatedItem` objects that point to the selected emails. Each `EmailRelatedItem` contains an `EmailGuid` property with the GUID identifier of the selected email’s configuration object (`EmailConfigurationInfo`).
 #### Configuration properties
   * **MaximumEmails** – sets the maximum number of selected emails. If not specified, the default value is 1 (single email selection). Setting the value to 0 means the number of selected emails is not limited.
   * **Sortable** – enables or disables the ordering of the selected emails.
-  * Allowed email purposes – the following properties allow you to restrict the selection to emails with specific [email purposes](documentation/business-users/digital-marketing/emails#email-purposes). Set the purpose using the string constants from `CMS.EmailLibrary.EmailPurposeOptions`. 
+  * Allowed email purposes – the following properties allow you to restrict the selection to emails with specific [email purposes](/documentation/business-users/digital-marketing/emails#email-purposes). Set the purpose using the string constants from `CMS.EmailLibrary.EmailPurposeOptions`. 
     * **AllowedEmailPurpose** – string property that allows you to set one allowed email purpose.
     * **AllowedEmailPurposes** – an array of strings for multiple allowed email purposes.
   * **ForPreview** – indicates whether the selector allows emails that do not have a published version yet (i.e., emails with the initial _Draft_ status). False by default.
@@ -397,7 +405,7 @@ public IEnumerable<EmailRelatedItem> Emails { get; set; } = new List<EmailRelate
 ```
 
 ### Object selector
-This form component is currently usable only in Page or Form Builder, and [model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or listing filter models in the Xperience administration.
+This form component is currently usable only in Page or Form Builder, and [model-based edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or listing filter models in the Xperience administration.
 **C# data type** : IEnumerable<ObjectRelatedItem>  
 **Form component attribute** : ObjectSelectorComponent
 Enables users to select any object types from the Xperience database.
@@ -463,13 +471,13 @@ Selector |  Component attribute |  Description
 ---|---|---  
 Object code name selector |  ObjectCodeNameSelectorComponent |  Returns object code names directly instead of `ObjectRelatedItem` instances.  
 Object GUID selector |  ObjectGuidSelectorComponent |  Returns object GUIDs directly instead of `ObjectRelatedItem` instances.  
-Object ID selector |  None, assignable only via the [field editor](documentation/developers-and-admins/customization/field-editor). |  Returns the ID of a single selected object, as an `int` value.  
+Object ID selector |  None, assignable only via the [field editor](/documentation/developers-and-admins/customization/field-editor). |  Returns the ID of a single selected object, as an `int` value.  
 ### Page selector
 **Field data type** : Pages  
 **C# data type** : IEnumerable<WebPageRelatedItem>  
 **Form component attribute** : WebPageSelectorComponent
-Enables users to select [pages](documentation/business-users/website-content) from the content tree of a website channel.
-Returns a collection of `WebPageRelatedItem` objects that represent the selected pages. Each `WebPageRelatedItem` object contains a `WebPageGuid` property with the GUID of a selected page. You can use the GUIDs to [retrieve](documentation/developers-and-admins/development/content-retrieval) the selected pages and work with them in your custom components.
+Enables users to select [pages](/documentation/business-users/website-content) from the content tree of a website channel.
+Returns a collection of `WebPageRelatedItem` objects that represent the selected pages. Each `WebPageRelatedItem` object contains a `WebPageGuid` property with the GUID of a selected page. You can use the GUIDs to [retrieve](/documentation/developers-and-admins/development/content-retrieval) the selected pages and work with them in your custom components.
 #### Configuration properties
   * **TreePath** – limits the selection of pages to a subtree under a page identified by its tree path (e.g., _“/Products/Coffee-grinders”_). Only the specified page and its sub-pages can be selected. If not configured, users can select from the entire content tree of a selected website channel.
   * **MaximumPages** – sets the maximum number of selectable pages. If not specified, the default value is 1 (single page selection). 
@@ -557,10 +565,10 @@ public class PagesWithUrlPagePanelItemModifier : IWebPagePanelItemModifier
 ```
 
 ### URL selector
-This form component is currently usable only in Page or Form Builder, and [model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or [listing filter models](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#assign-filters-to-listing-pages) in the Xperience administration.
+This form component is currently usable only in Page or Form Builder, and [model-based edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or [listing filter models](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/listing-ui-page-template#assign-filters-to-listing-pages) in the Xperience administration.
 **C# data type:** string  
 **Form component attribute** : UrlSelectorComponent
-Allows content editors to insert a URL to an external resource or select a page from the [content tree](documentation/business-users/website-content) of a website channel (the selector returns [canonical URLs](documentation/business-users/website-content/manage-page-urls#select-the-canonical-url-of-pages) of pages). When used outside of a [website channel](documentation/developers-and-admins/configuration/website-channel-management), the page selection functionality is disabled and URLs can only be inserted manually in text form.
+Allows content editors to insert a URL to an external resource or select a page from the [content tree](/documentation/business-users/website-content) of a website channel (the selector returns [canonical URLs](/documentation/business-users/website-content/manage-page-urls#select-the-canonical-url-of-pages) of pages). When used outside of a [website channel](/documentation/developers-and-admins/configuration/website-channel-management), the page selection functionality is disabled and URLs can only be inserted manually in text form.
 #### Example
 C#
 **Assignment in model classes**
@@ -601,11 +609,11 @@ public class UrlSelectorUsage : ViewComponent
 **Field data type** : Smart folder  
 **C# data type** : SmartFolderReference  
 **Form component attribute** : SmartFolderSelectorComponent
-Enables users to select a [smart folder](documentation/business-users/content-hub/content-hub-folders#smart-folders).
-Returns a `SmartFolderReference` object, which contains an `Identifier` property with the GUID of the selected smart folder. You can use the GUID to [retrieve](documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders) the content items that match the filter condition of the selected smart folder.
+Enables users to select a [smart folder](/documentation/business-users/content-hub/content-hub-folders#smart-folders).
+Returns a `SmartFolderReference` object, which contains an `Identifier` property with the GUID of the selected smart folder. You can use the GUID to [retrieve](/documentation/developers-and-admins/development/content-retrieval/retrieve-content-items#retrieve-content-items-from-smart-folders) the content items that match the filter condition of the selected smart folder.
 The selector optionally enables you to restrict which smart folders are available based on the content types allowed by the filter conditions of folders. Create a filter class that implements an appropriate filter interface, and assign its type into the corresponding property of the smart folder selector attribute:
-  * **AllowedContentTypeIdentifiersFilter** – scopes the selector to offer only smart folders that include at least one of the returned [content types](documentation/developers-and-admins/development/content-types) in their filter condition (as well as smart folders that don’t filter by content type at all). The filter type class must implement the `IContentTypesNameFilter` interface. See [Example with content type scoping](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#example-with-content-type-scoping).
-  * **AllowedReusableFieldSchemaIdentifiersFilter** – scopes the selector to offer only smart folders that include at least one content type using one of the returned [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas) in their filter condition (as well as smart folders that don’t filter by content type at all). The filter type class must implement the `IReusableFieldSchemasFilter` interface. See [Example with reusable field schema scoping](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#example-with-reusable-field-schema-scoping).
+  * **AllowedContentTypeIdentifiersFilter** – scopes the selector to offer only smart folders that include at least one of the returned [content types](/documentation/developers-and-admins/development/content-types) in their filter condition (as well as smart folders that don’t filter by content type at all). The filter type class must implement the `IContentTypesNameFilter` interface. See [Example with content type scoping](#example-with-content-type-scoping).
+  * **AllowedReusableFieldSchemaIdentifiersFilter** – scopes the selector to offer only smart folders that include at least one content type using one of the returned [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) in their filter condition (as well as smart folders that don’t filter by content type at all). The filter type class must implement the `IReusableFieldSchemasFilter` interface. See [Example with reusable field schema scoping](#example-with-reusable-field-schema-scoping).
 
 
 If you do not set either property, the selector allows all smart folders that have dynamic content delivery enabled.
@@ -715,8 +723,8 @@ public class SmartFolderSelectorUsage : ViewComponent
 **Field data type** : Taxonomy  
 **C# data type** : IEnumerable<TagReference>  
 **Form component attribute** : TagSelectorComponent
-Enables users to select tags from [taxonomies](documentation/developers-and-admins/configuration/taxonomies) to associate them with the currently edited object.
-When used as an [editing component](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components), returns a collection of `TagReference` objects that contain GUIDs of the selected tags.
+Enables users to select tags from [taxonomies](/documentation/developers-and-admins/configuration/taxonomies) to associate them with the currently edited object.
+When used as an [editing component](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/editing-components), returns a collection of `TagReference` objects that contain GUIDs of the selected tags.
 #### Configuration properties
   * **TaxonomyName** – the code name of the taxonomy to offer the selection from.
   * **MinSelectedTagsCount** – the minimum number of tags that need to be selected.
@@ -764,7 +772,7 @@ public class TagSelectorUsage : ViewComponent
 ```
 
 ### General selector
-This form component is currently usable only in Page or Form Builder, and [model-based edit pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or listing filter models in the Xperience administration.
+This form component is currently usable only in Page or Form Builder, and [model-based edit pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-pages-with-forms) or listing filter models in the Xperience administration.
 **C# data type** : IEnumerable<string>  
 **Form component attribute** : GeneralSelectorComponent
 Allows users to select one or more items using a drop-down menu with a search bar. The items offered by the selector can be of any type, including external data outside of Xperience. Developers need to implement a data provider that loads and prepares the items displayed in the selector.
@@ -783,7 +791,7 @@ The general selector’s data source class must implement the `IGeneralSelectorD
 
 
 **Performance considerations**
-If you wish to load and display a very large number of items in the general selector, we recommend using pagination and implementing [caching](documentation/developers-and-admins/development/caching/data-caching) in your data provider implementation.
+If you wish to load and display a very large number of items in the general selector, we recommend using pagination and implementing [caching](/documentation/developers-and-admins/development/caching/data-caching) in your data provider implementation.
 C#
 **Assignment in model classes**
 Copy
@@ -1042,9 +1050,9 @@ Text input field that obscures user input.
 **Field data type** : Rich text (HTML)  
 **C# data type** : string  
 **Form component attribute** : RichTextEditorComponent
-Allows users to enter HTML-enriched text using the [Rich text editor](documentation/business-users/rich-text-editor).
+Allows users to enter HTML-enriched text using the [Rich text editor](/documentation/business-users/rich-text-editor).
 #### Configuration properties
-  * **ConfigurationName** – the configuration to use for the editor. See [Rich text editor configuration](documentation/developers-and-admins/configuration/rich-text-editor-configuration).
+  * **ConfigurationName** – the configuration to use for the editor. See [Rich text editor configuration](/documentation/developers-and-admins/configuration/rich-text-editor-configuration).
 
 
 ### Radio group component
@@ -1088,3 +1096,7 @@ Used to display non-editable text together with a label for informational value.
 Allows you to specify a list of allowed extensions using a simple interface. Defaults to the list of system-wide allowed extensions specified in the **Settings** application: **Content** → **Media** → **Media file allowed extensions** setting.
 #### Configuration properties
   * **AllowedExtensions** – the semicolon-delimited list of allowed extensions.
+
+
+![]()
+[]()[]()

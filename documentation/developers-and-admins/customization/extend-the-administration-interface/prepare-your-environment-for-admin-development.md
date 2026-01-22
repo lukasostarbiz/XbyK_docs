@@ -1,38 +1,45 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Customization](/documentation/developers-and-admins/customization)
+  * [Extend the administration interface](/documentation/developers-and-admins/customization/extend-the-administration-interface)
+  * Prepare your environment for admin development 
+
+
 # Prepare your environment for admin development
-  * [ Copy page link ](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#) | [Get HelpService ID](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#)
 This page provides information about the requirements and configuration necessary to get started customizing the Xperience administration interface. Find information about:
-  * [Requirements](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#requirements)
-  * [Client development boilerplate](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#client-development-boilerplate)
-    * [Naming conventions](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#naming-conventions)
-    * [Boilerplate project overview](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#boilerplate-project-overview)
-    * [Add the boilerplate to an Xperience project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#add-the-boilerplate-to-an-xperience-project)
-    * [Choose how to serve client scripts](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#choose-how-to-serve-client-scripts)
-    * [Export custom React components](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#export-custom-react-components)
-    * [Keep client packages up-to-date](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#keep-client-packages-up-to-date)
-    * [Rename the boilerplate project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#rename-the-boilerplate-project)
+  * [Requirements](#requirements)
+  * [Client development boilerplate](#client-development-boilerplate)
+    * [Naming conventions](#naming-conventions)
+    * [Boilerplate project overview](#boilerplate-project-overview)
+    * [Add the boilerplate to an Xperience project](#add-the-boilerplate-to-an-xperience-project)
+    * [Choose how to serve client scripts](#choose-how-to-serve-client-scripts)
+    * [Export custom React components](#export-custom-react-components)
+    * [Keep client packages up-to-date](#keep-client-packages-up-to-date)
+    * [Rename the boilerplate project](#rename-the-boilerplate-project)
 
 
 ## Requirements
 Depending on the scope of your planned customizations, you need some or all of the following components installed on your machine.
-To make changes to existing applications and pages (via [page extenders](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders)), or add new [pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) and [applications](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) based on [existing templates](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates), you will only be making changes to the administration back end. For this, you need:
+To make changes to existing applications and pages (via [page extenders](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-page-extenders)), or add new [pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages) and [applications](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/ui-application-pages) based on [existing templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates), you will only be making changes to the administration back end. For this, you need:
   * A development environment with support for .NET (such as [Visual Studio](https://visualstudio.microsoft.com/))
 
 
-If the default set of components is insufficient and you need custom [UI page templates](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages), [form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation rules](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules), and other components for your planned customizations, you will be developing JavaScript modules that plug into the front-end React application. For this, you also need: 
-  * A supported [Node.js](documentation/developers-and-admins/installation/system-requirements#task-specific-requirements) version
+If the default set of components is insufficient and you need custom [UI page templates](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages), [form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation rules](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules), and other components for your planned customizations, you will be developing JavaScript modules that plug into the front-end React application. For this, you also need: 
+  * A supported [Node.js](/documentation/developers-and-admins/installation/system-requirements#task-specific-requirements) version
   * A compatible package manager of your choice
   * An editor for JavaScript development with TypeScript support (such as [Visual Studio Code](https://code.visualstudio.com/))
-  * [Boilerplate project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#client-development-boilerplate) for the development of client JavaScript modules
+  * [Boilerplate project](#client-development-boilerplate) for the development of client JavaScript modules
 
 
-See [Admin UI customization model overview](documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview) for details about the structure of the admin UI customization framework and an overview of its extension points.
+See [Admin UI customization model overview](/documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview) for details about the structure of the admin UI customization framework and an overview of its extension points.
 ## Client development boilerplate
 Xperience provides a boilerplate project to help you get started writing custom client components for the admin UI. We recommend using the boilerplate to bootstrap your environment. However, using the project is not required. If you are familiar with the way the admin UI consumes custom modules, you can set up a custom process.
-The boilerplate project is available as a .NET template as part of the [Kentico.Xperience.Templates package](documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages). To install it, run the following command in a suitable directory:
+The boilerplate project is available as a .NET template as part of the [Kentico.Xperience.Templates package](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects/xperience-by-kentico-nuget-packages). To install it, run the following command in a suitable directory:
 CMD
 Copy
 ```
@@ -45,7 +52,7 @@ The project includes:
   * examples demonstrating customization options
 
 
-For more information about the contents of the boilerplate project and its default configuration, see [Boilerplate project overview](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#boilerplate-project-overview).
+For more information about the contents of the boilerplate project and its default configuration, see [Boilerplate project overview](#boilerplate-project-overview).
 ### Naming conventions
 JavaScript client modules are registered into the system based on naming conventions that use the **organization name** and **project name**. These values can be seen referenced in multiple places throughout the project.
   * In _webpack.config.js_ in the client JS module template
@@ -53,12 +60,12 @@ JavaScript client modules are registered into the system based on naming convent
   * In the _Module.cs_ class file where the client module is registered via `RegisterClientModule`
 
 
-The current version of the boilerplate package comes with hardcoded organization and project names (using a fictional **Acme** organization and the **Web.Admin** project name). See [Rename the boilerplate project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#rename-the-boilerplate-project) to learn what needs to be changed when renaming the project.
+The current version of the boilerplate package comes with hardcoded organization and project names (using a fictional **Acme** organization and the **Web.Admin** project name). See [Rename the boilerplate project](#rename-the-boilerplate-project) to learn what needs to be changed when renaming the project.
 These conventions ensure uniqueness when sharing client modules with other Xperience projects.
 ### Boilerplate project overview
 The boilerplate project is made up of two main parts:
-  1. [a Node.js project for developing JavaScript modules](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#node.js-project-overview)
-  2. [a .NET class library project](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#net-class-library-overview)
+  1. [a Node.js project for developing JavaScript modules](#node.js-project-overview)
+  2. [a .NET class library project](#net-class-library-overview)
 
 
 #### Node.js project overview
@@ -99,21 +106,21 @@ XML Copy ```
 </ItemGroup>
 ```
   
-Module.cs |  Contains [application startup code](documentation/developers-and-admins/customization/run-code-on-application-startup) used to register the client module via  C# Copy ```
+Module.cs |  Contains [application startup code](/documentation/developers-and-admins/customization/run-code-on-application-startup) used to register the client module via  C# Copy ```
 RegisterClientModule("organizationName", "projectName");
 ```
 available from the base `AdminModule` class.  
-Other files included in the class library demonstrate customization options available for the admin UI. See [Admin UI customization model overview](documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview).
+Other files included in the class library demonstrate customization options available for the admin UI. See [Admin UI customization model overview](/documentation/developers-and-admins/customization/extend-the-administration-interface/admin-ui-customization-model-overview).
 ### Add the boilerplate to an Xperience project
 Before you can start using the boilerplate to develop client code, you need to add it to your Xperience project:
-  1. Install the boilerplate project next to your Xperience project’s folder. Requires the _Kentico.Xperience.Templates_ package to be [installed](documentation/developers-and-admins/installation).
+  1. Install the boilerplate project next to your Xperience project’s folder. Requires the _Kentico.Xperience.Templates_ package to be [installed](/documentation/developers-and-admins/installation).
 CMD
 Copy
 ```
 dotnet new kentico-xperience-admin-sample -n <project_name>
 ```
 
-[![Folder structure of the custom admin project](docsassets/documentation/prepare-your-environment-for-admin-development/FolderStructure.png)](https://docs.kentico.com/docsassets/documentation/prepare-your-environment-for-admin-development/FolderStructure.png)
+[![Folder structure of the custom admin project](/docsassets/documentation/prepare-your-environment-for-admin-development/FolderStructure.png)](/docsassets/documentation/prepare-your-environment-for-admin-development/FolderStructure.png)
   2. Extract the contents next to your Xperience project’s folder.
   3. Reference the boilerplate project from your Xperience project. 
 CMD
@@ -135,7 +142,7 @@ npm run build
 
   5. Configure the client module in the Xperience web application.
     1. Open _appsettings.json_ of your Xperience project.
-    2. Add the module and configure your preferred way of [handling client scripts](documentation/developers-and-admins/customization/extend-the-administration-interface/prepare-your-environment-for-admin-development#choose-how-to-serve-client-scripts) under `CMSAdminClientModuleSettings.`
+    2. Add the module and configure your preferred way of [handling client scripts](#choose-how-to-serve-client-scripts) under `CMSAdminClientModuleSettings.`
 JSON
 **appsettings.json**
 Copy
@@ -159,7 +166,7 @@ Method |  Description
 Proxy |  The Xperience web application requests client modules from a webpack dev server that runs parallel to the Xperience application. Changes to client code are immediately integrated and don’t require a restart or rebuild of the web application.  Before you start developing, the webpack server needs to be manually started by running C# Copy ```
 npm run start
 ```
-from the root of the module folder (where _package.json_ is located). [![Proxy mode behavior diagram](docsassets/documentation/prepare-your-environment-for-admin-development/ProxyMode.png)](https://docs.kentico.com/docsassets/documentation/prepare-your-environment-for-admin-development/ProxyMode.png)  
+from the root of the module folder (where _package.json_ is located). [![Proxy mode behavior diagram](/docsassets/documentation/prepare-your-environment-for-admin-development/ProxyMode.png)](/docsassets/documentation/prepare-your-environment-for-admin-development/ProxyMode.png)  
 When configuring the module in your Xperience application, supply the following parameters:
   * Mode: `Proxy`
   * Port: the port number matching the one set for the webpack server in _webpack.config.js_ (provided with the boilerplate project). JS **webpack.config.js** Copy ```
@@ -200,7 +207,7 @@ npm run build
 
   2. Build the Xperience web application (to update the embedded resources).
 
-The following diagram summarizes the behavior of _Embedded_ mode: [![Embedded mode diagram](docsassets/documentation/prepare-your-environment-for-admin-development/EmbeddedMode.png)](https://docs.kentico.com/docsassets/documentation/prepare-your-environment-for-admin-development/EmbeddedMode.png) When configuring the module in your Xperience application, supply the following parameters:
+The following diagram summarizes the behavior of _Embedded_ mode: [![Embedded mode diagram](/docsassets/documentation/prepare-your-environment-for-admin-development/EmbeddedMode.png)](/docsassets/documentation/prepare-your-environment-for-admin-development/EmbeddedMode.png) When configuring the module in your Xperience application, supply the following parameters:
   * Mode: `Embedded`
 
 **Example appsettings.json module configuration** JSON **appsettings.json - Embedded mode configuration** Copy ```
@@ -218,7 +225,7 @@ The following diagram summarizes the behavior of _Embedded_ mode: [![Embedded mo
 
   
 ### Export custom React components
-You must export all components that you want to make available from the main Xperience admin UI application via the custom module’s **entry.tsx** file. This primarily includes all components covered in the customization section, such as [UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages), [UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) rules.
+You must export all components that you want to make available from the main Xperience admin UI application via the custom module’s **entry.tsx** file. This primarily includes all components covered in the customization section, such as [UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages), [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components), [validation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) and [visibility](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) rules.
 JS
 **Exporting custom components**
 Copy
@@ -230,7 +237,7 @@ export * from './form-components/ColorSelectorFormComponent';
 ```
 
 ### Keep client packages up-to-date
-When [updating your Xperience project](documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), remember to also update the dependencies of your admin UI client project – _@kentico/xperience-admin-base_ , _@kentico/xperience-admin-components_ , _@kentico/xperience-webpack-config_ , etc.
+When [updating your Xperience project](/documentation/developers-and-admins/installation/update-xperience-by-kentico-projects), remember to also update the dependencies of your admin UI client project – _@kentico/xperience-admin-base_ , _@kentico/xperience-admin-components_ , _@kentico/xperience-webpack-config_ , etc.
 Use the [npm-update](https://docs.npmjs.com/cli/v9/commands/npm-update) command:
 CMD
 Copy
@@ -241,7 +248,7 @@ npm update
 ```
 
 **Custom dependencies**
-In admin UI client projects, you may use any dependencies required for your functionality, except those managed by the application itself and shared across system and custom modules. The most important of these is the **React** dependency, which must match the version used by the application. For the required React version, see [System requirements](documentation/developers-and-admins/installation/system-requirements#task-specific-requirements).
+In admin UI client projects, you may use any dependencies required for your functionality, except those managed by the application itself and shared across system and custom modules. The most important of these is the **React** dependency, which must match the version used by the application. For the required React version, see [System requirements](/documentation/developers-and-admins/installation/system-requirements#task-specific-requirements).
 ### Rename the boilerplate project
 The admin UI customization framework relies on naming conventions to register JavaScript modules. All modules follow the **organizationName.projectName** naming pattern.
 You can set these parameters when creating the boilerplate project. This way the project is created and configured with the correct values.
@@ -324,3 +331,8 @@ public class Module : AdminModule
     }
 }
 ```
+
+
+
+![]()
+[]()[]()

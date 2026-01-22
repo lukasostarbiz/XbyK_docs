@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with email](/guides/digital-marketing/work-with-email)
+  * Create newsletter confirmation and unsubscription emails 
+
+
 # Create newsletter confirmation and unsubscription emails
-  * How-to| [ Copy page link ](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails#) | [Get HelpService ID](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails#) | This page is part of a module: [ Work with emails ](modules/work-with-emails)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-emails#)
 Create an email where your visitors can either confirm their subscription to or unsubscribe from a newsletter.
 This sample shows how to create a newsletter subscription and unsubscription emails.
 Do you know what it’s like working with [Xperience by Kentico](https://www.kentico.com/platforms/xperience-by-kentico)? Try our Kbank demo website and get a hands-on experience. And if you don’t have your demo site, request it through the form at [Kentico website](https://www.kentico.com/services/training/training-website-requests) and request the _Xperience by Kentico – Business Tutorial Kbank demo site_. Once you approve the request, we will automatically send you a link to the demo site. In case want to follow along, we prepared content for you. And you can also watch [this detailed video](https://www.youtube.com/watch?v=uWkV4ALAitg&list=PL9RdJplq_ukam3poVr7YEt9_IcsRoRlsC).
@@ -35,4 +41,6 @@ _Thank you._
 
 
 ### Next step
-The next guide shows you how to [create newsletter confirmation and unsubscription pages](guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-pages).
+The next guide shows you how to [create newsletter confirmation and unsubscription pages](/guides/digital-marketing/work-with-email/create-newsletter-confirmation-and-unsubscription-pages).
+![]()
+[]()[]()

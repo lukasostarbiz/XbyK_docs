@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/content-modeling-guide/choose-the-right-approach-for-storing-content
+scrape_date: 2026-01-22
+---
+
+Module: Content modeling guide
+10 of 28 Pages
 # Choose the right approach for storing content
-  * [ Copy page link ](modules/content-modeling-guide/choose-the-right-approach-for-storing-content#) | [Get HelpService ID](modules/content-modeling-guide/choose-the-right-approach-for-storing-content#)
-Core MVC 5
-
-
-[✖](modules/content-modeling-guide/choose-the-right-approach-for-storing-content# "Close page link panel") [Copy to clipboard](modules/content-modeling-guide/choose-the-right-approach-for-storing-content#)
 The method you use to store your content in Xperience affects how easily editors can reuse, update, adapt, and maintain their digital content. We’ll explore and explain the details and impacts of choosing different storage approaches, and provide recommendations for when to use each.
 ### Remember how Page Builder content is stored
 All content added directly to a Page Builder widget is stored in a single database field (_CMS_ContentItemCommonData_ → _ContentItemCommonDataVisualBuilderWidgets_), making it difficult to reuse. On the other hand, widgets that add design to structured content store only a reference to the linked content item (using the GUID value).
@@ -30,22 +32,14 @@ The following diagram shows the benefit of storing data separately from its pres
   * The widget references the selected _Author_ using its GUID. Data about the widgets’ configuration on the _Landing page_ is stored in the _DocumentPageBuilderWidgets_ database field in JSON format.
 
 
-[![Structured content reuse example](docsassets/guides/store-content/cm-guide-using-structured-content-in-content-types.png)](https://docs.kentico.com/docsassets/guides/store-content/cm-guide-using-structured-content-in-content-types.png)
+[![Structured content reuse example](/docsassets/guides/store-content/cm-guide-using-structured-content-in-content-types.png)](/docsassets/guides/store-content/cm-guide-using-structured-content-in-content-types.png)
 ### Use Content hub for reusable content
 Xperience comes with the **Content hub** application for storing reusable content. Think of the _Content hub_ as a **centralized repository** where you **create and keep your marketing content** , and potentially **reuse** it across multiple communication channels.
 In the _Content hub_ , editors create items using content types with fields where they input data. The editing forms create a unified editing experience, and adding content in the _Content hub_ feels like filling out an online form.
-[![Content type editing interface](docsassets/guides/store-content/cm-guide-hero-banner-content-type.png)](https://docs.kentico.com/docsassets/guides/store-content/cm-guide-hero-banner-content-type.png)
+[![Content type editing interface](/docsassets/guides/store-content/cm-guide-hero-banner-content-type.png)](/docsassets/guides/store-content/cm-guide-hero-banner-content-type.png)
 Because the _Content hub_ is channel agnostic, editors do not see what the content will look like once it’s displayed, for example, on the company website. They can focus **on the quality of their content** rather than getting distracted by how the content will look.
-[ Previous page ](modules/content-modeling-guide/understand-different-storing-options)
+[ Previous page ](/modules/content-modeling-guide/understand-different-storing-options)
 10 of 28
-[ Mark complete and continue ](modules/content-modeling-guide/work-with-semantic-content-types)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/content-modeling-guide/choose-the-right-approach-for-storing-content)
-[](https://docs.kentico.com/modules/content-modeling-guide/choose-the-right-approach-for-storing-content)[](https://docs.kentico.com/modules/content-modeling-guide/choose-the-right-approach-for-storing-content)
+[ Mark complete and continue ](/modules/content-modeling-guide/work-with-semantic-content-types)
+![]()
+[]()[]()

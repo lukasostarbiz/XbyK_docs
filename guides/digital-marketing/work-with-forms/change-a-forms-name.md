@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/change-a-forms-name
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Work with forms](/guides/digital-marketing/work-with-forms)
+  * Change a form's name 
+
+
 # Change a form's name
-  * Tutorial| [ Copy page link ](guides/digital-marketing/work-with-forms/change-a-forms-name#) | [Get HelpService ID](guides/digital-marketing/work-with-forms/change-a-forms-name#) | This page is part of a module: [ Contact management ](modules/contact-management)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/work-with-forms/change-a-forms-name# "Close page link panel") [Copy to clipboard](guides/digital-marketing/work-with-forms/change-a-forms-name#)
 Learn how to adjust a form’s name to follow your own naming conventions.
 When you create a new form, it comes with a generated name. However, the form’s name contains a timestamp and can seem confusing and not very informative. With a growing number of forms, you want to be able to find the form you are looking for. It’s a good practice to create your own naming convention so you can find your form with a quick glance at the form list.
   1. Navigate to the **Forms** application.
@@ -15,4 +21,6 @@ When you create a new form, it comes with a generated name. However, the form’
 
 
 ### Next step
-Learn how you can [update an existing form](guides/digital-marketing/work-with-forms/update-an-existing-form).
+Learn how you can [update an existing form](/guides/digital-marketing/work-with-forms/update-an-existing-form).
+![]()
+[]()[]()

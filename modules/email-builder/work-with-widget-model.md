@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/email-builder/work-with-widget-model
+scrape_date: 2026-01-22
+---
+
+Module: Email Builder
+6 of 13 Pages
 # Work with the widget model
-  * [ Copy page link ](modules/email-builder/work-with-widget-model#) | [Get HelpService ID](modules/email-builder/work-with-widget-model#)
-Core MVC 5
-
-
-[✖](modules/email-builder/work-with-widget-model# "Close page link panel") [Copy to clipboard](modules/email-builder/work-with-widget-model#)
 With the article widget properties in place, we need to define the data the widget will display. Create a file called **ArticleEmailWidgetModel.cs** in the _~/Features/Articles/EmailWidgets_ folder.
 The widget should not render the full text of the article directly in the email, because it is meant to drive traffic to the full version on the website. Properties for the _title_ , _teaser image_ , _summary_ , and _URL_ should be enough.
 Since we are using the Email Builder Starter Kit, we can take advantage of the pre-existing `ImageWidgetModel` class to represent the _URL_ and _alt text_ of the article teaser image.
@@ -33,7 +35,7 @@ If you do not need a portable widget, you can include your data access logic dir
 ### Implement the mapper
 Add a file called **ArticleEmailWidgetModelMapper.cs** in the _~/Features/Articles/EmailWidgets_ folder. Implement the `IComponentModelMapper<TModel>` interface from the Starter Kit.
 The **Article page** content type of the Training guides repository can link to multiple reusable article types— `Article` and `IArticleSchema`.
-These types exist to show the process of handling content model expansion over time in the [advanced content module](modules/advanced-content).
+These types exist to show the process of handling content model expansion over time in the [advanced content module](/modules/advanced-content).
 We’ll need to handle both potential scenarios in our mapping class.
 C#
 **ArticleEmailWidgetModelMapper.cs**
@@ -118,16 +120,8 @@ services.AddScoped<IComponentModelMapper<ArticleEmailWidgetModel>, ArticleEmailW
 ...
 ```
 
-[ Previous page ](modules/email-builder/set-up-widget-properties)
+[ Previous page ](/modules/email-builder/set-up-widget-properties)
 6 of 13
-[ Mark complete and continue ](modules/email-builder/build-widget-component)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/email-builder/work-with-widget-model)
-[](https://docs.kentico.com/modules/email-builder/work-with-widget-model)[](https://docs.kentico.com/modules/email-builder/work-with-widget-model)
+[ Mark complete and continue ](/modules/email-builder/build-widget-component)
+![]()
+[]()[]()

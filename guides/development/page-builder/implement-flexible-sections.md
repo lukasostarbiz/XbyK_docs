@@ -1,35 +1,41 @@
+---
+source: https://docs.kentico.com/guides/development/page-builder/implement-flexible-sections
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Page Builder](/guides/development/page-builder)
+  * Implement flexible sections 
+
+
 # Implement flexible sections
-  * How-to| [ Copy page link ](guides/development/page-builder/implement-flexible-sections#) | [Get HelpService ID](guides/development/page-builder/implement-flexible-sections#) | This page is part of a module: [ Page Builder ](modules/page-builder)
-Core MVC 5
-
-
-[✖](guides/development/page-builder/implement-flexible-sections# "Close page link panel") [Copy to clipboard](guides/development/page-builder/implement-flexible-sections#)
-[Page Builder sections](documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) are the primary way for your editors to change the layout and appearance of a page with a set template configuration. They control where widgets can be added.
+[Page Builder sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder) are the primary way for your editors to change the layout and appearance of a page with a set template configuration. They control where widgets can be added.
 Let’s go over the steps of creating a flexible Page Builder section.
 The code samples here are for a section that allows editors to change its color scheme, corner style, and number of columns. If you use these samples specifically, you’ll be able to replicate the functionality in the following screenshot:
-[![screenshot of Page Builder section demonstrating multiple layouts](docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)](https://docs.kentico.com/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)
+[![screenshot of Page Builder section demonstrating multiple layouts](/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)](/docsassets/guides/implement-flexible-sections/PageBuilderSectionSample.png)
 This image depicts four instances of the same section, each configured differently.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
-  * Familiarity with the basics of [Page Builder](documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
+  * Familiarity with the basics of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) in Xperience by Kentico.
 
 
-If you’d like to follow along with this specific example, we recommend starting from [the first guide in the Page Builder series](guides/development/page-builder/meet-requirements-with-page-builder).
+If you’d like to follow along with this specific example, we recommend starting from [the first guide in the Page Builder series](/guides/development/page-builder/meet-requirements-with-page-builder).
 **Code samples**
 You can find a project with completed, working versions of code samples from this guide and others in the [finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) of the _Training guides_ repository. The code samples in this guide revolve around creating a section called _General section_ to be located in the _~/Features/Shared/Sections/General_ folder.
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the repository provides a starting point to code along with the guides.
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
 They come from a project that uses [implicit using directives](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives). You may need to add additional `using` directives to your code if your project does not use this feature.
 ## Define the section properties
-Flexible Page Builder sections provide configurable options not only for the layout of [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones), but other aspects of their appearance as well.
+Flexible Page Builder sections provide configurable options not only for the layout of [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones), but other aspects of their appearance as well.
   1. Create a file that inherits from `ISectionProperties`.
   2. Define string properties for any text data that will be rendered in the section’s output, such as attributes for HTML elements or simple text that you plan to display on the page.
-  3. Use [dropdown components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) on string properties for lists of options relating to the appearance and structure of the section. 
+  3. Use [dropdown components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#dropdown-selector) on string properties for lists of options relating to the appearance and structure of the section. 
 Use a custom `IDropDownOptionsProvider` implementation to feed your dropdowns with more manageable or dynamically-supplied options.
-You can find more information here: [Add a custom dropdown provider for administration components](guides/development/page-builder/map-enum-to-dropdown)
+You can find more information here: [Add a custom dropdown provider for administration components](/guides/development/page-builder/map-enum-to-dropdown)
 If you need to display complicated data or take user input from the live site, use a widget and its properties rather than a section. 
 
 
@@ -76,8 +82,8 @@ public class GeneralSectionProperties : ISectionProperties
 ```
 
 If you’ve happened upon this part of the series, or you need review, you can see steps outlining the enumerations above in our previous guides about page templates:
-  * [_ColorSchemeOption_ and _CornerStyleOption_](guides/development/page-builder/create-versatile-templates-part-1#define-page-template-properties)
-  * [_ColumnLayoutOption_](guides/development/page-builder/create-versatile-templates-part-2#expand-the-template-properties)
+  * [_ColorSchemeOption_ and _CornerStyleOption_](/guides/development/page-builder/create-versatile-templates-part-1#define-page-template-properties)
+  * [_ColumnLayoutOption_](/guides/development/page-builder/create-versatile-templates-part-2#expand-the-template-properties)
 
 
 You can also find working examples in the [finished branch of the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished).
@@ -102,7 +108,7 @@ public class GeneralSectionViewModel
 ## Create a section view
 ### Build helpful components
 Consider the functionality you want to achieve with your section, and whether tools like tag helpers and view components could help achieve your goal.
-If you’re following along with the examples in this series, start by expanding [the view component from earlier in the series](guides/development/page-builder/create-versatile-templates-part-2#add-supporting-entities-for-the-view-component). Change it so that it works with both [editable areas](documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) and [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones).
+If you’re following along with the examples in this series, start by expanding [the view component from earlier in the series](/guides/development/page-builder/create-versatile-templates-part-2#add-supporting-entities-for-the-view-component). Change it so that it works with both [editable areas](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) and [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones).
   1. Add an enumeration to represent the two types of areas that the component should render.
 C#
 **PageBuilderColumnsViewComponent.cs**
@@ -333,7 +339,7 @@ Next, let’s add a view that handles the display of the data from the previous 
   1. Create a .cshtml file for the section.
   2. Ensure that any properties being rendered directly to the page are filled in.
   3. Use tag helpers and view components to extract complex display logic into modular, reusable components.
-  4. Include [widget zones](documentation/developers-and-admins/development/builders/page-builder#widget-zones) in the section, so editors can add widgets. 
+  4. Include [widget zones](/documentation/developers-and-admins/development/builders/page-builder#widget-zones) in the section, so editors can add widgets. 
 You can include widget zones in the output of a view component used in the view, or directly in the view itself.
 If you have restrictions for which widgets should be allowed, configure the `allowed-widgets` of the widget zone accordingly.
 
@@ -365,7 +371,7 @@ Copy
 </section>
 ```
 
-Find instructions for building the tag helper from this sample here: [Component style tag helper and supporting service](guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles)
+Find instructions for building the tag helper from this sample here: [Component style tag helper and supporting service](/guides/development/page-builder/create-versatile-templates-part-1#create-a-service-to-retrieve-styles)
 ## Implement and register the section.
 Finally, you need to register the section, and if you’re creating a complex section, you may also need to create a view component.
   1. Create a class with an `IDENTIFIER` constant and use it to register the Page Builder section, via the `RegisterSection` assembly attribute. 
@@ -455,4 +461,6 @@ Copy
 ```
 
 ## What’s next?
-In the [next guide of this series](guides/development/page-builder/build-simple-cta-widget), we’ll walk though the process of creating a widget that displays a simple _call to action_ (CTA) button to demonstrate widget development concepts, before moving on to [a more advanced widget](guides/development/page-builder/define-advanced-widget) for displaying products in various configurations.
+In the [next guide of this series](/guides/development/page-builder/build-simple-cta-widget), we’ll walk though the process of creating a widget that displays a simple _call to action_ (CTA) button to demonstrate widget development concepts, before moving on to [a more advanced widget](/guides/development/page-builder/define-advanced-widget) for displaying products in various configurations.
+![]()
+[]()[]()

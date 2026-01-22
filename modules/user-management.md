@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/user-management
+scrape_date: 2026-01-22
+---
+
+Module: User management
+1 of 20 Pages
 # Get started with User management
-  * [ Copy page link ](modules/user-management#) | [Get HelpService ID](modules/user-management#)
-Core MVC 5
-
-
-[✖](modules/user-management# "Close page link panel") [Copy to clipboard](modules/user-management#)
 Some of the materials in this module are not exclusive, and may look familiar if you’ve already completed other modules.
 Whether you’re growing your content team, adding a new marketing specialist, or helping a customer find out which of their data you’ve collected and stored, everyone must have the right access to get their job done – securely and efficiently.
 In this module, you’ll learn how to manage users and roles in **Xperience by Kentico**. You’ll see how to create user accounts, assign permissions, and make sure your team only has access to the tools they need. You’ll also explore how Xperience helps you meet data privacy requirements like GDPR, including how to manage personal data and respond to customer requests.
@@ -40,14 +42,6 @@ By the end of this module, you’ll be able to:
 Take control of your workspace. Make onboarding smoother, permissions smarter, and compliance easier. Let’s get started!
 Previous page
 1 of 20
-[ Mark complete and continue ](modules/user-management/user-management-essentials-introduction)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/user-management)
-[](https://docs.kentico.com/modules/user-management)[](https://docs.kentico.com/modules/user-management)
+[ Mark complete and continue ](/modules/user-management/user-management-essentials-introduction)
+![]()
+[]()[]()

@@ -1,18 +1,25 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/development/content-types/management-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Development](/documentation/developers-and-admins/development)
+  * [Content types](/documentation/developers-and-admins/development/content-types)
+  * Content type management API 
+
+
 # Content type management API
-  * [ Copy page link ](documentation/developers-and-admins/development/content-types/management-api#) | [Get HelpService ID](documentation/developers-and-admins/development/content-types/management-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/development/content-types/management-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/development/content-types/management-api#)
 **Preview feature**
 The Xperience by Kentico management API and MCP server are currently in preview mode. Expect changes in the functionality, potentially including breaking changes.
-Feel free to try out the features, for example using the sample _Dancing Goat_ [project template](documentation/developers-and-admins/installation). You can share your feedback directly with the Kentico [Product team](https://roadmap.kentico.com/).
+Feel free to try out the features, for example using the sample _Dancing Goat_ [project template](/documentation/developers-and-admins/installation). You can share your feedback directly with the Kentico [Product team](https://roadmap.kentico.com/).
 The Xperience by Kentico management API provides endpoints that allow retrieval and management (Create, Read, Update, Delete) of objects within the system. At this time, the API allows:
-  * Retrieval and management of [content types](documentation/developers-and-admins/development/content-types) and [reusable field schemas](documentation/developers-and-admins/development/content-types/reusable-field-schemas)
-  * Retrieval of information about [UI form components](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) and [data types](documentation/developers-and-admins/customization/field-editor/data-type-management) for fields
+  * Retrieval and management of [content types](/documentation/developers-and-admins/development/content-types) and [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas)
+  * Retrieval of information about [UI form components](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components) and [data types](/documentation/developers-and-admins/customization/field-editor/data-type-management) for fields
 
 
-This enables automated [content modeling](guides/architecture/content-modeling) workflows, accelerates migration scenarios, and simplifies integration with external systems that need to manage your project’s content model.
+This enables automated [content modeling](/guides/architecture/content-modeling) workflows, accelerates migration scenarios, and simplifies integration with external systems that need to manage your project’s content model.
 The management API is designed to be used via **AI tools**. Kentico provides a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) server that allows AI clients to easily discover and use the tools provided by the API.
 ## Enable the management API
 **Only for local development purposes**
@@ -25,8 +32,8 @@ To enable the content management API for a development project:
     1. Call the `AddKenticoManagementApi()` extension method on your application’s service collection. 
        * Adds controllers used by the management API. Also registers and configures services for authentication, authorization, [Swagger generation](https://swagger.io/tools/swagger-codegen/), and API versioning. If you already configure such services, place the _AddKenticoManagementApi()_ call after your configuration. Most of the configuration is scoped only to the management API endpoints, but there are exceptions (see the method’s remarks in your IDE for details).
     2. In the method’s `ManagementApiOptions` parameter, set the `Secret` property to a string with at least 32 characters. 
-       * The secret is required to authenticate all requests to the management API endpoints, and will be used in the configuration of your management API [MCP server](documentation/developers-and-admins/development/content-types/management-api#management-api-mcp-server).
-    3. Add the following to the application’s [middleware pipeline](documentation/developers-and-admins/development/website-development-basics/configure-new-projects): 
+       * The secret is required to authenticate all requests to the management API endpoints, and will be used in the configuration of your management API [MCP server](#management-api-mcp-server).
+    3. Add the following to the application’s [middleware pipeline](/documentation/developers-and-admins/development/website-development-basics/configure-new-projects): 
        * `UseAuthentication()` – adds authentication middleware. Must be called **before** _UseKentico()_.
        * `UseKenticoManagementApi()` – adds middleware required for the management API.
        * `UseAuthorization()` – adds authorization middleware. Must be called **after** _UseKentico()_.
@@ -88,12 +95,12 @@ app.Kentico().MapRoutes();
 Kentico provides an [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) server that allows AI clients to easily discover and work with the management API. The MCP server is accessible to any IDE, agent, or tool that supports MCP.
 The server **runs locally** on your development machine, and automatically generates tools for using the available management API endpoints.
 **Node.js requirement**
-To use the management API MCP server, you must have a [supported version of Node.js](documentation/developers-and-admins/installation/system-requirements#task-specific-requirements) installed on your development machine.
+To use the management API MCP server, you must have a [supported version of Node.js](/documentation/developers-and-admins/installation/system-requirements#task-specific-requirements) installed on your development machine.
 To add the MCP server:
   * Use the [@kentico/management-api-mcp](https://www.npmjs.com/package/@kentico/management-api-mcp) npm package.
   * Set the following environment variables in the server’s configuration: 
     * `MANAGEMENT_API_URL` – the URL of your locally running Xperience application, followed by the _kentico-api/management_ path.
-    * `MANAGEMENT_API_SECRET` – the secret configured when [enabling the management API](documentation/developers-and-admins/development/content-types/management-api#enable-the-management-api) for your application.
+    * `MANAGEMENT_API_SECRET` – the secret configured when [enabling the management API](#enable-the-management-api) for your application.
 
 
 See the documentation of your IDE for detailed information:
@@ -129,8 +136,8 @@ Copy
 
   3. Adjust the environment variables for your project:
      * `MANAGEMENT_API_URL` – change the port number to match the URL where your Xperience application is running.
-     * `MANAGEMENT_API_SECRET` – set the value to the secret configured when [enabling the management API](documentation/developers-and-admins/development/content-types/management-api#enable-the-management-api).
-  4. Run your Xperience application. See [Set up local hosting](documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting) for more information.
+     * `MANAGEMENT_API_SECRET` – set the value to the secret configured when [enabling the management API](#enable-the-management-api).
+  4. Run your Xperience application. See [Set up local hosting](/documentation/developers-and-admins/development/website-development-basics/set-up-local-hosting) for more information.
   5. Start the MCP server in your IDE.
 
 
@@ -146,3 +153,5 @@ Your AI agent will automatically use the MCP server’s tools when handling prom
 ### Certificate issues
 In certain cases, you may encounter certificate related errors when using the MCP server with an application running under HTTPS (i.e., you have an HTTPS URL in the server’s `MANAGEMENT_API_URL` environment variable).
 To resolve the issue, try setting the `NODE_OPTIONS` environment variable to `--use-system-ca`.
+![]()
+[]()[]()

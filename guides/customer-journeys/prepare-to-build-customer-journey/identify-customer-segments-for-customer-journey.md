@@ -1,19 +1,25 @@
+---
+source: https://docs.kentico.com/guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Customer journeys](/guides/customer-journeys)
+  * [Prepare to build customer journey](/guides/customer-journeys/prepare-to-build-customer-journey)
+  * Identify customer segments 
+
+
 # Identify customer segments
-  * Concept| [ Copy page link ](guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey#) | [Get HelpService ID](guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey#) | This page is part of a module: [ Customer journeys ](modules/customer-journeys)
-Core MVC 5
-
-
-[✖](guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey# "Close page link panel") [Copy to clipboard](guides/customer-journeys/prepare-to-build-customer-journey/identify-customer-segments-for-customer-journey#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Customer segmentation helps you categorize your audience based on shared characteristics, making personalizing communication and marketing efforts easier. Typically, marketing teams work with the following segments:
   * **Persona** – A fictional representation of an ideal customer based on research and accurate data. _Personas_ capture traits like demographics, behavior, goals, and pain points to help you effectively understand and engage with different types of users.
-  * **Contact group** – A dynamic or static collection of actual [contacts groups](documentation/business-users/digital-marketing/contact-groups) based on specific criteria, such as purchase history, engagement level, interests, or preferences. Unlike personas, contact groups consist of real people, allowing for targeted campaigns and personalized messaging.
-  * **Lead** – A potential customer who has shown interest in your business but hasn’t made a purchase or taken a key action yet. You can [collect leads](guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare) through [website sign-ups](guides/digital-marketing/work-with-forms) , inquiries, or interactions with marketing campaigns. The goal is to nurture leads and convert them into customers.
+  * **Contact group** – A dynamic or static collection of actual [contacts groups](/documentation/business-users/digital-marketing/contact-groups) based on specific criteria, such as purchase history, engagement level, interests, or preferences. Unlike personas, contact groups consist of real people, allowing for targeted campaigns and personalized messaging.
+  * **Lead** – A potential customer who has shown interest in your business but hasn’t made a purchase or taken a key action yet. You can [collect leads](/guides/customer-journeys/get-started-with-customer-journeys/how-customer-journeys-buyers-journeys-and-sales-funnels-compare) through [website sign-ups](/guides/digital-marketing/work-with-forms) , inquiries, or interactions with marketing campaigns. The goal is to nurture leads and convert them into customers.
 
 
-Use the **Contact groups** application in Xperience by Kentico to [segment your customers](documentation/business-users/digital-marketing/contact-groups) into targeted audiences. Built-in [condition rules](documentation/business-users/digital-marketing/contact-groups#set-up-dynamic-contact-groups) in Xperience let you dynamically create groups based on behavior and attributes, such as customers who _consent to marketing tracking_ , _submit specific forms_ , _register as members_ , or _visit certain pages_ at specific times.
+Use the **Contact groups** application in Xperience by Kentico to [segment your customers](/documentation/business-users/digital-marketing/contact-groups) into targeted audiences. Built-in [condition rules](/documentation/business-users/digital-marketing/contact-groups#set-up-dynamic-contact-groups) in Xperience let you dynamically create groups based on behavior and attributes, such as customers who _consent to marketing tracking_ , _submit specific forms_ , _register as members_ , or _visit certain pages_ at specific times.
 Businesses use personas, contact groups, or leads to refine their strategies to ensure that the right audience gets the right message at the right time. Let’s use “segments” or “customer segments” to refer to any segmentation types in this guide.
 ## Align customer journeys with the right segments
 A well-defined customer journey is only as good as the customers that live in it. If the customer journey for your segment is too broad, misaligned, or contradictory, your journey may not accurately reflect real customer experiences.
@@ -50,4 +56,6 @@ Using well-researched personas and meaningful contact groups in customer journey
 If your personas are poorly defined or contradict each other, contact groups overlap, or leads don’t have a clear position in your sales funnel, actions based on this customer journey may lead to wasted resources and missed opportunities. Refine content and interactions to smoothen drop-offs between neighboring customer journey stages.
 Track engagement (e.g., bounce rates, conversion rates) to see if the touchpoints resonate with the intended audience. The more accurately your customer segments represent your actual customers, the more data inform the journey stages, the more valuable and actionable your journey insights will be.
 ## Next step
-You have learned how knowing customer segments helps you build effective customer journeys. Find out about how [understanding your analytics data](guides/customer-journeys/prepare-to-build-customer-journey/gather-analytics-data.for-customer-journey) will help you in defining stages for your customer journey.
+You have learned how knowing customer segments helps you build effective customer journeys. Find out about how [understanding your analytics data](/guides/customer-journeys/prepare-to-build-customer-journey/gather-analytics-data.for-customer-journey) will help you in defining stages for your customer journey.
+![]()
+[]()[]()

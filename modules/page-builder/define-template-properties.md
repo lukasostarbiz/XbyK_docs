@@ -1,11 +1,13 @@
+---
+source: https://docs.kentico.com/modules/page-builder/define-template-properties
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+5 of 16 Pages
 # Define the template's properties
-  * [ Copy page link ](modules/page-builder/define-template-properties#) | [Get HelpService ID](modules/page-builder/define-template-properties#)
-Core MVC 5
-
-
-[✖](modules/page-builder/define-template-properties# "Close page link panel") [Copy to clipboard](modules/page-builder/define-template-properties#)
 Now that we have view models to determine the product template’s data, let’s add properties, so that editors can configure its appearance.
-The properties will utilize dropdowns fed by the dropdown provider we created [earlier in this series](modules/page-builder/map-enum-to-dropdown), so start by defining enumerations for different color scheme and corner style options.
+The properties will utilize dropdowns fed by the dropdown provider we created [earlier in this series](/modules/page-builder/map-enum-to-dropdown), so start by defining enumerations for different color scheme and corner style options.
 Decorate options with the `Description` attribute to provide user-friendly names.
   * In the _~/Features/Shared/OptionProviders/ColorScheme_ directory:
 C#
@@ -100,11 +102,11 @@ public class ProductPagePageTemplateProperties : IPageTemplateProperties
 ### Set up the template
 With the view models and service in place, we can create the page template, register it, and serve it from a controller.
 **Find more details here**
-This section briefly goes over processes covered in [Build a page template](guides/development/developer-kickstart/build-a-page-template) step of our Kickstart series. Please refer to it if you’d like more detailed steps and information in the context of a different example.
+This section briefly goes over processes covered in [Build a page template](/guides/development/developer-kickstart/build-a-page-template) step of our Kickstart series. Please refer to it if you’d like more detailed steps and information in the context of a different example.
 Note these sections in particular:
-  * [Add the page template view](guides/development/developer-kickstart/build-a-page-template#add-the-page-template-view)
-  * [Register the page template](guides/development/developer-kickstart/build-a-page-template#register-the-page-template)
-  * [Define a page template controller](guides/development/developer-kickstart/build-a-page-template#define-a-page-template-controller)
+  * [Add the page template view](/guides/development/developer-kickstart/build-a-page-template#add-the-page-template-view)
+  * [Register the page template](/guides/development/developer-kickstart/build-a-page-template#register-the-page-template)
+  * [Define a page template controller](/guides/development/developer-kickstart/build-a-page-template#define-a-page-template-controller)
 
 
 #### Define the view
@@ -163,7 +165,7 @@ public static class ProductPagePageTemplate
 #### Create the controller
   1. In the _~/Features/Products_ folder, add a file called _ProductPageController_.
   2. Use an `IContentItemRetrieverService` to get the product data from Xperience.
-  3. Use an instance of the `IProductPageService` we defined [earlier](modules/page-builder/model-template-data) to convert the `ProductPage` to a `ProductPageViewModel`.
+  3. Use an instance of the `IProductPageService` we defined [earlier](/modules/page-builder/model-template-data) to convert the `ProductPage` to a `ProductPageViewModel`.
   4. Add a new `ProductFeatureViewModel` containing the product’s price, so that it appears in the table.
 
 
@@ -230,16 +232,8 @@ We’ve been focused on code for a while, so let’s double-check that everythin
 
 Your browser does not support the video tag. 
 If you’re not seeing any output, make sure the product page type is included in the `UsePageBuilder` call during the application’s startup sequence, try putting breakpoints in the controller and view. If one or both of them is not being hit, it could indicate an issue in one of the registration attributes for the controller or page template.
-[ Previous page ](modules/page-builder/model-template-data)
+[ Previous page ](/modules/page-builder/model-template-data)
 5 of 16
-[ Mark complete and continue ](modules/page-builder/style-the-template)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/define-template-properties)
-[](https://docs.kentico.com/modules/page-builder/define-template-properties)[](https://docs.kentico.com/modules/page-builder/define-template-properties)
+[ Mark complete and continue ](/modules/page-builder/style-the-template)
+![]()
+[]()[]()

@@ -1,16 +1,18 @@
+---
+source: https://docs.kentico.com/modules/page-builder/set-up-advanced-widget
+scrape_date: 2026-01-22
+---
+
+Module: Page Builder
+13 of 16 Pages
 # Set up an advanced widget
-  * [ Copy page link ](modules/page-builder/set-up-advanced-widget#) | [Get HelpService ID](modules/page-builder/set-up-advanced-widget#)
-Core MVC 5
-
-
-[✖](modules/page-builder/set-up-advanced-widget# "Close page link panel") [Copy to clipboard](modules/page-builder/set-up-advanced-widget#)
 Now that we’ve gone over the process of building a simple widget, let’s dive into a more complex example with many configuration options.
 The code samples here are for a product widget with many properties to control which product data it shows and how the data are presented.
-Combined with the [Page templates](modules/page-builder/model-template-data) and [Page Builder section](modules/page-builder/implement-flexible-sections) from earlier in this series, it works to achieve the page designs specified by these mockups:
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)
-[![Mockup of a promotional page](docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)
-[![Mockup of a product detail page](docsassets/guides/define-advanced-widget/WidgetMockups3.png)](https://docs.kentico.com/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
-For a more detailed breakdown of how templates, sections, and widgets can be applied to achieve the mockups, check out [the start of this series](modules/page-builder/meet-requirements-with-page-builder).
+Combined with the [Page templates](/modules/page-builder/model-template-data) and [Page Builder section](/modules/page-builder/implement-flexible-sections) from earlier in this series, it works to achieve the page designs specified by these mockups:
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups1annotation2.png)
+[![Mockup of a promotional page](/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)](/docsassets/guides/define-advanced-widget/WidgetMockups2annotation2.png)
+[![Mockup of a product detail page](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)](/docsassets/guides/define-advanced-widget/WidgetMockups3.png)
+For a more detailed breakdown of how templates, sections, and widgets can be applied to achieve the mockups, check out [the start of this series](/modules/page-builder/meet-requirements-with-page-builder).
 ## Create the widget view model
 Begin with the widget view model, so that you have a focus on the final result the widget will render from the beginning.
 Focus only on what the view needs at this point. We can gather, transform, and process the data however we like between the widget’s properties and view component.
@@ -294,8 +296,8 @@ Copy
 ```
 
 Alongside the tag helpers we’ve just implemented, the sample above uses multiple tag helpers from the earlier page templates examples. You can review the details of their implementation here:
-  * [ComponentStyleTagHelper](modules/page-builder/style-the-template#apply-the-styles-with-a-tag-helper) and its [prerequisite service](modules/page-builder/style-the-template#create-a-service-to-retrieve-styles)
-  * [StyledImageTagHelper](modules/page-builder/style-the-template#create-an-image-tag-helper)
+  * [ComponentStyleTagHelper](/modules/page-builder/style-the-template#apply-the-styles-with-a-tag-helper) and its [prerequisite service](/modules/page-builder/style-the-template#create-a-service-to-retrieve-styles)
+  * [StyledImageTagHelper](/modules/page-builder/style-the-template#create-an-image-tag-helper)
 
 
 ## Define the widget’s properties
@@ -303,7 +305,7 @@ Widget properties are meant to gather only necessary data from editors. They do 
 Some widgets that operate based on hard-coded values or settings stored elsewhere do not need properties at all. However, widgets meant to empower editors with flexible options rely heavily on properties.
   1. If a flexible data source suits your scenario, create a property to determine where the widget sources its data.
 For example, a widget can use data from its page by default, and pull data from a different page depending on the value of a property. 
-  2. If more details are required based on any of the data sources, use [visibility conditions](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to display additional properties only when the corresponding option is selected.
+  2. If more details are required based on any of the data sources, use [visibility conditions](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions) to display additional properties only when the corresponding option is selected.
   3. If you are displaying structured data, add properties to determine what should be included or hidden.
 For example, your editors may want to be able to choose whether or not a thumbnail image should appear alongside text-based content. 
   4. Add properties to configure the visual display of the widget.
@@ -513,19 +515,11 @@ public enum LinkStyleOption
 }
 ```
 
-For information about creating `IDropdownOptionProvider` implementations such as the `DropdownEnumOptionProvider` in this sample, see the [custom dropdown example from earlier](modules/page-builder/map-enum-to-dropdown).
+For information about creating `IDropdownOptionProvider` implementations such as the `DropdownEnumOptionProvider` in this sample, see the [custom dropdown example from earlier](/modules/page-builder/map-enum-to-dropdown).
 
 
-[ Previous page ](modules/page-builder/build-simple-cta-widget)
+[ Previous page ](/modules/page-builder/build-simple-cta-widget)
 13 of 16
-[ Mark complete and continue ](modules/page-builder/build-advanced-widget-view-component)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/page-builder/set-up-advanced-widget)
-[](https://docs.kentico.com/modules/page-builder/set-up-advanced-widget)[](https://docs.kentico.com/modules/page-builder/set-up-advanced-widget)
+[ Mark complete and continue ](/modules/page-builder/build-advanced-widget-view-component)
+![]()
+[]()[]()

@@ -1,10 +1,17 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/content-item-asset-upload-api
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [API](/documentation/developers-and-admins/api)
+  * [Content API](/documentation/developers-and-admins/api/content-item-api)
+  * Content item asset upload API 
+
+
 # Content item asset upload API
-  * [ Copy page link ](documentation/developers-and-admins/api/content-item-api/content-item-asset-upload-api#) | [Get HelpService ID](documentation/developers-and-admins/api/content-item-api/content-item-asset-upload-api#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/api/content-item-api/content-item-asset-upload-api# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/api/content-item-api/content-item-asset-upload-api#)
-The system provides a supporting API for managing content item asset binaries (for content items with _Content item asset_ [fields](documentation/developers-and-admins/customization/field-editor)). When creating or updating asset binaries, you control where the data is sourced via the `IContentItemAssetSource` interface and its implementations.
+The system provides a supporting API for managing content item asset binaries (for content items with _Content item asset_ [fields](/documentation/developers-and-admins/customization/field-editor)). When creating or updating asset binaries, you control where the data is sourced via the `IContentItemAssetSource` interface and its implementations.
 You can use the following default implementations:
   1. `ContentItemAssetFileSource` – sources the binary data from a location on the file system. When constructing this source, provide: 
     1. filePath – the location of the asset binary.
@@ -14,8 +21,8 @@ You can use the following default implementations:
 
 
 The source is passed when constructing `ContentItemAssetMedataWithSource` objects that are used when updating or creating `ContentItemData` (the class responsible for populating content item fields) via `IContentItemManager`.
-The following excerpt only demonstrates `IContentItemAssetSource` instantiation and usage. See the [Content items](api/content-management/content-items) API examples for full code samples.
-Use the [files API](documentation/developers-and-admins/api/files-api-and-cms-io) that can be found in the **CMS.IO** namespace instead of the default **System.IO** library to ensure compatibility with various types of storage providers.
+The following excerpt only demonstrates `IContentItemAssetSource` instantiation and usage. See the [Content items](/api/content-management/content-items) API examples for full code samples.
+Use the [files API](/documentation/developers-and-admins/api/files-api-and-cms-io) that can be found in the **CMS.IO** namespace instead of the default **System.IO** library to ensure compatibility with various types of storage providers.
 C#
 **ContentItemAssetFileSource usage**
 Copy
@@ -138,3 +145,6 @@ public class ContentItemAssetUriSource : IContentItemAssetSource, IDisposable
     }
 }
 ```
+
+![]()
+[]()[]()

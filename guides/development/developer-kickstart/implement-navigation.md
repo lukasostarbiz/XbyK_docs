@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/development/developer-kickstart/implement-navigation
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Developer kickstart](/guides/development/developer-kickstart)
+  * Implement navigation 
+
+
 # Implement navigation
-  * [ Copy page link ](guides/development/developer-kickstart/implement-navigation#) | [Get HelpService ID](guides/development/developer-kickstart/implement-navigation#) | This page is part of a module: [ Xperience by Kentico Developer kickstart ](modules/developer-kickstart)
-Core MVC 5
-
-
-[✖](guides/development/developer-kickstart/implement-navigation# "Close page link panel") [Copy to clipboard](guides/development/developer-kickstart/implement-navigation#)
 With the navigation content types in place, let’s use a view component to render the _Navigation menu_ that exists in the Content hub.
 ## Create view models
 Start by creating view models that correspond to the _Navigation item_ and _Navigation menu_ classes.
@@ -22,7 +28,7 @@ public class NavigationItemViewModel
 }
 ```
 
-You might remember that in the [page template step](guides/development/developer-kickstart/build-a-page-template#add-a-view-model-class), you defined a method that created a `LandingPageViewModel` based on a `LandingPage` object.
+You might remember that in the [page template step](/guides/development/developer-kickstart/build-a-page-template#add-a-view-model-class), you defined a method that created a `LandingPageViewModel` based on a `LandingPage` object.
 We need a similar method here to create a `NavigationItemViewModel` from a `NavigationItem`.
 You can retrieve the page’s URL simply by calling the `GetUrl` extension method of `IWebPageFieldsSource`, which every web page implements. Return `null` if the provided item is `null` or missing its target.
 C#
@@ -138,7 +144,7 @@ If you copy-paste the code above, you will see a couple of issues:
 
 We will fix both of these shortly.
 Add a private method to retrieve the menu.
-To query the content items, we will use the [ContentRetriever](documentation/developers-and-admins/api/content-item-api/content-retriever-api), as we did in [the earlier step](guides/development/developer-kickstart/build-a-page-template#query-the-landing-page). This time we’ll use it’s `RetrieveContent` method to get the whole menu structure, including it’s items, based on a provided menu codename.
+To query the content items, we will use the [ContentRetriever](/documentation/developers-and-admins/api/content-item-api/content-retriever-api), as we did in [the earlier step](/guides/development/developer-kickstart/build-a-page-template#query-the-landing-page). This time we’ll use it’s `RetrieveContent` method to get the whole menu structure, including it’s items, based on a provided menu codename.
 C#
 **NavigationMenuViewComponent.cs**
 Copy
@@ -234,8 +240,10 @@ Copy
 ```
 
 With all these elements in place, you should have a working navigation menu that looks something like this:
-[![Screen recording of working navigation](docsassets/guides/implement-navigation/working-navigation.gif)](https://docs.kentico.com/docsassets/guides/implement-navigation/working-navigation.gif)
+[![Screen recording of working navigation](/docsassets/guides/implement-navigation/working-navigation.gif)](/docsassets/guides/implement-navigation/working-navigation.gif)
 If you haven’t already, check out our [Kickstart repository](https://github.com/Kentico/xperience-by-kentico-kickstart) to see the complete implementation of the website we created together in this series. To run the project, follow the _README_ instructions.
 Continue to the next step for additional exercises and resources.
 ## Continue learning
-When you’re ready, move on to the next page: [Next steps](guides/development/developer-kickstart/next-steps)
+When you’re ready, move on to the next page: [Next steps](/guides/development/developer-kickstart/next-steps)
+![]()
+[]()[]()

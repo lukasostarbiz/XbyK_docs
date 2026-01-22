@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Digital marketing](/guides/digital-marketing)
+  * [Xperience essentials](/guides/digital-marketing/xperience-essentials)
+  * Work with image variants and focal point 
+
+
 # Work with image variants and focal point
-  * [ Copy page link ](guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point#) | [Get HelpService ID](guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point#)
-Core MVC 5
-
-
-[✖](guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point# "Close page link panel") [Copy to clipboard](guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point#)
 Images bring your content to life, but they don’t always fit neatly into every space across your website, emails, and other marketing channels. A photo that looks great in a wide hero banner might not work as well in a square thumbnail or a social media preview. Instead of uploading multiple versions of the same image yourself, **Xperience by Kentico** can generate **image variants** for you and even detect the best **focal point**.
 Let’s explore how to make the most of these features in _Xperience_ so that your images are always sharp, relevant, and well-framed, no matter where they appear.
 ## What we’ll cover
@@ -28,9 +34,9 @@ For example:
   * A **social media card** might need yet another size and ratio.
 
 
-You don’t need to create these versions yourself. Once configured, Xperience automatically generates them from the **primary optimized image** you upload into [Content hub](guides/digital-marketing/xperience-essentials/manage-content-hub-essentials).
+You don’t need to create these versions yourself. Once configured, Xperience automatically generates them from the **primary optimized image** you upload into [Content hub](/guides/digital-marketing/xperience-essentials/manage-content-hub-essentials).
 Each project can have its own set of image variants, depending on the design and channel requirements. Your project’s UX and graphic designers work with developers to decide which aspect ratios and sizes are needed, and they set up the rules in advance.
-That means you don’t need to create multiple sizes of your images manually, or worry about compression settings under time pressure – you can leave the basic optimization to [AIRA](documentation/business-users/aira). If you ever find a particular variant that isn’t currently available, you can ask your administrator or developer to create one for you. You’re not restricted in how many variants your project can support.
+That means you don’t need to create multiple sizes of your images manually, or worry about compression settings under time pressure – you can leave the basic optimization to [AIRA](/documentation/business-users/aira). If you ever find a particular variant that isn’t currently available, you can ask your administrator or developer to create one for you. You’re not restricted in how many variants your project can support.
 ## Why image variants matter, and what they do
 Image variants are more than just a matter of convenience. When you upload your image assets into Content hub, _AIRA_ automatically transforms them, giving you several image variants to choose from. But what do you do with these variants once they’re ready?
 Image variants, in short, help you:
@@ -76,7 +82,7 @@ When cropping manually, keep in mind:
   * They’re marked with a crop icon so you can tell them apart from the automatically optimized variants.
 
 
-[![Manually cropped variants](docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)
+[![Manually cropped variants](/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)](/docsassets/guides/work-with-image-variants-and-focal-point/manually-cropped-image-variant.png)
 You may have noticed that each of the variants in our example is named in a way that relates to how the variant behaves. A “wide” variant retains “wide” dimensions, and a “vertical” always remains “vertical”, no matter where you move the crop box. The developers set these dimensions and the variant names during the project implementation.
 While your project setting might look different from ours – your variants may have other dimensions and different names – one thing will always remain the same. An image variant will stay within the predefined limits of its dimensions.
 ## Exercise: Upload and adjust an image
@@ -102,7 +108,7 @@ The **Primary image** is already resized and compressed by the system. This keep
     3. **Save** your changes.
 
 
-For more details on how to manunally adjust an image, see how to [optimize image assets](documentation/business-users/content-hub/content-item-assets#optimize-image-assets).
+For more details on how to manunally adjust an image, see how to [optimize image assets](/documentation/business-users/content-hub/content-item-assets#optimize-image-assets).
 ### 3. Preview variants
   1. Open the uploaded image asset in _Content hub_.  
 
@@ -134,9 +140,9 @@ You cannot share the image variant via URL without publishing it, so **always pu
 ### 6. Share an image variant via URL
 You updated the focal point and manually adjusted the image variants to your liking. Satisfied with your work, you want to share the asset outside _Xperience_ , for example, on social media.
 You can:
-  * Copy the **URL of the primary image** , which is already optimized for online use. [![Copy primary image URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)
-  * Copy the **URL of a specific variant** , if you need a certain size or crop. [![Copy image variant URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)
-  * Or copy the **URL of the whole asset**. [![Copy asset URL](docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)](https://docs.kentico.com/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)
+  * Copy the **URL of the primary image** , which is already optimized for online use. [![Copy primary image URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-primary-image-URL.png)
+  * Copy the **URL of a specific variant** , if you need a certain size or crop. [![Copy image variant URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-image-variant-URL.png)
+  * Or copy the **URL of the whole asset**. [![Copy asset URL](/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)](/docsassets/guides/work-with-image-variants-and-focal-point/copy-asset-URL.png)
 
 
 Downloading the original uploaded image asset isn’t available yet, but watch our [roadmap](https://roadmap.kentico.com/tabs/6-next-refreshes) to stay updated on the latest refreshes.
@@ -150,7 +156,7 @@ Here are a few best practices to keep in mind when working with image variants a
 
   * Always preview your image variants before publishing.  
 
-  * If you need an image that cannot be in any way adjusted, cropped or focused, e.g., for legal or copyright reasons, store it as a [restricted image content type](guides/architecture/content-modeling/content-modeling-guide/store-files#restricted-image-content-type).
+  * If you need an image that cannot be in any way adjusted, cropped or focused, e.g., for legal or copyright reasons, store it as a [restricted image content type](/guides/architecture/content-modeling/content-modeling-guide/store-files#restricted-image-content-type).
   * Share optimized images and variants via URL in just a few clicks.
 
 
@@ -158,4 +164,6 @@ Here are a few best practices to keep in mind when working with image variants a
 You’ve seen that with image variants and focal points, you don’t need to manually create multiple versions of the same image. Instead, you can rely on Xperience’s intuitive automation to guide you to **better pictures with far less effort**. And if you still want some control over how your images look and display? Play with finding your own sweet spot between **leveraging AIRA’s automated image optimization capabilities and manually adjusting image variants** where necessary.
 The result? You’ll work faster, but your visuals will always look great, no matter where they appear on your website or beyond.
 ## Next step
-You’ve now learned the basics of working with image variants, focal point, and cropping. To further enhance your skills, explore additional resources on Xperience’s digital marketing capabilities in our [content management](guides/digital-marketing/xperience-essentials/manage-content-essentials-next-steps) guide.
+You’ve now learned the basics of working with image variants, focal point, and cropping. To further enhance your skills, explore additional resources on Xperience’s digital marketing capabilities in our [content management](/guides/digital-marketing/xperience-essentials/manage-content-essentials-next-steps) guide.
+![]()
+[]()[]()

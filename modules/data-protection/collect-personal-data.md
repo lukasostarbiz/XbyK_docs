@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/data-protection/collect-personal-data
+scrape_date: 2026-01-22
+---
+
+Module: Data protection
+11 of 13 Pages
 # Collect personal data
-  * [ Copy page link ](modules/data-protection/collect-personal-data#) | [Get HelpService ID](modules/data-protection/collect-personal-data#)
-Core MVC 5
-
-
-[✖](modules/data-protection/collect-personal-data# "Close page link panel") [Copy to clipboard](modules/data-protection/collect-personal-data#)
 ### Prepare to collect forms
 While many of the objects that need to be collected are relatively straightforward, containing a set of known columns, including a reference to the _contact_ type, form submissions are more complicated.
 The columns of forms are defined by editors in the Xperience administration interface. For this reason, there is no way to anticipate which columns the forms will consist of, and they cannot be explicitly referenced in code in advance.
@@ -799,18 +801,10 @@ var serviceProvider = parameters.Services.GetRequiredService<IServiceProvider>()
 
 
 Now, the system will use this data collector on the **Data portability** and **Right to access** tabs of the **Data protection** application in the **Configuration** section of the Xperience administration interface.
-If you search the email address of an existing contact on one of these tabs, Xperience will use this data collector, in conjunction with the identity collector from [earlier in this series](modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor), to retrieve data associated with that contact. See an example in the following video:
+If you search the email address of an existing contact on one of these tabs, Xperience will use this data collector, in conjunction with the identity collector from [earlier in this series](/modules/data-protection/identity-collectors-gather-contacts-associated-with-a-visitor), to retrieve data associated with that contact. See an example in the following video:
 Your browser does not support the video tag. 
-[ Previous page ](modules/data-protection/prepare-data-writers)
+[ Previous page ](/modules/data-protection/prepare-data-writers)
 11 of 13
-[ Mark complete and continue ](modules/data-protection/data-erasers-clear-contact-information-from-the-site)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/data-protection/collect-personal-data)
-[](https://docs.kentico.com/modules/data-protection/collect-personal-data)[](https://docs.kentico.com/modules/data-protection/collect-personal-data)
+[ Mark complete and continue ](/modules/data-protection/data-erasers-clear-contact-information-from-the-site)
+![]()
+[]()[]()

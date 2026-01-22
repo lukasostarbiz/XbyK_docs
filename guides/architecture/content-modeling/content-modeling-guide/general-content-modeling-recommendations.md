@@ -1,32 +1,39 @@
+---
+source: https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Architecture](/guides/architecture)
+  * [Content modeling](/guides/architecture/content-modeling)
+  * [Content modeling guide](/guides/architecture/content-modeling/content-modeling-guide)
+  * General content modeling recommendations 
+
+
 # General content modeling recommendations
-  * Concept| [ Copy page link ](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#) | [Get HelpService ID](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#)
-Core MVC 5
-
-
-[✖](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations# "Close page link panel") [Copy to clipboard](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#)
 ## About this guide
-This page is a part of the **Content modeling guide** which you should follow sequentially from [beginning to end](guides/architecture/content-modeling/content-modeling-guide). You can also follow this series in [Content modeling guide](modules/content-modeling-guide), which helps you keep track of your progress as you move through this sequential material.
+This page is a part of the **Content modeling guide** which you should follow sequentially from [beginning to end](/guides/architecture/content-modeling/content-modeling-guide). You can also follow this series in [Content modeling guide](/modules/content-modeling-guide), which helps you keep track of your progress as you move through this sequential material.
 ## Plan your content model around business needs
 A good content model that matches your business’s unique requirements and challenges is vital to a successful online presence. When deciding how to model content in Xperience, always respect the project’s business requirements and the preferences of website editors and marketers.
 On this page, you can learn about general recommendations that you or your developers should consider when planning the content model for your project.
 ## Digital marketing features
 Xperience comes with a set of digital marketing features. Marketers can use these features to attract new customers, promote content, or automate workflows to keep in touch with existing customers. Using digital marketing can directly impact your content model and how content editors work with the content.
-Find out more about the digital marketing features in the [documentation](documentation/business-users/digital-marketing).
+Find out more about the digital marketing features in the [documentation](/documentation/business-users/digital-marketing).
 **Recommendations – Digital marketing**
   * If you want to leverage the built-in digital marketing features, **store your content in the Content hub** and **use Page Builder widgets and page templates to display it**.
-  * We recommend using Page Builder on pages where your editors benefit from [content personalization](documentation/business-users/digital-marketing/widget-personalization). Marketers can personalize their content based on contact groups across the website. 
+  * We recommend using Page Builder on pages where your editors benefit from [content personalization](/documentation/business-users/digital-marketing/widget-personalization). Marketers can personalize their content based on contact groups across the website. 
     * Typical examples of content personalization include **frequently changed pages** , such as the website’s home page, campaign landing pages, or thank-you pages. Marketers create variants of content that is dynamically displayed to different visitors based on visitors’ previous interactions with the website and business.
     * Less common scenarios include personalization on **pages that display aggregated content**. For example, an _Articles_ listing page can contain an editable area with a _Featured articles_ widget. Editors can personalize the widget and offer different featured articles to visitors based on their assigned contact groups or based on the phase of the visitors’ contact journey.
     * Developers need to **prepare custom Page Builder widgets** that allow editors to personalize content based on contact groups.
-  * Use custom content assets type and **store your images, PDFs, videos, and other similar media in the Content hub**. If you need to upload large amounts of data in bulk, use [mass asset upload](documentation/business-users/content-hub/content-item-assets#mass-asset-upload).
-  * For collecting data from users, we recommend using **built-in[forms](documentation/business-users/digital-marketing/forms)**. Ensure that your editors have rich options for customization of their forms via custom [Form Builder components](documentation/developers-and-admins/development/builders/form-builder). Include requirements for custom form components, their styling properties, or custom form section properties in your project requirements. Once developers prepare your project, editors can adjust their forms’ layout to match the rest of the pages.
-  * We recommend using the [Data protection](documentation/developers-and-admins/data-protection) and [cookies](documentation/developers-and-admins/data-protection/cookies) functionality to ensure your website complies with relevant legislation.
+  * Use custom content assets type and **store your images, PDFs, videos, and other similar media in the Content hub**. If you need to upload large amounts of data in bulk, use [mass asset upload](/documentation/business-users/content-hub/content-item-assets#mass-asset-upload).
+  * For collecting data from users, we recommend using **built-in[forms](/documentation/business-users/digital-marketing/forms)**. Ensure that your editors have rich options for customization of their forms via custom [Form Builder components](/documentation/developers-and-admins/development/builders/form-builder). Include requirements for custom form components, their styling properties, or custom form section properties in your project requirements. Once developers prepare your project, editors can adjust their forms’ layout to match the rest of the pages.
+  * We recommend using the [Data protection](/documentation/developers-and-admins/data-protection) and [cookies](/documentation/developers-and-admins/data-protection/cookies) functionality to ensure your website complies with relevant legislation.
 
 
 ## General content modeling recommendations
 **Routing and URLs**
-We recommend using [content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing) for most scenarios. With content tree-based routing, the system generates ULRs for pages based on their position in the content tree. The content tree-based routing also allows editors to easily [change the URL slugs of their pages](documentation/business-users/website-content/manage-page-urls) and store the URL history in the **Former URLs** application. 
-Sometimes, editors use characters considered suboptimal (or even invalid) for URLs. For example, some accented characters from extended Latin alphabets, such as _ö_ , can be encoded into SEO-suboptimal URL slugs. We recommend building [custom field validation](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) on any URL-related page type fields and constraining forbidden (or suboptimal) URL characters. To validate custom URL fields, your code can reference the _Settings_ for URLs in the administration. You can use the `ISettingsService` and [retrieve specified URL restrictions](documentation/developers-and-admins/configuration/settings).
+We recommend using [content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing) for most scenarios. With content tree-based routing, the system generates ULRs for pages based on their position in the content tree. The content tree-based routing also allows editors to easily [change the URL slugs of their pages](/documentation/business-users/website-content/manage-page-urls) and store the URL history in the **Former URLs** application. 
+Sometimes, editors use characters considered suboptimal (or even invalid) for URLs. For example, some accented characters from extended Latin alphabets, such as _ö_ , can be encoded into SEO-suboptimal URL slugs. We recommend building [custom field validation](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) on any URL-related page type fields and constraining forbidden (or suboptimal) URL characters. To validate custom URL fields, your code can reference the _Settings_ for URLs in the administration. You can use the `ISettingsService` and [retrieve specified URL restrictions](/documentation/developers-and-admins/configuration/settings).
 **Aim for content reusability**
 Follow a simple rule of thumb: if there is a chance that specific content will appear on the same website in multiple places or various channels of marketing communication, use structured content and **store your reusable content items in the Content hub**.
 **Ensure a seamless editing experience**
@@ -52,16 +59,16 @@ We recommend that
 
 ## Model navigation
 Website navigation helps users find the content they are looking for. Well-ordered navigation menus provide an overview of how the website’s content or its segments are structured. It can also keep users engaged and lead them to explore more of the site.
-There are different approaches to modeling navigation that you can consider. The following text highlights the recommended approach. At the same time, your project requirement might differ and you’ll need to reach for a different approach for modeling navigation. That’s why we have collected examples suitable for Xperience projects into a dedicated [model website navigation](guides/architecture/content-modeling/model-website-content-types/model-website-navigation) guide.
-We recommend modeling website navigation via reusable [content items](documentation/business-users/content-hub). Developers prepare dedicated content types for individual _Navigation items_ as well as for the _Website navigation_ as a whole. Editors then manually build the website navigation in the content hub. Based on the site’s designs, they create the hierarchy and desired order of individual menu items that developers then display in the relevant locations. The editors can also organize the content items used for website navigation into [folders](documentation/business-users/content-hub/content-hub-folders#content-folders) in the content hub. This way they can make the menu hierarchy more visual and easily see in which channel application the navigation items are used.
-What about modeling navigation using dedicated [website pages](documentation/business-users/website-content) without URLs within the content tree which was common in Kentico 13 and older versions?
-In Xperience, this approach is less optimal, as it clutters the content tree with items that do not represent actual pages on the live site, which can be confusing to your content editors. See the [guide about navigation](guides/architecture/content-modeling/model-website-content-types/model-website-navigation) to learn about additional options and practices to follow if you decide to place navigation into the content tree.
+There are different approaches to modeling navigation that you can consider. The following text highlights the recommended approach. At the same time, your project requirement might differ and you’ll need to reach for a different approach for modeling navigation. That’s why we have collected examples suitable for Xperience projects into a dedicated [model website navigation](/guides/architecture/content-modeling/model-website-content-types/model-website-navigation) guide.
+We recommend modeling website navigation via reusable [content items](/documentation/business-users/content-hub). Developers prepare dedicated content types for individual _Navigation items_ as well as for the _Website navigation_ as a whole. Editors then manually build the website navigation in the content hub. Based on the site’s designs, they create the hierarchy and desired order of individual menu items that developers then display in the relevant locations. The editors can also organize the content items used for website navigation into [folders](/documentation/business-users/content-hub/content-hub-folders#content-folders) in the content hub. This way they can make the menu hierarchy more visual and easily see in which channel application the navigation items are used.
+What about modeling navigation using dedicated [website pages](/documentation/business-users/website-content) without URLs within the content tree which was common in Kentico 13 and older versions?
+In Xperience, this approach is less optimal, as it clutters the content tree with items that do not represent actual pages on the live site, which can be confusing to your content editors. See the [guide about navigation](/guides/architecture/content-modeling/model-website-content-types/model-website-navigation) to learn about additional options and practices to follow if you decide to place navigation into the content tree.
 You can also ask developers to build a custom _Menu widget_. Editors can place the widget into appropriate section and select which content items the widget processes into a submenu. Similarly, you can request a custom _Breadcrumbs menu_ widget. When an editor places the widget onto the page, the widget automatically displays the breadcrumb path to the page’s location.
 Depending on your project’s requirements, the _Navigation item_ content type may contain some or all of the following properties:
-  * Page to link to – a page from the content tree that is selectable using the [Page selector](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). The selector populates its assigned field with the GUID of the selected page, which developers can use to [retrieve the URL](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) of the linked page.
+  * Page to link to – a page from the content tree that is selectable using the [Page selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components). The selector populates its assigned field with the GUID of the selected page, which developers can use to [retrieve the URL](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content/retrieve-page-urls) of the linked page.
   * Depending on the project’s requirements, you may want to add some of the following fields: 
     * External link 
-      * Developers can use the [URL validation rule](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) to ensure the URLs passed by editors are valid.
+      * Developers can use the [URL validation rule](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-validation-rules) to ensure the URLs passed by editors are valid.
     * Link title
     * Link caption
     * Link icon
@@ -69,15 +76,15 @@ Depending on your project’s requirements, the _Navigation item_ content type m
 
 
 The _Website navigation_ content type then contains all the _Navigation items_ that are displayed in the navigation menu.
-For more information and a sample implementation, see [this page of our Developer kickstart](guides/development/developer-kickstart/model-navigation). For complex overview of approaches to modeling navigation, see a dedicated guide [Model website navigation](guides/architecture/content-modeling/model-website-content-types/model-website-navigation).
+For more information and a sample implementation, see [this page of our Developer kickstart](/guides/development/developer-kickstart/model-navigation). For complex overview of approaches to modeling navigation, see a dedicated guide [Model website navigation](/guides/architecture/content-modeling/model-website-content-types/model-website-navigation).
 ## Website system pages
 A good website administration experience doesn’t only mean that editors can easily create and manage website content. A well-structured website offers editors ways to adjust system-specific features without asking developers for help whenever they need to change the website’s SEO performance. For example, you can create a ”Website settings” section in the content tree and create specific page types that content administrators can use to change system settings. We recommend including the following system pages in your project:
-  * [Search result pages](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#search-result-pages)
-  * [Consent settings page](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#consent-settings-page)
-  * [SEO-specific pages](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#seo-specific-pages)
-    * [Sitemap](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#sitemap)
-    * [Error pages](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#error-pages)
-    * [Robots.txt and no-indexing content](guides/architecture/content-modeling/content-modeling-guide/general-content-modeling-recommendations#robots.txt-and-no-indexing-content)
+  * [Search result pages](#search-result-pages)
+  * [Consent settings page](#consent-settings-page)
+  * [SEO-specific pages](#seo-specific-pages)
+    * [Sitemap](#sitemap)
+    * [Error pages](#error-pages)
+    * [Robots.txt and no-indexing content](#robots.txt-and-no-indexing-content)
 
 
 ### Search result pages
@@ -85,12 +92,12 @@ Xperience doesn’t currently provide any solution out of the box that will sear
 **Recommendations – Search**
 Considering your project requirements, we recommend using one of the available integrations with [Algolia Search](https://github.com/Kentico/xperience-by-kentico-algolia), [Lucene Search](https://github.com/Kentico/xperience-by-kentico-lucene), or [Azure AI Search](https://github.com/Kentico/xperience-by-kentico-azure-ai-search).
 ### Consent settings page
-Xperience comes with extensive [Data protection](documentation/developers-and-admins/data-protection) functionality that allows for building websites compliant with many different e-privacy laws and legislation.
+Xperience comes with extensive [Data protection](/documentation/developers-and-admins/data-protection) functionality that allows for building websites compliant with many different e-privacy laws and legislation.
 Administrators can use the data protection features to create and manage tracking consents or easily remove personal data from the administration UI. Once the personal data is in the system, marketers can easily use the built-in Xperience online marketing features, e.g., ensure that marketing emails are sent only to visitors who provided appropriate consent.
 To comply with data privacy regulations, developers must implement data collection and erasure features to match project requirements and accommodate how the website gathers, processes, and stores personal data.
 Find out more about customer data protection in Xperience:
-  * [Customer data management](documentation/business-users/digital-marketing/contact-management)
-  * [Data protection](documentation/developers-and-admins/data-protection)
+  * [Customer data management](/documentation/business-users/digital-marketing/contact-management)
+  * [Data protection](/documentation/developers-and-admins/data-protection)
 
 
 **Recommendations – Consents**
@@ -146,3 +153,5 @@ The key points for building content models are:
 
 
 Happy content modeling!
+![]()
+[]()[]()

@@ -1,17 +1,22 @@
+---
+source: https://docs.kentico.com/api/digital-marketing/contact-groups
+scrape_date: 2026-01-22
+---
+
+  * [Home](/api)
+  * [Digital marketing](/api/digital-marketing)
+  * Contact groups 
+
+
 # Contact groups
-  * [ Copy page link ](api/digital-marketing/contact-groups#) | [Get HelpService ID](api/digital-marketing/contact-groups#)
-Core MVC 5
-
-
-[✖](api/digital-marketing/contact-groups# "Close page link panel") [Copy to clipboard](api/digital-marketing/contact-groups#)
   
 List of examples:
-  * [Dependency injection](api/digital-marketing/contact-groups#dependency-injection)
-    * [Initialize required services](api/digital-marketing/contact-groups#initialize-required-services)
-    * [Create contact groups](api/digital-marketing/contact-groups#create-contact-groups)
-    * [Update contact groups](api/digital-marketing/contact-groups#update-contact-groups)
-    * [Update multiple contact groups](api/digital-marketing/contact-groups#update-multiple-contact-groups)
-    * [Delete contact groups](api/digital-marketing/contact-groups#delete-contact-groups)
+  * [Dependency injection](#dependency-injection)
+    * [Initialize required services](#initialize-required-services)
+    * [Create contact groups](#create-contact-groups)
+    * [Update contact groups](#update-contact-groups)
+    * [Update multiple contact groups](#update-multiple-contact-groups)
+    * [Delete contact groups](#delete-contact-groups)
 
 
 ## Dependency injection
@@ -36,7 +41,7 @@ public ContactGroupsServices(IInfoProvider<ContactInfo> contactInfoProvider,
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contact-groups#toc)
+[> Back to list of examples](#toc)
 ### Create contact groups
 C#
 Copy
@@ -57,7 +62,7 @@ ContactGroupInfo newGroup = new ContactGroupInfo()
 contactGroupInfoProvider.Set(newGroup);
 ```
 
-[> Back to list of examples](api/digital-marketing/contact-groups#toc)
+[> Back to list of examples](#toc)
 ### Update contact groups
 C#
 Copy
@@ -75,7 +80,7 @@ if (updateGroup != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contact-groups#toc)
+[> Back to list of examples](#toc)
 ### Update multiple contact groups
 C#
 Copy
@@ -94,7 +99,7 @@ foreach (ContactGroupInfo group in groups)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contact-groups#toc)
+[> Back to list of examples](#toc)
 ### Delete contact groups
 C#
 Copy
@@ -109,4 +114,6 @@ if (deleteGroup != null)
 }
 ```
 
-[> Back to list of examples](api/digital-marketing/contact-groups#toc)
+[> Back to list of examples](#toc)
+![]()
+[]()[]()

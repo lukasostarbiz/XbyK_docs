@@ -1,21 +1,27 @@
+---
+source: https://docs.kentico.com/guides/development/members/require-authentication-for-certain-content
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Members](/guides/development/members)
+  * Require authentication for certain content 
+
+
 # Require authentication for certain content
-  * How-to| [ Copy page link ](guides/development/members/require-authentication-for-certain-content#) | [Get HelpService ID](guides/development/members/require-authentication-for-certain-content#)
-Core MVC 5
-
-
-[✖](guides/development/members/require-authentication-for-certain-content# "Close page link panel") [Copy to clipboard](guides/development/members/require-authentication-for-certain-content#)
 When a business decides to include members in their project, they typically have some kind of exclusive content that only members should be able to see.
 As a result, developers must ensure that only signed-in members can see certain content.
 Luckily, Xperience and .NET Identity both include functionality to facilitate this process.
 ## Before you start
 This guide requires the following:
   * Familiarity with [C#](https://learn.microsoft.com/en-us/dotnet/csharp/), [.NET Core](https://learn.microsoft.com/en-us/dotnet/), [.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity), [Dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection), and the [MVC pattern](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview).
-  * A running instance of Xperience by Kentico, preferably [30.11.1](documentation/changelog) or higher. 
+  * A running instance of Xperience by Kentico, preferably [30.11.1](/documentation/changelog) or higher. 
 Some features covered in the training guides may not work in older versions. 
 
 
 **Code samples**
-The code samples in this guide rely on code from previous guides in the [Members series](guides/development/members).
+The code samples in this guide rely on code from previous guides in the [Members series](/guides/development/members).
 You can find a project with completed, working versions of code samples from this guide and others in the [finished branch](https://github.com/Kentico/xperience-by-kentico-training-guides/tree/finished) of the _Training guides_ repository.
 The [main branch](https://github.com/Kentico/xperience-by-kentico-training-guides) of the repository provides a starting point to code along with the guides.
 The code samples in this guide are for [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8/overview) only.
@@ -27,18 +33,18 @@ In the Xperience admin UI, open a _website channel_ where you want to secure a p
 Then, select the page you want to secure in the content tree, and switch to the **Properties** tab.
 Expand the **Membership** section and tick the box to require authentication, before clicking to publish the change.
 For this example, choose one of the article pages under the **News and articles** page of the **Training guides pages** channel.
-Depending on whether you’ve completed the [advanced content guides](guides/development/advanced-content), some articles might not work. Make sure you choose one that renders properly.
-[![Screenshot of the membership properties of a page](docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)
+Depending on whether you’ve completed the [advanced content guides](/guides/development/advanced-content), some articles might not work. Make sure you choose one that renders properly.
+[![Screenshot of the membership properties of a page](/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)](/docsassets/guides/require-authentication-for-certain-content/WebPageRequireAuthentication.png)
 ### Restrict a reusable item in the Content hub
 In the **Content hub** , edit the item you want to secure.
 Select the **Properties** tab and tick the box to require authentication under the **Security** heading.
 For this example, choose one of the reusable articles referenced by a page under the **News and articles** page of the **Training guides pages** channel.
 Make sure it’s from a page that renders properly, and is **NOT** associated with the page you chose in the previous section. **DO NOT** secure the page that references this reusable item, only secure the reusable item itself.
-[![Screenshot of the security properties of a reusable content item](docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)
+[![Screenshot of the security properties of a reusable content item](/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)](/docsassets/guides/require-authentication-for-certain-content/ReusableItemRequireAuthentication.png)
 ## Handle the 403 HTTP status code
 The _403 Forbidden_ error code is used in web development to indicate that someone does not have access to a resource.
 Both Xperience and .NET Identity follow this convention in ways that are relevant to our scenario:
-  * Xperience’s [Content tree-based router](documentation/developers-and-admins/development/routing/content-tree-based-routing) returns this status code when a secured page is requested by an unauthenticated visitor.
+  * Xperience’s [Content tree-based router](/documentation/developers-and-admins/development/routing/content-tree-based-routing) returns this status code when a secured page is requested by an unauthenticated visitor.
   * .NET Identity offers [configuration](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration?view=aspnetcore-9.0#cookie-settings) to redirect requests that return this status code to a certain path, such as a sign-in page.
 
 
@@ -283,18 +289,18 @@ public class SignInWidgetViewComponent : ViewComponent
 }
 ```
 
-See [this section of the language selector guide](guides/development/multilingual/implement-language-selector-for-your-website#handle-urls-and-routing) or [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/Services/HttpRequestService.cs) for details about how to implement the `GetBaseUrlWithLanguage` method.
+See [this section of the language selector guide](/guides/development/multilingual/implement-language-selector-for-your-website#handle-urls-and-routing) or [the Training guides repository](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Shared/Services/HttpRequestService.cs) for details about how to implement the `GetBaseUrlWithLanguage` method.
 If you ensure the return URL only works with relative paths, you can prevent attackers from exploiting the query string to redirect members to phishing sites after successful authentication on your site.
 ## See the redirect in action
 Now the sign in form should correctly redirect you to the _return URL_ after you authenticate.
 Your browser does not support the video tag. 
-However, you may notice that even if you followed along [earlier](guides/development/members/require-authentication-for-certain-content#restrict-a-reusable-item-in-the-content-hub) and set a reusable item to require authentication, it is still visible to signed out users on the page.
-[![Screenshot of the ‘About frogs’ article displaying on the site even though the underlying reusable item is secured](docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)](https://docs.kentico.com/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)
+However, you may notice that even if you followed along [earlier](#restrict-a-reusable-item-in-the-content-hub) and set a reusable item to require authentication, it is still visible to signed out users on the page.
+[![Screenshot of the ‘About frogs’ article displaying on the site even though the underlying reusable item is secured](/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)](/docsassets/guides/require-authentication-for-certain-content/AboutFrogsUnsecured.png)
 This happens because the web page that references this reusable article is not secured. The _content tree-based router_ only knows to check security of the pages it is retrieving, and not any reusable content they might reference.
 ## Handle secured reusable content
 Ideally, content editors should mark all pages that reference secured items to require authentication, but we shouldn’t assume that they will never make mistakes.
 When pages display reusable content, you need one of the following approaches to for security:
-  1. Set the query that retrieves the content to [filter out secured items](documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration).
+  1. Set the query that retrieves the content to [filter out secured items](/documentation/developers-and-admins/development/content-retrieval/retrieve-page-content#page-security-configuration).
   2. Check the `ContentItemIsSecured` value of the linked items you want to secure, and react accordingly. For example, you can redirect or display an error message.
 
 
@@ -331,7 +337,7 @@ public bool IsReusableArticleSecured(ArticlePage articlePage)
 ...
 ```
 
-Depending on whether you’ve followed along with the [Advanced content](guides/development/advanced-content) series, the `ArticlePageArticleContent` field may or may not exist in the `ArticlePage` type.
+Depending on whether you’ve followed along with the [Advanced content](/guides/development/advanced-content) series, the `ArticlePageArticleContent` field may or may not exist in the `ArticlePage` type.
 Then, use your new method in the article page controller, returning the _403 Forbidden_ status code when the current visitor is unauthenticated and the item is secured.
 C#
 **ArticlePageController.cs**
@@ -395,3 +401,5 @@ Specifically, check out:
 
 
 The branch also contains other useful features for your reference, like [password reset functionality](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Membership/Widgets/ResetPassword) and a [dynamic widget](https://github.com/Kentico/xperience-by-kentico-training-guides/blob/finished/src/TrainingGuides.Web/Features/Membership/Widgets/LinkOrSignOut) that shows a sign-out button or a link depending on whether or not the current visitor is authenticated.
+![]()
+[]()[]()

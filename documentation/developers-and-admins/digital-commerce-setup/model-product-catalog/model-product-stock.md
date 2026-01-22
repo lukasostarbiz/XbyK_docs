@@ -1,25 +1,32 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * [Digital commerce setup](/documentation/developers-and-admins/digital-commerce-setup)
+  * [Product catalog](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog)
+  * Model product stock 
+
+
 # Model product stock
-  * [ Copy page link ](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#) | [Get HelpService ID](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#)
-Core MVC 5
-
-
-[✖](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock# "Close page link panel") [Copy to clipboard](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#)
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
 Product stock management is a critical component of any commerce system. This page covers key considerations for implementing a product stock model in Xperience by Kentico.
 The product stock model manages the relationship between products and their available quantities. It provides functionality to track, update, and display stock levels while handling various business scenarios such as purchases, returns, and restocking. We recommend that you implement the product stock model as a custom module to ensure flexibility and maintainability.
 To create a custom product stock management module, follow these main steps:
-  1. Create the core [custom module](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#product-stock-module) with database structure and object dependencies.
-  2. Build [administration interfaces](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#management-interfaces) for listing and editing product stock records.
-  3. Implement automatic or manual [stock record creation processes](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#product-stock-creation).
-  4. Handle [business logic](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#business-logic-implementation) of stock updates for purchases, returns, and reservations.
-  5. Implement [validation and business rules](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#validation-and-business-rules) to ensure data integrity and implement business constraints.
-  6. [Display product stock](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#display-product-stock) information to customers on your storefront.
+  1. Create the core [custom module](#product-stock-module) with database structure and object dependencies.
+  2. Build [administration interfaces](#management-interfaces) for listing and editing product stock records.
+  3. Implement automatic or manual [stock record creation processes](#product-stock-creation).
+  4. Handle [business logic](#business-logic-implementation) of stock updates for purchases, returns, and reservations.
+  5. Implement [validation and business rules](#validation-and-business-rules) to ensure data integrity and implement business constraints.
+  6. [Display product stock](#display-product-stock) information to customers on your storefront.
 
 
 ## Product stock module
-Create a [custom module](documentation/developers-and-admins/customization/object-types) to handle product stock management. Within the module, create a class with the necessary fields. Each record of this class represents the stock level for a specific product. The fields typically include:
+Create a [custom module](/documentation/developers-and-admins/customization/object-types) to handle product stock management. Within the module, create a class with the necessary fields. Each record of this class represents the stock level for a specific product. The fields typically include:
   * Content item ID – unique identifier linking to the product’s content item. 
     * You need to manually set the reference to the content item object in the initializer of the `TYPEINFO` member of the generated `*Info` class. This ensures that the stock information is always associated with a product and that the when the product is deleted, the stock information is also removed.
 C#
@@ -49,13 +56,13 @@ public class ProductStockInfo
 
 Depending on your requirements, you may use a simple implementation with just content item ID and product stock value, or a more complex model that also includes fields such as reserved stock for pending orders and minimum threshold value.
 ## Management interfaces
-The management interface consists of several interconnected components that work together to provide a complete administration experience for product stock records. [Create the following UI pages](documentation/developers-and-admins/customization/extend-the-administration-interface) to manage product stock.
-  * [Create the application entry point](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#create-the-application-entry-point) – Register the stock management app in the admin interface
-  * [Create the listing page](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#create-the-listing-page) – Display all stock records with product information
-  * [Create the edit section](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#create-the-edit-section) – Handle URL routing for individual record editing
-  * [Create the edit page](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#create-the-edit-page) – Provide the actual editing form interface
-  * [Create the product metadata retriever](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#create-the-product-metadata-retriever) – Service to retrieve product display names
-  * [Register dependencies](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#register-dependencies) – Configure dependency injection for all services
+The management interface consists of several interconnected components that work together to provide a complete administration experience for product stock records. [Create the following UI pages](/documentation/developers-and-admins/customization/extend-the-administration-interface) to manage product stock.
+  * [Create the application entry point](#create-the-application-entry-point) – Register the stock management app in the admin interface
+  * [Create the listing page](#create-the-listing-page) – Display all stock records with product information
+  * [Create the edit section](#create-the-edit-section) – Handle URL routing for individual record editing
+  * [Create the edit page](#create-the-edit-page) – Provide the actual editing form interface
+  * [Create the product metadata retriever](#create-the-product-metadata-retriever) – Service to retrieve product display names
+  * [Register dependencies](#register-dependencies) – Configure dependency injection for all services
 
 
 ### Create the application entry point
@@ -204,7 +211,7 @@ namespace YourProject.AdminComponents
 ```
 
 ### Create the edit page
-Create a [UI form](documentation/developers-and-admins/customization/object-types/extend-system-object-types#Extendsystemobjecttypes-UIForms) for editing product stock records:
+Create a [UI form](/documentation/developers-and-admins/customization/object-types/extend-system-object-types#Extendsystemobjecttypes-UIForms) for editing product stock records:
   1. Navigate to the **Modules** application → select your stock management module → **Classes** tab → select your product stock class → **UI forms** tab.
   2. Create a **New UI form** with the name _ProductStockEdit_ (code name).
   3. Switch to the **Fields** tab and add the fields you want to display on the form:
@@ -445,7 +452,7 @@ builder.Services.AddTransient<DefaultContentLanguageRetriever>();
 ## Product stock creation
 ### Automatic stock creation
 Consider implementing automatic stock creation when new products are added:
-  * Set up [event handlers](documentation/developers-and-admins/customization/handle-global-events) for product creation
+  * Set up [event handlers](/documentation/developers-and-admins/customization/handle-global-events) for product creation
   * Initialize default stock values based on business rules
   * Ensure proper data consistency between products and stock
 
@@ -548,7 +555,7 @@ public class ProductStockCreationHandler : IInfoObjectEventHandler<InfoObjectAft
 }
 ```
 
-To use this event handler, you must register it in your application’s service collection. Create a [custom module](documentation/developers-and-admins/customization/run-code-on-application-startup) and override the `OnPreInit` method:
+To use this event handler, you must register it in your application’s service collection. Create a [custom module](/documentation/developers-and-admins/customization/run-code-on-application-startup) and override the `OnPreInit` method:
 C#
 **Register the event handler**
 Copy
@@ -579,13 +586,13 @@ public class ProductStockModule : Module
 
 ### Manual stock creation
 Provide administration interface for manual stock creation and management:
-  * Create an [editing interface](documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) where administrators can create new stock records
+  * Create an [editing interface](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-pages/reference-ui-page-templates/edit-ui-page-template) where administrators can create new stock records
   * Consider adding bulk operations for mass stock updates
 
 
 ## Business logic implementation
 ### Purchase transactions
-Handle stock reduction when products are purchased. The following example shows very simple stock management logic. In your project, you need handle any [edge cases and business rules](documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/model-product-stock#validation-and-business-rules) specific to your requirements.
+Handle stock reduction when products are purchased. The following example shows very simple stock management logic. In your project, you need handle any [edge cases and business rules](#validation-and-business-rules) specific to your requirements.
 C#
 **Example - Order service**
 Copy
@@ -661,3 +668,7 @@ Display product stock information to customers on your storefront:
   * In-stock indicators – display indication whether a product is available for purchase
   * Quantity selectors – prevent customers from selecting more items than are in stock
   * Low stock warnings – consider alerting customers when quantities are limited and encourage them to purchase soon
+
+
+![]()
+[]()[]()

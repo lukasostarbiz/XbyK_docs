@@ -1,12 +1,18 @@
+---
+source: https://docs.kentico.com/documentation/business-users/media-libraries/create-media-libraries
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Business users](/documentation/business-users)
+  * [Media libraries](/documentation/business-users/media-libraries)
+  * Create media libraries 
+
+
 # Create media libraries
-  * [ Copy page link ](documentation/business-users/media-libraries/create-media-libraries#) | [Get HelpService ID](documentation/business-users/media-libraries/create-media-libraries#)
-Core MVC 5
-
-
-[✖](documentation/business-users/media-libraries/create-media-libraries# "Close page link panel") [Copy to clipboard](documentation/business-users/media-libraries/create-media-libraries#)
 **Media libraries sunset**
 Media libraries have been officially sunset, and their related API members have been marked as obsolete. Support for media libraries will continue for one more year (until July 24, 2026), after which the feature and all associated APIs will be completely removed.
-See [Media library migration](guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](documentation/business-users/content-hub).
+See [Media library migration](/guides/architecture/media-libraries-migration-guidance) for instructions on how to migrate your media library files to [Content hub](/documentation/business-users/content-hub).
 To create media libraries in your project:
   1. Open the **Media libraries** application.
   2. Select **New media library**.
@@ -20,3 +26,5 @@ To create media libraries in your project:
 
 The system creates the media library and the associated folder on the file system. An editing interface for the media library appears.
 On the **General** tab, you can edit the properties that you entered when creating the media library:
+![]()
+[]()[]()

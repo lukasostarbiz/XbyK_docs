@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/contact-management/update-existing-contact-group
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+11 of 44 Pages
 # Update existing contact group
-  * [ Copy page link ](modules/contact-management/update-existing-contact-group#) | [Get HelpService ID](modules/contact-management/update-existing-contact-group#)
-Core MVC 5
-
-
-[✖](modules/contact-management/update-existing-contact-group# "Close page link panel") [Copy to clipboard](modules/contact-management/update-existing-contact-group#)
 See how you can adjust an existing contact group to match new definition.
 Let’s say that you want to personalize the content of you website for contacts collected into a contact group. Just before you launch your campaign, you realize that your contact group definition doesn’t verify if a contact gave you a consent agreement to use this advanced marketing tactic.
 The following how-to show you steps to fix your contact group definition.
@@ -20,16 +22,8 @@ The following how-to show you steps to fix your contact group definition.
     2. Select **Recalculate the group** to reevaluate contacts, and let Xperience will do the work.
 
 
-[ Previous page ](modules/contact-management/create-a-new-contact-group)
+[ Previous page ](/modules/contact-management/create-a-new-contact-group)
 11 of 44
-[ Mark complete and continue ](modules/contact-management/contact-activity-tracking-overview)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/contact-management/update-existing-contact-group)
-[](https://docs.kentico.com/modules/contact-management/update-existing-contact-group)[](https://docs.kentico.com/modules/contact-management/update-existing-contact-group)
+[ Mark complete and continue ](/modules/contact-management/contact-activity-tracking-overview)
+![]()
+[]()[]()

@@ -1,9 +1,11 @@
+---
+source: https://docs.kentico.com/modules/advanced-content/convert-items-to-schemas
+scrape_date: 2026-01-22
+---
+
+Module: Advanced content
+7 of 11 Pages
 # Convert flat items to schemas
-  * [ Copy page link ](modules/advanced-content/convert-items-to-schemas#) | [Get HelpService ID](modules/advanced-content/convert-items-to-schemas#)
-Core MVC 5
-
-
-[✖](modules/advanced-content/convert-items-to-schemas# "Close page link panel") [Copy to clipboard](modules/advanced-content/convert-items-to-schemas#)
 For the primary functionality of this article, we’ll
 ### Set a target
 Let’s start out with the top-level method that orchestrates the conversion. We’ll include calls to methods we haven’t implemented yet to help set our direction.
@@ -38,7 +40,7 @@ public async Task<List<ConversionAttempt>> Convert()
 ...
 ```
 
-If you have a large number of items that leads to timeouts or memory issues, you can use the `Offset` and `OrderBy` extension methods on the `queryFilter` parameter to [process items in batches](documentation/developers-and-admins/api/content-item-api/reference-content-item-query#offset).
+If you have a large number of items that leads to timeouts or memory issues, you can use the `Offset` and `OrderBy` extension methods on the `queryFilter` parameter to [process items in batches](https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/reference-content-item-query#offset).
 ### Convert reusable items
 Now let’s convert our reusable items from the original `Article` content type to the new schema-based `GeneralArticle` type.
 #### Create items and language versions in the new type
@@ -310,16 +312,8 @@ private async Task<List<ConversionAttempt>> ConvertReusableArticles(IEnumerable<
 ...
 ```
 
-[ Previous page ](modules/advanced-content/prepare-to-convert-items)
+[ Previous page ](/modules/advanced-content/prepare-to-convert-items)
 7 of 11
-[ Mark complete and continue ](modules/advanced-content/update-references)
-  * [Community Questions & Answers](https://community.kentico.com/q-and-a)
-  * [Contact support](https://community.kentico.com/support)
-
-
-### Cookie consent
-We use necessary [cookies](https://www.kentico.com/cookies-policy) to run our website and improve your experience while browsing. Additional cookies are only used with your consent. You may revoke your consent on the [Cookies Policy](https://www.kentico.com/cookies-policy) page or in your browser at any time. 
-ACCEPT ALL  [Configure](https://www.kentico.com/cookies-policy)
-USE ONLY NECESSARY 
-![](https://docs.kentico.com/modules/advanced-content/convert-items-to-schemas)
-[](https://docs.kentico.com/modules/advanced-content/convert-items-to-schemas)[](https://docs.kentico.com/modules/advanced-content/convert-items-to-schemas)
+[ Mark complete and continue ](/modules/advanced-content/update-references)
+![]()
+[]()[]()

@@ -1,9 +1,15 @@
+---
+source: https://docs.kentico.com/guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects
+scrape_date: 2026-01-22
+---
+
+  * [Home](/guides)
+  * [Development](/guides/development)
+  * [Get started](/guides/development/get-started)
+  * Use abstraction and enterprise-level architecture in Xperience projects 
+
+
 # Use abstraction and enterprise-level architecture in Xperience projects
-  * [ Copy page link ](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#) | [Get HelpService ID](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#)
-Core MVC 5
-
-
-[✖](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects# "Close page link panel") [Copy to clipboard](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#)
 As enterprise projects grow over time, with several developers working together, having an organized architecture becomes increasingly important for automated testing and code maintenance. However, digital experience platforms like Xperience by Kentico offer a wide array of features spanning many parts of the project, making it difficult to decide where to draw the lines between layers of a project and minimize dependence on infrastructure.
 This guide sheds light on this topic, demonstrating an approach similar to [_Ports and adapters_ or _Clean architecture_](https://www.youtube.com/watch?v=yF9SwL0p0Y0). It covers:
   * Benefits of abstraction in enterprise projects
@@ -13,7 +19,7 @@ This guide sheds light on this topic, demonstrating an approach similar to [_Por
 
 
 This guide is more conceptual and does NOT have a corresponding repository in the [Kentico GitHub](https://github.com/Kentico).  
-If you are familiar with our other guides, e.g. [the _Activities and marketing_ series](guides/development/activities-and-marketing), note that there are differences between the examples they reference and the architecture presented in this guide.
+If you are familiar with our other guides, e.g. [the _Activities and marketing_ series](/guides/development/activities-and-marketing), note that there are differences between the examples they reference and the architecture presented in this guide.
 Enterprise architecture sacrifices initial development overhead and readability in exchange for easier code maintenance and automated testing. This makes it ideal for large, long-lived production projects, but not for proofs of concept that demonstrate how to use various Kentico features in isolation.
 ## Prerequisites
 Familiarity with [dependency injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
@@ -61,11 +67,11 @@ Much like the separation between business logic and data access offered by the r
 It takes the concept a few steps further by using project structure to enforce the separation, rather than relying on developers to follow rules. It separates projects in such a way that creating dependencies to the wrong layer is not possible. It also aims to put the application’s business logic and the objects it uses at the center of its design, with other layers being molded to meet its requirements.
 ### The layers
 This type of architecture typically has three layers: _Domain_ , _Infrastructure_ , and _UI_.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/Layers.jpg)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/Layers.jpg)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/Layers.jpg)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/Layers.jpg)
 #### 🧱 Domain
   * The domain layer contains the types or **domain models** that your business logic works with. These are typically referred to as _Value objects, Entities,_ and _Aggregates_. These are all classes that are distinguished on a conceptual level.  
 An _entity_ represents a thing, while a  _value object_ represents an attribute of a thing, and an _aggregate_ represents a collection of entities and value objects.
-For each _Aggregate root_ , or aggregate that represent meaningful concepts in the domain, the domain layer contains a [repository interface](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#the-repository-pattern). This emphasizes data consistency over efficiency in data retrieval, ensuring that all relevant data is present, and parent and child entities can each be updated based on changes to the other.
+For each _Aggregate root_ , or aggregate that represent meaningful concepts in the domain, the domain layer contains a [repository interface](#the-repository-pattern). This emphasizes data consistency over efficiency in data retrieval, ensuring that all relevant data is present, and parent and child entities can each be updated based on changes to the other.
 The domain layer also contains business logic, using interfaces that can be implemented by other layers. This includes things like events, event handlers, and domain services.
 Domain layer project(s) should not reference projects from the other layers. The domain layer should be the central piece on which the others depend.
 **Shared kernel**
@@ -98,7 +104,7 @@ The UI layer, controlling the presentation and interactivity of your application
 
 
 However, like any approach, clean architecture also has drawbacks. 
-They are essentially the same as those mentioned in [the earlier section on abstraction of data access](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#drawbacks).
+They are essentially the same as those mentioned in [the earlier section on abstraction of data access](#drawbacks).
 The modular design of clean architecture projects requires a lot of additional development time at the start of a project, along with anytime you change domain objects and business logic.
 🔤 For example
 If you have a web project, and you decide to change which properties are in the domain model, you must also consider if these changes affect your repository interface. For example, if you decide to incorporate letters into formerly numerical IDs, then the signature of a `GetProductById` method in your repository interface will need to be updated.
@@ -114,18 +120,18 @@ The guide includes a general overview of the following, with some supporting cod
 
 
 The sample scenario revolves around university courses. A course, like _Accounting 101_ , can be taught to several different groups of students by several different professors over the course of multiple terms. These specific instances of the course are called _sections_. There are also _professors,_ _lessons,_ and _materials_ , associated with the sections.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/course+class3.jpg)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/course+class3.jpg)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/course+class3.jpg)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/course+class3.jpg)
 This example provides an overview of an application that displays a listing page of courses as well as course details, following the clean architecture as closely as possible.
 ### Plan how projects will correspond to layers
 Let’s break this example into projects that correspond to the different layers of enterprise architecture.
 Each project will be discussed in greater detail in the next sections.
 For the sake of this guide about abstraction, _TrainingGuides.Abstraction_ as the name of the solution, and as a prefix for the projects within:
-  * [Domain layer](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#create-the-domain-layer)
+  * [Domain layer](#create-the-domain-layer)
     * **TrainingGuides.Abstraction.Core** contains all of the domain models (e.g., Professor, Section) and the repository interface.
-  * [Infrastructure layer](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#implement-the-infrastructure-layer)
+  * [Infrastructure layer](#implement-the-infrastructure-layer)
     * **TrainingGuides.Abstraction.Infrastructure** contains the implementation of the repository interface, along with a service it uses to retrieve content form Xperience.
     * **TrainingGuides.Abstraction.Generated** contains generated classes from Xperience that correspond to content types.
-  * [UI layer](guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects#add-the-ui-layer)
+  * [UI layer](#add-the-ui-layer)
     * **TrainingGuides.Abstraction.Web** contains the display logic for the application’s web site.
 
 
@@ -133,7 +139,7 @@ For the sake of this guide about abstraction, _TrainingGuides.Abstraction_ as th
 The domain layer of our sample has only one project -  _TrainingGuides.Abstraction.Core._
 This project contains the classes of all the domain models, as well as the interface for the Course repository.
 #### Decide the structure
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-9_10-18-49.png)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-9_10-18-49.png)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-9_10-18-49.png)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-9_10-18-49.png)
 The project is organized first by business concern, then by technical concern. We recommend [alternating between the two](https://xperience-by-kentico-styleguide.netlify.app/guides/solution-setup/#use-feature-folders-vertical-slice-architecture) as you add deeper levels to your directories. It will help point developers in the right direction when they need to make changes.
 Classes directly related to courses are in the _Courses_ folder.  
 `Download`, which represents a downloadable file optionally used by the `Material` class _,_ can be used outside of the context of courses. (For instance, the admission department of the university might have a downloadable map of the university campus for prospective students taking tours.)  
@@ -141,7 +147,7 @@ For this reason, _Download_ is stored beneath the  _Shared_ folder.
 #### Understand the relationships
 Let’s go over the relationships between the models for this example:
 The `Course` class contains a collection of `Section` objects, among other properties. `Section`, in turn, contains collections of `Professor` and `Lesson` objects. Multiple professors are allowed per section, in case any of them are co-taught. Each `Lesson` in a section has scheduling information, as well as properties describing what the lesson is about and a collection of `Material` objects, representing learning materials the students should look at before or during the lecture. `Material` contains properties for linking to an external source, in case the learning material is hosted elsewhere, as well as a `Download` object, in case it is a downloadable file.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/courseclassesdetailed2.jpg)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/courseclassesdetailed2.jpg)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/courseclassesdetailed2.jpg)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/courseclassesdetailed2.jpg)
 You can look over the code samples below to see these classes and their properties in full.
 C#
 **Course.cs**
@@ -322,7 +328,7 @@ public class Repository<T> : IRepository<T>
 ### Implement the infrastructure layer
 The infrastructure layer has two projects:
   * **TrainingGuides.Abstraction.Generated**  
-This project is holds classes that are created by Xperience by Kentico’s [code generation tool](documentation/developers-and-admins/api/generate-code-files-for-system-objects), and any customizations made to them through partial classes.
+This project is holds classes that are created by Xperience by Kentico’s [code generation tool](/documentation/developers-and-admins/api/generate-code-files-for-system-objects), and any customizations made to them through partial classes.
 **Generated files project**
 It is not necessary to keep them in a separate project, but we recommend doing so. The extra level of separation reduces the chance of developers accidentally modifying the files, only to have their changes overwritten the next time the files are regenerated.
 It also makes it possible for any other projects that use Xperience objects to do so without referencing _all_ of the infrastructure code.
@@ -332,11 +338,11 @@ In a full fledged project, it would contain implementations of all the interface
 
 #### Decide the structure
 As with the _Core_ project, the _Infrastructure_ project is organized by business concern first, then technical concern.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-2-49.png)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-2-49.png)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-2-49.png)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-2-49.png)
 It has fewer files, as the generated classes that loosely correspond to the domain models are stored separately.
 #### Examine the generated files
 The files in the Generated project are sorted according to technical concern, which is most conducive to the command line parameters used to generate them. Xperience doesn’t know which content types relate to groups of features.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-5-56.png)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-5-56.png)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-5-56.png)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-17_17-5-56.png)
 **Differences from the domain**
 The reusable content types that hold the structured data of the objects have the _Item_ suffix, so that code files that use domain models and generated content item classes do not have naming collisions.
 Similarly, the corresponding web page types have the _Page_ suffix.
@@ -1094,9 +1100,9 @@ If you do not plan to use a similar customization, make sure to handle errors th
 The UI layer of this sample contains a single project - _TrainingGuides.Abstraction.Web_.
 It is where things get a little complicated when dealing with a digital experience platform (DXP) like Xperience by Kentico, because DXPs typically offer features to help integrate the UI into the content management experience.
 This blurs the lines between the infrastructure and UI layers, as the UI will contain code specific to the platform.
-It is technically possible to completely separate these layers, if you use only [Headless channels](documentation/developers-and-admins/configuration/headless-channel-management) in Xperience, but this defeats the purpose of using a DXP platform in some ways. In order to utilize features like [content tree-based routing](documentation/developers-and-admins/development/routing/content-tree-based-routing), [Page Builder](documentation/developers-and-admins/development/builders/page-builder), and [page templates](documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder), you need to include code from Kentico in the UI layer, and reference the project where the generated classes are stored.
+It is technically possible to completely separate these layers, if you use only [Headless channels](/documentation/developers-and-admins/configuration/headless-channel-management) in Xperience, but this defeats the purpose of using a DXP platform in some ways. In order to utilize features like [content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing), [Page Builder](/documentation/developers-and-admins/development/builders/page-builder), and [page templates](/documentation/developers-and-admins/development/builders/page-builder/page-templates-for-page-builder), you need to include code from Kentico in the UI layer, and reference the project where the generated classes are stored.
 This sample elects to use those features.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_9-24-6.png)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_9-24-6.png)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_9-24-6.png)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_9-24-6.png)
 The web project has a lot more going on in the root, so the files organized by business concern are kept in a folder called _Features_.
 **Differences to the domain layer**
 Like with the content items in the infrastructure layer, this example has some differences between the view models in the UI layer and the models in the domain layer. The `CourseListingViewModel` doesn’t directly correspond to any domain model, and the `LinkViewModel` exists, rather than anything directly corresponding to the `Download` domain model.
@@ -1610,8 +1616,10 @@ With the controllers and page templates in place, only a few steps remain to get
 
 We invite you to finish setting up this project as an exercise, following the principles you learned in this guide.
 With that, you should be able to display any courses added to the Xperience instance.
-[![](docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_15-15-9.png)](https://docs.kentico.com/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_15-15-9.png)
+[![](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_15-15-9.png)](/docsassets/guides/use-abstraction-and-enterprise-level-architecture-in-xperience-projects/image-2024-1-10_15-15-9.png)
 ## What’s next?
 Now that you’ve seen an example of data retrieval with a repository in the context of an enterprise layered architecture, you can start thinking about how it could be expanded.
 Perhaps you’d like to add methods for Create, Update, and Delete to the repository. Perhaps you’d like to expand the domain layer beyond just the repository. You can try adding new object types like `Student` and `CourseRegistration` and an event handler in the domain layer that sends an email though a service implemented in the infrastructure layer whenever the time of a lesson is updated.
 Moving forward, try to consider what degree of layering and abstraction will benefit your projects and strike the proper balance to fit your scenario.
+![]()
+[]()[]()
