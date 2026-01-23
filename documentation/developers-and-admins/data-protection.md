@@ -1,0 +1,23 @@
+---
+source: https://docs.kentico.com/documentation/developers-and-admins/data-protection
+scrape_date: 2026-01-22
+---
+
+  * [Home](/documentation)
+  * [Developers and admins](/documentation/developers-and-admins)
+  * Data protection 
+
+
+# Data protection
+Across the world, certain privacy laws that restrict the manipulation and processing of personal data are in effect. Most notable are the European Union’s [Cookie law](https://commission.europa.eu/resources-partners/europa-web-guide/design-content-and-development/privacy-security-and-legal-notices/cookies-and-similar-technologies_en) and the [General Data Protection Regulation](https://ec.europa.eu/commission/priorities/justice-and-fundamental-rights/data-protection/2018-reform-eu-data-protection-rules_en) (GDPR).
+Xperience by Kentico provides functionality that facilitates compliance with this legislation. For more information, see the [GDPR compliance](/documentation/developers-and-admins/data-protection/gdpr-compliance) overview and the [Cookies](/documentation/developers-and-admins/data-protection/cookies) page.
+## General Data Protection Regulation
+The General Data Protection Regulation is a regulation on the protection and free movement of personal data of all individuals within the European Union. Assembled by the European Parliament and the Council of the European Union, the regulation is in effect from the 25th of May 2018 across all EU member states. It applies to organizations that collect or process data from EU residents or cooperate with EU-based organizations that process the data on their behalf.
+## Cookie law
+The Cookie Law is a piece of privacy legislation that requires websites to get explicit consent from visitors to store or retrieve any information on their devices. It was designed to protect online privacy by making consumers aware of how information about them is collected and used online, and giving them a chance to refuse cookie-related data collection.
+Xperience provides a system of cookie levels that can help implement the required functionality. To learn more, see [Cookies](/documentation/developers-and-admins/data-protection/cookies).
+## California Consumer Privacy Act (CCPA)
+The CCPA is a legislation designed to protect consumers in California. Coming into effect on January 1, 2020, the CCPA will ensure that companies are transparent on the personal information they collect, sell, and disclose, and detail how it is used. The CCPA applies to companies that collect, share, or sell California consumers’ personal data, and have annual gross revenues of more than $25 million, or possess the personal information of 50,000 or more consumers, or earn more than half of its annual revenue from selling consumers’ personal information.
+To comply with this legislation, you can use the data protection functionality provided by the system. See [Consent management](/documentation/developers-and-admins/data-protection/consent-management) and [Personal data collection](/documentation/developers-and-admins/data-protection/personal-data-collection) for more information.
+![]()
+[]()[]()

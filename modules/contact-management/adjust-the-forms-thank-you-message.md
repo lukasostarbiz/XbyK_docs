@@ -1,0 +1,21 @@
+---
+source: https://docs.kentico.com/modules/contact-management/adjust-the-forms-thank-you-message
+scrape_date: 2026-01-22
+---
+
+Module: Contact management
+27 of 44 Pages
+# Adjust the form's Thank you message
+Set up a special “thank you” message that your visitors see after submitting a form. This can be done in the form widget added to an **Xperience** page.
+  1. Go to the page where your form is located and open the page for editing.
+  2. Open the form widget properties using the **Configure section** button (
+  3. In the **After form submission** section, keep the **Display a message** option selected.
+  4. Insert a new message, e.g.: _“Thanks! We’ll get back to you within 2 business days!”_
+  5. Use the **Apply** button to keep your changes, and don’t forget to save and publish your page so your new “thank you” message displays to your audience.
+
+
+[ Previous page ](/modules/contact-management/set-what-happens-after-form-submission)
+27 of 44
+[ Mark complete and continue ](/modules/contact-management/forms)
+![]()
+[]()[]()
