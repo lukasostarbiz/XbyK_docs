@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -117,7 +117,7 @@ Copy
 ...
 
 @* Registers Page Builder scripts *@
-@Html.Kentico().PageBuilderScripts()
+@await Html.Kentico().PageBuilderScriptsAsync()
 
 @* Registers the toolbar configuration script *@
 @if (Context.Kentico().PageBuilder().GetMode() == PageBuilderMode.Edit)
@@ -147,7 +147,7 @@ Copy
 ...
 
 @* Registers Page Builder scripts *@
-@Html.Kentico().PageBuilderScripts()
+@await Html.Kentico().PageBuilderScriptsAsync()
 
 @* Registers the toolbar configuration script *@
 @if (Context.Kentico().PageBuilder().GetMode() == PageBuilderMode.Edit)
@@ -187,7 +187,7 @@ Copy
 @using Kentico.PageBuilder.Web.Mvc
 
 @* Renders Page Builder scripts *@
-@Html.Kentico().PageBuilderScripts()
+@await Html.Kentico().PageBuilderScriptsAsync()
 
 @* Renders plugin scripts *@
 @if (Context.Kentico().PageBuilder().GetMode() == PageBuilderMode.Edit)

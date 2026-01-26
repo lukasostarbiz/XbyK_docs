@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/customer-journeys/prepare-to-build-customer-journey/gather-analytics-data.for-customer-journey
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

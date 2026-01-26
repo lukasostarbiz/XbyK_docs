@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/get-started/generate-code-for-custom-content-and-data-classes
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

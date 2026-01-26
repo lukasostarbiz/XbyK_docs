@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -62,7 +62,7 @@ Copy
 If you do not specify the default section for an area, it uses the default section configured for all Page Builder instances (either the system’s _Default_ section with a single widget zone, or a custom section assigned when enabling Page Builder).
 ### Load Page Builder scripts and styles
 All pages with editable areas must contain scripts and CSS styles required by Page Builder and its components. To add these resources to pages, call the following extension methods (or their [Tag Helper alternatives](/documentation/developers-and-admins/development/reference-tag-helpers)) in your views:
-  * `Html.Kentico().PageBuilderScripts` – renders required script tags and script file links. Call before the closing `</body>` tag of the page code.
+  * `Html.Kentico().PageBuilderScriptsAsync` – renders required script tags and script file links. Call before the closing `</body>` tag of the page code.
   * `Html.Kentico().PageBuilderStyles` – renders links for the required stylesheet files. Call within the `<head>` tag of the page code.
 cshtml
 Copy
@@ -77,7 +77,7 @@ Copy
 </head>
 <body>
     ...
-    @Html.Kentico().PageBuilderScripts()
+    @await Html.Kentico().PageBuilderScriptsAsync()
 </body>
 </html>
 ```

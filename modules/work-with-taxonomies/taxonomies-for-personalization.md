@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/work-with-taxonomies/taxonomies-for-personalization
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Work with taxonomies

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/activities-and-contacts/hide-builder-content-from-visitors-who-have-not-consented-to-tracking
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Activities and contacts

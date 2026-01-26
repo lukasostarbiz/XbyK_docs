@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)

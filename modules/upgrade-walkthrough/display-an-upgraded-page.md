@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/upgrade-walkthrough/display-an-upgraded-page
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Upgrading to Xperience by Kentico - Walkthrough
@@ -1002,7 +1002,7 @@ The Contacts page in the KX13 Dancing Goat is rendered by the _~/Views/Contacts/
 #### Contacts view
 Copy this view into the same location within the _DancingGoat.Web_ project in your Xperience by Kentico solution.
 Then copy _~/Views/Shared/_GoogleMaps.cshtml_ from KX13 into the corresponding folder in XbyK’s _DancingGoat.Web_ project. This partial view is rendered by the Index view, and can be left unaltered.
-As for the Index view, thanks to the _ViewStart_ and _ViewImports_ files we set up in [the global code guide](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#shared-views), only small changes are necessary. Simply adjust the allowed widgets to only include the form widget’s identifier, as we have not migrated the other widgets in this example.
+As for the Index view, thanks to the _ViewStart_ and _ViewImports_ files we set up in [the global code guide](/guides/upgrade-to-xbyk/upgrade-walkthrough/adjust-global-code#shared-views), only small changes are necessary. Simply adjust the allowed widgets to only include the form widget’s identifier, as we have not migrated the other widgets in this example.
 cshtml
 **Index.cshtml**
 Copy
@@ -1199,7 +1199,7 @@ namespace DancingGoat.Sections
 }
 ```
 
-Now, in the _ComponentIdentifiers.cs_ file that you [copied earlier](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough/adjust-global-code#identifiers), un-comment the `SINGLE_COLUMN_SECTION` constant.
+Now, in the _ComponentIdentifiers.cs_ file that you [copied earlier](/guides/upgrade-to-xbyk/upgrade-walkthrough/adjust-global-code#identifiers), un-comment the `SINGLE_COLUMN_SECTION` constant.
 Then copy _PageBuilderComponentRegister.cs_ from the _~/Components/_ folder in KX13 into the corresponding folder in XbyK, and comment out everything except for the `RegisterSection` attribute that registers the single column section.
 C#
 **ComponentIdentifiers.cs**

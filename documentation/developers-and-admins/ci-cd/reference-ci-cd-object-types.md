@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/ci-cd/reference-ci-cd-object-types
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -186,7 +186,7 @@ Object type |  CI/CD folder name |  Notes
 Order status |  commerce.orderstatus |  Represents [statuses](/documentation/developers-and-admins/digital-commerce-setup/configure-order-statuses) in the lifecycle of orders created by customers (_New_ , _Payment received_ , _Shipped_ , _Delivered_ , etc.).  
 Shipping method |  commerce.shippingmethod |  Defines [shipping options](/documentation/developers-and-admins/digital-commerce-setup/shipping-and-payment-methods) available to customers during checkout.  
 Payment method |  commerce.paymentmethod |  Defines [payment options](/documentation/developers-and-admins/digital-commerce-setup/shipping-and-payment-methods) available to customers during checkout.  
-Promotion |  commerce.promotion |  Stores created [promotions](/documentation/developers-and-admins/digital-commerce-setup/promotions).  
+Promotion |  commerce.promotion |  Stores created [promotions](/documentation/developers-and-admins/digital-commerce-setup/promotions). |  commerce.promotioncoupon |  Stores [coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) associated with created promotions.  
 ## Binding object types
 In addition to standard object types, CI/CD also supports most related bindings (i.e. objects representing relationships between the supported objects and other objects).
 Binding |  CI folder name |  Main object type (parent) |  Related object type  

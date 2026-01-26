@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/advanced-content/advanced-content-learn-more
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Advanced content

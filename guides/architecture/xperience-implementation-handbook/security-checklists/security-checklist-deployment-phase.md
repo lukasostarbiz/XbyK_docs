@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/architecture/xperience-implementation-handbook/security-checklists/security-checklist-deployment-phase
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

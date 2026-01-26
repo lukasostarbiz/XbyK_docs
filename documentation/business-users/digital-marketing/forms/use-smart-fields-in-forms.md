@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/business-users/digital-marketing/forms/use-smart-fields-in-forms
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -43,7 +43,7 @@ The following steps guide you through the process of creating a smart form:
      * You can imagine smart forms as a queue of fields. The order in the queue is the same as the order of fields in Form Builder (from top to bottom in the default layout).
      * Always place the form’s standard fields before the smart fields.
      * We recommend placing your most important smart fields first.
-     * Avoid fields that only make sense when viewed together with another field.
+     * Avoid fields that only make sense when viewed together with another field. For this reason, [visibility conditions](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-visibility) may work inconsistently, since you cannot fully control which smart fields are displayed together.
 
 
 The Form Builder interface displays the 
@@ -52,6 +52,10 @@ We recommend [displaying smart forms on pages](/documentation/business-users/dig
 After a visitor tracked as a contact submits the form, the system links the resulting form submission with that visitor. When the same visitor views the form again, smart fields replace the fields they have already filled in (according to the order set within Form Builder). If the visitor submits the form again, the system automatically updates the existing form submission. This process repeats until all fields have values. Once all fields are filled, the system no longer displays the smart form at all for the given visitor.
 **Notes**
   * Smart fields cannot be **Required**. Because smart fields are not always displayed, making them required would prevent users from submitting the form.
+  * [Visibility conditions](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-visibility) have limited functionality in forms with smart fields: 
+    * Never use smart fields as the reference in the visibility conditions of standard fields, since you cannot control when the smart field will be displayed.
+    * Visibility conditions of smart fields with references to other smart fields only work if the fields are displayed together. The results may be inconsistent, since you cannot guarantee that smart fields will be displayed in specific pairs.
+    * When a field is hidden due to a visibility condition, it is replaced by the next item in the queue of smart fields.
   * If you add a **Consent agreement** field to a smart form (see [Consent management](/documentation/developers-and-admins/data-protection/consent-management)), do not configure the consent field as a smart field. You also need to ensure that the consent text covers all possible fields in the form, even though the visitor might see only a small subset when accepting the agreement.
 
 

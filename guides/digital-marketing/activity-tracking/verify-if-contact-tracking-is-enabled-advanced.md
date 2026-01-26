@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/digital-marketing/activity-tracking/verify-if-contact-tracking-is-enabled-advanced
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

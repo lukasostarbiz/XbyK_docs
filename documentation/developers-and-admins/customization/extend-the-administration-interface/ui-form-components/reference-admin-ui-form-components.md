@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -148,17 +148,15 @@ public class ContentItemSelectorUsage : ViewComponent
         var productGuids = model?.Properties?.SelectedProducts.Select(i => i.Identifier).ToList();
 
         // Retrieves the data of selected content items
-        // Use RetrieveContentOfContentTypes method with additional Where filtering for multiple content types
+        // Use RetrieveContentOfContentTypesByGuids method for multiple content types
         var contentTypes = new[] { Coffee.CONTENT_TYPE_NAME, Grinder.CONTENT_TYPE_NAME };
-        var result = await contentRetriever.RetrieveContentOfContentTypes<IContentItemFieldsSource>(
+        IEnumerable<IContentItemFieldsSource> result = await contentRetriever.RetrieveContentOfContentTypesByGuids<IContentItemFieldsSource>(
             contentTypes,
+            productGuids,
             new RetrieveContentOfContentTypesParameters
             {
                 LinkedItemsMaxLevel = 1
-            },
-            query => query.Where(w => w.WhereIn("ContentItemGUID", productGuids)),
-            new RetrievalCacheSettings(cacheItemNameSuffix:
-                $"{nameof(RetrieveContentOfContentTypesQueryParameters.Where)}|{nameof(WhereParameters.WhereIn)}|ContentItemGUID|productGuids")
+            }
         );
 
         // Iterates over selected items as typed objects
@@ -235,16 +233,15 @@ public class ContentItemSelectorUsage : ViewComponent
             .ToList();
 
         // Retrieves data of the selected content items
-        var result = await contentRetriever.RetrieveContentOfContentTypes<IContentItemFieldsSource>(
-            contentTypeNames,
-            new RetrieveContentOfContentTypesParameters
-            {
-                LinkedItemsMaxLevel = 1
-            },
-            query => query.Where(w => w.WhereIn("ContentItemGUID", assetsToDisplayGuids)),
-            new RetrievalCacheSettings(cacheItemNameSuffix:
-                $"{nameof(RetrieveContentOfContentTypesQueryParameters.Where)}|{nameof(WhereParameters.WhereIn)}|ContentItemGUID|assetsToDisplayGuids")
-        );
+        IEnumerable<IContentItemFieldsSource> result = await contentRetriever.
+            RetrieveContentOfContentTypesByGuids<IContentItemFieldsSource>(
+                contentTypeNames,
+                assetsToDisplayGuids,
+                new RetrieveContentOfContentTypesParameters
+                {
+                    LinkedItemsMaxLevel = 1
+                }
+            );
 
         // Iterates over selected items as typed objects. 'Image' and 'Video'
         // are generated model classes representing content types that contain
@@ -304,15 +301,13 @@ public class ContentItemSelectorUsage : ViewComponent
 
         // Retrieves the selected data using reusable field schema filtering
         var schemaNames = new[] { IProductFields.REUSABLE_FIELD_SCHEMA_NAME };
-        IEnumerable<IProductFields> result = await contentRetriever.RetrieveContentOfReusableSchemas<IProductFields>(
+        IEnumerable<IProductFields> result = await contentRetriever.RetrieveContentOfReusableSchemasByGuids<IProductFields>(
             schemaNames,
+            selectedProductGuids,
             new RetrieveContentOfReusableSchemasParameters
             {
                 LinkedItemsMaxLevel = 1
-            },
-            query => query.Where(w => w.WhereIn("ContentItemGUID", selectedProductGuids)),
-            new RetrievalCacheSettings(cacheItemNameSuffix:
-                $"{nameof(RetrieveContentOfContentTypesQueryParameters.Where)}|{nameof(WhereParameters.WhereIn)}|ContentItemGUID|selectedProductGuids")
+            }
         );
 
          // Custom logic...
@@ -524,18 +519,11 @@ public class PageSelectorUsage : ViewComponent
                                                     .ToList();
 
         // Retrieves the data of the selected pages under a shared page interface.
-        // Uses the 'RetrieveAllPages' method to get pages from all content types and filter
-        // based on the GUIDs received from the selector.
+        // Uses the 'RetrieveAllPagesByGuids' method to get pages from all content types
+        // filtered by the GUIDs received from the selector.
         IEnumerable<IWebPageFieldsSource> selectedPages =
-                await contentRetriever.RetrieveAllPages<IWebPageFieldsSource>(
-                    // Uses default parameters (current channel, language from context, etc.)
-                    parameters: RetrieveAllPagesParameters.Default,
-                    // Applies WHERE condition to filter only the pages with matching GUIDs
-                    additionalQueryConfiguration: query =>
-                        query.Where(where => where
-                                .WhereIn(nameof(IWebPageFieldsSource.SystemFields.WebPageItemGUID), webPageItemGuids)),
-                    // Configures caching with a suffix that reflects the query modification (WhereIn filter by GUIDs)
-                    cacheSettings: new RetrievalCacheSettings($"{nameof(InvokeAsync)}|{nameof(RetrieveAllPagesQueryParameters.Where)}|ArticlesGUIDs"));
+                await contentRetriever.RetrieveAllPagesByGuids<IWebPageFieldsSource>(
+                    webPageItemGuids);
 
         // Custom logic...
 

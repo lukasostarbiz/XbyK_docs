@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/upgrade-overview/prep-for-upgrade-and-transfer-data
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Upgrading to Xperience by Kentico - Overview

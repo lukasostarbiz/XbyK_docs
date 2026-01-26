@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/deployment/read-only-deployments
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -128,7 +128,7 @@ Copy
 Option |  Description  
 ---|---  
 `ReadOnly` |  Set to `true` to enable read-only mode, `false` to allow normal write operations.  
-`VersioningTimestamp` |  The timestamp for blob version retrieval. When read-only mode is enabled, Azure Blob storage operations retrieve the newest blob version created before this timestamp. Set to the time the read-only database snapshot was created.  
+`VersioningTimestamp` |  The timestamp for blob version retrieval. When read-only mode is enabled, Azure Blob storage operations retrieve the newest blob version created before this timestamp. Set this value to indicate the latest point in time up to which the secondary (read-only) database matches the primary database exactly, and reflects the point at which the secondary database became frozen. The exact timing depends on your database replication method. For example, for _Point-in-time snapshots_ , the timestamp is the time the snapshot was taken. **Update VersioningTimestamp for every deployment** The `VersioningTimestamp` must be set for every new read-only deployment. Some drift between the database state and blob versions is expected and acceptable – blob versioning ensures the read-only instance serves files that are consistent with or slightly older than the database snapshot.  
 Register the read-only mode options in your **Program.cs** file:
 C#
 **Program.cs**
@@ -148,8 +148,8 @@ builder.Services.Configure<ReadOnlyModeOptions>(
 The following diagram illustrates the high-level flow of a read-only deployment:
 [![Read-only deployment timeline](/docsassets/documentation/read-only-deployments/deployment-timeline.drawio.svg)](/docsassets/documentation/read-only-deployments/deployment-timeline.drawio.svg)
 The deployment process follows these general steps:
-  1. **Clone the database** – Use database replication, snapshotting, or similar features to create a copy of your production database while the source database remains in read-write mode. After cloning is complete, set the clone database as _read-only_ using your database management platform (for example, Azure SQL Database portal) or SQL commands to prevent accidental modifications.
-  2. **Enable read-only mode on the clone** – Deploy the same application build (binaries) to a separate deployment slot and configure it to run in read-only mode. Set the application’s connection string to point to the cloned database and [configure](#configure-read-only-mode-for-applications) the `VersioningTimestamp` to match the timestamp when the database was cloned. This ensures blob operations retrieve versions that align with the frozen database state.
+  1. **Clone the database** – Create a copy of your production database using database replication, snapshotting, or similar features. The source database remains in read-write mode during this process. Record the exact timestamp when the snapshot is taken (this depends on you chosen cloning method) – you’ll need this value for the `VersioningTimestamp` configuration. After cloning completes, configure the clone database as read-only using your database management platform or SQL commands to prevent accidental modifications.
+  2. **Enable read-only mode on the clone** – Deploy the same application build (binaries) to a separate deployment slot and configure it to run in read-only mode. Set the application’s connection string to point to the cloned database and [configure](#configure-read-only-mode-for-applications) the `VersioningTimestamp` to the timestamp recorded in the previous step. This ensures blob operations retrieve versions that align with the frozen database state.
      * We recommend using [managed identities](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview) for Azure Blob Storage authentication, granting the read-only application identity only read permissions to the blob storage.
   3. **Switch traffic to read-only instance** – Update your traffic management or deployment setup to direct all incoming requests to the read-only application instance. Your live site continues serving content without interruption, but write operations are blocked.
   4. **Perform database updates** – With traffic switched away, safely update the original production database.

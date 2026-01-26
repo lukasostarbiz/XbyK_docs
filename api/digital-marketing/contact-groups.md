@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/api/digital-marketing/contact-groups
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/api)

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/architecture/content-modeling/model-website-presentation-components/model-page-builder-widgets
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/digital-marketing/work-with-forms/provide-meaningful-help-with-your-form
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

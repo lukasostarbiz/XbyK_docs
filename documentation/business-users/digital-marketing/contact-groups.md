@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/business-users/digital-marketing/contact-groups
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)

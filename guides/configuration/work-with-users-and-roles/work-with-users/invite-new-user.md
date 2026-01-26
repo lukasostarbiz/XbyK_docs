@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/configuration/work-with-users-and-roles/work-with-users/invite-new-user
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

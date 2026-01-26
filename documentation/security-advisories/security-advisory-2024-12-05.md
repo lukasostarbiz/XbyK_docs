@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/security-advisories/security-advisory-2024-12-05
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)

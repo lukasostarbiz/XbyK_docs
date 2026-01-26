@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/model-website-presentation-components/what-are-page-builder-widgets
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Model website presentation components

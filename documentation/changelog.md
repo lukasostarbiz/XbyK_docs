@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/changelog
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -8,6 +8,84 @@ scrape_date: 2026-01-22
 
 
 # Changelog
+## Refresh (January 22, 2026)
+**version 31.1.0**
+### New features
+**Visibility conditions for form fields**  
+When creating forms in the Form Builder, editors can now control when and how fields are displayed by [adding visibility conditions](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-visibility). The conditions are based on the value of another field in the form. For example, a “Company name” field can be configured to only appear when users select “Business” in a preceding “Account type” field. This helps keep forms clean and relevant for individual users.
+The system provides a set of visibility conditions for common scenarios. Development of custom conditions is currently not supported.
+Fields can also be configured as hidden, which allows them to be removed from the form while preserving the field’s data in existing form submissions. Hidden fields can also be used by developers to [set form values programmatically](/documentation/developers-and-admins/customization/handle-global-events/handle-form-events).
+**Content writing assistance: Improved AIRA rich text editor refinements**  
+[AIRA rich text editor refinements](/documentation/business-users/aira#rich-text-editor-refinements) are now available not only for [fields on the Content tab](/documentation/developers-and-admins/configuration/aira-configuration#add-aira-features-to-your-content-types), but also in rich text editors [within Page Builder and Email Builder](/documentation/developers-and-admins/configuration/aira-configuration#rich-text-refinements-in-page-builder-and-email-builder). When you apply predefined text refinement prompts, the text is now edited directly in the editor instead of in the AIRA chat.
+**Coupon codes for digital commerce promotions**  
+Digital commerce [promotions](/documentation/developers-and-admins/digital-commerce-setup/promotions) now support coupon code redemption. Users can configure promotions that require customers to enter a specific code during checkout to receive discounts. See [Coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) for more information.
+**Activity value-based conditions for automation**  
+A new condition type is now available in automation [condition steps](/documentation/business-users/digital-marketing/automation#conditions), which evaluates whether an activity was logged with a specific value. This allows marketers to build more sophisticated conditions, particularly when working with custom activities.
+### Updates and changes
+**New retrieve content by GUIDs content retriever methods**  
+Developers can now retrieve pages and content items by their GUID identifiers when working with multiple content types or reusable schemas. Three new methods are available for the [content retriever API](/documentation/developers-and-admins/api/content-item-api/content-retriever-api):
+  * `RetrieveAllPagesByGuids` – retrieves pages of any content type by their `WebPageItemGUID` values
+  * `RetrieveContentOfContentTypesByGuids` – retrieves content items of specific content types by their `ContentItemGUID` values
+  * `RetrieveContentOfReusableSchemasByGuids` – retrieves content items using reusable field schemas by their `ContentItemGUID` values
+
+
+This is particularly useful when working with GUIDs obtained from selector components, such as page selectors or combined content selectors. See the [content retriever API reference](/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api) for more information.
+**Froala editor update**  
+The [Froala WYSIWYG editor](https://froala.com/wysiwyg-editor) that provides the [Rich text editor](/documentation/business-users/rich-text-editor) in Xperience was updated to version 5.0.0. See [Froala Editor 5.0.0](https://froala.com/blog/editor/new-releases/froala-v5-0-0-code-snippets-word-import/) for details.
+**Rich text editor configuration update**  
+All [rich text editor configurations](/documentation/developers-and-admins/configuration/rich-text-editor-configuration/rich-text-editor-customization#replace-the-default-editor-configuration) provided by the system were updated, so that the toolbar in these configurations now includes the _Undo_ and _Redo_ buttons.
+**Empty visibility conditions for selector content type fields**  
+The [field editor](/documentation/developers-and-admins/customization/field-editor) for [content types](/documentation/developers-and-admins/development/content-types) and [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) now supports the _Empty_ visibility condition for selector fields. This includes fields with data types such as _Pages and reusable content_ or _Taxonomy_. Manual registration of `IsEmptyVisibilityCondition` for the given data types is no longer required.
+**Database changes**  
+The `CMS_AutomationTemplate` database table was removed. This table is not used by the system and was not intended to store custom data.
+**Replacement of disabled mode on the Content tab**  
+When a piece of content (content items, website channel pages, emails, and headless items) is not being edited, its fields on the _Content_ tab are now displayed in read-only mode instead of disabled mode. This update improves readability and allows editors to copy text without having to start editing the content.
+### Removed object types for CI/CD
+The update removes the `ma.automationtemplate` object type from the system. This is a legacy object type that was not used, but could potentially be present in the [repository.config](/documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories) files of your CI/CD repositories. After upgrading, you need to remove any configuration related to this object type from your _repository.config_ files, otherwise you will encounter the following error when storing or restoring data: “System.InvalidOperationException: Object type ‘ma.automationtemplate’ not found”
+Note: Check and update the Continuous Deployment repository.config used for [SaaS projects](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#prepare-a-project-for-deployment-to-the-saas-environment). Projects created using installation templates prior to version 31.1.0 include this object type in their initial CD repository.config.
+### New object types for CI/CD
+The update introduces the following object types, which are supported by the [Continuous Integration](/documentation/developers-and-admins/ci-cd/continuous-integration) and [Continuous Deployment](/documentation/developers-and-admins/ci-cd/continuous-deployment) features. Consider updating the [repository.config](/documentation/developers-and-admins/ci-cd/configure-ci-cd-repositories) files of your CI/CD repositories, particularly when using the `<IncludedObjectTypes>` allowlist for object type filtering.
+  * commerce.promotioncoupon – stores [coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) associated with created promotions.
+
+
+### Newly obsolete API
+**Html.Kentico().PageBuilderScripts method obsolete**  
+The `Html.Kentico().PageBuilderScripts()` method for [loading Page Builder scripts](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas#load-page-builder-scripts-and-styles) was made obsolete. Use `Html.Kentico().PageBuilderScriptsAsync()`instead.
+**PriceCalculationPromotionCandidate object obsolete**  
+The `PriceCalculationPromotionCandidate` digital commerce object, storing promotion-related information, was made obsolete. The object was never intended to be exposed publicly. Instead, the information is surfaced via `IPriceCalculationPromotionCandidate`.
+### Fixed issues
+  * API – In versions 30.12.0 or newer, updating content items using the `IContentItemManager.TryUpdateDraft()` method shortly after creating a new draft or a new language variant of the item via the API resulted in an error (“Sequence contains no matching element”, “System.InvalidOperationException”).
+  * Admin UI
+    * After editing and then reverting a page or content item to its published version, certain field types displayed their value incorrectly. This was only a visual issue – values appeared correctly after refreshing the UI.
+    * After enabling a discount in the **Promotions** application, its status in the breadcrumbs remained incorrectly set to “Deactivated” until the page was fully refreshed. 
+  * Assets – When uploading [content item assets](/documentation/business-users/content-hub/content-item-assets) via the [API](/api/content-management/content-items#content-item-assets), the system now automatically ensures that the file extension value set in the asset metadata starts with a dot character (`.`). A missing dot in the metadata could lead to errors when [synchronizing content](/documentation/business-users/content-sync) that referenced the asset (“Error uploading asset” or “Unexpected error code (Forbidden)”). The change affects assets uploaded after the update is applied.
+  * Events – The [event](/documentation/developers-and-admins/customization/handle-global-events) `WebPageEvents.Move.Execute`, which is triggered after the Move operation, provided incorrect values for the following event argument properties: `OriginalTreePath`, `OriginalOrder`, and `OriginalParentID`. The values reflected the page’s new location after the move instead of the original location.
+  * Membership – [Members](/documentation/developers-and-admins/development/registration-and-authentication) who had an active [shopping cart](/documentation/developers-and-admins/digital-commerce-setup) could not be deleted. After applying the update, members with shopping carts can now be deleted, and their associated shopping cart records are removed automatically.
+  * Page Builder – When a [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) component was re-rendered after a request, it could display text in the default language instead of the appropriate translation. For example, this could occur in a custom widget with a form after submitting invalid data.
+  * Pages – Copying [shareable preview URLs](/documentation/business-users/website-content) to the clipboard did not work in the Safari browser.
+  * Performance
+    * Improved performance when loading child pages in the content tree in web page applications.
+    * the update improves the performance of system APIs used to resolve [resource strings](/documentation/developers-and-admins/customization/integrate-custom-code#store-application-resources-in-resource-files). 
+  * Recycle bin – When an email was restored from the [recycle bin](/documentation/business-users/recycle_bin), the usage of [content items](/documentation/business-users/content-hub/content-items#track-usage-of-content-items) and [pages](/documentation/business-users/website-content/track-page-usages) referenced in [Email Builder components](/documentation/developers-and-admins/development/builders/email-builder/develop-email-builder-components) was not tracked correctly.
+  * Rich text editor – The _Insert link_ → _Web URL_ [rich text editor](/documentation/business-users/rich-text-editor) option did not work correctly when used on more than one [asset](/documentation/business-users/content-hub/content-item-assets) in a single rich text editor field.
+
+
+* * *
+### SaaS update (January 22, 2026)
+**Xperience by Kentico version update not required**
+New features
+  * Security events in Xperience Portal – The new [Security events](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#security-events) application allows users to view security events detected by [Cloudflare CDN](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn), such as DDoS attacks and blocked requests, directly in [Xperience Portal](/documentation/developers-and-admins/saas/xperience-portal). The application provides filtering options, a timeline view, and event details like the event’s Ray ID or HTTP request information.
+
+
+Fixed issues
+  * SaaS 
+    * In rare cases, a failed [zero-downtime deployment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#zero-downtime-deployments) could leave the environment in an inconsistent state where the deployment slots were not properly synchronized. This prevented successful recovery through standard [restore](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#restore-points-and-exports) operations and could cause the application to remain in an error state even after attempting to restore to a previous package.
+    * In some cases, old versions of stored files were not deleted, leading to increased storage usage.
+    * The application service could fail to start after a swap during the [deployment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package).
+    * When processing a large number of files, [exports](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#restore-points-and-exports) could time out due to extensive data in temporary or cache folders. 
+
+
+* * *
 ### Kentico migration tool (January 15, 2026)
 **Xperience by Kentico version update not required**
 **Kentico Migration Tool - Commerce entities support**  
@@ -42,8 +120,8 @@ Updates and changes
 * * *
 ### KentiCopilot repository (January 8, 2025)
 **Xperience by Kentico version update not required**
-The [KentiCopilot repository](https://github.com/Kentico/xperience-by-kentico-kenticopilot) was updated with new prompts for migrating the _codebase_ of Kentico Xperience 13 projects to [Xperience by Kentico](/guides/architecture/upgrade-from-kx13).
-These prompts are designed to help migrate the live site and page presentation logic as described in the [upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough).
+The [KentiCopilot repository](https://github.com/Kentico/xperience-by-kentico-kenticopilot) was updated with new prompts for migrating the _codebase_ of Kentico Xperience 13 projects to [Xperience by Kentico](/guides/upgrade-to-xbyk/upgrade-from-kx13).
+These prompts are designed to help migrate the live site and page presentation logic as described in the [upgrade walkthrough](/guides/upgrade-to-xbyk/upgrade-walkthrough).
 * * *
 ### Hotfix (December 18, 2025)
 **version 31.0.1**

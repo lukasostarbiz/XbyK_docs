@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/custom-settings/access-channel-specific-settings-options-pattern
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Custom modules: custom settings

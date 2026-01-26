@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/developer-kickstart/create-a-reusable-content-type
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

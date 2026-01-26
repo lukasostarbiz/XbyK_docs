@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/contact-management/analyze-and-customize-automation
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Contact management
@@ -57,7 +57,8 @@ The fields available for the step are taken from the _Set contact field value st
     * The order of the fields will not reflect in the step’s selector. The order is alphabetical by default.
     * AI features are not supported in this UI form.
     * Fields without a database column are not supported in this UI form.
-    * **Condition** – Splits the process into true and false branches based on a [specified condition](#conditions). [![An example of a condition path](/docsassets/documentation/automation/Condition.png)](/docsassets/documentation/automation/Condition.png)
+    * **Condition** – Splits the process into true and false branches based on a [specified condition](#conditions).  
+[![An example of a condition path](/docsassets/documentation/automation/Condition.png)](/docsassets/documentation/automation/Condition.png)
     * **Finish** – Represents the end of the process (either successful or not). A process may contain multiple _Finish_ steps. For processes with **If not already running** [recurrence](#automation-process-recurrence), contacts must be in this step for the process to start again.
 
 
@@ -67,7 +68,7 @@ When building the condition for **Condition** steps within an automation process
   * Conditions are organized together within condition groups.
   * Select **Add condition group** to create multiple groups. A selector appears above the groups where you can choose if **Any** or **All** of the condition groups need to be fulfilled.
   * To add individual conditions to a group, select **Add another condition**.
-  * For each group, you can select if **Any** or **All** of the conditions need to be fulfilled.
+  * For each group, you can select if **Any** or **All** of the conditions need to be fulfilled.  
 [![Building a condition](/docsassets/documentation/automation/Multiple_Conditions.png)](/docsassets/documentation/automation/Multiple_Conditions.png)
 
 

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/manage-content/create-multilingual-variant-of-product-2
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Manage content

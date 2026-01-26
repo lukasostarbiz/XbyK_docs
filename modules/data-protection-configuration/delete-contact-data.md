@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/data-protection-configuration/delete-contact-data
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Data protection configuration

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/understand-emails/email-issues-low-ctr
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Understand emails in Xperience

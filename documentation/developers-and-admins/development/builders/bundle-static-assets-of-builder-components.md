@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/development/builders/bundle-static-assets-of-builder-components
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -24,7 +24,7 @@ See the [Bundles](#bundles) section for detailed information about the default b
 
 
 The system includes and renders the resulting bundles on pages where Builder functionality is enabled:
-  * For the Page Builder on pages that call the `PageBuilderScripts` and `PageBuilderStyles` [extension methods](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas).
+  * For the Page Builder on pages that call the `PageBuilderScriptsAsync` and `PageBuilderStyles` [extension methods](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas).
   * For the Form Builder automatically when creating forms in the administration interface and on pages containing forms.
 
 

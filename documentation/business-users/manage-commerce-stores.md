@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/business-users/manage-commerce-stores
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -62,18 +62,21 @@ Your development team configures the available promotion types for your store. C
   * **Order discounts** – Apply discounts to the entire order (e.g., 15% off orders above $100)
 
 
-When multiple promotions could apply to the same product, the system automatically selects the promotion that provides the best discount for the customer.
+When multiple promotions could apply to the same product or order, the system automatically selects the promotion that provides the best discount for the customer. For more details, see [Discount applicability and priority](/documentation/developers-and-admins/digital-commerce-setup/promotions#discount-applicability-and-priority).
 ### Create a promotion
   1. Open the **Promotions** application.
-  2. Select **Create promotion**.
-  3. Fill in the promotion details: 
+  2. Select the promotion type in the left tab.
+  3. Select **Create promotion**.
+  4. Fill in the promotion details: 
      * Enter a **Display name** for the promotion.
      * Select a **Promotion type** – choose from available promotion rules configured by your development team.
      * Configure the **promotion rule settings** based on the selected type (e.g., discount percentage, target products, eligibility rules).
-  4. Set the **Active from** and **Active to** dates to define when the promotion is available. Promotions are automatically activated and deactivated based on these dates.
   5. **Save** the promotion.
+  6. Select **Schedule activation**.
+  7. Set the **Active from** and **Active to** dates to define when the promotion is available. Promotions are automatically activated and deactivated based on these dates.
 
 
+[![Create a promotion](/docsassets/documentation/manage-commerce-stores/promotion_create.png)](/docsassets/documentation/manage-commerce-stores/promotion_create.png)
 The promotion is automatically applied to eligible products or orders during checkout based on the configured rules.
 ### Edit a promotion
   1. Open the **Promotions** application.
@@ -90,7 +93,20 @@ Promotions display a status indicator to help you track their state:
   * **Deactivated** – The promotion is not active. You can reactivate it by setting new activation dates.
 
 
-The status automatically updates based on the **Active from** and **Active to** dates you configure.
+[![Promotion status info](/docsassets/documentation/manage-commerce-stores/promotion_status.png)](/docsassets/documentation/manage-commerce-stores/promotion_status.png)
+The status automatically updates based on the **Active from** and **Active to** dates you configure via **Change duration** when editing the promotion.
+### Use coupon codes with promotions
+Coupon codes (also called discount codes or promo codes) allow you to control which customers receive a discount. Instead of automatically applying a promotion to all eligible customers, you can require customers to enter a specific code during checkout.
+#### Add a coupon code to a promotion
+When creating or editing a promotion:
+  1. In the **Redemption method** field, select **Generic discount code**.
+  2. Enter your desired code in the **Discount code** field (e.g., _WELCOME20_ , _SUMMER50_).
+  3. Configure the rest of the promotion as usual (discount amount, activation dates, rules).
+  4. **Save** the promotion.
+
+
+The promotion now requires customers to enter the matching discount code to receive the discount.
+Discount codes are **case-insensitive**. Customers can enter _welcome20_ , _WELCOME20_ , or _Welcome20_ and all variations will work.
 ### Delete a promotion
   1. Open the **Promotions** application.
   2. Select the promotion you want to delete.

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/members/expand-restricted-content-and-sign-in-functionality
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Members

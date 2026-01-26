@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/contact-management/add-a-contacts-phone-number-or-other-contact-details
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Contact management

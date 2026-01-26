@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/email-builder/set-up-widget-properties
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Email Builder

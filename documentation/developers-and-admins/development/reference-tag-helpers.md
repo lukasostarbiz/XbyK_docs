@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/development/reference-tag-helpers
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -82,7 +82,7 @@ Currently, there is no attribute Tag Helper in the Xperience API that supports r
 ### Page Builder scripts
 **Fully qualified name:** Kentico.Content.Web.Mvc.PageBuilderScriptsTagHelper
 **Assembly name:** Kentico.Content.Web.Mvc
-Renders markup that includes scripts required by the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderScripts` extension method.
+Renders markup that includes scripts required by the [Page Builder](/documentation/developers-and-admins/development/builders/page-builder/create-pages-with-editable-areas) feature. Serves as an alternative to the `HtmlHelper.Kentico().PageBuilderScriptsAsync` extension method.
 The Tag Helper includes scripts used in the system’s editing interface, as well as those of individual Page Builder components ([widgets](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder), [sections](/documentation/developers-and-admins/development/builders/page-builder/sections-for-page-builder), [inline property editors](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/inline-editors-for-widget-properties)). See the linked documentation to learn how to correctly add custom scripts for your own components.
 cshtml
 Copy

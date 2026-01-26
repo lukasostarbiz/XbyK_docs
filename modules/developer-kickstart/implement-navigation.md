@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/developer-kickstart/implement-navigation
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Xperience by Kentico Developer kickstart

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/user-management/update-a-role
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: User management

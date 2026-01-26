@@ -1,16 +1,16 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
   * [Developers and admins](/documentation/developers-and-admins)
   * [Digital commerce setup](/documentation/developers-and-admins/digital-commerce-setup)
   * [Price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation)
-  * Price calculation implementation 
+  * Set up price calculation 
 
 
-# Price calculation implementation
+# Set up price calculation
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -97,8 +97,7 @@ public class ProductDataRetriever<TProductIdentifier, TProductData> : IProductDa
 }
 ```
 
-  3. Use the [content retriever API](/documentation/developers-and-admins/api/content-item-api) to query Xperience’s [content hub](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog), or retrieve data from your external data source.
-  4. Transform the retrieved data into `ProductData` objects with the required `UnitPrice` property and any custom fields:
+  3. Use the [content retriever API](/documentation/developers-and-admins/api/content-item-api) to query Xperience’s [content hub](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog), or retrieve data from your external data source, and transform the results into `ProductData` objects:
 C#
 **Mapping to ProductData**
 Copy
@@ -113,7 +112,7 @@ return products.ToDictionary(
 );
 ```
 
-  5. Register your implementation in the [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) container:
+  4. Register your implementation in the [dependency injection](/documentation/developers-and-admins/development/website-development-basics/dependency-injection) container:
 C#
 **Program.cs**
 Copy
@@ -124,7 +123,7 @@ builder.Services.AddTransient(
 );
 ```
 
-You must register the implementation using **open generic types** (`<,>` without specific type arguments) to enable Xperience to recognize and correctly resolve the type. This requires your `ProductDataRetriever` class to be generic with `where` constraints. 
+You must register the implementation using **open generic types** (`<,>` without specific type arguments) to enable Xperience to recognize and correctly resolve the type. This requires your `ProductDataRetriever` class to be generic with `where` constraints. See the implementation example in this section. 
 
 
 ### Pipeline integration
@@ -132,7 +131,7 @@ The `ProductDataLoaderCalculationStep` automatically calls your retriever implem
   1. The step extracts product identifiers from all `PriceCalculationRequestItem` objects in the request.
   2. It calls your retriever’s `Get` method with these identifiers and the request’s language name.
   3. The retrieved `ProductData` is attached to each corresponding `PriceCalculationResultItem`.
-  4. Subsequent calculation steps (unit price, tax, or custom) can access this product data when evaluating [promotions](/documentation/developers-and-admins/digital-commerce-setup/promotions), for example.
+  4. Subsequent calculation steps (such as unit price, tax, or custom) can access this product data when evaluating [promotions](/documentation/developers-and-admins/digital-commerce-setup/promotions), for example.
 
 
 This means you only need to implement the retriever – the price calculation service handles calling it at the appropriate time.
@@ -345,8 +344,50 @@ public async Task<PriceCalculationResult> CalculateShoppingCartPrice(
 ```
 
 In a real implementation, you would retrieve cart items from your [shopping cart storage](/documentation/developers-and-admins/digital-commerce-setup/checkout-process#manage-shopping-cart-data) and transform them into `PriceCalculationRequestItem` objects. See the **CalculationService.cs** file in the [Dancing Goat sample site](/documentation/developers-and-admins/installation#available-project-templates) for a complete implementation example.
+### Pass coupon codes
+If your promotions use [coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes), include any customer-entered codes in the calculation request via the `CouponCodes` property:
+C#
+**Include coupon codes in price calculation**
+Copy
+```
+/// <summary>
+/// Calculates prices for a shopping cart with coupon codes applied.
+/// </summary>
+public async Task<PriceCalculationResult> CalculateWithCoupons(
+    ShoppingCartDataModel cart,
+    int customerId,
+    CancellationToken cancellationToken)
+{
+    // Build the price calculation request
+    PriceCalculationRequest calculationRequest = new PriceCalculationRequest
+    {
+        Items = cart.Items.Select(item => new PriceCalculationRequestItem
+        {
+            ProductIdentifier = item.ProductIdentifier,
+            Quantity = item.Quantity
+        }).ToList(),
+        CustomerId = customerId,
+        LanguageName = "en",
+        Mode = PriceCalculationMode.ShoppingCart,
+        // Pass any coupon codes entered by the customer
+        CouponCodes = cart.CouponCodes
+    };
+
+    // Calculate prices - promotions requiring matching coupon codes are applied
+    PriceCalculationResult result =
+        await priceCalculationService.Calculate(calculationRequest, cancellationToken);
+
+    return result;
+}
+ 
+ 
+
+
+```
+
+Coupon codes are **case-insensitive**. The price calculation pipeline checks each promotion’s coupon requirements and only applies promotions configured for automatic redemption, or promotions where the customer has provided a matching code.
 ### Checkout price calculation
-Use `PriceCalculationMode.Checkout` for the final price calculation during checkout. This mode runs all calculation steps including shipping. Use this mode when the customer has selected a shipping method and is ready to complete the purchase.
+Use `PriceCalculationMode.Checkout` for the final price calculation during checkout. This mode runs all calculation steps including shipping and taxes. Use this mode when the customer has selected a shipping method and is ready to complete the purchase.
 C#
 **Calculate checkout prices**
 Copy
@@ -415,12 +456,11 @@ Retrieve customer information, shipping selections, and cart contents from vario
 
 **Incremental calculations**  
 Call the price calculation service at different points in your commerce flow using the appropriate calculation mode:
-  * Product catalog – Use `PriceCalculationMode.Catalog` for product pricing with catalog promotions applied
-  * Shopping cart view – Use `PriceCalculationMode.ShoppingCart` for cart totals with order promotions and taxes, but without shipping
-  * Final checkout – Use `PriceCalculationMode.Checkout` for complete calculation including shipping
+  * Product catalog – Use `PriceCalculationMode.Catalog` for product pricing with catalog promotions applied.
+  * Shopping cart view – Use `PriceCalculationMode.ShoppingCart` for cart totals with order promotions and taxes, but without shipping.
+  * Final checkout – Use `PriceCalculationMode.Checkout` for complete calculation including shipping.
 
 
-The Dancing Goat sample site demonstrates this approach in its `CalculationService` class, which provides separate methods for calculations with and without shipping information. The service gathers customer data from ASP.NET Core Identity, retrieves customer records from the database, and transforms address view models into `PriceCalculationRequestAddress` objects.
-For a complete working example that shows how to integrate request creation with user authentication, form data, and session state, examine the _CalculationService.cs_ file in the [Dancing Goat sample site](/documentation/developers-and-admins/installation#available-project-templates).
+The _Dancing Goat_ [sample site](/documentation/developers-and-admins/installation#available-project-templates) demonstrates this approach in its `CalculationService` class, which provides separate methods for calculations with and without shipping information. The service gathers customer data from the currently authenticated [member](/documentation/business-users/members) and retrieves customer records from the database.
 ![]()
 []()[]()

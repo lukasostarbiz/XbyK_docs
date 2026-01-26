@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/advanced-content/work-with-reusable-field-schemas
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Advanced content

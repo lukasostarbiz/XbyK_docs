@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/kenticopilot
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -58,10 +58,10 @@ Rapidly implement functional widgets with detailed prompts and reference materia
 Watch a five-minute demo showing widget implementation from start to finish, then use the detailed prompts and requirements templates from the KentiCopilot repository to build your own widgets with AI assistance.
 * * *
 ## Remodeling during upgrades
-*(From the [upgrade deep dives](/guides/development/upgrade-deep-dives) section)
+*(From the [upgrade deep dives](/guides/upgrade-to-xbyk/upgrade-deep-dives) section)
 Use AI agents to help modernize your content model as you transfer data from Kentico Xperience 13 to Xperience by Kentico
 * * *
-[Speed up remodeling with AI](/guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai) CONCEPT
+[Speed up remodeling with AI](/guides/upgrade-to-xbyk/upgrade-deep-dives/speed-up-remodeling-with-ai) CONCEPT
 See how agentic AI coding assistants can accelerate the process of remodeling content types and field mappings during your upgrade. Learn how to provide the best context and instructions for the highest quality results.
 * * *
 ## AI-powered content modeling

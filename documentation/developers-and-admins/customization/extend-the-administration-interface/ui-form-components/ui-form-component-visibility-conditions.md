@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/ui-form-component-visibility-conditions
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -219,46 +219,6 @@ using Kentico.Xperience.Admin.Base.Forms;
 ```
 
 The visibility condition is now registered in the system. Users can assign the condition when configuring the visibility of fields not marked as _Required_ via the field editor for content types and reusable field schemas. Each field can have **one** visibility condition.
-### Register "Is empty" conditions for selector fields
-You may wish to display a field only if another field, such as a content or tag selector, does not have any items selected. Currently, the system does not provide a condition for this scenario by default. However, you can use the `RegisterFormVisibilityCondition` assembly attribute to manually register the built-in _Is empty_ visibility condition (`IsEmptyVisibilityCondition`) for the appropriate `TargetFieldType` values.
-The following table provides information about the [data types](/documentation/developers-and-admins/customization/field-editor/data-type-management) of selector fields that are compatible as dependencies for the _Is empty_ condition:
-Field editor data type |  C# data type  
----|---  
-Pages and reusable content |  `IEnumerable<ContentItemReference>`  
-Pages |  `IEnumerable<WebPageRelatedItem>`  
-Taxonomy |  `IEnumerable<TagReference>`  
-Media files |  `IEnumerable<AssetRelatedItem>`  
-C#
-**Is empty visibility condition registrations**
-Copy
-```
-using Kentico.Xperience.Admin.Base.Forms;
-
-// Registers the "Is empty" visibility condition for Taxonomy fields
-[assembly: RegisterFormVisibilityCondition(
-    identifier: "Acme.VisibilityConditions.IsEmptyTaxonomy",
-    conditionType: typeof(IsEmptyVisibilityCondition),
-    name: "Is empty",
-    TargetFieldType = typeof(IEnumerable<TagReference>)
-)]
-
-// Registers the "Is empty" visibility condition for Pages and reusable content fields
-[assembly: RegisterFormVisibilityCondition(
-    identifier: "Acme.VisibilityConditions.IsEmptyPagesAndReusable",
-    conditionType: typeof(IsEmptyVisibilityCondition),
-    name: "Is empty",
-    TargetFieldType = typeof(IEnumerable<ContentItemReference>)
-)]
-
-// Registers the "Is empty" visibility condition for Pages fields
-[assembly: RegisterFormVisibilityCondition(
-    identifier: "Acme.VisibilityConditions.IsEmptyPages",
-    conditionType: typeof(IsEmptyVisibilityCondition),
-    name: "Is empty",
-    TargetFieldType = typeof(IEnumerable<WebPageRelatedItem>)
-)]
-```
-
 ## Assign visibility conditions using attributes
 Visibility conditions are supported in dynamically created configuration dialogs of [Page Builder](/documentation/developers-and-admins/development/builders/page-builder) and [Form Builder](/documentation/developers-and-admins/development/builders/form-builder) components and other admin UI components:
   * Page Builder 

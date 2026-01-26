@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/upgrade-walkthrough/migrate-data-and-binary-files
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Upgrading to Xperience by Kentico - Walkthrough
@@ -25,7 +25,6 @@ Copy
 ```
 ...
   "Settings": {
-    "MigrationProtocolPath": "<ABSOLUTE_PATH_TO_STORE_THE_-_LOG>\\Migration.Toolkit.Protocol.log",
     "KxConnectionString": "Data Source=<YOUR_DB_SERVER_NAME>;Initial Catalog=<SOURCE_KX13_DB_NAME>;Integrated Security=True;Persist Security Info=False;Connect Timeout=60;Encrypt=False;Current Language=English;",
     "KxCmsDirPath": "<ABSOLUTE_PATH_TO_YOUR_SOURCE_KX13_INSTANCE>\\CMS",
     "XbKDirPath": "<ABSOLUTE_PATH_TO_YOUR_XbyK_REPO_FOLDER>\\DancingGoat.Web",
@@ -118,7 +117,7 @@ For successful data migration, make sure that:
 
 
 Create a **database backup** each time before you run the `migrate` command.
-If you run into issues during the data migration process, check out the [Migration Protocol Reference](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/MIGRATION_PROTOCOL_REFERENCE.md#migration-protocol-reference) to troubleshoot common errors.
+If you run into issues during the data migration process, examine console output and [log files](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#configuration) to troubleshoot common errors.
 In the video, we utilize [Source instance API discovery](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md#api-discovery-setup) to ensure the migrated Page Builder data can work with the new [Editing components in Xperience by Kentico](/documentation/developers-and-admins/upgrade-to-xperience-by-kentico/editing-components-in-xperience-by-kentico) rather than in the legacy compatibility mode. While it is not a mandatory step, **we highly recommend this approach.**
 [ Previous page ](/modules/upgrade-walkthrough/setup-your-environment)
 3 of 6

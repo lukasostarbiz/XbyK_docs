@@ -1,16 +1,16 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/checkout-process/order-creation
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
   * [Developers and admins](/documentation/developers-and-admins)
   * [Digital commerce setup](/documentation/developers-and-admins/digital-commerce-setup)
   * [Checkout process](/documentation/developers-and-admins/digital-commerce-setup/checkout-process)
-  * Order creation 
+  * Create orders 
 
 
-# Order creation
+# Create orders
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -36,18 +36,20 @@ C#
 **Checkout controller**
 Copy
 ```
-public class CheckoutController : Controller
+/// <summary>
+/// Minimal example showing basic order creation.
+/// </summary>
+public class CheckoutControllerSample : Controller
 {
     private readonly IOrderCreationService<OrderData, PriceCalculationRequest, PriceCalculationResult, AddressDto> orderCreationService;
     private readonly UserManager<ApplicationUser> userManager;
 
-
-    // Inject the order creation service
-    public CheckoutController(
+    public CheckoutControllerSample(
         IOrderCreationService<OrderData, PriceCalculationRequest, PriceCalculationResult, AddressDto> orderCreationService,
         UserManager<ApplicationUser> userManager)
     {
         this.orderCreationService = orderCreationService;
+        this.userManager = userManager;
     }
 
     public async Task<IActionResult> CreateOrder(CancellationToken cancellationToken)
@@ -56,9 +58,9 @@ public class CheckoutController : Controller
         var orderData = new OrderData
         {
             // Gets the authenticated user, if one exists for the current order
-            MemberId = (await userManager.GetUserAsync(User))?.Id,
+            MemberId = (await userManager.GetUserAsync(User))?.Id ?? 0,
             // Ensure a unique order ID
-            OrderNumber = 1,
+            OrderNumber = "ORD-2026-0001",
             // Gets the rest of the order data from the request
             LanguageName = "en",
             BillingAddress = new AddressDto
@@ -124,30 +126,64 @@ Order data is represented by the `IOrderData` interface and its implementation `
   * **Payment and shipping** – Selected payment and shipping method IDs.
   * **Language** – Language name for product data localization.
   * **Order number** – Unique identifier for the order.
+  * **Coupon codes** – Any [discount codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) applied by the customer.
 
 
 C#
 **Basic order data structure**
 Copy
 ```
-var orderData = new OrderData
+/// <summary>
+/// Example showing how to construct order data with all common fields.
+/// </summary>
+public class OrderDataExample
 {
-    MemberId = currentMemberId,
-    OrderNumber = "ORD-2024-0001",
-    LanguageName = "en",
-    BillingAddress = new AddressDto { /* address fields */ },
-    ShippingAddress = new AddressDto { /* address fields */ },
-    PaymentMethodId = 1,
-    ShippingMethodId = 2,
-    OrderItems = new[]
+    public OrderData CreateOrderData(int currentMemberId)
     {
-        new OrderItem
+        var orderData = new OrderData
         {
-            ProductIdentifier = new ProductIdentifier { Identifier = 123 },
-            Quantity = 2
-        }
+            MemberId = currentMemberId,
+            OrderNumber = "ORD-2024-0001",
+            LanguageName = "en",
+            BillingAddress = new AddressDto
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                Email = "john@example.com",
+                Line1 = "123 Main St",
+                City = "New York",
+                Zip = "10001",
+                CountryID = 1,
+                StateID = 1
+            },
+            ShippingAddress = new AddressDto
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                Email = "john@example.com",
+                Line1 = "456 Elm St",
+                City = "Boston",
+                Zip = "02101",
+                CountryID = 1,
+                StateID = 2
+            },
+            PaymentMethodId = 1,
+            ShippingMethodId = 2,
+            // Include any coupon codes entered by the customer
+            CouponCodes = new[] { "WINTER20" },
+            OrderItems = new[]
+            {
+                new OrderItem
+                {
+                    ProductIdentifier = new ProductIdentifier { Identifier = 123 },
+                    Quantity = 2
+                }
+            }
+        };
+
+        return orderData;
     }
-};
+}
 ```
 
 ### Address handling
@@ -158,7 +194,7 @@ Addresses are represented by the `AddressDto` record, which includes:
 
 The service automatically:
   * Creates customer addresses if they don’t already exist
-  * Compares addresses to avoid duplicates (case-insensitive comparison, including [custom fields](#address-mapping))
+  * Compares addresses to avoid duplicates (case-insensitive comparison, including [custom fields](/documentation/developers-and-admins/digital-commerce-setup/checkout-process/customize-order-creation#address-mapping))
   * Uses shipping address data as primary source for customer information when available
 
 
@@ -173,8 +209,8 @@ The service handles both [authenticated](/documentation/business-users/members) 
 
 **Customer data updates**
 When an existing customer is found (by member ID or email), the service uses the existing customer record without updating customer information fields (such as first name, last name, email, or phone). Customer data is only populated when creating a new customer record.
-If you need to update customer information during order creation, implement a custom `ICustomerInfoMapper<TOrderData>` to modify the customer record before it’s used in the order. See [Customer information mapping](#customer-information-mapping).
-[Customer addresses](#address-handling) are stored separately and reused across orders when they match existing addresses.
+If you need to update customer information during order creation, implement a custom `ICustomerInfoMapper<TOrderData>` to modify the customer record before it’s used in the order. See [Order creation customization](/documentation/developers-and-admins/digital-commerce-setup/checkout-process/customize-order-creation#customer-information-mapping).
+Customer addresses are stored separately and reused across orders when they match existing addresses.
 ### Price calculation integration
 The order creation API uses `IPriceCalculationService` to compute order totals. You can customize the price calculation by:
   * Implementing `IPriceCalculationRequestMapper<TPriceCalculationRequest, TOrderData>` to add custom data to calculation requests.
@@ -202,12 +238,15 @@ C#
 **Example - Basic order creation**
 Copy
 ```
-public class CheckoutController : Controller
+/// <summary>
+/// Complete example with address mapping and helper methods.
+/// </summary>
+public class CheckoutControllerFullExample : Controller
 {
     private readonly IOrderCreationService<OrderData, PriceCalculationRequest,
         PriceCalculationResult, AddressDto> orderCreationService;
 
-    public CheckoutController(
+    public CheckoutControllerFullExample(
         IOrderCreationService<OrderData, PriceCalculationRequest,
             PriceCalculationResult, AddressDto> orderCreationService)
     {
@@ -228,9 +267,9 @@ public class CheckoutController : Controller
         // Prepare order data
         var orderData = new OrderData
         {
-            MemberId = User.GetMemberId(), // null for anonymous users
+            MemberId = GetMemberId(), // 0 for anonymous users
             OrderNumber = await GenerateOrderNumber(cancellationToken),
-            LanguageName = currentLanguage,
+            LanguageName = GetCurrentLanguage(),
             BillingAddress = MapToAddressDto(billingAddress, customer),
             ShippingAddress = shippingAddress.IsSameAsBilling
                 ? null
@@ -252,6 +291,19 @@ public class CheckoutController : Controller
 
         return RedirectToAction("OrderConfirmation", new { orderId });
     }
+
+    // Helper methods (simplified for documentation)
+    private Task<IEnumerable<CartItemPlaceholder>> GetShoppingCartItems(CancellationToken cancellationToken) =>
+        Task.FromResult(Enumerable.Empty<CartItemPlaceholder>());
+
+    private Task<string> GenerateOrderNumber(CancellationToken cancellationToken) =>
+        Task.FromResult("ORD-2024-0001");
+
+    private string GetCurrentLanguage() => "en";
+
+    private int GetMemberId() => User.Identity?.IsAuthenticated == true ? 1 : 0;
+
+    private Task ClearShoppingCart(CancellationToken cancellationToken) => Task.CompletedTask;
 
     private AddressDto MapToAddressDto(
         CustomerAddressViewModel address,
@@ -276,143 +328,16 @@ public class CheckoutController : Controller
 ```
 
 You have successfully created orders from shopping cart data. Customer records, addresses, and order items are persisted in the database, and order confirmation notifications are sent.
-## Customization points
-The API provides several interfaces that allow you to customize the order creation process without modifying core functionality.
-### Customer information mapping
-Implement `ICustomerInfoMapper<TOrderData>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to customer records:
-C#
-**Example - Custom customer mapper**
-Copy
-```
-public class CustomCustomerInfoMapper : ICustomerInfoMapper<CustomOrderData>
-{
-    public CustomerInfo PopulateInfo(CustomerInfo customerInfo, CustomOrderData orderData)
-    {
-        // Add custom logic to populate additional customer fields.
-        // Note that the example uses a customized
-        // CustomOrderData object extended with additional fields.
-        // Example: customerInfo.SetValue("CustomerLoyaltyPoints", orderData.LoyaltyPoints);
+## Customization
+The order creation service provides mapper interfaces to extend orders, customers, addresses, and order items with [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types). You can also customize how data is mapped before persistence or integrate with external systems during order creation.
+Common customization scenarios include:
+  * Adding loyalty points or customer tier information to customer records
+  * Storing promotional campaign codes or gift messages with orders
+  * Including delivery instructions or geocoding data on addresses
+  * Recording product configurations or warranty selections on order items
+  * Passing custom data to the price calculation service
 
-        return customerInfo;
-    }
-}
 
-// Register in the application IoC container
-builder.Services.AddTransient<ICustomerInfoMapper<CustomOrderData>, CustomCustomerInfoMapper>();
-```
-
-### Order information mapping
-Implement `IOrderInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order records:
-C#
-**Example - Custom order mapper**
-Copy
-```
-public class CustomOrderInfoMapper : IOrderInfoMapper<CustomOrderData, PriceCalculationResult>
-{
-    public OrderInfo PopulateInfo(
-        OrderInfo orderInfo,
-        CustomOrderData orderData,
-        PriceCalculationResult calculationResult)
-    {
-        // Add custom logic to populate additional order fields
-        // Note that the example uses a customized
-        // CustomOrderData object extended with additional fields.
-        // Example: orderInfo.SetValue("OrderDiscountCode", orderData.DiscountCode);
-
-        return orderInfo;
-    }
-}
-
-// Register in the application IoC container
-builder.Services.AddTransient<IOrderInfoMapper<CustomOrderData, PriceCalculationResult>,
-    CustomOrderInfoMapper>();
-```
-
-### Address mapping
-Implement `ICustomerAddressInfoMapper<TAddressDto>` or `IOrderAddressInfoMapper<TAddressDto>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to address records:
-C#
-**Example - Custom address mapper**
-Copy
-```
-public class CustomAddressInfoMapper : IOrderAddressInfoMapper<CustomAddressDto>
-{
-    public OrderAddressInfo PopulateInfo(
-        OrderAddressInfo orderAddressInfo,
-        CustomAddressDto addressDto)
-    {
-        // Add custom logic to populate additional address fields
-        // Note that the example uses a customized
-        // CustomAddressDto object extended with additional fields.
-        // Example: orderAddressInfo.SetValue("AddressNotes", addressDto.DeliveryNotes);
-
-        return orderAddressInfo;
-    }
-
-    public AddressDto PopulateDto(AddressDto addressDto, OrderAddressInfo orderAddressInfo)
-    {
-        // Reverse mapping if needed for reading order addresses
-        return addressDto;
-    }
-}
-
-// Register in the application IoC container
-builder.Services.AddTransient<IOrderAddressInfoMapper<CustomAddressDto>, CustomAddressInfoMapper>();
-```
-
-### Order item mapping
-Implement `IOrderItemInfoMapper<TOrderData, TPriceCalculationResult>` to add [custom fields](/documentation/developers-and-admins/customization/object-types/extend-system-object-types) to order items:
-C#
-**Example - Custom order item mapper**
-Copy
-```
-public class CustomOrderItemInfoMapper :
-    IOrderItemInfoMapper<CustomOrderData, PriceCalculationResult>
-{
-    public OrderItemInfo PopulateInfo(
-        OrderItemInfo orderItemInfo,
-        CustomOrderData orderData,
-        PriceCalculationResult calculationResult,
-        ProductIdentifier productIdentifier)
-    {
-        // Add custom logic to populate additional order item fields
-        // Note that the example uses a customized
-        // CustomOrderData object extended with additional fields.
-        // Example: orderItemInfo.SetValue("ItemWarrantyMonths", 24);
-
-        return orderItemInfo;
-    }
-}
-
-// Register in the application IoC container
-builder.Services.AddTransient<IOrderItemInfoMapper<CustomOrderData, PriceCalculationResult>,
-    CustomOrderItemInfoMapper>();
-```
-
-### Price calculation customization
-Implement `IPriceCalculationRequestMapper<TPriceCalculationRequest, TOrderData>` to add custom data to [price calculation requests](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#extend-data-transfer-objects):
-C#
-**Example - Custom calculation request mapper**
-Copy
-```
-public class CustomCalculationRequestMapper :
-    IPriceCalculationRequestMapper<PriceCalculationRequest, OrderData>
-{
-    public PriceCalculationRequest PopulateCalculationRequest(
-        PriceCalculationRequest calculationRequest,
-        OrderData orderData)
-    {
-        // Add custom logic to modify the calculation request
-        // Example: Add customer tier information, etc.
-
-        return calculationRequest;
-    }
-}
-
-// Register in the dependency injection container
-builder.Services
-    .AddTransient<IPriceCalculationRequestMapper<PriceCalculationRequest, rderData>,
-        CustomCalculationRequestMapper>();
-```
-
+For detailed implementation examples and best practices, see [Order creation customization](/documentation/developers-and-admins/digital-commerce-setup/checkout-process/customize-order-creation).
 ![]()
 []()[]()

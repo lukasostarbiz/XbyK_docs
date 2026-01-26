@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/understand-emails/how-emails-work-behind-the-scenes
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Understand emails in Xperience

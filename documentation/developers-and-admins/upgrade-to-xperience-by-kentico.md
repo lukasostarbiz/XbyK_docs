@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/upgrade-to-xperience-by-kentico
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -18,7 +18,7 @@ To upgrade a project from a previous version of Kentico Xperience to Xperience b
   4. Deploy your Xperience by Kentico project either to our [SaaS environment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment) or to your [private cloud](/documentation/developers-and-admins/deployment/deploy-to-private-cloud).
 
 
-See our series of [guides](/guides/architecture/upgrade-from-kx13) for a more detailed walkthrough of the upgrade process.
+See our series of [guides](/guides/upgrade-to-xbyk/upgrade-from-kx13) for a more detailed walkthrough of the upgrade process.
 ### Technical comparison
 The following table and diagram outline the main differences in the **architecture** of the Xperience products.
 [![Comparison of the Kentico Xperience 13 and Xperience by Kentico architecture](/docsassets/documentation/upgrade-to-xperience-by-kentico/Xperience_Architecture_Comparison.png)](/docsassets/documentation/upgrade-to-xperience-by-kentico/Xperience_Architecture_Comparison.png)

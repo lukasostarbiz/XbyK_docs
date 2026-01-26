@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/contact-management/custom-activity-forms
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Contact management

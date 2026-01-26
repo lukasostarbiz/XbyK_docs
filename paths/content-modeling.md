@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/paths/content-modeling
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Xperience by Kentico
@@ -19,7 +19,7 @@ Xperience by Kentico
   * [ Documentation ](/documentation "Documentation")
 [ Administration interface basics ](/documentation/administration-interface-basics) [ Developers and admins ](/documentation/developers-and-admins) [ Business users ](/documentation/business-users) [ Changelog ](/documentation/changelog) [ Security advisories ](/documentation/security-advisories) [ Glossary ](/documentation/glossary)
   * [ Guides ](/guides "Guides")
-[ Administration interface basics ](/guides/administration-interface-basics) [ Customer journeys ](/guides/customer-journeys) [ Digital marketing ](/guides/digital-marketing) [ Configuration ](/guides/configuration) [ Development ](/guides/development) [ Architecture ](/guides/architecture)
+[ Administration interface basics ](/guides/administration-interface-basics) [ Customer journeys ](/guides/customer-journeys) [ Digital marketing ](/guides/digital-marketing) [ Configuration ](/guides/configuration) [ Development ](/guides/development) [ Architecture ](/guides/architecture) [ Upgrade to Xperience by Kentico ](/guides/upgrade-to-xbyk)
   * [ Training ](/personas "Training")
 [ For Admins ](/personas/admin) [ For Business users ](/personas/business) [ For Developers ](/personas/developer) [ For Solution architects ](/personas/architect)
   * [ API Examples ](/api "API Examples")

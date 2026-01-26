@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/content-retriever-api
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -81,7 +81,7 @@ new RetrievePagesParameters { PathMatch = PathMatch.Children("/products") }
 
 
 By using these parameters objects, you gain explicit control over the retrieval context and scope, ensuring the retriever fetches the right content based on your application’s requirements, rather than just relying on provided defaults.
-All `*Parameters` objects also include a `Default` property. This property provides a default instance of the specific parameter type when no custom configuration is needed. Useful when a configuration action is syntactically required but no additional configuration is necessary (for instance, when using certain advanced overloads of the available methods).
+All `*Parameters` objects also include a `Default` property. This property provides a default instance of the specific parameter type when no custom configuration is needed. Useful when a configuration action is syntactically required but no additional configuration is necessary (for instance, when using certain advanced overloads of the available methods). However, note that the default object is only populated in certain scenarios, see: [Request context requirements](#request-context-requirements).
 ### Optional query configuration
 Certain overloads of `IContentRetriever` methods accept an `additionalQueryConfiguration` parameter. This parameter allows you to directly configure the underlying [content query builder](/documentation/developers-and-admins/api/content-item-api/content-item-query-api#build-queries) instance, providing advanced control over the database query construction beyond what is possible using the [retrieval parameters](#configurable-retrieval-behavior) described above.
 You can use this to apply various query modifications, such as:
@@ -316,6 +316,52 @@ using (var dependencyCollector = new CacheDependencyCollector())
 
 The collector also supports nested scopes. If you create multiple `CacheDependencyCollector` instances in a nested fashion (e.g., within a method that calls another method, both using a collector), dependencies from inner scopes are automatically propagated to outer scopes upon disposal of the inner collector.
 The `CacheDependencyCollector.AddCacheDependency(CMSCacheDependency dependency)` method can also be used to manually add dependencies to the current scope if needed. Note that the method must be called from inside an initialized collector scope – the call otherwise returns an exception.
+### Request context requirements
+Certain `IContentRetriever` method parameters (`ChannelName`, `LanguageName`, `IsForPreview`) can be detected automatically when the request’s domain matches a configured [website channel](/documentation/developers-and-admins/configuration/website-channel-management).
+C#
+**Automatic context detection**
+Copy
+```
+// Callable from any route where request domain
+// matches an existing website channel domain.
+var articles = await contentRetriever.RetrievePages<ArticlePage>();
+```
+
+Additionally, the `RetrieveCurrentPage` method is only intended to be called from inside code handled by [content tree-based routing](/documentation/developers-and-admins/development/routing/content-tree-based-routing), which provides all required parameters for the retrieval (page ID, etc.).
+C#
+**RetrieveCurrentPage context requirements**
+Copy
+```
+// Callable from code handled by content tree-based routing.
+var currentPage = await contentRetriever.RetrieveCurrentPage<HomePage>();
+```
+
+When automatic detection is not possible, you need to provide these parameters explicitly:
+C#
+**Specify context parameters explicitly**
+Copy
+```
+var articles = await contentRetriever.RetrievePages<ArticlePage>(
+    new RetrievePagesParameters
+    {
+        ChannelName = "MyWebsite",
+        LanguageName = "en",
+        IsForPreview = false
+    }
+);
+```
+
+Explicit parameterization is needed when:
+  * Request domain does not match any configured [website channel](/documentation/business-users/website-content).
+  * Executing code in background jobs or [scheduled tasks](/documentation/developers-and-admins/customization/scheduled-tasks).
+  * Running code in [console applications or CLI tools](/documentation/developers-and-admins/api/use-the-xperience-by-kentico-api-externally).
+
+
+If context cannot be detected automatically, the API throws an `InvalidOperationException` with messages such as:
+  * “The HTTP context is not available. Ensure that the `IContentRetrieverWebsiteContextProvider` is used within a valid HTTP request context.”
+  * “Website data context could not be retrieved. Parameters `ChannelName`, `LanguageName`, and `IsForPreview` need to be specified manually.”
+
+
 ### Custom model mapping
 The `IContentRetriever` API provides flexible model mapping capabilities that support both registered content types and custom model classes. The underlying model mapping system uses the following priority:
   1. **Registered content types** – If a model type is registered for the content type via [RegisterContentTypeMappingAttribute](/documentation/developers-and-admins/api/generate-code-files-for-system-objects#registercontenttypemapping-attribute) and your target model type (provided via the generic method parameter) is assignable from the registered type, the registered type is used for mapping.
@@ -480,7 +526,7 @@ IEnumerable<IWebPageFieldsSource> allPages =
 ```
 
 #### Retrieving pages by GUIDs across content types
-When you need to retrieve all pages of any content type by specific GUIDs, use the `RetrieveAllPages` method with [additional query configuration](#optional-query-configuration):
+When you need to retrieve pages of any content type by specific GUIDs, use the [RetrieveAllPagesByGuids](/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api#retrieve-all-pages-by-guids) method:
 C#
 **Retrieve pages by GUIDs across all content types**
 Copy
@@ -488,14 +534,9 @@ Copy
 // A collection of page GUIDs (typically obtained from Page selector)
 var webPageItemGuids = new[] { guid1, guid2, guid3 };
 
-var pagesByGuids = await contentRetriever.RetrieveAllPages<IWebPageFieldsSource>(
-    RetrieveAllPagesParameters.Default,
-    query => query
-        .Where(where => where.WhereIn(
-            nameof(IWebPageFieldsSource.SystemFields.WebPageItemGUID),
-            webPageItemGuids)),
-    new RetrievalCacheSettings($"{nameof(RetrieveAllPagesQueryParameters.Where)}|ByGUIDs")
-);
+var pagesByGuids = await contentRetriever.
+    RetrieveAllPagesByGuids<IWebPageFieldsSource>(
+        webPageItemGuids);
  
  
  
@@ -503,8 +544,9 @@ var pagesByGuids = await contentRetriever.RetrieveAllPages<IWebPageFieldsSource>
 
 ```
 
+This method provides automatic cache dependency management based on the provided GUIDs, making it more efficient and convenient than manual query configuration.
 #### Limitations for reusable content items
-The `RetrieveAllPages` approach is only available for page content types. For reusable content items, you must use one of the following approaches:
+The `RetrieveAllPages` (`RetrieveAllPagesByGuids`) approach is only available for page content types. For reusable content items, you must use one of the following approaches:
   * Specify exact content types you want to retrieve.
   * Use [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) to group related content types that share common properties.
 

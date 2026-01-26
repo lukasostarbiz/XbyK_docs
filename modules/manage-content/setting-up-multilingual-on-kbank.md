@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/manage-content/setting-up-multilingual-on-kbank
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Manage content

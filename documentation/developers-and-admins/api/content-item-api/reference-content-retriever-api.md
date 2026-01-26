@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/reference-content-retriever-api
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -378,7 +378,9 @@ C#
 Copy
 ```
 // Assuming 'ArticlePage' is a generated model class
-var specificPageGuids = new[] { Guid.Parse("..."), Guid.Parse("...") };
+var specificPageGuids = new[] {
+    // Guid values...
+};
 
 // Gets the specified pages using default settings
 IEnumerable<ArticlePage> specificPages =
@@ -470,6 +472,60 @@ IEnumerable<PageTitleModel> pageLinks =
 ```
 
 Some overloads of `RetrieveAllPages` require an instance of `RetrieveAllPagesParameters`. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](#page-query-parameters) table.
+### Retrieve all pages by GUIDs
+**Method:** `RetrieveAllPagesByGuids<TResult>(...)`
+Retrieves all pages (of any content type) identified by their `WebPageItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
+This method is useful when you need to fetch pages of multiple content types by specific identifiers, for example obtained using [page selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#page-selector), without restricting to a single content type.
+**Combined content selector usage limitations**
+The GUIDs returned by [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector) cannot be used with this method because they are incompatible with the page GUIDs this method expects. The combined content selector returns `ContentItemGUID` values inside its `ContentItemReference` return type, while this method expects `WebPageItemGUID` values.
+Passing collections of GUIDs from the combined content selector returns an empty result. Use [RetrieveContentByGuids](#retrieve-content-items-by-guids) to work with combined selector data.
+C#
+**Basic usage**
+Copy
+```
+// Assuming you have a collection of page GUIDs from a page selector
+var webPageItemGuids = new[] {
+    // Guid values...
+};
+
+// Gets pages of any content type using default settings
+IEnumerable<IWebPageFieldsSource> specificPages =
+  await contentRetriever.RetrieveAllPagesByGuids<IWebPageFieldsSource>(webPageItemGuids);
+```
+
+C#
+**All configuration options**
+Copy
+```
+var webPageItemGuids = new[] {
+    // Guid values...
+};
+
+var parameters = new RetrieveAllPagesParameters
+{
+    PathMatch = PathMatch.Children("/products")
+};
+
+// Disables caching
+var cacheSettings = RetrievalCacheSettings.CacheDisabled;
+
+IEnumerable<IWebPageFieldsSource> pageData =
+  await contentRetriever.RetrieveAllPagesByGuids<IWebPageFieldsSource>(
+    webPageItemGuids,
+    parameters,
+    query => query
+        // Orders by name
+        .OrderBy("DocumentName")
+        // Gets the top 10 results
+        .TopN(10),
+    cacheSettings,
+    // Uses default mapping
+    configureModel: null
+);
+```
+
+The `RetrieveAllPagesByGuids` method utilizes the `RetrieveAllPagesParameters` object, which is also used by the [Retrieve all pages](#retrieve-all-pages) method. This object allows you to fine-tune how the pages are retrieved. For available parameters, see the [Page query parameters](#page-query-parameters) table.
+**Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate [cache dependencies](/documentation/developers-and-admins/development/caching/cache-dependencies#by-idguidcodename) based on the provided `SystemFields.WebPageItemGuid` values are automatically included.
 ### Page query parameters
 The following table contains all parameters available for page query methods. Each parameter row specifies which methods support that parameter.
 Property |  Default value |  Applicable methods |  Description  
@@ -541,6 +597,64 @@ IEnumerable<IMetadata> oldestMetadataItems =
 ```
 
 For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
+### Retrieve content items of reusable schemas by GUIDs
+**Method:** `RetrieveContentOfReusableSchemasByGuids<TResult>(...)`
+Retrieves a collection of specific reusable content items whose content types use one or more of the specified [reusable field schemas](/documentation/developers-and-admins/development/content-types/reusable-field-schemas), identified by their `ContentItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
+This method is useful when you have a list of specific content item identifiers that share common reusable schemas and need to fetch their data efficiently.
+C#
+**Basic usage**
+Copy
+```
+// Assuming 'IMetadata' is an interface implemented by types using the schema
+var schemaNames = new[] { IMetadataFields.REUSABLE_FIELD_SCHEMA_NAME };
+var contentItemGuids = new[] {
+    // Guid values...
+};
+
+// Gets the specified content items using default settings
+IEnumerable<IMetadataFields> specificItems =
+  await contentRetriever.RetrieveContentOfReusableSchemasByGuids<IMetadataFields>(
+    schemaNames,
+    contentItemGuids);
+```
+
+C#
+**All configuration options**
+Copy
+```
+var schemaNames = new[] { IMetadataFields.REUSABLE_FIELD_SCHEMA_NAME };
+var contentItemGuids = new[] {
+    // Guid values...
+};
+
+// Gets specific content items with custom configuration
+var parameters = new RetrieveContentOfReusableSchemasParameters
+{
+    WorkspaceNames = new[] { "MainContent" }
+};
+
+// Disables caching
+var cacheSettings = RetrievalCacheSettings.CacheDisabled;
+
+IEnumerable<IMetadataFields> contentData =
+  await contentRetriever
+    .RetrieveContentOfReusableSchemasByGuids<IMetadataFields>(
+        schemaNames,
+        contentItemGuids,
+        parameters,
+        query => query
+            // Selects specific columns
+            .Columns("DisplayName", "ContentItemModifiedWhen")
+            // Orders by modified date
+            .OrderByDescending("ContentItemModifiedWhen"),
+        cacheSettings,
+        // Uses default mapping
+        configureModel: null
+);
+```
+
+The `RetrieveContentOfReusableSchemasByGuids` method uses the `RetrieveContentOfReusableSchemasParameters` object. This object allows you to fine-tune how the content items are retrieved. For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
+**Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate cache dependencies based on the provided `contentItemGuids` are automatically included.
 ### Retrieve content items of a single content type
 Method: `RetrieveContent<TSource, TResult>(...)`
 Retrieves a collection of content items of a specific [content type](/documentation/developers-and-admins/development/content-types), mapped to the `TResult` model. Allows filtering by workspace, language, and other criteria using the parameters described in the [Content item query parameters](#content-item-query-parameters) table.
@@ -709,6 +823,69 @@ IEnumerable<IContentInfo> recentContent =
 ```
 
 For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
+### Retrieve content items of multiple content types by GUIDs
+**Method:** `RetrieveContentOfContentTypesByGuids<TResult>(...)`
+Retrieves a collection of specific reusable content items of multiple content types identified by their `ContentItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
+This method is useful when you have a list of specific content item identifiers from multiple content types (e.g., from a [combined content selector](/documentation/developers-and-admins/customization/extend-the-administration-interface/ui-form-components/reference-admin-ui-form-components#combined-content-selector)) and need to fetch their data efficiently.
+C#
+**Basic usage**
+Copy
+```
+// Assuming you have content item GUIDs from the combined selector
+var contentTypes = new[] { Author.CONTENT_TYPE_NAME, Article.CONTENT_TYPE_NAME };
+var contentItemGuids = new[] {
+    // Guids...
+ };
+
+// Gets the specified content items using default settings
+IEnumerable<IContentItemFieldsSource> specificItems =
+  await contentRetriever
+    .RetrieveContentOfContentTypesByGuids<IContentItemFieldsSource>(
+        contentTypes,
+        contentItemGuids);
+```
+
+C#
+**All configuration options**
+Copy
+```
+var contentTypes = new[] {
+    Author.CONTENT_TYPE_NAME,
+    Article.CONTENT_TYPE_NAME
+};
+
+var contentItemGuids = new[] {
+    // Guids...
+};
+
+// Gets specific content items with custom configuration
+var parameters = new RetrieveContentOfContentTypesParameters
+{
+    WorkspaceNames = new[] { "BlogContent" }
+};
+
+// Disables caching
+var cacheSettings = RetrievalCacheSettings.CacheDisabled;
+
+IEnumerable<IContentItemFieldsSource> contentData =
+  await contentRetriever
+    .RetrieveContentOfContentTypesByGuids<IContentItemFieldsSource>(
+        contentTypes,
+        contentItemGuids,
+        parameters,
+        query => query
+                    // Selects specific columns
+                    .Columns("DisplayName", "ContentItemModifiedWhen")
+                    // Orders by modified date
+                    .OrderByDescending("ContentItemModifiedWhen"),
+        cacheSettings,
+        // Uses default mapping
+        configureModel: null
+);
+```
+
+The `RetrieveContentOfContentTypesByGuids` method uses the `RetrieveContentOfContentTypesParameters` object. This object allows you to fine-tune how the content items are retrieved. For available parameters, see the [Content item query parameters](#content-item-query-parameters) table.
+**Note:** When caching is enabled via `RetrievalCacheSettings`, appropriate cache dependencies based on the provided `contentItemGuids` are automatically included.
 ### Retrieve content items by GUIDs
 **Method:** `RetrieveContentByGuids<TResult>(...)`
 Retrieves a collection of specific reusable content items identified by their `ContentItemGUID` values. The method maps the retrieved data to the specified `TResult` model.
@@ -718,7 +895,9 @@ C#
 Copy
 ```
 // Assuming 'Author' is a generated model class
-var specificAuthorGuids = new[] { Guid.Parse("..."), Guid.Parse("...") };
+var specificAuthorGuids = new[] {
+    // Guid values...
+};
 
 // Gets the specified authors using default settings
 IEnumerable<Author> specificAuthors =

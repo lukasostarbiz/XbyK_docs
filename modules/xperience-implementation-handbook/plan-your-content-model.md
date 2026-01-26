@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/xperience-implementation-handbook/plan-your-content-model
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Xperience implementation handbook
@@ -75,7 +75,7 @@ When you need to synchronize data between Xperience and an external system conti
 If the built-in scheduled tasks do not meet your requirements, you can look into external services like [Hangfire](https://www.hangfire.io/) or [Quartz.NET](https://www.quartz-scheduler.net/).
 Instead of pulling data directly from the external system at runtime, we recommend storing it in your Xperience instance and working with it there if possible. If managing data in Xperience isn’t feasible, clearly define your “source of truth” (e.g., your ERP or another external system) and the process for content editors to manage each data type.
 For a one-way data migration from an external system, you can use our [Xperience by Kentico: Universal Migration Tool](https://github.com/Kentico/xperience-by-kentico-universal-migration-tool/tree/main).
-If you plan to migrate from an older Kentico product using the [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool), take a look at our [migration strategy guide](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features) for information about important considerations.
+If you plan to migrate from an older Kentico product using the [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool), take a look at our [migration strategy guide](/guides/upgrade-to-xbyk/upgrade-from-kx13/plan-your-strategy-for-migrating-features) for information about important considerations.
 ### Design, organize, and share content
 In Xperience by Kentico, you can present content to visitors using multiple channels: websites, emails, or headless.
 Read the [Design content](/guides/architecture/content-modeling/content-modeling-guide/design-content) page of the _Content modeling guide_ to learn how to build, manage, share, and secure your content.

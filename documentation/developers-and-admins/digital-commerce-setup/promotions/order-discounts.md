@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/promotions/order-discounts
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -29,6 +29,7 @@ The system supports two types of promotions:
   * **Order discounts** – Apply discounts to the entire order based on its contents (for example, percentage discounts for orders above a given total price).
 
 
+Both catalog and order discounts can optionally require [coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) for redemption. When configured with a coupon code, the promotion is only applied if the customer enters the matching code during checkout.
 ## Order promotion rule overview
 A **promotion rule** defines the logic for determining whether a promotion applies to an order and how to calculate the discount amount. You implement promotion rules as classes that inherit from `OrderPromotionRule`.
 **Terminology – Discounts vs. Promotions**
@@ -155,7 +156,7 @@ Copy
 [assembly: RegisterPromotionRule<OrderPercentageDiscountRule>(
     "Acme.OrderPercentageDiscount",
     PromotionType.Order,
-    "Order Percentage Discount")]
+    "Order percentage discount")]
 ```
 
 ### Filter promotion applicability
@@ -266,7 +267,6 @@ public class FirstTimeBuyerOrderPromotionRule
     /// </summary>
     private async Task<bool> IsFirstTimeCustomer(int customerId, CancellationToken cancellationToken)
     {
-        Console.WriteLine(customerId);
         // Applies only to authenticated live site members
         bool isAuthenticated =
             httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated

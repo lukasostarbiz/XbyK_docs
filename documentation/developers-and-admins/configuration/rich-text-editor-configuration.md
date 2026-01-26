@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/configuration/rich-text-editor-configuration
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -124,7 +124,9 @@ Copy
         'alignLeft',
         'alignCenter',
         'alignRight',
-        'html'
+        'html',
+        'undo',
+        'redo'
     ],
     paragraphFormat: {
         N: 'Paragraph',
@@ -166,7 +168,9 @@ Copy
     "alignCenter",
     "alignRight",
     "html",
-    "insertLinkDropDown"
+    "insertLinkDropDown",
+    "undo",
+    "redo"
   ],
   "imageEditButtons": [ "imageReplace", "imageAlt", "imageAlign", "imageDisplay", "imageSize", "imageRemove" ],
   "customPlugins": [

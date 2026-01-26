@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/contact-management/display-forms-on-pages
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Contact management

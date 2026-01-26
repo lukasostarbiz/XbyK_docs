@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/glossary
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -124,7 +124,8 @@ Form Builder |  The Xperience [Form Builder](/documentation/developers-and-admin
 |  [Form components](/documentation/developers-and-admins/development/builders/form-builder/form-components) are reusable elements used to create and edit forms in Form Builder. Each component represents a form input type, such as a text box or a group of radio buttons. Users can add, remove, or reorder individual form components and specify their properties via the form builder interface in the _Forms_ application.  
 Form section |  [Form sections](/documentation/developers-and-admins/development/builders/form-builder/form-sections) define the layout of forms. They represent reusable pieces of markup that can store any number of form zones – areas where content editors can place form fields.  
 Form widget |  The [form widget](/documentation/business-users/digital-marketing/forms/display-forms-on-pages) is provided in Kentico Xperience by default. It allows editors to place forms into the content of pages that use Page Builder. The _Form_ widget can be found only when editing pages in the _Page Builder_ within a website channel application.  
-Validation rule |  Validation rules restrict which values can be submitted into form fields. For example, validation rules can limit the maximum number of characters or the maximum numerical value a user can enter into a field. Editors can add validation rules when configuring individual fields in the Form Builder UI. Developers can implement custom validation rules as described in [Form Builder validation rules](/documentation/developers-and-admins/development/builders/form-builder/form-builder-validation-rules).  
+Validation rule |  Validation rules restrict which values can be submitted into form fields. For example, validation rules can limit the maximum number of characters or the maximum numerical value a user can enter into a field. Editors can [add validation rules](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-validation) when configuring individual fields in the Form Builder UI. Developers can implement custom validation rules as described in [Form Builder validation rules](/documentation/developers-and-admins/development/builders/form-builder/form-builder-validation-rules).  
+Visibility condition |  Visibility conditions control when and how form fields are displayed to users. The conditions are always based on the value of another field in the form. For example, a “Company name” field can be configured to only appear when users select “Business” in a preceding “Account type” field, keeping the form clean and relevant for individual users. Editors can [add a visibility condition](/documentation/business-users/digital-marketing/forms/create-and-edit-forms#field-visibility) when configuring individual fields in the Form Builder UI. The system provides a set of visibility conditions for common scenarios. Development of custom conditions is currently not supported.  
 ## Digital marketing
 Term |  Description  
 ---|---  

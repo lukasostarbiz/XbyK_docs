@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/business-users/content-hub/content-items
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -21,7 +21,7 @@ Content items are useful for numerous scenarios:
 
 ## Find content items
 The Content hub will often contain a large number of items. The search bar allows you to find items with a name or content type matching the entered text in the current [workspace](/documentation/developers-and-admins/configuration/users/role-management/workspaces).
-The listing displays only items in the current workspace. If you have access to multiple workspaces, you can switch between them using the workspace switcher located at the top left of the Content Hub interface.
+The listing displays only items in the current workspace. If you have access to multiple workspaces, you can switch between them using the workspace switcher located at the top left of the Content hub interface.
 If you select a [folder](/documentation/business-users/content-hub/content-hub-folders) in the tree, the listing only displays items located directly in the given folder. You can use the search function to find items, including subfolders.
 You can also **Filter** the list of content items to display only selected content types, items with specific statuses, items containing specific tags, or items with authentication requirements.
 [![Filtering items in the Content hub application](/docsassets/documentation/content-items/CH_filter.png)](/docsassets/documentation/content-items/CH_filter.png)

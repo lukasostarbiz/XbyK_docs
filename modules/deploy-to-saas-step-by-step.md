@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/deploy-to-saas-step-by-step
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Deploy to SaaS step-by-step

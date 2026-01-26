@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/price-calculation
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -18,8 +18,8 @@ Different calculation modes optimize the service for each scenario, running only
 **Key points**
   * The price calculation service uses a **pipeline architecture** with sequential calculation steps.
   * Three **calculation modes** (`Catalog`, `ShoppingCart`, `Checkout`) optimize performance for different scenarios.
-  * You must implement a **product data retriever** to connect the service to your catalog. See [Price calculation implementation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-product-data-retriever).
-  * **Tax calculation** requires a custom implementation – the default step does not calculate taxes. See [Price calculation implementation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-tax-calculation-step).
+  * You must implement a **product data retriever** to connect the service to your catalog. See [Set up price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-product-data-retriever).
+  * **Tax calculation** requires a custom implementation – the default step does not calculate taxes. See [Set up price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-tax-calculation-step).
   * All calculation steps can be [customized or extended](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization) to fit your business logic.
 
 
@@ -28,7 +28,7 @@ To make the price calculation API usable in your project, you need to implement 
 Component |  Required for |  Description  
 ---|---|---  
 **Product data retriever** |  All modes |  Implements `IProductDataRetriever` to load product information and pricing data from your [catalog](/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog). See [Implement product data retrieval](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#implement-product-data-retrieval).  
-**Tax calculation step** |  ShoppingCart, Checkout modes |  Overrides the default `ITaxPriceCalculationStep` to calculate taxes. The default implementation does not add taxes. See [Price calculation implementation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-tax-calculation-step).  
+**Tax calculation step** |  ShoppingCart, Checkout modes |  Overrides the default `ITaxPriceCalculationStep` to calculate taxes. The default implementation does not add taxes. See [Set up price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#create-a-tax-calculation-step).  
 Once you’ve implemented and registered these components, the price calculation service automatically handles the rest of the calculation pipeline, including unit price calculations, catalog promotions, subtotals, order promotions, shipping costs, and final totals.
 For complete implementation examples, examine the _ProductDataRetriever.cs_ and _DancingGoatTaxPriceCalculationStep.cs_ files in the [Dancing Goat](/documentation/developers-and-admins/installation#available-project-templates) sample project.
 ## Calculation modes
@@ -77,7 +77,7 @@ Taxes |  ShoppingCart, Checkout |  Calculates taxes (requires custom implementat
 Line totals |  ShoppingCart, Checkout |  Calculates final line totals including taxes  
 Order total |  ShoppingCart, Checkout |  Sums line subtotals, shipping, and taxes  
 Grand total |  ShoppingCart, Checkout |  Sets the final grand total to be paid  
-You can customize the default flow by [modifying existing steps](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#modify-existing-calculation-steps) or [implementing custom steps](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#implement-custom-calculation-steps) and inserting them into the pipeline.
+You can customize the default flow by [modifying existing steps](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#modify-existing-calculation-steps) or [adding custom steps](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization#add-a-custom-calculation-step) to the pipeline.
 ## Basic usage
 Inject `IPriceCalculationService` and call `Calculate` with a `PriceCalculationRequest`. The service returns a `PriceCalculationResult` containing itemized prices, totals, and applied promotions.
 C#
@@ -137,8 +137,8 @@ public class ShoppingCartController : Controller
 
 For complete examples of each calculation mode, see [Calculate prices](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#calculate-prices).
 ## Next steps
-  * [Price calculation implementation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation) – Implement product data retrieval and use the calculation service
-  * [Price calculation customization](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization) – Extend data objects, modify calculation steps, or add custom steps
+  * [Set up price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation) – Implement product data retrieval and use the calculation service
+  * [Customize price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization) – Extend data objects, modify calculation steps, or add custom steps
   * [Checkout process](/documentation/developers-and-admins/digital-commerce-setup/checkout-process) – Integrate price calculation into your checkout process
 
 

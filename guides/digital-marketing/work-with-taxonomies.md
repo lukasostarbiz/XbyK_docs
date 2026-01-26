@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/digital-marketing/work-with-taxonomies
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -17,5 +17,3 @@ Learn about how taxonomies work in Xperience by Kentico.
 * * *
 [Work with taxonomies in Kbank](/guides/digital-marketing/work-with-taxonomies/work-with-taxonomies-in-kbank) HOW-TO
 See practical examples of how you can work with taxonomies in Xperience.
-![]()
-[]()[]()

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/customizations-and-integrations/access-custom-channel-specific-configurations
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

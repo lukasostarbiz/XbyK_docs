@@ -1,13 +1,13 @@
 ---
 source: https://docs.kentico.com/modules/upgrade-overview/plan-your-strategy-for-migrating-features
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Upgrading to Xperience by Kentico - Overview
 3 of 6 Pages
 # Plan your strategy for migrating features
 Upgrading from **Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK)** involves varying levels of effort depending on the features you choose to carry over.
-Our [Upgrade overview](/modules/upgrade-overview/upgrade-from-kx13-overview) guide outlines the process consisting of configuring the environment, running the data migration using the [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) and subsequent adjustments. If you prefer to learn hands-on, follow along with our [walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough), which showcases the upgrade of Dancing Goat sample site from KX13 to XbyK.
+Our [Upgrade overview](/modules/upgrade-overview/upgrade-from-kx13-overview) guide outlines the process consisting of configuring the environment, running the data migration using the [Kentico Migration Tool](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool) and subsequent adjustments. If you prefer to learn hands-on, follow along with our [walkthrough](/guides/upgrade-to-xbyk/upgrade-walkthrough), which showcases the upgrade of Dancing Goat sample site from KX13 to XbyK.
 This guide breaks down the upgrade process **by feature** , offering insights into which areas are relatively straightforward and which ones may demand more time and resources.
 It is NOT our goal to provide exact feature parity between KX13 and XbyK, but rather to offer more modern, faster, and more composable tools to deliver value to your customers. Therefore, in addition to notes about the effort, we highlight the benefits your customers gain after the upgrade.
 So you can evaluate and plan your upgrade most effectively, we also provide information about features currently on the roadmap.

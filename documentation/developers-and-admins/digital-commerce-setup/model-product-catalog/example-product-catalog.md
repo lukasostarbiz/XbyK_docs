@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/model-product-catalog/example-product-catalog
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -222,21 +222,20 @@ Copy
 /// <summary>
 /// Service for retrieving product categories from the ProductCategory taxonomy.
 /// </summary>
-public class CategoryService
+public class CategoryService : CachedServiceBase
 {
     public const string PRODUCT_CATEGORY_TAXONOMY = "Codesamples.ProductCategory";
 
     private readonly ITaxonomyRetriever taxonomyRetriever;
-    private readonly IProgressiveCache progressiveCache;
     private readonly ICacheDependencyBuilderFactory cacheDependencyBuilderFactory;
 
     public CategoryService(
         ITaxonomyRetriever taxonomyRetriever,
         IProgressiveCache progressiveCache,
         ICacheDependencyBuilderFactory cacheDependencyBuilderFactory)
+        : base(progressiveCache)
     {
         this.taxonomyRetriever = taxonomyRetriever;
-        this.progressiveCache = progressiveCache;
         this.cacheDependencyBuilderFactory = cacheDependencyBuilderFactory;
     }
 
@@ -245,9 +244,9 @@ public class CategoryService
     /// </summary>
     public async Task<List<CategoryModel>> GetCategoriesAsync()
     {
-        return await progressiveCache.LoadAsync(async (cacheSettings) =>
+        return await LoadWithCacheAndDependency(async (cacheSettings) =>
         {
-            // Load taxonomy data
+            // Loads taxonomy data
             var taxonomyData = await taxonomyRetriever.RetrieveTaxonomy(PRODUCT_CATEGORY_TAXONOMY, "en");
 
             var result = taxonomyData.Tags
@@ -256,6 +255,7 @@ public class CategoryService
                     TagGuid = tag.Identifier,
                     Name = tag.Title
                 })
+                .OrderBy(n => n.Name)
                 .ToList();
 
             // Set cache dependency - clear cache when the taxonomy changes
@@ -268,11 +268,8 @@ public class CategoryService
 
             return result;
         },
-        // Caches the result for 60 minutes, using sliding expiration
-        new CacheSettings(
-            cacheMinutes: CacheConstants.LongCacheDurationMinutes,
-            useSlidingExpiration: true,
-            cacheItemNameParts: ["commerce", "categories", PRODUCT_CATEGORY_TAXONOMY]));
+        cacheMinutes: CacheConstants.LongCacheDurationMinutes,
+        cacheItemNameParts: ["commerce", "categories", PRODUCT_CATEGORY_TAXONOMY]);
     }
 }
 ```

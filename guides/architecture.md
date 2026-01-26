@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/architecture
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -38,29 +38,6 @@ Examine the tools and approaches available for deploying your solution and consi
 Examine key ways to ensure your solution continues to operate well after launch, and how to spot issues.
 * * *
 [Discover more](/guides/architecture/xperience-implementation-handbook)
-## Upgrade from Kentico Xperience 13
-### Upgrade from Kentico Xperience 13
-Migrating between platforms can be an overwhelming process. These guides should help clarify the process of upgrading your existing project to Xperience by Kentico.
-* * *
-[Upgrade overview](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) CONCEPT
-Take a high-level look at the process of migrating from Kentico Xperience 13 to Xperience by Kentico and what it might entail.
-* * *
-[Plan your strategy for migrating features](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features) CONCEPT
-If you are wondering about the effort upgrading will require of your team, read our guide that breaks down the complexity by feature.
-* * *
-[Prep for the upgrade and transfer data](/guides/architecture/upgrade-from-kx13/prep-for-upgrade-and-transfer-data) CONCEPT
-Expand upon the processes of preparing your environment for the upgrade and running the _Xperience by Kentico: Kentico migration tool_.
-* * *
-[Adjust your code and adapt your project](/guides/architecture/upgrade-from-kx13/adjust-your-code-and-adapt) CONCEPT
-Delve deeper into the migration process, discussing how to migrate code that relates to various Kentico Xperience 13 features and utilize new features from Xperience by Kentico.
-* * *
-[Upgrade - Frequently asked questions](/guides/architecture/upgrade-from-kx13/upgrade-faq) CONCEPT
-Get answers to the most common questions from solution architects and tech leaders about planning, executing, and troubleshooting upgrades with the _Kentico Migration Tool_.
-* * *
-[Walk through the upgrade step-by-step](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) HOW-TO
-Learn the basics of upgrading your solution with this step-by-step, code-along guide using the Dancing Goat sample site. The guide covers both data migration and code adjustments to display a Kentico Xperience 13 page seamlessly in Xperience by Kentico.
-* * *
-[Discover more](/guides/architecture/upgrade-from-kx13)
 ## Content modeling
 Discover the fundamental principles of content modeling, empowering you to structure and organize your website’s content effectively.
 Through understanding content types, attributes, and relationships, you’ll gain insight into creating a cohesive and user-friendly online experience. Mastering these principles will enable you to streamline content creation, management, and delivery to better meet your marketing goals.

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/configuration/aira-configuration
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -109,15 +109,39 @@ For fields using the _Rich text editor_ form component, the _Generate email cont
        1. Select **Continue**.
        2. Choose which fields of the content type will serve as the content source. Supported field data types are _Text_ , _Long text_ , _Rich text (HTML)_ or _Content items_. The same data types are supported when loading content from the fields of linked content items. The maximum length of the total source content is 10 000 characters (if exceeded, a warning is displayed to the user and content over the limit is truncated).
        3. Select **Save**.
-     * **Rich text editor refinements** – supported for text fields using the _Rich text editor_ form component. Allows editors to select text and send it to AIRA for refinement (make text shorter, improve writing and grammar, etc.).
+     * **Rich text editor refinements** – supported for text fields using the _Rich text editor_ form component. Allows editors to select text and refine it in place using predefined options (make text shorter, improve writing and grammar, etc.), or apply a custom prompt and send it to AIRA for refinement.
   6. **Save** the field editor.
 
 
-The selected AIRA feature is now enabled for the given field. Only one AIRA feature can be enabled for a single field.
+The selected AIRA feature is now enabled for the given field.
 [![AIRA feature added to a content type field](/docsassets/documentation/aira-configuration/Field_editor_AIRA_features.png)](/docsassets/documentation/aira-configuration/Field_editor_AIRA_features.png)
 Repeat the process for all fields and content types where you wish to enable the AIRA features.
 **Use AIRA features outside of content types**
 AIRA features are not restricted to content types in the _Content types_ application. You can use the same process to enable AIRA features in other field editors, for example for the fields of a [custom object type](/documentation/developers-and-admins/customization/object-types) in the _Modules_ application.
 However, keep in mind that the _Generate email content_ and _Generate email subject based on email content_ features optimize the AIRA prompts to generate email content. Results may be inaccurate if you attempt to generate other types of content.
+## Rich text refinements in Page Builder and Email Builder
+In Page Builder and Email Builder, the rich text editor can appear directly on the respective builder tabs as an [inline editor](/documentation/developers-and-admins/development/builders/page-builder/widgets-for-page-builder/rich-text-inline-editors) or in the configuration dialog for component properties.
+[Rich text editor refinements](/documentation/business-users/aira#rich-text-editor-refinements) are automatically enabled for the rich text inline editor. Refinements in the property configuration dialog need to be [enabled](#enable-rich-text-refinements-in-property-configuration-dialog) by developers.
+### Enable rich text refinements in property configuration dialog
+To enable rich text refinements in the configuration dialog, apply the `FormComponentConfiguration` attribute with `AiraTextRefinementConfigurator` as the configurator type to component properties that use the rich text editor as their editing component.
+The example below shows how to enable text refinements for a Page Builder widget property:
+C#
+**MyWidgetProperties.cs**
+Copy
+```
+using Kentico.Xperience.Admin.Base;
+using Kentico.Xperience.Admin.Base.FormAnnotations;
+using Kentico.PageBuilder.Web.Mvc;
+
+public class MyWidgetProperties : IWidgetProperties
+{
+
+    [RichTextEditorComponent]
+    // Enables AIRA rich text refinements for the rich text editor editing component
+    [FormComponentConfiguration(typeof(AiraTextRefinementConfigurator))]
+    public string RichText { get; set; }
+}
+```
+
 ![]()
 []()[]()

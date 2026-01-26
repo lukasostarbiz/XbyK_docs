@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/get-started-with-saas/manage-saas-deployments
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Get started with SaaS
@@ -12,6 +12,7 @@ The **Monitoring** set of applications in the Xperience Portal are designed to k
   * [Uptime monitoring](#uptime-monitoring)
   * [Event log and exceptions](#event-log-and-exceptions)
   * [Performance metrics](#performance-metrics)
+  * [Security events](#security-events)
   * [Alerts and email notifications](#alerts)
 
 
@@ -66,6 +67,30 @@ To view email metrics for various email channels and [deployment environment](/d
 
 
 [![Email metrics in Xperience Portal](/docsassets/documentation/manage-saas-deployments/XP_Monitoring_Emails.png)](/docsassets/documentation/manage-saas-deployments/XP_Monitoring_Emails.png)
+### Security events
+Use the **Security events** application under **Monitoring** to view security events detected and handled by [Cloudflare CDN](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn). The application provides an overview of security threats, including [DDoS attacks](https://en.wikipedia.org/wiki/Denial-of-service_attack), malicious requests, and other suspicious activities that Cloudflare automatically detects and mitigates.
+Security event data is available for the **last 28 days** only. Events older than 28 days are automatically removed and cannot be retrieved.
+Security events are categorized into the following action types:
+  * **Block** – Requests blocked by Cloudflare’s security rules
+  * **Skip** – Requests that bypassed certain security checks
+  * **Log** – Security events that were logged for monitoring purposes
+  * **Managed challenge** – Requests that received an automated challenge to verify legitimacy
+
+
+To view security events for your project:
+  1. In [Xperience Portal](https://xperience-portal.com), navigate to **Monitoring → Security events**.
+  2. Use the available filters to narrow down the security events: 
+     * **Channel** – Filter by website channel
+     * **Environment** – Select a [deployment environment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-the-package-to-another-deployment-environment) (QA, UAT, PROD, STG)
+     * **Actions** – Filter by action type (Block, Skip, Log, Managed challenge)
+     * **From (UTC)** and **To (UTC)** – Specify the time range for events
+     * **Limit** – Set the number of most recent events to retrieve from Cloudflare
+  3. **Apply filters** to view the filtered results.
+
+
+The **Security events overview** section displays the total count of security events in the selected time period, a breakdown by action type with color-coded indicators showing the number of events for each category, and a timeline chart visualizing security event trends over time, helping you identify patterns and potential attack periods.
+The **Security events** table displays filtered events based on your selected parameters. To view detailed information about a specific event, including Cloudflare’s [Ray ID](https://developers.cloudflare.com/fundamentals/reference/cloudflare-ray-id/), description, HTTP request details, and response information, select the Information (**Details** column.
+[![Security events in Xperience Portal](/docsassets/documentation/manage-saas-deployments/security-events.png)](/docsassets/documentation/manage-saas-deployments/security-events.png)
 ### Alerts
 Alerts notify about potential problems with applications deployed to the SaaS environment. Most of the available alerts are based on [performance metrics,](#performance-metrics) such as application responses, server errors or CPU/memory/DTU utilization.
 The system currently provides the following types of alerts:
@@ -79,7 +104,7 @@ DTU utilization greater than 70% |  Warning |  The application’s average memor
 Failed requests (Server errors) |  Error |  More than 5% of web requests sent to the application over a **30 minute** interval resulted in a failed status, i.e. returned a 5xx [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
 Failed deployment |  Error |  [Deployment](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment#deploy-with-a-deployment-package) of a package failed.  
 Service scaling |  Warning |  A production environment was scaled out to the maximum number of allowed instances over the past **360 minutes**. Typically occurs due to auto-scaling under heavy load. Only applies to projects with a custom service plan, which can allow scaling to 3 or more service instances.  
-Cloudflare DDoS attack |  Warning |  An HTTP [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack has been detected on one of your domains. These attacks are automatically detected and mitigated by the [Cloudflare CDN](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn).  
+Cloudflare DDoS attack |  Warning |  An HTTP [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack has been detected on one of your domains. These attacks are automatically detected and mitigated by the [Cloudflare CDN](/documentation/developers-and-admins/configuration/saas-configuration#cloudflare-cdn). View detailed security event data in the [Security events](#security-events) application.  
 To view alerts for your project’s deployments, navigate to **Monitoring → Alerts** in [Xperience Portal](https://xperience-portal.com). You can filter the alerts for individual deployment environments, based on the time when the alert was fired, and the alert severity.
 Alerts are displayed with the **Resolved** _CPU utilization_ alert will be resolved after the average utilization drops under the 80% threshold over 30 minutes. Select **Show active alerts only** in the filter if you wish to see only unresolved alerts.
 [![Alerts in Xperience Portal](/docsassets/documentation/manage-saas-deployments/XP_Monitoring_Alerts.png)](/docsassets/documentation/manage-saas-deployments/XP_Monitoring_Alerts.png)

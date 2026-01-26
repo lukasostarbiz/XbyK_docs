@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/get-started/use-abstraction-and-enterprise-level-architecture-in-xperience-projects
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

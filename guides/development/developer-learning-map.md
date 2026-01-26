@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/developer-learning-map
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -310,7 +310,7 @@ In this section, you will learn how to improve Xperience by Kentico with third-p
 
 
 **Migrations**
-  1. [Migrate from Kentico Xperience 13](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) – Read a four-article series about [migrating to Xperience by Kentico](/guides/architecture/upgrade-from-kx13), including advice on [how to prepare for code changes](/guides/architecture/upgrade-from-kx13/adjust-your-code-and-adapt).
+  1. [Migrate from Kentico Xperience 13](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-from-kx13-overview) – Read a four-article series about [migrating to Xperience by Kentico](/guides/upgrade-to-xbyk/upgrade-from-kx13), including advice on [how to prepare for code changes](/guides/upgrade-to-xbyk/upgrade-from-kx13/adjust-your-code-and-adapt).
   2. [Xperience by Kentico Migration Toolkit](https://github.com/Kentico/xperience-by-kentico-migration-toolkit) – Learn about the tools designed to help teams migrate content from various data sources into Xperience by Kentico solutions.
 
 

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/architecture/media-libraries-migration-guidance
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -12,7 +12,7 @@ scrape_date: 2026-01-22
 Media libraries have been officially sunset, and their related API members have been marked as obsolete. Support will continue for a year (until July 24, 2026), after which the feature and all associated APIs will be removed. [Content item assets](/documentation/business-users/content-hub/content-item-assets) are the long-term replacement, offering a more structured and future-ready way to manage files in Xperience by Kentico.
 This guide walks you through migrating media library files to content item assets in Xperience by Kentico projects. It covers how assets are transformed, which metadata is preserved (such as GUIDs, custom fields, and system fields), and how legacy URLs are handled during the transition.
 **Migrate media libraries from Kentico Xperience 13**
-For information about migrating media libraries from Kentico Xperience 13 to Xperience by Kentico, see [Upgrade from Kentico Xperience 13](/guides/architecture/upgrade-from-kx13) or the [upgrade walkthrough guide](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough).
+For information about migrating media libraries from Kentico Xperience 13 to Xperience by Kentico, see [Upgrade from Kentico Xperience 13](/guides/upgrade-to-xbyk/upgrade-from-kx13) or the [upgrade walkthrough guide](/guides/upgrade-to-xbyk/upgrade-walkthrough).
 ## Migration overview
 When you migrate your media library files, each one is transformed into a content item asset within a dedicated [workspace](/documentation/developers-and-admins/configuration/users/role-management/workspaces) in the Content hub application.
 The full migration involves the following high-level steps:

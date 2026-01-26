@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/content-modeling-guide/store-content-in-reusable-schemas
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Content modeling guide

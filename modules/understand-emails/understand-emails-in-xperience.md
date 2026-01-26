@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/understand-emails/understand-emails-in-xperience
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Understand emails in Xperience

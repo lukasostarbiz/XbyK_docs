@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/promotions/catalog-discounts
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -21,14 +21,15 @@ Use catalog discounts to implement:
   * Category-based promotions (e.g., discounts on all products in a category)
 
 
-**Catalog promotion rules are for unit price discounts only**
-Catalog promotion rules are exclusively intended for calculating unit price discounts. Performing other modifications inside custom promotion rules, such as adding extra items to the order or modifying the cart contents, may disrupt the calculation pipeline and produce invalid results.
+**Catalog discounts are for unit price discounts only**
+Catalog discounts are exclusively intended for **unit price discounts**. Performing other modifications inside custom promotion rules, such as adding extra items to the order or modifying the cart contents, may disrupt the [calculation pipeline](/documentation/developers-and-admins/digital-commerce-setup/price-calculation) and produce invalid results.
 ## Promotion types
-The system supports two types of promotions:
+The system supports the following types of promotions:
   * **Catalog discounts** – Apply discounts to individual products. Each product can have at most one catalog promotion applied. The system automatically selects the promotion that provides the highest discount.
   * **Order discounts** – Apply discounts to the entire order based on its contents (for example, percentage discounts for orders above given total price). See [Order discounts](/documentation/developers-and-admins/digital-commerce-setup/promotions/order-discounts).
 
 
+Both catalog and order discounts can optionally require [coupon codes](/documentation/developers-and-admins/digital-commerce-setup/promotions/coupon-codes) for redemption. When configured with a coupon code, the promotion is only applied if the customer enters the matching code during checkout.
 ## Catalog promotion rule overview
 A **promotion rule** defines the logic for determining whether a catalog discount applies to a product and how to calculate the discount amount. You implement promotion rules as classes that inherit from `CatalogPromotionRule`.
 **Terminology – Discounts vs. Promotions**
@@ -150,6 +151,7 @@ public class CatalogDiscountBasedOnProductCategoryPromotionRule
 
         // Checks if the product belongs to any of the
         // categories selected when creating the rule
+        // Compare by Identifier (Guid) instead of TagReference equality
         bool isInEligibleCategory = codesamplesProduct.Categories
             .Intersect(Properties.ProductCategories)
             .Any();
@@ -226,7 +228,7 @@ The evaluation pipeline works as follows:
   4. **Select best promotion** – The system selects the promotion with the highest discount for each product.
 
 
-Use `IsApplicable` for checks that apply to the entire promotion context (not individual products). For example, to check if the customer is registerd as a [member](/documentation/developers-and-admins/development/registration-and-authentication):
+Use `IsApplicable` for checks that apply to the entire promotion context (not individual products). For example, to check if the customer is registered as a [member](/documentation/developers-and-admins/development/registration-and-authentication):
 C#
 **Check if a customer is a registered member**
 Copy

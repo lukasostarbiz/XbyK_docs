@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/work-with-assets/media-libraries-sunset
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Work with assets

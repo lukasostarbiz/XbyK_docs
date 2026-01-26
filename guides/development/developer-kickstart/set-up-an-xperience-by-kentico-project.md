@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/developer-kickstart/set-up-an-xperience-by-kentico-project
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

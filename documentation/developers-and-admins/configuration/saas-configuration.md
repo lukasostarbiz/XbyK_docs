@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/configuration/saas-configuration
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -98,6 +98,7 @@ Refer to Microsoft’s documentation on how to use [Application Insights in Visu
 
 ### Cloudflare CDN
 The SaaS environment integrates [Cloudflare CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) to ensure better application performance and availability by distributing the network load across the CDN data centers and by caching website resources.
+Cloudflare CDN also provides security protection against [DDoS attacks](https://en.wikipedia.org/wiki/Denial-of-service_attack) and other threats. You can monitor security events in [Xperience Portal](/documentation/developers-and-admins/deployment/deploy-to-the-saas-environment/manage-saas-deployments#security-events).
 Cloudflare CDN performs caching as described in [Default Cache Behavior](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/).
   * Files with the [Default cached extensions](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions) (images, videos, CSS, JS, PDF, etc.) are cached. By default, the cache time-to-live (TTL) is based on the response’s HTTP status code – see [Edge TTL](https://developers.cloudflare.com/cache/how-to/configure-cache-status-code/#edge-ttl).
   * The HTML output of pages is not cached.

@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/work-with-website-content/create-a-new-landing-page-from-a-template
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Work with website content

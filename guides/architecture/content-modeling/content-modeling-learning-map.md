@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-learning-map
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -91,8 +91,8 @@ Learn about the tools available in Xperience for tailoring content to customer p
 
 ### Migrating to Xperience by Kentico
 Dive into our migration overview to see what an upgrade to Xperience by Kentico entails and learn strategic planning tips for migrating features from previous versions.
-  1. [Upgrade overview](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) – See what upgrading to Xperience by Kentico looks like.
-  2. [Plan your strategy for migrating features](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features) – Understand how to approach upgrading to Xperience from previous Kentico versions.
+  1. [Upgrade overview](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-from-kx13-overview) – See what upgrading to Xperience by Kentico looks like.
+  2. [Plan your strategy for migrating features](/guides/upgrade-to-xbyk/upgrade-from-kx13/plan-your-strategy-for-migrating-features) – Understand how to approach upgrading to Xperience from previous Kentico versions.
   3. [Migration Toolkit documentation](https://github.com/Kentico/xperience-by-kentico-kentico-migration-tool/blob/master/Migration.Tool.CLI/README.md) – Get a thorough understanding of the Kentico Migration Toolkit and discover which content types can be transferred to your Xperience application.
 
 

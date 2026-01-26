@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/api/content-item-api/content-item-database-structure
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -13,12 +13,12 @@ scrape_date: 2026-01-22
 # Content item database structure
 This page introduces the database structure of various system entities used to manage content in Xperience.
 ## Content items
-Content items, managed via the **Content Hub** application and the `IContentItemManager` [management API](/api/), are composed of the following entities:
+Content items, managed via the **Content hub** application and the `IContentItemManager` [management API](/api/), are composed of the following entities:
 Database table |  Description  
 ---|---  
 CMS_ContentItem |  Stores system information about the content item.
   * The item’s content type is stored by the **ContentTypeId** column.
-  * The **ContentItemIsReusable** flag determines whether the item can be linked across multiple channels (i.e., is a reusable content item managed via the _Content Hub_ application) or is tied to a specific channel (i.e., a [page](#pages) or an [email](#emails)).
+  * The **ContentItemIsReusable** flag determines whether the item can be linked across multiple channels (i.e., is a reusable content item managed via the _Content hub_ application) or is tied to a specific channel (i.e., a [page](#pages) or an [email](#emails)).
 
   
 CMS_ContentItemCommonData |  Stores content item properties and data of Page Builder widgets (for page content items) and [reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas) fields. The table stores a separate record for each [language variant](/documentation/developers-and-admins/configuration/languages) of an item.  

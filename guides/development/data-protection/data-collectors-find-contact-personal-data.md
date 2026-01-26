@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/development/data-protection/data-collectors-find-contact-personal-data
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)

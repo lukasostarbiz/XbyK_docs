@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/data-protection/data-erasers-clear-contact-information-from-the-site
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Data protection

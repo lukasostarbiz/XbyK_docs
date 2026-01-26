@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/customer-journeys/creating-a-customer-journey-blueprint-for-success
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Customer journeys

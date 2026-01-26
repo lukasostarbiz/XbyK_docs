@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/changelog/documentation-updates
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -11,9 +11,14 @@ scrape_date: 2026-01-22
 # Documentation updates
 On this page, you can find a summary of changes made to the Xperience by Kentico documentation.
 This list of updates is not directly related to product updates or the introduction of new features (for those, refer to the product [Changelog](/documentation/changelog)) but rather to the documentation itself: newly created pages, significant changes to existing pages, overhauls of specific sections of the documentation, etc.
+## January 22, 2026
+  * ADDED Refresh release – overall update of the documentation corresponding with the January 2026 Refresh release. See the [Refresh changelog](/documentation/changelog#refresh-january-22-2026) and [SaaS update](/documentation/changelog#saas-update-january-22-2026) for details.
+  * ADDED [Upgrade to Xperience by Kentico](/guides/upgrade-to-xbyk) – new root-level category consolidating all upgrade-related materials from Kentico Xperience 13 (KX13) to Xperience by Kentico (XbyK). All upgrade guides previously located under Architecture and Development sections are now centralized here.
+
+
 ## January 15, 2026
   * UPDATED [Notifications basics](/guides/digital-marketing/work-with-email/notifications-basics) – a new interactive demo teaching the business users how to create internal notifications added to the guide on notification basics.
-  * ADDED [Upgrade - Commerce features overview](/guides/architecture/upgrade-from-kx13/upgrade-commerce-features-overview) – new conceptual guide overviews Kentico Xperience 13 and Xperience by Kentico commerce features.
+  * ADDED [Upgrade - Commerce features overview](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-commerce-features-overview) – new conceptual guide overviews Kentico Xperience 13 and Xperience by Kentico commerce features.
 
 
 ## January 8, 2026
@@ -26,7 +31,7 @@ This list of updates is not directly related to product updates or the introduct
 
 ## December 11, 2025
   * ADDED Refresh release – overall update of the documentation corresponding with the December 2025 Refresh release. See the [Changelog](/documentation/changelog#refresh-december-11-2025) for details.
-  * ADDED [Work with assets in Xperience](/guides/digital-marketing/work-with-reusable-content/work-with-assets) – new interactive demo that shows business users how to upload, optimize, and publish assets both in the Content Hub and directly within a page widget.
+  * ADDED [Work with assets in Xperience](/guides/digital-marketing/work-with-reusable-content/work-with-assets) – new interactive demo that shows business users how to upload, optimize, and publish assets both in the Content hub and directly within a page widget.
   * ADDED [Rapidly implement widgets with KentiCopilot](/guides/development/kenticopilot/implement-widgets-kenticopilot) – new video how-to guide for developers showing rapid widget implementation with KentiCopilot. Includes a five-minute video demo, detailed prompts, and requirements templates from the KentiCopilot GitHub repository.
 
 
@@ -47,7 +52,7 @@ This list of updates is not directly related to product updates or the introduct
 
 
 ## November 6, 2025
-  * UPDATED [Upgrade - Frequently asked questions](/guides/architecture/upgrade-from-kx13/upgrade-faq) – updated with more questions about data migration, planning, content remodelling and commerce, based on feedback from our partners.
+  * UPDATED [Upgrade - Frequently asked questions](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-faq) – updated with more questions about data migration, planning, content remodelling and commerce, based on feedback from our partners.
   * UPDATED [Adjust the form’s Thank you message](/guides/digital-marketing/work-with-forms/adjust-the-forms-thank-you-message) – updated a guide teaching the business users how to adjust a form’s thank you message. There were outdated UI elements and/or part of the processes moved from Forms app to form widget in pages.
   * UPDATED [Update an existing form](/guides/digital-marketing/work-with-forms/update-an-existing-form) – updated a guide teaching the business users how to change a form’s metadata and other properties. There were outdated UI elements and/or part of the processes moved from Forms app to form widget in pages.
   * UPDATED [Create a Contact us form](/guides/digital-marketing/work-with-forms/create-a-contact-us-form) – updated a guide teaching the business users how to create a contact form from scratch. There were outdated UI elements and/or part of the processes moved from Forms app to form widget in pages.
@@ -55,7 +60,7 @@ This list of updates is not directly related to product updates or the introduct
 
 ## October 30, 2025
   * UPDATED [Set what happens after form submission](/guides/digital-marketing/work-with-forms/set-what-happens-after-form-submission) – updated the guide teaching business users how to set up the after submission behavior of a form (regarding new spaces where the user sets up the form after submission message and email).
-  * ADDED [Convert child pages to widget content](/guides/development/upgrade-deep-dives/convert-child-pages-to-widgets) – convert static child pages into flexible Page Builder widgets with reusable content items.
+  * ADDED [Convert child pages to widget content](/guides/upgrade-to-xbyk/upgrade-deep-dives/convert-child-pages-to-widgets) – convert static child pages into flexible Page Builder widgets with reusable content items.
   * ADDED [Convert existing content to reusable field schemas](/guides/development/advanced-content/convert-content-to-reusable-schemas) – a new guide for developers migrating existing content from a flat content type to a reusable field schema-based type. Programmatically create and publish new content items, update references in pages and related content, and clean up deprecated types.
   * ADDED [Integrate with decoupled systems](/documentation/developers-and-admins/integrate-with-decoupled-systems) – a new documentation page for architects and developers providing guidance on creating decoupled integrations with Xperience by Kentico.
 
@@ -67,13 +72,13 @@ This list of updates is not directly related to product updates or the introduct
 
 ## October 16, 2025
   * ADDED Refresh release – overall update of the documentation corresponding with the October 2025 Refresh release. See the [Changelog](/documentation/changelog#refresh-october-16-2025) for details.
-  * ADDED [Transform widget properties](/guides/development/upgrade-deep-dives/transform-widget-properties) – a technical deep dive covering custom widget properties migration from Kentico Xperience 13, including data transformations, UI control changes, and custom property migrations.
+  * ADDED [Transform widget properties](/guides/upgrade-to-xbyk/upgrade-deep-dives/transform-widget-properties) – a technical deep dive covering custom widget properties migration from Kentico Xperience 13, including data transformations, UI control changes, and custom property migrations.
   * ADDED [Update Xperience by Kentico](/guides/development/get-started/update-xperience) – a guide for developers that shows how to update an Xperience by Kentico project and demonstrates the process in a short video.
 
 
 ## October 9, 2025
   * UPDATED [Design email content](/guides/architecture/content-modeling/content-modeling-guide/design-email-content) – updates the guide with details on email types, use of Email Builder, and best practices for modeling reusable and flexible email content types.
-  * ADDED [Upgrade your content retrieval code](/guides/development/upgrade-deep-dives/upgrade-content-retrieval) – new guide for developers about upgrading content retrieval code. Convert your code from `IPageRetriever`, `DocumentHelper`, and `TreeProvider` patterns to modern Xperience by Kentico APIs with practical examples from real Kentico 13 scenarios.
+  * ADDED [Upgrade your content retrieval code](/guides/upgrade-to-xbyk/upgrade-deep-dives/upgrade-content-retrieval) – new guide for developers about upgrading content retrieval code. Convert your code from `IPageRetriever`, `DocumentHelper`, and `TreeProvider` patterns to modern Xperience by Kentico APIs with practical examples from real Kentico 13 scenarios.
 
 
 ## October 2, 2025
@@ -90,22 +95,22 @@ This list of updates is not directly related to product updates or the introduct
 
 ## September 22, 2025
   * ADDED Refresh release – overall update of the documentation corresponding with the September 2025 Refresh release. See the [Changelog](/documentation/changelog#refresh-september-22-2025) for details.
-  * ADDED [Migrate widget data as reusable content](/guides/development/upgrade-deep-dives/migrate-widget-data-to-content-hub) – new technical deep dive showing how to use custom widget migration during an upgrade to Xperience by Kentico to extract widget content from pages and transform it into reusable content items referenced by migrated widgets.
+  * ADDED [Migrate widget data as reusable content](/guides/upgrade-to-xbyk/upgrade-deep-dives/migrate-widget-data-to-content-hub) – new technical deep dive showing how to use custom widget migration during an upgrade to Xperience by Kentico to extract widget content from pages and transform it into reusable content items referenced by migrated widgets.
 
 
 ## September 18, 2025
   * ADDED [Add a user to a role](/guides/configuration/work-with-users-and-roles/work-with-users/add-user-to-role) – added an updated (now interactive) version of a video in a guide for business users that shows how to create a user role, add permissions to it, and then assign it to a newly created user, or to multiple users at once.
-  * UPDATED – the [Upgrade walkthrough](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) for architects and developers was updated to utilize newer content retrieval and caching APIs.
+  * UPDATED – the [Upgrade walkthrough](/guides/upgrade-to-xbyk/upgrade-walkthrough) for architects and developers was updated to utilize newer content retrieval and caching APIs.
 
 
 ## September 11, 2025
   * ADDED [Work with image variants and focal point](/guides/digital-marketing/xperience-essentials/work-with-image-variants-and-focal-point) – new guide for business users that takes a deep dive into working with image variants, focal point, manual cropping, and sharing assets via URL.
-  * ADDED [Upgrade widgets from Kentico Xperience 13](/guides/development/upgrade-deep-dives/upgrade-widgets-introduction) – new guide for developers exploring options for upgrading Kentico Xperience 13 widgets to Xperience by Kentico.
+  * ADDED [Upgrade widgets from Kentico Xperience 13](/guides/upgrade-to-xbyk/upgrade-deep-dives/upgrade-widgets-introduction) – new guide for developers exploring options for upgrading Kentico Xperience 13 widgets to Xperience by Kentico.
 
 
 ## September 4, 2025
   * ADDED [Manage files in Xperience](/guides/digital-marketing/xperience-essentials/manage-files-essentials) – two new hands-on exercises added to an existing guide: one walks you through bulk-uploading and organizing multiple images in Content hub, and the other shows how to insert an image into a page widget.
-  * ADDED [Transfer parent-child page hierarchy to the Content hub](/guides/development/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub) – new guide for developers exploring how to migrate Kentico Xperience 13 pages to the content hub in Xperience by Kentico without losing page hierarchy, creating relationships between reusable items.
+  * ADDED [Transfer parent-child page hierarchy to the Content hub](/guides/upgrade-to-xbyk/upgrade-deep-dives/transfer-page-hierarchy-to-content-hub) – new guide for developers exploring how to migrate Kentico Xperience 13 pages to the content hub in Xperience by Kentico without losing page hierarchy, creating relationships between reusable items.
 
 
 ## August 28, 2025
@@ -117,13 +122,13 @@ This list of updates is not directly related to product updates or the introduct
 
 
 ## August 21, 2025
-  * ADDED [Speed up remodeling with AI](/guides/development/upgrade-deep-dives/speed-up-remodeling-with-ai) – new guide for developers discussing how agentic AI coding assistants can accelerate the process of remodeling content types and field mappings during your upgrade.
-  * ADDED [Optimize images during your upgrade](/guides/development/upgrade-deep-dives/optimize-images-during-upgrade) – new how-to guide for developers configuring the _Kentico migration tool_ to use Xperience’s _automatic image optimization_ feature for images stored as media library files and page attachments in Kentico Xperience 13.
+  * ADDED [Speed up remodeling with AI](/guides/upgrade-to-xbyk/upgrade-deep-dives/speed-up-remodeling-with-ai) – new guide for developers discussing how agentic AI coding assistants can accelerate the process of remodeling content types and field mappings during your upgrade.
+  * ADDED [Optimize images during your upgrade](/guides/upgrade-to-xbyk/upgrade-deep-dives/optimize-images-during-upgrade) – new how-to guide for developers configuring the _Kentico migration tool_ to use Xperience’s _automatic image optimization_ feature for images stored as media library files and page attachments in Kentico Xperience 13.
   * ADDED [Understand emails in Xperience](/modules/understand-emails) – new module for business users, tying together conceptual materials about how emails work in Xperience into a series where learners can track their progress over time.
 
 
 ## August 14, 2025
-  * ADDED [Upgrade - Frequently asked questions](/guides/architecture/upgrade-from-kx13/upgrade-faq) – new material for solution architects and tech leads, addressing frequently asked questions about upgrades from Kentico Xperience 13 to Xperience by Kentico.
+  * ADDED [Upgrade - Frequently asked questions](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-faq) – new material for solution architects and tech leads, addressing frequently asked questions about upgrades from Kentico Xperience 13 to Xperience by Kentico.
 
 
 ## July 31, 2025
@@ -180,7 +185,7 @@ This list of updates is not directly related to product updates or the introduct
 
 ## April 17, 2025
   * ADDED Refresh release – overall update of the documentation corresponding with the April 2025 Refresh release. See the [Changelog](/documentation/changelog#refresh-april-17-2025) for details.
-  * ADDED [Remodel page types as reusable field schemas](/guides/development/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) – this new guide for developers walks through the process of transforming two page types from Kentico Xperience 13 into content types that share a [Reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
+  * ADDED [Remodel page types as reusable field schemas](/guides/upgrade-to-xbyk/upgrade-deep-dives/remodel-page-types-as-reusable-field-schemas) – this new guide for developers walks through the process of transforming two page types from Kentico Xperience 13 into content types that share a [Reusable field schema](/documentation/developers-and-admins/development/content-types/reusable-field-schemas).
 
 
 ## April 3, 2025
@@ -198,7 +203,7 @@ This list of updates is not directly related to product updates or the introduct
 
 
 ## March 13, 2025
-  * ADDED [Walk through the upgrade step-by-step](/guides/architecture/upgrade-from-kx13/upgrade-walkthrough) – A new guide for developers, project managers, and architects, walking through the upgrade process. This includes setup, data migration, and code changes in order to display a page from Kentico Xperience 13’s _Dancing Goat_ sample site in Xperience by Kentico.
+  * ADDED [Walk through the upgrade step-by-step](/guides/upgrade-to-xbyk/upgrade-walkthrough) – A new guide for developers, project managers, and architects, walking through the upgrade process. This includes setup, data migration, and code changes in order to display a page from Kentico Xperience 13’s _Dancing Goat_ sample site in Xperience by Kentico.
 
 
 ## February 27, 2025
@@ -256,7 +261,7 @@ This list of updates is not directly related to product updates or the introduct
 ## October 31, 2024
   * ADDED [Architecture](/guides/architecture) – new category of guides written for project managers, solution architects, and development team leads.
   * ADDED [Xperience implementation handbook](/guides/architecture/xperience-implementation-handbook) – new series of guides for project managers and development team leads, focused on high-level considerations for each phase of Xperience development.
-  * UPDATED [Upgrade from Kentico Xperience 13](/guides/architecture/upgrade-from-kx13) – high-level guides about the migration process from Kentico Xperience 13 to Xperience by Kentico were moved under the new [Architecture](/guides/architecture) category.
+  * UPDATED [Upgrade from Kentico Xperience 13](/guides/upgrade-to-xbyk/upgrade-from-kx13) – high-level guides about the migration process from Kentico Xperience 13 to Xperience by Kentico were moved under the new [Architecture](/guides/architecture) category.
   * UPDATED [Content modeling](/guides/architecture/content-modeling) – auxiliary guides about content modeling were moved under the new [Architecture](/guides/architecture) category.
 
 
@@ -271,13 +276,13 @@ This list of updates is not directly related to product updates or the introduct
 ## October 3, 2024
   * ADDED [Design headless content](/guides/architecture/content-modeling/content-modeling-guide/design-headless-content) – new page explaining how to model content for [headless channels](/documentation/developers-and-admins/configuration/headless-channel-management).
   * Migration guides: 
-    * ADDED [Plan your strategy for migrating features](/guides/architecture/upgrade-from-kx13/plan-your-strategy-for-migrating-features) – a conceptual guide for developers and tech lead roles, that breaks down migration from Kentico Xperience 13 to Xperience by Kentico by feature.
-    * ADDED [Prep for the upgrade and transfer data](/guides/architecture/upgrade-from-kx13/prep-for-upgrade-and-transfer-data) – a new guide for developers discussing how to prepare for a migration and move data from Kentico Xperience 13 to Xperience by Kentico.
-    * ADDED [Adjust your code and adapt your project](/guides/architecture/upgrade-from-kx13/adjust-your-code-and-adapt) – a new guide for developers covering how to migrate code that relates to various Kentico Xperience 13 features and utilize new features from Xperience by Kentico.
+    * ADDED [Plan your strategy for migrating features](/guides/upgrade-to-xbyk/upgrade-from-kx13/plan-your-strategy-for-migrating-features) – a conceptual guide for developers and tech lead roles, that breaks down migration from Kentico Xperience 13 to Xperience by Kentico by feature.
+    * ADDED [Prep for the upgrade and transfer data](/guides/upgrade-to-xbyk/upgrade-from-kx13/prep-for-upgrade-and-transfer-data) – a new guide for developers discussing how to prepare for a migration and move data from Kentico Xperience 13 to Xperience by Kentico.
+    * ADDED [Adjust your code and adapt your project](/guides/upgrade-to-xbyk/upgrade-from-kx13/adjust-your-code-and-adapt) – a new guide for developers covering how to migrate code that relates to various Kentico Xperience 13 features and utilize new features from Xperience by Kentico.
 
 
 ## September 26, 2024
-  * ADDED [Upgrade overview](/guides/architecture/upgrade-from-kx13/upgrade-from-kx13-overview) – a new training guide providing a high-level overview of the migration process from Kentico 13 to Xperience by Kentico.
+  * ADDED [Upgrade overview](/guides/upgrade-to-xbyk/upgrade-from-kx13/upgrade-from-kx13-overview) – a new training guide providing a high-level overview of the migration process from Kentico 13 to Xperience by Kentico.
 
 
 ## September 19, 2024

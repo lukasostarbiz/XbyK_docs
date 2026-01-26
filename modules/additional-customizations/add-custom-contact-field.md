@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/modules/additional-customizations/add-custom-contact-field
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
 Module: Additional customizations

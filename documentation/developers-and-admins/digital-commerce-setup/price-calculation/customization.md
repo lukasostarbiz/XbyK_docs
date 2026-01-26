@@ -1,16 +1,16 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/price-calculation/customization
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
   * [Developers and admins](/documentation/developers-and-admins)
   * [Digital commerce setup](/documentation/developers-and-admins/digital-commerce-setup)
   * [Price calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation)
-  * Price calculation customization 
+  * Customize price calculation 
 
 
-# Price calculation customization
+# Customize price calculation
 **Advanced license required**   
   
 Features described on this page require the Xperience by Kentico **Advanced** license tier. 
@@ -66,7 +66,7 @@ public class CodesamplesPriceCalculationResult
     : PriceCalculationResultBase<CodesamplesPriceCalculationResultItem>;
 ```
 
-These custom types can be used when [modifying calculation steps](#modify-existing-calculation-steps) or [implementing custom steps](#implement-custom-calculation-steps).
+These custom types can be used when [modifying calculation steps](#modify-existing-calculation-steps) or [adding custom steps](#add-a-custom-calculation-step).
 ## Modify existing calculation steps
 You can modify the behavior of existing [calculation steps](/documentation/developers-and-admins/digital-commerce-setup/price-calculation#calculation-steps) to implement custom pricing logic without creating entirely new steps. When you register a custom step implementation, it automatically replaces the default step implementation in the calculation pipeline.
 The following calculation step interfaces can be overridden:
@@ -95,9 +95,10 @@ builder.Services.AddTransient(typeof(IModifiedCalculationStep<,>), typeof(Modifi
 
 
 For a complete example of overriding a calculation step, see [Implement tax calculation](/documentation/developers-and-admins/digital-commerce-setup/price-calculation/implementation#implement-tax-calculation), which demonstrates replacing the default tax step with custom tax logic.
-## Implement custom calculation steps
-Custom calculation steps allow you to add specialized pricing logic such as volume-based discounts, loyalty program benefits, handling fees, gift wrapping charges, or complex promotional rules. Custom steps can be inserted anywhere in the calculation pipeline by creating a custom steps provider.
-### Create a custom step
+## Customize calculation steps
+You can customize the calculation pipeline by overriding existing calculation steps or adding new custom steps. Both approaches require creating a [custom calculation steps provider](#create-a-custom-steps-provider) to control which steps execute and in what order.
+### Add a custom calculation step
+Custom calculation steps allow you to add specialized pricing logic such as volume-based discounts, loyalty program benefits, handling fees, gift wrapping charges, or complex promotional rules.
   1. Add a custom class that implements `IPriceCalculationStep<TPriceCalculationRequest, TPriceCalculationResult>`. In the `Execute` method, define your custom logic to modify the calculation result based on the calculation request.
 C#
 **Custom calculation step implementation**
@@ -123,10 +124,10 @@ Copy
 builder.Services.AddTransient(typeof(IPriceCalculationStep<,>), typeof(CustomCalculationStep<,>));
 ```
 
-  3. Create a [custom calculation steps provider](#create-a-custom-steps-provider) to include your new step in the calculation pipeline.
+  3. Create a custom calculation steps provider (see below) to include your new step in the calculation pipeline.
 
 
-## Create a custom steps provider
+### Create a custom steps provider
 A custom steps provider allows you to control which steps execute and in what order. You can reorganize the default pipeline, add custom steps, or conditionally include steps based on request properties such as the [calculation mode](/documentation/developers-and-admins/digital-commerce-setup/price-calculation#calculation-modes).
 When you register a custom implementation of `IPriceCalculationStepsProvider`, you need to ensure that all required calculation steps are included, including the default calculation steps. If any required step is omitted, the price calculation service may not function correctly, leading to incomplete or incorrect price calculations.
   1. Create a class that implements `IPriceCalculationStepsProvider<TPriceCalculationRequest, TPriceCalculationResult>`. Inject all default and custom calculation steps through the constructor.

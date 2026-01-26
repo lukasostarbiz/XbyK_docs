@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/guides/digital-marketing/work-with-reusable-content/create-a-new-reusable-article-in-the-content-hub
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/guides)
@@ -11,5 +11,3 @@ scrape_date: 2026-01-22
 
 # Create a new reusable article in the Content hub
 See how to prepare an article content item that you can use in various places in your channels.
-![]()
-[]()[]()

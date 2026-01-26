@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/developers-and-admins/digital-commerce-setup/checkout-process
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -62,7 +62,12 @@ public class ShoppingCartDataModel
     /// <summary>
     /// Items inside the shopping cart.
     /// </summary>
-    public ICollection<ShoppingCartDataItem> Items { get; init; } = new List<ShoppingCartDataItem>();
+    public ICollection<ShoppingCartDataItem> Items { get; set; } = new List<ShoppingCartDataItem>();
+
+    /// <summary>
+    /// Coupon codes entered by the customer.
+    /// </summary>
+    public ICollection<string> CouponCodes { get; set; } = new List<string>();
 }
 ```
 
@@ -186,7 +191,8 @@ C#
 Copy
 ```
 /// <summary>
-/// Gets the current shopping cart or creates a new one if it doesn't exist.
+/// Gets the current shopping cart or creates a new one if it doesn't exist
+/// using <see cref="ICurrentShoppingCartRetriever"/> and <see cref="ICurrentShoppingCartCreator"/>.
 /// </summary>
 public async Task<ShoppingCartInfo> GetOrCreateCart(CancellationToken cancellationToken = default)
 {

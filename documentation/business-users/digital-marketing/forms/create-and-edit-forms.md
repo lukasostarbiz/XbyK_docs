@@ -1,6 +1,6 @@
 ---
 source: https://docs.kentico.com/documentation/business-users/digital-marketing/forms/create-and-edit-forms
-scrape_date: 2026-01-22
+scrape_date: 2026-01-26
 ---
 
   * [Home](/documentation)
@@ -59,7 +59,7 @@ Select the purple  _plus_ buttons in the form editing area to add new fields. Th
 
 [![Adding a field to a form](/docsassets/documentation/create-and-edit-forms/FormBuilder_New_Field.png)](/docsassets/documentation/create-and-edit-forms/FormBuilder_New_Field.png)
 The form saves automatically each time a new field is added. 
-After creating a new field, we recommend setting an appropriate **Name** property based on the field’s purpose. By default, the _Name_ is generated based on the type of the selected field type. Changing the value later once the form starts collecting data can be problematic.
+After creating a new field, we recommend setting an appropriate **Name** property based on the field’s purpose. By default, the _Name_ is generated based on the type of the selected field. Changing the value later once the form starts collecting data can be problematic.
 See [Field properties](#field-properties) for details.
 ### Hide featured fields
 If any of the featured fields are not relevant for your forms, you can hide them from the _Fields_ dialog that appears when adding new form fields:
@@ -75,7 +75,49 @@ Fields in the form are configurable. You can change a field’s label, tooltip, 
   3. Select **Apply** to save your changes.
 
 
+**Smart fields**
 You can configure fields to behave as “smart fields”, which means they are only displayed on repeated views of a form as a replacement for other fields that the visitor has already filled in. For more information, see [Use smart fields in forms](/documentation/business-users/digital-marketing/forms/use-smart-fields-in-forms).
+Xperience can use the information collected via forms to update [contacts](/documentation/business-users/digital-marketing/contact-management) representing website visitors in the system. If a visitor submits a form, the system automatically transfers the entered values into the data of a matching contact (for visitors who give [consent](/documentation/developers-and-admins/data-protection/consent-management)). You can also use the same approach to update the data of existing contacts when a visitor provides new information.
+Mapping links a form field to a specific contact attribute. You control how form fields are mapped via the **Mapped to contact attribute** [field property](#field-properties).
+[![Mapping a form field to a contact attribute](/docsassets/documentation/create-and-edit-forms/FormBuilder_FFtoCAmapping.png)](/docsassets/documentation/create-and-edit-forms/FormBuilder_FFtoCAmapping.png)
+For example, if the form has a field where users enter their email address, you can map this field to the **Email** contact attribute. When a user submits the form, the system automatically saves the field’s value as the email address of the contact representing the given user.
+**Contact mapping and featured fields**
+Certain _featured_ fields are preconfigured to map to the corresponding contact attribute (e.g., First name, Last name, Email). The mapping can be changed. You can view and modify the field’s configuration using the [properties dialog](#field-properties).
+**Contact email changes**
+If you have the _Overwrite existing contact information with submitted data_ option enabled on the form’s [General tab](#configure-form-properties-and-behavior), it is possible for visitors to change their contact information by submitting data into mapped fields. However, because a contact’s email address is its main identifier in Xperience, the system **does not allow the email to be changed** based on data submitted through forms.
+If you have a form field mapped to the _Email_ contact attribute, and a visitor submits a different value than the associated contact’s current email address, all related field updates are performed for a different contact. Either an existing contact that matches the submitted email value is used, or a new contact is created.
+In these cases, the given visitor’s associated contact remains unchanged, but all subsequent actions, such as logging of the _Form submission_ [activity](/documentation/business-users/digital-marketing/contact-activities) and triggering of [automation processes](/documentation/business-users/digital-marketing/automation), are done for the “other” contact that matches the submitted email address.
+### Field visibility
+Form Builder allows you to configure when and how form fields are displayed to users. Fields can either be always visible, hidden, or have conditional visibility. Visibility conditions are always based on the value of another **reference field** in the form. For example, a “Company name” field can be configured to only appear when users select “Business” in a preceding “Account type” field. This helps keep forms clean and relevant for individual users.
+To set the visibility of fields in Form Builder:
+  1. Select the field whose visibility you want to configure.
+  2. Open the properties dialog by selecting configure (
+  3. Navigate down to the **Visibility** section.
+  4. Select one of the available options: 
+     * **Always** – the field is always visible. This is the default state for all fields.
+     * **Conditional** – the field is displayed based on a selected reference field and condition. This option is not offered for the first field in the form (since no reference fields are available).
+     * **Hidden** – the field is never displayed in the form on the live site. Hidden fields allow you to remove a field from the form while preserving the field’s data in existing [form submissions](/documentation/business-users/digital-marketing/forms/manage-form-submissions). Hidden fields can also be used by developers to [set form values programmatically](/documentation/developers-and-admins/customization/handle-global-events/handle-form-events).
+  5. For the **Conditional** option, continue with the following configuration: 
+    1. Select a **Reference field**. This field’s value is checked by the visibility condition. 
+       * The reference field must always be placed “above” the field with the condition. If your form has an advanced layout, e.g., with multiple columns, you may need to consult with your project’s developers to understand the order of fields.
+    2. Select a **Condition** (_Equal to_ , _Contains_ , _Is empty_ , etc.). 
+       * The available conditions depend on the type of the reference field.
+       * Each form field can only have one visibility condition.
+    3. Enter the **Value** against which the reference field will be evaluated (the _Value_ input is not provided for some conditions, such as _Is empty_).
+The value is **not case-sensitive**. For example, an _Equal to_ condition with a _Value_ set to “copilot” is fulfilled even if the input in the reference field is “coPilot”. 
+[![Visibility configuration for a form field](/docsassets/documentation/create-and-edit-forms/FormBuilder_visibility.png)](/docsassets/documentation/create-and-edit-forms/FormBuilder_visibility.png)
+  6. Select **Apply** to save your changes.
+
+
+The Form Builder interface displays the following icons to indicate field visibility:
+  * _Conditional_ visibility
+
+
+The field’s visibility configuration is now applied when users view the form on the live site. If using _Conditional_ visibility, the field only appears when the reference field fulfills the given condition.
+**Behavior of fields hidden by visibility conditions**
+When a field’s visibility condition is not met, the field is **not rendered** anywhere in the form’s output code (there is no hidden input).
+[Validation](#field-validation) does not occur for hidden fields.
+If a field is visible when the form is initially displayed, but later becomes hidden before the form is submitted, any data entered into the field is **not included**. The [form submission](/documentation/business-users/digital-marketing/forms/manage-form-submissions) instead stores an empty value (for non-required fields) or the field’s **default value** (for required fields).
 ### Field validation
 Validation rules restrict which values can be submitted into form fields. For example, validation can limit the maximum number of characters or the maximum numerical value a user can enter into a field.
 **Validation of empty values**
@@ -98,16 +140,7 @@ To add validation rules to fields in Form Builder:
 
 
 The added validation requirements are now evaluated whenever a user submits the form. If the input is not valid, the form submission fails and the error message text appears next to the field. The user can adjust the value and submit the form again.
-Xperience can use the information collected via forms to update [contacts](/documentation/business-users/digital-marketing/contact-management) representing website visitors in the system. If a visitor submits a form, the system automatically transfers the entered values into the data of a matching contact (for visitors who give [consent](/documentation/developers-and-admins/data-protection/consent-management)). You can also use the same approach to update the data of existing contacts when a visitor provides new information.
-Mapping links a form field to a specific contact attribute. You control how form fields are mapped via the **Mapped to contact attribute** [field property](#field-properties).
-[![Mapping a form field to a contact attribute](/docsassets/documentation/create-and-edit-forms/FormBuilder_FFtoCAmapping.png)](/docsassets/documentation/create-and-edit-forms/FormBuilder_FFtoCAmapping.png)
-For example, if the form has a field where users enter their email address, you can choose this field for the **Email** contact attribute. When a user submits the form, the system automatically saves the field’s value as the email address of the contact representing the given user.
-**Contact mapping and featured fields**
-Certain _featured_ fields are preconfigured to map to the corresponding contact attribute (e.g., First name, Last name, Email). The mapping can be changed. You can view and modify the field’s configuration using the [properties dialog](#field-properties).
-**Contact email changes**
-If you have the _Overwrite existing contact information with submitted data_ option enabled on the form’s [General tab](#configure-form-properties-and-behavior), it is possible for visitors to change their contact information by submitting data into mapped fields. However, because a contact’s email address is its main identifier in Xperience, the system **does not allow the email to be changed** based on data submitted through forms.
-If you have a form field mapped to the _Email_ contact attribute, and a visitor submits a different value than the associated contact’s current email address, all related field updates are performed for a different contact. Either an existing contact that matches the submitted email value is used, or a new contact is created.
-In these cases, the given visitor’s associated contact remains unchanged, but all subsequent actions, such as logging of the _Form submission_ [activity](/documentation/business-users/digital-marketing/contact-activities) and triggering of [automation processes](/documentation/business-users/digital-marketing/automation), are done for the “other” contact that matches the submitted email address.
+Validation only works for visible fields. Fields that are hidden as a result of their [visibility configuration](#field-visibility) are not validated.
 ## Move and reorder fields
 To change the order of existing fields or move them between different zones in the form layout:
   1. Select a field in the form.
@@ -117,7 +150,8 @@ To change the order of existing fields or move them between different zones in t
 ## Delete fields
 To delete fields from the form:
 **Removing fields from forms with existing submissions**
-Removing a field from forms with existing submissions also deletes all data the field gathered over its lifetime.
+Removing a field from a form with existing submissions also deletes all data the field gathered over its lifetime.
+If you wish to remove a field while preserving its data, you can set the field’s [visibility](#field-visibility) to **Hidden**.
   1. Select the field you wish to remove.
   2. Select the delete (
   3. Confirm the removal via the popup dialog.
